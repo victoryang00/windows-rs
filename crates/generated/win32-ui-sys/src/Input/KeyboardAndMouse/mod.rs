@@ -17,17 +17,17 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetFocus() -> super::super::super::Foundation::HWND;
     pub fn GetKBCodePage() -> u32;
-    pub fn GetKeyNameTextA(lparam: i32, lpstring: ::windows_sys_core::PSTR, cchsize: i32) -> i32;
-    pub fn GetKeyNameTextW(lparam: i32, lpstring: ::windows_sys_core::PWSTR, cchsize: i32) -> i32;
+    pub fn GetKeyNameTextA(lparam: i32, lpstring: ::windows_core_sys::PSTR, cchsize: i32) -> i32;
+    pub fn GetKeyNameTextW(lparam: i32, lpstring: ::windows_core_sys::PWSTR, cchsize: i32) -> i32;
     pub fn GetKeyState(nvirtkey: i32) -> i16;
     #[cfg(feature = "Win32_UI_TextServices")]
     pub fn GetKeyboardLayout(idthread: u32) -> super::super::TextServices::HKL;
     #[cfg(feature = "Win32_UI_TextServices")]
     pub fn GetKeyboardLayoutList(nbuff: i32, lplist: *mut super::super::TextServices::HKL) -> i32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetKeyboardLayoutNameA(pwszklid: ::windows_sys_core::PSTR) -> super::super::super::Foundation::BOOL;
+    pub fn GetKeyboardLayoutNameA(pwszklid: ::windows_core_sys::PSTR) -> super::super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetKeyboardLayoutNameW(pwszklid: ::windows_sys_core::PWSTR) -> super::super::super::Foundation::BOOL;
+    pub fn GetKeyboardLayoutNameW(pwszklid: ::windows_core_sys::PWSTR) -> super::super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetKeyboardState(lpkeystate: *mut u8) -> super::super::super::Foundation::BOOL;
     pub fn GetKeyboardType(ntypeflag: i32) -> i32;
@@ -37,9 +37,9 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn IsWindowEnabled(hwnd: super::super::super::Foundation::HWND) -> super::super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn LoadKeyboardLayoutA(pwszklid: ::windows_sys_core::PCSTR, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
+    pub fn LoadKeyboardLayoutA(pwszklid: ::windows_core_sys::PCSTR, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn LoadKeyboardLayoutW(pwszklid: ::windows_sys_core::PCWSTR, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
+    pub fn LoadKeyboardLayoutW(pwszklid: ::windows_core_sys::PCWSTR, flags: ACTIVATE_KEYBOARD_LAYOUT_FLAGS) -> super::super::TextServices::HKL;
     pub fn MapVirtualKeyA(ucode: u32, umaptype: u32) -> u32;
     #[cfg(feature = "Win32_UI_TextServices")]
     pub fn MapVirtualKeyExA(ucode: u32, umaptype: u32, dwhkl: super::super::TextServices::HKL) -> u32;
@@ -67,9 +67,9 @@ extern "system" {
     pub fn ToAscii(uvirtkey: u32, uscancode: u32, lpkeystate: *const u8, lpchar: *mut u16, uflags: u32) -> i32;
     #[cfg(feature = "Win32_UI_TextServices")]
     pub fn ToAsciiEx(uvirtkey: u32, uscancode: u32, lpkeystate: *const u8, lpchar: *mut u16, uflags: u32, dwhkl: super::super::TextServices::HKL) -> i32;
-    pub fn ToUnicode(wvirtkey: u32, wscancode: u32, lpkeystate: *const u8, pwszbuff: ::windows_sys_core::PWSTR, cchbuff: i32, wflags: u32) -> i32;
+    pub fn ToUnicode(wvirtkey: u32, wscancode: u32, lpkeystate: *const u8, pwszbuff: ::windows_core_sys::PWSTR, cchbuff: i32, wflags: u32) -> i32;
     #[cfg(feature = "Win32_UI_TextServices")]
-    pub fn ToUnicodeEx(wvirtkey: u32, wscancode: u32, lpkeystate: *const u8, pwszbuff: ::windows_sys_core::PWSTR, cchbuff: i32, wflags: u32, dwhkl: super::super::TextServices::HKL) -> i32;
+    pub fn ToUnicodeEx(wvirtkey: u32, wscancode: u32, lpkeystate: *const u8, pwszbuff: ::windows_core_sys::PWSTR, cchbuff: i32, wflags: u32, dwhkl: super::super::TextServices::HKL) -> i32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn TrackMouseEvent(lpeventtrack: *mut TRACKMOUSEEVENT) -> super::super::super::Foundation::BOOL;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_TextServices"))]
@@ -877,7 +877,7 @@ pub const VK__none_: u32 = 255u32;
 #[repr(C)]
 pub struct VSC_LPWSTR {
     pub vsc: u8,
-    pub pwsz: ::windows_sys_core::PWSTR,
+    pub pwsz: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for VSC_LPWSTR {}
 impl ::core::clone::Clone for VSC_LPWSTR {

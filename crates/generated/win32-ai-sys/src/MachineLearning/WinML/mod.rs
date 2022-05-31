@@ -1,7 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
-    pub fn MLCreateOperatorRegistry(registry: *mut IMLOperatorRegistry) -> ::windows_sys_core::HRESULT;
-    pub fn WinMLCreateRuntime(runtime: *mut IWinMLRuntime) -> ::windows_sys_core::HRESULT;
+    pub fn MLCreateOperatorRegistry(registry: *mut IMLOperatorRegistry) -> ::windows_core_sys::HRESULT;
+    pub fn WinMLCreateRuntime(runtime: *mut IWinMLRuntime) -> ::windows_core_sys::HRESULT;
 }
 pub type IMLOperatorAttributes = *mut ::core::ffi::c_void;
 pub type IMLOperatorKernel = *mut ::core::ffi::c_void;
@@ -21,7 +21,7 @@ pub type IWinMLRuntime = *mut ::core::ffi::c_void;
 pub type IWinMLRuntimeFactory = *mut ::core::ffi::c_void;
 #[repr(C)]
 pub struct MLOperatorAttribute {
-    pub name: ::windows_sys_core::PCSTR,
+    pub name: ::windows_core_sys::PCSTR,
     pub r#type: MLOperatorAttributeType,
     pub required: bool,
 }
@@ -33,7 +33,7 @@ impl ::core::clone::Clone for MLOperatorAttribute {
 }
 #[repr(C)]
 pub struct MLOperatorAttributeNameValue {
-    pub name: ::windows_sys_core::PCSTR,
+    pub name: ::windows_core_sys::PCSTR,
     pub r#type: MLOperatorAttributeType,
     pub valueCount: u32,
     pub Anonymous: MLOperatorAttributeNameValue_0,
@@ -110,7 +110,7 @@ impl ::core::clone::Clone for MLOperatorEdgeType {
 }
 #[repr(C)]
 pub struct MLOperatorEdgeTypeConstraint {
-    pub typeLabel: ::windows_sys_core::PCSTR,
+    pub typeLabel: ::windows_core_sys::PCSTR,
     pub allowedTypes: *const MLOperatorEdgeDescription,
     pub allowedTypeCount: u32,
 }
@@ -135,8 +135,8 @@ impl ::core::clone::Clone for MLOperatorExecutionType {
 }
 #[repr(C)]
 pub struct MLOperatorKernelDescription {
-    pub domain: ::windows_sys_core::PCSTR,
-    pub name: ::windows_sys_core::PCSTR,
+    pub domain: ::windows_core_sys::PCSTR,
+    pub name: ::windows_core_sys::PCSTR,
     pub minimumOperatorSetVersion: i32,
     pub executionType: MLOperatorExecutionType,
     pub typeConstraints: *const MLOperatorEdgeTypeConstraint,
@@ -179,7 +179,7 @@ impl ::core::clone::Clone for MLOperatorParameterOptions {
 }
 #[repr(C)]
 pub struct MLOperatorSchemaDescription {
-    pub name: ::windows_sys_core::PCSTR,
+    pub name: ::windows_core_sys::PCSTR,
     pub operatorSetVersionAtLastChange: i32,
     pub inputs: *const MLOperatorSchemaEdgeDescription,
     pub inputCount: u32,
@@ -213,7 +213,7 @@ impl ::core::clone::Clone for MLOperatorSchemaEdgeDescription {
 #[repr(C)]
 pub union MLOperatorSchemaEdgeDescription_0 {
     pub reserved: *const ::core::ffi::c_void,
-    pub typeLabel: ::windows_sys_core::PCSTR,
+    pub typeLabel: ::windows_core_sys::PCSTR,
     pub edgeDescription: MLOperatorEdgeDescription,
 }
 impl ::core::marker::Copy for MLOperatorSchemaEdgeDescription_0 {}
@@ -236,7 +236,7 @@ impl ::core::clone::Clone for MLOperatorSchemaEdgeTypeFormat {
 }
 #[repr(C)]
 pub struct MLOperatorSetId {
-    pub domain: ::windows_sys_core::PCSTR,
+    pub domain: ::windows_core_sys::PCSTR,
     pub version: i32,
 }
 impl ::core::marker::Copy for MLOperatorSetId {}
@@ -274,7 +274,7 @@ impl ::core::clone::Clone for MLOperatorTensorDataType {
 #[repr(C)]
 #[cfg(feature = "Win32_Graphics_Direct3D12")]
 pub struct WINML_BINDING_DESC {
-    pub Name: ::windows_sys_core::PCWSTR,
+    pub Name: ::windows_core_sys::PCWSTR,
     pub BindType: WINML_BINDING_TYPE,
     pub Anonymous: WINML_BINDING_DESC_0,
 }
@@ -358,7 +358,7 @@ impl ::core::clone::Clone for WINML_MAP_BINDING_DESC {
 }
 #[repr(C)]
 pub union WINML_MAP_BINDING_DESC_0 {
-    pub pStringKeys: *mut ::windows_sys_core::PWSTR,
+    pub pStringKeys: *mut ::windows_core_sys::PWSTR,
     pub pIntKeys: *mut i64,
 }
 impl ::core::marker::Copy for WINML_MAP_BINDING_DESC_0 {}
@@ -369,7 +369,7 @@ impl ::core::clone::Clone for WINML_MAP_BINDING_DESC_0 {
 }
 #[repr(C)]
 pub union WINML_MAP_BINDING_DESC_1 {
-    pub pStringFields: *mut ::windows_sys_core::PWSTR,
+    pub pStringFields: *mut ::windows_core_sys::PWSTR,
     pub pIntFields: *mut i64,
     pub pFloatFields: *mut f32,
     pub pDoubleFields: *mut f64,
@@ -393,10 +393,10 @@ impl ::core::clone::Clone for WINML_MAP_VARIABLE_DESC {
 }
 #[repr(C)]
 pub struct WINML_MODEL_DESC {
-    pub Author: ::windows_sys_core::PWSTR,
-    pub Name: ::windows_sys_core::PWSTR,
-    pub Domain: ::windows_sys_core::PWSTR,
-    pub Description: ::windows_sys_core::PWSTR,
+    pub Author: ::windows_core_sys::PWSTR,
+    pub Name: ::windows_core_sys::PWSTR,
+    pub Domain: ::windows_core_sys::PWSTR,
+    pub Description: ::windows_core_sys::PWSTR,
     pub Version: usize,
 }
 impl ::core::marker::Copy for WINML_MODEL_DESC {}
@@ -437,7 +437,7 @@ impl ::core::clone::Clone for WINML_SEQUENCE_BINDING_DESC {
 }
 #[repr(C)]
 pub union WINML_SEQUENCE_BINDING_DESC_0 {
-    pub pStrings: *mut ::windows_sys_core::PWSTR,
+    pub pStrings: *mut ::windows_core_sys::PWSTR,
     pub pInts: *mut i64,
     pub pFloats: *mut f32,
     pub pDoubles: *mut f64,
@@ -505,8 +505,8 @@ impl ::core::clone::Clone for WINML_TENSOR_VARIABLE_DESC {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct WINML_VARIABLE_DESC {
-    pub Name: ::windows_sys_core::PWSTR,
-    pub Description: ::windows_sys_core::PWSTR,
+    pub Name: ::windows_core_sys::PWSTR,
+    pub Description: ::windows_core_sys::PWSTR,
     pub FeatureType: WINML_FEATURE_TYPE,
     pub Required: super::super::super::Foundation::BOOL,
     pub Anonymous: WINML_VARIABLE_DESC_0,

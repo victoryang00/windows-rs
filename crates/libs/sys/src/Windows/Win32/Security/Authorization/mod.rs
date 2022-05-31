@@ -49,16 +49,16 @@ extern "system" {
     pub fn AuthzInitializeContextFromToken(flags: u32, tokenhandle: super::super::Foundation::HANDLE, hauthzresourcemanager: AUTHZ_RESOURCE_MANAGER_HANDLE, pexpirationtime: *const i64, identifier: super::super::Foundation::LUID, dynamicgroupargs: *const ::core::ffi::c_void, phauthzclientcontext: *mut isize) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AuthzInitializeObjectAccessAuditEvent(flags: AUTHZ_INITIALIZE_OBJECT_ACCESS_AUDIT_EVENT_FLAGS, hauditeventtype: AUTHZ_AUDIT_EVENT_TYPE_HANDLE, szoperationtype: ::windows_sys_core::PCWSTR, szobjecttype: ::windows_sys_core::PCWSTR, szobjectname: ::windows_sys_core::PCWSTR, szadditionalinfo: ::windows_sys_core::PCWSTR, phauditevent: *mut isize, dwadditionalparametercount: u32) -> super::super::Foundation::BOOL;
+    pub fn AuthzInitializeObjectAccessAuditEvent(flags: AUTHZ_INITIALIZE_OBJECT_ACCESS_AUDIT_EVENT_FLAGS, hauditeventtype: AUTHZ_AUDIT_EVENT_TYPE_HANDLE, szoperationtype: ::windows_core_sys::PCWSTR, szobjecttype: ::windows_core_sys::PCWSTR, szobjectname: ::windows_core_sys::PCWSTR, szadditionalinfo: ::windows_core_sys::PCWSTR, phauditevent: *mut isize, dwadditionalparametercount: u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AuthzInitializeObjectAccessAuditEvent2(flags: u32, hauditeventtype: AUTHZ_AUDIT_EVENT_TYPE_HANDLE, szoperationtype: ::windows_sys_core::PCWSTR, szobjecttype: ::windows_sys_core::PCWSTR, szobjectname: ::windows_sys_core::PCWSTR, szadditionalinfo: ::windows_sys_core::PCWSTR, szadditionalinfo2: ::windows_sys_core::PCWSTR, phauditevent: *mut isize, dwadditionalparametercount: u32) -> super::super::Foundation::BOOL;
+    pub fn AuthzInitializeObjectAccessAuditEvent2(flags: u32, hauditeventtype: AUTHZ_AUDIT_EVENT_TYPE_HANDLE, szoperationtype: ::windows_core_sys::PCWSTR, szobjecttype: ::windows_core_sys::PCWSTR, szobjectname: ::windows_core_sys::PCWSTR, szadditionalinfo: ::windows_core_sys::PCWSTR, szadditionalinfo2: ::windows_core_sys::PCWSTR, phauditevent: *mut isize, dwadditionalparametercount: u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn AuthzInitializeRemoteResourceManager(prpcinitinfo: *const AUTHZ_RPC_INIT_INFO_CLIENT, phauthzresourcemanager: *mut AUTHZ_RESOURCE_MANAGER_HANDLE) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AuthzInitializeResourceManager(flags: u32, pfndynamicaccesscheck: PFN_AUTHZ_DYNAMIC_ACCESS_CHECK, pfncomputedynamicgroups: PFN_AUTHZ_COMPUTE_DYNAMIC_GROUPS, pfnfreedynamicgroups: PFN_AUTHZ_FREE_DYNAMIC_GROUPS, szresourcemanagername: ::windows_sys_core::PCWSTR, phauthzresourcemanager: *mut AUTHZ_RESOURCE_MANAGER_HANDLE) -> super::super::Foundation::BOOL;
+    pub fn AuthzInitializeResourceManager(flags: u32, pfndynamicaccesscheck: PFN_AUTHZ_DYNAMIC_ACCESS_CHECK, pfncomputedynamicgroups: PFN_AUTHZ_COMPUTE_DYNAMIC_GROUPS, pfnfreedynamicgroups: PFN_AUTHZ_FREE_DYNAMIC_GROUPS, szresourcemanagername: ::windows_core_sys::PCWSTR, phauthzresourcemanager: *mut AUTHZ_RESOURCE_MANAGER_HANDLE) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn AuthzInitializeResourceManagerEx(flags: AUTHZ_RESOURCE_MANAGER_FLAGS, pauthzinitinfo: *const AUTHZ_INIT_INFO, phauthzresourcemanager: *mut AUTHZ_RESOURCE_MANAGER_HANDLE) -> super::super::Foundation::BOOL;
@@ -82,7 +82,7 @@ extern "system" {
     pub fn AuthzRegisterCapChangeNotification(phcapchangesubscription: *mut *mut AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE__, pfncapchangecallback: super::super::System::Threading::LPTHREAD_START_ROUTINE, pcallbackcontext: *const ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AuthzRegisterSecurityEventSource(dwflags: u32, szeventsourcename: ::windows_sys_core::PCWSTR, pheventprovider: *mut isize) -> super::super::Foundation::BOOL;
+    pub fn AuthzRegisterSecurityEventSource(dwflags: u32, szeventsourcename: ::windows_core_sys::PCWSTR, pheventprovider: *mut isize) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn AuthzReportSecurityEvent(dwflags: u32, heventprovider: AUTHZ_SECURITY_EVENT_PROVIDER_HANDLE, dwauditid: u32, pusersid: super::super::Foundation::PSID, dwcount: u32) -> super::super::Foundation::BOOL;
@@ -94,7 +94,7 @@ extern "system" {
     pub fn AuthzSetAppContainerInformation(hauthzclientcontext: AUTHZ_CLIENT_CONTEXT_HANDLE, pappcontainersid: super::super::Foundation::PSID, capabilitycount: u32, pcapabilitysids: *const super::SID_AND_ATTRIBUTES) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AuthzUninstallSecurityEventSource(dwflags: u32, szeventsourcename: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn AuthzUninstallSecurityEventSource(dwflags: u32, szeventsourcename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn AuthzUnregisterCapChangeNotification(hcapchangesubscription: *const AUTHZ_CAP_CHANGE_SUBSCRIPTION_HANDLE__) -> super::super::Foundation::BOOL;
@@ -102,13 +102,13 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn AuthzUnregisterSecurityEventSource(dwflags: u32, pheventprovider: *mut isize) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-    pub fn BuildExplicitAccessWithNameA(pexplicitaccess: *mut EXPLICIT_ACCESS_A, ptrusteename: ::windows_sys_core::PCSTR, accesspermissions: u32, accessmode: ACCESS_MODE, inheritance: super::ACE_FLAGS);
+    pub fn BuildExplicitAccessWithNameA(pexplicitaccess: *mut EXPLICIT_ACCESS_A, ptrusteename: ::windows_core_sys::PCSTR, accesspermissions: u32, accessmode: ACCESS_MODE, inheritance: super::ACE_FLAGS);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-    pub fn BuildExplicitAccessWithNameW(pexplicitaccess: *mut EXPLICIT_ACCESS_W, ptrusteename: ::windows_sys_core::PCWSTR, accesspermissions: u32, accessmode: ACCESS_MODE, inheritance: super::ACE_FLAGS);
+    pub fn BuildExplicitAccessWithNameW(pexplicitaccess: *mut EXPLICIT_ACCESS_W, ptrusteename: ::windows_core_sys::PCWSTR, accesspermissions: u32, accessmode: ACCESS_MODE, inheritance: super::ACE_FLAGS);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-    pub fn BuildImpersonateExplicitAccessWithNameA(pexplicitaccess: *mut EXPLICIT_ACCESS_A, ptrusteename: ::windows_sys_core::PCSTR, ptrustee: *const TRUSTEE_A, accesspermissions: u32, accessmode: ACCESS_MODE, inheritance: u32);
+    pub fn BuildImpersonateExplicitAccessWithNameA(pexplicitaccess: *mut EXPLICIT_ACCESS_A, ptrusteename: ::windows_core_sys::PCSTR, ptrustee: *const TRUSTEE_A, accesspermissions: u32, accessmode: ACCESS_MODE, inheritance: u32);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-    pub fn BuildImpersonateExplicitAccessWithNameW(pexplicitaccess: *mut EXPLICIT_ACCESS_W, ptrusteename: ::windows_sys_core::PCWSTR, ptrustee: *const TRUSTEE_W, accesspermissions: u32, accessmode: ACCESS_MODE, inheritance: u32);
+    pub fn BuildImpersonateExplicitAccessWithNameW(pexplicitaccess: *mut EXPLICIT_ACCESS_W, ptrusteename: ::windows_core_sys::PCWSTR, ptrustee: *const TRUSTEE_W, accesspermissions: u32, accessmode: ACCESS_MODE, inheritance: u32);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
     pub fn BuildImpersonateTrusteeA(ptrustee: *mut TRUSTEE_A, pimpersonatetrustee: *const TRUSTEE_A);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
@@ -118,19 +118,19 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
     pub fn BuildSecurityDescriptorW(powner: *const TRUSTEE_W, pgroup: *const TRUSTEE_W, ccountofaccessentries: u32, plistofaccessentries: *const EXPLICIT_ACCESS_W, ccountofauditentries: u32, plistofauditentries: *const EXPLICIT_ACCESS_W, poldsd: super::PSECURITY_DESCRIPTOR, psizenewsd: *mut u32, pnewsd: *mut super::PSECURITY_DESCRIPTOR) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-    pub fn BuildTrusteeWithNameA(ptrustee: *mut TRUSTEE_A, pname: ::windows_sys_core::PCSTR);
+    pub fn BuildTrusteeWithNameA(ptrustee: *mut TRUSTEE_A, pname: ::windows_core_sys::PCSTR);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-    pub fn BuildTrusteeWithNameW(ptrustee: *mut TRUSTEE_W, pname: ::windows_sys_core::PCWSTR);
+    pub fn BuildTrusteeWithNameW(ptrustee: *mut TRUSTEE_W, pname: ::windows_core_sys::PCWSTR);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-    pub fn BuildTrusteeWithObjectsAndNameA(ptrustee: *mut TRUSTEE_A, pobjname: *const OBJECTS_AND_NAME_A, objecttype: SE_OBJECT_TYPE, objecttypename: ::windows_sys_core::PCSTR, inheritedobjecttypename: ::windows_sys_core::PCSTR, name: ::windows_sys_core::PCSTR);
+    pub fn BuildTrusteeWithObjectsAndNameA(ptrustee: *mut TRUSTEE_A, pobjname: *const OBJECTS_AND_NAME_A, objecttype: SE_OBJECT_TYPE, objecttypename: ::windows_core_sys::PCSTR, inheritedobjecttypename: ::windows_core_sys::PCSTR, name: ::windows_core_sys::PCSTR);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-    pub fn BuildTrusteeWithObjectsAndNameW(ptrustee: *mut TRUSTEE_W, pobjname: *const OBJECTS_AND_NAME_W, objecttype: SE_OBJECT_TYPE, objecttypename: ::windows_sys_core::PCWSTR, inheritedobjecttypename: ::windows_sys_core::PCWSTR, name: ::windows_sys_core::PCWSTR);
+    pub fn BuildTrusteeWithObjectsAndNameW(ptrustee: *mut TRUSTEE_W, pobjname: *const OBJECTS_AND_NAME_W, objecttype: SE_OBJECT_TYPE, objecttypename: ::windows_core_sys::PCWSTR, inheritedobjecttypename: ::windows_core_sys::PCWSTR, name: ::windows_core_sys::PCWSTR);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BuildTrusteeWithObjectsAndSidA(ptrustee: *mut TRUSTEE_A, pobjsid: *const OBJECTS_AND_SID, pobjectguid: *const ::windows_sys_core::GUID, pinheritedobjectguid: *const ::windows_sys_core::GUID, psid: super::super::Foundation::PSID);
+    pub fn BuildTrusteeWithObjectsAndSidA(ptrustee: *mut TRUSTEE_A, pobjsid: *const OBJECTS_AND_SID, pobjectguid: *const ::windows_core_sys::GUID, pinheritedobjectguid: *const ::windows_core_sys::GUID, psid: super::super::Foundation::PSID);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BuildTrusteeWithObjectsAndSidW(ptrustee: *mut TRUSTEE_W, pobjsid: *const OBJECTS_AND_SID, pobjectguid: *const ::windows_sys_core::GUID, pinheritedobjectguid: *const ::windows_sys_core::GUID, psid: super::super::Foundation::PSID);
+    pub fn BuildTrusteeWithObjectsAndSidW(ptrustee: *mut TRUSTEE_W, pobjsid: *const OBJECTS_AND_SID, pobjectguid: *const ::windows_core_sys::GUID, pinheritedobjectguid: *const ::windows_core_sys::GUID, psid: super::super::Foundation::PSID);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn BuildTrusteeWithSidA(ptrustee: *mut TRUSTEE_A, psid: super::super::Foundation::PSID);
@@ -139,28 +139,28 @@ extern "system" {
     pub fn BuildTrusteeWithSidW(ptrustee: *mut TRUSTEE_W, psid: super::super::Foundation::PSID);
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertSecurityDescriptorToStringSecurityDescriptorA(securitydescriptor: super::PSECURITY_DESCRIPTOR, requestedstringsdrevision: u32, securityinformation: u32, stringsecuritydescriptor: *mut ::windows_sys_core::PSTR, stringsecuritydescriptorlen: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn ConvertSecurityDescriptorToStringSecurityDescriptorA(securitydescriptor: super::PSECURITY_DESCRIPTOR, requestedstringsdrevision: u32, securityinformation: u32, stringsecuritydescriptor: *mut ::windows_core_sys::PSTR, stringsecuritydescriptorlen: *mut u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertSecurityDescriptorToStringSecurityDescriptorW(securitydescriptor: super::PSECURITY_DESCRIPTOR, requestedstringsdrevision: u32, securityinformation: u32, stringsecuritydescriptor: *mut ::windows_sys_core::PWSTR, stringsecuritydescriptorlen: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn ConvertSecurityDescriptorToStringSecurityDescriptorW(securitydescriptor: super::PSECURITY_DESCRIPTOR, requestedstringsdrevision: u32, securityinformation: u32, stringsecuritydescriptor: *mut ::windows_core_sys::PWSTR, stringsecuritydescriptorlen: *mut u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertSidToStringSidA(sid: super::super::Foundation::PSID, stringsid: *mut ::windows_sys_core::PSTR) -> super::super::Foundation::BOOL;
+    pub fn ConvertSidToStringSidA(sid: super::super::Foundation::PSID, stringsid: *mut ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertSidToStringSidW(sid: super::super::Foundation::PSID, stringsid: *mut ::windows_sys_core::PWSTR) -> super::super::Foundation::BOOL;
+    pub fn ConvertSidToStringSidW(sid: super::super::Foundation::PSID, stringsid: *mut ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertStringSecurityDescriptorToSecurityDescriptorA(stringsecuritydescriptor: ::windows_sys_core::PCSTR, stringsdrevision: u32, securitydescriptor: *mut super::PSECURITY_DESCRIPTOR, securitydescriptorsize: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn ConvertStringSecurityDescriptorToSecurityDescriptorA(stringsecuritydescriptor: ::windows_core_sys::PCSTR, stringsdrevision: u32, securitydescriptor: *mut super::PSECURITY_DESCRIPTOR, securitydescriptorsize: *mut u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertStringSecurityDescriptorToSecurityDescriptorW(stringsecuritydescriptor: ::windows_sys_core::PCWSTR, stringsdrevision: u32, securitydescriptor: *mut super::PSECURITY_DESCRIPTOR, securitydescriptorsize: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn ConvertStringSecurityDescriptorToSecurityDescriptorW(stringsecuritydescriptor: ::windows_core_sys::PCWSTR, stringsdrevision: u32, securitydescriptor: *mut super::PSECURITY_DESCRIPTOR, securitydescriptorsize: *mut u32) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertStringSidToSidA(stringsid: ::windows_sys_core::PCSTR, sid: *mut super::super::Foundation::PSID) -> super::super::Foundation::BOOL;
+    pub fn ConvertStringSidToSidA(stringsid: ::windows_core_sys::PCSTR, sid: *mut super::super::Foundation::PSID) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertStringSidToSidW(stringsid: ::windows_sys_core::PCWSTR, sid: *mut super::super::Foundation::PSID) -> super::super::Foundation::BOOL;
+    pub fn ConvertStringSidToSidW(stringsid: ::windows_core_sys::PCWSTR, sid: *mut super::super::Foundation::PSID) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
     pub fn FreeInheritedFromArray(pinheritarray: *const INHERITED_FROMW, acecnt: u16, pfnarray: *const FN_OBJECT_MGR_FUNCTIONS) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
@@ -177,10 +177,10 @@ extern "system" {
     pub fn GetExplicitEntriesFromAclW(pacl: *const super::ACL, pccountofexplicitentries: *mut u32, plistofexplicitentries: *mut *mut EXPLICIT_ACCESS_W) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetInheritanceSourceA(pobjectname: ::windows_sys_core::PCSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, container: super::super::Foundation::BOOL, pobjectclassguids: *const *const ::windows_sys_core::GUID, guidcount: u32, pacl: *const super::ACL, pfnarray: *const FN_OBJECT_MGR_FUNCTIONS, pgenericmapping: *const super::GENERIC_MAPPING, pinheritarray: *mut INHERITED_FROMA) -> u32;
+    pub fn GetInheritanceSourceA(pobjectname: ::windows_core_sys::PCSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, container: super::super::Foundation::BOOL, pobjectclassguids: *const *const ::windows_core_sys::GUID, guidcount: u32, pacl: *const super::ACL, pfnarray: *const FN_OBJECT_MGR_FUNCTIONS, pgenericmapping: *const super::GENERIC_MAPPING, pinheritarray: *mut INHERITED_FROMA) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetInheritanceSourceW(pobjectname: ::windows_sys_core::PCWSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, container: super::super::Foundation::BOOL, pobjectclassguids: *const *const ::windows_sys_core::GUID, guidcount: u32, pacl: *const super::ACL, pfnarray: *const FN_OBJECT_MGR_FUNCTIONS, pgenericmapping: *const super::GENERIC_MAPPING, pinheritarray: *mut INHERITED_FROMW) -> u32;
+    pub fn GetInheritanceSourceW(pobjectname: ::windows_core_sys::PCWSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, container: super::super::Foundation::BOOL, pobjectclassguids: *const *const ::windows_core_sys::GUID, guidcount: u32, pacl: *const super::ACL, pfnarray: *const FN_OBJECT_MGR_FUNCTIONS, pgenericmapping: *const super::GENERIC_MAPPING, pinheritarray: *mut INHERITED_FROMW) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
     pub fn GetMultipleTrusteeA(ptrustee: *const TRUSTEE_A) -> *mut TRUSTEE_A;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
@@ -191,10 +191,10 @@ extern "system" {
     pub fn GetMultipleTrusteeW(ptrustee: *const TRUSTEE_W) -> *mut TRUSTEE_W;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetNamedSecurityInfoA(pobjectname: ::windows_sys_core::PCSTR, objecttype: SE_OBJECT_TYPE, securityinfo: super::OBJECT_SECURITY_INFORMATION, ppsidowner: *mut super::super::Foundation::PSID, ppsidgroup: *mut super::super::Foundation::PSID, ppdacl: *mut *mut super::ACL, ppsacl: *mut *mut super::ACL, ppsecuritydescriptor: *mut super::PSECURITY_DESCRIPTOR) -> super::super::Foundation::WIN32_ERROR;
+    pub fn GetNamedSecurityInfoA(pobjectname: ::windows_core_sys::PCSTR, objecttype: SE_OBJECT_TYPE, securityinfo: super::OBJECT_SECURITY_INFORMATION, ppsidowner: *mut super::super::Foundation::PSID, ppsidgroup: *mut super::super::Foundation::PSID, ppdacl: *mut *mut super::ACL, ppsacl: *mut *mut super::ACL, ppsecuritydescriptor: *mut super::PSECURITY_DESCRIPTOR) -> super::super::Foundation::WIN32_ERROR;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetNamedSecurityInfoW(pobjectname: ::windows_sys_core::PCWSTR, objecttype: SE_OBJECT_TYPE, securityinfo: super::OBJECT_SECURITY_INFORMATION, ppsidowner: *mut super::super::Foundation::PSID, ppsidgroup: *mut super::super::Foundation::PSID, ppdacl: *mut *mut super::ACL, ppsacl: *mut *mut super::ACL, ppsecuritydescriptor: *mut super::PSECURITY_DESCRIPTOR) -> super::super::Foundation::WIN32_ERROR;
+    pub fn GetNamedSecurityInfoW(pobjectname: ::windows_core_sys::PCWSTR, objecttype: SE_OBJECT_TYPE, securityinfo: super::OBJECT_SECURITY_INFORMATION, ppsidowner: *mut super::super::Foundation::PSID, ppsidgroup: *mut super::super::Foundation::PSID, ppdacl: *mut *mut super::ACL, ppsacl: *mut *mut super::ACL, ppsecuritydescriptor: *mut super::PSECURITY_DESCRIPTOR) -> super::super::Foundation::WIN32_ERROR;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetSecurityInfo(handle: super::super::Foundation::HANDLE, objecttype: SE_OBJECT_TYPE, securityinfo: u32, ppsidowner: *mut super::super::Foundation::PSID, ppsidgroup: *mut super::super::Foundation::PSID, ppdacl: *mut *mut super::ACL, ppsacl: *mut *mut super::ACL, ppsecuritydescriptor: *mut super::PSECURITY_DESCRIPTOR) -> super::super::Foundation::WIN32_ERROR;
@@ -203,9 +203,9 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
     pub fn GetTrusteeFormW(ptrustee: *const TRUSTEE_W) -> TRUSTEE_FORM;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-    pub fn GetTrusteeNameA(ptrustee: *const TRUSTEE_A) -> ::windows_sys_core::PSTR;
+    pub fn GetTrusteeNameA(ptrustee: *const TRUSTEE_A) -> ::windows_core_sys::PSTR;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-    pub fn GetTrusteeNameW(ptrustee: *const TRUSTEE_W) -> ::windows_sys_core::PWSTR;
+    pub fn GetTrusteeNameW(ptrustee: *const TRUSTEE_W) -> ::windows_core_sys::PWSTR;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
     pub fn GetTrusteeTypeA(ptrustee: *const TRUSTEE_A) -> TRUSTEE_TYPE;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
@@ -220,25 +220,25 @@ extern "system" {
     pub fn SetEntriesInAclW(ccountofexplicitentries: u32, plistofexplicitentries: *const EXPLICIT_ACCESS_W, oldacl: *const super::ACL, newacl: *mut *mut super::ACL) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetNamedSecurityInfoA(pobjectname: ::windows_sys_core::PCSTR, objecttype: SE_OBJECT_TYPE, securityinfo: super::OBJECT_SECURITY_INFORMATION, psidowner: super::super::Foundation::PSID, psidgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL) -> u32;
+    pub fn SetNamedSecurityInfoA(pobjectname: ::windows_core_sys::PCSTR, objecttype: SE_OBJECT_TYPE, securityinfo: super::OBJECT_SECURITY_INFORMATION, psidowner: super::super::Foundation::PSID, psidgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetNamedSecurityInfoW(pobjectname: ::windows_sys_core::PCWSTR, objecttype: SE_OBJECT_TYPE, securityinfo: super::OBJECT_SECURITY_INFORMATION, psidowner: super::super::Foundation::PSID, psidgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL) -> u32;
+    pub fn SetNamedSecurityInfoW(pobjectname: ::windows_core_sys::PCWSTR, objecttype: SE_OBJECT_TYPE, securityinfo: super::OBJECT_SECURITY_INFORMATION, psidowner: super::super::Foundation::PSID, psidgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn SetSecurityInfo(handle: super::super::Foundation::HANDLE, objecttype: SE_OBJECT_TYPE, securityinfo: u32, psidowner: super::super::Foundation::PSID, psidgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TreeResetNamedSecurityInfoA(pobjectname: ::windows_sys_core::PCSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, powner: super::super::Foundation::PSID, pgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL, keepexplicit: super::super::Foundation::BOOL, fnprogress: FN_PROGRESS, progressinvokesetting: PROG_INVOKE_SETTING, args: *const ::core::ffi::c_void) -> u32;
+    pub fn TreeResetNamedSecurityInfoA(pobjectname: ::windows_core_sys::PCSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, powner: super::super::Foundation::PSID, pgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL, keepexplicit: super::super::Foundation::BOOL, fnprogress: FN_PROGRESS, progressinvokesetting: PROG_INVOKE_SETTING, args: *const ::core::ffi::c_void) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TreeResetNamedSecurityInfoW(pobjectname: ::windows_sys_core::PCWSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, powner: super::super::Foundation::PSID, pgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL, keepexplicit: super::super::Foundation::BOOL, fnprogress: FN_PROGRESS, progressinvokesetting: PROG_INVOKE_SETTING, args: *const ::core::ffi::c_void) -> u32;
+    pub fn TreeResetNamedSecurityInfoW(pobjectname: ::windows_core_sys::PCWSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, powner: super::super::Foundation::PSID, pgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL, keepexplicit: super::super::Foundation::BOOL, fnprogress: FN_PROGRESS, progressinvokesetting: PROG_INVOKE_SETTING, args: *const ::core::ffi::c_void) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TreeSetNamedSecurityInfoA(pobjectname: ::windows_sys_core::PCSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, powner: super::super::Foundation::PSID, pgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL, dwaction: TREE_SEC_INFO, fnprogress: FN_PROGRESS, progressinvokesetting: PROG_INVOKE_SETTING, args: *const ::core::ffi::c_void) -> u32;
+    pub fn TreeSetNamedSecurityInfoA(pobjectname: ::windows_core_sys::PCSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, powner: super::super::Foundation::PSID, pgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL, dwaction: TREE_SEC_INFO, fnprogress: FN_PROGRESS, progressinvokesetting: PROG_INVOKE_SETTING, args: *const ::core::ffi::c_void) -> u32;
     #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TreeSetNamedSecurityInfoW(pobjectname: ::windows_sys_core::PCWSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, powner: super::super::Foundation::PSID, pgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL, dwaction: TREE_SEC_INFO, fnprogress: FN_PROGRESS, progressinvokesetting: PROG_INVOKE_SETTING, args: *const ::core::ffi::c_void) -> u32;
+    pub fn TreeSetNamedSecurityInfoW(pobjectname: ::windows_core_sys::PCWSTR, objecttype: SE_OBJECT_TYPE, securityinfo: u32, powner: super::super::Foundation::PSID, pgroup: super::super::Foundation::PSID, pdacl: *const super::ACL, psacl: *const super::ACL, dwaction: TREE_SEC_INFO, fnprogress: FN_PROGRESS, progressinvokesetting: PROG_INVOKE_SETTING, args: *const ::core::ffi::c_void) -> u32;
 }
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub const ACCCTRL_DEFAULT_PROVIDER: &str = "Windows NT Access Provider";
@@ -294,7 +294,7 @@ pub struct ACTRL_ACCESS_ENTRYA {
     pub Access: u32,
     pub ProvSpecificAccess: u32,
     pub Inheritance: super::ACE_FLAGS,
-    pub lpInheritProperty: ::windows_sys_core::PSTR,
+    pub lpInheritProperty: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for ACTRL_ACCESS_ENTRYA {}
 impl ::core::clone::Clone for ACTRL_ACCESS_ENTRYA {
@@ -310,7 +310,7 @@ pub struct ACTRL_ACCESS_ENTRYW {
     pub Access: u32,
     pub ProvSpecificAccess: u32,
     pub Inheritance: super::ACE_FLAGS,
-    pub lpInheritProperty: ::windows_sys_core::PWSTR,
+    pub lpInheritProperty: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for ACTRL_ACCESS_ENTRYW {}
 impl ::core::clone::Clone for ACTRL_ACCESS_ENTRYW {
@@ -356,7 +356,7 @@ impl ::core::clone::Clone for ACTRL_ACCESS_ENTRY_LISTW {
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct ACTRL_ACCESS_INFOA {
     pub fAccessPermission: u32,
-    pub lpAccessPermissionName: ::windows_sys_core::PSTR,
+    pub lpAccessPermissionName: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for ACTRL_ACCESS_INFOA {}
 impl ::core::clone::Clone for ACTRL_ACCESS_INFOA {
@@ -368,7 +368,7 @@ impl ::core::clone::Clone for ACTRL_ACCESS_INFOA {
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct ACTRL_ACCESS_INFOW {
     pub fAccessPermission: u32,
-    pub lpAccessPermissionName: ::windows_sys_core::PWSTR,
+    pub lpAccessPermissionName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for ACTRL_ACCESS_INFOW {}
 impl ::core::clone::Clone for ACTRL_ACCESS_INFOW {
@@ -389,8 +389,8 @@ pub const ACTRL_CHANGE_OWNER: u32 = 1073741824u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct ACTRL_CONTROL_INFOA {
-    pub lpControlId: ::windows_sys_core::PSTR,
-    pub lpControlName: ::windows_sys_core::PSTR,
+    pub lpControlId: ::windows_core_sys::PSTR,
+    pub lpControlName: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for ACTRL_CONTROL_INFOA {}
 impl ::core::clone::Clone for ACTRL_CONTROL_INFOA {
@@ -401,8 +401,8 @@ impl ::core::clone::Clone for ACTRL_CONTROL_INFOA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct ACTRL_CONTROL_INFOW {
-    pub lpControlId: ::windows_sys_core::PWSTR,
-    pub lpControlName: ::windows_sys_core::PWSTR,
+    pub lpControlId: ::windows_core_sys::PWSTR,
+    pub lpControlName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for ACTRL_CONTROL_INFOW {}
 impl ::core::clone::Clone for ACTRL_CONTROL_INFOW {
@@ -556,7 +556,7 @@ pub const ACTRL_PRINT_SLIST: u32 = 2u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct ACTRL_PROPERTY_ENTRYA {
-    pub lpProperty: ::windows_sys_core::PSTR,
+    pub lpProperty: ::windows_core_sys::PSTR,
     pub pAccessEntryList: *mut ACTRL_ACCESS_ENTRY_LISTA,
     pub fListFlags: u32,
 }
@@ -569,7 +569,7 @@ impl ::core::clone::Clone for ACTRL_PROPERTY_ENTRYA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct ACTRL_PROPERTY_ENTRYW {
-    pub lpProperty: ::windows_sys_core::PWSTR,
+    pub lpProperty: ::windows_core_sys::PWSTR,
     pub pAccessEntryList: *mut ACTRL_ACCESS_ENTRY_LISTW,
     pub fListFlags: u32,
 }
@@ -661,7 +661,7 @@ impl ::core::clone::Clone for AUDIT_IP_ADDRESS {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct AUDIT_OBJECT_TYPE {
-    pub ObjectType: ::windows_sys_core::GUID,
+    pub ObjectType: ::windows_core_sys::GUID,
     pub Flags: u16,
     pub Level: u16,
     pub AccessMask: u32,
@@ -704,10 +704,10 @@ impl ::core::clone::Clone for AUDIT_PARAM {
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub union AUDIT_PARAM_0 {
     pub Data0: usize,
-    pub String: ::windows_sys_core::PWSTR,
+    pub String: ::windows_core_sys::PWSTR,
     pub u: usize,
     pub psid: *mut super::SID,
-    pub pguid: *mut ::windows_sys_core::GUID,
+    pub pguid: *mut ::windows_core_sys::GUID,
     pub LogonId_LowPart: u32,
     pub pObjectTypes: *mut AUDIT_OBJECT_TYPES,
     pub pIpAddress: *mut AUDIT_IP_ADDRESS,
@@ -945,7 +945,7 @@ pub const AUTHZ_NO_ALLOC_STRINGS: AUTHZ_INITIALIZE_OBJECT_ACCESS_AUDIT_EVENT_FLA
 #[cfg(feature = "Win32_Foundation")]
 pub struct AUTHZ_INIT_INFO {
     pub version: u16,
-    pub szResourceManagerName: ::windows_sys_core::PCWSTR,
+    pub szResourceManagerName: ::windows_core_sys::PCWSTR,
     pub pfnDynamicAccessCheck: PFN_AUTHZ_DYNAMIC_ACCESS_CHECK,
     pub pfnComputeDynamicGroups: PFN_AUTHZ_COMPUTE_DYNAMIC_GROUPS,
     pub pfnFreeDynamicGroups: PFN_AUTHZ_FREE_DYNAMIC_GROUPS,
@@ -967,7 +967,7 @@ pub const AUTHZ_MIGRATED_LEGACY_PUBLISHER: u32 = 2u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct AUTHZ_REGISTRATION_OBJECT_TYPE_NAME_OFFSET {
-    pub szObjectTypeName: ::windows_sys_core::PWSTR,
+    pub szObjectTypeName: ::windows_core_sys::PWSTR,
     pub dwOffset: u32,
 }
 impl ::core::marker::Copy for AUTHZ_REGISTRATION_OBJECT_TYPE_NAME_OFFSET {}
@@ -991,12 +991,12 @@ pub type AUTHZ_RESOURCE_MANAGER_HANDLE = isize;
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct AUTHZ_RPC_INIT_INFO_CLIENT {
     pub version: u16,
-    pub ObjectUuid: ::windows_sys_core::PWSTR,
-    pub ProtSeq: ::windows_sys_core::PWSTR,
-    pub NetworkAddr: ::windows_sys_core::PWSTR,
-    pub Endpoint: ::windows_sys_core::PWSTR,
-    pub Options: ::windows_sys_core::PWSTR,
-    pub ServerSpn: ::windows_sys_core::PWSTR,
+    pub ObjectUuid: ::windows_core_sys::PWSTR,
+    pub ProtSeq: ::windows_core_sys::PWSTR,
+    pub NetworkAddr: ::windows_core_sys::PWSTR,
+    pub Endpoint: ::windows_core_sys::PWSTR,
+    pub Options: ::windows_core_sys::PWSTR,
+    pub ServerSpn: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for AUTHZ_RPC_INIT_INFO_CLIENT {}
 impl ::core::clone::Clone for AUTHZ_RPC_INIT_INFO_CLIENT {
@@ -1045,7 +1045,7 @@ pub const AUTHZ_SECURITY_ATTRIBUTE_VALUE_CASE_SENSITIVE: AUTHZ_SECURITY_ATTRIBUT
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct AUTHZ_SECURITY_ATTRIBUTE_FQBN_VALUE {
     pub Version: u64,
-    pub pName: ::windows_sys_core::PWSTR,
+    pub pName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for AUTHZ_SECURITY_ATTRIBUTE_FQBN_VALUE {}
 impl ::core::clone::Clone for AUTHZ_SECURITY_ATTRIBUTE_FQBN_VALUE {
@@ -1096,7 +1096,7 @@ pub const AUTHZ_SECURITY_ATTRIBUTE_TYPE_UINT64: u32 = 2u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct AUTHZ_SECURITY_ATTRIBUTE_V1 {
-    pub pName: ::windows_sys_core::PWSTR,
+    pub pName: ::windows_core_sys::PWSTR,
     pub ValueType: u16,
     pub Reserved: u16,
     pub Flags: AUTHZ_SECURITY_ATTRIBUTE_FLAGS,
@@ -1114,7 +1114,7 @@ impl ::core::clone::Clone for AUTHZ_SECURITY_ATTRIBUTE_V1 {
 pub union AUTHZ_SECURITY_ATTRIBUTE_V1_0 {
     pub pInt64: *mut i64,
     pub pUint64: *mut u64,
-    pub ppString: *mut ::windows_sys_core::PWSTR,
+    pub ppString: *mut ::windows_core_sys::PWSTR,
     pub pFqbn: *mut AUTHZ_SECURITY_ATTRIBUTE_FQBN_VALUE,
     pub pOctetString: *mut AUTHZ_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE,
 }
@@ -1143,11 +1143,11 @@ pub const AUTHZ_SKIP_TOKEN_GROUPS: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct AUTHZ_SOURCE_SCHEMA_REGISTRATION {
     pub dwFlags: u32,
-    pub szEventSourceName: ::windows_sys_core::PWSTR,
-    pub szEventMessageFile: ::windows_sys_core::PWSTR,
-    pub szEventSourceXmlSchemaFile: ::windows_sys_core::PWSTR,
-    pub szEventAccessStringsFile: ::windows_sys_core::PWSTR,
-    pub szExecutableImagePath: ::windows_sys_core::PWSTR,
+    pub szEventSourceName: ::windows_core_sys::PWSTR,
+    pub szEventMessageFile: ::windows_core_sys::PWSTR,
+    pub szEventSourceXmlSchemaFile: ::windows_core_sys::PWSTR,
+    pub szEventAccessStringsFile: ::windows_core_sys::PWSTR,
+    pub szExecutableImagePath: ::windows_core_sys::PWSTR,
     pub Anonymous: AUTHZ_SOURCE_SCHEMA_REGISTRATION_0,
     pub dwObjectTypeNameCount: u32,
     pub ObjectTypeNames: [AUTHZ_REGISTRATION_OBJECT_TYPE_NAME_OFFSET; 1],
@@ -1162,7 +1162,7 @@ impl ::core::clone::Clone for AUTHZ_SOURCE_SCHEMA_REGISTRATION {
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub union AUTHZ_SOURCE_SCHEMA_REGISTRATION_0 {
     pub pReserved: *mut ::core::ffi::c_void,
-    pub pProviderGuid: *mut ::windows_sys_core::GUID,
+    pub pProviderGuid: *mut ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for AUTHZ_SOURCE_SCHEMA_REGISTRATION_0 {}
 impl ::core::clone::Clone for AUTHZ_SOURCE_SCHEMA_REGISTRATION_0 {
@@ -1370,9 +1370,9 @@ pub const AZ_CLIENT_CONTEXT_SKIP_LDAP_QUERY: AZ_PROP_CONSTANTS = 1i32;
 pub const AZ_CLIENT_CONTEXT_GET_GROUP_RECURSIVE: AZ_PROP_CONSTANTS = 2i32;
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub const AZ_CLIENT_CONTEXT_GET_GROUPS_STORE_LEVEL_ONLY: AZ_PROP_CONSTANTS = 2i32;
-pub const AzAuthorizationStore: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2998730585, data2: 42839, data3: 19211, data4: [161, 188, 234, 105, 152, 29, 166, 158] };
-pub const AzBizRuleContext: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1546504559, data2: 36177, data3: 17227, data4: [179, 60, 55, 155, 204, 174, 119, 195] };
-pub const AzPrincipalLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1211824989, data2: 28895, data3: 19990, data4: [171, 220, 161, 222, 77, 1, 90, 62] };
+pub const AzAuthorizationStore: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2998730585, data2: 42839, data3: 19211, data4: [161, 188, 234, 105, 152, 29, 166, 158] };
+pub const AzBizRuleContext: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1546504559, data2: 36177, data3: 17227, data4: [179, 60, 55, 155, 204, 174, 119, 195] };
+pub const AzPrincipalLocator: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1211824989, data2: 28895, data3: 19990, data4: [171, 220, 161, 222, 77, 1, 90, 62] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct EXPLICIT_ACCESS_A {
@@ -1414,7 +1414,7 @@ impl ::core::clone::Clone for FN_OBJECT_MGR_FUNCTIONS {
 }
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
-pub type FN_PROGRESS = ::core::option::Option<unsafe extern "system" fn(pobjectname: ::windows_sys_core::PCWSTR, status: u32, pinvokesetting: *mut PROG_INVOKE_SETTING, args: *const ::core::ffi::c_void, securityset: super::super::Foundation::BOOL)>;
+pub type FN_PROGRESS = ::core::option::Option<unsafe extern "system" fn(pobjectname: ::windows_core_sys::PCWSTR, status: u32, pinvokesetting: *mut PROG_INVOKE_SETTING, args: *const ::core::ffi::c_void, securityset: super::super::Foundation::BOOL)>;
 pub type IAzApplication = *mut ::core::ffi::c_void;
 pub type IAzApplication2 = *mut ::core::ffi::c_void;
 pub type IAzApplication3 = *mut ::core::ffi::c_void;
@@ -1455,7 +1455,7 @@ pub const INHERITED_ACCESS_ENTRY: u32 = 16u32;
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct INHERITED_FROMA {
     pub GenerationGap: i32,
-    pub AncestorName: ::windows_sys_core::PSTR,
+    pub AncestorName: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for INHERITED_FROMA {}
 impl ::core::clone::Clone for INHERITED_FROMA {
@@ -1467,7 +1467,7 @@ impl ::core::clone::Clone for INHERITED_FROMA {
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct INHERITED_FROMW {
     pub GenerationGap: i32,
-    pub AncestorName: ::windows_sys_core::PWSTR,
+    pub AncestorName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for INHERITED_FROMW {}
 impl ::core::clone::Clone for INHERITED_FROMW {
@@ -1490,9 +1490,9 @@ pub const TRUSTEE_IS_IMPERSONATE: MULTIPLE_TRUSTEE_OPERATION = 1i32;
 pub struct OBJECTS_AND_NAME_A {
     pub ObjectsPresent: super::SYSTEM_AUDIT_OBJECT_ACE_FLAGS,
     pub ObjectType: SE_OBJECT_TYPE,
-    pub ObjectTypeName: ::windows_sys_core::PSTR,
-    pub InheritedObjectTypeName: ::windows_sys_core::PSTR,
-    pub ptstrName: ::windows_sys_core::PSTR,
+    pub ObjectTypeName: ::windows_core_sys::PSTR,
+    pub InheritedObjectTypeName: ::windows_core_sys::PSTR,
+    pub ptstrName: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for OBJECTS_AND_NAME_A {}
 impl ::core::clone::Clone for OBJECTS_AND_NAME_A {
@@ -1505,9 +1505,9 @@ impl ::core::clone::Clone for OBJECTS_AND_NAME_A {
 pub struct OBJECTS_AND_NAME_W {
     pub ObjectsPresent: super::SYSTEM_AUDIT_OBJECT_ACE_FLAGS,
     pub ObjectType: SE_OBJECT_TYPE,
-    pub ObjectTypeName: ::windows_sys_core::PWSTR,
-    pub InheritedObjectTypeName: ::windows_sys_core::PWSTR,
-    pub ptstrName: ::windows_sys_core::PWSTR,
+    pub ObjectTypeName: ::windows_core_sys::PWSTR,
+    pub InheritedObjectTypeName: ::windows_core_sys::PWSTR,
+    pub ptstrName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for OBJECTS_AND_NAME_W {}
 impl ::core::clone::Clone for OBJECTS_AND_NAME_W {
@@ -1519,8 +1519,8 @@ impl ::core::clone::Clone for OBJECTS_AND_NAME_W {
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct OBJECTS_AND_SID {
     pub ObjectsPresent: super::SYSTEM_AUDIT_OBJECT_ACE_FLAGS,
-    pub ObjectTypeGuid: ::windows_sys_core::GUID,
-    pub InheritedObjectTypeGuid: ::windows_sys_core::GUID,
+    pub ObjectTypeGuid: ::windows_core_sys::GUID,
+    pub InheritedObjectTypeGuid: ::windows_core_sys::GUID,
     pub pSid: *mut super::SID,
 }
 impl ::core::marker::Copy for OBJECTS_AND_SID {}
@@ -1530,7 +1530,7 @@ impl ::core::clone::Clone for OBJECTS_AND_SID {
     }
 }
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
-pub const OLESCRIPT_E_SYNTAX: ::windows_sys_core::HRESULT = -2147352319i32;
+pub const OLESCRIPT_E_SYNTAX: ::windows_core_sys::HRESULT = -2147352319i32;
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_AUTHZ_COMPUTE_DYNAMIC_GROUPS = ::core::option::Option<unsafe extern "system" fn(hauthzclientcontext: AUTHZ_CLIENT_CONTEXT_HANDLE, args: *const ::core::ffi::c_void, psidattrarray: *mut *mut super::SID_AND_ATTRIBUTES, psidcount: *mut u32, prestrictedsidattrarray: *mut *mut super::SID_AND_ATTRIBUTES, prestrictedsidcount: *mut u32) -> super::super::Foundation::BOOL>;
@@ -1906,7 +1906,7 @@ pub struct TRUSTEE_A {
     pub MultipleTrusteeOperation: MULTIPLE_TRUSTEE_OPERATION,
     pub TrusteeForm: TRUSTEE_FORM,
     pub TrusteeType: TRUSTEE_TYPE,
-    pub ptstrName: ::windows_sys_core::PSTR,
+    pub ptstrName: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for TRUSTEE_A {}
 impl ::core::clone::Clone for TRUSTEE_A {
@@ -1917,7 +1917,7 @@ impl ::core::clone::Clone for TRUSTEE_A {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct TRUSTEE_ACCESSA {
-    pub lpProperty: ::windows_sys_core::PSTR,
+    pub lpProperty: ::windows_core_sys::PSTR,
     pub Access: u32,
     pub fAccessFlags: u32,
     pub fReturnedAccess: u32,
@@ -1931,7 +1931,7 @@ impl ::core::clone::Clone for TRUSTEE_ACCESSA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Security_Authorization\"`*"]
 pub struct TRUSTEE_ACCESSW {
-    pub lpProperty: ::windows_sys_core::PWSTR,
+    pub lpProperty: ::windows_core_sys::PWSTR,
     pub Access: u32,
     pub fAccessFlags: u32,
     pub fReturnedAccess: u32,
@@ -1991,7 +1991,7 @@ pub struct TRUSTEE_W {
     pub MultipleTrusteeOperation: MULTIPLE_TRUSTEE_OPERATION,
     pub TrusteeForm: TRUSTEE_FORM,
     pub TrusteeType: TRUSTEE_TYPE,
-    pub ptstrName: ::windows_sys_core::PWSTR,
+    pub ptstrName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for TRUSTEE_W {}
 impl ::core::clone::Clone for TRUSTEE_W {

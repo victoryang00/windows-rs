@@ -1,5 +1,5 @@
-pub const CLSID_VdsLoader: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2620976481, data2: 54629, data3: 18216, data4: [174, 238, 200, 9, 82, 240, 236, 222] };
-pub const CLSID_VdsService: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2098803659, data2: 34550, data3: 19096, data4: [134, 40, 1, 190, 148, 201, 165, 117] };
+pub const CLSID_VdsLoader: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2620976481, data2: 54629, data3: 18216, data4: [174, 238, 200, 9, 82, 240, 236, 222] };
+pub const CLSID_VdsService: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2098803659, data2: 34550, data3: 19096, data4: [134, 40, 1, 190, 148, 201, 165, 117] };
 pub const GPT_PARTITION_NAME_LENGTH: u32 = 36u32;
 pub type IEnumVdsObject = *mut ::core::ffi::c_void;
 pub type IVdsAdmin = *mut ::core::ffi::c_void;
@@ -70,7 +70,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0 {
 }
 #[repr(C)]
 pub struct VDS_ASYNC_OUTPUT_0_0 {
-    pub pVolumeUnk: ::windows_sys_core::IUnknown,
+    pub pVolumeUnk: ::windows_core_sys::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_0 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_0 {
@@ -80,7 +80,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_0 {
 }
 #[repr(C)]
 pub struct VDS_ASYNC_OUTPUT_0_1 {
-    pub pLunUnk: ::windows_sys_core::IUnknown,
+    pub pLunUnk: ::windows_core_sys::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_1 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_1 {
@@ -91,7 +91,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_1 {
 #[repr(C)]
 pub struct VDS_ASYNC_OUTPUT_0_2 {
     pub ullOffset: u64,
-    pub volumeId: ::windows_sys_core::GUID,
+    pub volumeId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_2 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_2 {
@@ -101,7 +101,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_2 {
 }
 #[repr(C)]
 pub struct VDS_ASYNC_OUTPUT_0_3 {
-    pub pPortalGroupUnk: ::windows_sys_core::IUnknown,
+    pub pPortalGroupUnk: ::windows_core_sys::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_3 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_3 {
@@ -111,7 +111,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_3 {
 }
 #[repr(C)]
 pub struct VDS_ASYNC_OUTPUT_0_4 {
-    pub pTargetUnk: ::windows_sys_core::IUnknown,
+    pub pTargetUnk: ::windows_core_sys::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_4 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_4 {
@@ -121,7 +121,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_4 {
 }
 #[repr(C)]
 pub struct VDS_ASYNC_OUTPUT_0_5 {
-    pub pVolumeUnk: ::windows_sys_core::IUnknown,
+    pub pVolumeUnk: ::windows_core_sys::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_5 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_5 {
@@ -131,7 +131,7 @@ impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_5 {
 }
 #[repr(C)]
 pub struct VDS_ASYNC_OUTPUT_0_6 {
-    pub pVDiskUnk: ::windows_sys_core::IUnknown,
+    pub pVDiskUnk: ::windows_core_sys::IUnknown,
 }
 impl ::core::marker::Copy for VDS_ASYNC_OUTPUT_0_6 {}
 impl ::core::clone::Clone for VDS_ASYNC_OUTPUT_0_6 {
@@ -186,7 +186,7 @@ pub const VDS_ATTACH_VIRTUAL_DISK_FLAG_USE_FILE_ACL: u32 = 1u32;
 #[repr(C)]
 pub struct VDS_CONTROLLER_NOTIFICATION {
     pub ulEvent: VDS_NF_CONTROLLER,
-    pub controllerId: ::windows_sys_core::GUID,
+    pub controllerId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_CONTROLLER_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_CONTROLLER_NOTIFICATION {
@@ -196,9 +196,9 @@ impl ::core::clone::Clone for VDS_CONTROLLER_NOTIFICATION {
 }
 #[repr(C)]
 pub struct VDS_CONTROLLER_PROP {
-    pub id: ::windows_sys_core::GUID,
-    pub pwszFriendlyName: ::windows_sys_core::PWSTR,
-    pub pwszIdentification: ::windows_sys_core::PWSTR,
+    pub id: ::windows_core_sys::GUID,
+    pub pwszFriendlyName: ::windows_core_sys::PWSTR,
+    pub pwszIdentification: ::windows_core_sys::PWSTR,
     pub status: VDS_CONTROLLER_STATUS,
     pub health: VDS_HEALTH,
     pub sNumberOfPorts: i16,
@@ -219,7 +219,7 @@ pub const VDS_CS_REMOVED: VDS_CONTROLLER_STATUS = 8i32;
 #[repr(C)]
 pub struct VDS_DISK_NOTIFICATION {
     pub ulEvent: VDS_NF_DISK,
-    pub diskId: ::windows_sys_core::GUID,
+    pub diskId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_DISK_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_DISK_NOTIFICATION {
@@ -230,8 +230,8 @@ impl ::core::clone::Clone for VDS_DISK_NOTIFICATION {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct VDS_DRIVE_EXTENT {
-    pub id: ::windows_sys_core::GUID,
-    pub LunId: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
+    pub LunId: ::windows_core_sys::GUID,
     pub ullSize: u64,
     pub bUsed: super::super::Foundation::BOOL,
 }
@@ -253,7 +253,7 @@ pub const VDS_DRF_HOTSPARE_STANDBY: VDS_DRIVE_FLAG = 16i32;
 pub struct VDS_DRIVE_LETTER_NOTIFICATION {
     pub ulEvent: u32,
     pub wcLetter: u16,
-    pub volumeId: ::windows_sys_core::GUID,
+    pub volumeId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_DRIVE_LETTER_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_DRIVE_LETTER_NOTIFICATION {
@@ -264,7 +264,7 @@ impl ::core::clone::Clone for VDS_DRIVE_LETTER_NOTIFICATION {
 #[repr(C)]
 pub struct VDS_DRIVE_NOTIFICATION {
     pub ulEvent: VDS_NF_DRIVE,
-    pub driveId: ::windows_sys_core::GUID,
+    pub driveId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_DRIVE_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_DRIVE_NOTIFICATION {
@@ -274,10 +274,10 @@ impl ::core::clone::Clone for VDS_DRIVE_NOTIFICATION {
 }
 #[repr(C)]
 pub struct VDS_DRIVE_PROP {
-    pub id: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
     pub ullSize: u64,
-    pub pwszFriendlyName: ::windows_sys_core::PWSTR,
-    pub pwszIdentification: ::windows_sys_core::PWSTR,
+    pub pwszFriendlyName: ::windows_core_sys::PWSTR,
+    pub pwszIdentification: ::windows_core_sys::PWSTR,
     pub ulFlags: u32,
     pub status: VDS_DRIVE_STATUS,
     pub health: VDS_HEALTH,
@@ -292,10 +292,10 @@ impl ::core::clone::Clone for VDS_DRIVE_PROP {
 }
 #[repr(C)]
 pub struct VDS_DRIVE_PROP2 {
-    pub id: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
     pub ullSize: u64,
-    pub pwszFriendlyName: ::windows_sys_core::PWSTR,
-    pub pwszIdentification: ::windows_sys_core::PWSTR,
+    pub pwszFriendlyName: ::windows_core_sys::PWSTR,
+    pub pwszIdentification: ::windows_core_sys::PWSTR,
     pub ulFlags: u32,
     pub status: VDS_DRIVE_STATUS,
     pub health: VDS_HEALTH,
@@ -318,359 +318,359 @@ pub const VDS_DRS_NOT_READY: VDS_DRIVE_STATUS = 2i32;
 pub const VDS_DRS_OFFLINE: VDS_DRIVE_STATUS = 4i32;
 pub const VDS_DRS_FAILED: VDS_DRIVE_STATUS = 5i32;
 pub const VDS_DRS_REMOVED: VDS_DRIVE_STATUS = 8i32;
-pub const VDS_E_ACCESS_DENIED: ::windows_sys_core::HRESULT = -2147212249i32;
-pub const VDS_E_ACTIVE_PARTITION: ::windows_sys_core::HRESULT = -2147212232i32;
-pub const VDS_E_ADDRESSES_INCOMPLETELY_SET: ::windows_sys_core::HRESULT = -2147211517i32;
-pub const VDS_E_ALIGN_BEYOND_FIRST_CYLINDER: ::windows_sys_core::HRESULT = -2147211949i32;
-pub const VDS_E_ALIGN_IS_ZERO: ::windows_sys_core::HRESULT = -2147211888i32;
-pub const VDS_E_ALIGN_NOT_A_POWER_OF_TWO: ::windows_sys_core::HRESULT = -2147211889i32;
-pub const VDS_E_ALIGN_NOT_SECTOR_SIZE_MULTIPLE: ::windows_sys_core::HRESULT = -2147211948i32;
-pub const VDS_E_ALIGN_NOT_ZERO: ::windows_sys_core::HRESULT = -2147211947i32;
-pub const VDS_E_ALREADY_REGISTERED: ::windows_sys_core::HRESULT = -2147212285i32;
-pub const VDS_E_ANOTHER_CALL_IN_PROGRESS: ::windows_sys_core::HRESULT = -2147212284i32;
-pub const VDS_E_ASSOCIATED_LUNS_EXIST: ::windows_sys_core::HRESULT = -2147211509i32;
-pub const VDS_E_ASSOCIATED_PORTALS_EXIST: ::windows_sys_core::HRESULT = -2147211508i32;
-pub const VDS_E_ASYNC_OBJECT_FAILURE: ::windows_sys_core::HRESULT = -2147212210i32;
-pub const VDS_E_BAD_BOOT_DISK: ::windows_sys_core::HRESULT = -2147211898i32;
-pub const VDS_E_BAD_COOKIE: ::windows_sys_core::HRESULT = -2147212271i32;
-pub const VDS_E_BAD_LABEL: ::windows_sys_core::HRESULT = -2147212247i32;
-pub const VDS_E_BAD_PNP_MESSAGE: ::windows_sys_core::HRESULT = -2147212017i32;
-pub const VDS_E_BAD_PROVIDER_DATA: ::windows_sys_core::HRESULT = -2147212223i32;
-pub const VDS_E_BAD_REVISION_NUMBER: ::windows_sys_core::HRESULT = -2147211880i32;
-pub const VDS_E_BLOCK_CLUSTERED: ::windows_sys_core::HRESULT = -2147210749i32;
-pub const VDS_E_BOOT_DISK: ::windows_sys_core::HRESULT = -2147211257i32;
-pub const VDS_E_BOOT_PAGEFILE_DRIVE_LETTER: ::windows_sys_core::HRESULT = -2147210994i32;
-pub const VDS_E_BOOT_PARTITION_NUMBER_CHANGE: ::windows_sys_core::HRESULT = -2147212234i32;
-pub const VDS_E_CACHE_CORRUPT: ::windows_sys_core::HRESULT = -2147211946i32;
-pub const VDS_E_CANCEL_TOO_LATE: ::windows_sys_core::HRESULT = -2147212276i32;
-pub const VDS_E_CANNOT_CLEAR_VOLUME_FLAG: ::windows_sys_core::HRESULT = -2147211945i32;
-pub const VDS_E_CANNOT_EXTEND: ::windows_sys_core::HRESULT = -2147212274i32;
-pub const VDS_E_CANNOT_SHRINK: ::windows_sys_core::HRESULT = -2147212002i32;
-pub const VDS_E_CANT_INVALIDATE_FVE: ::windows_sys_core::HRESULT = -2147211886i32;
-pub const VDS_E_CANT_QUICK_FORMAT: ::windows_sys_core::HRESULT = -2147212246i32;
-pub const VDS_E_CLEAN_WITH_BOOTBACKING: ::windows_sys_core::HRESULT = -2147210743i32;
-pub const VDS_E_CLEAN_WITH_CRITICAL: ::windows_sys_core::HRESULT = -2147210990i32;
-pub const VDS_E_CLEAN_WITH_DATA: ::windows_sys_core::HRESULT = -2147210992i32;
-pub const VDS_E_CLEAN_WITH_OEM: ::windows_sys_core::HRESULT = -2147210991i32;
-pub const VDS_E_CLUSTER_COUNT_BEYOND_32BITS: ::windows_sys_core::HRESULT = -2147212240i32;
-pub const VDS_E_CLUSTER_SIZE_TOO_BIG: ::windows_sys_core::HRESULT = -2147212241i32;
-pub const VDS_E_CLUSTER_SIZE_TOO_SMALL: ::windows_sys_core::HRESULT = -2147212242i32;
-pub const VDS_E_COMPRESSION_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147210984i32;
-pub const VDS_E_CONFIG_LIMIT: ::windows_sys_core::HRESULT = -2147211976i32;
-pub const VDS_E_CORRUPT_EXTENT_INFO: ::windows_sys_core::HRESULT = -2147212021i32;
-pub const VDS_E_CORRUPT_NOTIFICATION_INFO: ::windows_sys_core::HRESULT = -2147211990i32;
-pub const VDS_E_CORRUPT_PARTITION_INFO: ::windows_sys_core::HRESULT = -2147212023i32;
-pub const VDS_E_CORRUPT_VOLUME_INFO: ::windows_sys_core::HRESULT = -2147212029i32;
-pub const VDS_E_CRASHDUMP_DISK: ::windows_sys_core::HRESULT = -2147211250i32;
-pub const VDS_E_CRITICAL_PLEX: ::windows_sys_core::HRESULT = -2147211906i32;
-pub const VDS_E_DELETE_WITH_BOOTBACKING: ::windows_sys_core::HRESULT = -2147210745i32;
-pub const VDS_E_DELETE_WITH_CRITICAL: ::windows_sys_core::HRESULT = -2147210993i32;
-pub const VDS_E_DEVICE_IN_USE: ::windows_sys_core::HRESULT = -2147212269i32;
-pub const VDS_E_DISK_BEING_CLEANED: ::windows_sys_core::HRESULT = -2147211944i32;
-pub const VDS_E_DISK_CONFIGURATION_CORRUPTED: ::windows_sys_core::HRESULT = -2147211975i32;
-pub const VDS_E_DISK_CONFIGURATION_NOT_IN_SYNC: ::windows_sys_core::HRESULT = -2147211974i32;
-pub const VDS_E_DISK_CONFIGURATION_UPDATE_FAILED: ::windows_sys_core::HRESULT = -2147211973i32;
-pub const VDS_E_DISK_DYNAMIC: ::windows_sys_core::HRESULT = -2147211972i32;
-pub const VDS_E_DISK_HAS_BANDS: ::windows_sys_core::HRESULT = -2147210748i32;
-pub const VDS_E_DISK_IN_USE_BY_VOLUME: ::windows_sys_core::HRESULT = -2147212212i32;
-pub const VDS_E_DISK_IO_FAILING: ::windows_sys_core::HRESULT = -2147211968i32;
-pub const VDS_E_DISK_IS_OFFLINE: ::windows_sys_core::HRESULT = -2147211254i32;
-pub const VDS_E_DISK_IS_READ_ONLY: ::windows_sys_core::HRESULT = -2147211253i32;
-pub const VDS_E_DISK_LAYOUT_PARTITIONS_TOO_SMALL: ::windows_sys_core::HRESULT = -2147211969i32;
-pub const VDS_E_DISK_NOT_CONVERTIBLE: ::windows_sys_core::HRESULT = -2147211943i32;
-pub const VDS_E_DISK_NOT_CONVERTIBLE_SIZE: ::windows_sys_core::HRESULT = -2147210971i32;
-pub const VDS_E_DISK_NOT_EMPTY: ::windows_sys_core::HRESULT = -2147212268i32;
-pub const VDS_E_DISK_NOT_FOUND_IN_PACK: ::windows_sys_core::HRESULT = -2147211987i32;
-pub const VDS_E_DISK_NOT_IMPORTED: ::windows_sys_core::HRESULT = -2147212206i32;
-pub const VDS_E_DISK_NOT_INITIALIZED: ::windows_sys_core::HRESULT = -2147212265i32;
-pub const VDS_E_DISK_NOT_LOADED_TO_CACHE: ::windows_sys_core::HRESULT = -2147212217i32;
-pub const VDS_E_DISK_NOT_MISSING: ::windows_sys_core::HRESULT = -2147212031i32;
-pub const VDS_E_DISK_NOT_OFFLINE: ::windows_sys_core::HRESULT = -2147211883i32;
-pub const VDS_E_DISK_NOT_ONLINE: ::windows_sys_core::HRESULT = -2147212213i32;
-pub const VDS_E_DISK_PNP_REG_CORRUPT: ::windows_sys_core::HRESULT = -2147212203i32;
-pub const VDS_E_DISK_REMOVEABLE: ::windows_sys_core::HRESULT = -2147211942i32;
-pub const VDS_E_DISK_REMOVEABLE_NOT_EMPTY: ::windows_sys_core::HRESULT = -2147211941i32;
-pub const VDS_E_DISTINCT_VOLUME: ::windows_sys_core::HRESULT = -2147211909i32;
-pub const VDS_E_DMADMIN_CORRUPT_NOTIFICATION: ::windows_sys_core::HRESULT = -2147212252i32;
-pub const VDS_E_DMADMIN_METHOD_CALL_FAILED: ::windows_sys_core::HRESULT = -2147212256i32;
-pub const VDS_E_DMADMIN_SERVICE_CONNECTION_FAILED: ::windows_sys_core::HRESULT = -2147212261i32;
-pub const VDS_E_DRIVER_INTERNAL_ERROR: ::windows_sys_core::HRESULT = -2147212027i32;
-pub const VDS_E_DRIVER_INVALID_PARAM: ::windows_sys_core::HRESULT = -2147212004i32;
-pub const VDS_E_DRIVER_NO_PACK_NAME: ::windows_sys_core::HRESULT = -2147212019i32;
-pub const VDS_E_DRIVER_OBJECT_NOT_FOUND: ::windows_sys_core::HRESULT = -2147211971i32;
-pub const VDS_E_DRIVE_LETTER_NOT_FREE: ::windows_sys_core::HRESULT = -2147211940i32;
-pub const VDS_E_DUPLICATE_DISK: ::windows_sys_core::HRESULT = -2147211986i32;
-pub const VDS_E_DUP_EMPTY_PACK_GUID: ::windows_sys_core::HRESULT = -2147212020i32;
-pub const VDS_E_DYNAMIC_DISKS_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147211967i32;
-pub const VDS_E_EXTEND_FILE_SYSTEM_FAILED: ::windows_sys_core::HRESULT = -2147212186i32;
-pub const VDS_E_EXTEND_MULTIPLE_DISKS_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147211939i32;
-pub const VDS_E_EXTEND_TOO_MANY_CLUSTERS: ::windows_sys_core::HRESULT = -2147210968i32;
-pub const VDS_E_EXTEND_UNKNOWN_FILESYSTEM: ::windows_sys_core::HRESULT = -2147210967i32;
-pub const VDS_E_EXTENT_EXCEEDS_DISK_FREE_SPACE: ::windows_sys_core::HRESULT = -2147212011i32;
-pub const VDS_E_EXTENT_SIZE_LESS_THAN_MIN: ::windows_sys_core::HRESULT = -2147212237i32;
-pub const VDS_E_FAILED_TO_OFFLINE_DISK: ::windows_sys_core::HRESULT = -2147211881i32;
-pub const VDS_E_FAILED_TO_ONLINE_DISK: ::windows_sys_core::HRESULT = -2147211882i32;
-pub const VDS_E_FAT32_FORMAT_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147210987i32;
-pub const VDS_E_FAT_FORMAT_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147210986i32;
-pub const VDS_E_FAULT_TOLERANT_DISKS_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147211966i32;
-pub const VDS_E_FLAG_ALREADY_SET: ::windows_sys_core::HRESULT = -2147211911i32;
-pub const VDS_E_FORMAT_CRITICAL: ::windows_sys_core::HRESULT = -2147210989i32;
-pub const VDS_E_FORMAT_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147210985i32;
-pub const VDS_E_FORMAT_WITH_BOOTBACKING: ::windows_sys_core::HRESULT = -2147210744i32;
-pub const VDS_E_FS_NOT_DETERMINED: ::windows_sys_core::HRESULT = -2147211885i32;
-pub const VDS_E_GET_SAN_POLICY: ::windows_sys_core::HRESULT = -2147211259i32;
-pub const VDS_E_GPT_ATTRIBUTES_INVALID: ::windows_sys_core::HRESULT = -2147211965i32;
-pub const VDS_E_HIBERNATION_FILE_DISK: ::windows_sys_core::HRESULT = -2147211251i32;
-pub const VDS_E_IA64_BOOT_MIRRORED_TO_MBR: ::windows_sys_core::HRESULT = -2147212198i32;
-pub const VDS_E_IMPORT_SET_INCOMPLETE: ::windows_sys_core::HRESULT = -2147212207i32;
-pub const VDS_E_INCOMPATIBLE_FILE_SYSTEM: ::windows_sys_core::HRESULT = -2147212251i32;
-pub const VDS_E_INCOMPATIBLE_MEDIA: ::windows_sys_core::HRESULT = -2147212250i32;
-pub const VDS_E_INCORRECT_BOOT_VOLUME_EXTENT_INFO: ::windows_sys_core::HRESULT = -2147211260i32;
-pub const VDS_E_INCORRECT_SYSTEM_VOLUME_EXTENT_INFO: ::windows_sys_core::HRESULT = -2147211248i32;
-pub const VDS_E_INITIALIZED_FAILED: ::windows_sys_core::HRESULT = -2147212287i32;
-pub const VDS_E_INITIALIZE_NOT_CALLED: ::windows_sys_core::HRESULT = -2147212286i32;
-pub const VDS_E_INITIATOR_ADAPTER_NOT_FOUND: ::windows_sys_core::HRESULT = -2147211008i32;
-pub const VDS_E_INITIATOR_SPECIFIC_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147211513i32;
-pub const VDS_E_INTERNAL_ERROR: ::windows_sys_core::HRESULT = -2147212216i32;
-pub const VDS_E_INVALID_BLOCK_SIZE: ::windows_sys_core::HRESULT = -2147211982i32;
-pub const VDS_E_INVALID_DISK: ::windows_sys_core::HRESULT = -2147212007i32;
-pub const VDS_E_INVALID_DISK_COUNT: ::windows_sys_core::HRESULT = -2147211994i32;
-pub const VDS_E_INVALID_DRIVE_LETTER: ::windows_sys_core::HRESULT = -2147211938i32;
-pub const VDS_E_INVALID_DRIVE_LETTER_COUNT: ::windows_sys_core::HRESULT = -2147211937i32;
-pub const VDS_E_INVALID_ENUMERATOR: ::windows_sys_core::HRESULT = -2147212028i32;
-pub const VDS_E_INVALID_EXTENT_COUNT: ::windows_sys_core::HRESULT = -2147211993i32;
-pub const VDS_E_INVALID_FS_FLAG: ::windows_sys_core::HRESULT = -2147211936i32;
-pub const VDS_E_INVALID_FS_TYPE: ::windows_sys_core::HRESULT = -2147211935i32;
-pub const VDS_E_INVALID_IP_ADDRESS: ::windows_sys_core::HRESULT = -2147210997i32;
-pub const VDS_E_INVALID_ISCSI_PATH: ::windows_sys_core::HRESULT = -2147210980i32;
-pub const VDS_E_INVALID_ISCSI_TARGET_NAME: ::windows_sys_core::HRESULT = -2147211005i32;
-pub const VDS_E_INVALID_MEMBER_COUNT: ::windows_sys_core::HRESULT = -2147211998i32;
-pub const VDS_E_INVALID_MEMBER_ORDER: ::windows_sys_core::HRESULT = -2147211996i32;
-pub const VDS_E_INVALID_OBJECT_TYPE: ::windows_sys_core::HRESULT = -2147211934i32;
-pub const VDS_E_INVALID_OPERATION: ::windows_sys_core::HRESULT = -2147212267i32;
-pub const VDS_E_INVALID_PACK: ::windows_sys_core::HRESULT = -2147212006i32;
-pub const VDS_E_INVALID_PARTITION_LAYOUT: ::windows_sys_core::HRESULT = -2147211933i32;
-pub const VDS_E_INVALID_PARTITION_STYLE: ::windows_sys_core::HRESULT = -2147211932i32;
-pub const VDS_E_INVALID_PARTITION_TYPE: ::windows_sys_core::HRESULT = -2147211931i32;
-pub const VDS_E_INVALID_PATH: ::windows_sys_core::HRESULT = -2147210981i32;
-pub const VDS_E_INVALID_PLEX_BLOCK_SIZE: ::windows_sys_core::HRESULT = -2147211978i32;
-pub const VDS_E_INVALID_PLEX_COUNT: ::windows_sys_core::HRESULT = -2147211999i32;
-pub const VDS_E_INVALID_PLEX_GUID: ::windows_sys_core::HRESULT = -2147211988i32;
-pub const VDS_E_INVALID_PLEX_ORDER: ::windows_sys_core::HRESULT = -2147211997i32;
-pub const VDS_E_INVALID_PLEX_TYPE: ::windows_sys_core::HRESULT = -2147211979i32;
-pub const VDS_E_INVALID_PORT_PATH: ::windows_sys_core::HRESULT = -2147211006i32;
-pub const VDS_E_INVALID_PROVIDER_CLSID: ::windows_sys_core::HRESULT = -2147211930i32;
-pub const VDS_E_INVALID_PROVIDER_ID: ::windows_sys_core::HRESULT = -2147211929i32;
-pub const VDS_E_INVALID_PROVIDER_NAME: ::windows_sys_core::HRESULT = -2147211928i32;
-pub const VDS_E_INVALID_PROVIDER_TYPE: ::windows_sys_core::HRESULT = -2147211927i32;
-pub const VDS_E_INVALID_PROVIDER_VERSION_GUID: ::windows_sys_core::HRESULT = -2147211926i32;
-pub const VDS_E_INVALID_PROVIDER_VERSION_STRING: ::windows_sys_core::HRESULT = -2147211925i32;
-pub const VDS_E_INVALID_QUERY_PROVIDER_FLAG: ::windows_sys_core::HRESULT = -2147211924i32;
-pub const VDS_E_INVALID_SECTOR_SIZE: ::windows_sys_core::HRESULT = -2147211984i32;
-pub const VDS_E_INVALID_SERVICE_FLAG: ::windows_sys_core::HRESULT = -2147211923i32;
-pub const VDS_E_INVALID_SHRINK_SIZE: ::windows_sys_core::HRESULT = -2147211241i32;
-pub const VDS_E_INVALID_SPACE: ::windows_sys_core::HRESULT = -2147212282i32;
-pub const VDS_E_INVALID_STATE: ::windows_sys_core::HRESULT = -2147210747i32;
-pub const VDS_E_INVALID_STRIPE_SIZE: ::windows_sys_core::HRESULT = -2147211995i32;
-pub const VDS_E_INVALID_VOLUME_FLAG: ::windows_sys_core::HRESULT = -2147211922i32;
-pub const VDS_E_INVALID_VOLUME_LENGTH: ::windows_sys_core::HRESULT = -2147211954i32;
-pub const VDS_E_INVALID_VOLUME_TYPE: ::windows_sys_core::HRESULT = -2147211899i32;
-pub const VDS_E_IO_ERROR: ::windows_sys_core::HRESULT = -2147212245i32;
-pub const VDS_E_ISCSI_CHAP_SECRET: ::windows_sys_core::HRESULT = -2147210998i32;
-pub const VDS_E_ISCSI_GET_IKE_INFO: ::windows_sys_core::HRESULT = -2147211003i32;
-pub const VDS_E_ISCSI_GROUP_PRESHARE_KEY: ::windows_sys_core::HRESULT = -2147210999i32;
-pub const VDS_E_ISCSI_INITIATOR_NODE_NAME: ::windows_sys_core::HRESULT = -2147211000i32;
-pub const VDS_E_ISCSI_LOGIN_FAILED: ::windows_sys_core::HRESULT = -2147211512i32;
-pub const VDS_E_ISCSI_LOGOUT_FAILED: ::windows_sys_core::HRESULT = -2147211511i32;
-pub const VDS_E_ISCSI_LOGOUT_INCOMPLETE: ::windows_sys_core::HRESULT = -2147211504i32;
-pub const VDS_E_ISCSI_SESSION_NOT_FOUND: ::windows_sys_core::HRESULT = -2147211510i32;
-pub const VDS_E_ISCSI_SET_IKE_INFO: ::windows_sys_core::HRESULT = -2147211002i32;
-pub const VDS_E_LAST_VALID_DISK: ::windows_sys_core::HRESULT = -2147211985i32;
-pub const VDS_E_LBN_REMAP_ENABLED_FLAG: ::windows_sys_core::HRESULT = -2147212202i32;
-pub const VDS_E_LDM_TIMEOUT: ::windows_sys_core::HRESULT = -2147212191i32;
-pub const VDS_E_LEGACY_VOLUME_FORMAT: ::windows_sys_core::HRESULT = -2147212230i32;
-pub const VDS_E_LOG_UPDATE: ::windows_sys_core::HRESULT = -2147211897i32;
-pub const VDS_E_LUN_DISK_FAILED: ::windows_sys_core::HRESULT = -2147211239i32;
-pub const VDS_E_LUN_DISK_MISSING: ::windows_sys_core::HRESULT = -2147211240i32;
-pub const VDS_E_LUN_DISK_NOT_READY: ::windows_sys_core::HRESULT = -2147211238i32;
-pub const VDS_E_LUN_DISK_NO_MEDIA: ::windows_sys_core::HRESULT = -2147211237i32;
-pub const VDS_E_LUN_DISK_READ_ONLY: ::windows_sys_core::HRESULT = -2147210978i32;
-pub const VDS_E_LUN_DYNAMIC: ::windows_sys_core::HRESULT = -2147210976i32;
-pub const VDS_E_LUN_DYNAMIC_OFFLINE: ::windows_sys_core::HRESULT = -2147210975i32;
-pub const VDS_E_LUN_FAILED: ::windows_sys_core::HRESULT = -2147211234i32;
-pub const VDS_E_LUN_NOT_READY: ::windows_sys_core::HRESULT = -2147211236i32;
-pub const VDS_E_LUN_OFFLINE: ::windows_sys_core::HRESULT = -2147211235i32;
-pub const VDS_E_LUN_SHRINK_GPT_HEADER: ::windows_sys_core::HRESULT = -2147210974i32;
-pub const VDS_E_LUN_UPDATE_DISK: ::windows_sys_core::HRESULT = -2147210977i32;
-pub const VDS_E_MAX_USABLE_MBR: ::windows_sys_core::HRESULT = -2147212184i32;
-pub const VDS_E_MEDIA_WRITE_PROTECTED: ::windows_sys_core::HRESULT = -2147212248i32;
-pub const VDS_E_MEMBER_IS_HEALTHY: ::windows_sys_core::HRESULT = -2147211964i32;
-pub const VDS_E_MEMBER_MISSING: ::windows_sys_core::HRESULT = -2147211958i32;
-pub const VDS_E_MEMBER_REGENERATING: ::windows_sys_core::HRESULT = -2147211963i32;
-pub const VDS_E_MEMBER_SIZE_INVALID: ::windows_sys_core::HRESULT = -2147212010i32;
-pub const VDS_E_MIGRATE_OPEN_VOLUME: ::windows_sys_core::HRESULT = -2147212228i32;
-pub const VDS_E_MIRROR_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147210973i32;
-pub const VDS_E_MISSING_DISK: ::windows_sys_core::HRESULT = -2147212204i32;
-pub const VDS_E_MULTIPLE_DISCOVERY_DOMAINS: ::windows_sys_core::HRESULT = -2147211506i32;
-pub const VDS_E_MULTIPLE_PACKS: ::windows_sys_core::HRESULT = -2147212001i32;
-pub const VDS_E_NAME_NOT_UNIQUE: ::windows_sys_core::HRESULT = -2147211519i32;
-pub const VDS_E_NON_CONTIGUOUS_DATA_PARTITIONS: ::windows_sys_core::HRESULT = -2147212229i32;
-pub const VDS_E_NOT_AN_UNALLOCATED_DISK: ::windows_sys_core::HRESULT = -2147212264i32;
-pub const VDS_E_NOT_ENOUGH_DRIVE: ::windows_sys_core::HRESULT = -2147212272i32;
-pub const VDS_E_NOT_ENOUGH_SPACE: ::windows_sys_core::HRESULT = -2147212273i32;
-pub const VDS_E_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147212288i32;
-pub const VDS_E_NO_DISCOVERY_DOMAIN: ::windows_sys_core::HRESULT = -2147211507i32;
-pub const VDS_E_NO_DISKS_FOUND: ::windows_sys_core::HRESULT = -2147212258i32;
-pub const VDS_E_NO_DISK_PATHNAME: ::windows_sys_core::HRESULT = -2147211505i32;
-pub const VDS_E_NO_DRIVELETTER_FLAG: ::windows_sys_core::HRESULT = -2147212201i32;
-pub const VDS_E_NO_EXTENTS_FOR_PLEX: ::windows_sys_core::HRESULT = -2147211980i32;
-pub const VDS_E_NO_EXTENTS_FOR_VOLUME: ::windows_sys_core::HRESULT = -2147212218i32;
-pub const VDS_E_NO_FREE_SPACE: ::windows_sys_core::HRESULT = -2147212233i32;
-pub const VDS_E_NO_HEALTHY_DISKS: ::windows_sys_core::HRESULT = -2147211977i32;
-pub const VDS_E_NO_IMPORT_TARGET: ::windows_sys_core::HRESULT = -2147211501i32;
-pub const VDS_E_NO_MAINTENANCE_MODE: ::windows_sys_core::HRESULT = -2147210750i32;
-pub const VDS_E_NO_MEDIA: ::windows_sys_core::HRESULT = -2147212270i32;
-pub const VDS_E_NO_PNP_DISK_ARRIVE: ::windows_sys_core::HRESULT = -2147212016i32;
-pub const VDS_E_NO_PNP_DISK_REMOVE: ::windows_sys_core::HRESULT = -2147212014i32;
-pub const VDS_E_NO_PNP_VOLUME_ARRIVE: ::windows_sys_core::HRESULT = -2147212015i32;
-pub const VDS_E_NO_PNP_VOLUME_REMOVE: ::windows_sys_core::HRESULT = -2147212013i32;
-pub const VDS_E_NO_POOL: ::windows_sys_core::HRESULT = -2147210752i32;
-pub const VDS_E_NO_POOL_CREATED: ::windows_sys_core::HRESULT = -2147210751i32;
-pub const VDS_E_NO_SOFTWARE_PROVIDERS_LOADED: ::windows_sys_core::HRESULT = -2147212032i32;
-pub const VDS_E_NO_VALID_LOG_COPIES: ::windows_sys_core::HRESULT = -2147211894i32;
-pub const VDS_E_NO_VOLUME_LAYOUT: ::windows_sys_core::HRESULT = -2147212030i32;
-pub const VDS_E_NO_VOLUME_PATHNAME: ::windows_sys_core::HRESULT = -2147211503i32;
-pub const VDS_E_NTFS_FORMAT_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147210988i32;
-pub const VDS_E_OBJECT_DELETED: ::windows_sys_core::HRESULT = -2147212277i32;
-pub const VDS_E_OBJECT_EXISTS: ::windows_sys_core::HRESULT = -2147212259i32;
-pub const VDS_E_OBJECT_NOT_FOUND: ::windows_sys_core::HRESULT = -2147212283i32;
-pub const VDS_E_OBJECT_OUT_OF_SYNC: ::windows_sys_core::HRESULT = -2147212205i32;
-pub const VDS_E_OBJECT_STATUS_FAILED: ::windows_sys_core::HRESULT = -2147212239i32;
-pub const VDS_E_OFFLINE_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147210970i32;
-pub const VDS_E_ONE_EXTENT_PER_DISK: ::windows_sys_core::HRESULT = -2147211983i32;
-pub const VDS_E_ONLINE_PACK_EXISTS: ::windows_sys_core::HRESULT = -2147212188i32;
-pub const VDS_E_OPERATION_CANCELED: ::windows_sys_core::HRESULT = -2147212275i32;
-pub const VDS_E_OPERATION_DENIED: ::windows_sys_core::HRESULT = -2147212278i32;
-pub const VDS_E_OPERATION_PENDING: ::windows_sys_core::HRESULT = -2147212279i32;
-pub const VDS_E_PACK_NAME_INVALID: ::windows_sys_core::HRESULT = -2147211962i32;
-pub const VDS_E_PACK_NOT_FOUND: ::windows_sys_core::HRESULT = -2147212208i32;
-pub const VDS_E_PACK_OFFLINE: ::windows_sys_core::HRESULT = -2147212220i32;
-pub const VDS_E_PACK_ONLINE: ::windows_sys_core::HRESULT = -2147212000i32;
-pub const VDS_E_PAGEFILE_DISK: ::windows_sys_core::HRESULT = -2147211252i32;
-pub const VDS_E_PARTITION_LDM: ::windows_sys_core::HRESULT = -2147211891i32;
-pub const VDS_E_PARTITION_LIMIT_REACHED: ::windows_sys_core::HRESULT = -2147212281i32;
-pub const VDS_E_PARTITION_MSR: ::windows_sys_core::HRESULT = -2147211892i32;
-pub const VDS_E_PARTITION_NON_DATA: ::windows_sys_core::HRESULT = -2147211907i32;
-pub const VDS_E_PARTITION_NOT_CYLINDER_ALIGNED: ::windows_sys_core::HRESULT = -2147211970i32;
-pub const VDS_E_PARTITION_NOT_EMPTY: ::windows_sys_core::HRESULT = -2147212280i32;
-pub const VDS_E_PARTITION_NOT_OEM: ::windows_sys_core::HRESULT = -2147211921i32;
-pub const VDS_E_PARTITION_OF_UNKNOWN_TYPE: ::windows_sys_core::HRESULT = -2147212231i32;
-pub const VDS_E_PARTITION_PROTECTED: ::windows_sys_core::HRESULT = -2147211920i32;
-pub const VDS_E_PARTITION_STYLE_MISMATCH: ::windows_sys_core::HRESULT = -2147211919i32;
-pub const VDS_E_PATH_NOT_FOUND: ::windows_sys_core::HRESULT = -2147212266i32;
-pub const VDS_E_PLEX_IS_HEALTHY: ::windows_sys_core::HRESULT = -2147211961i32;
-pub const VDS_E_PLEX_LAST_ACTIVE: ::windows_sys_core::HRESULT = -2147211960i32;
-pub const VDS_E_PLEX_MISSING: ::windows_sys_core::HRESULT = -2147211959i32;
-pub const VDS_E_PLEX_NOT_LOADED_TO_CACHE: ::windows_sys_core::HRESULT = -2147211893i32;
-pub const VDS_E_PLEX_REGENERATING: ::windows_sys_core::HRESULT = -2147211957i32;
-pub const VDS_E_PLEX_SIZE_INVALID: ::windows_sys_core::HRESULT = -2147211981i32;
-pub const VDS_E_PROVIDER_CACHE_CORRUPT: ::windows_sys_core::HRESULT = -2147212257i32;
-pub const VDS_E_PROVIDER_CACHE_OUTOFSYNC: ::windows_sys_core::HRESULT = -2147211502i32;
-pub const VDS_E_PROVIDER_EXITING: ::windows_sys_core::HRESULT = -2147212012i32;
-pub const VDS_E_PROVIDER_FAILURE: ::windows_sys_core::HRESULT = -2147212222i32;
-pub const VDS_E_PROVIDER_INITIALIZATION_FAILED: ::windows_sys_core::HRESULT = -2147212260i32;
-pub const VDS_E_PROVIDER_INTERNAL_ERROR: ::windows_sys_core::HRESULT = -2147211918i32;
-pub const VDS_E_PROVIDER_TYPE_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147212214i32;
-pub const VDS_E_PROVIDER_VOL_DEVICE_NAME_NOT_FOUND: ::windows_sys_core::HRESULT = -2147212254i32;
-pub const VDS_E_PROVIDER_VOL_OPEN: ::windows_sys_core::HRESULT = -2147212253i32;
-pub const VDS_E_RAID5_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147210972i32;
-pub const VDS_E_READONLY: ::windows_sys_core::HRESULT = -2147211900i32;
-pub const VDS_E_REBOOT_REQUIRED: ::windows_sys_core::HRESULT = -2147210996i32;
-pub const VDS_E_REFS_FORMAT_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147210746i32;
-pub const VDS_E_REPAIR_VOLUMESTATE: ::windows_sys_core::HRESULT = -2147212192i32;
-pub const VDS_E_REQUIRES_CONTIGUOUS_DISK_SPACE: ::windows_sys_core::HRESULT = -2147212224i32;
-pub const VDS_E_RETRY: ::windows_sys_core::HRESULT = -2147212189i32;
-pub const VDS_E_REVERT_ON_CLOSE: ::windows_sys_core::HRESULT = -2147212200i32;
-pub const VDS_E_REVERT_ON_CLOSE_MISMATCH: ::windows_sys_core::HRESULT = -2147212190i32;
-pub const VDS_E_REVERT_ON_CLOSE_SET: ::windows_sys_core::HRESULT = -2147212199i32;
-pub const VDS_E_SECTOR_SIZE_ERROR: ::windows_sys_core::HRESULT = -2147211229i32;
-pub const VDS_E_SECURITY_INCOMPLETELY_SET: ::windows_sys_core::HRESULT = -2147211515i32;
-pub const VDS_E_SET_SAN_POLICY: ::windows_sys_core::HRESULT = -2147211258i32;
-pub const VDS_E_SET_TUNNEL_MODE_OUTER_ADDRESS: ::windows_sys_core::HRESULT = -2147211004i32;
-pub const VDS_E_SHRINK_DIRTY_VOLUME: ::windows_sys_core::HRESULT = -2147211878i32;
-pub const VDS_E_SHRINK_EXTEND_UNALIGNED: ::windows_sys_core::HRESULT = -2147210496i32;
-pub const VDS_E_SHRINK_IN_PROGRESS: ::windows_sys_core::HRESULT = -2147211887i32;
-pub const VDS_E_SHRINK_LUN_NOT_UNMASKED: ::windows_sys_core::HRESULT = -2147210979i32;
-pub const VDS_E_SHRINK_OVER_DATA: ::windows_sys_core::HRESULT = -2147211242i32;
-pub const VDS_E_SHRINK_SIZE_LESS_THAN_MIN: ::windows_sys_core::HRESULT = -2147211917i32;
-pub const VDS_E_SHRINK_SIZE_TOO_BIG: ::windows_sys_core::HRESULT = -2147211916i32;
-pub const VDS_E_SHRINK_UNKNOWN_FILESYSTEM: ::windows_sys_core::HRESULT = -2147210966i32;
-pub const VDS_E_SHRINK_USER_CANCELLED: ::windows_sys_core::HRESULT = -2147211879i32;
-pub const VDS_E_SOURCE_IS_TARGET_PACK: ::windows_sys_core::HRESULT = -2147211992i32;
-pub const VDS_E_SUBSYSTEM_ID_IS_NULL: ::windows_sys_core::HRESULT = -2147211001i32;
-pub const VDS_E_SYSTEM_DISK: ::windows_sys_core::HRESULT = -2147211247i32;
-pub const VDS_E_TARGET_PACK_NOT_EMPTY: ::windows_sys_core::HRESULT = -2147212003i32;
-pub const VDS_E_TARGET_PORTAL_NOT_FOUND: ::windows_sys_core::HRESULT = -2147211007i32;
-pub const VDS_E_TARGET_SPECIFIC_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147211514i32;
-pub const VDS_E_TIMEOUT: ::windows_sys_core::HRESULT = -2147212193i32;
-pub const VDS_E_UNABLE_TO_FIND_BOOT_DISK: ::windows_sys_core::HRESULT = -2147211261i32;
-pub const VDS_E_UNABLE_TO_FIND_SYSTEM_DISK: ::windows_sys_core::HRESULT = -2147211249i32;
-pub const VDS_E_UNEXPECTED_DISK_LAYOUT_CHANGE: ::windows_sys_core::HRESULT = -2147211955i32;
-pub const VDS_E_UNRECOVERABLE_ERROR: ::windows_sys_core::HRESULT = -2147212263i32;
-pub const VDS_E_UNRECOVERABLE_PROVIDER_ERROR: ::windows_sys_core::HRESULT = -2147211915i32;
-pub const VDS_E_VDISK_INVALID_OP_STATE: ::windows_sys_core::HRESULT = -2147210982i32;
-pub const VDS_E_VDISK_NOT_OPEN: ::windows_sys_core::HRESULT = -2147210983i32;
-pub const VDS_E_VDISK_PATHNAME_INVALID: ::windows_sys_core::HRESULT = -2147210969i32;
-pub const VDS_E_VD_ALREADY_ATTACHED: ::windows_sys_core::HRESULT = -2147210956i32;
-pub const VDS_E_VD_ALREADY_COMPACTING: ::windows_sys_core::HRESULT = -2147210958i32;
-pub const VDS_E_VD_ALREADY_DETACHED: ::windows_sys_core::HRESULT = -2147210955i32;
-pub const VDS_E_VD_ALREADY_MERGING: ::windows_sys_core::HRESULT = -2147210957i32;
-pub const VDS_E_VD_DISK_ALREADY_EXPANDING: ::windows_sys_core::HRESULT = -2147210959i32;
-pub const VDS_E_VD_DISK_ALREADY_OPEN: ::windows_sys_core::HRESULT = -2147210960i32;
-pub const VDS_E_VD_DISK_IS_COMPACTING: ::windows_sys_core::HRESULT = -2147210963i32;
-pub const VDS_E_VD_DISK_IS_EXPANDING: ::windows_sys_core::HRESULT = -2147210964i32;
-pub const VDS_E_VD_DISK_IS_MERGING: ::windows_sys_core::HRESULT = -2147210962i32;
-pub const VDS_E_VD_DISK_NOT_OPEN: ::windows_sys_core::HRESULT = -2147210965i32;
-pub const VDS_E_VD_IS_ATTACHED: ::windows_sys_core::HRESULT = -2147210961i32;
-pub const VDS_E_VD_IS_BEING_ATTACHED: ::windows_sys_core::HRESULT = -2147210953i32;
-pub const VDS_E_VD_IS_BEING_DETACHED: ::windows_sys_core::HRESULT = -2147210952i32;
-pub const VDS_E_VD_NOT_ATTACHED_READONLY: ::windows_sys_core::HRESULT = -2147210954i32;
-pub const VDS_E_VOLUME_DISK_COUNT_MAX_EXCEEDED: ::windows_sys_core::HRESULT = -2147211991i32;
-pub const VDS_E_VOLUME_EXTEND_FVE: ::windows_sys_core::HRESULT = -2147211230i32;
-pub const VDS_E_VOLUME_EXTEND_FVE_CORRUPT: ::windows_sys_core::HRESULT = -2147211232i32;
-pub const VDS_E_VOLUME_EXTEND_FVE_LOCKED: ::windows_sys_core::HRESULT = -2147211233i32;
-pub const VDS_E_VOLUME_EXTEND_FVE_RECOVERY: ::windows_sys_core::HRESULT = -2147211231i32;
-pub const VDS_E_VOLUME_GUID_PATHNAME_NOT_ALLOWED: ::windows_sys_core::HRESULT = -2147210995i32;
-pub const VDS_E_VOLUME_HAS_PATH: ::windows_sys_core::HRESULT = -2147212194i32;
-pub const VDS_E_VOLUME_HIDDEN: ::windows_sys_core::HRESULT = -2147211914i32;
-pub const VDS_E_VOLUME_INCOMPLETE: ::windows_sys_core::HRESULT = -2147212238i32;
-pub const VDS_E_VOLUME_INVALID_NAME: ::windows_sys_core::HRESULT = -2147212025i32;
-pub const VDS_E_VOLUME_LENGTH_NOT_SECTOR_SIZE_MULTIPLE: ::windows_sys_core::HRESULT = -2147211953i32;
-pub const VDS_E_VOLUME_MIRRORED: ::windows_sys_core::HRESULT = -2147211896i32;
-pub const VDS_E_VOLUME_NOT_A_MIRROR: ::windows_sys_core::HRESULT = -2147212219i32;
-pub const VDS_E_VOLUME_NOT_FOUND_IN_PACK: ::windows_sys_core::HRESULT = -2147211908i32;
-pub const VDS_E_VOLUME_NOT_HEALTHY: ::windows_sys_core::HRESULT = -2147212226i32;
-pub const VDS_E_VOLUME_NOT_MOUNTED: ::windows_sys_core::HRESULT = -2147212209i32;
-pub const VDS_E_VOLUME_NOT_ONLINE: ::windows_sys_core::HRESULT = -2147212227i32;
-pub const VDS_E_VOLUME_NOT_RETAINED: ::windows_sys_core::HRESULT = -2147211952i32;
-pub const VDS_E_VOLUME_ON_DISK: ::windows_sys_core::HRESULT = -2147212005i32;
-pub const VDS_E_VOLUME_PERMANENTLY_DISMOUNTED: ::windows_sys_core::HRESULT = -2147212195i32;
-pub const VDS_E_VOLUME_REGENERATING: ::windows_sys_core::HRESULT = -2147211904i32;
-pub const VDS_E_VOLUME_RETAINED: ::windows_sys_core::HRESULT = -2147211951i32;
-pub const VDS_E_VOLUME_SHRINK_FVE: ::windows_sys_core::HRESULT = -2147211243i32;
-pub const VDS_E_VOLUME_SHRINK_FVE_CORRUPT: ::windows_sys_core::HRESULT = -2147211245i32;
-pub const VDS_E_VOLUME_SHRINK_FVE_LOCKED: ::windows_sys_core::HRESULT = -2147211246i32;
-pub const VDS_E_VOLUME_SHRINK_FVE_RECOVERY: ::windows_sys_core::HRESULT = -2147211244i32;
-pub const VDS_E_VOLUME_SIMPLE_SPANNED: ::windows_sys_core::HRESULT = -2147211895i32;
-pub const VDS_E_VOLUME_SPANS_DISKS: ::windows_sys_core::HRESULT = -2147212225i32;
-pub const VDS_E_VOLUME_SYNCHRONIZING: ::windows_sys_core::HRESULT = -2147211905i32;
-pub const VDS_E_VOLUME_TEMPORARILY_DISMOUNTED: ::windows_sys_core::HRESULT = -2147212196i32;
-pub const VDS_E_VOLUME_TOO_BIG: ::windows_sys_core::HRESULT = -2147212243i32;
-pub const VDS_E_VOLUME_TOO_SMALL: ::windows_sys_core::HRESULT = -2147212244i32;
+pub const VDS_E_ACCESS_DENIED: ::windows_core_sys::HRESULT = -2147212249i32;
+pub const VDS_E_ACTIVE_PARTITION: ::windows_core_sys::HRESULT = -2147212232i32;
+pub const VDS_E_ADDRESSES_INCOMPLETELY_SET: ::windows_core_sys::HRESULT = -2147211517i32;
+pub const VDS_E_ALIGN_BEYOND_FIRST_CYLINDER: ::windows_core_sys::HRESULT = -2147211949i32;
+pub const VDS_E_ALIGN_IS_ZERO: ::windows_core_sys::HRESULT = -2147211888i32;
+pub const VDS_E_ALIGN_NOT_A_POWER_OF_TWO: ::windows_core_sys::HRESULT = -2147211889i32;
+pub const VDS_E_ALIGN_NOT_SECTOR_SIZE_MULTIPLE: ::windows_core_sys::HRESULT = -2147211948i32;
+pub const VDS_E_ALIGN_NOT_ZERO: ::windows_core_sys::HRESULT = -2147211947i32;
+pub const VDS_E_ALREADY_REGISTERED: ::windows_core_sys::HRESULT = -2147212285i32;
+pub const VDS_E_ANOTHER_CALL_IN_PROGRESS: ::windows_core_sys::HRESULT = -2147212284i32;
+pub const VDS_E_ASSOCIATED_LUNS_EXIST: ::windows_core_sys::HRESULT = -2147211509i32;
+pub const VDS_E_ASSOCIATED_PORTALS_EXIST: ::windows_core_sys::HRESULT = -2147211508i32;
+pub const VDS_E_ASYNC_OBJECT_FAILURE: ::windows_core_sys::HRESULT = -2147212210i32;
+pub const VDS_E_BAD_BOOT_DISK: ::windows_core_sys::HRESULT = -2147211898i32;
+pub const VDS_E_BAD_COOKIE: ::windows_core_sys::HRESULT = -2147212271i32;
+pub const VDS_E_BAD_LABEL: ::windows_core_sys::HRESULT = -2147212247i32;
+pub const VDS_E_BAD_PNP_MESSAGE: ::windows_core_sys::HRESULT = -2147212017i32;
+pub const VDS_E_BAD_PROVIDER_DATA: ::windows_core_sys::HRESULT = -2147212223i32;
+pub const VDS_E_BAD_REVISION_NUMBER: ::windows_core_sys::HRESULT = -2147211880i32;
+pub const VDS_E_BLOCK_CLUSTERED: ::windows_core_sys::HRESULT = -2147210749i32;
+pub const VDS_E_BOOT_DISK: ::windows_core_sys::HRESULT = -2147211257i32;
+pub const VDS_E_BOOT_PAGEFILE_DRIVE_LETTER: ::windows_core_sys::HRESULT = -2147210994i32;
+pub const VDS_E_BOOT_PARTITION_NUMBER_CHANGE: ::windows_core_sys::HRESULT = -2147212234i32;
+pub const VDS_E_CACHE_CORRUPT: ::windows_core_sys::HRESULT = -2147211946i32;
+pub const VDS_E_CANCEL_TOO_LATE: ::windows_core_sys::HRESULT = -2147212276i32;
+pub const VDS_E_CANNOT_CLEAR_VOLUME_FLAG: ::windows_core_sys::HRESULT = -2147211945i32;
+pub const VDS_E_CANNOT_EXTEND: ::windows_core_sys::HRESULT = -2147212274i32;
+pub const VDS_E_CANNOT_SHRINK: ::windows_core_sys::HRESULT = -2147212002i32;
+pub const VDS_E_CANT_INVALIDATE_FVE: ::windows_core_sys::HRESULT = -2147211886i32;
+pub const VDS_E_CANT_QUICK_FORMAT: ::windows_core_sys::HRESULT = -2147212246i32;
+pub const VDS_E_CLEAN_WITH_BOOTBACKING: ::windows_core_sys::HRESULT = -2147210743i32;
+pub const VDS_E_CLEAN_WITH_CRITICAL: ::windows_core_sys::HRESULT = -2147210990i32;
+pub const VDS_E_CLEAN_WITH_DATA: ::windows_core_sys::HRESULT = -2147210992i32;
+pub const VDS_E_CLEAN_WITH_OEM: ::windows_core_sys::HRESULT = -2147210991i32;
+pub const VDS_E_CLUSTER_COUNT_BEYOND_32BITS: ::windows_core_sys::HRESULT = -2147212240i32;
+pub const VDS_E_CLUSTER_SIZE_TOO_BIG: ::windows_core_sys::HRESULT = -2147212241i32;
+pub const VDS_E_CLUSTER_SIZE_TOO_SMALL: ::windows_core_sys::HRESULT = -2147212242i32;
+pub const VDS_E_COMPRESSION_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147210984i32;
+pub const VDS_E_CONFIG_LIMIT: ::windows_core_sys::HRESULT = -2147211976i32;
+pub const VDS_E_CORRUPT_EXTENT_INFO: ::windows_core_sys::HRESULT = -2147212021i32;
+pub const VDS_E_CORRUPT_NOTIFICATION_INFO: ::windows_core_sys::HRESULT = -2147211990i32;
+pub const VDS_E_CORRUPT_PARTITION_INFO: ::windows_core_sys::HRESULT = -2147212023i32;
+pub const VDS_E_CORRUPT_VOLUME_INFO: ::windows_core_sys::HRESULT = -2147212029i32;
+pub const VDS_E_CRASHDUMP_DISK: ::windows_core_sys::HRESULT = -2147211250i32;
+pub const VDS_E_CRITICAL_PLEX: ::windows_core_sys::HRESULT = -2147211906i32;
+pub const VDS_E_DELETE_WITH_BOOTBACKING: ::windows_core_sys::HRESULT = -2147210745i32;
+pub const VDS_E_DELETE_WITH_CRITICAL: ::windows_core_sys::HRESULT = -2147210993i32;
+pub const VDS_E_DEVICE_IN_USE: ::windows_core_sys::HRESULT = -2147212269i32;
+pub const VDS_E_DISK_BEING_CLEANED: ::windows_core_sys::HRESULT = -2147211944i32;
+pub const VDS_E_DISK_CONFIGURATION_CORRUPTED: ::windows_core_sys::HRESULT = -2147211975i32;
+pub const VDS_E_DISK_CONFIGURATION_NOT_IN_SYNC: ::windows_core_sys::HRESULT = -2147211974i32;
+pub const VDS_E_DISK_CONFIGURATION_UPDATE_FAILED: ::windows_core_sys::HRESULT = -2147211973i32;
+pub const VDS_E_DISK_DYNAMIC: ::windows_core_sys::HRESULT = -2147211972i32;
+pub const VDS_E_DISK_HAS_BANDS: ::windows_core_sys::HRESULT = -2147210748i32;
+pub const VDS_E_DISK_IN_USE_BY_VOLUME: ::windows_core_sys::HRESULT = -2147212212i32;
+pub const VDS_E_DISK_IO_FAILING: ::windows_core_sys::HRESULT = -2147211968i32;
+pub const VDS_E_DISK_IS_OFFLINE: ::windows_core_sys::HRESULT = -2147211254i32;
+pub const VDS_E_DISK_IS_READ_ONLY: ::windows_core_sys::HRESULT = -2147211253i32;
+pub const VDS_E_DISK_LAYOUT_PARTITIONS_TOO_SMALL: ::windows_core_sys::HRESULT = -2147211969i32;
+pub const VDS_E_DISK_NOT_CONVERTIBLE: ::windows_core_sys::HRESULT = -2147211943i32;
+pub const VDS_E_DISK_NOT_CONVERTIBLE_SIZE: ::windows_core_sys::HRESULT = -2147210971i32;
+pub const VDS_E_DISK_NOT_EMPTY: ::windows_core_sys::HRESULT = -2147212268i32;
+pub const VDS_E_DISK_NOT_FOUND_IN_PACK: ::windows_core_sys::HRESULT = -2147211987i32;
+pub const VDS_E_DISK_NOT_IMPORTED: ::windows_core_sys::HRESULT = -2147212206i32;
+pub const VDS_E_DISK_NOT_INITIALIZED: ::windows_core_sys::HRESULT = -2147212265i32;
+pub const VDS_E_DISK_NOT_LOADED_TO_CACHE: ::windows_core_sys::HRESULT = -2147212217i32;
+pub const VDS_E_DISK_NOT_MISSING: ::windows_core_sys::HRESULT = -2147212031i32;
+pub const VDS_E_DISK_NOT_OFFLINE: ::windows_core_sys::HRESULT = -2147211883i32;
+pub const VDS_E_DISK_NOT_ONLINE: ::windows_core_sys::HRESULT = -2147212213i32;
+pub const VDS_E_DISK_PNP_REG_CORRUPT: ::windows_core_sys::HRESULT = -2147212203i32;
+pub const VDS_E_DISK_REMOVEABLE: ::windows_core_sys::HRESULT = -2147211942i32;
+pub const VDS_E_DISK_REMOVEABLE_NOT_EMPTY: ::windows_core_sys::HRESULT = -2147211941i32;
+pub const VDS_E_DISTINCT_VOLUME: ::windows_core_sys::HRESULT = -2147211909i32;
+pub const VDS_E_DMADMIN_CORRUPT_NOTIFICATION: ::windows_core_sys::HRESULT = -2147212252i32;
+pub const VDS_E_DMADMIN_METHOD_CALL_FAILED: ::windows_core_sys::HRESULT = -2147212256i32;
+pub const VDS_E_DMADMIN_SERVICE_CONNECTION_FAILED: ::windows_core_sys::HRESULT = -2147212261i32;
+pub const VDS_E_DRIVER_INTERNAL_ERROR: ::windows_core_sys::HRESULT = -2147212027i32;
+pub const VDS_E_DRIVER_INVALID_PARAM: ::windows_core_sys::HRESULT = -2147212004i32;
+pub const VDS_E_DRIVER_NO_PACK_NAME: ::windows_core_sys::HRESULT = -2147212019i32;
+pub const VDS_E_DRIVER_OBJECT_NOT_FOUND: ::windows_core_sys::HRESULT = -2147211971i32;
+pub const VDS_E_DRIVE_LETTER_NOT_FREE: ::windows_core_sys::HRESULT = -2147211940i32;
+pub const VDS_E_DUPLICATE_DISK: ::windows_core_sys::HRESULT = -2147211986i32;
+pub const VDS_E_DUP_EMPTY_PACK_GUID: ::windows_core_sys::HRESULT = -2147212020i32;
+pub const VDS_E_DYNAMIC_DISKS_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147211967i32;
+pub const VDS_E_EXTEND_FILE_SYSTEM_FAILED: ::windows_core_sys::HRESULT = -2147212186i32;
+pub const VDS_E_EXTEND_MULTIPLE_DISKS_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147211939i32;
+pub const VDS_E_EXTEND_TOO_MANY_CLUSTERS: ::windows_core_sys::HRESULT = -2147210968i32;
+pub const VDS_E_EXTEND_UNKNOWN_FILESYSTEM: ::windows_core_sys::HRESULT = -2147210967i32;
+pub const VDS_E_EXTENT_EXCEEDS_DISK_FREE_SPACE: ::windows_core_sys::HRESULT = -2147212011i32;
+pub const VDS_E_EXTENT_SIZE_LESS_THAN_MIN: ::windows_core_sys::HRESULT = -2147212237i32;
+pub const VDS_E_FAILED_TO_OFFLINE_DISK: ::windows_core_sys::HRESULT = -2147211881i32;
+pub const VDS_E_FAILED_TO_ONLINE_DISK: ::windows_core_sys::HRESULT = -2147211882i32;
+pub const VDS_E_FAT32_FORMAT_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147210987i32;
+pub const VDS_E_FAT_FORMAT_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147210986i32;
+pub const VDS_E_FAULT_TOLERANT_DISKS_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147211966i32;
+pub const VDS_E_FLAG_ALREADY_SET: ::windows_core_sys::HRESULT = -2147211911i32;
+pub const VDS_E_FORMAT_CRITICAL: ::windows_core_sys::HRESULT = -2147210989i32;
+pub const VDS_E_FORMAT_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147210985i32;
+pub const VDS_E_FORMAT_WITH_BOOTBACKING: ::windows_core_sys::HRESULT = -2147210744i32;
+pub const VDS_E_FS_NOT_DETERMINED: ::windows_core_sys::HRESULT = -2147211885i32;
+pub const VDS_E_GET_SAN_POLICY: ::windows_core_sys::HRESULT = -2147211259i32;
+pub const VDS_E_GPT_ATTRIBUTES_INVALID: ::windows_core_sys::HRESULT = -2147211965i32;
+pub const VDS_E_HIBERNATION_FILE_DISK: ::windows_core_sys::HRESULT = -2147211251i32;
+pub const VDS_E_IA64_BOOT_MIRRORED_TO_MBR: ::windows_core_sys::HRESULT = -2147212198i32;
+pub const VDS_E_IMPORT_SET_INCOMPLETE: ::windows_core_sys::HRESULT = -2147212207i32;
+pub const VDS_E_INCOMPATIBLE_FILE_SYSTEM: ::windows_core_sys::HRESULT = -2147212251i32;
+pub const VDS_E_INCOMPATIBLE_MEDIA: ::windows_core_sys::HRESULT = -2147212250i32;
+pub const VDS_E_INCORRECT_BOOT_VOLUME_EXTENT_INFO: ::windows_core_sys::HRESULT = -2147211260i32;
+pub const VDS_E_INCORRECT_SYSTEM_VOLUME_EXTENT_INFO: ::windows_core_sys::HRESULT = -2147211248i32;
+pub const VDS_E_INITIALIZED_FAILED: ::windows_core_sys::HRESULT = -2147212287i32;
+pub const VDS_E_INITIALIZE_NOT_CALLED: ::windows_core_sys::HRESULT = -2147212286i32;
+pub const VDS_E_INITIATOR_ADAPTER_NOT_FOUND: ::windows_core_sys::HRESULT = -2147211008i32;
+pub const VDS_E_INITIATOR_SPECIFIC_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147211513i32;
+pub const VDS_E_INTERNAL_ERROR: ::windows_core_sys::HRESULT = -2147212216i32;
+pub const VDS_E_INVALID_BLOCK_SIZE: ::windows_core_sys::HRESULT = -2147211982i32;
+pub const VDS_E_INVALID_DISK: ::windows_core_sys::HRESULT = -2147212007i32;
+pub const VDS_E_INVALID_DISK_COUNT: ::windows_core_sys::HRESULT = -2147211994i32;
+pub const VDS_E_INVALID_DRIVE_LETTER: ::windows_core_sys::HRESULT = -2147211938i32;
+pub const VDS_E_INVALID_DRIVE_LETTER_COUNT: ::windows_core_sys::HRESULT = -2147211937i32;
+pub const VDS_E_INVALID_ENUMERATOR: ::windows_core_sys::HRESULT = -2147212028i32;
+pub const VDS_E_INVALID_EXTENT_COUNT: ::windows_core_sys::HRESULT = -2147211993i32;
+pub const VDS_E_INVALID_FS_FLAG: ::windows_core_sys::HRESULT = -2147211936i32;
+pub const VDS_E_INVALID_FS_TYPE: ::windows_core_sys::HRESULT = -2147211935i32;
+pub const VDS_E_INVALID_IP_ADDRESS: ::windows_core_sys::HRESULT = -2147210997i32;
+pub const VDS_E_INVALID_ISCSI_PATH: ::windows_core_sys::HRESULT = -2147210980i32;
+pub const VDS_E_INVALID_ISCSI_TARGET_NAME: ::windows_core_sys::HRESULT = -2147211005i32;
+pub const VDS_E_INVALID_MEMBER_COUNT: ::windows_core_sys::HRESULT = -2147211998i32;
+pub const VDS_E_INVALID_MEMBER_ORDER: ::windows_core_sys::HRESULT = -2147211996i32;
+pub const VDS_E_INVALID_OBJECT_TYPE: ::windows_core_sys::HRESULT = -2147211934i32;
+pub const VDS_E_INVALID_OPERATION: ::windows_core_sys::HRESULT = -2147212267i32;
+pub const VDS_E_INVALID_PACK: ::windows_core_sys::HRESULT = -2147212006i32;
+pub const VDS_E_INVALID_PARTITION_LAYOUT: ::windows_core_sys::HRESULT = -2147211933i32;
+pub const VDS_E_INVALID_PARTITION_STYLE: ::windows_core_sys::HRESULT = -2147211932i32;
+pub const VDS_E_INVALID_PARTITION_TYPE: ::windows_core_sys::HRESULT = -2147211931i32;
+pub const VDS_E_INVALID_PATH: ::windows_core_sys::HRESULT = -2147210981i32;
+pub const VDS_E_INVALID_PLEX_BLOCK_SIZE: ::windows_core_sys::HRESULT = -2147211978i32;
+pub const VDS_E_INVALID_PLEX_COUNT: ::windows_core_sys::HRESULT = -2147211999i32;
+pub const VDS_E_INVALID_PLEX_GUID: ::windows_core_sys::HRESULT = -2147211988i32;
+pub const VDS_E_INVALID_PLEX_ORDER: ::windows_core_sys::HRESULT = -2147211997i32;
+pub const VDS_E_INVALID_PLEX_TYPE: ::windows_core_sys::HRESULT = -2147211979i32;
+pub const VDS_E_INVALID_PORT_PATH: ::windows_core_sys::HRESULT = -2147211006i32;
+pub const VDS_E_INVALID_PROVIDER_CLSID: ::windows_core_sys::HRESULT = -2147211930i32;
+pub const VDS_E_INVALID_PROVIDER_ID: ::windows_core_sys::HRESULT = -2147211929i32;
+pub const VDS_E_INVALID_PROVIDER_NAME: ::windows_core_sys::HRESULT = -2147211928i32;
+pub const VDS_E_INVALID_PROVIDER_TYPE: ::windows_core_sys::HRESULT = -2147211927i32;
+pub const VDS_E_INVALID_PROVIDER_VERSION_GUID: ::windows_core_sys::HRESULT = -2147211926i32;
+pub const VDS_E_INVALID_PROVIDER_VERSION_STRING: ::windows_core_sys::HRESULT = -2147211925i32;
+pub const VDS_E_INVALID_QUERY_PROVIDER_FLAG: ::windows_core_sys::HRESULT = -2147211924i32;
+pub const VDS_E_INVALID_SECTOR_SIZE: ::windows_core_sys::HRESULT = -2147211984i32;
+pub const VDS_E_INVALID_SERVICE_FLAG: ::windows_core_sys::HRESULT = -2147211923i32;
+pub const VDS_E_INVALID_SHRINK_SIZE: ::windows_core_sys::HRESULT = -2147211241i32;
+pub const VDS_E_INVALID_SPACE: ::windows_core_sys::HRESULT = -2147212282i32;
+pub const VDS_E_INVALID_STATE: ::windows_core_sys::HRESULT = -2147210747i32;
+pub const VDS_E_INVALID_STRIPE_SIZE: ::windows_core_sys::HRESULT = -2147211995i32;
+pub const VDS_E_INVALID_VOLUME_FLAG: ::windows_core_sys::HRESULT = -2147211922i32;
+pub const VDS_E_INVALID_VOLUME_LENGTH: ::windows_core_sys::HRESULT = -2147211954i32;
+pub const VDS_E_INVALID_VOLUME_TYPE: ::windows_core_sys::HRESULT = -2147211899i32;
+pub const VDS_E_IO_ERROR: ::windows_core_sys::HRESULT = -2147212245i32;
+pub const VDS_E_ISCSI_CHAP_SECRET: ::windows_core_sys::HRESULT = -2147210998i32;
+pub const VDS_E_ISCSI_GET_IKE_INFO: ::windows_core_sys::HRESULT = -2147211003i32;
+pub const VDS_E_ISCSI_GROUP_PRESHARE_KEY: ::windows_core_sys::HRESULT = -2147210999i32;
+pub const VDS_E_ISCSI_INITIATOR_NODE_NAME: ::windows_core_sys::HRESULT = -2147211000i32;
+pub const VDS_E_ISCSI_LOGIN_FAILED: ::windows_core_sys::HRESULT = -2147211512i32;
+pub const VDS_E_ISCSI_LOGOUT_FAILED: ::windows_core_sys::HRESULT = -2147211511i32;
+pub const VDS_E_ISCSI_LOGOUT_INCOMPLETE: ::windows_core_sys::HRESULT = -2147211504i32;
+pub const VDS_E_ISCSI_SESSION_NOT_FOUND: ::windows_core_sys::HRESULT = -2147211510i32;
+pub const VDS_E_ISCSI_SET_IKE_INFO: ::windows_core_sys::HRESULT = -2147211002i32;
+pub const VDS_E_LAST_VALID_DISK: ::windows_core_sys::HRESULT = -2147211985i32;
+pub const VDS_E_LBN_REMAP_ENABLED_FLAG: ::windows_core_sys::HRESULT = -2147212202i32;
+pub const VDS_E_LDM_TIMEOUT: ::windows_core_sys::HRESULT = -2147212191i32;
+pub const VDS_E_LEGACY_VOLUME_FORMAT: ::windows_core_sys::HRESULT = -2147212230i32;
+pub const VDS_E_LOG_UPDATE: ::windows_core_sys::HRESULT = -2147211897i32;
+pub const VDS_E_LUN_DISK_FAILED: ::windows_core_sys::HRESULT = -2147211239i32;
+pub const VDS_E_LUN_DISK_MISSING: ::windows_core_sys::HRESULT = -2147211240i32;
+pub const VDS_E_LUN_DISK_NOT_READY: ::windows_core_sys::HRESULT = -2147211238i32;
+pub const VDS_E_LUN_DISK_NO_MEDIA: ::windows_core_sys::HRESULT = -2147211237i32;
+pub const VDS_E_LUN_DISK_READ_ONLY: ::windows_core_sys::HRESULT = -2147210978i32;
+pub const VDS_E_LUN_DYNAMIC: ::windows_core_sys::HRESULT = -2147210976i32;
+pub const VDS_E_LUN_DYNAMIC_OFFLINE: ::windows_core_sys::HRESULT = -2147210975i32;
+pub const VDS_E_LUN_FAILED: ::windows_core_sys::HRESULT = -2147211234i32;
+pub const VDS_E_LUN_NOT_READY: ::windows_core_sys::HRESULT = -2147211236i32;
+pub const VDS_E_LUN_OFFLINE: ::windows_core_sys::HRESULT = -2147211235i32;
+pub const VDS_E_LUN_SHRINK_GPT_HEADER: ::windows_core_sys::HRESULT = -2147210974i32;
+pub const VDS_E_LUN_UPDATE_DISK: ::windows_core_sys::HRESULT = -2147210977i32;
+pub const VDS_E_MAX_USABLE_MBR: ::windows_core_sys::HRESULT = -2147212184i32;
+pub const VDS_E_MEDIA_WRITE_PROTECTED: ::windows_core_sys::HRESULT = -2147212248i32;
+pub const VDS_E_MEMBER_IS_HEALTHY: ::windows_core_sys::HRESULT = -2147211964i32;
+pub const VDS_E_MEMBER_MISSING: ::windows_core_sys::HRESULT = -2147211958i32;
+pub const VDS_E_MEMBER_REGENERATING: ::windows_core_sys::HRESULT = -2147211963i32;
+pub const VDS_E_MEMBER_SIZE_INVALID: ::windows_core_sys::HRESULT = -2147212010i32;
+pub const VDS_E_MIGRATE_OPEN_VOLUME: ::windows_core_sys::HRESULT = -2147212228i32;
+pub const VDS_E_MIRROR_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147210973i32;
+pub const VDS_E_MISSING_DISK: ::windows_core_sys::HRESULT = -2147212204i32;
+pub const VDS_E_MULTIPLE_DISCOVERY_DOMAINS: ::windows_core_sys::HRESULT = -2147211506i32;
+pub const VDS_E_MULTIPLE_PACKS: ::windows_core_sys::HRESULT = -2147212001i32;
+pub const VDS_E_NAME_NOT_UNIQUE: ::windows_core_sys::HRESULT = -2147211519i32;
+pub const VDS_E_NON_CONTIGUOUS_DATA_PARTITIONS: ::windows_core_sys::HRESULT = -2147212229i32;
+pub const VDS_E_NOT_AN_UNALLOCATED_DISK: ::windows_core_sys::HRESULT = -2147212264i32;
+pub const VDS_E_NOT_ENOUGH_DRIVE: ::windows_core_sys::HRESULT = -2147212272i32;
+pub const VDS_E_NOT_ENOUGH_SPACE: ::windows_core_sys::HRESULT = -2147212273i32;
+pub const VDS_E_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147212288i32;
+pub const VDS_E_NO_DISCOVERY_DOMAIN: ::windows_core_sys::HRESULT = -2147211507i32;
+pub const VDS_E_NO_DISKS_FOUND: ::windows_core_sys::HRESULT = -2147212258i32;
+pub const VDS_E_NO_DISK_PATHNAME: ::windows_core_sys::HRESULT = -2147211505i32;
+pub const VDS_E_NO_DRIVELETTER_FLAG: ::windows_core_sys::HRESULT = -2147212201i32;
+pub const VDS_E_NO_EXTENTS_FOR_PLEX: ::windows_core_sys::HRESULT = -2147211980i32;
+pub const VDS_E_NO_EXTENTS_FOR_VOLUME: ::windows_core_sys::HRESULT = -2147212218i32;
+pub const VDS_E_NO_FREE_SPACE: ::windows_core_sys::HRESULT = -2147212233i32;
+pub const VDS_E_NO_HEALTHY_DISKS: ::windows_core_sys::HRESULT = -2147211977i32;
+pub const VDS_E_NO_IMPORT_TARGET: ::windows_core_sys::HRESULT = -2147211501i32;
+pub const VDS_E_NO_MAINTENANCE_MODE: ::windows_core_sys::HRESULT = -2147210750i32;
+pub const VDS_E_NO_MEDIA: ::windows_core_sys::HRESULT = -2147212270i32;
+pub const VDS_E_NO_PNP_DISK_ARRIVE: ::windows_core_sys::HRESULT = -2147212016i32;
+pub const VDS_E_NO_PNP_DISK_REMOVE: ::windows_core_sys::HRESULT = -2147212014i32;
+pub const VDS_E_NO_PNP_VOLUME_ARRIVE: ::windows_core_sys::HRESULT = -2147212015i32;
+pub const VDS_E_NO_PNP_VOLUME_REMOVE: ::windows_core_sys::HRESULT = -2147212013i32;
+pub const VDS_E_NO_POOL: ::windows_core_sys::HRESULT = -2147210752i32;
+pub const VDS_E_NO_POOL_CREATED: ::windows_core_sys::HRESULT = -2147210751i32;
+pub const VDS_E_NO_SOFTWARE_PROVIDERS_LOADED: ::windows_core_sys::HRESULT = -2147212032i32;
+pub const VDS_E_NO_VALID_LOG_COPIES: ::windows_core_sys::HRESULT = -2147211894i32;
+pub const VDS_E_NO_VOLUME_LAYOUT: ::windows_core_sys::HRESULT = -2147212030i32;
+pub const VDS_E_NO_VOLUME_PATHNAME: ::windows_core_sys::HRESULT = -2147211503i32;
+pub const VDS_E_NTFS_FORMAT_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147210988i32;
+pub const VDS_E_OBJECT_DELETED: ::windows_core_sys::HRESULT = -2147212277i32;
+pub const VDS_E_OBJECT_EXISTS: ::windows_core_sys::HRESULT = -2147212259i32;
+pub const VDS_E_OBJECT_NOT_FOUND: ::windows_core_sys::HRESULT = -2147212283i32;
+pub const VDS_E_OBJECT_OUT_OF_SYNC: ::windows_core_sys::HRESULT = -2147212205i32;
+pub const VDS_E_OBJECT_STATUS_FAILED: ::windows_core_sys::HRESULT = -2147212239i32;
+pub const VDS_E_OFFLINE_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147210970i32;
+pub const VDS_E_ONE_EXTENT_PER_DISK: ::windows_core_sys::HRESULT = -2147211983i32;
+pub const VDS_E_ONLINE_PACK_EXISTS: ::windows_core_sys::HRESULT = -2147212188i32;
+pub const VDS_E_OPERATION_CANCELED: ::windows_core_sys::HRESULT = -2147212275i32;
+pub const VDS_E_OPERATION_DENIED: ::windows_core_sys::HRESULT = -2147212278i32;
+pub const VDS_E_OPERATION_PENDING: ::windows_core_sys::HRESULT = -2147212279i32;
+pub const VDS_E_PACK_NAME_INVALID: ::windows_core_sys::HRESULT = -2147211962i32;
+pub const VDS_E_PACK_NOT_FOUND: ::windows_core_sys::HRESULT = -2147212208i32;
+pub const VDS_E_PACK_OFFLINE: ::windows_core_sys::HRESULT = -2147212220i32;
+pub const VDS_E_PACK_ONLINE: ::windows_core_sys::HRESULT = -2147212000i32;
+pub const VDS_E_PAGEFILE_DISK: ::windows_core_sys::HRESULT = -2147211252i32;
+pub const VDS_E_PARTITION_LDM: ::windows_core_sys::HRESULT = -2147211891i32;
+pub const VDS_E_PARTITION_LIMIT_REACHED: ::windows_core_sys::HRESULT = -2147212281i32;
+pub const VDS_E_PARTITION_MSR: ::windows_core_sys::HRESULT = -2147211892i32;
+pub const VDS_E_PARTITION_NON_DATA: ::windows_core_sys::HRESULT = -2147211907i32;
+pub const VDS_E_PARTITION_NOT_CYLINDER_ALIGNED: ::windows_core_sys::HRESULT = -2147211970i32;
+pub const VDS_E_PARTITION_NOT_EMPTY: ::windows_core_sys::HRESULT = -2147212280i32;
+pub const VDS_E_PARTITION_NOT_OEM: ::windows_core_sys::HRESULT = -2147211921i32;
+pub const VDS_E_PARTITION_OF_UNKNOWN_TYPE: ::windows_core_sys::HRESULT = -2147212231i32;
+pub const VDS_E_PARTITION_PROTECTED: ::windows_core_sys::HRESULT = -2147211920i32;
+pub const VDS_E_PARTITION_STYLE_MISMATCH: ::windows_core_sys::HRESULT = -2147211919i32;
+pub const VDS_E_PATH_NOT_FOUND: ::windows_core_sys::HRESULT = -2147212266i32;
+pub const VDS_E_PLEX_IS_HEALTHY: ::windows_core_sys::HRESULT = -2147211961i32;
+pub const VDS_E_PLEX_LAST_ACTIVE: ::windows_core_sys::HRESULT = -2147211960i32;
+pub const VDS_E_PLEX_MISSING: ::windows_core_sys::HRESULT = -2147211959i32;
+pub const VDS_E_PLEX_NOT_LOADED_TO_CACHE: ::windows_core_sys::HRESULT = -2147211893i32;
+pub const VDS_E_PLEX_REGENERATING: ::windows_core_sys::HRESULT = -2147211957i32;
+pub const VDS_E_PLEX_SIZE_INVALID: ::windows_core_sys::HRESULT = -2147211981i32;
+pub const VDS_E_PROVIDER_CACHE_CORRUPT: ::windows_core_sys::HRESULT = -2147212257i32;
+pub const VDS_E_PROVIDER_CACHE_OUTOFSYNC: ::windows_core_sys::HRESULT = -2147211502i32;
+pub const VDS_E_PROVIDER_EXITING: ::windows_core_sys::HRESULT = -2147212012i32;
+pub const VDS_E_PROVIDER_FAILURE: ::windows_core_sys::HRESULT = -2147212222i32;
+pub const VDS_E_PROVIDER_INITIALIZATION_FAILED: ::windows_core_sys::HRESULT = -2147212260i32;
+pub const VDS_E_PROVIDER_INTERNAL_ERROR: ::windows_core_sys::HRESULT = -2147211918i32;
+pub const VDS_E_PROVIDER_TYPE_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147212214i32;
+pub const VDS_E_PROVIDER_VOL_DEVICE_NAME_NOT_FOUND: ::windows_core_sys::HRESULT = -2147212254i32;
+pub const VDS_E_PROVIDER_VOL_OPEN: ::windows_core_sys::HRESULT = -2147212253i32;
+pub const VDS_E_RAID5_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147210972i32;
+pub const VDS_E_READONLY: ::windows_core_sys::HRESULT = -2147211900i32;
+pub const VDS_E_REBOOT_REQUIRED: ::windows_core_sys::HRESULT = -2147210996i32;
+pub const VDS_E_REFS_FORMAT_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147210746i32;
+pub const VDS_E_REPAIR_VOLUMESTATE: ::windows_core_sys::HRESULT = -2147212192i32;
+pub const VDS_E_REQUIRES_CONTIGUOUS_DISK_SPACE: ::windows_core_sys::HRESULT = -2147212224i32;
+pub const VDS_E_RETRY: ::windows_core_sys::HRESULT = -2147212189i32;
+pub const VDS_E_REVERT_ON_CLOSE: ::windows_core_sys::HRESULT = -2147212200i32;
+pub const VDS_E_REVERT_ON_CLOSE_MISMATCH: ::windows_core_sys::HRESULT = -2147212190i32;
+pub const VDS_E_REVERT_ON_CLOSE_SET: ::windows_core_sys::HRESULT = -2147212199i32;
+pub const VDS_E_SECTOR_SIZE_ERROR: ::windows_core_sys::HRESULT = -2147211229i32;
+pub const VDS_E_SECURITY_INCOMPLETELY_SET: ::windows_core_sys::HRESULT = -2147211515i32;
+pub const VDS_E_SET_SAN_POLICY: ::windows_core_sys::HRESULT = -2147211258i32;
+pub const VDS_E_SET_TUNNEL_MODE_OUTER_ADDRESS: ::windows_core_sys::HRESULT = -2147211004i32;
+pub const VDS_E_SHRINK_DIRTY_VOLUME: ::windows_core_sys::HRESULT = -2147211878i32;
+pub const VDS_E_SHRINK_EXTEND_UNALIGNED: ::windows_core_sys::HRESULT = -2147210496i32;
+pub const VDS_E_SHRINK_IN_PROGRESS: ::windows_core_sys::HRESULT = -2147211887i32;
+pub const VDS_E_SHRINK_LUN_NOT_UNMASKED: ::windows_core_sys::HRESULT = -2147210979i32;
+pub const VDS_E_SHRINK_OVER_DATA: ::windows_core_sys::HRESULT = -2147211242i32;
+pub const VDS_E_SHRINK_SIZE_LESS_THAN_MIN: ::windows_core_sys::HRESULT = -2147211917i32;
+pub const VDS_E_SHRINK_SIZE_TOO_BIG: ::windows_core_sys::HRESULT = -2147211916i32;
+pub const VDS_E_SHRINK_UNKNOWN_FILESYSTEM: ::windows_core_sys::HRESULT = -2147210966i32;
+pub const VDS_E_SHRINK_USER_CANCELLED: ::windows_core_sys::HRESULT = -2147211879i32;
+pub const VDS_E_SOURCE_IS_TARGET_PACK: ::windows_core_sys::HRESULT = -2147211992i32;
+pub const VDS_E_SUBSYSTEM_ID_IS_NULL: ::windows_core_sys::HRESULT = -2147211001i32;
+pub const VDS_E_SYSTEM_DISK: ::windows_core_sys::HRESULT = -2147211247i32;
+pub const VDS_E_TARGET_PACK_NOT_EMPTY: ::windows_core_sys::HRESULT = -2147212003i32;
+pub const VDS_E_TARGET_PORTAL_NOT_FOUND: ::windows_core_sys::HRESULT = -2147211007i32;
+pub const VDS_E_TARGET_SPECIFIC_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147211514i32;
+pub const VDS_E_TIMEOUT: ::windows_core_sys::HRESULT = -2147212193i32;
+pub const VDS_E_UNABLE_TO_FIND_BOOT_DISK: ::windows_core_sys::HRESULT = -2147211261i32;
+pub const VDS_E_UNABLE_TO_FIND_SYSTEM_DISK: ::windows_core_sys::HRESULT = -2147211249i32;
+pub const VDS_E_UNEXPECTED_DISK_LAYOUT_CHANGE: ::windows_core_sys::HRESULT = -2147211955i32;
+pub const VDS_E_UNRECOVERABLE_ERROR: ::windows_core_sys::HRESULT = -2147212263i32;
+pub const VDS_E_UNRECOVERABLE_PROVIDER_ERROR: ::windows_core_sys::HRESULT = -2147211915i32;
+pub const VDS_E_VDISK_INVALID_OP_STATE: ::windows_core_sys::HRESULT = -2147210982i32;
+pub const VDS_E_VDISK_NOT_OPEN: ::windows_core_sys::HRESULT = -2147210983i32;
+pub const VDS_E_VDISK_PATHNAME_INVALID: ::windows_core_sys::HRESULT = -2147210969i32;
+pub const VDS_E_VD_ALREADY_ATTACHED: ::windows_core_sys::HRESULT = -2147210956i32;
+pub const VDS_E_VD_ALREADY_COMPACTING: ::windows_core_sys::HRESULT = -2147210958i32;
+pub const VDS_E_VD_ALREADY_DETACHED: ::windows_core_sys::HRESULT = -2147210955i32;
+pub const VDS_E_VD_ALREADY_MERGING: ::windows_core_sys::HRESULT = -2147210957i32;
+pub const VDS_E_VD_DISK_ALREADY_EXPANDING: ::windows_core_sys::HRESULT = -2147210959i32;
+pub const VDS_E_VD_DISK_ALREADY_OPEN: ::windows_core_sys::HRESULT = -2147210960i32;
+pub const VDS_E_VD_DISK_IS_COMPACTING: ::windows_core_sys::HRESULT = -2147210963i32;
+pub const VDS_E_VD_DISK_IS_EXPANDING: ::windows_core_sys::HRESULT = -2147210964i32;
+pub const VDS_E_VD_DISK_IS_MERGING: ::windows_core_sys::HRESULT = -2147210962i32;
+pub const VDS_E_VD_DISK_NOT_OPEN: ::windows_core_sys::HRESULT = -2147210965i32;
+pub const VDS_E_VD_IS_ATTACHED: ::windows_core_sys::HRESULT = -2147210961i32;
+pub const VDS_E_VD_IS_BEING_ATTACHED: ::windows_core_sys::HRESULT = -2147210953i32;
+pub const VDS_E_VD_IS_BEING_DETACHED: ::windows_core_sys::HRESULT = -2147210952i32;
+pub const VDS_E_VD_NOT_ATTACHED_READONLY: ::windows_core_sys::HRESULT = -2147210954i32;
+pub const VDS_E_VOLUME_DISK_COUNT_MAX_EXCEEDED: ::windows_core_sys::HRESULT = -2147211991i32;
+pub const VDS_E_VOLUME_EXTEND_FVE: ::windows_core_sys::HRESULT = -2147211230i32;
+pub const VDS_E_VOLUME_EXTEND_FVE_CORRUPT: ::windows_core_sys::HRESULT = -2147211232i32;
+pub const VDS_E_VOLUME_EXTEND_FVE_LOCKED: ::windows_core_sys::HRESULT = -2147211233i32;
+pub const VDS_E_VOLUME_EXTEND_FVE_RECOVERY: ::windows_core_sys::HRESULT = -2147211231i32;
+pub const VDS_E_VOLUME_GUID_PATHNAME_NOT_ALLOWED: ::windows_core_sys::HRESULT = -2147210995i32;
+pub const VDS_E_VOLUME_HAS_PATH: ::windows_core_sys::HRESULT = -2147212194i32;
+pub const VDS_E_VOLUME_HIDDEN: ::windows_core_sys::HRESULT = -2147211914i32;
+pub const VDS_E_VOLUME_INCOMPLETE: ::windows_core_sys::HRESULT = -2147212238i32;
+pub const VDS_E_VOLUME_INVALID_NAME: ::windows_core_sys::HRESULT = -2147212025i32;
+pub const VDS_E_VOLUME_LENGTH_NOT_SECTOR_SIZE_MULTIPLE: ::windows_core_sys::HRESULT = -2147211953i32;
+pub const VDS_E_VOLUME_MIRRORED: ::windows_core_sys::HRESULT = -2147211896i32;
+pub const VDS_E_VOLUME_NOT_A_MIRROR: ::windows_core_sys::HRESULT = -2147212219i32;
+pub const VDS_E_VOLUME_NOT_FOUND_IN_PACK: ::windows_core_sys::HRESULT = -2147211908i32;
+pub const VDS_E_VOLUME_NOT_HEALTHY: ::windows_core_sys::HRESULT = -2147212226i32;
+pub const VDS_E_VOLUME_NOT_MOUNTED: ::windows_core_sys::HRESULT = -2147212209i32;
+pub const VDS_E_VOLUME_NOT_ONLINE: ::windows_core_sys::HRESULT = -2147212227i32;
+pub const VDS_E_VOLUME_NOT_RETAINED: ::windows_core_sys::HRESULT = -2147211952i32;
+pub const VDS_E_VOLUME_ON_DISK: ::windows_core_sys::HRESULT = -2147212005i32;
+pub const VDS_E_VOLUME_PERMANENTLY_DISMOUNTED: ::windows_core_sys::HRESULT = -2147212195i32;
+pub const VDS_E_VOLUME_REGENERATING: ::windows_core_sys::HRESULT = -2147211904i32;
+pub const VDS_E_VOLUME_RETAINED: ::windows_core_sys::HRESULT = -2147211951i32;
+pub const VDS_E_VOLUME_SHRINK_FVE: ::windows_core_sys::HRESULT = -2147211243i32;
+pub const VDS_E_VOLUME_SHRINK_FVE_CORRUPT: ::windows_core_sys::HRESULT = -2147211245i32;
+pub const VDS_E_VOLUME_SHRINK_FVE_LOCKED: ::windows_core_sys::HRESULT = -2147211246i32;
+pub const VDS_E_VOLUME_SHRINK_FVE_RECOVERY: ::windows_core_sys::HRESULT = -2147211244i32;
+pub const VDS_E_VOLUME_SIMPLE_SPANNED: ::windows_core_sys::HRESULT = -2147211895i32;
+pub const VDS_E_VOLUME_SPANS_DISKS: ::windows_core_sys::HRESULT = -2147212225i32;
+pub const VDS_E_VOLUME_SYNCHRONIZING: ::windows_core_sys::HRESULT = -2147211905i32;
+pub const VDS_E_VOLUME_TEMPORARILY_DISMOUNTED: ::windows_core_sys::HRESULT = -2147212196i32;
+pub const VDS_E_VOLUME_TOO_BIG: ::windows_core_sys::HRESULT = -2147212243i32;
+pub const VDS_E_VOLUME_TOO_SMALL: ::windows_core_sys::HRESULT = -2147212244i32;
 #[repr(C)]
 pub struct VDS_FILE_SYSTEM_NOTIFICATION {
     pub ulEvent: VDS_NF_FILE_SYSTEM,
-    pub volumeId: ::windows_sys_core::GUID,
+    pub volumeId: ::windows_core_sys::GUID,
     pub dwPercentCompleted: u32,
 }
 impl ::core::marker::Copy for VDS_FILE_SYSTEM_NOTIFICATION {}
@@ -692,7 +692,7 @@ pub const VDS_FST_CSVFS: VDS_FILE_SYSTEM_TYPE = 8i32;
 pub const VDS_FST_REFS: VDS_FILE_SYSTEM_TYPE = 9i32;
 #[repr(C)]
 pub struct VDS_HBAPORT_PROP {
-    pub id: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
     pub wwnNode: VDS_WWN,
     pub wwnPort: VDS_WWN,
     pub r#type: VDS_HBAPORT_TYPE,
@@ -896,8 +896,8 @@ pub const VDS_IAT_CHAP: VDS_ISCSI_AUTH_TYPE = 1i32;
 pub const VDS_IAT_MUTUAL_CHAP: VDS_ISCSI_AUTH_TYPE = 2i32;
 #[repr(C)]
 pub struct VDS_ISCSI_INITIATOR_ADAPTER_PROP {
-    pub id: ::windows_sys_core::GUID,
-    pub pwszName: ::windows_sys_core::PWSTR,
+    pub id: ::windows_core_sys::GUID,
+    pub pwszName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for VDS_ISCSI_INITIATOR_ADAPTER_PROP {}
 impl ::core::clone::Clone for VDS_ISCSI_INITIATOR_ADAPTER_PROP {
@@ -907,7 +907,7 @@ impl ::core::clone::Clone for VDS_ISCSI_INITIATOR_ADAPTER_PROP {
 }
 #[repr(C)]
 pub struct VDS_ISCSI_INITIATOR_PORTAL_PROP {
-    pub id: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
     pub address: VDS_IPADDRESS,
     pub ulPortIndex: u32,
 }
@@ -945,7 +945,7 @@ pub const VDS_ILT_PERSISTENT: VDS_ISCSI_LOGIN_TYPE = 1i32;
 pub const VDS_ILT_BOOT: VDS_ISCSI_LOGIN_TYPE = 2i32;
 #[repr(C)]
 pub struct VDS_ISCSI_PORTALGROUP_PROP {
-    pub id: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
     pub tag: u16,
 }
 impl ::core::marker::Copy for VDS_ISCSI_PORTALGROUP_PROP {}
@@ -956,7 +956,7 @@ impl ::core::clone::Clone for VDS_ISCSI_PORTALGROUP_PROP {
 }
 #[repr(C)]
 pub struct VDS_ISCSI_PORTAL_PROP {
-    pub id: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
     pub address: VDS_IPADDRESS,
     pub status: VDS_ISCSI_PORTAL_STATUS,
 }
@@ -986,9 +986,9 @@ impl ::core::clone::Clone for VDS_ISCSI_SHARED_SECRET {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct VDS_ISCSI_TARGET_PROP {
-    pub id: ::windows_sys_core::GUID,
-    pub pwszIscsiName: ::windows_sys_core::PWSTR,
-    pub pwszFriendlyName: ::windows_sys_core::PWSTR,
+    pub id: ::windows_core_sys::GUID,
+    pub pwszIscsiName: ::windows_core_sys::PWSTR,
+    pub pwszFriendlyName: ::windows_core_sys::PWSTR,
     pub bChapEnabled: super::super::Foundation::BOOL,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1030,7 +1030,7 @@ pub struct VDS_LUN_INFORMATION {
     pub m_szProductId: *mut u8,
     pub m_szProductRevision: *mut u8,
     pub m_szSerialNumber: *mut u8,
-    pub m_diskSignature: ::windows_sys_core::GUID,
+    pub m_diskSignature: ::windows_core_sys::GUID,
     pub m_deviceIdDescriptor: VDS_STORAGE_DEVICE_ID_DESCRIPTOR,
     pub m_cInterconnects: u32,
     pub m_rgInterconnects: *mut VDS_INTERCONNECT,
@@ -1046,7 +1046,7 @@ impl ::core::clone::Clone for VDS_LUN_INFORMATION {
 #[repr(C)]
 pub struct VDS_LUN_NOTIFICATION {
     pub ulEvent: VDS_NF_LUN,
-    pub LunId: ::windows_sys_core::GUID,
+    pub LunId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_LUN_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_LUN_NOTIFICATION {
@@ -1058,7 +1058,7 @@ pub type VDS_LUN_PLEX_FLAG = i32;
 pub const VDS_LPF_LBN_REMAP_ENABLED: VDS_LUN_PLEX_FLAG = 1i32;
 #[repr(C)]
 pub struct VDS_LUN_PLEX_PROP {
-    pub id: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
     pub ullSize: u64,
     pub r#type: VDS_LUN_PLEX_TYPE,
     pub status: VDS_LUN_PLEX_STATUS,
@@ -1101,11 +1101,11 @@ pub const VDS_LPT_RAID53: VDS_LUN_PLEX_TYPE = 28i32;
 pub const VDS_LPT_RAID60: VDS_LUN_PLEX_TYPE = 29i32;
 #[repr(C)]
 pub struct VDS_LUN_PROP {
-    pub id: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
     pub ullSize: u64,
-    pub pwszFriendlyName: ::windows_sys_core::PWSTR,
-    pub pwszIdentification: ::windows_sys_core::PWSTR,
-    pub pwszUnmaskingList: ::windows_sys_core::PWSTR,
+    pub pwszFriendlyName: ::windows_core_sys::PWSTR,
+    pub pwszIdentification: ::windows_core_sys::PWSTR,
+    pub pwszUnmaskingList: ::windows_core_sys::PWSTR,
     pub ulFlags: u32,
     pub r#type: VDS_LUN_TYPE,
     pub status: VDS_LUN_STATUS,
@@ -1160,7 +1160,7 @@ pub const Ping: VDS_MAINTENANCE_OPERATION = 5i32;
 #[repr(C)]
 pub struct VDS_MOUNT_POINT_NOTIFICATION {
     pub ulEvent: u32,
-    pub volumeId: ::windows_sys_core::GUID,
+    pub volumeId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_MOUNT_POINT_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_MOUNT_POINT_NOTIFICATION {
@@ -1303,7 +1303,7 @@ pub const VDS_OT_OPEN_VDISK: VDS_OBJECT_TYPE = 201i32;
 #[repr(C)]
 pub struct VDS_PACK_NOTIFICATION {
     pub ulEvent: VDS_NF_PACK,
-    pub packId: ::windows_sys_core::GUID,
+    pub packId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_PACK_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_PACK_NOTIFICATION {
@@ -1314,7 +1314,7 @@ impl ::core::clone::Clone for VDS_PACK_NOTIFICATION {
 #[repr(C)]
 pub struct VDS_PARTITION_NOTIFICATION {
     pub ulEvent: u32,
-    pub diskId: ::windows_sys_core::GUID,
+    pub diskId: ::windows_core_sys::GUID,
     pub ullOffset: u64,
 }
 impl ::core::marker::Copy for VDS_PARTITION_NOTIFICATION {}
@@ -1351,8 +1351,8 @@ impl ::core::clone::Clone for VDS_PATH_INFO {
 }
 #[repr(C)]
 pub union VDS_PATH_INFO_0 {
-    pub controllerPortId: ::windows_sys_core::GUID,
-    pub targetPortalId: ::windows_sys_core::GUID,
+    pub controllerPortId: ::windows_core_sys::GUID,
+    pub targetPortalId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_PATH_INFO_0 {}
 impl ::core::clone::Clone for VDS_PATH_INFO_0 {
@@ -1362,8 +1362,8 @@ impl ::core::clone::Clone for VDS_PATH_INFO_0 {
 }
 #[repr(C)]
 pub union VDS_PATH_INFO_1 {
-    pub hbaPortId: ::windows_sys_core::GUID,
-    pub initiatorAdapterId: ::windows_sys_core::GUID,
+    pub hbaPortId: ::windows_core_sys::GUID,
+    pub initiatorAdapterId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_PATH_INFO_1 {}
 impl ::core::clone::Clone for VDS_PATH_INFO_1 {
@@ -1408,7 +1408,7 @@ pub struct VDS_POOL_ATTRIBUTES {
     pub ullAttributeMask: u64,
     pub raidType: VDS_RAID_TYPE,
     pub busType: VDS_STORAGE_BUS_TYPE,
-    pub pwszIntendedUsage: ::windows_sys_core::PWSTR,
+    pub pwszIntendedUsage: ::windows_core_sys::PWSTR,
     pub bSpinDown: super::super::Foundation::BOOL,
     pub bIsThinProvisioned: super::super::Foundation::BOOL,
     pub ullProvisionedSpace: u64,
@@ -1482,8 +1482,8 @@ pub const VDS_POOL_ATTRIB_STRIPE_SIZE_MIN: i32 = 8192i32;
 pub const VDS_POOL_ATTRIB_THIN_PROVISION: i32 = 8i32;
 #[repr(C)]
 pub struct VDS_POOL_CUSTOM_ATTRIBUTES {
-    pub pwszName: ::windows_sys_core::PWSTR,
-    pub pwszValue: ::windows_sys_core::PWSTR,
+    pub pwszName: ::windows_core_sys::PWSTR,
+    pub pwszValue: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for VDS_POOL_CUSTOM_ATTRIBUTES {}
 impl ::core::clone::Clone for VDS_POOL_CUSTOM_ATTRIBUTES {
@@ -1494,7 +1494,7 @@ impl ::core::clone::Clone for VDS_POOL_CUSTOM_ATTRIBUTES {
 #[repr(C)]
 pub struct VDS_PORTAL_GROUP_NOTIFICATION {
     pub ulEvent: u32,
-    pub portalGroupId: ::windows_sys_core::GUID,
+    pub portalGroupId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_PORTAL_GROUP_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_PORTAL_GROUP_NOTIFICATION {
@@ -1505,7 +1505,7 @@ impl ::core::clone::Clone for VDS_PORTAL_GROUP_NOTIFICATION {
 #[repr(C)]
 pub struct VDS_PORTAL_NOTIFICATION {
     pub ulEvent: u32,
-    pub portalId: ::windows_sys_core::GUID,
+    pub portalId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_PORTAL_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_PORTAL_NOTIFICATION {
@@ -1516,7 +1516,7 @@ impl ::core::clone::Clone for VDS_PORTAL_NOTIFICATION {
 #[repr(C)]
 pub struct VDS_PORT_NOTIFICATION {
     pub ulEvent: VDS_NF_PORT,
-    pub portId: ::windows_sys_core::GUID,
+    pub portId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_PORT_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_PORT_NOTIFICATION {
@@ -1526,9 +1526,9 @@ impl ::core::clone::Clone for VDS_PORT_NOTIFICATION {
 }
 #[repr(C)]
 pub struct VDS_PORT_PROP {
-    pub id: ::windows_sys_core::GUID,
-    pub pwszFriendlyName: ::windows_sys_core::PWSTR,
-    pub pwszIdentification: ::windows_sys_core::PWSTR,
+    pub id: ::windows_core_sys::GUID,
+    pub pwszFriendlyName: ::windows_core_sys::PWSTR,
+    pub pwszIdentification: ::windows_core_sys::PWSTR,
     pub status: VDS_PORT_STATUS,
 }
 impl ::core::marker::Copy for VDS_PORT_PROP {}
@@ -1565,10 +1565,10 @@ pub const VDS_LBF_LEAST_BLOCKS: VDS_PROVIDER_LBSUPPORT_FLAG = 32i32;
 pub const VDS_LBF_VENDOR_SPECIFIC: VDS_PROVIDER_LBSUPPORT_FLAG = 64i32;
 #[repr(C)]
 pub struct VDS_PROVIDER_PROP {
-    pub id: ::windows_sys_core::GUID,
-    pub pwszName: ::windows_sys_core::PWSTR,
-    pub guidVersionId: ::windows_sys_core::GUID,
-    pub pwszVersion: ::windows_sys_core::PWSTR,
+    pub id: ::windows_core_sys::GUID,
+    pub pwszName: ::windows_core_sys::PWSTR,
+    pub guidVersionId: ::windows_core_sys::GUID,
+    pub pwszVersion: ::windows_core_sys::PWSTR,
     pub r#type: VDS_PROVIDER_TYPE,
     pub ulFlags: u32,
     pub ulStripeSizeFlags: u32,
@@ -1689,7 +1689,7 @@ pub const VDSStorageIdTypeScsiNameString: VDS_STORAGE_IDENTIFIER_TYPE = 8i32;
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct VDS_STORAGE_POOL_DRIVE_EXTENT {
-    pub id: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
     pub ullSize: u64,
     pub bUsed: super::super::Foundation::BOOL,
 }
@@ -1703,12 +1703,12 @@ impl ::core::clone::Clone for VDS_STORAGE_POOL_DRIVE_EXTENT {
 }
 #[repr(C)]
 pub struct VDS_STORAGE_POOL_PROP {
-    pub id: ::windows_sys_core::GUID,
+    pub id: ::windows_core_sys::GUID,
     pub status: VDS_STORAGE_POOL_STATUS,
     pub health: VDS_HEALTH,
     pub r#type: VDS_STORAGE_POOL_TYPE,
-    pub pwszName: ::windows_sys_core::PWSTR,
-    pub pwszDescription: ::windows_sys_core::PWSTR,
+    pub pwszName: ::windows_core_sys::PWSTR,
+    pub pwszDescription: ::windows_core_sys::PWSTR,
     pub ullTotalConsumedSpace: u64,
     pub ullTotalManagedSpace: u64,
     pub ullRemainingFreeSpace: u64,
@@ -1756,7 +1756,7 @@ pub const VDS_SF_CONSISTENCY_CHECK_CAPABLE: VDS_SUB_SYSTEM_FLAG = 16777216i32;
 #[repr(C)]
 pub struct VDS_SUB_SYSTEM_NOTIFICATION {
     pub ulEvent: u32,
-    pub subSystemId: ::windows_sys_core::GUID,
+    pub subSystemId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_SUB_SYSTEM_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_SUB_SYSTEM_NOTIFICATION {
@@ -1766,9 +1766,9 @@ impl ::core::clone::Clone for VDS_SUB_SYSTEM_NOTIFICATION {
 }
 #[repr(C)]
 pub struct VDS_SUB_SYSTEM_PROP {
-    pub id: ::windows_sys_core::GUID,
-    pub pwszFriendlyName: ::windows_sys_core::PWSTR,
-    pub pwszIdentification: ::windows_sys_core::PWSTR,
+    pub id: ::windows_core_sys::GUID,
+    pub pwszFriendlyName: ::windows_core_sys::PWSTR,
+    pub pwszIdentification: ::windows_core_sys::PWSTR,
     pub ulFlags: u32,
     pub ulStripeSizeFlags: u32,
     pub status: VDS_SUB_SYSTEM_STATUS,
@@ -1786,9 +1786,9 @@ impl ::core::clone::Clone for VDS_SUB_SYSTEM_PROP {
 }
 #[repr(C)]
 pub struct VDS_SUB_SYSTEM_PROP2 {
-    pub id: ::windows_sys_core::GUID,
-    pub pwszFriendlyName: ::windows_sys_core::PWSTR,
-    pub pwszIdentification: ::windows_sys_core::PWSTR,
+    pub id: ::windows_core_sys::GUID,
+    pub pwszFriendlyName: ::windows_core_sys::PWSTR,
+    pub pwszIdentification: ::windows_core_sys::PWSTR,
     pub ulFlags: u32,
     pub ulStripeSizeFlags: u32,
     pub ulSupportedRaidTypeFlags: u32,
@@ -1830,44 +1830,44 @@ pub const VDS_SF_SUPPORTS_RAID51_LUNS: VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG =
 pub const VDS_SF_SUPPORTS_RAID53_LUNS: VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG = 8192i32;
 pub const VDS_SF_SUPPORTS_RAID60_LUNS: VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG = 16384i32;
 pub const VDS_SF_SUPPORTS_RAID61_LUNS: VDS_SUB_SYSTEM_SUPPORTED_RAID_TYPE_FLAG = 32768i32;
-pub const VDS_S_ACCESS_PATH_NOT_DELETED: ::windows_sys_core::HRESULT = 279108i32;
-pub const VDS_S_ALREADY_EXISTS: ::windows_sys_core::HRESULT = 272148i32;
-pub const VDS_S_BOOT_PARTITION_NUMBER_CHANGE: ::windows_sys_core::HRESULT = 271414i32;
-pub const VDS_S_DEFAULT_PLEX_MEMBER_IDS: ::windows_sys_core::HRESULT = 271640i32;
-pub const VDS_S_DISK_DISMOUNT_FAILED: ::windows_sys_core::HRESULT = 272393i32;
-pub const VDS_S_DISK_IS_MISSING: ::windows_sys_core::HRESULT = 271624i32;
-pub const VDS_S_DISK_MOUNT_FAILED: ::windows_sys_core::HRESULT = 272392i32;
-pub const VDS_S_DISK_PARTIALLY_CLEANED: ::windows_sys_core::HRESULT = 271386i32;
-pub const VDS_S_DISMOUNT_FAILED: ::windows_sys_core::HRESULT = 271735i32;
-pub const VDS_S_EXTEND_FILE_SYSTEM_FAILED: ::windows_sys_core::HRESULT = 271461i32;
-pub const VDS_S_FS_LOCK: ::windows_sys_core::HRESULT = 271747i32;
-pub const VDS_S_GPT_BOOT_MIRRORED_TO_MBR: ::windows_sys_core::HRESULT = -2147212183i32;
-pub const VDS_S_IA64_BOOT_MIRRORED_TO_MBR: ::windows_sys_core::HRESULT = 271450i32;
-pub const VDS_S_IN_PROGRESS: ::windows_sys_core::HRESULT = 271437i32;
-pub const VDS_S_ISCSI_LOGIN_ALREAD_EXISTS: ::windows_sys_core::HRESULT = 272386i32;
-pub const VDS_S_ISCSI_PERSISTENT_LOGIN_MAY_NOT_BE_REMOVED: ::windows_sys_core::HRESULT = 272385i32;
-pub const VDS_S_ISCSI_SESSION_NOT_FOUND_PERSISTENT_LOGIN_REMOVED: ::windows_sys_core::HRESULT = 272384i32;
-pub const VDS_S_MBR_BOOT_MIRRORED_TO_GPT: ::windows_sys_core::HRESULT = 271463i32;
-pub const VDS_S_NAME_TRUNCATED: ::windows_sys_core::HRESULT = 272128i32;
-pub const VDS_S_NONCONFORMANT_PARTITION_INFO: ::windows_sys_core::HRESULT = 271626i32;
-pub const VDS_S_NO_NOTIFICATION: ::windows_sys_core::HRESULT = 271639i32;
-pub const VDS_S_PLEX_NOT_LOADED_TO_CACHE: ::windows_sys_core::HRESULT = 271755i32;
-pub const VDS_S_PROPERTIES_INCOMPLETE: ::windows_sys_core::HRESULT = 272149i32;
-pub const VDS_S_PROVIDER_ERROR_LOADING_CACHE: ::windows_sys_core::HRESULT = 271393i32;
-pub const VDS_S_REMOUNT_FAILED: ::windows_sys_core::HRESULT = 271736i32;
-pub const VDS_S_RESYNC_NOTIFICATION_TASK_FAILED: ::windows_sys_core::HRESULT = 271738i32;
-pub const VDS_S_STATUSES_INCOMPLETELY_SET: ::windows_sys_core::HRESULT = 272130i32;
-pub const VDS_S_SYSTEM_PARTITION: ::windows_sys_core::HRESULT = 271630i32;
-pub const VDS_S_UNABLE_TO_GET_GPT_ATTRIBUTES: ::windows_sys_core::HRESULT = 271451i32;
-pub const VDS_S_UPDATE_BOOTFILE_FAILED: ::windows_sys_core::HRESULT = 271412i32;
-pub const VDS_S_VOLUME_COMPRESS_FAILED: ::windows_sys_core::HRESULT = 271427i32;
-pub const VDS_S_VSS_FLUSH_AND_HOLD_WRITES: ::windows_sys_core::HRESULT = 271745i32;
-pub const VDS_S_VSS_RELEASE_WRITES: ::windows_sys_core::HRESULT = 271746i32;
-pub const VDS_S_WINPE_BOOTENTRY: ::windows_sys_core::HRESULT = 271758i32;
+pub const VDS_S_ACCESS_PATH_NOT_DELETED: ::windows_core_sys::HRESULT = 279108i32;
+pub const VDS_S_ALREADY_EXISTS: ::windows_core_sys::HRESULT = 272148i32;
+pub const VDS_S_BOOT_PARTITION_NUMBER_CHANGE: ::windows_core_sys::HRESULT = 271414i32;
+pub const VDS_S_DEFAULT_PLEX_MEMBER_IDS: ::windows_core_sys::HRESULT = 271640i32;
+pub const VDS_S_DISK_DISMOUNT_FAILED: ::windows_core_sys::HRESULT = 272393i32;
+pub const VDS_S_DISK_IS_MISSING: ::windows_core_sys::HRESULT = 271624i32;
+pub const VDS_S_DISK_MOUNT_FAILED: ::windows_core_sys::HRESULT = 272392i32;
+pub const VDS_S_DISK_PARTIALLY_CLEANED: ::windows_core_sys::HRESULT = 271386i32;
+pub const VDS_S_DISMOUNT_FAILED: ::windows_core_sys::HRESULT = 271735i32;
+pub const VDS_S_EXTEND_FILE_SYSTEM_FAILED: ::windows_core_sys::HRESULT = 271461i32;
+pub const VDS_S_FS_LOCK: ::windows_core_sys::HRESULT = 271747i32;
+pub const VDS_S_GPT_BOOT_MIRRORED_TO_MBR: ::windows_core_sys::HRESULT = -2147212183i32;
+pub const VDS_S_IA64_BOOT_MIRRORED_TO_MBR: ::windows_core_sys::HRESULT = 271450i32;
+pub const VDS_S_IN_PROGRESS: ::windows_core_sys::HRESULT = 271437i32;
+pub const VDS_S_ISCSI_LOGIN_ALREAD_EXISTS: ::windows_core_sys::HRESULT = 272386i32;
+pub const VDS_S_ISCSI_PERSISTENT_LOGIN_MAY_NOT_BE_REMOVED: ::windows_core_sys::HRESULT = 272385i32;
+pub const VDS_S_ISCSI_SESSION_NOT_FOUND_PERSISTENT_LOGIN_REMOVED: ::windows_core_sys::HRESULT = 272384i32;
+pub const VDS_S_MBR_BOOT_MIRRORED_TO_GPT: ::windows_core_sys::HRESULT = 271463i32;
+pub const VDS_S_NAME_TRUNCATED: ::windows_core_sys::HRESULT = 272128i32;
+pub const VDS_S_NONCONFORMANT_PARTITION_INFO: ::windows_core_sys::HRESULT = 271626i32;
+pub const VDS_S_NO_NOTIFICATION: ::windows_core_sys::HRESULT = 271639i32;
+pub const VDS_S_PLEX_NOT_LOADED_TO_CACHE: ::windows_core_sys::HRESULT = 271755i32;
+pub const VDS_S_PROPERTIES_INCOMPLETE: ::windows_core_sys::HRESULT = 272149i32;
+pub const VDS_S_PROVIDER_ERROR_LOADING_CACHE: ::windows_core_sys::HRESULT = 271393i32;
+pub const VDS_S_REMOUNT_FAILED: ::windows_core_sys::HRESULT = 271736i32;
+pub const VDS_S_RESYNC_NOTIFICATION_TASK_FAILED: ::windows_core_sys::HRESULT = 271738i32;
+pub const VDS_S_STATUSES_INCOMPLETELY_SET: ::windows_core_sys::HRESULT = 272130i32;
+pub const VDS_S_SYSTEM_PARTITION: ::windows_core_sys::HRESULT = 271630i32;
+pub const VDS_S_UNABLE_TO_GET_GPT_ATTRIBUTES: ::windows_core_sys::HRESULT = 271451i32;
+pub const VDS_S_UPDATE_BOOTFILE_FAILED: ::windows_core_sys::HRESULT = 271412i32;
+pub const VDS_S_VOLUME_COMPRESS_FAILED: ::windows_core_sys::HRESULT = 271427i32;
+pub const VDS_S_VSS_FLUSH_AND_HOLD_WRITES: ::windows_core_sys::HRESULT = 271745i32;
+pub const VDS_S_VSS_RELEASE_WRITES: ::windows_core_sys::HRESULT = 271746i32;
+pub const VDS_S_WINPE_BOOTENTRY: ::windows_core_sys::HRESULT = 271758i32;
 #[repr(C)]
 pub struct VDS_TARGET_NOTIFICATION {
     pub ulEvent: u32,
-    pub targetId: ::windows_sys_core::GUID,
+    pub targetId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VDS_TARGET_NOTIFICATION {}
 impl ::core::clone::Clone for VDS_TARGET_NOTIFICATION {
@@ -1891,8 +1891,8 @@ pub const VDS_VSF_3_0: VDS_VERSION_SUPPORT_FLAG = 16i32;
 #[repr(C)]
 pub struct VDS_VOLUME_NOTIFICATION {
     pub ulEvent: u32,
-    pub volumeId: ::windows_sys_core::GUID,
-    pub plexId: ::windows_sys_core::GUID,
+    pub volumeId: ::windows_core_sys::GUID,
+    pub plexId: ::windows_core_sys::GUID,
     pub ulPercentCompleted: u32,
 }
 impl ::core::marker::Copy for VDS_VOLUME_NOTIFICATION {}

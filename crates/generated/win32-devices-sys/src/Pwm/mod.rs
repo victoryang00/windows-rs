@@ -1,4 +1,4 @@
-pub const GUID_DEVINTERFACE_PWM_CONTROLLER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1619151692, data2: 61137, data3: 19612, data4: [180, 156, 27, 150, 20, 97, 168, 25] };
+pub const GUID_DEVINTERFACE_PWM_CONTROLLER: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1619151692, data2: 61137, data3: 19612, data4: [180, 156, 27, 150, 20, 97, 168, 25] };
 pub const GUID_DEVINTERFACE_PWM_CONTROLLER_WSZ: &str = "{60824B4C-EED1-4C9C-B49C-1B961461A819}";
 pub const IOCTL_PWM_CONTROLLER_GET_ACTUAL_PERIOD: u32 = 262148u32;
 pub const IOCTL_PWM_CONTROLLER_GET_INFO: u32 = 262144u32;

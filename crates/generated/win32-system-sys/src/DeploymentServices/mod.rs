@@ -32,20 +32,20 @@ extern "system" {
     pub fn PxeProviderEnumNext(henum: super::super::Foundation::HANDLE, ppprovider: *mut *mut PXE_PROVIDER) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn PxeProviderFreeInfo(pprovider: *const PXE_PROVIDER) -> u32;
-    pub fn PxeProviderQueryIndex(pszprovidername: ::windows_sys_core::PCWSTR, puindex: *mut u32) -> u32;
+    pub fn PxeProviderQueryIndex(pszprovidername: ::windows_core_sys::PCWSTR, puindex: *mut u32) -> u32;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Registry"))]
-    pub fn PxeProviderRegister(pszprovidername: ::windows_sys_core::PCWSTR, pszmodulepath: ::windows_sys_core::PCWSTR, index: u32, biscritical: super::super::Foundation::BOOL, phproviderkey: *mut super::Registry::HKEY) -> u32;
+    pub fn PxeProviderRegister(pszprovidername: ::windows_core_sys::PCWSTR, pszmodulepath: ::windows_core_sys::PCWSTR, index: u32, biscritical: super::super::Foundation::BOOL, phproviderkey: *mut super::Registry::HKEY) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn PxeProviderSetAttribute(hprovider: super::super::Foundation::HANDLE, attribute: u32, pparameterbuffer: *const ::core::ffi::c_void, uparamlen: u32) -> u32;
-    pub fn PxeProviderUnRegister(pszprovidername: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn PxeProviderUnRegister(pszprovidername: ::windows_core_sys::PCWSTR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn PxeRegisterCallback(hprovider: super::super::Foundation::HANDLE, callbacktype: u32, pcallbackfunction: *const ::core::ffi::c_void, pcontext: *const ::core::ffi::c_void) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn PxeSendReply(hclientrequest: super::super::Foundation::HANDLE, ppacket: *const ::core::ffi::c_void, upacketlen: u32, paddress: *const PXE_ADDRESS) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeTrace(hprovider: super::super::Foundation::HANDLE, severity: u32, pszformat: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn PxeTrace(hprovider: super::super::Foundation::HANDLE, severity: u32, pszformat: ::windows_core_sys::PCWSTR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn PxeTraceV(hprovider: super::super::Foundation::HANDLE, severity: u32, pszformat: ::windows_sys_core::PCWSTR, params: *const i8) -> u32;
+    pub fn PxeTraceV(hprovider: super::super::Foundation::HANDLE, severity: u32, pszformat: ::windows_core_sys::PCWSTR, params: *const i8) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WdsBpAddOption(hhandle: super::super::Foundation::HANDLE, uoption: u32, uvaluelen: u32, pvalue: *const ::core::ffi::c_void) -> u32;
     #[cfg(feature = "Win32_Foundation")]
@@ -61,75 +61,75 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WdsBpQueryOption(hhandle: super::super::Foundation::HANDLE, uoption: u32, uvaluelen: u32, pvalue: *mut ::core::ffi::c_void, pubytes: *mut u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliAuthorizeSession(hsession: super::super::Foundation::HANDLE, pcred: *const WDS_CLI_CRED) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliAuthorizeSession(hsession: super::super::Foundation::HANDLE, pcred: *const WDS_CLI_CRED) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliCancelTransfer(htransfer: super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliCancelTransfer(htransfer: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliClose(handle: super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliClose(handle: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliCreateSession(pwszserver: ::windows_sys_core::PCWSTR, pcred: *const WDS_CLI_CRED, phsession: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliCreateSession(pwszserver: ::windows_core_sys::PCWSTR, pcred: *const WDS_CLI_CRED, phsession: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliFindFirstImage(hsession: super::super::Foundation::HANDLE, phfindhandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliFindFirstImage(hsession: super::super::Foundation::HANDLE, phfindhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliFindNextImage(handle: super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
-    pub fn WdsCliFreeStringArray(ppwszarray: *mut ::windows_sys_core::PWSTR, ulcount: u32) -> ::windows_sys_core::HRESULT;
-    pub fn WdsCliGetDriverQueryXml(pwszwindirpath: ::windows_sys_core::PCWSTR, ppwszdriverquery: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliFindNextImage(handle: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliFreeStringArray(ppwszarray: *mut ::windows_core_sys::PWSTR, ulcount: u32) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliGetDriverQueryXml(pwszwindirpath: ::windows_core_sys::PCWSTR, ppwszdriverquery: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetEnumerationFlags(handle: super::super::Foundation::HANDLE, pdwflags: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetEnumerationFlags(handle: super::super::Foundation::HANDLE, pdwflags: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageArchitecture(hifh: super::super::Foundation::HANDLE, pdwvalue: *mut CPU_ARCHITECTURE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageArchitecture(hifh: super::super::Foundation::HANDLE, pdwvalue: *mut CPU_ARCHITECTURE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageDescription(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageDescription(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageFiles(hifh: super::super::Foundation::HANDLE, pppwszfiles: *mut *mut ::windows_sys_core::PWSTR, pdwcount: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageFiles(hifh: super::super::Foundation::HANDLE, pppwszfiles: *mut *mut ::windows_core_sys::PWSTR, pdwcount: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageGroup(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageGroup(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageHalName(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageHalName(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageHandleFromFindHandle(findhandle: super::super::Foundation::HANDLE, phimagehandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageHandleFromFindHandle(findhandle: super::super::Foundation::HANDLE, phimagehandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageHandleFromTransferHandle(htransfer: super::super::Foundation::HANDLE, phimagehandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageHandleFromTransferHandle(htransfer: super::super::Foundation::HANDLE, phimagehandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageIndex(hifh: super::super::Foundation::HANDLE, pdwvalue: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageIndex(hifh: super::super::Foundation::HANDLE, pdwvalue: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageLanguage(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageLanguage(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageLanguages(hifh: super::super::Foundation::HANDLE, pppszvalues: *mut *mut *mut i8, pdwnumvalues: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageLanguages(hifh: super::super::Foundation::HANDLE, pppszvalues: *mut *mut *mut i8, pdwnumvalues: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageLastModifiedTime(hifh: super::super::Foundation::HANDLE, ppsystimevalue: *mut *mut super::super::Foundation::SYSTEMTIME) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageLastModifiedTime(hifh: super::super::Foundation::HANDLE, ppsystimevalue: *mut *mut super::super::Foundation::SYSTEMTIME) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageName(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageName(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageNamespace(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageNamespace(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageParameter(hifh: super::super::Foundation::HANDLE, paramtype: WDS_CLI_IMAGE_PARAM_TYPE, presponse: *mut ::core::ffi::c_void, uresponselen: u32) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageParameter(hifh: super::super::Foundation::HANDLE, paramtype: WDS_CLI_IMAGE_PARAM_TYPE, presponse: *mut ::core::ffi::c_void, uresponselen: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImagePath(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImagePath(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageSize(hifh: super::super::Foundation::HANDLE, pullvalue: *mut u64) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageSize(hifh: super::super::Foundation::HANDLE, pullvalue: *mut u64) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageType(hifh: super::super::Foundation::HANDLE, pimagetype: *mut WDS_CLI_IMAGE_TYPE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageType(hifh: super::super::Foundation::HANDLE, pimagetype: *mut WDS_CLI_IMAGE_TYPE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetImageVersion(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetImageVersion(hifh: super::super::Foundation::HANDLE, ppwszvalue: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliGetTransferSize(hifh: super::super::Foundation::HANDLE, pullvalue: *mut u64) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliGetTransferSize(hifh: super::super::Foundation::HANDLE, pullvalue: *mut u64) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliInitializeLog(hsession: super::super::Foundation::HANDLE, ulclientarchitecture: CPU_ARCHITECTURE, pwszclientid: ::windows_sys_core::PCWSTR, pwszclientaddress: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliInitializeLog(hsession: super::super::Foundation::HANDLE, ulclientarchitecture: CPU_ARCHITECTURE, pwszclientid: ::windows_core_sys::PCWSTR, pwszclientaddress: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliLog(hsession: super::super::Foundation::HANDLE, ulloglevel: u32, ulmessagecode: u32) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliLog(hsession: super::super::Foundation::HANDLE, ulloglevel: u32, ulmessagecode: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliObtainDriverPackages(himage: super::super::Foundation::HANDLE, ppwszservername: *mut ::windows_sys_core::PWSTR, pppwszdriverpackages: *mut *mut ::windows_sys_core::PWSTR, pulcount: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliObtainDriverPackages(himage: super::super::Foundation::HANDLE, ppwszservername: *mut ::windows_core_sys::PWSTR, pppwszdriverpackages: *mut *mut ::windows_core_sys::PWSTR, pulcount: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliObtainDriverPackagesEx(hsession: super::super::Foundation::HANDLE, pwszmachineinfo: ::windows_sys_core::PCWSTR, ppwszservername: *mut ::windows_sys_core::PWSTR, pppwszdriverpackages: *mut *mut ::windows_sys_core::PWSTR, pulcount: *mut u32) -> ::windows_sys_core::HRESULT;
-    pub fn WdsCliRegisterTrace(pfn: PFN_WdsCliTraceFunction) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliObtainDriverPackagesEx(hsession: super::super::Foundation::HANDLE, pwszmachineinfo: ::windows_core_sys::PCWSTR, ppwszservername: *mut ::windows_core_sys::PWSTR, pppwszdriverpackages: *mut *mut ::windows_core_sys::PWSTR, pulcount: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn WdsCliRegisterTrace(pfn: PFN_WdsCliTraceFunction) -> ::windows_core_sys::HRESULT;
     pub fn WdsCliSetTransferBufferSize(ulsizeinbytes: u32);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliTransferFile(pwszserver: ::windows_sys_core::PCWSTR, pwsznamespace: ::windows_sys_core::PCWSTR, pwszremotefilepath: ::windows_sys_core::PCWSTR, pwszlocalfilepath: ::windows_sys_core::PCWSTR, dwflags: u32, dwreserved: u32, pfnwdsclicallback: PFN_WdsCliCallback, pvuserdata: *const ::core::ffi::c_void, phtransfer: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliTransferFile(pwszserver: ::windows_core_sys::PCWSTR, pwsznamespace: ::windows_core_sys::PCWSTR, pwszremotefilepath: ::windows_core_sys::PCWSTR, pwszlocalfilepath: ::windows_core_sys::PCWSTR, dwflags: u32, dwreserved: u32, pfnwdsclicallback: PFN_WdsCliCallback, pvuserdata: *const ::core::ffi::c_void, phtransfer: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliTransferImage(himage: super::super::Foundation::HANDLE, pwszlocalpath: ::windows_sys_core::PCWSTR, dwflags: u32, dwreserved: u32, pfnwdsclicallback: PFN_WdsCliCallback, pvuserdata: *const ::core::ffi::c_void, phtransfer: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliTransferImage(himage: super::super::Foundation::HANDLE, pwszlocalpath: ::windows_core_sys::PCWSTR, dwflags: u32, dwreserved: u32, pfnwdsclicallback: PFN_WdsCliCallback, pvuserdata: *const ::core::ffi::c_void, phtransfer: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsCliWaitForTransfer(htransfer: super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn WdsCliWaitForTransfer(htransfer: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     pub fn WdsTransportClientAddRefBuffer(pvbuffer: *const ::core::ffi::c_void) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WdsTransportClientCancelSession(hsessionkey: super::super::Foundation::HANDLE) -> u32;
@@ -155,40 +155,40 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WdsTransportServerAllocateBuffer(hprovider: super::super::Foundation::HANDLE, ulbuffersize: u32) -> *mut ::core::ffi::c_void;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerCompleteRead(hprovider: super::super::Foundation::HANDLE, ulbytesread: u32, pvuserdata: *const ::core::ffi::c_void, hreadresult: ::windows_sys_core::HRESULT) -> ::windows_sys_core::HRESULT;
+    pub fn WdsTransportServerCompleteRead(hprovider: super::super::Foundation::HANDLE, ulbytesread: u32, pvuserdata: *const ::core::ffi::c_void, hreadresult: ::windows_core_sys::HRESULT) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerFreeBuffer(hprovider: super::super::Foundation::HANDLE, pvbuffer: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn WdsTransportServerFreeBuffer(hprovider: super::super::Foundation::HANDLE, pvbuffer: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerRegisterCallback(hprovider: super::super::Foundation::HANDLE, callbackid: TRANSPORTPROVIDER_CALLBACK_ID, pfncallback: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn WdsTransportServerRegisterCallback(hprovider: super::super::Foundation::HANDLE, callbackid: TRANSPORTPROVIDER_CALLBACK_ID, pfncallback: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerTrace(hprovider: super::super::Foundation::HANDLE, severity: u32, pwszformat: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn WdsTransportServerTrace(hprovider: super::super::Foundation::HANDLE, severity: u32, pwszformat: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WdsTransportServerTraceV(hprovider: super::super::Foundation::HANDLE, severity: u32, pwszformat: ::windows_sys_core::PCWSTR, params: *const i8) -> ::windows_sys_core::HRESULT;
+    pub fn WdsTransportServerTraceV(hprovider: super::super::Foundation::HANDLE, severity: u32, pwszformat: ::windows_core_sys::PCWSTR, params: *const i8) -> ::windows_core_sys::HRESULT;
 }
 pub type CPU_ARCHITECTURE = u32;
 pub const CPU_ARCHITECTURE_AMD64: CPU_ARCHITECTURE = 9u32;
 pub const CPU_ARCHITECTURE_IA64: CPU_ARCHITECTURE = 6u32;
 pub const CPU_ARCHITECTURE_INTEL: CPU_ARCHITECTURE = 0u32;
-pub const EVT_WDSMCS_E_CP_CALLBACKS_NOT_REG: ::windows_sys_core::HRESULT = -1054801324i32;
-pub const EVT_WDSMCS_E_CP_CLOSE_INSTANCE_FAILED: ::windows_sys_core::HRESULT = -1054801320i32;
-pub const EVT_WDSMCS_E_CP_DLL_LOAD_FAILED: ::windows_sys_core::HRESULT = -1054801328i32;
-pub const EVT_WDSMCS_E_CP_DLL_LOAD_FAILED_CRITICAL: ::windows_sys_core::HRESULT = -1054801317i32;
-pub const EVT_WDSMCS_E_CP_INCOMPATIBLE_SERVER_VERSION: ::windows_sys_core::HRESULT = -1054801325i32;
-pub const EVT_WDSMCS_E_CP_INIT_FUNC_FAILED: ::windows_sys_core::HRESULT = -1054801326i32;
-pub const EVT_WDSMCS_E_CP_INIT_FUNC_MISSING: ::windows_sys_core::HRESULT = -1054801327i32;
-pub const EVT_WDSMCS_E_CP_MEMORY_LEAK: ::windows_sys_core::HRESULT = -1054801322i32;
-pub const EVT_WDSMCS_E_CP_OPEN_CONTENT_FAILED: ::windows_sys_core::HRESULT = -1054801319i32;
-pub const EVT_WDSMCS_E_CP_OPEN_INSTANCE_FAILED: ::windows_sys_core::HRESULT = -1054801321i32;
-pub const EVT_WDSMCS_E_CP_SHUTDOWN_FUNC_FAILED: ::windows_sys_core::HRESULT = -1054801323i32;
-pub const EVT_WDSMCS_E_DUPLICATE_MULTICAST_ADDR: ::windows_sys_core::HRESULT = -1054801406i32;
-pub const EVT_WDSMCS_E_NON_WDS_DUPLICATE_MULTICAST_ADDR: ::windows_sys_core::HRESULT = -1054801405i32;
-pub const EVT_WDSMCS_E_NSREG_CONTENT_PROVIDER_NOT_REG: ::windows_sys_core::HRESULT = -1054801151i32;
-pub const EVT_WDSMCS_E_NSREG_FAILURE: ::windows_sys_core::HRESULT = -1054801149i32;
-pub const EVT_WDSMCS_E_NSREG_NAMESPACE_EXISTS: ::windows_sys_core::HRESULT = -1054801150i32;
-pub const EVT_WDSMCS_E_NSREG_START_TIME_IN_PAST: ::windows_sys_core::HRESULT = -1054801152i32;
-pub const EVT_WDSMCS_E_PARAMETERS_READ_FAILED: ::windows_sys_core::HRESULT = -1054801407i32;
-pub const EVT_WDSMCS_S_PARAMETERS_READ: ::windows_sys_core::HRESULT = 1092682240i32;
-pub const EVT_WDSMCS_W_CP_DLL_LOAD_FAILED_NOT_CRITICAL: ::windows_sys_core::HRESULT = -2128543142i32;
+pub const EVT_WDSMCS_E_CP_CALLBACKS_NOT_REG: ::windows_core_sys::HRESULT = -1054801324i32;
+pub const EVT_WDSMCS_E_CP_CLOSE_INSTANCE_FAILED: ::windows_core_sys::HRESULT = -1054801320i32;
+pub const EVT_WDSMCS_E_CP_DLL_LOAD_FAILED: ::windows_core_sys::HRESULT = -1054801328i32;
+pub const EVT_WDSMCS_E_CP_DLL_LOAD_FAILED_CRITICAL: ::windows_core_sys::HRESULT = -1054801317i32;
+pub const EVT_WDSMCS_E_CP_INCOMPATIBLE_SERVER_VERSION: ::windows_core_sys::HRESULT = -1054801325i32;
+pub const EVT_WDSMCS_E_CP_INIT_FUNC_FAILED: ::windows_core_sys::HRESULT = -1054801326i32;
+pub const EVT_WDSMCS_E_CP_INIT_FUNC_MISSING: ::windows_core_sys::HRESULT = -1054801327i32;
+pub const EVT_WDSMCS_E_CP_MEMORY_LEAK: ::windows_core_sys::HRESULT = -1054801322i32;
+pub const EVT_WDSMCS_E_CP_OPEN_CONTENT_FAILED: ::windows_core_sys::HRESULT = -1054801319i32;
+pub const EVT_WDSMCS_E_CP_OPEN_INSTANCE_FAILED: ::windows_core_sys::HRESULT = -1054801321i32;
+pub const EVT_WDSMCS_E_CP_SHUTDOWN_FUNC_FAILED: ::windows_core_sys::HRESULT = -1054801323i32;
+pub const EVT_WDSMCS_E_DUPLICATE_MULTICAST_ADDR: ::windows_core_sys::HRESULT = -1054801406i32;
+pub const EVT_WDSMCS_E_NON_WDS_DUPLICATE_MULTICAST_ADDR: ::windows_core_sys::HRESULT = -1054801405i32;
+pub const EVT_WDSMCS_E_NSREG_CONTENT_PROVIDER_NOT_REG: ::windows_core_sys::HRESULT = -1054801151i32;
+pub const EVT_WDSMCS_E_NSREG_FAILURE: ::windows_core_sys::HRESULT = -1054801149i32;
+pub const EVT_WDSMCS_E_NSREG_NAMESPACE_EXISTS: ::windows_core_sys::HRESULT = -1054801150i32;
+pub const EVT_WDSMCS_E_NSREG_START_TIME_IN_PAST: ::windows_core_sys::HRESULT = -1054801152i32;
+pub const EVT_WDSMCS_E_PARAMETERS_READ_FAILED: ::windows_core_sys::HRESULT = -1054801407i32;
+pub const EVT_WDSMCS_S_PARAMETERS_READ: ::windows_core_sys::HRESULT = 1092682240i32;
+pub const EVT_WDSMCS_W_CP_DLL_LOAD_FAILED_NOT_CRITICAL: ::windows_core_sys::HRESULT = -2128543142i32;
 pub const FACILITY_WDSMCCLIENT: u32 = 290u32;
 pub const FACILITY_WDSMCSERVER: u32 = 289u32;
 pub const FACILITY_WDSTPTMGMT: u32 = 272u32;
@@ -225,7 +225,7 @@ pub const WDS_CLI_MSG_PROGRESS: PFN_WDS_CLI_CALLBACK_MESSAGE_ID = 2u32;
 pub const WDS_CLI_MSG_TEXT: PFN_WDS_CLI_CALLBACK_MESSAGE_ID = 3u32;
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_WdsCliCallback = ::core::option::Option<unsafe extern "system" fn(dwmessageid: PFN_WDS_CLI_CALLBACK_MESSAGE_ID, wparam: super::super::Foundation::WPARAM, lparam: super::super::Foundation::LPARAM, pvuserdata: *const ::core::ffi::c_void)>;
-pub type PFN_WdsCliTraceFunction = ::core::option::Option<unsafe extern "system" fn(pwszformat: ::windows_sys_core::PCWSTR, params: *const i8)>;
+pub type PFN_WdsCliTraceFunction = ::core::option::Option<unsafe extern "system" fn(pwszformat: ::windows_core_sys::PCWSTR, params: *const i8)>;
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_WdsTransportClientReceiveContents = ::core::option::Option<unsafe extern "system" fn(hsessionkey: super::super::Foundation::HANDLE, pcallerdata: *const ::core::ffi::c_void, pcontents: *const ::core::ffi::c_void, ulsize: u32, pullcontentoffset: *const u64)>;
 #[cfg(feature = "Win32_Foundation")]
@@ -402,8 +402,8 @@ pub const PXE_MAX_ADDRESS: u32 = 16u32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct PXE_PROVIDER {
     pub uSizeOfStruct: u32,
-    pub pwszName: ::windows_sys_core::PWSTR,
-    pub pwszFilePath: ::windows_sys_core::PWSTR,
+    pub pwszName: ::windows_core_sys::PWSTR,
+    pub pwszFilePath: ::windows_core_sys::PWSTR,
     pub bIsCritical: super::super::Foundation::BOOL,
     pub uIndex: u32,
 }
@@ -484,76 +484,76 @@ pub const WDSBP_PK_TYPE_BCD: u32 = 4u32;
 pub const WDSBP_PK_TYPE_DHCP: u32 = 1u32;
 pub const WDSBP_PK_TYPE_DHCPV6: u32 = 8u32;
 pub const WDSBP_PK_TYPE_WDSNBP: u32 = 2u32;
-pub const WDSMCCLIENT_CATEGORY: ::windows_sys_core::HRESULT = 2i32;
-pub const WDSMCSERVER_CATEGORY: ::windows_sys_core::HRESULT = 1i32;
-pub const WDSMCS_E_CLIENT_DOESNOT_SUPPORT_SECURITY_MODE: ::windows_sys_core::HRESULT = -1054801648i32;
-pub const WDSMCS_E_CLIENT_NOT_FOUND: ::windows_sys_core::HRESULT = -1054801660i32;
-pub const WDSMCS_E_CONTENT_NOT_FOUND: ::windows_sys_core::HRESULT = -1054801661i32;
-pub const WDSMCS_E_CONTENT_PROVIDER_NOT_FOUND: ::windows_sys_core::HRESULT = -1054801658i32;
-pub const WDSMCS_E_INCOMPATIBLE_VERSION: ::windows_sys_core::HRESULT = -1054801662i32;
-pub const WDSMCS_E_NAMESPACE_ALREADY_EXISTS: ::windows_sys_core::HRESULT = -1054801657i32;
-pub const WDSMCS_E_NAMESPACE_ALREADY_STARTED: ::windows_sys_core::HRESULT = -1054801655i32;
-pub const WDSMCS_E_NAMESPACE_NOT_FOUND: ::windows_sys_core::HRESULT = -1054801659i32;
-pub const WDSMCS_E_NAMESPACE_SHUTDOWN_IN_PROGRESS: ::windows_sys_core::HRESULT = -1054801656i32;
-pub const WDSMCS_E_NS_START_FAILED_NO_CLIENTS: ::windows_sys_core::HRESULT = -1054801654i32;
-pub const WDSMCS_E_PACKET_HAS_SECURITY: ::windows_sys_core::HRESULT = -1054801650i32;
-pub const WDSMCS_E_PACKET_NOT_CHECKSUMED: ::windows_sys_core::HRESULT = -1054801649i32;
-pub const WDSMCS_E_PACKET_NOT_HASHED: ::windows_sys_core::HRESULT = -1054801652i32;
-pub const WDSMCS_E_PACKET_NOT_SIGNED: ::windows_sys_core::HRESULT = -1054801651i32;
-pub const WDSMCS_E_REQCALLBACKS_NOT_REG: ::windows_sys_core::HRESULT = -1054801663i32;
-pub const WDSMCS_E_SESSION_SHUTDOWN_IN_PROGRESS: ::windows_sys_core::HRESULT = -1054801664i32;
-pub const WDSMCS_E_START_TIME_IN_PAST: ::windows_sys_core::HRESULT = -1054801653i32;
-pub const WDSTPC_E_ALREADY_COMPLETED: ::windows_sys_core::HRESULT = -1054735615i32;
-pub const WDSTPC_E_ALREADY_IN_LOWEST_SESSION: ::windows_sys_core::HRESULT = -1054735606i32;
-pub const WDSTPC_E_ALREADY_IN_PROGRESS: ::windows_sys_core::HRESULT = -1054735614i32;
-pub const WDSTPC_E_CALLBACKS_NOT_REG: ::windows_sys_core::HRESULT = -1054735616i32;
-pub const WDSTPC_E_CLIENT_DEMOTE_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -1054735605i32;
-pub const WDSTPC_E_KICKED_FAIL: ::windows_sys_core::HRESULT = -1054735609i32;
-pub const WDSTPC_E_KICKED_FALLBACK: ::windows_sys_core::HRESULT = -1054735610i32;
-pub const WDSTPC_E_KICKED_POLICY_NOT_MET: ::windows_sys_core::HRESULT = -1054735611i32;
-pub const WDSTPC_E_KICKED_UNKNOWN: ::windows_sys_core::HRESULT = -1054735608i32;
-pub const WDSTPC_E_MULTISTREAM_NOT_ENABLED: ::windows_sys_core::HRESULT = -1054735607i32;
-pub const WDSTPC_E_NOT_INITIALIZED: ::windows_sys_core::HRESULT = -1054735612i32;
-pub const WDSTPC_E_NO_IP4_INTERFACE: ::windows_sys_core::HRESULT = -1054735604i32;
-pub const WDSTPC_E_UNKNOWN_ERROR: ::windows_sys_core::HRESULT = -1054735613i32;
-pub const WDSTPTC_E_WIM_APPLY_REQUIRES_REFERENCE_IMAGE: ::windows_sys_core::HRESULT = -1054735603i32;
-pub const WDSTPTMGMT_CATEGORY: ::windows_sys_core::HRESULT = 1i32;
-pub const WDSTPTMGMT_E_CANNOT_REFRESH_DIRTY_OBJECT: ::windows_sys_core::HRESULT = -1055915761i32;
-pub const WDSTPTMGMT_E_CANNOT_REINITIALIZE_OBJECT: ::windows_sys_core::HRESULT = -1055915767i32;
-pub const WDSTPTMGMT_E_CONTENT_PROVIDER_ALREADY_REGISTERED: ::windows_sys_core::HRESULT = -1055915773i32;
-pub const WDSTPTMGMT_E_CONTENT_PROVIDER_NOT_REGISTERED: ::windows_sys_core::HRESULT = -1055915772i32;
-pub const WDSTPTMGMT_E_INVALID_AUTO_DISCONNECT_THRESHOLD: ::windows_sys_core::HRESULT = -1055915748i32;
-pub const WDSTPTMGMT_E_INVALID_CLASS: ::windows_sys_core::HRESULT = -1055915774i32;
-pub const WDSTPTMGMT_E_INVALID_CONTENT_PROVIDER_NAME: ::windows_sys_core::HRESULT = -1055915771i32;
-pub const WDSTPTMGMT_E_INVALID_DIAGNOSTICS_COMPONENTS: ::windows_sys_core::HRESULT = -1055915762i32;
-pub const WDSTPTMGMT_E_INVALID_IPV4_MULTICAST_ADDRESS: ::windows_sys_core::HRESULT = -1055915753i32;
-pub const WDSTPTMGMT_E_INVALID_IPV6_MULTICAST_ADDRESS: ::windows_sys_core::HRESULT = -1055915752i32;
-pub const WDSTPTMGMT_E_INVALID_IPV6_MULTICAST_ADDRESS_SOURCE: ::windows_sys_core::HRESULT = -1055915750i32;
-pub const WDSTPTMGMT_E_INVALID_IP_ADDRESS: ::windows_sys_core::HRESULT = -1055915754i32;
-pub const WDSTPTMGMT_E_INVALID_MULTISTREAM_STREAM_COUNT: ::windows_sys_core::HRESULT = -1055915749i32;
-pub const WDSTPTMGMT_E_INVALID_NAMESPACE_DATA: ::windows_sys_core::HRESULT = -1055915765i32;
-pub const WDSTPTMGMT_E_INVALID_NAMESPACE_NAME: ::windows_sys_core::HRESULT = -1055915766i32;
-pub const WDSTPTMGMT_E_INVALID_NAMESPACE_START_PARAMETERS: ::windows_sys_core::HRESULT = -1055915758i32;
-pub const WDSTPTMGMT_E_INVALID_NAMESPACE_START_TIME: ::windows_sys_core::HRESULT = -1055915763i32;
-pub const WDSTPTMGMT_E_INVALID_OPERATION: ::windows_sys_core::HRESULT = -1055915775i32;
-pub const WDSTPTMGMT_E_INVALID_PROPERTY: ::windows_sys_core::HRESULT = -1055915776i32;
-pub const WDSTPTMGMT_E_INVALID_SERVICE_IP_ADDRESS_RANGE: ::windows_sys_core::HRESULT = -1055915760i32;
-pub const WDSTPTMGMT_E_INVALID_SERVICE_PORT_RANGE: ::windows_sys_core::HRESULT = -1055915759i32;
-pub const WDSTPTMGMT_E_INVALID_SLOW_CLIENT_HANDLING_TYPE: ::windows_sys_core::HRESULT = -1055915746i32;
-pub const WDSTPTMGMT_E_INVALID_TFTP_MAX_BLOCKSIZE: ::windows_sys_core::HRESULT = -1055915741i32;
-pub const WDSTPTMGMT_E_IPV6_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -1055915751i32;
-pub const WDSTPTMGMT_E_MULTICAST_SESSION_POLICY_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -1055915747i32;
-pub const WDSTPTMGMT_E_NAMESPACE_ALREADY_REGISTERED: ::windows_sys_core::HRESULT = -1055915769i32;
-pub const WDSTPTMGMT_E_NAMESPACE_NOT_ON_SERVER: ::windows_sys_core::HRESULT = -1055915756i32;
-pub const WDSTPTMGMT_E_NAMESPACE_NOT_REGISTERED: ::windows_sys_core::HRESULT = -1055915768i32;
-pub const WDSTPTMGMT_E_NAMESPACE_READ_ONLY: ::windows_sys_core::HRESULT = -1055915764i32;
-pub const WDSTPTMGMT_E_NAMESPACE_REMOVED_FROM_SERVER: ::windows_sys_core::HRESULT = -1055915755i32;
-pub const WDSTPTMGMT_E_NETWORK_PROFILES_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -1055915745i32;
-pub const WDSTPTMGMT_E_TFTP_MAX_BLOCKSIZE_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -1055915743i32;
-pub const WDSTPTMGMT_E_TFTP_VAR_WINDOW_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -1055915742i32;
-pub const WDSTPTMGMT_E_TRANSPORT_SERVER_ROLE_NOT_CONFIGURED: ::windows_sys_core::HRESULT = -1055915770i32;
-pub const WDSTPTMGMT_E_TRANSPORT_SERVER_UNAVAILABLE: ::windows_sys_core::HRESULT = -1055915757i32;
-pub const WDSTPTMGMT_E_UDP_PORT_POLICY_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -1055915744i32;
+pub const WDSMCCLIENT_CATEGORY: ::windows_core_sys::HRESULT = 2i32;
+pub const WDSMCSERVER_CATEGORY: ::windows_core_sys::HRESULT = 1i32;
+pub const WDSMCS_E_CLIENT_DOESNOT_SUPPORT_SECURITY_MODE: ::windows_core_sys::HRESULT = -1054801648i32;
+pub const WDSMCS_E_CLIENT_NOT_FOUND: ::windows_core_sys::HRESULT = -1054801660i32;
+pub const WDSMCS_E_CONTENT_NOT_FOUND: ::windows_core_sys::HRESULT = -1054801661i32;
+pub const WDSMCS_E_CONTENT_PROVIDER_NOT_FOUND: ::windows_core_sys::HRESULT = -1054801658i32;
+pub const WDSMCS_E_INCOMPATIBLE_VERSION: ::windows_core_sys::HRESULT = -1054801662i32;
+pub const WDSMCS_E_NAMESPACE_ALREADY_EXISTS: ::windows_core_sys::HRESULT = -1054801657i32;
+pub const WDSMCS_E_NAMESPACE_ALREADY_STARTED: ::windows_core_sys::HRESULT = -1054801655i32;
+pub const WDSMCS_E_NAMESPACE_NOT_FOUND: ::windows_core_sys::HRESULT = -1054801659i32;
+pub const WDSMCS_E_NAMESPACE_SHUTDOWN_IN_PROGRESS: ::windows_core_sys::HRESULT = -1054801656i32;
+pub const WDSMCS_E_NS_START_FAILED_NO_CLIENTS: ::windows_core_sys::HRESULT = -1054801654i32;
+pub const WDSMCS_E_PACKET_HAS_SECURITY: ::windows_core_sys::HRESULT = -1054801650i32;
+pub const WDSMCS_E_PACKET_NOT_CHECKSUMED: ::windows_core_sys::HRESULT = -1054801649i32;
+pub const WDSMCS_E_PACKET_NOT_HASHED: ::windows_core_sys::HRESULT = -1054801652i32;
+pub const WDSMCS_E_PACKET_NOT_SIGNED: ::windows_core_sys::HRESULT = -1054801651i32;
+pub const WDSMCS_E_REQCALLBACKS_NOT_REG: ::windows_core_sys::HRESULT = -1054801663i32;
+pub const WDSMCS_E_SESSION_SHUTDOWN_IN_PROGRESS: ::windows_core_sys::HRESULT = -1054801664i32;
+pub const WDSMCS_E_START_TIME_IN_PAST: ::windows_core_sys::HRESULT = -1054801653i32;
+pub const WDSTPC_E_ALREADY_COMPLETED: ::windows_core_sys::HRESULT = -1054735615i32;
+pub const WDSTPC_E_ALREADY_IN_LOWEST_SESSION: ::windows_core_sys::HRESULT = -1054735606i32;
+pub const WDSTPC_E_ALREADY_IN_PROGRESS: ::windows_core_sys::HRESULT = -1054735614i32;
+pub const WDSTPC_E_CALLBACKS_NOT_REG: ::windows_core_sys::HRESULT = -1054735616i32;
+pub const WDSTPC_E_CLIENT_DEMOTE_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -1054735605i32;
+pub const WDSTPC_E_KICKED_FAIL: ::windows_core_sys::HRESULT = -1054735609i32;
+pub const WDSTPC_E_KICKED_FALLBACK: ::windows_core_sys::HRESULT = -1054735610i32;
+pub const WDSTPC_E_KICKED_POLICY_NOT_MET: ::windows_core_sys::HRESULT = -1054735611i32;
+pub const WDSTPC_E_KICKED_UNKNOWN: ::windows_core_sys::HRESULT = -1054735608i32;
+pub const WDSTPC_E_MULTISTREAM_NOT_ENABLED: ::windows_core_sys::HRESULT = -1054735607i32;
+pub const WDSTPC_E_NOT_INITIALIZED: ::windows_core_sys::HRESULT = -1054735612i32;
+pub const WDSTPC_E_NO_IP4_INTERFACE: ::windows_core_sys::HRESULT = -1054735604i32;
+pub const WDSTPC_E_UNKNOWN_ERROR: ::windows_core_sys::HRESULT = -1054735613i32;
+pub const WDSTPTC_E_WIM_APPLY_REQUIRES_REFERENCE_IMAGE: ::windows_core_sys::HRESULT = -1054735603i32;
+pub const WDSTPTMGMT_CATEGORY: ::windows_core_sys::HRESULT = 1i32;
+pub const WDSTPTMGMT_E_CANNOT_REFRESH_DIRTY_OBJECT: ::windows_core_sys::HRESULT = -1055915761i32;
+pub const WDSTPTMGMT_E_CANNOT_REINITIALIZE_OBJECT: ::windows_core_sys::HRESULT = -1055915767i32;
+pub const WDSTPTMGMT_E_CONTENT_PROVIDER_ALREADY_REGISTERED: ::windows_core_sys::HRESULT = -1055915773i32;
+pub const WDSTPTMGMT_E_CONTENT_PROVIDER_NOT_REGISTERED: ::windows_core_sys::HRESULT = -1055915772i32;
+pub const WDSTPTMGMT_E_INVALID_AUTO_DISCONNECT_THRESHOLD: ::windows_core_sys::HRESULT = -1055915748i32;
+pub const WDSTPTMGMT_E_INVALID_CLASS: ::windows_core_sys::HRESULT = -1055915774i32;
+pub const WDSTPTMGMT_E_INVALID_CONTENT_PROVIDER_NAME: ::windows_core_sys::HRESULT = -1055915771i32;
+pub const WDSTPTMGMT_E_INVALID_DIAGNOSTICS_COMPONENTS: ::windows_core_sys::HRESULT = -1055915762i32;
+pub const WDSTPTMGMT_E_INVALID_IPV4_MULTICAST_ADDRESS: ::windows_core_sys::HRESULT = -1055915753i32;
+pub const WDSTPTMGMT_E_INVALID_IPV6_MULTICAST_ADDRESS: ::windows_core_sys::HRESULT = -1055915752i32;
+pub const WDSTPTMGMT_E_INVALID_IPV6_MULTICAST_ADDRESS_SOURCE: ::windows_core_sys::HRESULT = -1055915750i32;
+pub const WDSTPTMGMT_E_INVALID_IP_ADDRESS: ::windows_core_sys::HRESULT = -1055915754i32;
+pub const WDSTPTMGMT_E_INVALID_MULTISTREAM_STREAM_COUNT: ::windows_core_sys::HRESULT = -1055915749i32;
+pub const WDSTPTMGMT_E_INVALID_NAMESPACE_DATA: ::windows_core_sys::HRESULT = -1055915765i32;
+pub const WDSTPTMGMT_E_INVALID_NAMESPACE_NAME: ::windows_core_sys::HRESULT = -1055915766i32;
+pub const WDSTPTMGMT_E_INVALID_NAMESPACE_START_PARAMETERS: ::windows_core_sys::HRESULT = -1055915758i32;
+pub const WDSTPTMGMT_E_INVALID_NAMESPACE_START_TIME: ::windows_core_sys::HRESULT = -1055915763i32;
+pub const WDSTPTMGMT_E_INVALID_OPERATION: ::windows_core_sys::HRESULT = -1055915775i32;
+pub const WDSTPTMGMT_E_INVALID_PROPERTY: ::windows_core_sys::HRESULT = -1055915776i32;
+pub const WDSTPTMGMT_E_INVALID_SERVICE_IP_ADDRESS_RANGE: ::windows_core_sys::HRESULT = -1055915760i32;
+pub const WDSTPTMGMT_E_INVALID_SERVICE_PORT_RANGE: ::windows_core_sys::HRESULT = -1055915759i32;
+pub const WDSTPTMGMT_E_INVALID_SLOW_CLIENT_HANDLING_TYPE: ::windows_core_sys::HRESULT = -1055915746i32;
+pub const WDSTPTMGMT_E_INVALID_TFTP_MAX_BLOCKSIZE: ::windows_core_sys::HRESULT = -1055915741i32;
+pub const WDSTPTMGMT_E_IPV6_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -1055915751i32;
+pub const WDSTPTMGMT_E_MULTICAST_SESSION_POLICY_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -1055915747i32;
+pub const WDSTPTMGMT_E_NAMESPACE_ALREADY_REGISTERED: ::windows_core_sys::HRESULT = -1055915769i32;
+pub const WDSTPTMGMT_E_NAMESPACE_NOT_ON_SERVER: ::windows_core_sys::HRESULT = -1055915756i32;
+pub const WDSTPTMGMT_E_NAMESPACE_NOT_REGISTERED: ::windows_core_sys::HRESULT = -1055915768i32;
+pub const WDSTPTMGMT_E_NAMESPACE_READ_ONLY: ::windows_core_sys::HRESULT = -1055915764i32;
+pub const WDSTPTMGMT_E_NAMESPACE_REMOVED_FROM_SERVER: ::windows_core_sys::HRESULT = -1055915755i32;
+pub const WDSTPTMGMT_E_NETWORK_PROFILES_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -1055915745i32;
+pub const WDSTPTMGMT_E_TFTP_MAX_BLOCKSIZE_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -1055915743i32;
+pub const WDSTPTMGMT_E_TFTP_VAR_WINDOW_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -1055915742i32;
+pub const WDSTPTMGMT_E_TRANSPORT_SERVER_ROLE_NOT_CONFIGURED: ::windows_core_sys::HRESULT = -1055915770i32;
+pub const WDSTPTMGMT_E_TRANSPORT_SERVER_UNAVAILABLE: ::windows_core_sys::HRESULT = -1055915757i32;
+pub const WDSTPTMGMT_E_UDP_PORT_POLICY_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -1055915744i32;
 pub type WDSTRANSPORT_DIAGNOSTICS_COMPONENT_FLAGS = i32;
 pub const WdsTptDiagnosticsComponentPxe: WDSTRANSPORT_DIAGNOSTICS_COMPONENT_FLAGS = 1i32;
 pub const WdsTptDiagnosticsComponentTftp: WDSTRANSPORT_DIAGNOSTICS_COMPONENT_FLAGS = 2i32;
@@ -606,9 +606,9 @@ pub const WdsTptUdpPortPolicyDynamic: WDSTRANSPORT_UDP_PORT_POLICY = 0i32;
 pub const WdsTptUdpPortPolicyFixed: WDSTRANSPORT_UDP_PORT_POLICY = 1i32;
 #[repr(C)]
 pub struct WDS_CLI_CRED {
-    pub pwszUserName: ::windows_sys_core::PCWSTR,
-    pub pwszDomain: ::windows_sys_core::PCWSTR,
-    pub pwszPassword: ::windows_sys_core::PCWSTR,
+    pub pwszUserName: ::windows_core_sys::PCWSTR,
+    pub pwszDomain: ::windows_core_sys::PCWSTR,
+    pub pwszPassword: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for WDS_CLI_CRED {}
 impl ::core::clone::Clone for WDS_CLI_CRED {
@@ -690,9 +690,9 @@ pub struct WDS_TRANSPORTCLIENT_REQUEST {
     pub ulLength: u32,
     pub ulApiVersion: u32,
     pub ulAuthLevel: WDS_TRANSPORTCLIENT_REQUEST_AUTH_LEVEL,
-    pub pwszServer: ::windows_sys_core::PCWSTR,
-    pub pwszNamespace: ::windows_sys_core::PCWSTR,
-    pub pwszObjectName: ::windows_sys_core::PCWSTR,
+    pub pwszServer: ::windows_core_sys::PCWSTR,
+    pub pwszNamespace: ::windows_core_sys::PCWSTR,
+    pub pwszObjectName: ::windows_core_sys::PCWSTR,
     pub ulCacheSize: u32,
     pub ulProtocol: u32,
     pub pvProtocolData: *mut ::core::ffi::c_void,
@@ -739,24 +739,24 @@ impl ::core::clone::Clone for WDS_TRANSPORTPROVIDER_SETTINGS {
 }
 pub const WdsCliFlagEnumFilterFirmware: i32 = 2i32;
 pub const WdsCliFlagEnumFilterVersion: i32 = 1i32;
-pub const WdsTransportCacheable: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1884883734, data2: 61766, data3: 18109, data4: [189, 157, 74, 170, 144, 8, 75, 245] };
-pub const WdsTransportClient: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1725089257, data2: 4086, data3: 18924, data4: [151, 51, 218, 251, 30, 1, 223, 28] };
-pub const WdsTransportCollection: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3354495753, data2: 14622, data3: 17262, data4: [177, 11, 195, 239, 70, 242, 195, 79] };
-pub const WdsTransportConfigurationManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2269378164, data2: 36940, data3: 18378, data4: [133, 18, 53, 254, 152, 246, 176, 172] };
-pub const WdsTransportContent: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 176758759, data2: 19007, data3: 19557, data4: [182, 242, 20, 103, 97, 150, 121, 234] };
-pub const WdsTransportContentProvider: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3770577951, data2: 23157, data3: 20153, data4: [138, 45, 94, 24, 155, 69, 243, 39] };
-pub const WdsTransportDiagnosticsPolicy: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3946001377, data2: 42925, data3: 18165, data4: [128, 214, 107, 116, 2, 4, 229, 9] };
-pub const WdsTransportManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4061471734, data2: 33660, data3: 19032, data4: [175, 153, 138, 126, 39, 248, 255, 89] };
-pub const WdsTransportMulticastSessionPolicy: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1013695476, data2: 25624, data3: 18218, data4: [182, 241, 82, 212, 87, 25, 84, 55] };
-pub const WdsTransportNamespace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3627571048, data2: 1842, data3: 20161, data4: [149, 234, 22, 218, 88, 25, 8, 161] };
-pub const WdsTransportNamespaceAutoCast: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2962355624, data2: 27289, data3: 18317, data4: [178, 59, 9, 232, 254, 224, 69, 116] };
-pub const WdsTransportNamespaceManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4035763043, data2: 34270, data3: 18984, data4: [161, 169, 92, 163, 231, 239, 218, 115] };
-pub const WdsTransportNamespaceScheduledCast: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3134986391, data2: 28709, data3: 17643, data4: [145, 8, 251, 97, 196, 5, 87, 146] };
-pub const WdsTransportNamespaceScheduledCastAutoStart: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2702209106, data2: 4652, data3: 19329, data4: [155, 124, 56, 110, 104, 85, 56, 63] };
-pub const WdsTransportNamespaceScheduledCastManualStart: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3554779818, data2: 51884, data3: 17934, data4: [185, 138, 71, 249, 243, 24, 161, 250] };
-pub const WdsTransportServer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3927553603, data2: 19167, data3: 17427, data4: [148, 44, 20, 243, 121, 17, 135, 96] };
-pub const WdsTransportServicePolicy: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1705831132, data2: 12043, data3: 20291, data4: [159, 77, 129, 24, 101, 216, 206, 173] };
-pub const WdsTransportSession: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1956300000, data2: 26556, data3: 18243, data4: [191, 229, 202, 203, 31, 38, 245, 127] };
-pub const WdsTransportSetupManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3351177901, data2: 40708, data3: 18723, data4: [159, 12, 251, 245, 43, 199, 89, 15] };
-pub const WdsTransportTftpClient: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1345599781, data2: 31836, data3: 19596, data4: [150, 196, 173, 159, 165, 0, 95, 186] };
-pub const WdsTransportTftpManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3370769570, data2: 12865, data3: 20045, data4: [184, 6, 188, 116, 1, 157, 254, 218] };
+pub const WdsTransportCacheable: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1884883734, data2: 61766, data3: 18109, data4: [189, 157, 74, 170, 144, 8, 75, 245] };
+pub const WdsTransportClient: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1725089257, data2: 4086, data3: 18924, data4: [151, 51, 218, 251, 30, 1, 223, 28] };
+pub const WdsTransportCollection: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3354495753, data2: 14622, data3: 17262, data4: [177, 11, 195, 239, 70, 242, 195, 79] };
+pub const WdsTransportConfigurationManager: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2269378164, data2: 36940, data3: 18378, data4: [133, 18, 53, 254, 152, 246, 176, 172] };
+pub const WdsTransportContent: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 176758759, data2: 19007, data3: 19557, data4: [182, 242, 20, 103, 97, 150, 121, 234] };
+pub const WdsTransportContentProvider: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3770577951, data2: 23157, data3: 20153, data4: [138, 45, 94, 24, 155, 69, 243, 39] };
+pub const WdsTransportDiagnosticsPolicy: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3946001377, data2: 42925, data3: 18165, data4: [128, 214, 107, 116, 2, 4, 229, 9] };
+pub const WdsTransportManager: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4061471734, data2: 33660, data3: 19032, data4: [175, 153, 138, 126, 39, 248, 255, 89] };
+pub const WdsTransportMulticastSessionPolicy: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1013695476, data2: 25624, data3: 18218, data4: [182, 241, 82, 212, 87, 25, 84, 55] };
+pub const WdsTransportNamespace: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3627571048, data2: 1842, data3: 20161, data4: [149, 234, 22, 218, 88, 25, 8, 161] };
+pub const WdsTransportNamespaceAutoCast: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2962355624, data2: 27289, data3: 18317, data4: [178, 59, 9, 232, 254, 224, 69, 116] };
+pub const WdsTransportNamespaceManager: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4035763043, data2: 34270, data3: 18984, data4: [161, 169, 92, 163, 231, 239, 218, 115] };
+pub const WdsTransportNamespaceScheduledCast: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3134986391, data2: 28709, data3: 17643, data4: [145, 8, 251, 97, 196, 5, 87, 146] };
+pub const WdsTransportNamespaceScheduledCastAutoStart: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2702209106, data2: 4652, data3: 19329, data4: [155, 124, 56, 110, 104, 85, 56, 63] };
+pub const WdsTransportNamespaceScheduledCastManualStart: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3554779818, data2: 51884, data3: 17934, data4: [185, 138, 71, 249, 243, 24, 161, 250] };
+pub const WdsTransportServer: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3927553603, data2: 19167, data3: 17427, data4: [148, 44, 20, 243, 121, 17, 135, 96] };
+pub const WdsTransportServicePolicy: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1705831132, data2: 12043, data3: 20291, data4: [159, 77, 129, 24, 101, 216, 206, 173] };
+pub const WdsTransportSession: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1956300000, data2: 26556, data3: 18243, data4: [191, 229, 202, 203, 31, 38, 245, 127] };
+pub const WdsTransportSetupManager: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3351177901, data2: 40708, data3: 18723, data4: [159, 12, 251, 245, 43, 199, 89, 15] };
+pub const WdsTransportTftpClient: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1345599781, data2: 31836, data3: 19596, data4: [150, 196, 173, 159, 165, 0, 95, 186] };
+pub const WdsTransportTftpManager: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3370769570, data2: 12865, data3: 20045, data4: [184, 6, 188, 116, 1, 157, 254, 218] };

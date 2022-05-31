@@ -1,28 +1,28 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]
-    pub fn ProtectFileToEnterpriseIdentity(fileorfolderpath: ::windows_sys_core::PCWSTR, identity: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn ProtectFileToEnterpriseIdentity(fileorfolderpath: ::windows_core_sys::PCWSTR, identity: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SrpCloseThreadNetworkContext(threadnetworkcontext: *mut HTHREAD_NETWORK_CONTEXT) -> ::windows_sys_core::HRESULT;
+    pub fn SrpCloseThreadNetworkContext(threadnetworkcontext: *mut HTHREAD_NETWORK_CONTEXT) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SrpCreateThreadNetworkContext(enterpriseid: ::windows_sys_core::PCWSTR, threadnetworkcontext: *mut HTHREAD_NETWORK_CONTEXT) -> ::windows_sys_core::HRESULT;
+    pub fn SrpCreateThreadNetworkContext(enterpriseid: ::windows_core_sys::PCWSTR, threadnetworkcontext: *mut HTHREAD_NETWORK_CONTEXT) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]
-    pub fn SrpDisablePermissiveModeFileEncryption() -> ::windows_sys_core::HRESULT;
+    pub fn SrpDisablePermissiveModeFileEncryption() -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`, `\"Win32_Foundation\"`, `\"Win32_Storage_Packaging_Appx\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_Packaging_Appx"))]
-    pub fn SrpDoesPolicyAllowAppExecution(packageid: *const super::super::Storage::Packaging::Appx::PACKAGE_ID, isallowed: *mut super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
+    pub fn SrpDoesPolicyAllowAppExecution(packageid: *const super::super::Storage::Packaging::Appx::PACKAGE_ID, isallowed: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]
-    pub fn SrpEnablePermissiveModeFileEncryption(enterpriseid: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn SrpEnablePermissiveModeFileEncryption(enterpriseid: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SrpGetEnterpriseIds(tokenhandle: super::super::Foundation::HANDLE, numberofbytes: *mut u32, enterpriseids: *mut ::windows_sys_core::PWSTR, enterpriseidcount: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn SrpGetEnterpriseIds(tokenhandle: super::super::Foundation::HANDLE, numberofbytes: *mut u32, enterpriseids: *mut ::windows_core_sys::PWSTR, enterpriseidcount: *mut u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SrpGetEnterprisePolicy(tokenhandle: super::super::Foundation::HANDLE, policyflags: *mut ENTERPRISE_DATA_POLICIES) -> ::windows_sys_core::HRESULT;
+    pub fn SrpGetEnterprisePolicy(tokenhandle: super::super::Foundation::HANDLE, policyflags: *mut ENTERPRISE_DATA_POLICIES) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]
-    pub fn SrpHostingInitialize(version: SRPHOSTING_VERSION, r#type: SRPHOSTING_TYPE, pvdata: *const ::core::ffi::c_void, cbdata: u32) -> ::windows_sys_core::HRESULT;
+    pub fn SrpHostingInitialize(version: SRPHOSTING_VERSION, r#type: SRPHOSTING_TYPE, pvdata: *const ::core::ffi::c_void, cbdata: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]
     pub fn SrpHostingTerminate(r#type: SRPHOSTING_TYPE);
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`, `\"Win32_Foundation\"`*"]
@@ -30,9 +30,9 @@ extern "system" {
     pub fn SrpIsTokenService(tokenhandle: super::super::Foundation::HANDLE, istokenservice: *mut u8) -> super::super::Foundation::NTSTATUS;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SrpSetTokenEnterpriseId(tokenhandle: super::super::Foundation::HANDLE, enterpriseid: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn SrpSetTokenEnterpriseId(tokenhandle: super::super::Foundation::HANDLE, enterpriseid: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]
-    pub fn UnprotectFile(fileorfolderpath: ::windows_sys_core::PCWSTR, options: *const FILE_UNPROTECT_OPTIONS) -> ::windows_sys_core::HRESULT;
+    pub fn UnprotectFile(fileorfolderpath: ::windows_core_sys::PCWSTR, options: *const FILE_UNPROTECT_OPTIONS) -> ::windows_core_sys::HRESULT;
 }
 #[doc = "*Required features: `\"Win32_Security_EnterpriseData\"`*"]
 pub type ENTERPRISE_DATA_POLICIES = u32;

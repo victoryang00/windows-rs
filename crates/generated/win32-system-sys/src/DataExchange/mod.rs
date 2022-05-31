@@ -1,7 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
-    pub fn AddAtomA(lpstring: ::windows_sys_core::PCSTR) -> u16;
-    pub fn AddAtomW(lpstring: ::windows_sys_core::PCWSTR) -> u16;
+    pub fn AddAtomA(lpstring: ::windows_core_sys::PCSTR) -> u16;
+    pub fn AddAtomW(lpstring: ::windows_core_sys::PCWSTR) -> u16;
     #[cfg(feature = "Win32_Foundation")]
     pub fn AddClipboardFormatListener(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -20,8 +20,8 @@ extern "system" {
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
     pub fn DdeConnectList(idinst: u32, hszservice: HSZ, hsztopic: HSZ, hconvlist: HCONVLIST, pcc: *const CONVCONTEXT) -> HCONVLIST;
     pub fn DdeCreateDataHandle(idinst: u32, psrc: *const u8, cb: u32, cboff: u32, hszitem: HSZ, wfmt: u32, afcmd: u32) -> HDDEDATA;
-    pub fn DdeCreateStringHandleA(idinst: u32, psz: ::windows_sys_core::PCSTR, icodepage: i32) -> HSZ;
-    pub fn DdeCreateStringHandleW(idinst: u32, psz: ::windows_sys_core::PCWSTR, icodepage: i32) -> HSZ;
+    pub fn DdeCreateStringHandleA(idinst: u32, psz: ::windows_core_sys::PCSTR, icodepage: i32) -> HSZ;
+    pub fn DdeCreateStringHandleW(idinst: u32, psz: ::windows_core_sys::PCWSTR, icodepage: i32) -> HSZ;
     #[cfg(feature = "Win32_Foundation")]
     pub fn DdeDisconnect(hconv: HCONV) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -46,8 +46,8 @@ extern "system" {
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
     pub fn DdeQueryConvInfo(hconv: HCONV, idtransaction: u32, pconvinfo: *mut CONVINFO) -> u32;
     pub fn DdeQueryNextServer(hconvlist: HCONVLIST, hconvprev: HCONV) -> HCONV;
-    pub fn DdeQueryStringA(idinst: u32, hsz: HSZ, psz: ::windows_sys_core::PSTR, cchmax: u32, icodepage: i32) -> u32;
-    pub fn DdeQueryStringW(idinst: u32, hsz: HSZ, psz: ::windows_sys_core::PWSTR, cchmax: u32, icodepage: i32) -> u32;
+    pub fn DdeQueryStringA(idinst: u32, hsz: HSZ, psz: ::windows_core_sys::PSTR, cchmax: u32, icodepage: i32) -> u32;
+    pub fn DdeQueryStringW(idinst: u32, hsz: HSZ, psz: ::windows_core_sys::PWSTR, cchmax: u32, icodepage: i32) -> u32;
     pub fn DdeReconnect(hconv: HCONV) -> HCONV;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
     pub fn DdeSetQualityOfService(hwndclient: super::super::Foundation::HWND, pqosnew: *const super::super::Security::SECURITY_QUALITY_OF_SERVICE, pqosprev: *mut super::super::Security::SECURITY_QUALITY_OF_SERVICE) -> super::super::Foundation::BOOL;
@@ -61,16 +61,16 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn EmptyClipboard() -> super::super::Foundation::BOOL;
     pub fn EnumClipboardFormats(format: u32) -> u32;
-    pub fn FindAtomA(lpstring: ::windows_sys_core::PCSTR) -> u16;
-    pub fn FindAtomW(lpstring: ::windows_sys_core::PCWSTR) -> u16;
+    pub fn FindAtomA(lpstring: ::windows_core_sys::PCSTR) -> u16;
+    pub fn FindAtomW(lpstring: ::windows_core_sys::PCWSTR) -> u16;
     #[cfg(feature = "Win32_Foundation")]
     pub fn FreeDDElParam(msg: u32, lparam: super::super::Foundation::LPARAM) -> super::super::Foundation::BOOL;
-    pub fn GetAtomNameA(natom: u16, lpbuffer: ::windows_sys_core::PSTR, nsize: i32) -> u32;
-    pub fn GetAtomNameW(natom: u16, lpbuffer: ::windows_sys_core::PWSTR, nsize: i32) -> u32;
+    pub fn GetAtomNameA(natom: u16, lpbuffer: ::windows_core_sys::PSTR, nsize: i32) -> u32;
+    pub fn GetAtomNameW(natom: u16, lpbuffer: ::windows_core_sys::PWSTR, nsize: i32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetClipboardData(uformat: u32) -> super::super::Foundation::HANDLE;
-    pub fn GetClipboardFormatNameA(format: u32, lpszformatname: ::windows_sys_core::PSTR, cchmaxcount: i32) -> i32;
-    pub fn GetClipboardFormatNameW(format: u32, lpszformatname: ::windows_sys_core::PWSTR, cchmaxcount: i32) -> i32;
+    pub fn GetClipboardFormatNameA(format: u32, lpszformatname: ::windows_core_sys::PSTR, cchmaxcount: i32) -> i32;
+    pub fn GetClipboardFormatNameW(format: u32, lpszformatname: ::windows_core_sys::PWSTR, cchmaxcount: i32) -> i32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetClipboardOwner() -> super::super::Foundation::HWND;
     pub fn GetClipboardSequenceNumber() -> u32;
@@ -81,15 +81,15 @@ extern "system" {
     pub fn GetPriorityClipboardFormat(paformatprioritylist: *const u32, cformats: i32) -> i32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetUpdatedClipboardFormats(lpuiformats: *mut u32, cformats: u32, pcformatsout: *mut u32) -> super::super::Foundation::BOOL;
-    pub fn GlobalAddAtomA(lpstring: ::windows_sys_core::PCSTR) -> u16;
-    pub fn GlobalAddAtomExA(lpstring: ::windows_sys_core::PCSTR, flags: u32) -> u16;
-    pub fn GlobalAddAtomExW(lpstring: ::windows_sys_core::PCWSTR, flags: u32) -> u16;
-    pub fn GlobalAddAtomW(lpstring: ::windows_sys_core::PCWSTR) -> u16;
+    pub fn GlobalAddAtomA(lpstring: ::windows_core_sys::PCSTR) -> u16;
+    pub fn GlobalAddAtomExA(lpstring: ::windows_core_sys::PCSTR, flags: u32) -> u16;
+    pub fn GlobalAddAtomExW(lpstring: ::windows_core_sys::PCWSTR, flags: u32) -> u16;
+    pub fn GlobalAddAtomW(lpstring: ::windows_core_sys::PCWSTR) -> u16;
     pub fn GlobalDeleteAtom(natom: u16) -> u16;
-    pub fn GlobalFindAtomA(lpstring: ::windows_sys_core::PCSTR) -> u16;
-    pub fn GlobalFindAtomW(lpstring: ::windows_sys_core::PCWSTR) -> u16;
-    pub fn GlobalGetAtomNameA(natom: u16, lpbuffer: ::windows_sys_core::PSTR, nsize: i32) -> u32;
-    pub fn GlobalGetAtomNameW(natom: u16, lpbuffer: ::windows_sys_core::PWSTR, nsize: i32) -> u32;
+    pub fn GlobalFindAtomA(lpstring: ::windows_core_sys::PCSTR) -> u16;
+    pub fn GlobalFindAtomW(lpstring: ::windows_core_sys::PCWSTR) -> u16;
+    pub fn GlobalGetAtomNameA(natom: u16, lpbuffer: ::windows_core_sys::PSTR, nsize: i32) -> u32;
+    pub fn GlobalGetAtomNameW(natom: u16, lpbuffer: ::windows_core_sys::PWSTR, nsize: i32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn ImpersonateDdeClientWindow(hwndclient: super::super::Foundation::HWND, hwndserver: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -100,8 +100,8 @@ extern "system" {
     pub fn OpenClipboard(hwndnewowner: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn PackDDElParam(msg: u32, uilo: usize, uihi: usize) -> super::super::Foundation::LPARAM;
-    pub fn RegisterClipboardFormatA(lpszformat: ::windows_sys_core::PCSTR) -> u32;
-    pub fn RegisterClipboardFormatW(lpszformat: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn RegisterClipboardFormatA(lpszformat: ::windows_core_sys::PCSTR) -> u32;
+    pub fn RegisterClipboardFormatW(lpszformat: ::windows_core_sys::PCWSTR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn RemoveClipboardFormatListener(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]

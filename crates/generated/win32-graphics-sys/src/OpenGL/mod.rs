@@ -364,7 +364,7 @@ extern "system" {
     pub fn gluEndSurface(nobj: *mut GLUnurbs);
     pub fn gluEndTrim(nobj: *mut GLUnurbs);
     pub fn gluErrorString(errcode: u32) -> *mut u8;
-    pub fn gluErrorUnicodeStringEXT(errcode: u32) -> ::windows_sys_core::PWSTR;
+    pub fn gluErrorUnicodeStringEXT(errcode: u32) -> ::windows_core_sys::PWSTR;
     pub fn gluGetNurbsProperty(nobj: *mut GLUnurbs, property: u32, value: *mut f32);
     pub fn gluGetString(name: u32) -> *mut u8;
     pub fn gluGetTessProperty(tess: *mut GLUtesselator, which: u32, value: *mut f64);
@@ -416,7 +416,7 @@ extern "system" {
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn wglGetLayerPaletteEntries(param0: super::Gdi::HDC, param1: i32, param2: i32, param3: i32, param4: *mut u32) -> i32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn wglGetProcAddress(param0: ::windows_sys_core::PCSTR) -> super::super::Foundation::PROC;
+    pub fn wglGetProcAddress(param0: ::windows_core_sys::PCSTR) -> super::super::Foundation::PROC;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
     pub fn wglMakeCurrent(param0: super::Gdi::HDC, param1: HGLRC) -> super::super::Foundation::BOOL;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]

@@ -1,9 +1,9 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MSChapSrvChangePassword(servername: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR, lmoldpresent: super::super::Foundation::BOOLEAN, lmoldowfpassword: *const LM_OWF_PASSWORD, lmnewowfpassword: *const LM_OWF_PASSWORD, ntoldowfpassword: *const LM_OWF_PASSWORD, ntnewowfpassword: *const LM_OWF_PASSWORD) -> u32;
+    pub fn MSChapSrvChangePassword(servername: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, lmoldpresent: super::super::Foundation::BOOLEAN, lmoldowfpassword: *const LM_OWF_PASSWORD, lmnewowfpassword: *const LM_OWF_PASSWORD, ntoldowfpassword: *const LM_OWF_PASSWORD, ntnewowfpassword: *const LM_OWF_PASSWORD) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn MSChapSrvChangePassword2(servername: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR, newpasswordencryptedwitholdnt: *const SAMPR_ENCRYPTED_USER_PASSWORD, oldntowfpasswordencryptedwithnewnt: *const ENCRYPTED_LM_OWF_PASSWORD, lmpresent: super::super::Foundation::BOOLEAN, newpasswordencryptedwitholdlm: *const SAMPR_ENCRYPTED_USER_PASSWORD, oldlmowfpasswordencryptedwithnewlmornt: *const ENCRYPTED_LM_OWF_PASSWORD) -> u32;
+    pub fn MSChapSrvChangePassword2(servername: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, newpasswordencryptedwitholdnt: *const SAMPR_ENCRYPTED_USER_PASSWORD, oldntowfpasswordencryptedwithnewnt: *const ENCRYPTED_LM_OWF_PASSWORD, lmpresent: super::super::Foundation::BOOLEAN, newpasswordencryptedwitholdlm: *const SAMPR_ENCRYPTED_USER_PASSWORD, oldlmowfpasswordencryptedwithnewlmornt: *const ENCRYPTED_LM_OWF_PASSWORD) -> u32;
 }
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]

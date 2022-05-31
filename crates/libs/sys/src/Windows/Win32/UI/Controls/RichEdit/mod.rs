@@ -21,7 +21,7 @@ pub const AURL_ENABLETELNO: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub const AURL_ENABLEURL: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
-pub type AutoCorrectProc = ::core::option::Option<unsafe extern "system" fn(langid: u16, pszbefore: ::windows_sys_core::PCWSTR, pszafter: ::windows_sys_core::PCWSTR, cchafter: i32, pcchreplaced: *mut i32) -> i32>;
+pub type AutoCorrectProc = ::core::option::Option<unsafe extern "system" fn(langid: u16, pszbefore: ::windows_core_sys::PCWSTR, pszafter: ::windows_core_sys::PCWSTR, cchafter: i32, pcchreplaced: *mut i32) -> i32>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub struct BIDIOPTIONS {
@@ -489,7 +489,7 @@ impl ::core::clone::Clone for EDITSTREAM {
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub type EDITSTREAMCALLBACK = ::core::option::Option<unsafe extern "system" fn(dwcookie: usize, pbbuff: *mut u8, cb: i32, pcb: *mut i32) -> u32>;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
-pub type EDITWORDBREAKPROCEX = ::core::option::Option<unsafe extern "system" fn(pchtext: ::windows_sys_core::PCSTR, cchtext: i32, bcharset: u8, action: i32) -> i32>;
+pub type EDITWORDBREAKPROCEX = ::core::option::Option<unsafe extern "system" fn(pchtext: ::windows_core_sys::PCSTR, cchtext: i32, bcharset: u8, action: i32) -> i32>;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub const ELLIPSIS_END: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
@@ -811,7 +811,7 @@ impl ::core::clone::Clone for ENLINK {
 #[cfg(feature = "Win32_Foundation")]
 pub struct ENLOWFIRTF {
     pub nmhdr: super::NMHDR,
-    pub szControl: ::windows_sys_core::PSTR,
+    pub szControl: ::windows_core_sys::PSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ENLOWFIRTF {}
@@ -878,7 +878,7 @@ pub struct ENOLEOPFAILED {
     pub nmhdr: super::NMHDR,
     pub iob: i32,
     pub lOper: i32,
-    pub hr: ::windows_sys_core::HRESULT,
+    pub hr: ::windows_core_sys::HRESULT,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for ENOLEOPFAILED {}
@@ -996,7 +996,7 @@ pub const ES_VERTICAL: u32 = 4194304u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub struct FINDTEXTA {
     pub chrg: CHARRANGE,
-    pub lpstrText: ::windows_sys_core::PCSTR,
+    pub lpstrText: ::windows_core_sys::PCSTR,
 }
 impl ::core::marker::Copy for FINDTEXTA {}
 impl ::core::clone::Clone for FINDTEXTA {
@@ -1008,7 +1008,7 @@ impl ::core::clone::Clone for FINDTEXTA {
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub struct FINDTEXTEXA {
     pub chrg: CHARRANGE,
-    pub lpstrText: ::windows_sys_core::PCSTR,
+    pub lpstrText: ::windows_core_sys::PCSTR,
     pub chrgText: CHARRANGE,
 }
 impl ::core::marker::Copy for FINDTEXTEXA {}
@@ -1021,7 +1021,7 @@ impl ::core::clone::Clone for FINDTEXTEXA {
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub struct FINDTEXTEXW {
     pub chrg: CHARRANGE,
-    pub lpstrText: ::windows_sys_core::PCWSTR,
+    pub lpstrText: ::windows_core_sys::PCWSTR,
     pub chrgText: CHARRANGE,
 }
 impl ::core::marker::Copy for FINDTEXTEXW {}
@@ -1034,7 +1034,7 @@ impl ::core::clone::Clone for FINDTEXTEXW {
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub struct FINDTEXTW {
     pub chrg: CHARRANGE,
-    pub lpstrText: ::windows_sys_core::PCWSTR,
+    pub lpstrText: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for FINDTEXTW {}
 impl ::core::clone::Clone for FINDTEXTW {
@@ -1101,7 +1101,7 @@ pub struct GETTEXTEX {
     pub cb: u32,
     pub flags: GETTEXTEX_FLAGS,
     pub codepage: u32,
-    pub lpDefaultChar: ::windows_sys_core::PCSTR,
+    pub lpDefaultChar: ::windows_core_sys::PCSTR,
     pub lpUsedDefChar: *mut i32,
 }
 impl ::core::marker::Copy for GETTEXTEX {}
@@ -1566,7 +1566,7 @@ pub const PC_LEADING: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub const PC_OVERFLOW: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
-pub type PCreateTextServices = ::core::option::Option<unsafe extern "system" fn(punkouter: ::windows_sys_core::IUnknown, pitexthost: ITextHost, ppunk: *mut ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT>;
+pub type PCreateTextServices = ::core::option::Option<unsafe extern "system" fn(punkouter: ::windows_core_sys::IUnknown, pitexthost: ITextHost, ppunk: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT>;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub const PFA_FULL_GLYPHS: u32 = 8u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
@@ -1638,12 +1638,12 @@ pub const PFN_UCLETTER: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub const PFN_UCROMAN: u32 = 6u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
-pub type PShutdownTextServices = ::core::option::Option<unsafe extern "system" fn(ptextservices: ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT>;
+pub type PShutdownTextServices = ::core::option::Option<unsafe extern "system" fn(ptextservices: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT>;
 #[repr(C, packed(4))]
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub struct PUNCTUATION {
     pub iSize: u32,
-    pub szPunctuation: ::windows_sys_core::PSTR,
+    pub szPunctuation: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for PUNCTUATION {}
 impl ::core::clone::Clone for PUNCTUATION {
@@ -1667,7 +1667,7 @@ pub const RECO_PASTE: i32 = 0i32;
 pub struct REOBJECT {
     pub cbStruct: u32,
     pub cp: i32,
-    pub clsid: ::windows_sys_core::GUID,
+    pub clsid: ::windows_core_sys::GUID,
     pub poleobj: super::super::super::System::Ole::IOleObject,
     pub pstg: super::super::super::System::Com::StructuredStorage::IStorage,
     pub polesite: super::super::super::System::Ole::IOleClientSite,
@@ -1776,7 +1776,7 @@ pub struct RICHEDIT_IMAGE_PARAMETERS {
     pub yHeight: i32,
     pub Ascent: i32,
     pub Type: super::super::super::Graphics::Gdi::TEXT_ALIGN_OPTIONS,
-    pub pwszAlternateText: ::windows_sys_core::PCWSTR,
+    pub pwszAlternateText: ::windows_core_sys::PCWSTR,
     pub pIStream: super::super::super::System::Com::IStream,
 }
 #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com"))]
@@ -1996,7 +1996,7 @@ pub const ST_SELECTION: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub const ST_UNICODE: u32 = 8u32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
-pub const S_MSG_KEY_IGNORED: ::windows_sys_core::HRESULT = 262657i32;
+pub const S_MSG_KEY_IGNORED: ::windows_core_sys::HRESULT = 262657i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub struct TABLECELLPARMS {
@@ -2059,7 +2059,7 @@ pub const TM_MULTICODEPAGE: TEXTMODE = 32i32;
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub struct TEXTRANGEA {
     pub chrg: CHARRANGE,
-    pub lpstrText: ::windows_sys_core::PSTR,
+    pub lpstrText: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for TEXTRANGEA {}
 impl ::core::clone::Clone for TEXTRANGEA {
@@ -2071,7 +2071,7 @@ impl ::core::clone::Clone for TEXTRANGEA {
 #[doc = "*Required features: `\"Win32_UI_Controls_RichEdit\"`*"]
 pub struct TEXTRANGEW {
     pub chrg: CHARRANGE,
-    pub lpstrText: ::windows_sys_core::PWSTR,
+    pub lpstrText: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for TEXTRANGEW {}
 impl ::core::clone::Clone for TEXTRANGEW {

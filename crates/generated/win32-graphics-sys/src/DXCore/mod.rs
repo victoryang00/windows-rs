@@ -1,10 +1,10 @@
 #[link(name = "windows")]
 extern "system" {
-    pub fn DXCoreCreateAdapterFactory(riid: *const ::windows_sys_core::GUID, ppvfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn DXCoreCreateAdapterFactory(riid: *const ::windows_core_sys::GUID, ppvfactory: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
-pub const DXCORE_ADAPTER_ATTRIBUTE_D3D11_GRAPHICS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2353497707, data2: 30083, data3: 17677, data4: [240, 240, 107, 173, 168, 149, 175, 75] };
-pub const DXCORE_ADAPTER_ATTRIBUTE_D3D12_CORE_COMPUTE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 613296128, data2: 42899, data3: 18212, data4: [171, 170, 35, 166, 222, 27, 224, 144] };
-pub const DXCORE_ADAPTER_ATTRIBUTE_D3D12_GRAPHICS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 211734093, data2: 12142, data3: 20225, data4: [140, 150, 232, 158, 51, 27, 71, 177] };
+pub const DXCORE_ADAPTER_ATTRIBUTE_D3D11_GRAPHICS: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2353497707, data2: 30083, data3: 17677, data4: [240, 240, 107, 173, 168, 149, 175, 75] };
+pub const DXCORE_ADAPTER_ATTRIBUTE_D3D12_CORE_COMPUTE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 613296128, data2: 42899, data3: 18212, data4: [171, 170, 35, 166, 222, 27, 224, 144] };
+pub const DXCORE_ADAPTER_ATTRIBUTE_D3D12_GRAPHICS: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 211734093, data2: 12142, data3: 20225, data4: [140, 150, 232, 158, 51, 27, 71, 177] };
 #[repr(C)]
 pub struct DXCoreAdapterMemoryBudget {
     pub budget: u64,
@@ -90,5 +90,5 @@ pub const NonLocal: DXCoreSegmentGroup = 1u32;
 pub type IDXCoreAdapter = *mut ::core::ffi::c_void;
 pub type IDXCoreAdapterFactory = *mut ::core::ffi::c_void;
 pub type IDXCoreAdapterList = *mut ::core::ffi::c_void;
-pub type PFN_DXCORE_NOTIFICATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(notificationtype: DXCoreNotificationType, object: ::windows_sys_core::IUnknown, context: *const ::core::ffi::c_void)>;
+pub type PFN_DXCORE_NOTIFICATION_CALLBACK = ::core::option::Option<unsafe extern "system" fn(notificationtype: DXCoreNotificationType, object: ::windows_core_sys::IUnknown, context: *const ::core::ffi::c_void)>;
 pub const _FACDXCORE: u32 = 2176u32;

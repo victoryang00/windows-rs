@@ -1,7 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
-    pub fn InitializeXamlDiagnostic(endpointname: ::windows_sys_core::PCWSTR, pid: u32, wszdllxamldiagnostics: ::windows_sys_core::PCWSTR, wsztapdllname: ::windows_sys_core::PCWSTR, tapclsid: ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
-    pub fn InitializeXamlDiagnosticsEx(endpointname: ::windows_sys_core::PCWSTR, pid: u32, wszdllxamldiagnostics: ::windows_sys_core::PCWSTR, wsztapdllname: ::windows_sys_core::PCWSTR, tapclsid: ::windows_sys_core::GUID, wszinitializationdata: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn InitializeXamlDiagnostic(endpointname: ::windows_core_sys::PCWSTR, pid: u32, wszdllxamldiagnostics: ::windows_core_sys::PCWSTR, wsztapdllname: ::windows_core_sys::PCWSTR, tapclsid: ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
+    pub fn InitializeXamlDiagnosticsEx(endpointname: ::windows_core_sys::PCWSTR, pid: u32, wszdllxamldiagnostics: ::windows_core_sys::PCWSTR, wsztapdllname: ::windows_core_sys::PCWSTR, tapclsid: ::windows_core_sys::GUID, wszinitializationdata: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
 }
 pub type BaseValueSource = i32;
 pub const BaseValueSourceUnknown: BaseValueSource = 0i32;
@@ -51,7 +51,7 @@ impl ::core::clone::Clone for CollectionElementValue {
         *self
     }
 }
-pub const E_UNKNOWNTYPE: ::windows_sys_core::HRESULT = -2144665560i32;
+pub const E_UNKNOWNTYPE: ::windows_core_sys::HRESULT = -2144665560i32;
 #[repr(C)]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
 pub struct EnumType {

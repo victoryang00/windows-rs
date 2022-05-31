@@ -41,23 +41,23 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
     pub fn CLIPFORMAT_UserUnmarshal64(param0: *const u32, param1: *const u8, param2: *mut u16) -> *mut u8;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoGetMarshalSizeMax(pulsize: *mut u32, riid: *const ::windows_sys_core::GUID, punk: ::windows_sys_core::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn CoGetMarshalSizeMax(pulsize: *mut u32, riid: *const ::windows_core_sys::GUID, punk: ::windows_core_sys::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoGetStandardMarshal(riid: *const ::windows_sys_core::GUID, punk: ::windows_sys_core::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32, ppmarshal: *mut IMarshal) -> ::windows_sys_core::HRESULT;
+    pub fn CoGetStandardMarshal(riid: *const ::windows_core_sys::GUID, punk: ::windows_core_sys::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32, ppmarshal: *mut IMarshal) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoGetStdMarshalEx(punkouter: ::windows_sys_core::IUnknown, smexflags: u32, ppunkinner: *mut ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
+    pub fn CoGetStdMarshalEx(punkouter: ::windows_core_sys::IUnknown, smexflags: u32, ppunkinner: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoMarshalHresult(pstm: super::IStream, hresult: ::windows_sys_core::HRESULT) -> ::windows_sys_core::HRESULT;
+    pub fn CoMarshalHresult(pstm: super::IStream, hresult: ::windows_core_sys::HRESULT) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoMarshalInterThreadInterfaceInStream(riid: *const ::windows_sys_core::GUID, punk: ::windows_sys_core::IUnknown, ppstm: *mut super::IStream) -> ::windows_sys_core::HRESULT;
+    pub fn CoMarshalInterThreadInterfaceInStream(riid: *const ::windows_core_sys::GUID, punk: ::windows_core_sys::IUnknown, ppstm: *mut super::IStream) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoMarshalInterface(pstm: super::IStream, riid: *const ::windows_sys_core::GUID, punk: ::windows_sys_core::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn CoMarshalInterface(pstm: super::IStream, riid: *const ::windows_core_sys::GUID, punk: ::windows_core_sys::IUnknown, dwdestcontext: u32, pvdestcontext: *const ::core::ffi::c_void, mshlflags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoReleaseMarshalData(pstm: super::IStream) -> ::windows_sys_core::HRESULT;
+    pub fn CoReleaseMarshalData(pstm: super::IStream) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoUnmarshalHresult(pstm: super::IStream, phresult: *mut ::windows_sys_core::HRESULT) -> ::windows_sys_core::HRESULT;
+    pub fn CoUnmarshalHresult(pstm: super::IStream, phresult: *mut ::windows_core_sys::HRESULT) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`*"]
-    pub fn CoUnmarshalInterface(pstm: super::IStream, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn CoUnmarshalInterface(pstm: super::IStream, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_Marshal\"`, `\"Win32_UI_WindowsAndMessaging\"`*"]
     #[cfg(feature = "Win32_UI_WindowsAndMessaging")]
     pub fn HACCEL_UserFree(param0: *const u32, param1: *const super::super::super::UI::WindowsAndMessaging::HACCEL);

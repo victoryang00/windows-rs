@@ -8,9 +8,9 @@ pub struct OSUpdateAssessment {
     pub securityStatus: UpdateAssessmentStatus,
     pub assessmentTime: super::super::Foundation::FILETIME,
     pub releaseInfoTime: super::super::Foundation::FILETIME,
-    pub currentOSBuild: ::windows_sys_core::PWSTR,
+    pub currentOSBuild: ::windows_core_sys::PWSTR,
     pub currentOSReleaseTime: super::super::Foundation::FILETIME,
-    pub upToDateOSBuild: ::windows_sys_core::PWSTR,
+    pub upToDateOSBuild: ::windows_core_sys::PWSTR,
     pub upToDateOSReleaseTime: super::super::Foundation::FILETIME,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -51,4 +51,4 @@ pub const UpdateImpactLevel_None: UpdateImpactLevel = 0i32;
 pub const UpdateImpactLevel_Low: UpdateImpactLevel = 1i32;
 pub const UpdateImpactLevel_Medium: UpdateImpactLevel = 2i32;
 pub const UpdateImpactLevel_High: UpdateImpactLevel = 3i32;
-pub const WaaSAssessor: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 160364657, data2: 64159, data3: 18095, data4: [137, 88, 192, 131, 81, 93, 124, 156] };
+pub const WaaSAssessor: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 160364657, data2: 64159, data3: 18095, data4: [137, 88, 192, 131, 81, 93, 124, 156] };

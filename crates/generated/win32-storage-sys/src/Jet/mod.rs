@@ -73,9 +73,9 @@ extern "system" {
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetCreateIndex4W(sesid: super::StructuredStorage::JET_SESID, tableid: super::StructuredStorage::JET_TABLEID, pindexcreate: *const JET_INDEXCREATE3_W, cindexcreate: u32) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
-    pub fn JetCreateIndexA(sesid: super::StructuredStorage::JET_SESID, tableid: super::StructuredStorage::JET_TABLEID, szindexname: *const i8, grbit: u32, szkey: ::windows_sys_core::PCSTR, cbkey: u32, ldensity: u32) -> i32;
+    pub fn JetCreateIndexA(sesid: super::StructuredStorage::JET_SESID, tableid: super::StructuredStorage::JET_TABLEID, szindexname: *const i8, grbit: u32, szkey: ::windows_core_sys::PCSTR, cbkey: u32, ldensity: u32) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
-    pub fn JetCreateIndexW(sesid: super::StructuredStorage::JET_SESID, tableid: super::StructuredStorage::JET_TABLEID, szindexname: *const u16, grbit: u32, szkey: ::windows_sys_core::PCWSTR, cbkey: u32, ldensity: u32) -> i32;
+    pub fn JetCreateIndexW(sesid: super::StructuredStorage::JET_SESID, tableid: super::StructuredStorage::JET_TABLEID, szindexname: *const u16, grbit: u32, szkey: ::windows_core_sys::PCWSTR, cbkey: u32, ldensity: u32) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetCreateInstance2A(pinstance: *mut super::StructuredStorage::JET_INSTANCE, szinstancename: *const i8, szdisplayname: *const i8, grbit: u32) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
@@ -169,7 +169,7 @@ extern "system" {
     pub fn JetExternalRestoreA(szcheckpointfilepath: *const i8, szlogpath: *const i8, rgrstmap: *const JET_RSTMAP_A, crstfilemap: i32, szbackuplogpath: *const i8, genlow: i32, genhigh: i32, pfn: JET_PFNSTATUS) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetExternalRestoreW(szcheckpointfilepath: *const u16, szlogpath: *const u16, rgrstmap: *const JET_RSTMAP_W, crstfilemap: i32, szbackuplogpath: *const u16, genlow: i32, genhigh: i32, pfn: JET_PFNSTATUS) -> i32;
-    pub fn JetFreeBuffer(pbbuf: ::windows_sys_core::PCSTR) -> i32;
+    pub fn JetFreeBuffer(pbbuf: ::windows_core_sys::PCSTR) -> i32;
     pub fn JetGetAttachInfoA(szzdatabases: *mut i8, cbmax: u32, pcbactual: *mut u32) -> i32;
     #[cfg(feature = "Win32_Storage_StructuredStorage")]
     pub fn JetGetAttachInfoInstanceA(instance: super::StructuredStorage::JET_INSTANCE, szzdatabases: *mut i8, cbmax: u32, pcbactual: *mut u32) -> i32;
@@ -441,7 +441,7 @@ extern "system" {
 }
 #[repr(C)]
 pub struct CONVERT_A {
-    pub szOldDll: ::windows_sys_core::PSTR,
+    pub szOldDll: ::windows_core_sys::PSTR,
     pub Anonymous: CONVERT_A_0,
 }
 impl ::core::marker::Copy for CONVERT_A {}
@@ -473,7 +473,7 @@ impl ::core::clone::Clone for CONVERT_A_0_0 {
 }
 #[repr(C)]
 pub struct CONVERT_W {
-    pub szOldDll: ::windows_sys_core::PWSTR,
+    pub szOldDll: ::windows_core_sys::PWSTR,
     pub Anonymous: CONVERT_W_0,
 }
 impl ::core::marker::Copy for CONVERT_W {}
@@ -656,7 +656,7 @@ impl ::core::clone::Clone for JET_COLUMNBASE_W {
 #[repr(C)]
 pub struct JET_COLUMNCREATE_A {
     pub cbStruct: u32,
-    pub szColumnName: ::windows_sys_core::PSTR,
+    pub szColumnName: ::windows_core_sys::PSTR,
     pub coltyp: u32,
     pub cbMax: u32,
     pub grbit: u32,
@@ -675,7 +675,7 @@ impl ::core::clone::Clone for JET_COLUMNCREATE_A {
 #[repr(C)]
 pub struct JET_COLUMNCREATE_W {
     pub cbStruct: u32,
-    pub szColumnName: ::windows_sys_core::PWSTR,
+    pub szColumnName: ::windows_core_sys::PWSTR,
     pub coltyp: u32,
     pub cbMax: u32,
     pub grbit: u32,
@@ -777,7 +777,7 @@ impl ::core::clone::Clone for JET_COMMIT_ID {
 #[repr(C)]
 pub struct JET_CONDITIONALCOLUMN_A {
     pub cbStruct: u32,
-    pub szColumnName: ::windows_sys_core::PSTR,
+    pub szColumnName: ::windows_core_sys::PSTR,
     pub grbit: u32,
 }
 impl ::core::marker::Copy for JET_CONDITIONALCOLUMN_A {}
@@ -789,7 +789,7 @@ impl ::core::clone::Clone for JET_CONDITIONALCOLUMN_A {
 #[repr(C)]
 pub struct JET_CONDITIONALCOLUMN_W {
     pub cbStruct: u32,
-    pub szColumnName: ::windows_sys_core::PWSTR,
+    pub szColumnName: ::windows_core_sys::PWSTR,
     pub grbit: u32,
 }
 impl ::core::marker::Copy for JET_CONDITIONALCOLUMN_W {}
@@ -1160,8 +1160,8 @@ pub const JET_IndexCheckingMax: JET_INDEXCHECKING = 3i32;
 #[repr(C)]
 pub struct JET_INDEXCREATE2_A {
     pub cbStruct: u32,
-    pub szIndexName: ::windows_sys_core::PSTR,
-    pub szKey: ::windows_sys_core::PSTR,
+    pub szIndexName: ::windows_core_sys::PSTR,
+    pub szKey: ::windows_core_sys::PSTR,
     pub cbKey: u32,
     pub grbit: u32,
     pub ulDensity: u32,
@@ -1204,8 +1204,8 @@ impl ::core::clone::Clone for JET_INDEXCREATE2_A_1 {
 #[repr(C)]
 pub struct JET_INDEXCREATE2_W {
     pub cbStruct: u32,
-    pub szIndexName: ::windows_sys_core::PWSTR,
-    pub szKey: ::windows_sys_core::PWSTR,
+    pub szIndexName: ::windows_core_sys::PWSTR,
+    pub szKey: ::windows_core_sys::PWSTR,
     pub cbKey: u32,
     pub grbit: u32,
     pub ulDensity: u32,
@@ -1248,8 +1248,8 @@ impl ::core::clone::Clone for JET_INDEXCREATE2_W_1 {
 #[repr(C)]
 pub struct JET_INDEXCREATE3_A {
     pub cbStruct: u32,
-    pub szIndexName: ::windows_sys_core::PSTR,
-    pub szKey: ::windows_sys_core::PSTR,
+    pub szIndexName: ::windows_core_sys::PSTR,
+    pub szKey: ::windows_core_sys::PSTR,
     pub cbKey: u32,
     pub grbit: u32,
     pub ulDensity: u32,
@@ -1281,8 +1281,8 @@ impl ::core::clone::Clone for JET_INDEXCREATE3_A_0 {
 #[repr(C)]
 pub struct JET_INDEXCREATE3_W {
     pub cbStruct: u32,
-    pub szIndexName: ::windows_sys_core::PWSTR,
-    pub szKey: ::windows_sys_core::PWSTR,
+    pub szIndexName: ::windows_core_sys::PWSTR,
+    pub szKey: ::windows_core_sys::PWSTR,
     pub cbKey: u32,
     pub grbit: u32,
     pub ulDensity: u32,
@@ -1314,8 +1314,8 @@ impl ::core::clone::Clone for JET_INDEXCREATE3_W_0 {
 #[repr(C)]
 pub struct JET_INDEXCREATE_A {
     pub cbStruct: u32,
-    pub szIndexName: ::windows_sys_core::PSTR,
-    pub szKey: ::windows_sys_core::PSTR,
+    pub szIndexName: ::windows_core_sys::PSTR,
+    pub szKey: ::windows_core_sys::PSTR,
     pub cbKey: u32,
     pub grbit: u32,
     pub ulDensity: u32,
@@ -1357,8 +1357,8 @@ impl ::core::clone::Clone for JET_INDEXCREATE_A_1 {
 #[repr(C)]
 pub struct JET_INDEXCREATE_W {
     pub cbStruct: u32,
-    pub szIndexName: ::windows_sys_core::PWSTR,
-    pub szKey: ::windows_sys_core::PWSTR,
+    pub szIndexName: ::windows_core_sys::PWSTR,
+    pub szKey: ::windows_core_sys::PWSTR,
     pub cbKey: u32,
     pub grbit: u32,
     pub ulDensity: u32,
@@ -1502,7 +1502,7 @@ impl ::core::clone::Clone for JET_INDEX_RANGE {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_INSTANCE_INFO_A {
     pub hInstanceId: super::StructuredStorage::JET_INSTANCE,
-    pub szInstanceName: ::windows_sys_core::PSTR,
+    pub szInstanceName: ::windows_core_sys::PSTR,
     pub cDatabases: super::StructuredStorage::JET_API_PTR,
     pub szDatabaseFileName: *mut *mut i8,
     pub szDatabaseDisplayName: *mut *mut i8,
@@ -1520,7 +1520,7 @@ impl ::core::clone::Clone for JET_INSTANCE_INFO_A {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_INSTANCE_INFO_W {
     pub hInstanceId: super::StructuredStorage::JET_INSTANCE,
-    pub szInstanceName: ::windows_sys_core::PWSTR,
+    pub szInstanceName: ::windows_core_sys::PWSTR,
     pub cDatabases: super::StructuredStorage::JET_API_PTR,
     pub szDatabaseFileName: *mut *mut u16,
     pub szDatabaseDisplayName: *mut *mut u16,
@@ -2067,8 +2067,8 @@ impl ::core::clone::Clone for JET_RSTINFO_W {
 }
 #[repr(C)]
 pub struct JET_RSTMAP_A {
-    pub szDatabaseName: ::windows_sys_core::PSTR,
-    pub szNewDatabaseName: ::windows_sys_core::PSTR,
+    pub szDatabaseName: ::windows_core_sys::PSTR,
+    pub szNewDatabaseName: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for JET_RSTMAP_A {}
 impl ::core::clone::Clone for JET_RSTMAP_A {
@@ -2078,8 +2078,8 @@ impl ::core::clone::Clone for JET_RSTMAP_A {
 }
 #[repr(C)]
 pub struct JET_RSTMAP_W {
-    pub szDatabaseName: ::windows_sys_core::PWSTR,
-    pub szNewDatabaseName: ::windows_sys_core::PWSTR,
+    pub szDatabaseName: ::windows_core_sys::PWSTR,
+    pub szNewDatabaseName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for JET_RSTMAP_W {}
 impl ::core::clone::Clone for JET_RSTMAP_W {
@@ -2120,7 +2120,7 @@ impl ::core::clone::Clone for JET_SETINFO {
 pub struct JET_SETSYSPARAM_A {
     pub paramid: u32,
     pub lParam: super::StructuredStorage::JET_API_PTR,
-    pub sz: ::windows_sys_core::PCSTR,
+    pub sz: ::windows_core_sys::PCSTR,
     pub err: i32,
 }
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
@@ -2136,7 +2136,7 @@ impl ::core::clone::Clone for JET_SETSYSPARAM_A {
 pub struct JET_SETSYSPARAM_W {
     pub paramid: u32,
     pub lParam: super::StructuredStorage::JET_API_PTR,
-    pub sz: ::windows_sys_core::PCWSTR,
+    pub sz: ::windows_core_sys::PCWSTR,
     pub err: i32,
 }
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
@@ -2195,15 +2195,15 @@ impl ::core::clone::Clone for JET_SPACEHINTS {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_TABLECREATE2_A {
     pub cbStruct: u32,
-    pub szTableName: ::windows_sys_core::PSTR,
-    pub szTemplateTableName: ::windows_sys_core::PSTR,
+    pub szTableName: ::windows_core_sys::PSTR,
+    pub szTemplateTableName: ::windows_core_sys::PSTR,
     pub ulPages: u32,
     pub ulDensity: u32,
     pub rgcolumncreate: *mut JET_COLUMNCREATE_A,
     pub cColumns: u32,
     pub rgindexcreate: *mut JET_INDEXCREATE_A,
     pub cIndexes: u32,
-    pub szCallback: ::windows_sys_core::PSTR,
+    pub szCallback: ::windows_core_sys::PSTR,
     pub cbtyp: u32,
     pub grbit: u32,
     pub tableid: super::StructuredStorage::JET_TABLEID,
@@ -2221,15 +2221,15 @@ impl ::core::clone::Clone for JET_TABLECREATE2_A {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_TABLECREATE2_W {
     pub cbStruct: u32,
-    pub szTableName: ::windows_sys_core::PWSTR,
-    pub szTemplateTableName: ::windows_sys_core::PWSTR,
+    pub szTableName: ::windows_core_sys::PWSTR,
+    pub szTemplateTableName: ::windows_core_sys::PWSTR,
     pub ulPages: u32,
     pub ulDensity: u32,
     pub rgcolumncreate: *mut JET_COLUMNCREATE_W,
     pub cColumns: u32,
     pub rgindexcreate: *mut JET_INDEXCREATE_W,
     pub cIndexes: u32,
-    pub szCallback: ::windows_sys_core::PWSTR,
+    pub szCallback: ::windows_core_sys::PWSTR,
     pub cbtyp: u32,
     pub grbit: u32,
     pub tableid: super::StructuredStorage::JET_TABLEID,
@@ -2247,15 +2247,15 @@ impl ::core::clone::Clone for JET_TABLECREATE2_W {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_TABLECREATE3_A {
     pub cbStruct: u32,
-    pub szTableName: ::windows_sys_core::PSTR,
-    pub szTemplateTableName: ::windows_sys_core::PSTR,
+    pub szTableName: ::windows_core_sys::PSTR,
+    pub szTemplateTableName: ::windows_core_sys::PSTR,
     pub ulPages: u32,
     pub ulDensity: u32,
     pub rgcolumncreate: *mut JET_COLUMNCREATE_A,
     pub cColumns: u32,
     pub rgindexcreate: *mut JET_INDEXCREATE2_A,
     pub cIndexes: u32,
-    pub szCallback: ::windows_sys_core::PSTR,
+    pub szCallback: ::windows_core_sys::PSTR,
     pub cbtyp: u32,
     pub grbit: u32,
     pub pSeqSpacehints: *mut JET_SPACEHINTS,
@@ -2276,15 +2276,15 @@ impl ::core::clone::Clone for JET_TABLECREATE3_A {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_TABLECREATE3_W {
     pub cbStruct: u32,
-    pub szTableName: ::windows_sys_core::PWSTR,
-    pub szTemplateTableName: ::windows_sys_core::PWSTR,
+    pub szTableName: ::windows_core_sys::PWSTR,
+    pub szTemplateTableName: ::windows_core_sys::PWSTR,
     pub ulPages: u32,
     pub ulDensity: u32,
     pub rgcolumncreate: *mut JET_COLUMNCREATE_W,
     pub cColumns: u32,
     pub rgindexcreate: *mut JET_INDEXCREATE2_W,
     pub cIndexes: u32,
-    pub szCallback: ::windows_sys_core::PWSTR,
+    pub szCallback: ::windows_core_sys::PWSTR,
     pub cbtyp: u32,
     pub grbit: u32,
     pub pSeqSpacehints: *mut JET_SPACEHINTS,
@@ -2305,15 +2305,15 @@ impl ::core::clone::Clone for JET_TABLECREATE3_W {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_TABLECREATE4_A {
     pub cbStruct: u32,
-    pub szTableName: ::windows_sys_core::PSTR,
-    pub szTemplateTableName: ::windows_sys_core::PSTR,
+    pub szTableName: ::windows_core_sys::PSTR,
+    pub szTemplateTableName: ::windows_core_sys::PSTR,
     pub ulPages: u32,
     pub ulDensity: u32,
     pub rgcolumncreate: *mut JET_COLUMNCREATE_A,
     pub cColumns: u32,
     pub rgindexcreate: *mut JET_INDEXCREATE3_A,
     pub cIndexes: u32,
-    pub szCallback: ::windows_sys_core::PSTR,
+    pub szCallback: ::windows_core_sys::PSTR,
     pub cbtyp: u32,
     pub grbit: u32,
     pub pSeqSpacehints: *mut JET_SPACEHINTS,
@@ -2334,15 +2334,15 @@ impl ::core::clone::Clone for JET_TABLECREATE4_A {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_TABLECREATE4_W {
     pub cbStruct: u32,
-    pub szTableName: ::windows_sys_core::PWSTR,
-    pub szTemplateTableName: ::windows_sys_core::PWSTR,
+    pub szTableName: ::windows_core_sys::PWSTR,
+    pub szTemplateTableName: ::windows_core_sys::PWSTR,
     pub ulPages: u32,
     pub ulDensity: u32,
     pub rgcolumncreate: *mut JET_COLUMNCREATE_W,
     pub cColumns: u32,
     pub rgindexcreate: *mut JET_INDEXCREATE3_W,
     pub cIndexes: u32,
-    pub szCallback: ::windows_sys_core::PWSTR,
+    pub szCallback: ::windows_core_sys::PWSTR,
     pub cbtyp: u32,
     pub grbit: u32,
     pub pSeqSpacehints: *mut JET_SPACEHINTS,
@@ -2363,8 +2363,8 @@ impl ::core::clone::Clone for JET_TABLECREATE4_W {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_TABLECREATE_A {
     pub cbStruct: u32,
-    pub szTableName: ::windows_sys_core::PSTR,
-    pub szTemplateTableName: ::windows_sys_core::PSTR,
+    pub szTableName: ::windows_core_sys::PSTR,
+    pub szTemplateTableName: ::windows_core_sys::PSTR,
     pub ulPages: u32,
     pub ulDensity: u32,
     pub rgcolumncreate: *mut JET_COLUMNCREATE_A,
@@ -2387,8 +2387,8 @@ impl ::core::clone::Clone for JET_TABLECREATE_A {
 #[cfg(feature = "Win32_Storage_StructuredStorage")]
 pub struct JET_TABLECREATE_W {
     pub cbStruct: u32,
-    pub szTableName: ::windows_sys_core::PWSTR,
-    pub szTemplateTableName: ::windows_sys_core::PWSTR,
+    pub szTableName: ::windows_core_sys::PWSTR,
+    pub szTemplateTableName: ::windows_core_sys::PWSTR,
     pub ulPages: u32,
     pub ulDensity: u32,
     pub rgcolumncreate: *mut JET_COLUMNCREATE_W,
@@ -2495,7 +2495,7 @@ impl ::core::clone::Clone for JET_UNICODEINDEX {
 }
 #[repr(C)]
 pub struct JET_UNICODEINDEX2 {
-    pub szLocaleName: ::windows_sys_core::PWSTR,
+    pub szLocaleName: ::windows_core_sys::PWSTR,
     pub dwMapFlags: u32,
 }
 impl ::core::marker::Copy for JET_UNICODEINDEX2 {}
@@ -2506,10 +2506,10 @@ impl ::core::clone::Clone for JET_UNICODEINDEX2 {
 }
 #[repr(C)]
 pub struct JET_USERDEFINEDDEFAULT_A {
-    pub szCallback: ::windows_sys_core::PSTR,
+    pub szCallback: ::windows_core_sys::PSTR,
     pub pbUserData: *mut u8,
     pub cbUserData: u32,
-    pub szDependantColumns: ::windows_sys_core::PSTR,
+    pub szDependantColumns: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for JET_USERDEFINEDDEFAULT_A {}
 impl ::core::clone::Clone for JET_USERDEFINEDDEFAULT_A {
@@ -2519,10 +2519,10 @@ impl ::core::clone::Clone for JET_USERDEFINEDDEFAULT_A {
 }
 #[repr(C)]
 pub struct JET_USERDEFINEDDEFAULT_W {
-    pub szCallback: ::windows_sys_core::PWSTR,
+    pub szCallback: ::windows_core_sys::PWSTR,
     pub pbUserData: *mut u8,
     pub cbUserData: u32,
-    pub szDependantColumns: ::windows_sys_core::PWSTR,
+    pub szDependantColumns: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for JET_USERDEFINEDDEFAULT_W {}
 impl ::core::clone::Clone for JET_USERDEFINEDDEFAULT_W {

@@ -7,10 +7,10 @@ extern "system" {
     pub fn AbortDoc(hdc: super::super::Graphics::Gdi::HDC) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Xps\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn DeviceCapabilitiesA(pdevice: ::windows_sys_core::PCSTR, pport: ::windows_sys_core::PCSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_sys_core::PSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEA) -> i32;
+    pub fn DeviceCapabilitiesA(pdevice: ::windows_core_sys::PCSTR, pport: ::windows_core_sys::PCSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core_sys::PSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEA) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Xps\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn DeviceCapabilitiesW(pdevice: ::windows_sys_core::PCWSTR, pport: ::windows_sys_core::PCWSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_sys_core::PWSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEW) -> i32;
+    pub fn DeviceCapabilitiesW(pdevice: ::windows_core_sys::PCWSTR, pport: ::windows_core_sys::PCWSTR, fwcapability: DEVICE_CAPABILITIES, poutput: ::windows_core_sys::PWSTR, pdevmode: *const super::super::Graphics::Gdi::DEVMODEW) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Xps\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn EndDoc(hdc: super::super::Graphics::Gdi::HDC) -> i32;
@@ -19,10 +19,10 @@ extern "system" {
     pub fn EndPage(hdc: super::super::Graphics::Gdi::HDC) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Xps\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn Escape(hdc: super::super::Graphics::Gdi::HDC, iescape: i32, cjin: i32, pvin: ::windows_sys_core::PCSTR, pvout: *mut ::core::ffi::c_void) -> i32;
+    pub fn Escape(hdc: super::super::Graphics::Gdi::HDC, iescape: i32, cjin: i32, pvin: ::windows_core_sys::PCSTR, pvout: *mut ::core::ffi::c_void) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Xps\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(feature = "Win32_Graphics_Gdi")]
-    pub fn ExtEscape(hdc: super::super::Graphics::Gdi::HDC, iescape: i32, cjinput: i32, lpindata: ::windows_sys_core::PCSTR, cjoutput: i32, lpoutdata: ::windows_sys_core::PSTR) -> i32;
+    pub fn ExtEscape(hdc: super::super::Graphics::Gdi::HDC, iescape: i32, cjinput: i32, lpindata: ::windows_core_sys::PCSTR, cjoutput: i32, lpoutdata: ::windows_core_sys::PSTR) -> i32;
     #[doc = "*Required features: `\"Win32_Storage_Xps\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
     pub fn PrintWindow(hwnd: super::super::Foundation::HWND, hdcblt: super::super::Graphics::Gdi::HDC, nflags: PRINT_WINDOW_FLAGS) -> super::super::Foundation::BOOL;
@@ -108,9 +108,9 @@ pub const DC_VERSION: DEVICE_CAPABILITIES = 10u32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
 pub struct DOCINFOA {
     pub cbSize: i32,
-    pub lpszDocName: ::windows_sys_core::PCSTR,
-    pub lpszOutput: ::windows_sys_core::PCSTR,
-    pub lpszDatatype: ::windows_sys_core::PCSTR,
+    pub lpszDocName: ::windows_core_sys::PCSTR,
+    pub lpszOutput: ::windows_core_sys::PCSTR,
+    pub lpszDatatype: ::windows_core_sys::PCSTR,
     pub fwType: u32,
 }
 impl ::core::marker::Copy for DOCINFOA {}
@@ -123,9 +123,9 @@ impl ::core::clone::Clone for DOCINFOA {
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
 pub struct DOCINFOW {
     pub cbSize: i32,
-    pub lpszDocName: ::windows_sys_core::PCWSTR,
-    pub lpszOutput: ::windows_sys_core::PCWSTR,
-    pub lpszDatatype: ::windows_sys_core::PCWSTR,
+    pub lpszDocName: ::windows_core_sys::PCWSTR,
+    pub lpszOutput: ::windows_core_sys::PCWSTR,
+    pub lpszDatatype: ::windows_core_sys::PCWSTR,
     pub fwType: u32,
 }
 impl ::core::marker::Copy for DOCINFOW {}
@@ -441,175 +441,175 @@ pub const XPS_DOCUMENT_TYPE_XPS: XPS_DOCUMENT_TYPE = 2i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
 pub const XPS_DOCUMENT_TYPE_OPENXPS: XPS_DOCUMENT_TYPE = 3i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_ABSOLUTE_REFERENCE: ::windows_sys_core::HRESULT = -2142108159i32;
+pub const XPS_E_ABSOLUTE_REFERENCE: ::windows_core_sys::HRESULT = -2142108159i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_ALREADY_OWNED: ::windows_sys_core::HRESULT = -2142108413i32;
+pub const XPS_E_ALREADY_OWNED: ::windows_core_sys::HRESULT = -2142108413i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_BLEED_BOX_PAGE_DIMENSIONS_NOT_IN_SYNC: ::windows_sys_core::HRESULT = -2142108407i32;
+pub const XPS_E_BLEED_BOX_PAGE_DIMENSIONS_NOT_IN_SYNC: ::windows_core_sys::HRESULT = -2142108407i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_BOTH_PATHFIGURE_AND_ABBR_SYNTAX_PRESENT: ::windows_sys_core::HRESULT = -2142108409i32;
+pub const XPS_E_BOTH_PATHFIGURE_AND_ABBR_SYNTAX_PRESENT: ::windows_core_sys::HRESULT = -2142108409i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_BOTH_RESOURCE_AND_SOURCEATTR_PRESENT: ::windows_sys_core::HRESULT = -2142108408i32;
+pub const XPS_E_BOTH_RESOURCE_AND_SOURCEATTR_PRESENT: ::windows_core_sys::HRESULT = -2142108408i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_CARET_OUTSIDE_STRING: ::windows_sys_core::HRESULT = -2142108923i32;
+pub const XPS_E_CARET_OUTSIDE_STRING: ::windows_core_sys::HRESULT = -2142108923i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_CARET_OUT_OF_ORDER: ::windows_sys_core::HRESULT = -2142108922i32;
+pub const XPS_E_CARET_OUT_OF_ORDER: ::windows_core_sys::HRESULT = -2142108922i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_COLOR_COMPONENT_OUT_OF_RANGE: ::windows_sys_core::HRESULT = -2142108410i32;
+pub const XPS_E_COLOR_COMPONENT_OUT_OF_RANGE: ::windows_core_sys::HRESULT = -2142108410i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_DICTIONARY_ITEM_NAMED: ::windows_sys_core::HRESULT = -2142108671i32;
+pub const XPS_E_DICTIONARY_ITEM_NAMED: ::windows_core_sys::HRESULT = -2142108671i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_DUPLICATE_NAMES: ::windows_sys_core::HRESULT = -2142109175i32;
+pub const XPS_E_DUPLICATE_NAMES: ::windows_core_sys::HRESULT = -2142109175i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_DUPLICATE_RESOURCE_KEYS: ::windows_sys_core::HRESULT = -2142109184i32;
+pub const XPS_E_DUPLICATE_RESOURCE_KEYS: ::windows_core_sys::HRESULT = -2142109184i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INDEX_OUT_OF_RANGE: ::windows_sys_core::HRESULT = -2142108416i32;
+pub const XPS_E_INDEX_OUT_OF_RANGE: ::windows_core_sys::HRESULT = -2142108416i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_BLEED_BOX: ::windows_sys_core::HRESULT = -2142109692i32;
+pub const XPS_E_INVALID_BLEED_BOX: ::windows_core_sys::HRESULT = -2142109692i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_CONTENT_BOX: ::windows_sys_core::HRESULT = -2142109685i32;
+pub const XPS_E_INVALID_CONTENT_BOX: ::windows_core_sys::HRESULT = -2142109685i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_CONTENT_TYPE: ::windows_sys_core::HRESULT = -2142109682i32;
+pub const XPS_E_INVALID_CONTENT_TYPE: ::windows_core_sys::HRESULT = -2142109682i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_FLOAT: ::windows_sys_core::HRESULT = -2142109689i32;
+pub const XPS_E_INVALID_FLOAT: ::windows_core_sys::HRESULT = -2142109689i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_FONT_URI: ::windows_sys_core::HRESULT = -2142109686i32;
+pub const XPS_E_INVALID_FONT_URI: ::windows_core_sys::HRESULT = -2142109686i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_LANGUAGE: ::windows_sys_core::HRESULT = -2142109696i32;
+pub const XPS_E_INVALID_LANGUAGE: ::windows_core_sys::HRESULT = -2142109696i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_LOOKUP_TYPE: ::windows_sys_core::HRESULT = -2142109690i32;
+pub const XPS_E_INVALID_LOOKUP_TYPE: ::windows_core_sys::HRESULT = -2142109690i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_MARKUP: ::windows_sys_core::HRESULT = -2142109684i32;
+pub const XPS_E_INVALID_MARKUP: ::windows_core_sys::HRESULT = -2142109684i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_NAME: ::windows_sys_core::HRESULT = -2142109695i32;
+pub const XPS_E_INVALID_NAME: ::windows_core_sys::HRESULT = -2142109695i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_NUMBER_OF_COLOR_CHANNELS: ::windows_sys_core::HRESULT = -2142108158i32;
+pub const XPS_E_INVALID_NUMBER_OF_COLOR_CHANNELS: ::windows_core_sys::HRESULT = -2142108158i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_NUMBER_OF_POINTS_IN_CURVE_SEGMENTS: ::windows_sys_core::HRESULT = -2142108160i32;
+pub const XPS_E_INVALID_NUMBER_OF_POINTS_IN_CURVE_SEGMENTS: ::windows_core_sys::HRESULT = -2142108160i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_OBFUSCATED_FONT_URI: ::windows_sys_core::HRESULT = -2142109681i32;
+pub const XPS_E_INVALID_OBFUSCATED_FONT_URI: ::windows_core_sys::HRESULT = -2142109681i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_PAGE_SIZE: ::windows_sys_core::HRESULT = -2142109693i32;
+pub const XPS_E_INVALID_PAGE_SIZE: ::windows_core_sys::HRESULT = -2142109693i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_RESOURCE_KEY: ::windows_sys_core::HRESULT = -2142109694i32;
+pub const XPS_E_INVALID_RESOURCE_KEY: ::windows_core_sys::HRESULT = -2142109694i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_SIGNATUREBLOCK_MARKUP: ::windows_sys_core::HRESULT = -2142108789i32;
+pub const XPS_E_INVALID_SIGNATUREBLOCK_MARKUP: ::windows_core_sys::HRESULT = -2142108789i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_THUMBNAIL_IMAGE_TYPE: ::windows_sys_core::HRESULT = -2142109691i32;
+pub const XPS_E_INVALID_THUMBNAIL_IMAGE_TYPE: ::windows_core_sys::HRESULT = -2142109691i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_INVALID_XML_ENCODING: ::windows_sys_core::HRESULT = -2142109683i32;
+pub const XPS_E_INVALID_XML_ENCODING: ::windows_core_sys::HRESULT = -2142109683i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MAPPING_OUTSIDE_INDICES: ::windows_sys_core::HRESULT = -2142108924i32;
+pub const XPS_E_MAPPING_OUTSIDE_INDICES: ::windows_core_sys::HRESULT = -2142108924i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MAPPING_OUTSIDE_STRING: ::windows_sys_core::HRESULT = -2142108925i32;
+pub const XPS_E_MAPPING_OUTSIDE_STRING: ::windows_core_sys::HRESULT = -2142108925i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MAPPING_OUT_OF_ORDER: ::windows_sys_core::HRESULT = -2142108926i32;
+pub const XPS_E_MAPPING_OUT_OF_ORDER: ::windows_core_sys::HRESULT = -2142108926i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MARKUP_COMPATIBILITY_ELEMENTS: ::windows_sys_core::HRESULT = -2142108791i32;
+pub const XPS_E_MARKUP_COMPATIBILITY_ELEMENTS: ::windows_core_sys::HRESULT = -2142108791i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_COLORPROFILE: ::windows_sys_core::HRESULT = -2142109436i32;
+pub const XPS_E_MISSING_COLORPROFILE: ::windows_core_sys::HRESULT = -2142109436i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_DISCARDCONTROL: ::windows_sys_core::HRESULT = -2142109422i32;
+pub const XPS_E_MISSING_DISCARDCONTROL: ::windows_core_sys::HRESULT = -2142109422i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_DOCUMENT: ::windows_sys_core::HRESULT = -2142109431i32;
+pub const XPS_E_MISSING_DOCUMENT: ::windows_core_sys::HRESULT = -2142109431i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_DOCUMENTSEQUENCE_RELATIONSHIP: ::windows_sys_core::HRESULT = -2142109432i32;
+pub const XPS_E_MISSING_DOCUMENTSEQUENCE_RELATIONSHIP: ::windows_core_sys::HRESULT = -2142109432i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_FONTURI: ::windows_sys_core::HRESULT = -2142109433i32;
+pub const XPS_E_MISSING_FONTURI: ::windows_core_sys::HRESULT = -2142109433i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_GLYPHS: ::windows_sys_core::HRESULT = -2142109438i32;
+pub const XPS_E_MISSING_GLYPHS: ::windows_core_sys::HRESULT = -2142109438i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_IMAGE_IN_IMAGEBRUSH: ::windows_sys_core::HRESULT = -2142109426i32;
+pub const XPS_E_MISSING_IMAGE_IN_IMAGEBRUSH: ::windows_core_sys::HRESULT = -2142109426i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_LOOKUP: ::windows_sys_core::HRESULT = -2142109439i32;
+pub const XPS_E_MISSING_LOOKUP: ::windows_core_sys::HRESULT = -2142109439i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_NAME: ::windows_sys_core::HRESULT = -2142109440i32;
+pub const XPS_E_MISSING_NAME: ::windows_core_sys::HRESULT = -2142109440i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_PAGE_IN_DOCUMENT: ::windows_sys_core::HRESULT = -2142109428i32;
+pub const XPS_E_MISSING_PAGE_IN_DOCUMENT: ::windows_core_sys::HRESULT = -2142109428i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_PAGE_IN_PAGEREFERENCE: ::windows_sys_core::HRESULT = -2142109427i32;
+pub const XPS_E_MISSING_PAGE_IN_PAGEREFERENCE: ::windows_core_sys::HRESULT = -2142109427i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_PART_REFERENCE: ::windows_sys_core::HRESULT = -2142109424i32;
+pub const XPS_E_MISSING_PART_REFERENCE: ::windows_core_sys::HRESULT = -2142109424i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_PART_STREAM: ::windows_sys_core::HRESULT = -2142109421i32;
+pub const XPS_E_MISSING_PART_STREAM: ::windows_core_sys::HRESULT = -2142109421i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_REFERRED_DOCUMENT: ::windows_sys_core::HRESULT = -2142109430i32;
+pub const XPS_E_MISSING_REFERRED_DOCUMENT: ::windows_core_sys::HRESULT = -2142109430i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_REFERRED_PAGE: ::windows_sys_core::HRESULT = -2142109429i32;
+pub const XPS_E_MISSING_REFERRED_PAGE: ::windows_core_sys::HRESULT = -2142109429i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_RELATIONSHIP_TARGET: ::windows_sys_core::HRESULT = -2142109435i32;
+pub const XPS_E_MISSING_RELATIONSHIP_TARGET: ::windows_core_sys::HRESULT = -2142109435i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_RESOURCE_KEY: ::windows_sys_core::HRESULT = -2142109425i32;
+pub const XPS_E_MISSING_RESOURCE_KEY: ::windows_core_sys::HRESULT = -2142109425i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_RESOURCE_RELATIONSHIP: ::windows_sys_core::HRESULT = -2142109434i32;
+pub const XPS_E_MISSING_RESOURCE_RELATIONSHIP: ::windows_core_sys::HRESULT = -2142109434i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_RESTRICTED_FONT_RELATIONSHIP: ::windows_sys_core::HRESULT = -2142109423i32;
+pub const XPS_E_MISSING_RESTRICTED_FONT_RELATIONSHIP: ::windows_core_sys::HRESULT = -2142109423i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MISSING_SEGMENT_DATA: ::windows_sys_core::HRESULT = -2142109437i32;
+pub const XPS_E_MISSING_SEGMENT_DATA: ::windows_core_sys::HRESULT = -2142109437i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MULTIPLE_DOCUMENTSEQUENCE_RELATIONSHIPS: ::windows_sys_core::HRESULT = -2142109182i32;
+pub const XPS_E_MULTIPLE_DOCUMENTSEQUENCE_RELATIONSHIPS: ::windows_core_sys::HRESULT = -2142109182i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MULTIPLE_PRINTTICKETS_ON_DOCUMENT: ::windows_sys_core::HRESULT = -2142109178i32;
+pub const XPS_E_MULTIPLE_PRINTTICKETS_ON_DOCUMENT: ::windows_core_sys::HRESULT = -2142109178i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MULTIPLE_PRINTTICKETS_ON_DOCUMENTSEQUENCE: ::windows_sys_core::HRESULT = -2142109177i32;
+pub const XPS_E_MULTIPLE_PRINTTICKETS_ON_DOCUMENTSEQUENCE: ::windows_core_sys::HRESULT = -2142109177i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MULTIPLE_PRINTTICKETS_ON_PAGE: ::windows_sys_core::HRESULT = -2142109179i32;
+pub const XPS_E_MULTIPLE_PRINTTICKETS_ON_PAGE: ::windows_core_sys::HRESULT = -2142109179i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MULTIPLE_REFERENCES_TO_PART: ::windows_sys_core::HRESULT = -2142109176i32;
+pub const XPS_E_MULTIPLE_REFERENCES_TO_PART: ::windows_core_sys::HRESULT = -2142109176i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MULTIPLE_RESOURCES: ::windows_sys_core::HRESULT = -2142109183i32;
+pub const XPS_E_MULTIPLE_RESOURCES: ::windows_core_sys::HRESULT = -2142109183i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MULTIPLE_THUMBNAILS_ON_PACKAGE: ::windows_sys_core::HRESULT = -2142109180i32;
+pub const XPS_E_MULTIPLE_THUMBNAILS_ON_PACKAGE: ::windows_core_sys::HRESULT = -2142109180i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_MULTIPLE_THUMBNAILS_ON_PAGE: ::windows_sys_core::HRESULT = -2142109181i32;
+pub const XPS_E_MULTIPLE_THUMBNAILS_ON_PAGE: ::windows_core_sys::HRESULT = -2142109181i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_NEGATIVE_FLOAT: ::windows_sys_core::HRESULT = -2142108918i32;
+pub const XPS_E_NEGATIVE_FLOAT: ::windows_core_sys::HRESULT = -2142108918i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_NESTED_REMOTE_DICTIONARY: ::windows_sys_core::HRESULT = -2142108670i32;
+pub const XPS_E_NESTED_REMOTE_DICTIONARY: ::windows_core_sys::HRESULT = -2142108670i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_NOT_ENOUGH_GRADIENT_STOPS: ::windows_sys_core::HRESULT = -2142108405i32;
+pub const XPS_E_NOT_ENOUGH_GRADIENT_STOPS: ::windows_core_sys::HRESULT = -2142108405i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_NO_CUSTOM_OBJECTS: ::windows_sys_core::HRESULT = -2142108414i32;
+pub const XPS_E_NO_CUSTOM_OBJECTS: ::windows_core_sys::HRESULT = -2142108414i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_OBJECT_DETACHED: ::windows_sys_core::HRESULT = -2142108790i32;
+pub const XPS_E_OBJECT_DETACHED: ::windows_core_sys::HRESULT = -2142108790i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_ODD_BIDILEVEL: ::windows_sys_core::HRESULT = -2142108921i32;
+pub const XPS_E_ODD_BIDILEVEL: ::windows_core_sys::HRESULT = -2142108921i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_ONE_TO_ONE_MAPPING_EXPECTED: ::windows_sys_core::HRESULT = -2142108920i32;
+pub const XPS_E_ONE_TO_ONE_MAPPING_EXPECTED: ::windows_core_sys::HRESULT = -2142108920i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_PACKAGE_ALREADY_OPENED: ::windows_sys_core::HRESULT = -2142108793i32;
+pub const XPS_E_PACKAGE_ALREADY_OPENED: ::windows_core_sys::HRESULT = -2142108793i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_PACKAGE_NOT_OPENED: ::windows_sys_core::HRESULT = -2142108794i32;
+pub const XPS_E_PACKAGE_NOT_OPENED: ::windows_core_sys::HRESULT = -2142108794i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_PACKAGE_WRITER_NOT_CLOSED: ::windows_sys_core::HRESULT = -2142108404i32;
+pub const XPS_E_PACKAGE_WRITER_NOT_CLOSED: ::windows_core_sys::HRESULT = -2142108404i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_RELATIONSHIP_EXTERNAL: ::windows_sys_core::HRESULT = -2142108406i32;
+pub const XPS_E_RELATIONSHIP_EXTERNAL: ::windows_core_sys::HRESULT = -2142108406i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_RESOURCE_NOT_OWNED: ::windows_sys_core::HRESULT = -2142108412i32;
+pub const XPS_E_RESOURCE_NOT_OWNED: ::windows_core_sys::HRESULT = -2142108412i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_RESTRICTED_FONT_NOT_OBFUSCATED: ::windows_sys_core::HRESULT = -2142108919i32;
+pub const XPS_E_RESTRICTED_FONT_NOT_OBFUSCATED: ::windows_core_sys::HRESULT = -2142108919i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_SIGNATUREID_DUP: ::windows_sys_core::HRESULT = -2142108792i32;
+pub const XPS_E_SIGNATUREID_DUP: ::windows_core_sys::HRESULT = -2142108792i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_SIGREQUESTID_DUP: ::windows_sys_core::HRESULT = -2142108795i32;
+pub const XPS_E_SIGREQUESTID_DUP: ::windows_core_sys::HRESULT = -2142108795i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_STRING_TOO_LONG: ::windows_sys_core::HRESULT = -2142108928i32;
+pub const XPS_E_STRING_TOO_LONG: ::windows_core_sys::HRESULT = -2142108928i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_TOO_MANY_INDICES: ::windows_sys_core::HRESULT = -2142108927i32;
+pub const XPS_E_TOO_MANY_INDICES: ::windows_core_sys::HRESULT = -2142108927i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_UNAVAILABLE_PACKAGE: ::windows_sys_core::HRESULT = -2142109420i32;
+pub const XPS_E_UNAVAILABLE_PACKAGE: ::windows_core_sys::HRESULT = -2142109420i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_UNEXPECTED_COLORPROFILE: ::windows_sys_core::HRESULT = -2142108411i32;
+pub const XPS_E_UNEXPECTED_COLORPROFILE: ::windows_core_sys::HRESULT = -2142108411i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_UNEXPECTED_CONTENT_TYPE: ::windows_sys_core::HRESULT = -2142109688i32;
+pub const XPS_E_UNEXPECTED_CONTENT_TYPE: ::windows_core_sys::HRESULT = -2142109688i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_UNEXPECTED_RELATIONSHIP_TYPE: ::windows_sys_core::HRESULT = -2142109680i32;
+pub const XPS_E_UNEXPECTED_RELATIONSHIP_TYPE: ::windows_core_sys::HRESULT = -2142109680i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_UNEXPECTED_RESTRICTED_FONT_RELATIONSHIP: ::windows_sys_core::HRESULT = -2142109679i32;
+pub const XPS_E_UNEXPECTED_RESTRICTED_FONT_RELATIONSHIP: ::windows_core_sys::HRESULT = -2142109679i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_VISUAL_CIRCULAR_REF: ::windows_sys_core::HRESULT = -2142108415i32;
+pub const XPS_E_VISUAL_CIRCULAR_REF: ::windows_core_sys::HRESULT = -2142108415i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
-pub const XPS_E_XKEY_ATTR_PRESENT_OUTSIDE_RES_DICT: ::windows_sys_core::HRESULT = -2142108672i32;
+pub const XPS_E_XKEY_ATTR_PRESENT_OUTSIDE_RES_DICT: ::windows_core_sys::HRESULT = -2142108672i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
 pub type XPS_FILL_RULE = i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
@@ -862,6 +862,6 @@ pub const XPS_TILE_MODE_FLIPX: XPS_TILE_MODE = 3i32;
 pub const XPS_TILE_MODE_FLIPY: XPS_TILE_MODE = 4i32;
 #[doc = "*Required features: `\"Win32_Storage_Xps\"`*"]
 pub const XPS_TILE_MODE_FLIPXY: XPS_TILE_MODE = 5i32;
-pub const XpsOMObjectFactory: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3916747373, data2: 15771, data3: 19783, data4: [136, 204, 56, 114, 242, 220, 53, 133] };
-pub const XpsOMThumbnailGenerator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2118788066, data2: 47465, data3: 18273, data4: [190, 53, 26, 140, 237, 88, 227, 35] };
-pub const XpsSignatureManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2965648160, data2: 8981, data3: 17570, data4: [183, 10, 9, 67, 161, 64, 168, 238] };
+pub const XpsOMObjectFactory: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3916747373, data2: 15771, data3: 19783, data4: [136, 204, 56, 114, 242, 220, 53, 133] };
+pub const XpsOMThumbnailGenerator: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2118788066, data2: 47465, data3: 18273, data4: [190, 53, 26, 140, 237, 88, 227, 35] };
+pub const XpsSignatureManager: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2965648160, data2: 8981, data3: 17570, data4: [183, 10, 9, 67, 161, 64, 168, 238] };

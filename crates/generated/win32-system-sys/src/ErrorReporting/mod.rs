@@ -1,58 +1,58 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AddERExcludedApplicationA(szapplication: ::windows_sys_core::PCSTR) -> super::super::Foundation::BOOL;
+    pub fn AddERExcludedApplicationA(szapplication: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AddERExcludedApplicationW(wszapplication: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn AddERExcludedApplicationW(wszapplication: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
     pub fn ReportFault(pep: *const super::Diagnostics::Debug::EXCEPTION_POINTERS, dwopt: u32) -> EFaultRepRetVal;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WerAddExcludedApplication(pwzexename: ::windows_sys_core::PCWSTR, ballusers: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
-    pub fn WerFreeString(pwszstr: ::windows_sys_core::PCWSTR);
+    pub fn WerAddExcludedApplication(pwzexename: ::windows_core_sys::PCWSTR, ballusers: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn WerFreeString(pwszstr: ::windows_core_sys::PCWSTR);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WerGetFlags(hprocess: super::super::Foundation::HANDLE, pdwflags: *mut WER_FAULT_REPORTING) -> ::windows_sys_core::HRESULT;
-    pub fn WerRegisterAdditionalProcess(processid: u32, captureextrainfoforthreadid: u32) -> ::windows_sys_core::HRESULT;
-    pub fn WerRegisterAppLocalDump(localappdatarelativepath: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn WerRegisterCustomMetadata(key: ::windows_sys_core::PCWSTR, value: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn WerRegisterExcludedMemoryBlock(address: *const ::core::ffi::c_void, size: u32) -> ::windows_sys_core::HRESULT;
-    pub fn WerRegisterFile(pwzfile: ::windows_sys_core::PCWSTR, regfiletype: WER_REGISTER_FILE_TYPE, dwflags: WER_FILE) -> ::windows_sys_core::HRESULT;
-    pub fn WerRegisterMemoryBlock(pvaddress: *const ::core::ffi::c_void, dwsize: u32) -> ::windows_sys_core::HRESULT;
-    pub fn WerRegisterRuntimeExceptionModule(pwszoutofprocesscallbackdll: ::windows_sys_core::PCWSTR, pcontext: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn WerGetFlags(hprocess: super::super::Foundation::HANDLE, pdwflags: *mut WER_FAULT_REPORTING) -> ::windows_core_sys::HRESULT;
+    pub fn WerRegisterAdditionalProcess(processid: u32, captureextrainfoforthreadid: u32) -> ::windows_core_sys::HRESULT;
+    pub fn WerRegisterAppLocalDump(localappdatarelativepath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WerRegisterCustomMetadata(key: ::windows_core_sys::PCWSTR, value: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WerRegisterExcludedMemoryBlock(address: *const ::core::ffi::c_void, size: u32) -> ::windows_core_sys::HRESULT;
+    pub fn WerRegisterFile(pwzfile: ::windows_core_sys::PCWSTR, regfiletype: WER_REGISTER_FILE_TYPE, dwflags: WER_FILE) -> ::windows_core_sys::HRESULT;
+    pub fn WerRegisterMemoryBlock(pvaddress: *const ::core::ffi::c_void, dwsize: u32) -> ::windows_core_sys::HRESULT;
+    pub fn WerRegisterRuntimeExceptionModule(pwszoutofprocesscallbackdll: ::windows_core_sys::PCWSTR, pcontext: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WerRemoveExcludedApplication(pwzexename: ::windows_sys_core::PCWSTR, ballusers: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
+    pub fn WerRemoveExcludedApplication(pwzexename: ::windows_core_sys::PCWSTR, ballusers: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-    pub fn WerReportAddDump(hreporthandle: HREPORT, hprocess: super::super::Foundation::HANDLE, hthread: super::super::Foundation::HANDLE, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows_sys_core::HRESULT;
-    pub fn WerReportAddFile(hreporthandle: HREPORT, pwzpath: ::windows_sys_core::PCWSTR, repfiletype: WER_FILE_TYPE, dwfileflags: WER_FILE) -> ::windows_sys_core::HRESULT;
-    pub fn WerReportCloseHandle(hreporthandle: HREPORT) -> ::windows_sys_core::HRESULT;
+    pub fn WerReportAddDump(hreporthandle: HREPORT, hprocess: super::super::Foundation::HANDLE, hthread: super::super::Foundation::HANDLE, dumptype: WER_DUMP_TYPE, pexceptionparam: *const WER_EXCEPTION_INFORMATION, pdumpcustomoptions: *const WER_DUMP_CUSTOM_OPTIONS, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn WerReportAddFile(hreporthandle: HREPORT, pwzpath: ::windows_core_sys::PCWSTR, repfiletype: WER_FILE_TYPE, dwfileflags: WER_FILE) -> ::windows_core_sys::HRESULT;
+    pub fn WerReportCloseHandle(hreporthandle: HREPORT) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WerReportCreate(pwzeventtype: ::windows_sys_core::PCWSTR, reptype: WER_REPORT_TYPE, preportinformation: *const WER_REPORT_INFORMATION, phreporthandle: *mut HREPORT) -> ::windows_sys_core::HRESULT;
+    pub fn WerReportCreate(pwzeventtype: ::windows_core_sys::PCWSTR, reptype: WER_REPORT_TYPE, preportinformation: *const WER_REPORT_INFORMATION, phreporthandle: *mut HREPORT) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WerReportHang(hwndhungapp: super::super::Foundation::HWND, pwzhungapplicationname: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn WerReportSetParameter(hreporthandle: HREPORT, dwparamid: u32, pwzname: ::windows_sys_core::PCWSTR, pwzvalue: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn WerReportSetUIOption(hreporthandle: HREPORT, repuitypeid: WER_REPORT_UI, pwzvalue: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn WerReportSubmit(hreporthandle: HREPORT, consent: WER_CONSENT, dwflags: WER_SUBMIT_FLAGS, psubmitresult: *mut WER_SUBMIT_RESULT) -> ::windows_sys_core::HRESULT;
-    pub fn WerSetFlags(dwflags: WER_FAULT_REPORTING) -> ::windows_sys_core::HRESULT;
+    pub fn WerReportHang(hwndhungapp: super::super::Foundation::HWND, pwzhungapplicationname: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WerReportSetParameter(hreporthandle: HREPORT, dwparamid: u32, pwzname: ::windows_core_sys::PCWSTR, pwzvalue: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WerReportSetUIOption(hreporthandle: HREPORT, repuitypeid: WER_REPORT_UI, pwzvalue: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WerReportSubmit(hreporthandle: HREPORT, consent: WER_CONSENT, dwflags: WER_SUBMIT_FLAGS, psubmitresult: *mut WER_SUBMIT_RESULT) -> ::windows_core_sys::HRESULT;
+    pub fn WerSetFlags(dwflags: WER_FAULT_REPORTING) -> ::windows_core_sys::HRESULT;
     pub fn WerStoreClose(hreportstore: HREPORTSTORE);
-    pub fn WerStoreGetFirstReportKey(hreportstore: HREPORTSTORE, ppszreportkey: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn WerStoreGetNextReportKey(hreportstore: HREPORTSTORE, ppszreportkey: *mut ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn WerStoreGetReportCount(hreportstore: HREPORTSTORE, pdwreportcount: *mut u32) -> ::windows_sys_core::HRESULT;
-    pub fn WerStoreGetSizeOnDisk(hreportstore: HREPORTSTORE, pqwsizeinbytes: *mut u64) -> ::windows_sys_core::HRESULT;
-    pub fn WerStoreOpen(repstoretype: REPORT_STORE_TYPES, phreportstore: *mut HREPORTSTORE) -> ::windows_sys_core::HRESULT;
-    pub fn WerStorePurge() -> ::windows_sys_core::HRESULT;
+    pub fn WerStoreGetFirstReportKey(hreportstore: HREPORTSTORE, ppszreportkey: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WerStoreGetNextReportKey(hreportstore: HREPORTSTORE, ppszreportkey: *mut ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WerStoreGetReportCount(hreportstore: HREPORTSTORE, pdwreportcount: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn WerStoreGetSizeOnDisk(hreportstore: HREPORTSTORE, pqwsizeinbytes: *mut u64) -> ::windows_core_sys::HRESULT;
+    pub fn WerStoreOpen(repstoretype: REPORT_STORE_TYPES, phreportstore: *mut HREPORTSTORE) -> ::windows_core_sys::HRESULT;
+    pub fn WerStorePurge() -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WerStoreQueryReportMetadataV1(hreportstore: HREPORTSTORE, pszreportkey: ::windows_sys_core::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V1) -> ::windows_sys_core::HRESULT;
+    pub fn WerStoreQueryReportMetadataV1(hreportstore: HREPORTSTORE, pszreportkey: ::windows_core_sys::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V1) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WerStoreQueryReportMetadataV2(hreportstore: HREPORTSTORE, pszreportkey: ::windows_sys_core::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V2) -> ::windows_sys_core::HRESULT;
+    pub fn WerStoreQueryReportMetadataV2(hreportstore: HREPORTSTORE, pszreportkey: ::windows_core_sys::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V2) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WerStoreQueryReportMetadataV3(hreportstore: HREPORTSTORE, pszreportkey: ::windows_sys_core::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V3) -> ::windows_sys_core::HRESULT;
-    pub fn WerStoreUploadReport(hreportstore: HREPORTSTORE, pszreportkey: ::windows_sys_core::PCWSTR, dwflags: u32, psubmitresult: *mut WER_SUBMIT_RESULT) -> ::windows_sys_core::HRESULT;
-    pub fn WerUnregisterAdditionalProcess(processid: u32) -> ::windows_sys_core::HRESULT;
-    pub fn WerUnregisterAppLocalDump() -> ::windows_sys_core::HRESULT;
-    pub fn WerUnregisterCustomMetadata(key: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn WerUnregisterExcludedMemoryBlock(address: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
-    pub fn WerUnregisterFile(pwzfilepath: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn WerUnregisterMemoryBlock(pvaddress: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
-    pub fn WerUnregisterRuntimeExceptionModule(pwszoutofprocesscallbackdll: ::windows_sys_core::PCWSTR, pcontext: *const ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn WerStoreQueryReportMetadataV3(hreportstore: HREPORTSTORE, pszreportkey: ::windows_core_sys::PCWSTR, preportmetadata: *mut WER_REPORT_METADATA_V3) -> ::windows_core_sys::HRESULT;
+    pub fn WerStoreUploadReport(hreportstore: HREPORTSTORE, pszreportkey: ::windows_core_sys::PCWSTR, dwflags: u32, psubmitresult: *mut WER_SUBMIT_RESULT) -> ::windows_core_sys::HRESULT;
+    pub fn WerUnregisterAdditionalProcess(processid: u32) -> ::windows_core_sys::HRESULT;
+    pub fn WerUnregisterAppLocalDump() -> ::windows_core_sys::HRESULT;
+    pub fn WerUnregisterCustomMetadata(key: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WerUnregisterExcludedMemoryBlock(address: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn WerUnregisterFile(pwzfilepath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn WerUnregisterMemoryBlock(pvaddress: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn WerUnregisterRuntimeExceptionModule(pwszoutofprocesscallbackdll: ::windows_core_sys::PCWSTR, pcontext: *const ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 pub const APPCRASH_EVENT: &str = "APPCRASH";
 pub type EFaultRepRetVal = i32;
@@ -71,11 +71,11 @@ pub type HREPORT = isize;
 pub type HREPORTSTORE = isize;
 pub const PACKAGED_APPCRASH_EVENT: &str = "MoAppCrash";
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-pub type PFN_WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbiscustomdebugger: *mut super::super::Foundation::BOOL, pwszdebuggerlaunch: ::windows_sys_core::PWSTR, pchdebuggerlaunch: *mut u32, pbisdebuggerautolaunch: *mut super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT>;
+pub type PFN_WER_RUNTIME_EXCEPTION_DEBUGGER_LAUNCH = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbiscustomdebugger: *mut super::super::Foundation::BOOL, pwszdebuggerlaunch: ::windows_core_sys::PWSTR, pchdebuggerlaunch: *mut u32, pbisdebuggerautolaunch: *mut super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT>;
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-pub type PFN_WER_RUNTIME_EXCEPTION_EVENT = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbownershipclaimed: *mut super::super::Foundation::BOOL, pwszeventname: ::windows_sys_core::PWSTR, pchsize: *mut u32, pdwsignaturecount: *mut u32) -> ::windows_sys_core::HRESULT>;
+pub type PFN_WER_RUNTIME_EXCEPTION_EVENT = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, pbownershipclaimed: *mut super::super::Foundation::BOOL, pwszeventname: ::windows_core_sys::PWSTR, pchsize: *mut u32, pdwsignaturecount: *mut u32) -> ::windows_core_sys::HRESULT>;
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
-pub type PFN_WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, dwindex: u32, pwszname: ::windows_sys_core::PWSTR, pchname: *mut u32, pwszvalue: ::windows_sys_core::PWSTR, pchvalue: *mut u32) -> ::windows_sys_core::HRESULT>;
+pub type PFN_WER_RUNTIME_EXCEPTION_EVENT_SIGNATURE = ::core::option::Option<unsafe extern "system" fn(pcontext: *const ::core::ffi::c_void, pexceptioninformation: *const WER_RUNTIME_EXCEPTION_INFORMATION, dwindex: u32, pwszname: ::windows_core_sys::PWSTR, pchname: *mut u32, pwszvalue: ::windows_core_sys::PWSTR, pchvalue: *mut u32) -> ::windows_core_sys::HRESULT>;
 pub type REPORT_STORE_TYPES = i32;
 pub const E_STORE_USER_ARCHIVE: REPORT_STORE_TYPES = 0i32;
 pub const E_STORE_USER_QUEUE: REPORT_STORE_TYPES = 1i32;
@@ -344,8 +344,8 @@ impl ::core::clone::Clone for WER_REPORT_INFORMATION_V5 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_METADATA_V1 {
     pub Signature: WER_REPORT_SIGNATURE,
-    pub BucketId: ::windows_sys_core::GUID,
-    pub ReportId: ::windows_sys_core::GUID,
+    pub BucketId: ::windows_core_sys::GUID,
+    pub ReportId: ::windows_core_sys::GUID,
     pub CreationTime: super::super::Foundation::FILETIME,
     pub SizeInBytes: u64,
 }
@@ -361,16 +361,16 @@ impl ::core::clone::Clone for WER_REPORT_METADATA_V1 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_METADATA_V2 {
     pub Signature: WER_REPORT_SIGNATURE,
-    pub BucketId: ::windows_sys_core::GUID,
-    pub ReportId: ::windows_sys_core::GUID,
+    pub BucketId: ::windows_core_sys::GUID,
+    pub ReportId: ::windows_core_sys::GUID,
     pub CreationTime: super::super::Foundation::FILETIME,
     pub SizeInBytes: u64,
     pub CabId: [u16; 260],
     pub ReportStatus: u32,
-    pub ReportIntegratorId: ::windows_sys_core::GUID,
+    pub ReportIntegratorId: ::windows_core_sys::GUID,
     pub NumberOfFiles: u32,
     pub SizeOfFileNames: u32,
-    pub FileNames: ::windows_sys_core::PWSTR,
+    pub FileNames: ::windows_core_sys::PWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WER_REPORT_METADATA_V2 {}
@@ -384,16 +384,16 @@ impl ::core::clone::Clone for WER_REPORT_METADATA_V2 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WER_REPORT_METADATA_V3 {
     pub Signature: WER_REPORT_SIGNATURE,
-    pub BucketId: ::windows_sys_core::GUID,
-    pub ReportId: ::windows_sys_core::GUID,
+    pub BucketId: ::windows_core_sys::GUID,
+    pub ReportId: ::windows_core_sys::GUID,
     pub CreationTime: super::super::Foundation::FILETIME,
     pub SizeInBytes: u64,
     pub CabId: [u16; 260],
     pub ReportStatus: u32,
-    pub ReportIntegratorId: ::windows_sys_core::GUID,
+    pub ReportIntegratorId: ::windows_core_sys::GUID,
     pub NumberOfFiles: u32,
     pub SizeOfFileNames: u32,
-    pub FileNames: ::windows_sys_core::PWSTR,
+    pub FileNames: ::windows_core_sys::PWSTR,
     pub FriendlyEventName: [u16; 128],
     pub ApplicationName: [u16; 128],
     pub ApplicationPath: [u16; 260],
@@ -461,7 +461,7 @@ pub struct WER_RUNTIME_EXCEPTION_INFORMATION {
     pub hThread: super::super::Foundation::HANDLE,
     pub exceptionRecord: super::Diagnostics::Debug::EXCEPTION_RECORD,
     pub context: super::Diagnostics::Debug::CONTEXT,
-    pub pwszReportId: ::windows_sys_core::PCWSTR,
+    pub pwszReportId: ::windows_core_sys::PCWSTR,
     pub bIsFatal: super::super::Foundation::BOOL,
     pub dwReserved: u32,
 }
@@ -504,7 +504,7 @@ pub const WerThrottled: WER_SUBMIT_RESULT = 10i32;
 pub const WerReportUploadedCab: WER_SUBMIT_RESULT = 11i32;
 pub const WerStorageLocationNotFound: WER_SUBMIT_RESULT = 12i32;
 pub const WerSubmitResultMax: WER_SUBMIT_RESULT = 13i32;
-pub type pfn_ADDEREXCLUDEDAPPLICATIONA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys_core::PCSTR) -> EFaultRepRetVal>;
-pub type pfn_ADDEREXCLUDEDAPPLICATIONW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys_core::PCWSTR) -> EFaultRepRetVal>;
+pub type pfn_ADDEREXCLUDEDAPPLICATIONA = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR) -> EFaultRepRetVal>;
+pub type pfn_ADDEREXCLUDEDAPPLICATIONW = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCWSTR) -> EFaultRepRetVal>;
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Diagnostics_Debug", feature = "Win32_System_Kernel"))]
 pub type pfn_REPORTFAULT = ::core::option::Option<unsafe extern "system" fn(param0: *const super::Diagnostics::Debug::EXCEPTION_POINTERS, param1: u32) -> EFaultRepRetVal>;

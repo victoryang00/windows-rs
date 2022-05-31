@@ -19,4 +19,4 @@ pub const ICW_REGPATHSETTINGS: &str = "Software\\Microsoft\\Internet Connection 
 pub const ICW_USEDEFAULTS: u32 = 1u32;
 pub const ICW_USE_SHELLNEXT: u32 = 1024u32;
 pub type PFNCHECKCONNECTIONWIZARD = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: *mut u32) -> u32>;
-pub type PFNSETSHELLNEXT = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_sys_core::PCSTR) -> u32>;
+pub type PFNSETSHELLNEXT = ::core::option::Option<unsafe extern "system" fn(param0: ::windows_core_sys::PCSTR) -> u32>;

@@ -82,7 +82,7 @@ pub const NLM_CONNECTIVITY_IPV6_INTERNET: NLM_CONNECTIVITY = 1024i32;
 #[doc = "*Required features: `\"Win32_Networking_NetworkListManager\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct NLM_DATAPLAN_STATUS {
-    pub InterfaceGuid: ::windows_sys_core::GUID,
+    pub InterfaceGuid: ::windows_core_sys::GUID,
     pub UsageData: NLM_USAGE_DATA,
     pub DataLimitInMegabytes: u32,
     pub InboundBandwidthInKbps: u32,
@@ -195,4 +195,4 @@ impl ::core::clone::Clone for NLM_USAGE_DATA {
         *self
     }
 }
-pub const NetworkListManager: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3702524929, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };
+pub const NetworkListManager: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3702524929, data2: 22287, data3: 19099, data4: [141, 105, 25, 159, 219, 165, 114, 59] };

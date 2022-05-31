@@ -7,4 +7,4 @@ pub type WindowsMediaLibrarySharingDeviceAuthorizationStatus = i32;
 pub const DEVICE_AUTHORIZATION_UNKNOWN: WindowsMediaLibrarySharingDeviceAuthorizationStatus = 0i32;
 pub const DEVICE_AUTHORIZATION_ALLOWED: WindowsMediaLibrarySharingDeviceAuthorizationStatus = 1i32;
 pub const DEVICE_AUTHORIZATION_DENIED: WindowsMediaLibrarySharingDeviceAuthorizationStatus = 2i32;
-pub const WindowsMediaLibrarySharingServices: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2908232448, data2: 31588, data3: 20057, data4: [163, 141, 210, 197, 191, 81, 221, 179] };
+pub const WindowsMediaLibrarySharingServices: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2908232448, data2: 31588, data3: 20057, data4: [163, 141, 210, 197, 191, 81, 221, 179] };

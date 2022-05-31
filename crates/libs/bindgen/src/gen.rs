@@ -416,7 +416,7 @@ impl<'a> Gen<'a> {
     }
     fn crate_name(&self) -> TokenStream {
         if self.sys {
-            "windows_sys_core".into()
+            "windows_core_sys".into()
         } else {
             "windows_core".into()
         }

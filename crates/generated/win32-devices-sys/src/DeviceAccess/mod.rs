@@ -1,8 +1,8 @@
 #[link(name = "windows")]
 extern "system" {
-    pub fn CreateDeviceAccessInstance(deviceinterfacepath: ::windows_sys_core::PCWSTR, desiredaccess: u32, createasync: *mut ICreateDeviceAccessAsync) -> ::windows_sys_core::HRESULT;
+    pub fn CreateDeviceAccessInstance(deviceinterfacepath: ::windows_core_sys::PCWSTR, desiredaccess: u32, createasync: *mut ICreateDeviceAccessAsync) -> ::windows_core_sys::HRESULT;
 }
-pub const CLSID_DeviceIoControl: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 315876210, data2: 34635, data3: 17789, data4: [159, 223, 115, 151, 119, 120, 104, 108] };
+pub const CLSID_DeviceIoControl: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 315876210, data2: 34635, data3: 17789, data4: [159, 223, 115, 151, 119, 120, 104, 108] };
 pub const DEV_PORT_1394: u32 = 8u32;
 pub const DEV_PORT_ARTI: u32 = 7u32;
 pub const DEV_PORT_COM1: u32 = 2u32;

@@ -1,7 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Graphics_CompositionSwapchain\"`*"]
-    pub fn CreatePresentationFactory(d3ddevice: ::windows_sys_core::IUnknown, riid: *const ::windows_sys_core::GUID, presentationfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn CreatePresentationFactory(d3ddevice: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, presentationfactory: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_CompositionSwapchain\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Dxgi_Common\"`*"]

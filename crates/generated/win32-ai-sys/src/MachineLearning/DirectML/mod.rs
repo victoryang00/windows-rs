@@ -1,9 +1,9 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub fn DMLCreateDevice(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn DMLCreateDevice(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Graphics_Direct3D12")]
-    pub fn DMLCreateDevice1(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn DMLCreateDevice1(d3d12device: super::super::super::Graphics::Direct3D12::ID3D12Device, flags: DML_CREATE_DEVICE_FLAGS, minimumfeaturelevel: DML_FEATURE_LEVEL, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
 pub struct DML_ACTIVATION_CELU_OPERATOR_DESC {
@@ -1616,7 +1616,7 @@ pub struct DML_INPUT_GRAPH_EDGE_DESC {
     pub GraphInputIndex: u32,
     pub ToNodeIndex: u32,
     pub ToNodeInputIndex: u32,
-    pub Name: ::windows_sys_core::PCSTR,
+    pub Name: ::windows_core_sys::PCSTR,
 }
 impl ::core::marker::Copy for DML_INPUT_GRAPH_EDGE_DESC {}
 impl ::core::clone::Clone for DML_INPUT_GRAPH_EDGE_DESC {
@@ -1630,7 +1630,7 @@ pub struct DML_INTERMEDIATE_GRAPH_EDGE_DESC {
     pub FromNodeOutputIndex: u32,
     pub ToNodeIndex: u32,
     pub ToNodeInputIndex: u32,
-    pub Name: ::windows_sys_core::PCSTR,
+    pub Name: ::windows_core_sys::PCSTR,
 }
 impl ::core::marker::Copy for DML_INTERMEDIATE_GRAPH_EDGE_DESC {}
 impl ::core::clone::Clone for DML_INTERMEDIATE_GRAPH_EDGE_DESC {
@@ -1936,7 +1936,7 @@ impl ::core::clone::Clone for DML_OPERATOR_DESC {
 #[repr(C)]
 pub struct DML_OPERATOR_GRAPH_NODE_DESC {
     pub Operator: IDMLOperator,
-    pub Name: ::windows_sys_core::PCSTR,
+    pub Name: ::windows_core_sys::PCSTR,
 }
 impl ::core::marker::Copy for DML_OPERATOR_GRAPH_NODE_DESC {}
 impl ::core::clone::Clone for DML_OPERATOR_GRAPH_NODE_DESC {
@@ -2101,7 +2101,7 @@ pub struct DML_OUTPUT_GRAPH_EDGE_DESC {
     pub FromNodeIndex: u32,
     pub FromNodeOutputIndex: u32,
     pub GraphOutputIndex: u32,
-    pub Name: ::windows_sys_core::PCSTR,
+    pub Name: ::windows_core_sys::PCSTR,
 }
 impl ::core::marker::Copy for DML_OUTPUT_GRAPH_EDGE_DESC {}
 impl ::core::clone::Clone for DML_OUTPUT_GRAPH_EDGE_DESC {

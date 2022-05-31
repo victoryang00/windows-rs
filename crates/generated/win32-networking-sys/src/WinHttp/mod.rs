@@ -1,20 +1,20 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpAddRequestHeaders(hrequest: *mut ::core::ffi::c_void, lpszheaders: ::windows_sys_core::PCWSTR, dwheaderslength: u32, dwmodifiers: u32) -> super::super::Foundation::BOOL;
+    pub fn WinHttpAddRequestHeaders(hrequest: *mut ::core::ffi::c_void, lpszheaders: ::windows_core_sys::PCWSTR, dwheaderslength: u32, dwmodifiers: u32) -> super::super::Foundation::BOOL;
     pub fn WinHttpAddRequestHeadersEx(hrequest: *mut ::core::ffi::c_void, dwmodifiers: u32, ullflags: u64, ullextra: u64, cheaders: u32, pheaders: *const WINHTTP_EXTENDED_HEADER) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpCheckPlatform() -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpCloseHandle(hinternet: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
-    pub fn WinHttpConnect(hsession: *mut ::core::ffi::c_void, pswzservername: ::windows_sys_core::PCWSTR, nserverport: INTERNET_PORT, dwreserved: u32) -> *mut ::core::ffi::c_void;
+    pub fn WinHttpConnect(hsession: *mut ::core::ffi::c_void, pswzservername: ::windows_core_sys::PCWSTR, nserverport: INTERNET_PORT, dwreserved: u32) -> *mut ::core::ffi::c_void;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpCrackUrl(pwszurl: ::windows_sys_core::PCWSTR, dwurllength: u32, dwflags: u32, lpurlcomponents: *mut URL_COMPONENTS) -> super::super::Foundation::BOOL;
+    pub fn WinHttpCrackUrl(pwszurl: ::windows_core_sys::PCWSTR, dwurllength: u32, dwflags: u32, lpurlcomponents: *mut URL_COMPONENTS) -> super::super::Foundation::BOOL;
     pub fn WinHttpCreateProxyResolver(hsession: *const ::core::ffi::c_void, phresolver: *mut *mut ::core::ffi::c_void) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpCreateUrl(lpurlcomponents: *const URL_COMPONENTS, dwflags: WIN_HTTP_CREATE_URL_FLAGS, pwszurl: ::windows_sys_core::PWSTR, pdwurllength: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WinHttpCreateUrl(lpurlcomponents: *const URL_COMPONENTS, dwflags: WIN_HTTP_CREATE_URL_FLAGS, pwszurl: ::windows_core_sys::PWSTR, pdwurllength: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpDetectAutoProxyConfigUrl(dwautodetectflags: u32, ppwstrautoconfigurl: *mut ::windows_sys_core::PWSTR) -> super::super::Foundation::BOOL;
+    pub fn WinHttpDetectAutoProxyConfigUrl(dwautodetectflags: u32, ppwstrautoconfigurl: *mut ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpFreeProxyResult(pproxyresult: *mut WINHTTP_PROXY_RESULT);
     #[cfg(feature = "Win32_Foundation")]
@@ -27,25 +27,25 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpGetIEProxyConfigForCurrentUser(pproxyconfig: *mut WINHTTP_CURRENT_USER_IE_PROXY_CONFIG) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpGetProxyForUrl(hsession: *mut ::core::ffi::c_void, lpcwszurl: ::windows_sys_core::PCWSTR, pautoproxyoptions: *mut WINHTTP_AUTOPROXY_OPTIONS, pproxyinfo: *mut WINHTTP_PROXY_INFO) -> super::super::Foundation::BOOL;
+    pub fn WinHttpGetProxyForUrl(hsession: *mut ::core::ffi::c_void, lpcwszurl: ::windows_core_sys::PCWSTR, pautoproxyoptions: *mut WINHTTP_AUTOPROXY_OPTIONS, pproxyinfo: *mut WINHTTP_PROXY_INFO) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpGetProxyForUrlEx(hresolver: *const ::core::ffi::c_void, pcwszurl: ::windows_sys_core::PCWSTR, pautoproxyoptions: *const WINHTTP_AUTOPROXY_OPTIONS, pcontext: usize) -> u32;
+    pub fn WinHttpGetProxyForUrlEx(hresolver: *const ::core::ffi::c_void, pcwszurl: ::windows_core_sys::PCWSTR, pautoproxyoptions: *const WINHTTP_AUTOPROXY_OPTIONS, pcontext: usize) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpGetProxyForUrlEx2(hresolver: *const ::core::ffi::c_void, pcwszurl: ::windows_sys_core::PCWSTR, pautoproxyoptions: *const WINHTTP_AUTOPROXY_OPTIONS, cbinterfaceselectioncontext: u32, pinterfaceselectioncontext: *const u8, pcontext: usize) -> u32;
+    pub fn WinHttpGetProxyForUrlEx2(hresolver: *const ::core::ffi::c_void, pcwszurl: ::windows_core_sys::PCWSTR, pautoproxyoptions: *const WINHTTP_AUTOPROXY_OPTIONS, cbinterfaceselectioncontext: u32, pinterfaceselectioncontext: *const u8, pcontext: usize) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpGetProxyResult(hresolver: *const ::core::ffi::c_void, pproxyresult: *mut WINHTTP_PROXY_RESULT) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpGetProxyResultEx(hresolver: *const ::core::ffi::c_void, pproxyresultex: *mut WINHTTP_PROXY_RESULT_EX) -> u32;
     pub fn WinHttpGetProxySettingsVersion(hsession: *const ::core::ffi::c_void, pdwproxysettingsversion: *mut u32) -> u32;
-    pub fn WinHttpOpen(pszagentw: ::windows_sys_core::PCWSTR, dwaccesstype: WINHTTP_ACCESS_TYPE, pszproxyw: ::windows_sys_core::PCWSTR, pszproxybypassw: ::windows_sys_core::PCWSTR, dwflags: u32) -> *mut ::core::ffi::c_void;
-    pub fn WinHttpOpenRequest(hconnect: *mut ::core::ffi::c_void, pwszverb: ::windows_sys_core::PCWSTR, pwszobjectname: ::windows_sys_core::PCWSTR, pwszversion: ::windows_sys_core::PCWSTR, pwszreferrer: ::windows_sys_core::PCWSTR, ppwszaccepttypes: *mut ::windows_sys_core::PWSTR, dwflags: WINHTTP_OPEN_REQUEST_FLAGS) -> *mut ::core::ffi::c_void;
+    pub fn WinHttpOpen(pszagentw: ::windows_core_sys::PCWSTR, dwaccesstype: WINHTTP_ACCESS_TYPE, pszproxyw: ::windows_core_sys::PCWSTR, pszproxybypassw: ::windows_core_sys::PCWSTR, dwflags: u32) -> *mut ::core::ffi::c_void;
+    pub fn WinHttpOpenRequest(hconnect: *mut ::core::ffi::c_void, pwszverb: ::windows_core_sys::PCWSTR, pwszobjectname: ::windows_core_sys::PCWSTR, pwszversion: ::windows_core_sys::PCWSTR, pwszreferrer: ::windows_core_sys::PCWSTR, ppwszaccepttypes: *mut ::windows_core_sys::PWSTR, dwflags: WINHTTP_OPEN_REQUEST_FLAGS) -> *mut ::core::ffi::c_void;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpQueryAuthSchemes(hrequest: *mut ::core::ffi::c_void, lpdwsupportedschemes: *mut u32, lpdwfirstscheme: *mut u32, pdwauthtarget: *mut u32) -> super::super::Foundation::BOOL;
-    pub fn WinHttpQueryConnectionGroup(hinternet: *const ::core::ffi::c_void, pguidconnection: *const ::windows_sys_core::GUID, ullflags: u64, ppresult: *mut *mut WINHTTP_QUERY_CONNECTION_GROUP_RESULT) -> u32;
+    pub fn WinHttpQueryConnectionGroup(hinternet: *const ::core::ffi::c_void, pguidconnection: *const ::windows_core_sys::GUID, ullflags: u64, ppresult: *mut *mut WINHTTP_QUERY_CONNECTION_GROUP_RESULT) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpQueryDataAvailable(hrequest: *mut ::core::ffi::c_void, lpdwnumberofbytesavailable: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpQueryHeaders(hrequest: *mut ::core::ffi::c_void, dwinfolevel: u32, pwszname: ::windows_sys_core::PCWSTR, lpbuffer: *mut ::core::ffi::c_void, lpdwbufferlength: *mut u32, lpdwindex: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WinHttpQueryHeaders(hrequest: *mut ::core::ffi::c_void, dwinfolevel: u32, pwszname: ::windows_core_sys::PCWSTR, lpbuffer: *mut ::core::ffi::c_void, lpdwbufferlength: *mut u32, lpdwindex: *mut u32) -> super::super::Foundation::BOOL;
     pub fn WinHttpQueryHeadersEx(hrequest: *const ::core::ffi::c_void, dwinfolevel: u32, ullflags: u64, uicodepage: u32, pdwindex: *mut u32, pheadername: *const WINHTTP_HEADER_NAME, pbuffer: *mut ::core::ffi::c_void, pdwbufferlength: *mut u32, ppheaders: *mut *mut WINHTTP_EXTENDED_HEADER, pdwheaderscount: *mut u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpQueryOption(hinternet: *mut ::core::ffi::c_void, dwoption: u32, lpbuffer: *mut ::core::ffi::c_void, lpdwbufferlength: *mut u32) -> super::super::Foundation::BOOL;
@@ -53,14 +53,14 @@ extern "system" {
     pub fn WinHttpReadData(hrequest: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, dwnumberofbytestoread: u32, lpdwnumberofbytesread: *mut u32) -> super::super::Foundation::BOOL;
     pub fn WinHttpReadDataEx(hrequest: *mut ::core::ffi::c_void, lpbuffer: *mut ::core::ffi::c_void, dwnumberofbytestoread: u32, lpdwnumberofbytesread: *mut u32, ullflags: u64, cbproperty: u32, pvproperty: *const ::core::ffi::c_void) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpReadProxySettings(hsession: *const ::core::ffi::c_void, pcwszconnectionname: ::windows_sys_core::PCWSTR, ffallbacktodefaultsettings: super::super::Foundation::BOOL, fsetautodiscoverfordefaultsettings: super::super::Foundation::BOOL, pdwsettingsversion: *mut u32, pfdefaultsettingsarereturned: *mut super::super::Foundation::BOOL, pwinhttpproxysettings: *mut WINHTTP_PROXY_SETTINGS) -> u32;
+    pub fn WinHttpReadProxySettings(hsession: *const ::core::ffi::c_void, pcwszconnectionname: ::windows_core_sys::PCWSTR, ffallbacktodefaultsettings: super::super::Foundation::BOOL, fsetautodiscoverfordefaultsettings: super::super::Foundation::BOOL, pdwsettingsversion: *mut u32, pfdefaultsettingsarereturned: *mut super::super::Foundation::BOOL, pwinhttpproxysettings: *mut WINHTTP_PROXY_SETTINGS) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpReceiveResponse(hrequest: *mut ::core::ffi::c_void, lpreserved: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     pub fn WinHttpResetAutoProxy(hsession: *const ::core::ffi::c_void, dwflags: u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpSendRequest(hrequest: *mut ::core::ffi::c_void, lpszheaders: ::windows_sys_core::PCWSTR, dwheaderslength: u32, lpoptional: *const ::core::ffi::c_void, dwoptionallength: u32, dwtotallength: u32, dwcontext: usize) -> super::super::Foundation::BOOL;
+    pub fn WinHttpSendRequest(hrequest: *mut ::core::ffi::c_void, lpszheaders: ::windows_core_sys::PCWSTR, dwheaderslength: u32, lpoptional: *const ::core::ffi::c_void, dwoptionallength: u32, dwtotallength: u32, dwcontext: usize) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpSetCredentials(hrequest: *mut ::core::ffi::c_void, authtargets: u32, authscheme: u32, pwszusername: ::windows_sys_core::PCWSTR, pwszpassword: ::windows_sys_core::PCWSTR, pauthparams: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
+    pub fn WinHttpSetCredentials(hrequest: *mut ::core::ffi::c_void, authtargets: u32, authscheme: u32, pwszusername: ::windows_core_sys::PCWSTR, pwszpassword: ::windows_core_sys::PCWSTR, pauthparams: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpSetDefaultProxyConfiguration(pproxyinfo: *mut WINHTTP_PROXY_INFO) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -71,9 +71,9 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WinHttpSetTimeouts(hinternet: *mut ::core::ffi::c_void, nresolvetimeout: i32, nconnecttimeout: i32, nsendtimeout: i32, nreceivetimeout: i32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpTimeFromSystemTime(pst: *const super::super::Foundation::SYSTEMTIME, pwsztime: ::windows_sys_core::PWSTR) -> super::super::Foundation::BOOL;
+    pub fn WinHttpTimeFromSystemTime(pst: *const super::super::Foundation::SYSTEMTIME, pwsztime: ::windows_core_sys::PWSTR) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WinHttpTimeToSystemTime(pwsztime: ::windows_sys_core::PCWSTR, pst: *mut super::super::Foundation::SYSTEMTIME) -> super::super::Foundation::BOOL;
+    pub fn WinHttpTimeToSystemTime(pwsztime: ::windows_core_sys::PCWSTR, pst: *mut super::super::Foundation::SYSTEMTIME) -> super::super::Foundation::BOOL;
     pub fn WinHttpWebSocketClose(hwebsocket: *const ::core::ffi::c_void, usstatus: u16, pvreason: *const ::core::ffi::c_void, dwreasonlength: u32) -> u32;
     pub fn WinHttpWebSocketCompleteUpgrade(hrequest: *const ::core::ffi::c_void, pcontext: usize) -> *mut ::core::ffi::c_void;
     pub fn WinHttpWebSocketQueryCloseStatus(hwebsocket: *const ::core::ffi::c_void, pusstatus: *mut u16, pvreason: *mut ::core::ffi::c_void, dwreasonlength: u32, pdwreasonlengthconsumed: *mut u32) -> u32;
@@ -222,19 +222,19 @@ pub const SECURITY_FLAG_STRENGTH_WEAK: u32 = 268435456u32;
 #[repr(C)]
 pub struct URL_COMPONENTS {
     pub dwStructSize: u32,
-    pub lpszScheme: ::windows_sys_core::PWSTR,
+    pub lpszScheme: ::windows_core_sys::PWSTR,
     pub dwSchemeLength: u32,
     pub nScheme: WINHTTP_INTERNET_SCHEME,
-    pub lpszHostName: ::windows_sys_core::PWSTR,
+    pub lpszHostName: ::windows_core_sys::PWSTR,
     pub dwHostNameLength: u32,
     pub nPort: u16,
-    pub lpszUserName: ::windows_sys_core::PWSTR,
+    pub lpszUserName: ::windows_core_sys::PWSTR,
     pub dwUserNameLength: u32,
-    pub lpszPassword: ::windows_sys_core::PWSTR,
+    pub lpszPassword: ::windows_core_sys::PWSTR,
     pub dwPasswordLength: u32,
-    pub lpszUrlPath: ::windows_sys_core::PWSTR,
+    pub lpszUrlPath: ::windows_core_sys::PWSTR,
     pub dwUrlPathLength: u32,
-    pub lpszExtraInfo: ::windows_sys_core::PWSTR,
+    pub lpszExtraInfo: ::windows_core_sys::PWSTR,
     pub dwExtraInfoLength: u32,
 }
 impl ::core::marker::Copy for URL_COMPONENTS {}
@@ -290,7 +290,7 @@ pub const WINHTTP_AUTOPROXY_NO_DIRECTACCESS: u32 = 262144u32;
 pub struct WINHTTP_AUTOPROXY_OPTIONS {
     pub dwFlags: u32,
     pub dwAutoDetectFlags: u32,
-    pub lpszAutoConfigUrl: ::windows_sys_core::PCWSTR,
+    pub lpszAutoConfigUrl: ::windows_core_sys::PCWSTR,
     pub lpvReserved: *mut ::core::ffi::c_void,
     pub dwReserved: u32,
     pub fAutoLogonIfChallenged: super::super::Foundation::BOOL,
@@ -360,11 +360,11 @@ pub const WINHTTP_CALLBACK_STATUS_WRITE_COMPLETE: u32 = 1048576u32;
 pub struct WINHTTP_CERTIFICATE_INFO {
     pub ftExpiry: super::super::Foundation::FILETIME,
     pub ftStart: super::super::Foundation::FILETIME,
-    pub lpszSubjectInfo: ::windows_sys_core::PWSTR,
-    pub lpszIssuerInfo: ::windows_sys_core::PWSTR,
-    pub lpszProtocolName: ::windows_sys_core::PWSTR,
-    pub lpszSignatureAlgName: ::windows_sys_core::PWSTR,
-    pub lpszEncryptionAlgName: ::windows_sys_core::PWSTR,
+    pub lpszSubjectInfo: ::windows_core_sys::PWSTR,
+    pub lpszIssuerInfo: ::windows_core_sys::PWSTR,
+    pub lpszProtocolName: ::windows_core_sys::PWSTR,
+    pub lpszSignatureAlgName: ::windows_core_sys::PWSTR,
+    pub lpszEncryptionAlgName: ::windows_core_sys::PWSTR,
     pub dwKeySize: u32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -378,7 +378,7 @@ impl ::core::clone::Clone for WINHTTP_CERTIFICATE_INFO {
 #[repr(C)]
 pub struct WINHTTP_CONNECTION_GROUP {
     pub cConnections: u32,
-    pub guidGroup: ::windows_sys_core::GUID,
+    pub guidGroup: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for WINHTTP_CONNECTION_GROUP {}
 impl ::core::clone::Clone for WINHTTP_CONNECTION_GROUP {
@@ -428,11 +428,11 @@ pub const WINHTTP_CONNECTION_RETRY_CONDITION_STALE_CONNECTION: u32 = 4u32;
 pub const WINHTTP_CONNS_PER_SERVER_UNLIMITED: u32 = 4294967295u32;
 #[repr(C)]
 pub struct WINHTTP_CREDS {
-    pub lpszUserName: ::windows_sys_core::PSTR,
-    pub lpszPassword: ::windows_sys_core::PSTR,
-    pub lpszRealm: ::windows_sys_core::PSTR,
+    pub lpszUserName: ::windows_core_sys::PSTR,
+    pub lpszPassword: ::windows_core_sys::PSTR,
+    pub lpszRealm: ::windows_core_sys::PSTR,
     pub dwAuthScheme: WINHTTP_CREDS_AUTHSCHEME,
-    pub lpszHostName: ::windows_sys_core::PSTR,
+    pub lpszHostName: ::windows_core_sys::PSTR,
     pub dwPort: u32,
 }
 impl ::core::marker::Copy for WINHTTP_CREDS {}
@@ -447,13 +447,13 @@ pub const WINHTTP_AUTH_SCHEME_NTLM: WINHTTP_CREDS_AUTHSCHEME = 2u32;
 pub const WINHTTP_AUTH_SCHEME_NEGOTIATE: WINHTTP_CREDS_AUTHSCHEME = 16u32;
 #[repr(C)]
 pub struct WINHTTP_CREDS_EX {
-    pub lpszUserName: ::windows_sys_core::PSTR,
-    pub lpszPassword: ::windows_sys_core::PSTR,
-    pub lpszRealm: ::windows_sys_core::PSTR,
+    pub lpszUserName: ::windows_core_sys::PSTR,
+    pub lpszPassword: ::windows_core_sys::PSTR,
+    pub lpszRealm: ::windows_core_sys::PSTR,
     pub dwAuthScheme: WINHTTP_CREDS_AUTHSCHEME,
-    pub lpszHostName: ::windows_sys_core::PSTR,
+    pub lpszHostName: ::windows_core_sys::PSTR,
     pub dwPort: u32,
-    pub lpszUrl: ::windows_sys_core::PSTR,
+    pub lpszUrl: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for WINHTTP_CREDS_EX {}
 impl ::core::clone::Clone for WINHTTP_CREDS_EX {
@@ -465,9 +465,9 @@ impl ::core::clone::Clone for WINHTTP_CREDS_EX {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WINHTTP_CURRENT_USER_IE_PROXY_CONFIG {
     pub fAutoDetect: super::super::Foundation::BOOL,
-    pub lpszAutoConfigUrl: ::windows_sys_core::PWSTR,
-    pub lpszProxy: ::windows_sys_core::PWSTR,
-    pub lpszProxyBypass: ::windows_sys_core::PWSTR,
+    pub lpszAutoConfigUrl: ::windows_core_sys::PWSTR,
+    pub lpszProxy: ::windows_core_sys::PWSTR,
+    pub lpszProxyBypass: ::windows_core_sys::PWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for WINHTTP_CURRENT_USER_IE_PROXY_CONFIG {}
@@ -506,8 +506,8 @@ impl ::core::clone::Clone for WINHTTP_EXTENDED_HEADER {
 }
 #[repr(C)]
 pub union WINHTTP_EXTENDED_HEADER_0 {
-    pub pwszName: ::windows_sys_core::PCWSTR,
-    pub pszName: ::windows_sys_core::PCSTR,
+    pub pwszName: ::windows_core_sys::PCWSTR,
+    pub pszName: ::windows_core_sys::PCSTR,
 }
 impl ::core::marker::Copy for WINHTTP_EXTENDED_HEADER_0 {}
 impl ::core::clone::Clone for WINHTTP_EXTENDED_HEADER_0 {
@@ -517,8 +517,8 @@ impl ::core::clone::Clone for WINHTTP_EXTENDED_HEADER_0 {
 }
 #[repr(C)]
 pub union WINHTTP_EXTENDED_HEADER_1 {
-    pub pwszValue: ::windows_sys_core::PCWSTR,
-    pub pszValue: ::windows_sys_core::PCSTR,
+    pub pwszValue: ::windows_core_sys::PCWSTR,
+    pub pszValue: ::windows_core_sys::PCSTR,
 }
 impl ::core::marker::Copy for WINHTTP_EXTENDED_HEADER_1 {}
 impl ::core::clone::Clone for WINHTTP_EXTENDED_HEADER_1 {
@@ -551,8 +551,8 @@ pub const WINHTTP_HANDLE_TYPE_REQUEST: u32 = 3u32;
 pub const WINHTTP_HANDLE_TYPE_SESSION: u32 = 1u32;
 #[repr(C)]
 pub union WINHTTP_HEADER_NAME {
-    pub pwszName: ::windows_sys_core::PCWSTR,
-    pub pszName: ::windows_sys_core::PCSTR,
+    pub pwszName: ::windows_core_sys::PCWSTR,
+    pub pszName: ::windows_core_sys::PCSTR,
 }
 impl ::core::marker::Copy for WINHTTP_HEADER_NAME {}
 impl ::core::clone::Clone for WINHTTP_HEADER_NAME {
@@ -562,7 +562,7 @@ impl ::core::clone::Clone for WINHTTP_HEADER_NAME {
 }
 #[repr(C)]
 pub struct WINHTTP_HOST_CONNECTION_GROUP {
-    pub pwszHost: ::windows_sys_core::PCWSTR,
+    pub pwszHost: ::windows_core_sys::PCWSTR,
     pub cConnectionGroups: u32,
     pub pConnectionGroups: *mut WINHTTP_CONNECTION_GROUP,
 }
@@ -593,7 +593,7 @@ pub const WINHTTP_LAST_OPTION: u32 = 183u32;
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub struct WINHTTP_MATCH_CONNECTION_GUID {
-    pub ConnectionGuid: ::windows_sys_core::GUID,
+    pub ConnectionGuid: ::windows_core_sys::GUID,
     pub ullFlags: u64,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -607,7 +607,7 @@ impl ::core::clone::Clone for WINHTTP_MATCH_CONNECTION_GUID {
 #[repr(C, packed(4))]
 #[cfg(target_arch = "x86")]
 pub struct WINHTTP_MATCH_CONNECTION_GUID {
-    pub ConnectionGuid: ::windows_sys_core::GUID,
+    pub ConnectionGuid: ::windows_core_sys::GUID,
     pub ullFlags: u64,
 }
 #[cfg(target_arch = "x86")]
@@ -757,8 +757,8 @@ pub const WINHTTP_PROTOCOL_FLAG_HTTP3: u32 = 2u32;
 #[repr(C)]
 pub struct WINHTTP_PROXY_INFO {
     pub dwAccessType: WINHTTP_ACCESS_TYPE,
-    pub lpszProxy: ::windows_sys_core::PWSTR,
-    pub lpszProxyBypass: ::windows_sys_core::PWSTR,
+    pub lpszProxy: ::windows_core_sys::PWSTR,
+    pub lpszProxyBypass: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for WINHTTP_PROXY_INFO {}
 impl ::core::clone::Clone for WINHTTP_PROXY_INFO {
@@ -786,7 +786,7 @@ pub struct WINHTTP_PROXY_RESULT_ENTRY {
     pub fProxy: super::super::Foundation::BOOL,
     pub fBypass: super::super::Foundation::BOOL,
     pub ProxyScheme: WINHTTP_INTERNET_SCHEME,
-    pub pwszProxy: ::windows_sys_core::PWSTR,
+    pub pwszProxy: ::windows_core_sys::PWSTR,
     pub ProxyPort: u16,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -819,13 +819,13 @@ pub struct WINHTTP_PROXY_SETTINGS {
     pub dwStructSize: u32,
     pub dwFlags: u32,
     pub dwCurrentSettingsVersion: u32,
-    pub pwszConnectionName: ::windows_sys_core::PWSTR,
-    pub pwszProxy: ::windows_sys_core::PWSTR,
-    pub pwszProxyBypass: ::windows_sys_core::PWSTR,
-    pub pwszAutoconfigUrl: ::windows_sys_core::PWSTR,
-    pub pwszAutoconfigSecondaryUrl: ::windows_sys_core::PWSTR,
+    pub pwszConnectionName: ::windows_core_sys::PWSTR,
+    pub pwszProxy: ::windows_core_sys::PWSTR,
+    pub pwszProxyBypass: ::windows_core_sys::PWSTR,
+    pub pwszAutoconfigUrl: ::windows_core_sys::PWSTR,
+    pub pwszAutoconfigSecondaryUrl: ::windows_core_sys::PWSTR,
     pub dwAutoDiscoveryFlags: u32,
-    pub pwszLastKnownGoodAutoConfigUrl: ::windows_sys_core::PWSTR,
+    pub pwszLastKnownGoodAutoConfigUrl: ::windows_core_sys::PWSTR,
     pub dwAutoconfigReloadDelayMins: u32,
     pub ftLastKnownDetectTime: super::super::Foundation::FILETIME,
     pub dwDetectedInterfaceIpCount: u32,

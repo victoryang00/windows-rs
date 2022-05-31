@@ -10,7 +10,7 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
     pub fn DnsConnectionDeletePolicyEntries(policyentrytag: DNS_CONNECTION_POLICY_TAG) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsConnectionDeleteProxyInfo(pwszconnectionname: ::windows_sys_core::PCWSTR, r#type: DNS_CONNECTION_PROXY_TYPE) -> u32;
+    pub fn DnsConnectionDeleteProxyInfo(pwszconnectionname: ::windows_core_sys::PCWSTR, r#type: DNS_CONNECTION_PROXY_TYPE) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
     pub fn DnsConnectionFreeNameList(pnamelist: *mut DNS_CONNECTION_NAME_LIST);
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
@@ -23,16 +23,16 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
     pub fn DnsConnectionGetNameList(pnamelist: *mut DNS_CONNECTION_NAME_LIST) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsConnectionGetProxyInfo(pwszconnectionname: ::windows_sys_core::PCWSTR, r#type: DNS_CONNECTION_PROXY_TYPE, pproxyinfo: *mut DNS_CONNECTION_PROXY_INFO) -> u32;
+    pub fn DnsConnectionGetProxyInfo(pwszconnectionname: ::windows_core_sys::PCWSTR, r#type: DNS_CONNECTION_PROXY_TYPE, pproxyinfo: *mut DNS_CONNECTION_PROXY_INFO) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DnsConnectionGetProxyInfoForHostUrl(pwszhosturl: ::windows_sys_core::PCWSTR, pselectioncontext: *const u8, dwselectioncontextlength: u32, dwexplicitinterfaceindex: u32, pproxyinfoex: *mut DNS_CONNECTION_PROXY_INFO_EX) -> u32;
+    pub fn DnsConnectionGetProxyInfoForHostUrl(pwszhosturl: ::windows_core_sys::PCWSTR, pselectioncontext: *const u8, dwselectioncontextlength: u32, dwexplicitinterfaceindex: u32, pproxyinfoex: *mut DNS_CONNECTION_PROXY_INFO_EX) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsConnectionGetProxyList(pwszconnectionname: ::windows_sys_core::PCWSTR, pproxylist: *mut DNS_CONNECTION_PROXY_LIST) -> u32;
+    pub fn DnsConnectionGetProxyList(pwszconnectionname: ::windows_core_sys::PCWSTR, pproxylist: *mut DNS_CONNECTION_PROXY_LIST) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
     pub fn DnsConnectionSetPolicyEntries(policyentrytag: DNS_CONNECTION_POLICY_TAG, ppolicyentrylist: *const DNS_CONNECTION_POLICY_ENTRY_LIST) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsConnectionSetProxyInfo(pwszconnectionname: ::windows_sys_core::PCWSTR, r#type: DNS_CONNECTION_PROXY_TYPE, pproxyinfo: *const DNS_CONNECTION_PROXY_INFO) -> u32;
+    pub fn DnsConnectionSetProxyInfo(pwszconnectionname: ::windows_core_sys::PCWSTR, r#type: DNS_CONNECTION_PROXY_TYPE, pproxyinfo: *const DNS_CONNECTION_PROXY_INFO) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
     pub fn DnsConnectionUpdateIfIndexTable(pconnectionifindexentries: *const DNS_CONNECTION_IFINDEX_LIST) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
@@ -47,12 +47,12 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn DnsFreeCustomServers(pcservers: *mut u32, ppservers: *mut *mut DNS_CUSTOM_SERVER);
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsFreeProxyName(proxyname: ::windows_sys_core::PCWSTR);
+    pub fn DnsFreeProxyName(proxyname: ::windows_core_sys::PCWSTR);
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn DnsGetApplicationSettings(pcservers: *mut u32, ppdefaultservers: *mut *mut DNS_CUSTOM_SERVER, psettings: *mut DNS_APPLICATION_SETTINGS) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsGetProxyInformation(hostname: ::windows_sys_core::PCWSTR, proxyinformation: *mut DNS_PROXY_INFORMATION, defaultproxyinformation: *mut DNS_PROXY_INFORMATION, completionroutine: DNS_PROXY_COMPLETION_ROUTINE, completioncontext: *const ::core::ffi::c_void) -> u32;
+    pub fn DnsGetProxyInformation(hostname: ::windows_core_sys::PCWSTR, proxyinformation: *mut DNS_PROXY_INFORMATION, defaultproxyinformation: *mut DNS_PROXY_INFORMATION, completionroutine: DNS_PROXY_COMPLETION_ROUTINE, completioncontext: *const ::core::ffi::c_void) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn DnsModifyRecordsInSet_A(paddrecords: *const DNS_RECORDA, pdeleterecords: *const DNS_RECORDA, options: u32, hcredentials: super::super::Foundation::HANDLE, pextralist: *mut ::core::ffi::c_void, preserved: *mut ::core::ffi::c_void) -> i32;
@@ -64,24 +64,24 @@ extern "system" {
     pub fn DnsModifyRecordsInSet_W(paddrecords: *const DNS_RECORDA, pdeleterecords: *const DNS_RECORDA, options: u32, hcredentials: super::super::Foundation::HANDLE, pextralist: *mut ::core::ffi::c_void, preserved: *mut ::core::ffi::c_void) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DnsNameCompare_A(pname1: ::windows_sys_core::PCSTR, pname2: ::windows_sys_core::PCSTR) -> super::super::Foundation::BOOL;
+    pub fn DnsNameCompare_A(pname1: ::windows_core_sys::PCSTR, pname2: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DnsNameCompare_W(pname1: ::windows_sys_core::PCWSTR, pname2: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn DnsNameCompare_W(pname1: ::windows_core_sys::PCWSTR, pname2: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsQueryConfig(config: DNS_CONFIG_TYPE, flag: u32, pwsadaptername: ::windows_sys_core::PCWSTR, preserved: *const ::core::ffi::c_void, pbuffer: *mut ::core::ffi::c_void, pbuflen: *mut u32) -> i32;
+    pub fn DnsQueryConfig(config: DNS_CONFIG_TYPE, flag: u32, pwsadaptername: ::windows_core_sys::PCWSTR, preserved: *const ::core::ffi::c_void, pbuffer: *mut ::core::ffi::c_void, pbuflen: *mut u32) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn DnsQueryEx(pqueryrequest: *const DNS_QUERY_REQUEST, pqueryresults: *mut DNS_QUERY_RESULT, pcancelhandle: *mut DNS_QUERY_CANCEL) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DnsQuery_A(pszname: ::windows_sys_core::PCSTR, wtype: u16, options: u32, pextra: *mut ::core::ffi::c_void, ppqueryresults: *mut *mut DNS_RECORDA, preserved: *mut *mut ::core::ffi::c_void) -> i32;
+    pub fn DnsQuery_A(pszname: ::windows_core_sys::PCSTR, wtype: u16, options: u32, pextra: *mut ::core::ffi::c_void, ppqueryresults: *mut *mut DNS_RECORDA, preserved: *mut *mut ::core::ffi::c_void) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DnsQuery_UTF8(pszname: ::windows_sys_core::PCSTR, wtype: u16, options: u32, pextra: *mut ::core::ffi::c_void, ppqueryresults: *mut *mut DNS_RECORDA, preserved: *mut *mut ::core::ffi::c_void) -> i32;
+    pub fn DnsQuery_UTF8(pszname: ::windows_core_sys::PCSTR, wtype: u16, options: u32, pextra: *mut ::core::ffi::c_void, ppqueryresults: *mut *mut DNS_RECORDA, preserved: *mut *mut ::core::ffi::c_void) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DnsQuery_W(pszname: ::windows_sys_core::PCWSTR, wtype: u16, options: u32, pextra: *mut ::core::ffi::c_void, ppqueryresults: *mut *mut DNS_RECORDA, preserved: *mut *mut ::core::ffi::c_void) -> i32;
+    pub fn DnsQuery_W(pszname: ::windows_core_sys::PCWSTR, wtype: u16, options: u32, pextra: *mut ::core::ffi::c_void, ppqueryresults: *mut *mut DNS_RECORDA, preserved: *mut *mut ::core::ffi::c_void) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn DnsRecordCompare(precord1: *const DNS_RECORDA, precord2: *const DNS_RECORDA) -> super::super::Foundation::BOOL;
@@ -115,7 +115,7 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
     pub fn DnsServiceBrowseCancel(pcancelhandle: *const DNS_SERVICE_CANCEL) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsServiceConstructInstance(pservicename: ::windows_sys_core::PCWSTR, phostname: ::windows_sys_core::PCWSTR, pip4: *const u32, pip6: *const IP6_ADDRESS, wport: u16, wpriority: u16, wweight: u16, dwpropertiescount: u32, keys: *const ::windows_sys_core::PWSTR, values: *const ::windows_sys_core::PWSTR) -> *mut DNS_SERVICE_INSTANCE;
+    pub fn DnsServiceConstructInstance(pservicename: ::windows_core_sys::PCWSTR, phostname: ::windows_core_sys::PCWSTR, pip4: *const u32, pip6: *const IP6_ADDRESS, wport: u16, wpriority: u16, wweight: u16, dwpropertiescount: u32, keys: *const ::windows_core_sys::PWSTR, values: *const ::windows_core_sys::PWSTR) -> *mut DNS_SERVICE_INSTANCE;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
     pub fn DnsServiceCopyInstance(porig: *const DNS_SERVICE_INSTANCE) -> *mut DNS_SERVICE_INSTANCE;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
@@ -141,17 +141,17 @@ extern "system" {
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
     pub fn DnsStopMulticastQuery(phandle: *mut MDNS_QUERY_HANDLE) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsValidateName_A(pszname: ::windows_sys_core::PCSTR, format: DNS_NAME_FORMAT) -> i32;
+    pub fn DnsValidateName_A(pszname: ::windows_core_sys::PCSTR, format: DNS_NAME_FORMAT) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsValidateName_UTF8(pszname: ::windows_sys_core::PCSTR, format: DNS_NAME_FORMAT) -> i32;
+    pub fn DnsValidateName_UTF8(pszname: ::windows_core_sys::PCSTR, format: DNS_NAME_FORMAT) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
-    pub fn DnsValidateName_W(pszname: ::windows_sys_core::PCWSTR, format: DNS_NAME_FORMAT) -> i32;
+    pub fn DnsValidateName_W(pszname: ::windows_core_sys::PCWSTR, format: DNS_NAME_FORMAT) -> i32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DnsWriteQuestionToBuffer_UTF8(pdnsbuffer: *mut DNS_MESSAGE_BUFFER, pdwbuffersize: *mut u32, pszname: ::windows_sys_core::PCSTR, wtype: u16, xid: u16, frecursiondesired: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn DnsWriteQuestionToBuffer_UTF8(pdnsbuffer: *mut DNS_MESSAGE_BUFFER, pdwbuffersize: *mut u32, pszname: ::windows_core_sys::PCSTR, wtype: u16, xid: u16, frecursiondesired: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DnsWriteQuestionToBuffer_W(pdnsbuffer: *mut DNS_MESSAGE_BUFFER, pdwbuffersize: *mut u32, pszname: ::windows_sys_core::PCWSTR, wtype: u16, xid: u16, frecursiondesired: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn DnsWriteQuestionToBuffer_W(pdnsbuffer: *mut DNS_MESSAGE_BUFFER, pdwbuffersize: *mut u32, pszname: ::windows_core_sys::PCWSTR, wtype: u16, xid: u16, frecursiondesired: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
 }
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub const DNSREC_ADDITIONAL: u32 = 3u32;
@@ -456,7 +456,7 @@ pub const DnsConfigNameServer: DNS_CONFIG_TYPE = 18i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_CONNECTION_IFINDEX_ENTRY {
-    pub pwszConnectionName: ::windows_sys_core::PCWSTR,
+    pub pwszConnectionName: ::windows_core_sys::PCWSTR,
     pub dwIfIndex: u32,
 }
 impl ::core::marker::Copy for DNS_CONNECTION_IFINDEX_ENTRY {}
@@ -505,12 +505,12 @@ pub const DNS_CONNECTION_NAME_MAX_LENGTH: u32 = 64u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_CONNECTION_POLICY_ENTRY {
-    pub pwszHost: ::windows_sys_core::PCWSTR,
-    pub pwszAppId: ::windows_sys_core::PCWSTR,
+    pub pwszHost: ::windows_core_sys::PCWSTR,
+    pub pwszAppId: ::windows_core_sys::PCWSTR,
     pub cbAppSid: u32,
     pub pbAppSid: *mut u8,
     pub nConnections: u32,
-    pub ppwszConnections: *mut ::windows_sys_core::PWSTR,
+    pub ppwszConnections: *mut ::windows_core_sys::PWSTR,
     pub dwPolicyEntryFlags: u32,
 }
 impl ::core::marker::Copy for DNS_CONNECTION_POLICY_ENTRY {}
@@ -557,7 +557,7 @@ impl ::core::clone::Clone for DNS_CONNECTION_PROXY_ELEMENT {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_CONNECTION_PROXY_INFO {
     pub Version: u32,
-    pub pwszFriendlyName: ::windows_sys_core::PWSTR,
+    pub pwszFriendlyName: ::windows_core_sys::PWSTR,
     pub Flags: u32,
     pub Switch: DNS_CONNECTION_PROXY_INFO_SWITCH,
     pub Anonymous: DNS_CONNECTION_PROXY_INFO_0,
@@ -583,11 +583,11 @@ impl ::core::clone::Clone for DNS_CONNECTION_PROXY_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_CONNECTION_PROXY_INFO_0_0 {
-    pub pwszServer: ::windows_sys_core::PWSTR,
-    pub pwszUsername: ::windows_sys_core::PWSTR,
-    pub pwszPassword: ::windows_sys_core::PWSTR,
-    pub pwszException: ::windows_sys_core::PWSTR,
-    pub pwszExtraInfo: ::windows_sys_core::PWSTR,
+    pub pwszServer: ::windows_core_sys::PWSTR,
+    pub pwszUsername: ::windows_core_sys::PWSTR,
+    pub pwszPassword: ::windows_core_sys::PWSTR,
+    pub pwszException: ::windows_core_sys::PWSTR,
+    pub pwszExtraInfo: ::windows_core_sys::PWSTR,
     pub Port: u16,
 }
 impl ::core::marker::Copy for DNS_CONNECTION_PROXY_INFO_0_0 {}
@@ -599,9 +599,9 @@ impl ::core::clone::Clone for DNS_CONNECTION_PROXY_INFO_0_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_CONNECTION_PROXY_INFO_0_1 {
-    pub pwszScript: ::windows_sys_core::PWSTR,
-    pub pwszUsername: ::windows_sys_core::PWSTR,
-    pub pwszPassword: ::windows_sys_core::PWSTR,
+    pub pwszScript: ::windows_core_sys::PWSTR,
+    pub pwszUsername: ::windows_core_sys::PWSTR,
+    pub pwszPassword: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for DNS_CONNECTION_PROXY_INFO_0_1 {}
 impl ::core::clone::Clone for DNS_CONNECTION_PROXY_INFO_0_1 {
@@ -617,7 +617,7 @@ pub const DNS_CONNECTION_PROXY_INFO_CURRENT_VERSION: u32 = 1u32;
 pub struct DNS_CONNECTION_PROXY_INFO_EX {
     pub ProxyInfo: DNS_CONNECTION_PROXY_INFO,
     pub dwInterfaceIndex: u32,
-    pub pwszConnectionName: ::windows_sys_core::PWSTR,
+    pub pwszConnectionName: ::windows_core_sys::PWSTR,
     pub fDirectConfiguration: super::super::Foundation::BOOL,
     pub hConnection: super::super::Foundation::HANDLE,
 }
@@ -698,7 +698,7 @@ impl ::core::clone::Clone for DNS_CUSTOM_SERVER {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub union DNS_CUSTOM_SERVER_0 {
-    pub pwszTemplate: ::windows_sys_core::PWSTR,
+    pub pwszTemplate: ::windows_core_sys::PWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for DNS_CUSTOM_SERVER_0 {}
@@ -867,8 +867,8 @@ impl ::core::clone::Clone for DNS_MESSAGE_BUFFER {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_MINFO_DATAA {
-    pub pNameMailbox: ::windows_sys_core::PSTR,
-    pub pNameErrorsMailbox: ::windows_sys_core::PSTR,
+    pub pNameMailbox: ::windows_core_sys::PSTR,
+    pub pNameErrorsMailbox: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for DNS_MINFO_DATAA {}
 impl ::core::clone::Clone for DNS_MINFO_DATAA {
@@ -879,8 +879,8 @@ impl ::core::clone::Clone for DNS_MINFO_DATAA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_MINFO_DATAW {
-    pub pNameMailbox: ::windows_sys_core::PWSTR,
-    pub pNameErrorsMailbox: ::windows_sys_core::PWSTR,
+    pub pNameMailbox: ::windows_core_sys::PWSTR,
+    pub pNameErrorsMailbox: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for DNS_MINFO_DATAW {}
 impl ::core::clone::Clone for DNS_MINFO_DATAW {
@@ -891,7 +891,7 @@ impl ::core::clone::Clone for DNS_MINFO_DATAW {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_MX_DATAA {
-    pub pNameExchange: ::windows_sys_core::PSTR,
+    pub pNameExchange: ::windows_core_sys::PSTR,
     pub wPreference: u16,
     pub Pad: u16,
 }
@@ -904,7 +904,7 @@ impl ::core::clone::Clone for DNS_MX_DATAA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_MX_DATAW {
-    pub pNameExchange: ::windows_sys_core::PWSTR,
+    pub pNameExchange: ::windows_core_sys::PWSTR,
     pub wPreference: u16,
     pub Pad: u16,
 }
@@ -935,10 +935,10 @@ pub const DnsNameValidateTld: DNS_NAME_FORMAT = 6i32;
 pub struct DNS_NAPTR_DATAA {
     pub wOrder: u16,
     pub wPreference: u16,
-    pub pFlags: ::windows_sys_core::PSTR,
-    pub pService: ::windows_sys_core::PSTR,
-    pub pRegularExpression: ::windows_sys_core::PSTR,
-    pub pReplacement: ::windows_sys_core::PSTR,
+    pub pFlags: ::windows_core_sys::PSTR,
+    pub pService: ::windows_core_sys::PSTR,
+    pub pRegularExpression: ::windows_core_sys::PSTR,
+    pub pReplacement: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for DNS_NAPTR_DATAA {}
 impl ::core::clone::Clone for DNS_NAPTR_DATAA {
@@ -951,10 +951,10 @@ impl ::core::clone::Clone for DNS_NAPTR_DATAA {
 pub struct DNS_NAPTR_DATAW {
     pub wOrder: u16,
     pub wPreference: u16,
-    pub pFlags: ::windows_sys_core::PWSTR,
-    pub pService: ::windows_sys_core::PWSTR,
-    pub pRegularExpression: ::windows_sys_core::PWSTR,
-    pub pReplacement: ::windows_sys_core::PWSTR,
+    pub pFlags: ::windows_core_sys::PWSTR,
+    pub pService: ::windows_core_sys::PWSTR,
+    pub pRegularExpression: ::windows_core_sys::PWSTR,
+    pub pReplacement: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for DNS_NAPTR_DATAW {}
 impl ::core::clone::Clone for DNS_NAPTR_DATAW {
@@ -998,7 +998,7 @@ impl ::core::clone::Clone for DNS_NSEC3_DATA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_NSEC_DATAA {
-    pub pNextDomainName: ::windows_sys_core::PSTR,
+    pub pNextDomainName: ::windows_core_sys::PSTR,
     pub wTypeBitMapsLength: u16,
     pub wPad: u16,
     pub TypeBitMaps: [u8; 1],
@@ -1012,7 +1012,7 @@ impl ::core::clone::Clone for DNS_NSEC_DATAA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_NSEC_DATAW {
-    pub pNextDomainName: ::windows_sys_core::PWSTR,
+    pub pNextDomainName: ::windows_core_sys::PWSTR,
     pub wTypeBitMapsLength: u16,
     pub wPad: u16,
     pub TypeBitMaps: [u8; 1],
@@ -1038,7 +1038,7 @@ impl ::core::clone::Clone for DNS_NULL_DATA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_NXT_DATAA {
-    pub pNameNext: ::windows_sys_core::PSTR,
+    pub pNameNext: ::windows_core_sys::PSTR,
     pub wNumTypes: u16,
     pub wTypes: [u16; 1],
 }
@@ -1051,7 +1051,7 @@ impl ::core::clone::Clone for DNS_NXT_DATAA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_NXT_DATAW {
-    pub pNameNext: ::windows_sys_core::PWSTR,
+    pub pNameNext: ::windows_core_sys::PWSTR,
     pub wNumTypes: u16,
     pub wTypes: [u16; 1],
 }
@@ -1097,7 +1097,7 @@ pub type DNS_PROXY_COMPLETION_ROUTINE = ::core::option::Option<unsafe extern "sy
 pub struct DNS_PROXY_INFORMATION {
     pub version: u32,
     pub proxyInformationType: DNS_PROXY_INFORMATION_TYPE,
-    pub proxyName: ::windows_sys_core::PWSTR,
+    pub proxyName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for DNS_PROXY_INFORMATION {}
 impl ::core::clone::Clone for DNS_PROXY_INFORMATION {
@@ -1118,7 +1118,7 @@ pub const DNS_PROXY_INFORMATION_DOES_NOT_EXIST: DNS_PROXY_INFORMATION_TYPE = 3i3
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_PTR_DATAA {
-    pub pNameHost: ::windows_sys_core::PSTR,
+    pub pNameHost: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for DNS_PTR_DATAA {}
 impl ::core::clone::Clone for DNS_PTR_DATAA {
@@ -1129,7 +1129,7 @@ impl ::core::clone::Clone for DNS_PTR_DATAA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_PTR_DATAW {
-    pub pNameHost: ::windows_sys_core::PWSTR,
+    pub pNameHost: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for DNS_PTR_DATAW {}
 impl ::core::clone::Clone for DNS_PTR_DATAW {
@@ -1190,7 +1190,7 @@ pub const DNS_QUERY_NO_WIRE_QUERY: u32 = 16u32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct DNS_QUERY_REQUEST {
     pub Version: u32,
-    pub QueryName: ::windows_sys_core::PCWSTR,
+    pub QueryName: ::windows_core_sys::PCWSTR,
     pub QueryType: u16,
     pub QueryOptions: u64,
     pub pDnsServerList: *mut DNS_ADDR_ARRAY,
@@ -1211,7 +1211,7 @@ impl ::core::clone::Clone for DNS_QUERY_REQUEST {
 #[cfg(feature = "Win32_Foundation")]
 pub struct DNS_QUERY_REQUEST3 {
     pub Version: u32,
-    pub QueryName: ::windows_sys_core::PCWSTR,
+    pub QueryName: ::windows_core_sys::PCWSTR,
     pub QueryType: u16,
     pub QueryOptions: u64,
     pub pDnsServerList: *mut DNS_ADDR_ARRAY,
@@ -1332,7 +1332,7 @@ pub const DNS_RCODE_YXRRSET: u32 = 7u32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct DNS_RECORDA {
     pub pNext: *mut DNS_RECORDA,
-    pub pName: ::windows_sys_core::PSTR,
+    pub pName: ::windows_core_sys::PSTR,
     pub wType: u16,
     pub wDataLength: u16,
     pub Flags: DNS_RECORDA_1,
@@ -1465,7 +1465,7 @@ impl ::core::clone::Clone for DNS_RECORDA_1 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct DNS_RECORDW {
     pub pNext: *mut DNS_RECORDW,
-    pub pName: ::windows_sys_core::PWSTR,
+    pub pName: ::windows_core_sys::PWSTR,
     pub wType: u16,
     pub wDataLength: u16,
     pub Flags: DNS_RECORDW_1,
@@ -1763,7 +1763,7 @@ pub const DnsSectionAddtional: DNS_SECTION = 3i32;
 pub struct DNS_SERVICE_BROWSE_REQUEST {
     pub Version: u32,
     pub InterfaceIndex: u32,
-    pub QueryName: ::windows_sys_core::PCWSTR,
+    pub QueryName: ::windows_core_sys::PCWSTR,
     pub Anonymous: DNS_SERVICE_BROWSE_REQUEST_0,
     pub pQueryContext: *mut ::core::ffi::c_void,
 }
@@ -1804,16 +1804,16 @@ impl ::core::clone::Clone for DNS_SERVICE_CANCEL {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_SERVICE_INSTANCE {
-    pub pszInstanceName: ::windows_sys_core::PWSTR,
-    pub pszHostName: ::windows_sys_core::PWSTR,
+    pub pszInstanceName: ::windows_core_sys::PWSTR,
+    pub pszHostName: ::windows_core_sys::PWSTR,
     pub ip4Address: *mut u32,
     pub ip6Address: *mut IP6_ADDRESS,
     pub wPort: u16,
     pub wPriority: u16,
     pub wWeight: u16,
     pub dwPropertyCount: u32,
-    pub keys: *mut ::windows_sys_core::PWSTR,
-    pub values: *mut ::windows_sys_core::PWSTR,
+    pub keys: *mut ::windows_core_sys::PWSTR,
+    pub values: *mut ::windows_core_sys::PWSTR,
     pub dwInterfaceIndex: u32,
 }
 impl ::core::marker::Copy for DNS_SERVICE_INSTANCE {}
@@ -1847,7 +1847,7 @@ impl ::core::clone::Clone for DNS_SERVICE_REGISTER_REQUEST {
 pub struct DNS_SERVICE_RESOLVE_REQUEST {
     pub Version: u32,
     pub InterfaceIndex: u32,
-    pub QueryName: ::windows_sys_core::PWSTR,
+    pub QueryName: ::windows_core_sys::PWSTR,
     pub pResolveCompletionCallback: PDNS_SERVICE_RESOLVE_COMPLETE,
     pub pQueryContext: *mut ::core::ffi::c_void,
 }
@@ -1868,7 +1868,7 @@ pub struct DNS_SIG_DATAA {
     pub dwTimeSigned: u32,
     pub wKeyTag: u16,
     pub wSignatureLength: u16,
-    pub pNameSigner: ::windows_sys_core::PSTR,
+    pub pNameSigner: ::windows_core_sys::PSTR,
     pub Signature: [u8; 1],
 }
 impl ::core::marker::Copy for DNS_SIG_DATAA {}
@@ -1888,7 +1888,7 @@ pub struct DNS_SIG_DATAW {
     pub dwTimeSigned: u32,
     pub wKeyTag: u16,
     pub wSignatureLength: u16,
-    pub pNameSigner: ::windows_sys_core::PWSTR,
+    pub pNameSigner: ::windows_core_sys::PWSTR,
     pub Signature: [u8; 1],
 }
 impl ::core::marker::Copy for DNS_SIG_DATAW {}
@@ -1900,8 +1900,8 @@ impl ::core::clone::Clone for DNS_SIG_DATAW {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_SOA_DATAA {
-    pub pNamePrimaryServer: ::windows_sys_core::PSTR,
-    pub pNameAdministrator: ::windows_sys_core::PSTR,
+    pub pNamePrimaryServer: ::windows_core_sys::PSTR,
+    pub pNameAdministrator: ::windows_core_sys::PSTR,
     pub dwSerialNo: u32,
     pub dwRefresh: u32,
     pub dwRetry: u32,
@@ -1917,8 +1917,8 @@ impl ::core::clone::Clone for DNS_SOA_DATAA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_SOA_DATAW {
-    pub pNamePrimaryServer: ::windows_sys_core::PWSTR,
-    pub pNameAdministrator: ::windows_sys_core::PWSTR,
+    pub pNamePrimaryServer: ::windows_core_sys::PWSTR,
+    pub pNameAdministrator: ::windows_core_sys::PWSTR,
     pub dwSerialNo: u32,
     pub dwRefresh: u32,
     pub dwRetry: u32,
@@ -1934,7 +1934,7 @@ impl ::core::clone::Clone for DNS_SOA_DATAW {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_SRV_DATAA {
-    pub pNameTarget: ::windows_sys_core::PSTR,
+    pub pNameTarget: ::windows_core_sys::PSTR,
     pub wPriority: u16,
     pub wWeight: u16,
     pub wPort: u16,
@@ -1949,7 +1949,7 @@ impl ::core::clone::Clone for DNS_SRV_DATAA {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_SRV_DATAW {
-    pub pNameTarget: ::windows_sys_core::PWSTR,
+    pub pNameTarget: ::windows_core_sys::PWSTR,
     pub wPriority: u16,
     pub wWeight: u16,
     pub wPort: u16,
@@ -1965,7 +1965,7 @@ impl ::core::clone::Clone for DNS_SRV_DATAW {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct DNS_TKEY_DATAA {
-    pub pNameAlgorithm: ::windows_sys_core::PSTR,
+    pub pNameAlgorithm: ::windows_core_sys::PSTR,
     pub pAlgorithmPacket: *mut u8,
     pub pKey: *mut u8,
     pub pOtherData: *mut u8,
@@ -1990,7 +1990,7 @@ impl ::core::clone::Clone for DNS_TKEY_DATAA {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct DNS_TKEY_DATAW {
-    pub pNameAlgorithm: ::windows_sys_core::PWSTR,
+    pub pNameAlgorithm: ::windows_core_sys::PWSTR,
     pub pAlgorithmPacket: *mut u8,
     pub pKey: *mut u8,
     pub pOtherData: *mut u8,
@@ -2039,7 +2039,7 @@ impl ::core::clone::Clone for DNS_TLSA_DATA {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct DNS_TSIG_DATAA {
-    pub pNameAlgorithm: ::windows_sys_core::PSTR,
+    pub pNameAlgorithm: ::windows_core_sys::PSTR,
     pub pAlgorithmPacket: *mut u8,
     pub pSignature: *mut u8,
     pub pOtherData: *mut u8,
@@ -2064,7 +2064,7 @@ impl ::core::clone::Clone for DNS_TSIG_DATAA {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct DNS_TSIG_DATAW {
-    pub pNameAlgorithm: ::windows_sys_core::PWSTR,
+    pub pNameAlgorithm: ::windows_core_sys::PWSTR,
     pub pAlgorithmPacket: *mut u8,
     pub pSignature: *mut u8,
     pub pOtherData: *mut u8,
@@ -2089,7 +2089,7 @@ impl ::core::clone::Clone for DNS_TSIG_DATAW {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_TXT_DATAA {
     pub dwStringCount: u32,
-    pub pStringArray: [::windows_sys_core::PSTR; 1],
+    pub pStringArray: [::windows_core_sys::PSTR; 1],
 }
 impl ::core::marker::Copy for DNS_TXT_DATAA {}
 impl ::core::clone::Clone for DNS_TXT_DATAA {
@@ -2101,7 +2101,7 @@ impl ::core::clone::Clone for DNS_TXT_DATAA {
 #[doc = "*Required features: `\"Win32_NetworkManagement_Dns\"`*"]
 pub struct DNS_TXT_DATAW {
     pub dwStringCount: u32,
-    pub pStringArray: [::windows_sys_core::PWSTR; 1],
+    pub pStringArray: [::windows_core_sys::PWSTR; 1],
 }
 impl ::core::marker::Copy for DNS_TXT_DATAW {}
 impl ::core::clone::Clone for DNS_TXT_DATAW {
@@ -2297,7 +2297,7 @@ pub struct DNS_WINSR_DATAA {
     pub dwMappingFlag: u32,
     pub dwLookupTimeout: u32,
     pub dwCacheTimeout: u32,
-    pub pNameResultDomain: ::windows_sys_core::PSTR,
+    pub pNameResultDomain: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for DNS_WINSR_DATAA {}
 impl ::core::clone::Clone for DNS_WINSR_DATAA {
@@ -2311,7 +2311,7 @@ pub struct DNS_WINSR_DATAW {
     pub dwMappingFlag: u32,
     pub dwLookupTimeout: u32,
     pub dwCacheTimeout: u32,
-    pub pNameResultDomain: ::windows_sys_core::PWSTR,
+    pub pNameResultDomain: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for DNS_WINSR_DATAW {}
 impl ::core::clone::Clone for DNS_WINSR_DATAW {
@@ -2452,7 +2452,7 @@ impl ::core::clone::Clone for MDNS_QUERY_HANDLE {
 pub struct MDNS_QUERY_REQUEST {
     pub Version: u32,
     pub ulRefCount: u32,
-    pub Query: ::windows_sys_core::PCWSTR,
+    pub Query: ::windows_core_sys::PCWSTR,
     pub QueryType: u16,
     pub QueryOptions: u64,
     pub InterfaceIndex: u32,
@@ -2489,7 +2489,7 @@ pub const SIZEOF_IP4_ADDRESS: u32 = 4u32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct _DnsRecordOptA {
     pub pNext: *mut DNS_RECORDA,
-    pub pName: ::windows_sys_core::PSTR,
+    pub pName: ::windows_core_sys::PSTR,
     pub wType: u16,
     pub wDataLength: u16,
     pub Flags: _DnsRecordOptA_1,
@@ -2541,7 +2541,7 @@ impl ::core::clone::Clone for _DnsRecordOptA_1 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct _DnsRecordOptW {
     pub pNext: *mut DNS_RECORDW,
-    pub pName: ::windows_sys_core::PWSTR,
+    pub pName: ::windows_core_sys::PWSTR,
     pub wType: u16,
     pub wDataLength: u16,
     pub Flags: _DnsRecordOptW_1,

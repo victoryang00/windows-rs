@@ -2,7 +2,7 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothAuthenticateDevice(hwndparent: super::super::Foundation::HWND, hradio: super::super::Foundation::HANDLE, pbtbi: *mut BLUETOOTH_DEVICE_INFO, pszpasskey: ::windows_sys_core::PCWSTR, ulpasskeylength: u32) -> u32;
+    pub fn BluetoothAuthenticateDevice(hwndparent: super::super::Foundation::HWND, hradio: super::super::Foundation::HANDLE, pbtbi: *mut BLUETOOTH_DEVICE_INFO, pszpasskey: ::windows_core_sys::PCWSTR, ulpasskeylength: u32) -> u32;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn BluetoothAuthenticateDeviceEx(hwndparentin: super::super::Foundation::HWND, hradioin: super::super::Foundation::HANDLE, pbtdiinout: *mut BLUETOOTH_DEVICE_INFO, pbtoobdata: *const BLUETOOTH_OOB_DATA_INFO, authenticationrequirement: AUTHENTICATION_REQUIREMENTS) -> u32;
@@ -20,7 +20,7 @@ extern "system" {
     pub fn BluetoothEnableIncomingConnections(hradio: super::super::Foundation::HANDLE, fenabled: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothEnumerateInstalledServices(hradio: super::super::Foundation::HANDLE, pbtdi: *const BLUETOOTH_DEVICE_INFO, pcserviceinout: *mut u32, pguidservices: *mut ::windows_sys_core::GUID) -> u32;
+    pub fn BluetoothEnumerateInstalledServices(hradio: super::super::Foundation::HANDLE, pbtdi: *const BLUETOOTH_DEVICE_INFO, pcserviceinout: *mut u32, pguidservices: *mut ::windows_core_sys::GUID) -> u32;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn BluetoothFindDeviceClose(hfind: isize) -> super::super::Foundation::BOOL;
@@ -41,42 +41,42 @@ extern "system" {
     pub fn BluetoothFindRadioClose(hfind: isize) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTAbortReliableWrite(hdevice: super::super::Foundation::HANDLE, reliablewritecontext: u64, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTAbortReliableWrite(hdevice: super::super::Foundation::HANDLE, reliablewritecontext: u64, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTBeginReliableWrite(hdevice: super::super::Foundation::HANDLE, reliablewritecontext: *mut u64, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTBeginReliableWrite(hdevice: super::super::Foundation::HANDLE, reliablewritecontext: *mut u64, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTEndReliableWrite(hdevice: super::super::Foundation::HANDLE, reliablewritecontext: u64, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTEndReliableWrite(hdevice: super::super::Foundation::HANDLE, reliablewritecontext: u64, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTGetCharacteristicValue(hdevice: super::super::Foundation::HANDLE, characteristic: *const BTH_LE_GATT_CHARACTERISTIC, characteristicvaluedatasize: u32, characteristicvalue: *mut BTH_LE_GATT_CHARACTERISTIC_VALUE, characteristicvaluesizerequired: *mut u16, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTGetCharacteristicValue(hdevice: super::super::Foundation::HANDLE, characteristic: *const BTH_LE_GATT_CHARACTERISTIC, characteristicvaluedatasize: u32, characteristicvalue: *mut BTH_LE_GATT_CHARACTERISTIC_VALUE, characteristicvaluesizerequired: *mut u16, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTGetCharacteristics(hdevice: super::super::Foundation::HANDLE, service: *const BTH_LE_GATT_SERVICE, characteristicsbuffercount: u16, characteristicsbuffer: *mut BTH_LE_GATT_CHARACTERISTIC, characteristicsbufferactual: *mut u16, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTGetCharacteristics(hdevice: super::super::Foundation::HANDLE, service: *const BTH_LE_GATT_SERVICE, characteristicsbuffercount: u16, characteristicsbuffer: *mut BTH_LE_GATT_CHARACTERISTIC, characteristicsbufferactual: *mut u16, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTGetDescriptorValue(hdevice: super::super::Foundation::HANDLE, descriptor: *const BTH_LE_GATT_DESCRIPTOR, descriptorvaluedatasize: u32, descriptorvalue: *mut BTH_LE_GATT_DESCRIPTOR_VALUE, descriptorvaluesizerequired: *mut u16, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTGetDescriptorValue(hdevice: super::super::Foundation::HANDLE, descriptor: *const BTH_LE_GATT_DESCRIPTOR, descriptorvaluedatasize: u32, descriptorvalue: *mut BTH_LE_GATT_DESCRIPTOR_VALUE, descriptorvaluesizerequired: *mut u16, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTGetDescriptors(hdevice: super::super::Foundation::HANDLE, characteristic: *const BTH_LE_GATT_CHARACTERISTIC, descriptorsbuffercount: u16, descriptorsbuffer: *mut BTH_LE_GATT_DESCRIPTOR, descriptorsbufferactual: *mut u16, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTGetDescriptors(hdevice: super::super::Foundation::HANDLE, characteristic: *const BTH_LE_GATT_CHARACTERISTIC, descriptorsbuffercount: u16, descriptorsbuffer: *mut BTH_LE_GATT_DESCRIPTOR, descriptorsbufferactual: *mut u16, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTGetIncludedServices(hdevice: super::super::Foundation::HANDLE, parentservice: *const BTH_LE_GATT_SERVICE, includedservicesbuffercount: u16, includedservicesbuffer: *mut BTH_LE_GATT_SERVICE, includedservicesbufferactual: *mut u16, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTGetIncludedServices(hdevice: super::super::Foundation::HANDLE, parentservice: *const BTH_LE_GATT_SERVICE, includedservicesbuffercount: u16, includedservicesbuffer: *mut BTH_LE_GATT_SERVICE, includedservicesbufferactual: *mut u16, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTGetServices(hdevice: super::super::Foundation::HANDLE, servicesbuffercount: u16, servicesbuffer: *mut BTH_LE_GATT_SERVICE, servicesbufferactual: *mut u16, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTGetServices(hdevice: super::super::Foundation::HANDLE, servicesbuffercount: u16, servicesbuffer: *mut BTH_LE_GATT_SERVICE, servicesbufferactual: *mut u16, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTRegisterEvent(hservice: super::super::Foundation::HANDLE, eventtype: BTH_LE_GATT_EVENT_TYPE, eventparameterin: *const ::core::ffi::c_void, callback: PFNBLUETOOTH_GATT_EVENT_CALLBACK, callbackcontext: *const ::core::ffi::c_void, peventhandle: *mut isize, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTRegisterEvent(hservice: super::super::Foundation::HANDLE, eventtype: BTH_LE_GATT_EVENT_TYPE, eventparameterin: *const ::core::ffi::c_void, callback: PFNBLUETOOTH_GATT_EVENT_CALLBACK, callbackcontext: *const ::core::ffi::c_void, peventhandle: *mut isize, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTSetCharacteristicValue(hdevice: super::super::Foundation::HANDLE, characteristic: *const BTH_LE_GATT_CHARACTERISTIC, characteristicvalue: *const BTH_LE_GATT_CHARACTERISTIC_VALUE, reliablewritecontext: u64, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTSetCharacteristicValue(hdevice: super::super::Foundation::HANDLE, characteristic: *const BTH_LE_GATT_CHARACTERISTIC, characteristicvalue: *const BTH_LE_GATT_CHARACTERISTIC_VALUE, reliablewritecontext: u64, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothGATTSetDescriptorValue(hdevice: super::super::Foundation::HANDLE, descriptor: *const BTH_LE_GATT_DESCRIPTOR, descriptorvalue: *const BTH_LE_GATT_DESCRIPTOR_VALUE, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTSetDescriptorValue(hdevice: super::super::Foundation::HANDLE, descriptor: *const BTH_LE_GATT_DESCRIPTOR, descriptorvalue: *const BTH_LE_GATT_DESCRIPTOR_VALUE, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
-    pub fn BluetoothGATTUnregisterEvent(eventhandle: isize, flags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn BluetoothGATTUnregisterEvent(eventhandle: isize, flags: u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn BluetoothGetDeviceInfo(hradio: super::super::Foundation::HANDLE, pbtdi: *mut BLUETOOTH_DEVICE_INFO) -> u32;
@@ -113,7 +113,7 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn BluetoothSdpGetElementData(psdpstream: *const u8, cbsdpstreamlength: u32, pdata: *mut SDP_ELEMENT_DATA) -> u32;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
-    pub fn BluetoothSdpGetString(precordstream: *const u8, cbrecordlength: u32, pstringdata: *const SDP_STRING_TYPE_DATA, usstringoffset: u16, pszstring: ::windows_sys_core::PWSTR, pcchstringlength: *mut u32) -> u32;
+    pub fn BluetoothSdpGetString(precordstream: *const u8, cbrecordlength: u32, pstringdata: *const SDP_STRING_TYPE_DATA, usstringoffset: u16, pszstring: ::windows_core_sys::PWSTR, pcchstringlength: *mut u32) -> u32;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn BluetoothSelectDevices(pbtsdp: *mut BLUETOOTH_SELECT_DEVICE_PARAMS) -> super::super::Foundation::BOOL;
@@ -122,16 +122,16 @@ extern "system" {
     pub fn BluetoothSelectDevicesFree(pbtsdp: *mut BLUETOOTH_SELECT_DEVICE_PARAMS) -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothSendAuthenticationResponse(hradio: super::super::Foundation::HANDLE, pbtdi: *const BLUETOOTH_DEVICE_INFO, pszpasskey: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn BluetoothSendAuthenticationResponse(hradio: super::super::Foundation::HANDLE, pbtdi: *const BLUETOOTH_DEVICE_INFO, pszpasskey: ::windows_core_sys::PCWSTR) -> u32;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn BluetoothSendAuthenticationResponseEx(hradioin: super::super::Foundation::HANDLE, pauthresponse: *const BLUETOOTH_AUTHENTICATE_RESPONSE) -> u32;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothSetLocalServiceInfo(hradioin: super::super::Foundation::HANDLE, pclassguid: *const ::windows_sys_core::GUID, ulinstance: u32, pserviceinfoin: *const BLUETOOTH_LOCAL_SERVICE_INFO) -> u32;
+    pub fn BluetoothSetLocalServiceInfo(hradioin: super::super::Foundation::HANDLE, pclassguid: *const ::windows_core_sys::GUID, ulinstance: u32, pserviceinfoin: *const BLUETOOTH_LOCAL_SERVICE_INFO) -> u32;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn BluetoothSetServiceState(hradio: super::super::Foundation::HANDLE, pbtdi: *const BLUETOOTH_DEVICE_INFO, pguidservice: *const ::windows_sys_core::GUID, dwserviceflags: u32) -> u32;
+    pub fn BluetoothSetServiceState(hradio: super::super::Foundation::HANDLE, pbtdi: *const BLUETOOTH_DEVICE_INFO, pguidservice: *const ::windows_core_sys::GUID, dwserviceflags: u32) -> u32;
     #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn BluetoothUnregisterAuthentication(hreghandle: isize) -> super::super::Foundation::BOOL;
@@ -403,7 +403,7 @@ pub const BLUETOOTH_MITM_ProtectionNotDefined: BLUETOOTH_AUTHENTICATION_REQUIREM
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
 pub struct BLUETOOTH_COD_PAIRS {
     pub ulCODMask: u32,
-    pub pcszDescription: ::windows_sys_core::PCWSTR,
+    pub pcszDescription: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for BLUETOOTH_COD_PAIRS {}
 impl ::core::clone::Clone for BLUETOOTH_COD_PAIRS {
@@ -617,7 +617,7 @@ pub struct BLUETOOTH_SELECT_DEVICE_PARAMS {
     pub dwSize: u32,
     pub cNumOfClasses: u32,
     pub prgClassOfDevices: *mut BLUETOOTH_COD_PAIRS,
-    pub pszInfo: ::windows_sys_core::PWSTR,
+    pub pszInfo: ::windows_core_sys::PWSTR,
     pub hwndParent: super::super::Foundation::HWND,
     pub fForceAuthentication: super::super::Foundation::BOOL,
     pub fShowAuthenticated: super::super::Foundation::BOOL,
@@ -935,7 +935,7 @@ impl ::core::clone::Clone for BTH_L2CAP_EVENT_INFO {
         *self
     }
 }
-pub const BTH_LE_ATT_BLUETOOTH_BASE_GUID: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 0, data2: 0, data3: 4096, data4: [128, 0, 0, 128, 95, 155, 52, 251] };
+pub const BTH_LE_ATT_BLUETOOTH_BASE_GUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 0, data2: 0, data3: 4096, data4: [128, 0, 0, 128, 95, 155, 52, 251] };
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
 pub const BTH_LE_ATT_CID: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
@@ -1329,7 +1329,7 @@ impl ::core::clone::Clone for BTH_LE_UUID {
 #[cfg(feature = "Win32_Foundation")]
 pub union BTH_LE_UUID_0 {
     pub ShortUuid: u16,
-    pub LongUuid: ::windows_sys_core::GUID,
+    pub LongUuid: ::windows_core_sys::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for BTH_LE_UUID_0 {}
@@ -1551,7 +1551,7 @@ pub const BT_PORT_MIN: u32 = 1u32;
 pub const BasicPrintingProfileID_UUID16: u32 = 4386u32;
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
 pub const BasicPrintingServiceClassID_UUID16: u32 = 4386u32;
-pub const Bluetooth_Base_UUID: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 0, data2: 0, data3: 4096, data4: [128, 0, 0, 128, 95, 155, 52, 251] };
+pub const Bluetooth_Base_UUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 0, data2: 0, data3: 4096, data4: [128, 0, 0, 128, 95, 155, 52, 251] };
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
 pub const BrowseGroupDescriptorServiceClassID_UUID16: u32 = 4097u32;
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
@@ -1810,17 +1810,17 @@ pub const GNSSProfileID_UUID16: u32 = 4405u32;
 pub const GNSSServerServiceClassID_UUID16: u32 = 4406u32;
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
 pub const GNServiceClassID_UUID16: u32 = 4375u32;
-pub const GUID_BLUETOOTHLE_DEVICE_INTERFACE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2015030808, data2: 30515, data3: 19684, data4: [173, 208, 145, 244, 28, 103, 181, 146] };
-pub const GUID_BLUETOOTH_AUTHENTICATION_REQUEST: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1573458797, data2: 39276, data3: 18139, data4: [132, 245, 50, 192, 163, 244, 115, 82] };
-pub const GUID_BLUETOOTH_GATT_SERVICE_DEVICE_INTERFACE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1849407097, data2: 17266, data3: 16584, data4: [158, 170, 69, 9, 223, 38, 12, 216] };
-pub const GUID_BLUETOOTH_HCI_EVENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4230217826, data2: 5441, data3: 18878, data4: [180, 99, 132, 196, 220, 215, 191, 127] };
-pub const GUID_BLUETOOTH_HCI_VENDOR_EVENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1416775654, data2: 17851, data3: 19507, data4: [175, 140, 192, 14, 254, 21, 167, 29] };
-pub const GUID_BLUETOOTH_KEYPRESS_EVENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3597197261, data2: 3918, data3: 20220, data4: [191, 224, 57, 46, 238, 197, 16, 156] };
-pub const GUID_BLUETOOTH_L2CAP_EVENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2125348912, data2: 46857, data3: 19112, data4: [172, 85, 233, 83, 130, 156, 157, 170] };
-pub const GUID_BLUETOOTH_RADIO_IN_RANGE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3929758594, data2: 9966, data3: 17678, data4: [176, 216, 210, 111, 227, 10, 56, 105] };
-pub const GUID_BLUETOOTH_RADIO_OUT_OF_RANGE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3800590281, data2: 49834, data3: 19693, data4: [185, 105, 69, 112, 134, 96, 55, 196] };
-pub const GUID_BTHPORT_DEVICE_INTERFACE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 139472938, data2: 45892, data3: 20442, data4: [155, 233, 144, 87, 107, 141, 70, 240] };
-pub const GUID_BTH_RFCOMM_SERVICE_DEVICE_INTERFACE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2973957182, data2: 64078, data3: 17931, data4: [138, 188, 7, 43, 98, 139, 60, 112] };
+pub const GUID_BLUETOOTHLE_DEVICE_INTERFACE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2015030808, data2: 30515, data3: 19684, data4: [173, 208, 145, 244, 28, 103, 181, 146] };
+pub const GUID_BLUETOOTH_AUTHENTICATION_REQUEST: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1573458797, data2: 39276, data3: 18139, data4: [132, 245, 50, 192, 163, 244, 115, 82] };
+pub const GUID_BLUETOOTH_GATT_SERVICE_DEVICE_INTERFACE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1849407097, data2: 17266, data3: 16584, data4: [158, 170, 69, 9, 223, 38, 12, 216] };
+pub const GUID_BLUETOOTH_HCI_EVENT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4230217826, data2: 5441, data3: 18878, data4: [180, 99, 132, 196, 220, 215, 191, 127] };
+pub const GUID_BLUETOOTH_HCI_VENDOR_EVENT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1416775654, data2: 17851, data3: 19507, data4: [175, 140, 192, 14, 254, 21, 167, 29] };
+pub const GUID_BLUETOOTH_KEYPRESS_EVENT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3597197261, data2: 3918, data3: 20220, data4: [191, 224, 57, 46, 238, 197, 16, 156] };
+pub const GUID_BLUETOOTH_L2CAP_EVENT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2125348912, data2: 46857, data3: 19112, data4: [172, 85, 233, 83, 130, 156, 157, 170] };
+pub const GUID_BLUETOOTH_RADIO_IN_RANGE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3929758594, data2: 9966, data3: 17678, data4: [176, 216, 210, 111, 227, 10, 56, 105] };
+pub const GUID_BLUETOOTH_RADIO_OUT_OF_RANGE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3800590281, data2: 49834, data3: 19693, data4: [185, 105, 69, 112, 134, 96, 55, 196] };
+pub const GUID_BTHPORT_DEVICE_INTERFACE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 139472938, data2: 45892, data3: 20442, data4: [155, 233, 144, 87, 107, 141, 70, 240] };
+pub const GUID_BTH_RFCOMM_SERVICE_DEVICE_INTERFACE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2973957182, data2: 64078, data3: 17931, data4: [138, 188, 7, 43, 98, 139, 60, 112] };
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
 pub const GenericAudioServiceClassID_UUID16: u32 = 4611u32;
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
@@ -2380,7 +2380,7 @@ pub union SDP_ELEMENT_DATA_0 {
     pub uint16: u16,
     pub uint8: u8,
     pub booleanVal: u8,
-    pub uuid128: ::windows_sys_core::GUID,
+    pub uuid128: ::windows_core_sys::GUID,
     pub uuid32: u32,
     pub uuid16: u16,
     pub string: SDP_ELEMENT_DATA_0_2,
@@ -2604,7 +2604,7 @@ pub const SERVICE_SECURITY_USE_DEFAULTS: u32 = 0u32;
 pub struct SOCKADDR_BTH {
     pub addressFamily: u16,
     pub btAddr: u64,
-    pub serviceClassId: ::windows_sys_core::GUID,
+    pub serviceClassId: ::windows_core_sys::GUID,
     pub port: u32,
 }
 impl ::core::marker::Copy for SOCKADDR_BTH {}
@@ -2653,7 +2653,7 @@ pub const STR_USBHCI_CLASS_HARDWAREID: &str = "USB\\Class_E0&SubClass_01&Prot_01
 pub const STR_USBHCI_CLASS_HARDWAREIDA: &str = "USB\\Class_E0&SubClass_01&Prot_01";
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
 pub const STR_USBHCI_CLASS_HARDWAREIDW: &str = "USB\\Class_E0&SubClass_01&Prot_01";
-pub const SVCID_BTH_PROVIDER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 111829984, data2: 32096, data3: 16895, data4: [175, 178, 62, 230, 210, 217, 57, 45] };
+pub const SVCID_BTH_PROVIDER: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 111829984, data2: 32096, data3: 16895, data4: [175, 178, 62, 230, 210, 217, 57, 45] };
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
 pub const SYNCH_DATA_STORE_CALENDAR: u32 = 3u32;
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
@@ -2689,7 +2689,7 @@ impl ::core::clone::Clone for SdpQueryUuid {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Devices_Bluetooth\"`*"]
 pub union SdpQueryUuidUnion {
-    pub uuid128: ::windows_sys_core::GUID,
+    pub uuid128: ::windows_core_sys::GUID,
     pub uuid32: u32,
     pub uuid16: u16,
 }

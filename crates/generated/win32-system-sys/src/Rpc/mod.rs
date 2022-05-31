@@ -2,9 +2,9 @@
 extern "system" {
     pub fn DceErrorInqTextA(rpcstatus: RPC_STATUS, errortext: *mut u8) -> RPC_STATUS;
     pub fn DceErrorInqTextW(rpcstatus: RPC_STATUS, errortext: *mut u16) -> RPC_STATUS;
-    pub fn IUnknown_AddRef_Proxy(this: ::windows_sys_core::IUnknown) -> u32;
-    pub fn IUnknown_QueryInterface_Proxy(this: ::windows_sys_core::IUnknown, riid: *const ::windows_sys_core::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
-    pub fn IUnknown_Release_Proxy(this: ::windows_sys_core::IUnknown) -> u32;
+    pub fn IUnknown_AddRef_Proxy(this: ::windows_core_sys::IUnknown) -> u32;
+    pub fn IUnknown_QueryInterface_Proxy(this: ::windows_core_sys::IUnknown, riid: *const ::windows_core_sys::GUID, ppvobject: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn IUnknown_Release_Proxy(this: ::windows_core_sys::IUnknown) -> u32;
     pub fn I_RpcAllocate(size: u32) -> *mut ::core::ffi::c_void;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
     pub fn I_RpcAsyncAbortCall(pasync: *const RPC_ASYNC_STATE, exceptioncode: u32) -> RPC_STATUS;
@@ -34,7 +34,7 @@ extern "system" {
     pub fn I_RpcFreeBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS;
     pub fn I_RpcFreePipeBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS;
     pub fn I_RpcGetBuffer(message: *mut RPC_MESSAGE) -> RPC_STATUS;
-    pub fn I_RpcGetBufferWithObject(message: *mut RPC_MESSAGE, objectuuid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
+    pub fn I_RpcGetBufferWithObject(message: *mut RPC_MESSAGE, objectuuid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
     pub fn I_RpcGetCurrentCallHandle() -> *mut ::core::ffi::c_void;
     pub fn I_RpcGetDefaultSD(ppsecuritydescriptor: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn I_RpcGetExtendedError() -> RPC_STATUS;
@@ -69,8 +69,8 @@ extern "system" {
     pub fn I_RpcServerSetAddressChangeFn(paddresschangefn: *mut RPC_ADDRESS_CHANGE_FN) -> RPC_STATUS;
     pub fn I_RpcServerStartService(protseq: *const u16, endpoint: *const u16, ifspec: *const ::core::ffi::c_void) -> RPC_STATUS;
     pub fn I_RpcServerSubscribeForDisconnectNotification(binding: *const ::core::ffi::c_void, hevent: *const ::core::ffi::c_void) -> RPC_STATUS;
-    pub fn I_RpcServerSubscribeForDisconnectNotification2(binding: *const ::core::ffi::c_void, hevent: *const ::core::ffi::c_void, subscriptionid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
-    pub fn I_RpcServerUnsubscribeForDisconnectNotification(binding: *const ::core::ffi::c_void, subscriptionid: ::windows_sys_core::GUID) -> RPC_STATUS;
+    pub fn I_RpcServerSubscribeForDisconnectNotification2(binding: *const ::core::ffi::c_void, hevent: *const ::core::ffi::c_void, subscriptionid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
+    pub fn I_RpcServerUnsubscribeForDisconnectNotification(binding: *const ::core::ffi::c_void, subscriptionid: ::windows_core_sys::GUID) -> RPC_STATUS;
     pub fn I_RpcServerUseProtseq2A(networkaddress: *const u8, protseq: *const u8, maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void, policy: *const ::core::ffi::c_void) -> RPC_STATUS;
     pub fn I_RpcServerUseProtseq2W(networkaddress: *const u16, protseq: *const u16, maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void, policy: *const ::core::ffi::c_void) -> RPC_STATUS;
     pub fn I_RpcServerUseProtseqEp2A(networkaddress: *const u8, protseq: *const u8, maxcalls: u32, endpoint: *const u8, securitydescriptor: *const ::core::ffi::c_void, policy: *const ::core::ffi::c_void) -> RPC_STATUS;
@@ -79,12 +79,12 @@ extern "system" {
     pub fn I_RpcSsDontSerializeContext();
     pub fn I_RpcSystemHandleTypeSpecificWork(handle: *mut ::core::ffi::c_void, actualtype: u8, idltype: u8, marshaldirection: LRPC_SYSTEM_HANDLE_MARSHAL_DIRECTION) -> RPC_STATUS;
     pub fn I_RpcTurnOnEEInfoPropagation() -> RPC_STATUS;
-    pub fn I_UuidCreate(uuid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
+    pub fn I_UuidCreate(uuid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
     pub fn MesBufferHandleReset(handle: *const ::core::ffi::c_void, handlestyle: u32, operation: MIDL_ES_CODE, pbuffer: *const *const i8, buffersize: u32, pencodedsize: *mut u32) -> RPC_STATUS;
-    pub fn MesDecodeBufferHandleCreate(buffer: ::windows_sys_core::PCSTR, buffersize: u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+    pub fn MesDecodeBufferHandleCreate(buffer: ::windows_core_sys::PCSTR, buffersize: u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn MesDecodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_void, readfn: MIDL_ES_READ, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn MesEncodeDynBufferHandleCreate(pbuffer: *mut *mut i8, pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
-    pub fn MesEncodeFixedBufferHandleCreate(pbuffer: ::windows_sys_core::PSTR, buffersize: u32, pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+    pub fn MesEncodeFixedBufferHandleCreate(pbuffer: ::windows_core_sys::PSTR, buffersize: u32, pencodedsize: *mut u32, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn MesEncodeIncrementalHandleCreate(userstate: *mut ::core::ffi::c_void, allocfn: MIDL_ES_ALLOC, writefn: MIDL_ES_WRITE, phandle: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn MesHandleFree(handle: *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn MesIncrementalHandleReset(handle: *mut ::core::ffi::c_void, userstate: *mut ::core::ffi::c_void, allocfn: MIDL_ES_ALLOC, writefn: MIDL_ES_WRITE, readfn: MIDL_ES_READ, operation: MIDL_ES_CODE) -> RPC_STATUS;
@@ -248,7 +248,7 @@ extern "system" {
     #[cfg(feature = "Win32_System_Com")]
     pub fn NdrGetBuffer(pstubmsg: *mut MIDL_STUB_MESSAGE, bufferlength: u32, handle: *mut ::core::ffi::c_void) -> *mut u8;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn NdrGetDcomProtocolVersion(pstubmsg: *mut MIDL_STUB_MESSAGE, pversion: *mut RPC_VERSION) -> ::windows_sys_core::HRESULT;
+    pub fn NdrGetDcomProtocolVersion(pstubmsg: *mut MIDL_STUB_MESSAGE, pversion: *mut RPC_VERSION) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
     pub fn NdrGetUserMarshalInfo(pflags: *const u32, informationlevel: u32, pmarshalinfo: *mut NDR_USER_MARSHAL_INFO) -> RPC_STATUS;
     #[cfg(feature = "Win32_System_Com")]
@@ -458,7 +458,7 @@ extern "system" {
     pub fn RpcBindingInqAuthInfoExW(binding: *const ::core::ffi::c_void, serverprincname: *mut *mut u16, authnlevel: *mut u32, authnsvc: *mut u32, authidentity: *mut *mut ::core::ffi::c_void, authzsvc: *mut u32, rpcqosversion: u32, securityqos: *mut RPC_SECURITY_QOS) -> RPC_STATUS;
     pub fn RpcBindingInqAuthInfoW(binding: *const ::core::ffi::c_void, serverprincname: *mut *mut u16, authnlevel: *mut u32, authnsvc: *mut u32, authidentity: *mut *mut ::core::ffi::c_void, authzsvc: *mut u32) -> RPC_STATUS;
     pub fn RpcBindingInqMaxCalls(binding: *const ::core::ffi::c_void, maxcalls: *mut u32) -> RPC_STATUS;
-    pub fn RpcBindingInqObject(binding: *const ::core::ffi::c_void, objectuuid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
+    pub fn RpcBindingInqObject(binding: *const ::core::ffi::c_void, objectuuid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
     pub fn RpcBindingInqOption(hbinding: *const ::core::ffi::c_void, option: u32, poptionvalue: *mut usize) -> RPC_STATUS;
     pub fn RpcBindingReset(binding: *const ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcBindingServerFromClient(clientbinding: *const ::core::ffi::c_void, serverbinding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
@@ -468,7 +468,7 @@ extern "system" {
     #[cfg(feature = "Win32_System_Com")]
     pub fn RpcBindingSetAuthInfoExW(binding: *const ::core::ffi::c_void, serverprincname: *const u16, authnlevel: u32, authnsvc: u32, authidentity: *const ::core::ffi::c_void, authzsvc: u32, securityqos: *const RPC_SECURITY_QOS) -> RPC_STATUS;
     pub fn RpcBindingSetAuthInfoW(binding: *const ::core::ffi::c_void, serverprincname: *const u16, authnlevel: u32, authnsvc: u32, authidentity: *const ::core::ffi::c_void, authzsvc: u32) -> RPC_STATUS;
-    pub fn RpcBindingSetObject(binding: *const ::core::ffi::c_void, objectuuid: *const ::windows_sys_core::GUID) -> RPC_STATUS;
+    pub fn RpcBindingSetObject(binding: *const ::core::ffi::c_void, objectuuid: *const ::windows_core_sys::GUID) -> RPC_STATUS;
     pub fn RpcBindingSetOption(hbinding: *const ::core::ffi::c_void, option: u32, optionvalue: usize) -> RPC_STATUS;
     pub fn RpcBindingToStringBindingA(binding: *const ::core::ffi::c_void, stringbinding: *mut *mut u8) -> RPC_STATUS;
     pub fn RpcBindingToStringBindingW(binding: *const ::core::ffi::c_void, stringbinding: *mut *mut u16) -> RPC_STATUS;
@@ -507,11 +507,11 @@ extern "system" {
     pub fn RpcImpersonateClient2(bindinghandle: *const ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcImpersonateClientContainer(bindinghandle: *const ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcMgmtEnableIdleCleanup() -> RPC_STATUS;
-    pub fn RpcMgmtEpEltInqBegin(epbinding: *const ::core::ffi::c_void, inquirytype: u32, ifid: *const RPC_IF_ID, versoption: u32, objectuuid: *const ::windows_sys_core::GUID, inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+    pub fn RpcMgmtEpEltInqBegin(epbinding: *const ::core::ffi::c_void, inquirytype: u32, ifid: *const RPC_IF_ID, versoption: u32, objectuuid: *const ::windows_core_sys::GUID, inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcMgmtEpEltInqDone(inquirycontext: *mut *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
-    pub fn RpcMgmtEpEltInqNextA(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows_sys_core::GUID, annotation: *mut *mut u8) -> RPC_STATUS;
-    pub fn RpcMgmtEpEltInqNextW(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows_sys_core::GUID, annotation: *mut *mut u16) -> RPC_STATUS;
-    pub fn RpcMgmtEpUnregister(epbinding: *const ::core::ffi::c_void, ifid: *const RPC_IF_ID, binding: *const ::core::ffi::c_void, objectuuid: *const ::windows_sys_core::GUID) -> RPC_STATUS;
+    pub fn RpcMgmtEpEltInqNextA(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows_core_sys::GUID, annotation: *mut *mut u8) -> RPC_STATUS;
+    pub fn RpcMgmtEpEltInqNextW(inquirycontext: *const *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, binding: *mut *mut ::core::ffi::c_void, objectuuid: *mut ::windows_core_sys::GUID, annotation: *mut *mut u16) -> RPC_STATUS;
+    pub fn RpcMgmtEpUnregister(epbinding: *const ::core::ffi::c_void, ifid: *const RPC_IF_ID, binding: *const ::core::ffi::c_void, objectuuid: *const ::windows_core_sys::GUID) -> RPC_STATUS;
     pub fn RpcMgmtInqComTimeout(binding: *const ::core::ffi::c_void, timeout: *mut u32) -> RPC_STATUS;
     pub fn RpcMgmtInqDefaultProtectLevel(authnsvc: u32, authnlevel: *mut u32) -> RPC_STATUS;
     pub fn RpcMgmtInqIfIds(binding: *const ::core::ffi::c_void, ifidvector: *mut *mut RPC_IF_ID_VECTOR) -> RPC_STATUS;
@@ -534,14 +534,14 @@ extern "system" {
     pub fn RpcNsBindingExportPnPA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objectvector: *const UUID_VECTOR) -> RPC_STATUS;
     pub fn RpcNsBindingExportPnPW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objectvector: *const UUID_VECTOR) -> RPC_STATUS;
     pub fn RpcNsBindingExportW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, bindingvec: *const RPC_BINDING_VECTOR, objectuuidvec: *const UUID_VECTOR) -> RPC_STATUS;
-    pub fn RpcNsBindingImportBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_sys_core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
-    pub fn RpcNsBindingImportBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_sys_core::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+    pub fn RpcNsBindingImportBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core_sys::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+    pub fn RpcNsBindingImportBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core_sys::GUID, importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcNsBindingImportDone(importcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcNsBindingImportNext(importcontext: *mut ::core::ffi::c_void, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcNsBindingInqEntryNameA(binding: *const ::core::ffi::c_void, entrynamesyntax: u32, entryname: *mut *mut u8) -> RPC_STATUS;
     pub fn RpcNsBindingInqEntryNameW(binding: *const ::core::ffi::c_void, entrynamesyntax: u32, entryname: *mut *mut u16) -> RPC_STATUS;
-    pub fn RpcNsBindingLookupBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_sys_core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
-    pub fn RpcNsBindingLookupBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_sys_core::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+    pub fn RpcNsBindingLookupBeginA(entrynamesyntax: u32, entryname: *const u8, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core_sys::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+    pub fn RpcNsBindingLookupBeginW(entrynamesyntax: u32, entryname: *const u16, ifspec: *const ::core::ffi::c_void, objuuid: *const ::windows_core_sys::GUID, bindingmaxcount: u32, lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcNsBindingLookupDone(lookupcontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcNsBindingLookupNext(lookupcontext: *mut ::core::ffi::c_void, bindingvec: *mut *mut RPC_BINDING_VECTOR) -> RPC_STATUS;
     pub fn RpcNsBindingSelect(bindingvec: *mut RPC_BINDING_VECTOR, binding: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
@@ -554,7 +554,7 @@ extern "system" {
     pub fn RpcNsEntryObjectInqBeginA(entrynamesyntax: u32, entryname: *const u8, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcNsEntryObjectInqBeginW(entrynamesyntax: u32, entryname: *const u16, inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcNsEntryObjectInqDone(inquirycontext: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
-    pub fn RpcNsEntryObjectInqNext(inquirycontext: *mut ::core::ffi::c_void, objuuid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
+    pub fn RpcNsEntryObjectInqNext(inquirycontext: *mut ::core::ffi::c_void, objuuid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
     pub fn RpcNsGroupDeleteA(groupnamesyntax: GROUP_NAME_SYNTAX, groupname: *const u8) -> RPC_STATUS;
     pub fn RpcNsGroupDeleteW(groupnamesyntax: GROUP_NAME_SYNTAX, groupname: *const u16) -> RPC_STATUS;
     pub fn RpcNsGroupMbrAddA(groupnamesyntax: u32, groupname: *const u8, membernamesyntax: u32, membername: *const u8) -> RPC_STATUS;
@@ -588,9 +588,9 @@ extern "system" {
     pub fn RpcNsProfileEltInqNextW(inquirycontext: *const ::core::ffi::c_void, ifid: *mut RPC_IF_ID, membername: *mut *mut u16, priority: *mut u32, annotation: *mut *mut u16) -> RPC_STATUS;
     pub fn RpcNsProfileEltRemoveA(profilenamesyntax: u32, profilename: *const u8, ifid: *const RPC_IF_ID, membernamesyntax: u32, membername: *const u8) -> RPC_STATUS;
     pub fn RpcNsProfileEltRemoveW(profilenamesyntax: u32, profilename: *const u16, ifid: *const RPC_IF_ID, membernamesyntax: u32, membername: *const u16) -> RPC_STATUS;
-    pub fn RpcObjectInqType(objuuid: *const ::windows_sys_core::GUID, typeuuid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
+    pub fn RpcObjectInqType(objuuid: *const ::windows_core_sys::GUID, typeuuid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
     pub fn RpcObjectSetInqFn(inquiryfn: RPC_OBJECT_INQ_FN) -> RPC_STATUS;
-    pub fn RpcObjectSetType(objuuid: *const ::windows_sys_core::GUID, typeuuid: *const ::windows_sys_core::GUID) -> RPC_STATUS;
+    pub fn RpcObjectSetType(objuuid: *const ::windows_core_sys::GUID, typeuuid: *const ::windows_core_sys::GUID) -> RPC_STATUS;
     pub fn RpcProtseqVectorFreeA(protseqvector: *mut *mut RPC_PROTSEQ_VECTORA) -> RPC_STATUS;
     pub fn RpcProtseqVectorFreeW(protseqvector: *mut *mut RPC_PROTSEQ_VECTORW) -> RPC_STATUS;
     pub fn RpcRaiseException(exception: RPC_STATUS);
@@ -605,7 +605,7 @@ extern "system" {
     pub fn RpcServerInqCallAttributesW(clientbinding: *const ::core::ffi::c_void, rpccallattributes: *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcServerInqDefaultPrincNameA(authnsvc: u32, princname: *mut *mut u8) -> RPC_STATUS;
     pub fn RpcServerInqDefaultPrincNameW(authnsvc: u32, princname: *mut *mut u16) -> RPC_STATUS;
-    pub fn RpcServerInqIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_sys_core::GUID, mgrepv: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
+    pub fn RpcServerInqIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core_sys::GUID, mgrepv: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcServerInterfaceGroupActivate(ifgroup: *const ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcServerInterfaceGroupClose(ifgroup: *const ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcServerInterfaceGroupCreateA(interfaces: *const RPC_INTERFACE_TEMPLATEA, numifs: u32, endpoints: *const RPC_ENDPOINT_TEMPLATEA, numendpoints: u32, idleperiod: u32, idlecallbackfn: RPC_INTERFACE_GROUP_IDLE_CALLBACK_FN, idlecallbackcontext: *const ::core::ffi::c_void, ifgroup: *mut *mut ::core::ffi::c_void) -> RPC_STATUS;
@@ -615,15 +615,15 @@ extern "system" {
     pub fn RpcServerListen(minimumcallthreads: u32, maxcalls: u32, dontwait: u32) -> RPC_STATUS;
     pub fn RpcServerRegisterAuthInfoA(serverprincname: *const u8, authnsvc: u32, getkeyfn: RPC_AUTH_KEY_RETRIEVAL_FN, arg: *const ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcServerRegisterAuthInfoW(serverprincname: *const u16, authnsvc: u32, getkeyfn: RPC_AUTH_KEY_RETRIEVAL_FN, arg: *const ::core::ffi::c_void) -> RPC_STATUS;
-    pub fn RpcServerRegisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_sys_core::GUID, mgrepv: *const ::core::ffi::c_void) -> RPC_STATUS;
-    pub fn RpcServerRegisterIf2(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_sys_core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallbackfn: RPC_IF_CALLBACK_FN) -> RPC_STATUS;
-    pub fn RpcServerRegisterIf3(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_sys_core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallback: RPC_IF_CALLBACK_FN, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
-    pub fn RpcServerRegisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_sys_core::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, ifcallback: RPC_IF_CALLBACK_FN) -> RPC_STATUS;
+    pub fn RpcServerRegisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core_sys::GUID, mgrepv: *const ::core::ffi::c_void) -> RPC_STATUS;
+    pub fn RpcServerRegisterIf2(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core_sys::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallbackfn: RPC_IF_CALLBACK_FN) -> RPC_STATUS;
+    pub fn RpcServerRegisterIf3(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core_sys::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, maxrpcsize: u32, ifcallback: RPC_IF_CALLBACK_FN, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
+    pub fn RpcServerRegisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core_sys::GUID, mgrepv: *const ::core::ffi::c_void, flags: u32, maxcalls: u32, ifcallback: RPC_IF_CALLBACK_FN) -> RPC_STATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
     pub fn RpcServerSubscribeForNotification(binding: *const ::core::ffi::c_void, notification: RPC_NOTIFICATIONS, notificationtype: RPC_NOTIFICATION_TYPES, notificationinfo: *const RPC_ASYNC_NOTIFICATION_INFO) -> RPC_STATUS;
     pub fn RpcServerTestCancel(bindinghandle: *const ::core::ffi::c_void) -> RPC_STATUS;
-    pub fn RpcServerUnregisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_sys_core::GUID, waitforcallstocomplete: u32) -> RPC_STATUS;
-    pub fn RpcServerUnregisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_sys_core::GUID, rundowncontexthandles: i32) -> RPC_STATUS;
+    pub fn RpcServerUnregisterIf(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core_sys::GUID, waitforcallstocomplete: u32) -> RPC_STATUS;
+    pub fn RpcServerUnregisterIfEx(ifspec: *const ::core::ffi::c_void, mgrtypeuuid: *const ::windows_core_sys::GUID, rundowncontexthandles: i32) -> RPC_STATUS;
     pub fn RpcServerUnsubscribeForNotification(binding: *const ::core::ffi::c_void, notification: RPC_NOTIFICATIONS, notificationsqueued: *mut u32) -> RPC_STATUS;
     pub fn RpcServerUseAllProtseqs(maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void) -> RPC_STATUS;
     pub fn RpcServerUseAllProtseqsEx(maxcalls: u32, securitydescriptor: *const ::core::ffi::c_void, policy: *const RPC_POLICY) -> RPC_STATUS;
@@ -673,17 +673,17 @@ extern "system" {
     pub fn RpcStringFreeW(string: *mut *mut u16) -> RPC_STATUS;
     pub fn RpcTestCancel() -> RPC_STATUS;
     pub fn RpcUserFree(asynchandle: *mut ::core::ffi::c_void, pbuffer: *mut ::core::ffi::c_void);
-    pub fn UuidCompare(uuid1: *const ::windows_sys_core::GUID, uuid2: *const ::windows_sys_core::GUID, status: *mut RPC_STATUS) -> i32;
-    pub fn UuidCreate(uuid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
-    pub fn UuidCreateNil(niluuid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
-    pub fn UuidCreateSequential(uuid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
-    pub fn UuidEqual(uuid1: *const ::windows_sys_core::GUID, uuid2: *const ::windows_sys_core::GUID, status: *mut RPC_STATUS) -> i32;
-    pub fn UuidFromStringA(stringuuid: *const u8, uuid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
-    pub fn UuidFromStringW(stringuuid: *const u16, uuid: *mut ::windows_sys_core::GUID) -> RPC_STATUS;
-    pub fn UuidHash(uuid: *const ::windows_sys_core::GUID, status: *mut RPC_STATUS) -> u16;
-    pub fn UuidIsNil(uuid: *const ::windows_sys_core::GUID, status: *mut RPC_STATUS) -> i32;
-    pub fn UuidToStringA(uuid: *const ::windows_sys_core::GUID, stringuuid: *mut *mut u8) -> RPC_STATUS;
-    pub fn UuidToStringW(uuid: *const ::windows_sys_core::GUID, stringuuid: *mut *mut u16) -> RPC_STATUS;
+    pub fn UuidCompare(uuid1: *const ::windows_core_sys::GUID, uuid2: *const ::windows_core_sys::GUID, status: *mut RPC_STATUS) -> i32;
+    pub fn UuidCreate(uuid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
+    pub fn UuidCreateNil(niluuid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
+    pub fn UuidCreateSequential(uuid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
+    pub fn UuidEqual(uuid1: *const ::windows_core_sys::GUID, uuid2: *const ::windows_core_sys::GUID, status: *mut RPC_STATUS) -> i32;
+    pub fn UuidFromStringA(stringuuid: *const u8, uuid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
+    pub fn UuidFromStringW(stringuuid: *const u16, uuid: *mut ::windows_core_sys::GUID) -> RPC_STATUS;
+    pub fn UuidHash(uuid: *const ::windows_core_sys::GUID, status: *mut RPC_STATUS) -> u16;
+    pub fn UuidIsNil(uuid: *const ::windows_core_sys::GUID, status: *mut RPC_STATUS) -> i32;
+    pub fn UuidToStringA(uuid: *const ::windows_core_sys::GUID, stringuuid: *mut *mut u8) -> RPC_STATUS;
+    pub fn UuidToStringW(uuid: *const ::windows_core_sys::GUID, stringuuid: *mut *mut u16) -> RPC_STATUS;
 }
 #[repr(C)]
 pub struct ARRAY_INFO {
@@ -830,9 +830,9 @@ impl ::core::clone::Clone for I_RpcProxyCallbackInterface {
         *self
     }
 }
-pub type I_RpcProxyFilterIfFn = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, ifuuid: *const ::windows_sys_core::GUID, ifmajorversion: u16, fallow: *mut i32) -> RPC_STATUS>;
-pub type I_RpcProxyGetClientAddressFn = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, buffer: ::windows_sys_core::PCSTR, bufferlength: *mut u32) -> RPC_STATUS>;
-pub type I_RpcProxyGetClientSessionAndResourceUUID = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, sessionidpresent: *mut i32, sessionid: *mut ::windows_sys_core::GUID, resourceidpresent: *mut i32, resourceid: *mut ::windows_sys_core::GUID) -> RPC_STATUS>;
+pub type I_RpcProxyFilterIfFn = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, ifuuid: *const ::windows_core_sys::GUID, ifmajorversion: u16, fallow: *mut i32) -> RPC_STATUS>;
+pub type I_RpcProxyGetClientAddressFn = ::core::option::Option<unsafe extern "system" fn(context: *mut ::core::ffi::c_void, buffer: ::windows_core_sys::PCSTR, bufferlength: *mut u32) -> RPC_STATUS>;
+pub type I_RpcProxyGetClientSessionAndResourceUUID = ::core::option::Option<unsafe extern "system" fn(context: *const ::core::ffi::c_void, sessionidpresent: *mut i32, sessionid: *mut ::windows_core_sys::GUID, resourceidpresent: *mut i32, resourceid: *mut ::windows_core_sys::GUID) -> RPC_STATUS>;
 pub type I_RpcProxyGetConnectionTimeoutFn = ::core::option::Option<unsafe extern "system" fn(connectiontimeout: *mut u32) -> RPC_STATUS>;
 pub type I_RpcProxyIsValidMachineFn = ::core::option::Option<unsafe extern "system" fn(machine: *const u16, dotmachine: *const u16, portnumber: u32) -> RPC_STATUS>;
 pub type I_RpcProxyUpdatePerfCounterBackendServerFn = ::core::option::Option<unsafe extern "system" fn(machinename: *const u16, isconnectevent: i32)>;
@@ -861,7 +861,7 @@ pub const MES_INCREMENTAL_HANDLE: MIDL_ES_HANDLE_STYLE = 0i32;
 pub const MES_FIXED_BUFFER_HANDLE: MIDL_ES_HANDLE_STYLE = 1i32;
 pub const MES_DYNAMIC_BUFFER_HANDLE: MIDL_ES_HANDLE_STYLE = 2i32;
 pub type MIDL_ES_READ = ::core::option::Option<unsafe extern "system" fn(state: *mut ::core::ffi::c_void, pbuffer: *mut *mut i8, psize: *mut u32)>;
-pub type MIDL_ES_WRITE = ::core::option::Option<unsafe extern "system" fn(state: *mut ::core::ffi::c_void, buffer: ::windows_sys_core::PCSTR, size: u32)>;
+pub type MIDL_ES_WRITE = ::core::option::Option<unsafe extern "system" fn(state: *mut ::core::ffi::c_void, buffer: ::windows_core_sys::PCSTR, size: u32)>;
 #[repr(C)]
 pub struct MIDL_FORMAT_STRING {
     pub Pad: i16,
@@ -1348,7 +1348,7 @@ pub struct NDR64_CONSTANT_IID_FORMAT {
     pub FormatCode: u8,
     pub Flags: u8,
     pub Reserved: u16,
-    pub Guid: ::windows_sys_core::GUID,
+    pub Guid: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for NDR64_CONSTANT_IID_FORMAT {}
 impl ::core::clone::Clone for NDR64_CONSTANT_IID_FORMAT {
@@ -2087,8 +2087,8 @@ pub struct RDR_CALLOUT_STATE {
     pub ResourceTypePresent: u8,
     pub SessionIdPresent: u8,
     pub InterfacePresent: u8,
-    pub ResourceType: ::windows_sys_core::GUID,
-    pub SessionId: ::windows_sys_core::GUID,
+    pub ResourceType: ::windows_core_sys::GUID,
+    pub SessionId: ::windows_core_sys::GUID,
     pub Interface: RPC_SYNTAX_IDENTIFIER,
     pub CertContext: *mut ::core::ffi::c_void,
 }
@@ -2272,7 +2272,7 @@ pub struct RPC_BINDING_HANDLE_TEMPLATE_V1_A {
     pub NetworkAddress: *mut u8,
     pub StringEndpoint: *mut u8,
     pub u1: RPC_BINDING_HANDLE_TEMPLATE_V1_A_0,
-    pub ObjectUuid: ::windows_sys_core::GUID,
+    pub ObjectUuid: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for RPC_BINDING_HANDLE_TEMPLATE_V1_A {}
 impl ::core::clone::Clone for RPC_BINDING_HANDLE_TEMPLATE_V1_A {
@@ -2298,7 +2298,7 @@ pub struct RPC_BINDING_HANDLE_TEMPLATE_V1_W {
     pub NetworkAddress: *mut u16,
     pub StringEndpoint: *mut u16,
     pub u1: RPC_BINDING_HANDLE_TEMPLATE_V1_W_0,
-    pub ObjectUuid: ::windows_sys_core::GUID,
+    pub ObjectUuid: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for RPC_BINDING_HANDLE_TEMPLATE_V1_W {}
 impl ::core::clone::Clone for RPC_BINDING_HANDLE_TEMPLATE_V1_W {
@@ -2395,7 +2395,7 @@ pub struct RPC_CALL_ATTRIBUTES_V2_A {
     pub CallType: RpcCallType,
     pub CallLocalAddress: *mut RPC_CALL_LOCAL_ADDRESS_V1,
     pub OpNum: u16,
-    pub InterfaceUuid: ::windows_sys_core::GUID,
+    pub InterfaceUuid: ::windows_core_sys::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RPC_CALL_ATTRIBUTES_V2_A {}
@@ -2425,7 +2425,7 @@ pub struct RPC_CALL_ATTRIBUTES_V2_W {
     pub CallType: RpcCallType,
     pub CallLocalAddress: *mut RPC_CALL_LOCAL_ADDRESS_V1,
     pub OpNum: u16,
-    pub InterfaceUuid: ::windows_sys_core::GUID,
+    pub InterfaceUuid: ::windows_core_sys::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RPC_CALL_ATTRIBUTES_V2_W {}
@@ -2455,7 +2455,7 @@ pub struct RPC_CALL_ATTRIBUTES_V3_A {
     pub CallType: RpcCallType,
     pub CallLocalAddress: *mut RPC_CALL_LOCAL_ADDRESS_V1,
     pub OpNum: u16,
-    pub InterfaceUuid: ::windows_sys_core::GUID,
+    pub InterfaceUuid: ::windows_core_sys::GUID,
     pub ClientIdentifierBufferLength: u32,
     pub ClientIdentifier: *mut u8,
 }
@@ -2487,7 +2487,7 @@ pub struct RPC_CALL_ATTRIBUTES_V3_W {
     pub CallType: RpcCallType,
     pub CallLocalAddress: *mut RPC_CALL_LOCAL_ADDRESS_V1,
     pub OpNum: u16,
-    pub InterfaceUuid: ::windows_sys_core::GUID,
+    pub InterfaceUuid: ::windows_core_sys::GUID,
     pub ClientIdentifierBufferLength: u32,
     pub ClientIdentifier: *mut u8,
 }
@@ -2632,7 +2632,7 @@ pub const RPC_C_OPT_COOKIE_AUTH: u32 = 7u32;
 #[repr(C)]
 pub struct RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {
     pub BufferSize: u32,
-    pub Buffer: ::windows_sys_core::PSTR,
+    pub Buffer: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {}
 impl ::core::clone::Clone for RPC_C_OPT_COOKIE_AUTH_DESCRIPTOR {
@@ -2726,8 +2726,8 @@ impl ::core::clone::Clone for RPC_EE_INFO_PARAM {
 }
 #[repr(C)]
 pub union RPC_EE_INFO_PARAM_0 {
-    pub AnsiString: ::windows_sys_core::PSTR,
-    pub UnicodeString: ::windows_sys_core::PWSTR,
+    pub AnsiString: ::windows_core_sys::PSTR,
+    pub UnicodeString: ::windows_core_sys::PWSTR,
     pub LVal: i32,
     pub SVal: i16,
     pub PVal: u64,
@@ -2783,7 +2783,7 @@ impl ::core::clone::Clone for RPC_ERROR_ENUM_HANDLE {
 #[cfg(feature = "Win32_Foundation")]
 pub struct RPC_EXTENDED_ERROR_INFO {
     pub Version: u32,
-    pub ComputerName: ::windows_sys_core::PWSTR,
+    pub ComputerName: ::windows_core_sys::PWSTR,
     pub ProcessID: u32,
     pub u: RPC_EXTENDED_ERROR_INFO_0,
     pub GeneratingComponent: u32,
@@ -2816,7 +2816,7 @@ impl ::core::clone::Clone for RPC_EXTENDED_ERROR_INFO_0 {
     }
 }
 pub const RPC_FLAGS_VALID_BIT: u32 = 32768u32;
-pub type RPC_FORWARD_FUNCTION = ::core::option::Option<unsafe extern "system" fn(interfaceid: *mut ::windows_sys_core::GUID, interfaceversion: *mut RPC_VERSION, objectid: *mut ::windows_sys_core::GUID, rpcpro: *mut u8, ppdestendpoint: *mut *mut ::core::ffi::c_void) -> RPC_STATUS>;
+pub type RPC_FORWARD_FUNCTION = ::core::option::Option<unsafe extern "system" fn(interfaceid: *mut ::windows_core_sys::GUID, interfaceversion: *mut RPC_VERSION, objectid: *mut ::windows_core_sys::GUID, rpcpro: *mut u8, ppdestendpoint: *mut *mut ::core::ffi::c_void) -> RPC_STATUS>;
 pub const RPC_FW_IF_FLAG_DCOM: u32 = 1u32;
 pub type RPC_HTTP_PROXY_FREE_STRING = ::core::option::Option<unsafe extern "system" fn(string: *const u16)>;
 pub type RPC_HTTP_REDIRECTOR_STAGE = i32;
@@ -2936,7 +2936,7 @@ pub const RPC_IF_AUTOLISTEN: u32 = 1u32;
 pub type RPC_IF_CALLBACK_FN = ::core::option::Option<unsafe extern "system" fn(interfaceuuid: *const ::core::ffi::c_void, context: *const ::core::ffi::c_void) -> RPC_STATUS>;
 #[repr(C)]
 pub struct RPC_IF_ID {
-    pub Uuid: ::windows_sys_core::GUID,
+    pub Uuid: ::windows_core_sys::GUID,
     pub VersMajor: u16,
     pub VersMinor: u16,
 }
@@ -2978,7 +2978,7 @@ pub const RPC_INTERFACE_HAS_PIPES: u32 = 1u32;
 pub struct RPC_INTERFACE_TEMPLATEA {
     pub Version: u32,
     pub IfSpec: *mut ::core::ffi::c_void,
-    pub MgrTypeUuid: *mut ::windows_sys_core::GUID,
+    pub MgrTypeUuid: *mut ::windows_core_sys::GUID,
     pub MgrEpv: *mut ::core::ffi::c_void,
     pub Flags: u32,
     pub MaxCalls: u32,
@@ -2998,7 +2998,7 @@ impl ::core::clone::Clone for RPC_INTERFACE_TEMPLATEA {
 pub struct RPC_INTERFACE_TEMPLATEW {
     pub Version: u32,
     pub IfSpec: *mut ::core::ffi::c_void,
-    pub MgrTypeUuid: *mut ::windows_sys_core::GUID,
+    pub MgrTypeUuid: *mut ::windows_core_sys::GUID,
     pub MgrEpv: *mut ::core::ffi::c_void,
     pub Flags: u32,
     pub MaxCalls: u32,
@@ -3051,7 +3051,7 @@ pub const RpcNotificationTypeApc: RPC_NOTIFICATION_TYPES = 2i32;
 pub const RpcNotificationTypeIoc: RPC_NOTIFICATION_TYPES = 3i32;
 pub const RpcNotificationTypeHwnd: RPC_NOTIFICATION_TYPES = 4i32;
 pub const RpcNotificationTypeCallback: RPC_NOTIFICATION_TYPES = 5i32;
-pub type RPC_OBJECT_INQ_FN = ::core::option::Option<unsafe extern "system" fn(objectuuid: *const ::windows_sys_core::GUID, typeuuid: *mut ::windows_sys_core::GUID, status: *mut RPC_STATUS)>;
+pub type RPC_OBJECT_INQ_FN = ::core::option::Option<unsafe extern "system" fn(objectuuid: *const ::windows_core_sys::GUID, typeuuid: *mut ::windows_core_sys::GUID, status: *mut RPC_STATUS)>;
 #[repr(C)]
 pub struct RPC_POLICY {
     pub Length: u32,
@@ -3534,7 +3534,7 @@ pub const RPC_S_GRP_ELT_NOT_ADDED: RPC_STATUS = 1928i32;
 pub const RPC_S_GRP_ELT_NOT_REMOVED: RPC_STATUS = 1929i32;
 #[repr(C)]
 pub struct RPC_SYNTAX_IDENTIFIER {
-    pub SyntaxGUID: ::windows_sys_core::GUID,
+    pub SyntaxGUID: ::windows_core_sys::GUID,
     pub SyntaxVersion: RPC_VERSION,
 }
 impl ::core::marker::Copy for RPC_SYNTAX_IDENTIFIER {}
@@ -3549,7 +3549,7 @@ pub const RPC_SYSTEM_HANDLE_FREE_RETRIEVED: u32 = 2u32;
 pub const RPC_SYSTEM_HANDLE_FREE_UNRETRIEVED: u32 = 1u32;
 #[repr(C)]
 pub struct RPC_TRANSFER_SYNTAX {
-    pub Uuid: ::windows_sys_core::GUID,
+    pub Uuid: ::windows_core_sys::GUID,
     pub VersMajor: u16,
     pub VersMinor: u16,
 }
@@ -3724,7 +3724,7 @@ pub type USER_MARSHAL_UNMARSHALLING_ROUTINE = ::core::option::Option<unsafe exte
 #[repr(C)]
 pub struct UUID_VECTOR {
     pub Count: u32,
-    pub Uuid: [*mut ::windows_sys_core::GUID; 1],
+    pub Uuid: [*mut ::windows_core_sys::GUID; 1],
 }
 impl ::core::marker::Copy for UUID_VECTOR {}
 impl ::core::clone::Clone for UUID_VECTOR {

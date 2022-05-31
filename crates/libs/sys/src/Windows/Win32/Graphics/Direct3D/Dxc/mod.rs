@@ -1,22 +1,22 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`*"]
-    pub fn DxcCreateInstance(rclsid: *const ::windows_sys_core::GUID, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn DxcCreateInstance(rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`, `\"Win32_System_Com\"`*"]
     #[cfg(feature = "Win32_System_Com")]
-    pub fn DxcCreateInstance2(pmalloc: super::super::super::System::Com::IMalloc, rclsid: *const ::windows_sys_core::GUID, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn DxcCreateInstance2(pmalloc: super::super::super::System::Com::IMalloc, rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
-pub const CLSID_DxcAssembler: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3609779048, data2: 63747, data3: 20352, data4: [148, 205, 220, 207, 118, 236, 113, 81] };
-pub const CLSID_DxcCompiler: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1944202643, data2: 59086, data3: 18419, data4: [181, 191, 240, 102, 79, 57, 193, 176] };
-pub const CLSID_DxcCompilerArgs: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1045868162, data2: 8781, data3: 18191, data4: [161, 161, 254, 48, 22, 238, 159, 157] };
-pub const CLSID_DxcContainerBuilder: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2484290196, data2: 16671, data3: 17780, data4: [180, 208, 135, 65, 226, 82, 64, 210] };
-pub const CLSID_DxcContainerReflection: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3119858825, data2: 21944, data3: 16396, data4: [186, 58, 22, 117, 228, 114, 139, 145] };
-pub const CLSID_DxcDiaDataSource: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3441388403, data2: 10928, data3: 18509, data4: [142, 220, 235, 231, 164, 60, 160, 159] };
-pub const CLSID_DxcLibrary: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1648744111, data2: 26336, data3: 18685, data4: [128, 180, 77, 39, 23, 150, 116, 140] };
-pub const CLSID_DxcLinker: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4016734343, data2: 45290, data3: 19798, data4: [158, 69, 208, 126, 26, 139, 120, 6] };
-pub const CLSID_DxcOptimizer: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2922174367, data2: 52258, data3: 17727, data4: [155, 107, 177, 36, 231, 165, 32, 76] };
-pub const CLSID_DxcPdbUtils: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1415716347, data2: 62158, data3: 17790, data4: [174, 140, 236, 53, 95, 174, 236, 124] };
-pub const CLSID_DxcValidator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2359550485, data2: 63272, data3: 19699, data4: [140, 221, 136, 175, 145, 117, 135, 161] };
+pub const CLSID_DxcAssembler: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3609779048, data2: 63747, data3: 20352, data4: [148, 205, 220, 207, 118, 236, 113, 81] };
+pub const CLSID_DxcCompiler: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1944202643, data2: 59086, data3: 18419, data4: [181, 191, 240, 102, 79, 57, 193, 176] };
+pub const CLSID_DxcCompilerArgs: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1045868162, data2: 8781, data3: 18191, data4: [161, 161, 254, 48, 22, 238, 159, 157] };
+pub const CLSID_DxcContainerBuilder: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2484290196, data2: 16671, data3: 17780, data4: [180, 208, 135, 65, 226, 82, 64, 210] };
+pub const CLSID_DxcContainerReflection: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3119858825, data2: 21944, data3: 16396, data4: [186, 58, 22, 117, 228, 114, 139, 145] };
+pub const CLSID_DxcDiaDataSource: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3441388403, data2: 10928, data3: 18509, data4: [142, 220, 235, 231, 164, 60, 160, 159] };
+pub const CLSID_DxcLibrary: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1648744111, data2: 26336, data3: 18685, data4: [128, 180, 77, 39, 23, 150, 116, 140] };
+pub const CLSID_DxcLinker: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4016734343, data2: 45290, data3: 19798, data4: [158, 69, 208, 126, 26, 139, 120, 6] };
+pub const CLSID_DxcOptimizer: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2922174367, data2: 52258, data3: 17727, data4: [155, 107, 177, 36, 231, 165, 32, 76] };
+pub const CLSID_DxcPdbUtils: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1415716347, data2: 62158, data3: 17790, data4: [174, 140, 236, 53, 95, 174, 236, 124] };
+pub const CLSID_DxcValidator: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2359550485, data2: 63272, data3: 19699, data4: [140, 221, 136, 175, 145, 117, 135, 161] };
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`*"]
 pub const DXC_ARG_ALL_RESOURCES_BOUND: &str = "-all_resources_bound";
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`*"]
@@ -98,8 +98,8 @@ pub const DXC_OUT_FORCE_DWORD: DXC_OUT_KIND = -1i32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`*"]
 pub struct DxcArgPair {
-    pub pName: ::windows_sys_core::PCWSTR,
-    pub pValue: ::windows_sys_core::PCWSTR,
+    pub pName: ::windows_core_sys::PCWSTR,
+    pub pValue: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for DxcArgPair {}
 impl ::core::clone::Clone for DxcArgPair {
@@ -122,14 +122,14 @@ impl ::core::clone::Clone for DxcBuffer {
 }
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`, `\"Win32_System_Com\"`*"]
 #[cfg(feature = "Win32_System_Com")]
-pub type DxcCreateInstance2Proc = ::core::option::Option<unsafe extern "system" fn(pmalloc: super::super::super::System::Com::IMalloc, rclsid: *const ::windows_sys_core::GUID, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
+pub type DxcCreateInstance2Proc = ::core::option::Option<unsafe extern "system" fn(pmalloc: super::super::super::System::Com::IMalloc, rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`*"]
-pub type DxcCreateInstanceProc = ::core::option::Option<unsafe extern "system" fn(rclsid: *const ::windows_sys_core::GUID, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT>;
+pub type DxcCreateInstanceProc = ::core::option::Option<unsafe extern "system" fn(rclsid: *const ::windows_core_sys::GUID, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT>;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D_Dxc\"`*"]
 pub struct DxcDefine {
-    pub Name: ::windows_sys_core::PCWSTR,
-    pub Value: ::windows_sys_core::PCWSTR,
+    pub Name: ::windows_core_sys::PCWSTR,
+    pub Value: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for DxcDefine {}
 impl ::core::clone::Clone for DxcDefine {

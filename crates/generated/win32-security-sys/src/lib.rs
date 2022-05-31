@@ -38,37 +38,37 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn AccessCheck(psecuritydescriptor: PSECURITY_DESCRIPTOR, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, genericmapping: *const GENERIC_MAPPING, privilegeset: *mut PRIVILEGE_SET, privilegesetlength: *mut u32, grantedaccess: *mut u32, accessstatus: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AccessCheckAndAuditAlarmA(subsystemname: ::windows_sys_core::PCSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_sys_core::PCSTR, objectname: ::windows_sys_core::PCSTR, securitydescriptor: PSECURITY_DESCRIPTOR, desiredaccess: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatus: *mut i32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
+    pub fn AccessCheckAndAuditAlarmA(subsystemname: ::windows_core_sys::PCSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_core_sys::PCSTR, objectname: ::windows_core_sys::PCSTR, securitydescriptor: PSECURITY_DESCRIPTOR, desiredaccess: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatus: *mut i32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AccessCheckAndAuditAlarmW(subsystemname: ::windows_sys_core::PCWSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_sys_core::PCWSTR, objectname: ::windows_sys_core::PCWSTR, securitydescriptor: PSECURITY_DESCRIPTOR, desiredaccess: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatus: *mut i32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
+    pub fn AccessCheckAndAuditAlarmW(subsystemname: ::windows_core_sys::PCWSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_core_sys::PCWSTR, objectname: ::windows_core_sys::PCWSTR, securitydescriptor: PSECURITY_DESCRIPTOR, desiredaccess: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatus: *mut i32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn AccessCheckByType(psecuritydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, privilegeset: *mut PRIVILEGE_SET, privilegesetlength: *mut u32, grantedaccess: *mut u32, accessstatus: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AccessCheckByTypeAndAuditAlarmA(subsystemname: ::windows_sys_core::PCSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_sys_core::PCSTR, objectname: ::windows_sys_core::PCSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatus: *mut i32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
+    pub fn AccessCheckByTypeAndAuditAlarmA(subsystemname: ::windows_core_sys::PCSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_core_sys::PCSTR, objectname: ::windows_core_sys::PCSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatus: *mut i32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AccessCheckByTypeAndAuditAlarmW(subsystemname: ::windows_sys_core::PCWSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_sys_core::PCWSTR, objectname: ::windows_sys_core::PCWSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatus: *mut i32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
+    pub fn AccessCheckByTypeAndAuditAlarmW(subsystemname: ::windows_core_sys::PCWSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_core_sys::PCWSTR, objectname: ::windows_core_sys::PCWSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatus: *mut i32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn AccessCheckByTypeResultList(psecuritydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, privilegeset: *mut PRIVILEGE_SET, privilegesetlength: *mut u32, grantedaccesslist: *mut u32, accessstatuslist: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AccessCheckByTypeResultListAndAuditAlarmA(subsystemname: ::windows_sys_core::PCSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_sys_core::PCSTR, objectname: ::windows_sys_core::PCSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatuslist: *mut u32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
+    pub fn AccessCheckByTypeResultListAndAuditAlarmA(subsystemname: ::windows_core_sys::PCSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_core_sys::PCSTR, objectname: ::windows_core_sys::PCSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatuslist: *mut u32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AccessCheckByTypeResultListAndAuditAlarmByHandleA(subsystemname: ::windows_sys_core::PCSTR, handleid: *const ::core::ffi::c_void, clienttoken: super::Foundation::HANDLE, objecttypename: ::windows_sys_core::PCSTR, objectname: ::windows_sys_core::PCSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatuslist: *mut u32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
+    pub fn AccessCheckByTypeResultListAndAuditAlarmByHandleA(subsystemname: ::windows_core_sys::PCSTR, handleid: *const ::core::ffi::c_void, clienttoken: super::Foundation::HANDLE, objecttypename: ::windows_core_sys::PCSTR, objectname: ::windows_core_sys::PCSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccess: *mut u32, accessstatuslist: *mut u32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AccessCheckByTypeResultListAndAuditAlarmByHandleW(subsystemname: ::windows_sys_core::PCWSTR, handleid: *const ::core::ffi::c_void, clienttoken: super::Foundation::HANDLE, objecttypename: ::windows_sys_core::PCWSTR, objectname: ::windows_sys_core::PCWSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccesslist: *mut u32, accessstatuslist: *mut u32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
+    pub fn AccessCheckByTypeResultListAndAuditAlarmByHandleW(subsystemname: ::windows_core_sys::PCWSTR, handleid: *const ::core::ffi::c_void, clienttoken: super::Foundation::HANDLE, objecttypename: ::windows_core_sys::PCWSTR, objectname: ::windows_core_sys::PCWSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccesslist: *mut u32, accessstatuslist: *mut u32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AccessCheckByTypeResultListAndAuditAlarmW(subsystemname: ::windows_sys_core::PCWSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_sys_core::PCWSTR, objectname: ::windows_sys_core::PCWSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccesslist: *mut u32, accessstatuslist: *mut u32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
+    pub fn AccessCheckByTypeResultListAndAuditAlarmW(subsystemname: ::windows_core_sys::PCWSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_core_sys::PCWSTR, objectname: ::windows_core_sys::PCWSTR, securitydescriptor: PSECURITY_DESCRIPTOR, principalselfsid: super::Foundation::PSID, desiredaccess: u32, audittype: AUDIT_EVENT_TYPE, flags: u32, objecttypelist: *mut OBJECT_TYPE_LIST, objecttypelistlength: u32, genericmapping: *const GENERIC_MAPPING, objectcreation: super::Foundation::BOOL, grantedaccesslist: *mut u32, accessstatuslist: *mut u32, pfgenerateonclose: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn AddAccessAllowedAce(pacl: *mut ACL, dwacerevision: u32, accessmask: u32, psid: super::Foundation::PSID) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn AddAccessAllowedAceEx(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, accessmask: u32, psid: super::Foundation::PSID) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AddAccessAllowedObjectAce(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, accessmask: u32, objecttypeguid: *const ::windows_sys_core::GUID, inheritedobjecttypeguid: *const ::windows_sys_core::GUID, psid: super::Foundation::PSID) -> super::Foundation::BOOL;
+    pub fn AddAccessAllowedObjectAce(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, accessmask: u32, objecttypeguid: *const ::windows_core_sys::GUID, inheritedobjecttypeguid: *const ::windows_core_sys::GUID, psid: super::Foundation::PSID) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn AddAccessDeniedAce(pacl: *mut ACL, dwacerevision: u32, accessmask: u32, psid: super::Foundation::PSID) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn AddAccessDeniedAceEx(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, accessmask: u32, psid: super::Foundation::PSID) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AddAccessDeniedObjectAce(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, accessmask: u32, objecttypeguid: *const ::windows_sys_core::GUID, inheritedobjecttypeguid: *const ::windows_sys_core::GUID, psid: super::Foundation::PSID) -> super::Foundation::BOOL;
+    pub fn AddAccessDeniedObjectAce(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, accessmask: u32, objecttypeguid: *const ::windows_core_sys::GUID, inheritedobjecttypeguid: *const ::windows_core_sys::GUID, psid: super::Foundation::PSID) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn AddAce(pacl: *mut ACL, dwacerevision: u32, dwstartingaceindex: u32, pacelist: *const ::core::ffi::c_void, nacelistlength: u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -76,9 +76,9 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn AddAuditAccessAceEx(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, dwaccessmask: u32, psid: super::Foundation::PSID, bauditsuccess: super::Foundation::BOOL, bauditfailure: super::Foundation::BOOL) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AddAuditAccessObjectAce(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, accessmask: u32, objecttypeguid: *const ::windows_sys_core::GUID, inheritedobjecttypeguid: *const ::windows_sys_core::GUID, psid: super::Foundation::PSID, bauditsuccess: super::Foundation::BOOL, bauditfailure: super::Foundation::BOOL) -> super::Foundation::BOOL;
+    pub fn AddAuditAccessObjectAce(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, accessmask: u32, objecttypeguid: *const ::windows_core_sys::GUID, inheritedobjecttypeguid: *const ::windows_core_sys::GUID, psid: super::Foundation::PSID, bauditsuccess: super::Foundation::BOOL, bauditfailure: super::Foundation::BOOL) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AddConditionalAce(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, acetype: u8, accessmask: u32, psid: super::Foundation::PSID, conditionstr: ::windows_sys_core::PCWSTR, returnlength: *mut u32) -> super::Foundation::BOOL;
+    pub fn AddConditionalAce(pacl: *mut ACL, dwacerevision: u32, aceflags: ACE_FLAGS, acetype: u8, accessmask: u32, psid: super::Foundation::PSID, conditionstr: ::windows_core_sys::PCWSTR, returnlength: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn AddMandatoryAce(pacl: *mut ACL, dwacerevision: ACE_REVISION, aceflags: ACE_FLAGS, mandatorypolicy: u32, plabelsid: super::Foundation::PSID) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -104,15 +104,15 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn CheckTokenMembershipEx(tokenhandle: super::Foundation::HANDLE, sidtocheck: super::Foundation::PSID, flags: u32, ismember: *mut super::Foundation::BOOL) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertToAutoInheritPrivateObjectSecurity(parentdescriptor: PSECURITY_DESCRIPTOR, currentsecuritydescriptor: PSECURITY_DESCRIPTOR, newsecuritydescriptor: *mut PSECURITY_DESCRIPTOR, objecttype: *const ::windows_sys_core::GUID, isdirectoryobject: super::Foundation::BOOLEAN, genericmapping: *const GENERIC_MAPPING) -> super::Foundation::BOOL;
+    pub fn ConvertToAutoInheritPrivateObjectSecurity(parentdescriptor: PSECURITY_DESCRIPTOR, currentsecuritydescriptor: PSECURITY_DESCRIPTOR, newsecuritydescriptor: *mut PSECURITY_DESCRIPTOR, objecttype: *const ::windows_core_sys::GUID, isdirectoryobject: super::Foundation::BOOLEAN, genericmapping: *const GENERIC_MAPPING) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn CopySid(ndestinationsidlength: u32, pdestinationsid: super::Foundation::PSID, psourcesid: super::Foundation::PSID) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn CreatePrivateObjectSecurity(parentdescriptor: PSECURITY_DESCRIPTOR, creatordescriptor: PSECURITY_DESCRIPTOR, newdescriptor: *mut PSECURITY_DESCRIPTOR, isdirectoryobject: super::Foundation::BOOL, token: super::Foundation::HANDLE, genericmapping: *const GENERIC_MAPPING) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CreatePrivateObjectSecurityEx(parentdescriptor: PSECURITY_DESCRIPTOR, creatordescriptor: PSECURITY_DESCRIPTOR, newdescriptor: *mut PSECURITY_DESCRIPTOR, objecttype: *const ::windows_sys_core::GUID, iscontainerobject: super::Foundation::BOOL, autoinheritflags: SECURITY_AUTO_INHERIT_FLAGS, token: super::Foundation::HANDLE, genericmapping: *const GENERIC_MAPPING) -> super::Foundation::BOOL;
+    pub fn CreatePrivateObjectSecurityEx(parentdescriptor: PSECURITY_DESCRIPTOR, creatordescriptor: PSECURITY_DESCRIPTOR, newdescriptor: *mut PSECURITY_DESCRIPTOR, objecttype: *const ::windows_core_sys::GUID, iscontainerobject: super::Foundation::BOOL, autoinheritflags: SECURITY_AUTO_INHERIT_FLAGS, token: super::Foundation::HANDLE, genericmapping: *const GENERIC_MAPPING) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CreatePrivateObjectSecurityWithMultipleInheritance(parentdescriptor: PSECURITY_DESCRIPTOR, creatordescriptor: PSECURITY_DESCRIPTOR, newdescriptor: *mut PSECURITY_DESCRIPTOR, objecttypes: *const *const ::windows_sys_core::GUID, guidcount: u32, iscontainerobject: super::Foundation::BOOL, autoinheritflags: SECURITY_AUTO_INHERIT_FLAGS, token: super::Foundation::HANDLE, genericmapping: *const GENERIC_MAPPING) -> super::Foundation::BOOL;
+    pub fn CreatePrivateObjectSecurityWithMultipleInheritance(parentdescriptor: PSECURITY_DESCRIPTOR, creatordescriptor: PSECURITY_DESCRIPTOR, newdescriptor: *mut PSECURITY_DESCRIPTOR, objecttypes: *const *const ::windows_core_sys::GUID, guidcount: u32, iscontainerobject: super::Foundation::BOOL, autoinheritflags: SECURITY_AUTO_INHERIT_FLAGS, token: super::Foundation::HANDLE, genericmapping: *const GENERIC_MAPPING) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn CreateRestrictedToken(existingtokenhandle: super::Foundation::HANDLE, flags: CREATE_RESTRICTED_TOKEN_FLAGS, disablesidcount: u32, sidstodisable: *const SID_AND_ATTRIBUTES, deleteprivilegecount: u32, privilegestodelete: *const LUID_AND_ATTRIBUTES, restrictedsidcount: u32, sidstorestrict: *const SID_AND_ATTRIBUTES, newtokenhandle: *mut super::Foundation::HANDLE) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -120,7 +120,7 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn DeleteAce(pacl: *mut ACL, dwaceindex: u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DeriveCapabilitySidsFromName(capname: ::windows_sys_core::PCWSTR, capabilitygroupsids: *mut *mut super::Foundation::PSID, capabilitygroupsidcount: *mut u32, capabilitysids: *mut *mut super::Foundation::PSID, capabilitysidcount: *mut u32) -> super::Foundation::BOOL;
+    pub fn DeriveCapabilitySidsFromName(capname: ::windows_core_sys::PCWSTR, capabilitygroupsids: *mut *mut super::Foundation::PSID, capabilitygroupsidcount: *mut u32, capabilitysids: *mut *mut super::Foundation::PSID, capabilitysidcount: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn DestroyPrivateObjectSecurity(objectdescriptor: *const PSECURITY_DESCRIPTOR) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -146,9 +146,9 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetCachedSigningLevel(file: super::Foundation::HANDLE, flags: *mut u32, signinglevel: *mut u32, thumbprint: *mut u8, thumbprintsize: *mut u32, thumbprintalgorithm: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileSecurityA(lpfilename: ::windows_sys_core::PCSTR, requestedinformation: u32, psecuritydescriptor: PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::Foundation::BOOL;
+    pub fn GetFileSecurityA(lpfilename: ::windows_core_sys::PCSTR, requestedinformation: u32, psecuritydescriptor: PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetFileSecurityW(lpfilename: ::windows_sys_core::PCWSTR, requestedinformation: u32, psecuritydescriptor: PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::Foundation::BOOL;
+    pub fn GetFileSecurityW(lpfilename: ::windows_core_sys::PCWSTR, requestedinformation: u32, psecuritydescriptor: PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetKernelObjectSecurity(handle: super::Foundation::HANDLE, requestedinformation: u32, psecuritydescriptor: PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -203,60 +203,60 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn IsWellKnownSid(psid: super::Foundation::PSID, wellknownsidtype: WELL_KNOWN_SID_TYPE) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LogonUserA(lpszusername: ::windows_sys_core::PCSTR, lpszdomain: ::windows_sys_core::PCSTR, lpszpassword: ::windows_sys_core::PCSTR, dwlogontype: LOGON32_LOGON, dwlogonprovider: LOGON32_PROVIDER, phtoken: *mut super::Foundation::HANDLE) -> super::Foundation::BOOL;
+    pub fn LogonUserA(lpszusername: ::windows_core_sys::PCSTR, lpszdomain: ::windows_core_sys::PCSTR, lpszpassword: ::windows_core_sys::PCSTR, dwlogontype: LOGON32_LOGON, dwlogonprovider: LOGON32_PROVIDER, phtoken: *mut super::Foundation::HANDLE) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LogonUserExA(lpszusername: ::windows_sys_core::PCSTR, lpszdomain: ::windows_sys_core::PCSTR, lpszpassword: ::windows_sys_core::PCSTR, dwlogontype: LOGON32_LOGON, dwlogonprovider: LOGON32_PROVIDER, phtoken: *mut super::Foundation::HANDLE, pplogonsid: *mut super::Foundation::PSID, ppprofilebuffer: *mut *mut ::core::ffi::c_void, pdwprofilelength: *mut u32, pquotalimits: *mut QUOTA_LIMITS) -> super::Foundation::BOOL;
+    pub fn LogonUserExA(lpszusername: ::windows_core_sys::PCSTR, lpszdomain: ::windows_core_sys::PCSTR, lpszpassword: ::windows_core_sys::PCSTR, dwlogontype: LOGON32_LOGON, dwlogonprovider: LOGON32_PROVIDER, phtoken: *mut super::Foundation::HANDLE, pplogonsid: *mut super::Foundation::PSID, ppprofilebuffer: *mut *mut ::core::ffi::c_void, pdwprofilelength: *mut u32, pquotalimits: *mut QUOTA_LIMITS) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LogonUserExW(lpszusername: ::windows_sys_core::PCWSTR, lpszdomain: ::windows_sys_core::PCWSTR, lpszpassword: ::windows_sys_core::PCWSTR, dwlogontype: LOGON32_LOGON, dwlogonprovider: LOGON32_PROVIDER, phtoken: *mut super::Foundation::HANDLE, pplogonsid: *mut super::Foundation::PSID, ppprofilebuffer: *mut *mut ::core::ffi::c_void, pdwprofilelength: *mut u32, pquotalimits: *mut QUOTA_LIMITS) -> super::Foundation::BOOL;
+    pub fn LogonUserExW(lpszusername: ::windows_core_sys::PCWSTR, lpszdomain: ::windows_core_sys::PCWSTR, lpszpassword: ::windows_core_sys::PCWSTR, dwlogontype: LOGON32_LOGON, dwlogonprovider: LOGON32_PROVIDER, phtoken: *mut super::Foundation::HANDLE, pplogonsid: *mut super::Foundation::PSID, ppprofilebuffer: *mut *mut ::core::ffi::c_void, pdwprofilelength: *mut u32, pquotalimits: *mut QUOTA_LIMITS) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LogonUserW(lpszusername: ::windows_sys_core::PCWSTR, lpszdomain: ::windows_sys_core::PCWSTR, lpszpassword: ::windows_sys_core::PCWSTR, dwlogontype: LOGON32_LOGON, dwlogonprovider: LOGON32_PROVIDER, phtoken: *mut super::Foundation::HANDLE) -> super::Foundation::BOOL;
+    pub fn LogonUserW(lpszusername: ::windows_core_sys::PCWSTR, lpszdomain: ::windows_core_sys::PCWSTR, lpszpassword: ::windows_core_sys::PCWSTR, dwlogontype: LOGON32_LOGON, dwlogonprovider: LOGON32_PROVIDER, phtoken: *mut super::Foundation::HANDLE) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LookupAccountNameA(lpsystemname: ::windows_sys_core::PCSTR, lpaccountname: ::windows_sys_core::PCSTR, sid: super::Foundation::PSID, cbsid: *mut u32, referenceddomainname: ::windows_sys_core::PSTR, cchreferenceddomainname: *mut u32, peuse: *mut SID_NAME_USE) -> super::Foundation::BOOL;
+    pub fn LookupAccountNameA(lpsystemname: ::windows_core_sys::PCSTR, lpaccountname: ::windows_core_sys::PCSTR, sid: super::Foundation::PSID, cbsid: *mut u32, referenceddomainname: ::windows_core_sys::PSTR, cchreferenceddomainname: *mut u32, peuse: *mut SID_NAME_USE) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LookupAccountNameW(lpsystemname: ::windows_sys_core::PCWSTR, lpaccountname: ::windows_sys_core::PCWSTR, sid: super::Foundation::PSID, cbsid: *mut u32, referenceddomainname: ::windows_sys_core::PWSTR, cchreferenceddomainname: *mut u32, peuse: *mut SID_NAME_USE) -> super::Foundation::BOOL;
+    pub fn LookupAccountNameW(lpsystemname: ::windows_core_sys::PCWSTR, lpaccountname: ::windows_core_sys::PCWSTR, sid: super::Foundation::PSID, cbsid: *mut u32, referenceddomainname: ::windows_core_sys::PWSTR, cchreferenceddomainname: *mut u32, peuse: *mut SID_NAME_USE) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LookupAccountSidA(lpsystemname: ::windows_sys_core::PCSTR, sid: super::Foundation::PSID, name: ::windows_sys_core::PSTR, cchname: *mut u32, referenceddomainname: ::windows_sys_core::PSTR, cchreferenceddomainname: *mut u32, peuse: *mut SID_NAME_USE) -> super::Foundation::BOOL;
+    pub fn LookupAccountSidA(lpsystemname: ::windows_core_sys::PCSTR, sid: super::Foundation::PSID, name: ::windows_core_sys::PSTR, cchname: *mut u32, referenceddomainname: ::windows_core_sys::PSTR, cchreferenceddomainname: *mut u32, peuse: *mut SID_NAME_USE) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LookupAccountSidW(lpsystemname: ::windows_sys_core::PCWSTR, sid: super::Foundation::PSID, name: ::windows_sys_core::PWSTR, cchname: *mut u32, referenceddomainname: ::windows_sys_core::PWSTR, cchreferenceddomainname: *mut u32, peuse: *mut SID_NAME_USE) -> super::Foundation::BOOL;
+    pub fn LookupAccountSidW(lpsystemname: ::windows_core_sys::PCWSTR, sid: super::Foundation::PSID, name: ::windows_core_sys::PWSTR, cchname: *mut u32, referenceddomainname: ::windows_core_sys::PWSTR, cchreferenceddomainname: *mut u32, peuse: *mut SID_NAME_USE) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LookupPrivilegeDisplayNameA(lpsystemname: ::windows_sys_core::PCSTR, lpname: ::windows_sys_core::PCSTR, lpdisplayname: ::windows_sys_core::PSTR, cchdisplayname: *mut u32, lplanguageid: *mut u32) -> super::Foundation::BOOL;
+    pub fn LookupPrivilegeDisplayNameA(lpsystemname: ::windows_core_sys::PCSTR, lpname: ::windows_core_sys::PCSTR, lpdisplayname: ::windows_core_sys::PSTR, cchdisplayname: *mut u32, lplanguageid: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LookupPrivilegeDisplayNameW(lpsystemname: ::windows_sys_core::PCWSTR, lpname: ::windows_sys_core::PCWSTR, lpdisplayname: ::windows_sys_core::PWSTR, cchdisplayname: *mut u32, lplanguageid: *mut u32) -> super::Foundation::BOOL;
+    pub fn LookupPrivilegeDisplayNameW(lpsystemname: ::windows_core_sys::PCWSTR, lpname: ::windows_core_sys::PCWSTR, lpdisplayname: ::windows_core_sys::PWSTR, cchdisplayname: *mut u32, lplanguageid: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LookupPrivilegeNameA(lpsystemname: ::windows_sys_core::PCSTR, lpluid: *const super::Foundation::LUID, lpname: ::windows_sys_core::PSTR, cchname: *mut u32) -> super::Foundation::BOOL;
+    pub fn LookupPrivilegeNameA(lpsystemname: ::windows_core_sys::PCSTR, lpluid: *const super::Foundation::LUID, lpname: ::windows_core_sys::PSTR, cchname: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LookupPrivilegeNameW(lpsystemname: ::windows_sys_core::PCWSTR, lpluid: *const super::Foundation::LUID, lpname: ::windows_sys_core::PWSTR, cchname: *mut u32) -> super::Foundation::BOOL;
+    pub fn LookupPrivilegeNameW(lpsystemname: ::windows_core_sys::PCWSTR, lpluid: *const super::Foundation::LUID, lpname: ::windows_core_sys::PWSTR, cchname: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LookupPrivilegeValueA(lpsystemname: ::windows_sys_core::PCSTR, lpname: ::windows_sys_core::PCSTR, lpluid: *mut super::Foundation::LUID) -> super::Foundation::BOOL;
+    pub fn LookupPrivilegeValueA(lpsystemname: ::windows_core_sys::PCSTR, lpname: ::windows_core_sys::PCSTR, lpluid: *mut super::Foundation::LUID) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn LookupPrivilegeValueW(lpsystemname: ::windows_sys_core::PCWSTR, lpname: ::windows_sys_core::PCWSTR, lpluid: *mut super::Foundation::LUID) -> super::Foundation::BOOL;
+    pub fn LookupPrivilegeValueW(lpsystemname: ::windows_core_sys::PCWSTR, lpname: ::windows_core_sys::PCWSTR, lpluid: *mut super::Foundation::LUID) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn MakeAbsoluteSD(pselfrelativesecuritydescriptor: PSECURITY_DESCRIPTOR, pabsolutesecuritydescriptor: PSECURITY_DESCRIPTOR, lpdwabsolutesecuritydescriptorsize: *mut u32, pdacl: *mut ACL, lpdwdaclsize: *mut u32, psacl: *mut ACL, lpdwsaclsize: *mut u32, powner: super::Foundation::PSID, lpdwownersize: *mut u32, pprimarygroup: super::Foundation::PSID, lpdwprimarygroupsize: *mut u32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn MakeSelfRelativeSD(pabsolutesecuritydescriptor: PSECURITY_DESCRIPTOR, pselfrelativesecuritydescriptor: PSECURITY_DESCRIPTOR, lpdwbufferlength: *mut u32) -> super::Foundation::BOOL;
     pub fn MapGenericMask(accessmask: *mut u32, genericmapping: *const GENERIC_MAPPING);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ObjectCloseAuditAlarmA(subsystemname: ::windows_sys_core::PCSTR, handleid: *const ::core::ffi::c_void, generateonclose: super::Foundation::BOOL) -> super::Foundation::BOOL;
+    pub fn ObjectCloseAuditAlarmA(subsystemname: ::windows_core_sys::PCSTR, handleid: *const ::core::ffi::c_void, generateonclose: super::Foundation::BOOL) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ObjectCloseAuditAlarmW(subsystemname: ::windows_sys_core::PCWSTR, handleid: *const ::core::ffi::c_void, generateonclose: super::Foundation::BOOL) -> super::Foundation::BOOL;
+    pub fn ObjectCloseAuditAlarmW(subsystemname: ::windows_core_sys::PCWSTR, handleid: *const ::core::ffi::c_void, generateonclose: super::Foundation::BOOL) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ObjectDeleteAuditAlarmA(subsystemname: ::windows_sys_core::PCSTR, handleid: *const ::core::ffi::c_void, generateonclose: super::Foundation::BOOL) -> super::Foundation::BOOL;
+    pub fn ObjectDeleteAuditAlarmA(subsystemname: ::windows_core_sys::PCSTR, handleid: *const ::core::ffi::c_void, generateonclose: super::Foundation::BOOL) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ObjectDeleteAuditAlarmW(subsystemname: ::windows_sys_core::PCWSTR, handleid: *const ::core::ffi::c_void, generateonclose: super::Foundation::BOOL) -> super::Foundation::BOOL;
+    pub fn ObjectDeleteAuditAlarmW(subsystemname: ::windows_core_sys::PCWSTR, handleid: *const ::core::ffi::c_void, generateonclose: super::Foundation::BOOL) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ObjectOpenAuditAlarmA(subsystemname: ::windows_sys_core::PCSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_sys_core::PCSTR, objectname: ::windows_sys_core::PCSTR, psecuritydescriptor: PSECURITY_DESCRIPTOR, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, grantedaccess: u32, privileges: *const PRIVILEGE_SET, objectcreation: super::Foundation::BOOL, accessgranted: super::Foundation::BOOL, generateonclose: *mut i32) -> super::Foundation::BOOL;
+    pub fn ObjectOpenAuditAlarmA(subsystemname: ::windows_core_sys::PCSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_core_sys::PCSTR, objectname: ::windows_core_sys::PCSTR, psecuritydescriptor: PSECURITY_DESCRIPTOR, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, grantedaccess: u32, privileges: *const PRIVILEGE_SET, objectcreation: super::Foundation::BOOL, accessgranted: super::Foundation::BOOL, generateonclose: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ObjectOpenAuditAlarmW(subsystemname: ::windows_sys_core::PCWSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_sys_core::PCWSTR, objectname: ::windows_sys_core::PCWSTR, psecuritydescriptor: PSECURITY_DESCRIPTOR, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, grantedaccess: u32, privileges: *const PRIVILEGE_SET, objectcreation: super::Foundation::BOOL, accessgranted: super::Foundation::BOOL, generateonclose: *mut i32) -> super::Foundation::BOOL;
+    pub fn ObjectOpenAuditAlarmW(subsystemname: ::windows_core_sys::PCWSTR, handleid: *const ::core::ffi::c_void, objecttypename: ::windows_core_sys::PCWSTR, objectname: ::windows_core_sys::PCWSTR, psecuritydescriptor: PSECURITY_DESCRIPTOR, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, grantedaccess: u32, privileges: *const PRIVILEGE_SET, objectcreation: super::Foundation::BOOL, accessgranted: super::Foundation::BOOL, generateonclose: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ObjectPrivilegeAuditAlarmA(subsystemname: ::windows_sys_core::PCSTR, handleid: *const ::core::ffi::c_void, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, privileges: *const PRIVILEGE_SET, accessgranted: super::Foundation::BOOL) -> super::Foundation::BOOL;
+    pub fn ObjectPrivilegeAuditAlarmA(subsystemname: ::windows_core_sys::PCSTR, handleid: *const ::core::ffi::c_void, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, privileges: *const PRIVILEGE_SET, accessgranted: super::Foundation::BOOL) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ObjectPrivilegeAuditAlarmW(subsystemname: ::windows_sys_core::PCWSTR, handleid: *const ::core::ffi::c_void, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, privileges: *const PRIVILEGE_SET, accessgranted: super::Foundation::BOOL) -> super::Foundation::BOOL;
+    pub fn ObjectPrivilegeAuditAlarmW(subsystemname: ::windows_core_sys::PCWSTR, handleid: *const ::core::ffi::c_void, clienttoken: super::Foundation::HANDLE, desiredaccess: u32, privileges: *const PRIVILEGE_SET, accessgranted: super::Foundation::BOOL) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn PrivilegeCheck(clienttoken: super::Foundation::HANDLE, requiredprivileges: *mut PRIVILEGE_SET, pfresult: *mut i32) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn PrivilegedServiceAuditAlarmA(subsystemname: ::windows_sys_core::PCSTR, servicename: ::windows_sys_core::PCSTR, clienttoken: super::Foundation::HANDLE, privileges: *const PRIVILEGE_SET, accessgranted: super::Foundation::BOOL) -> super::Foundation::BOOL;
+    pub fn PrivilegedServiceAuditAlarmA(subsystemname: ::windows_core_sys::PCSTR, servicename: ::windows_core_sys::PCSTR, clienttoken: super::Foundation::HANDLE, privileges: *const PRIVILEGE_SET, accessgranted: super::Foundation::BOOL) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn PrivilegedServiceAuditAlarmW(subsystemname: ::windows_sys_core::PCWSTR, servicename: ::windows_sys_core::PCWSTR, clienttoken: super::Foundation::HANDLE, privileges: *const PRIVILEGE_SET, accessgranted: super::Foundation::BOOL) -> super::Foundation::BOOL;
+    pub fn PrivilegedServiceAuditAlarmW(subsystemname: ::windows_core_sys::PCWSTR, servicename: ::windows_core_sys::PCWSTR, clienttoken: super::Foundation::HANDLE, privileges: *const PRIVILEGE_SET, accessgranted: super::Foundation::BOOL) -> super::Foundation::BOOL;
     pub fn QuerySecurityAccessMask(securityinformation: u32, desiredaccess: *mut u32);
     #[cfg(feature = "Win32_Foundation")]
     pub fn RevertToSelf() -> super::Foundation::BOOL;
@@ -269,9 +269,9 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn SetCachedSigningLevel(sourcefiles: *const super::Foundation::HANDLE, sourcefilecount: u32, flags: u32, targetfile: super::Foundation::HANDLE) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileSecurityA(lpfilename: ::windows_sys_core::PCSTR, securityinformation: u32, psecuritydescriptor: PSECURITY_DESCRIPTOR) -> super::Foundation::BOOL;
+    pub fn SetFileSecurityA(lpfilename: ::windows_core_sys::PCSTR, securityinformation: u32, psecuritydescriptor: PSECURITY_DESCRIPTOR) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetFileSecurityW(lpfilename: ::windows_sys_core::PCWSTR, securityinformation: u32, psecuritydescriptor: PSECURITY_DESCRIPTOR) -> super::Foundation::BOOL;
+    pub fn SetFileSecurityW(lpfilename: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: PSECURITY_DESCRIPTOR) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn SetKernelObjectSecurity(handle: super::Foundation::HANDLE, securityinformation: u32, securitydescriptor: PSECURITY_DESCRIPTOR) -> super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -324,8 +324,8 @@ pub struct ACCESS_ALLOWED_CALLBACK_OBJECT_ACE {
     pub Header: ACE_HEADER,
     pub Mask: u32,
     pub Flags: SYSTEM_AUDIT_OBJECT_ACE_FLAGS,
-    pub ObjectType: ::windows_sys_core::GUID,
-    pub InheritedObjectType: ::windows_sys_core::GUID,
+    pub ObjectType: ::windows_core_sys::GUID,
+    pub InheritedObjectType: ::windows_core_sys::GUID,
     pub SidStart: u32,
 }
 impl ::core::marker::Copy for ACCESS_ALLOWED_CALLBACK_OBJECT_ACE {}
@@ -339,8 +339,8 @@ pub struct ACCESS_ALLOWED_OBJECT_ACE {
     pub Header: ACE_HEADER,
     pub Mask: u32,
     pub Flags: SYSTEM_AUDIT_OBJECT_ACE_FLAGS,
-    pub ObjectType: ::windows_sys_core::GUID,
-    pub InheritedObjectType: ::windows_sys_core::GUID,
+    pub ObjectType: ::windows_core_sys::GUID,
+    pub InheritedObjectType: ::windows_core_sys::GUID,
     pub SidStart: u32,
 }
 impl ::core::marker::Copy for ACCESS_ALLOWED_OBJECT_ACE {}
@@ -378,8 +378,8 @@ pub struct ACCESS_DENIED_CALLBACK_OBJECT_ACE {
     pub Header: ACE_HEADER,
     pub Mask: u32,
     pub Flags: SYSTEM_AUDIT_OBJECT_ACE_FLAGS,
-    pub ObjectType: ::windows_sys_core::GUID,
-    pub InheritedObjectType: ::windows_sys_core::GUID,
+    pub ObjectType: ::windows_core_sys::GUID,
+    pub InheritedObjectType: ::windows_core_sys::GUID,
     pub SidStart: u32,
 }
 impl ::core::marker::Copy for ACCESS_DENIED_CALLBACK_OBJECT_ACE {}
@@ -393,8 +393,8 @@ pub struct ACCESS_DENIED_OBJECT_ACE {
     pub Header: ACE_HEADER,
     pub Mask: u32,
     pub Flags: SYSTEM_AUDIT_OBJECT_ACE_FLAGS,
-    pub ObjectType: ::windows_sys_core::GUID,
-    pub InheritedObjectType: ::windows_sys_core::GUID,
+    pub ObjectType: ::windows_core_sys::GUID,
+    pub InheritedObjectType: ::windows_core_sys::GUID,
     pub SidStart: u32,
 }
 impl ::core::marker::Copy for ACCESS_DENIED_OBJECT_ACE {}
@@ -517,7 +517,7 @@ pub const CLAIM_SECURITY_ATTRIBUTE_MANDATORY: CLAIM_SECURITY_ATTRIBUTE_FLAGS = 3
 #[repr(C)]
 pub struct CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE {
     pub Version: u64,
-    pub Name: ::windows_sys_core::PWSTR,
+    pub Name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE {}
 impl ::core::clone::Clone for CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE {
@@ -567,7 +567,7 @@ impl ::core::clone::Clone for CLAIM_SECURITY_ATTRIBUTE_RELATIVE_V1_0 {
 }
 #[repr(C)]
 pub struct CLAIM_SECURITY_ATTRIBUTE_V1 {
-    pub Name: ::windows_sys_core::PWSTR,
+    pub Name: ::windows_core_sys::PWSTR,
     pub ValueType: CLAIM_SECURITY_ATTRIBUTE_VALUE_TYPE,
     pub Reserved: u16,
     pub Flags: u32,
@@ -584,7 +584,7 @@ impl ::core::clone::Clone for CLAIM_SECURITY_ATTRIBUTE_V1 {
 pub union CLAIM_SECURITY_ATTRIBUTE_V1_0 {
     pub pInt64: *mut i64,
     pub pUint64: *mut u64,
-    pub ppString: *mut ::windows_sys_core::PWSTR,
+    pub ppString: *mut ::windows_core_sys::PWSTR,
     pub pFqbn: *mut CLAIM_SECURITY_ATTRIBUTE_FQBN_VALUE,
     pub pOctetString: *mut CLAIM_SECURITY_ATTRIBUTE_OCTET_STRING_VALUE,
 }
@@ -716,7 +716,7 @@ pub const UNPROTECTED_SACL_SECURITY_INFORMATION: OBJECT_SECURITY_INFORMATION = 2
 pub struct OBJECT_TYPE_LIST {
     pub Level: u16,
     pub Sbz: u16,
-    pub ObjectType: *mut ::windows_sys_core::GUID,
+    pub ObjectType: *mut ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for OBJECT_TYPE_LIST {}
 impl ::core::clone::Clone for OBJECT_TYPE_LIST {
@@ -1025,8 +1025,8 @@ pub struct SYSTEM_ALARM_CALLBACK_OBJECT_ACE {
     pub Header: ACE_HEADER,
     pub Mask: u32,
     pub Flags: SYSTEM_AUDIT_OBJECT_ACE_FLAGS,
-    pub ObjectType: ::windows_sys_core::GUID,
-    pub InheritedObjectType: ::windows_sys_core::GUID,
+    pub ObjectType: ::windows_core_sys::GUID,
+    pub InheritedObjectType: ::windows_core_sys::GUID,
     pub SidStart: u32,
 }
 impl ::core::marker::Copy for SYSTEM_ALARM_CALLBACK_OBJECT_ACE {}
@@ -1040,8 +1040,8 @@ pub struct SYSTEM_ALARM_OBJECT_ACE {
     pub Header: ACE_HEADER,
     pub Mask: u32,
     pub Flags: u32,
-    pub ObjectType: ::windows_sys_core::GUID,
-    pub InheritedObjectType: ::windows_sys_core::GUID,
+    pub ObjectType: ::windows_core_sys::GUID,
+    pub InheritedObjectType: ::windows_core_sys::GUID,
     pub SidStart: u32,
 }
 impl ::core::marker::Copy for SYSTEM_ALARM_OBJECT_ACE {}
@@ -1079,8 +1079,8 @@ pub struct SYSTEM_AUDIT_CALLBACK_OBJECT_ACE {
     pub Header: ACE_HEADER,
     pub Mask: u32,
     pub Flags: SYSTEM_AUDIT_OBJECT_ACE_FLAGS,
-    pub ObjectType: ::windows_sys_core::GUID,
-    pub InheritedObjectType: ::windows_sys_core::GUID,
+    pub ObjectType: ::windows_core_sys::GUID,
+    pub InheritedObjectType: ::windows_core_sys::GUID,
     pub SidStart: u32,
 }
 impl ::core::marker::Copy for SYSTEM_AUDIT_CALLBACK_OBJECT_ACE {}
@@ -1094,8 +1094,8 @@ pub struct SYSTEM_AUDIT_OBJECT_ACE {
     pub Header: ACE_HEADER,
     pub Mask: u32,
     pub Flags: SYSTEM_AUDIT_OBJECT_ACE_FLAGS,
-    pub ObjectType: ::windows_sys_core::GUID,
-    pub InheritedObjectType: ::windows_sys_core::GUID,
+    pub ObjectType: ::windows_core_sys::GUID,
+    pub InheritedObjectType: ::windows_core_sys::GUID,
     pub SidStart: u32,
 }
 impl ::core::marker::Copy for SYSTEM_AUDIT_OBJECT_ACE {}

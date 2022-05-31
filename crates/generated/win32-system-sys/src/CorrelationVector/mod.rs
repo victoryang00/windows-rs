@@ -5,7 +5,7 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn RtlIncrementCorrelationVector(correlationvector: *mut CORRELATION_VECTOR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RtlInitializeCorrelationVector(correlationvector: *mut CORRELATION_VECTOR, version: i32, guid: *const ::windows_sys_core::GUID) -> u32;
+    pub fn RtlInitializeCorrelationVector(correlationvector: *mut CORRELATION_VECTOR, version: i32, guid: *const ::windows_core_sys::GUID) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn RtlValidateCorrelationVector(vector: *const CORRELATION_VECTOR) -> u32;
 }

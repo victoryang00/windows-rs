@@ -48,7 +48,7 @@ extern "system" {
     pub fn JsGetOwnPropertyDescriptor(object: *const ::core::ffi::c_void, propertyid: *const ::core::ffi::c_void, propertydescriptor: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     pub fn JsGetOwnPropertyNames(object: *const ::core::ffi::c_void, propertynames: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     pub fn JsGetProperty(object: *const ::core::ffi::c_void, propertyid: *const ::core::ffi::c_void, value: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
-    pub fn JsGetPropertyIdFromName(name: ::windows_sys_core::PCWSTR, propertyid: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsGetPropertyIdFromName(name: ::windows_core_sys::PCWSTR, propertyid: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     pub fn JsGetPropertyNameFromId(propertyid: *const ::core::ffi::c_void, name: *mut *mut u16) -> JsErrorCode;
     pub fn JsGetPrototype(object: *const ::core::ffi::c_void, prototypeobject: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     pub fn JsGetRuntime(context: *const ::core::ffi::c_void, runtime: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
@@ -67,14 +67,14 @@ extern "system" {
     pub fn JsIsEnumeratingHeap(isenumeratingheap: *mut bool) -> JsErrorCode;
     pub fn JsIsRuntimeExecutionDisabled(runtime: *const ::core::ffi::c_void, isdisabled: *mut bool) -> JsErrorCode;
     pub fn JsNumberToDouble(value: *const ::core::ffi::c_void, doublevalue: *mut f64) -> JsErrorCode;
-    pub fn JsParseScript(script: ::windows_sys_core::PCWSTR, sourcecontext: usize, sourceurl: ::windows_sys_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
-    pub fn JsParseSerializedScript(script: ::windows_sys_core::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows_sys_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
-    pub fn JsPointerToString(stringvalue: ::windows_sys_core::PCWSTR, stringlength: usize, value: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsParseScript(script: ::windows_core_sys::PCWSTR, sourcecontext: usize, sourceurl: ::windows_core_sys::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsParseSerializedScript(script: ::windows_core_sys::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows_core_sys::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsPointerToString(stringvalue: ::windows_core_sys::PCWSTR, stringlength: usize, value: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
     pub fn JsPreventExtension(object: *const ::core::ffi::c_void) -> JsErrorCode;
     pub fn JsRelease(r#ref: *const ::core::ffi::c_void, count: *mut u32) -> JsErrorCode;
-    pub fn JsRunScript(script: ::windows_sys_core::PCWSTR, sourcecontext: usize, sourceurl: ::windows_sys_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
-    pub fn JsRunSerializedScript(script: ::windows_sys_core::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows_sys_core::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
-    pub fn JsSerializeScript(script: ::windows_sys_core::PCWSTR, buffer: *mut u8, buffersize: *mut u32) -> JsErrorCode;
+    pub fn JsRunScript(script: ::windows_core_sys::PCWSTR, sourcecontext: usize, sourceurl: ::windows_core_sys::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsRunSerializedScript(script: ::windows_core_sys::PCWSTR, buffer: *const u8, sourcecontext: usize, sourceurl: ::windows_core_sys::PCWSTR, result: *mut *mut ::core::ffi::c_void) -> JsErrorCode;
+    pub fn JsSerializeScript(script: ::windows_core_sys::PCWSTR, buffer: *mut u8, buffersize: *mut u32) -> JsErrorCode;
     pub fn JsSetCurrentContext(context: *const ::core::ffi::c_void) -> JsErrorCode;
     pub fn JsSetException(exception: *const ::core::ffi::c_void) -> JsErrorCode;
     pub fn JsSetExternalData(object: *const ::core::ffi::c_void, externaldata: *const ::core::ffi::c_void) -> JsErrorCode;
@@ -92,7 +92,7 @@ extern "system" {
     pub fn JsStartDebugging(debugapplication: super::Diagnostics::Debug::IDebugApplication32) -> JsErrorCode;
     #[cfg(feature = "Win32_System_Diagnostics_Debug")]
     pub fn JsStartProfiling(callback: super::Diagnostics::Debug::IActiveScriptProfilerCallback, eventmask: super::Diagnostics::Debug::PROFILER_EVENT_MASK, context: u32) -> JsErrorCode;
-    pub fn JsStopProfiling(reason: ::windows_sys_core::HRESULT) -> JsErrorCode;
+    pub fn JsStopProfiling(reason: ::windows_core_sys::HRESULT) -> JsErrorCode;
     pub fn JsStrictEquals(object1: *const ::core::ffi::c_void, object2: *const ::core::ffi::c_void, result: *mut bool) -> JsErrorCode;
     pub fn JsStringToPointer(value: *const ::core::ffi::c_void, stringvalue: *mut *mut u16, stringlength: *mut usize) -> JsErrorCode;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]

@@ -1,22 +1,22 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DCompositionAttachMouseDragToHwnd(visual: IDCompositionVisual, hwnd: super::super::Foundation::HWND, enable: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
+    pub fn DCompositionAttachMouseDragToHwnd(visual: IDCompositionVisual, hwnd: super::super::Foundation::HWND, enable: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DCompositionAttachMouseWheelToHwnd(visual: IDCompositionVisual, hwnd: super::super::Foundation::HWND, enable: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
+    pub fn DCompositionAttachMouseWheelToHwnd(visual: IDCompositionVisual, hwnd: super::super::Foundation::HWND, enable: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DCompositionBoostCompositorClock(enable: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
+    pub fn DCompositionBoostCompositorClock(enable: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Graphics_Dxgi")]
-    pub fn DCompositionCreateDevice(dxgidevice: super::Dxgi::IDXGIDevice, iid: *const ::windows_sys_core::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
-    pub fn DCompositionCreateDevice2(renderingdevice: ::windows_sys_core::IUnknown, iid: *const ::windows_sys_core::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
-    pub fn DCompositionCreateDevice3(renderingdevice: ::windows_sys_core::IUnknown, iid: *const ::windows_sys_core::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn DCompositionCreateDevice(dxgidevice: super::Dxgi::IDXGIDevice, iid: *const ::windows_core_sys::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn DCompositionCreateDevice2(renderingdevice: ::windows_core_sys::IUnknown, iid: *const ::windows_core_sys::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn DCompositionCreateDevice3(renderingdevice: ::windows_core_sys::IUnknown, iid: *const ::windows_core_sys::GUID, dcompositiondevice: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn DCompositionCreateSurfaceHandle(desiredaccess: u32, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, surfacehandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
-    pub fn DCompositionGetFrameId(frameidtype: COMPOSITION_FRAME_ID_TYPE, frameid: *mut u64) -> ::windows_sys_core::HRESULT;
+    pub fn DCompositionCreateSurfaceHandle(desiredaccess: u32, securityattributes: *const super::super::Security::SECURITY_ATTRIBUTES, surfacehandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn DCompositionGetFrameId(frameidtype: COMPOSITION_FRAME_ID_TYPE, frameid: *mut u64) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DCompositionGetStatistics(frameid: u64, framestats: *mut COMPOSITION_FRAME_STATS, targetidcount: u32, targetids: *mut COMPOSITION_TARGET_ID, actualtargetidcount: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn DCompositionGetStatistics(frameid: u64, framestats: *mut COMPOSITION_FRAME_STATS, targetidcount: u32, targetids: *mut COMPOSITION_TARGET_ID, actualtargetidcount: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DCompositionGetTargetStatistics(frameid: u64, targetid: *const COMPOSITION_TARGET_ID, targetstats: *mut COMPOSITION_TARGET_STATS) -> ::windows_sys_core::HRESULT;
+    pub fn DCompositionGetTargetStatistics(frameid: u64, targetid: *const COMPOSITION_TARGET_ID, targetstats: *mut COMPOSITION_TARGET_STATS) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
     pub fn DCompositionWaitForCompositorClock(count: u32, handles: *const super::super::Foundation::HANDLE, timeoutinms: u32) -> u32;
 }

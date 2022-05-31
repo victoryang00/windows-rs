@@ -37,7 +37,7 @@ impl ::core::clone::Clone for TypeKind {
 }
 #[repr(C)]
 pub struct TypeName {
-    pub Name: ::windows_sys_core::HSTRING,
+    pub Name: ::windows_core_sys::HSTRING,
     pub Kind: TypeKind,
 }
 impl ::core::marker::Copy for TypeName {}

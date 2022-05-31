@@ -1,7 +1,7 @@
 pub const AUTO_WIDTH: i32 = -1i32;
 pub type AppEvents = *mut ::core::ffi::c_void;
-pub const AppEventsDHTMLConnector: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2917549131, data2: 51487, data3: 20023, data4: [146, 164, 91, 180, 48, 163, 51, 64] };
-pub const Application: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1236433178, data2: 45486, data3: 19600, data4: [155, 142, 232, 96, 186, 7, 248, 137] };
+pub const AppEventsDHTMLConnector: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2917549131, data2: 51487, data3: 20023, data4: [146, 164, 91, 180, 48, 163, 51, 64] };
+pub const Application: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1236433178, data2: 45486, data3: 19600, data4: [155, 142, 232, 96, 186, 7, 248, 137] };
 pub type CCM_COMMANDID_MASK_CONSTANTS = u32;
 pub const CCM_COMMANDID_MASK_RESERVED: CCM_COMMANDID_MASK_CONSTANTS = 4294901760u32;
 pub type CCM_INSERTIONALLOWED = i32;
@@ -33,8 +33,8 @@ pub const CCM_SPECIAL_INSERTION_POINT: CCM_SPECIAL = 8i32;
 pub const CCM_SPECIAL_TESTONLY: CCM_SPECIAL = 16i32;
 #[repr(C)]
 pub struct CONTEXTMENUITEM {
-    pub strName: ::windows_sys_core::PWSTR,
-    pub strStatusBarText: ::windows_sys_core::PWSTR,
+    pub strName: ::windows_core_sys::PWSTR,
+    pub strStatusBarText: ::windows_core_sys::PWSTR,
     pub lCommandID: i32,
     pub lInsertionPointID: i32,
     pub fFlags: i32,
@@ -48,13 +48,13 @@ impl ::core::clone::Clone for CONTEXTMENUITEM {
 }
 #[repr(C)]
 pub struct CONTEXTMENUITEM2 {
-    pub strName: ::windows_sys_core::PWSTR,
-    pub strStatusBarText: ::windows_sys_core::PWSTR,
+    pub strName: ::windows_core_sys::PWSTR,
+    pub strStatusBarText: ::windows_core_sys::PWSTR,
     pub lCommandID: i32,
     pub lInsertionPointID: i32,
     pub fFlags: i32,
     pub fSpecialFlags: i32,
-    pub strLanguageIndependentName: ::windows_sys_core::PWSTR,
+    pub strLanguageIndependentName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for CONTEXTMENUITEM2 {}
 impl ::core::clone::Clone for CONTEXTMENUITEM2 {
@@ -64,7 +64,7 @@ impl ::core::clone::Clone for CONTEXTMENUITEM2 {
 }
 pub type Column = *mut ::core::ffi::c_void;
 pub type Columns = *mut ::core::ffi::c_void;
-pub const ConsolePower: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4029174644, data2: 57329, data3: 4563, data4: [180, 51, 0, 192, 79, 142, 205, 120] };
+pub const ConsolePower: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4029174644, data2: 57329, data3: 4563, data4: [180, 51, 0, 192, 79, 142, 205, 120] };
 pub type ContextMenu = *mut ::core::ffi::c_void;
 pub type DATA_OBJECT_TYPES = i32;
 pub const CCT_SCOPE: DATA_OBJECT_TYPES = 32768i32;
@@ -153,8 +153,8 @@ pub struct MMCBUTTON {
     pub idCommand: i32,
     pub fsState: u8,
     pub fsType: u8,
-    pub lpButtonText: ::windows_sys_core::PWSTR,
-    pub lpTooltipText: ::windows_sys_core::PWSTR,
+    pub lpButtonText: ::windows_core_sys::PWSTR,
+    pub lpTooltipText: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for MMCBUTTON {}
 impl ::core::clone::Clone for MMCBUTTON {
@@ -173,7 +173,7 @@ pub const MMCLV_VIEWSTYLE_ICON: u32 = 0u32;
 pub const MMCLV_VIEWSTYLE_LIST: u32 = 3u32;
 pub const MMCLV_VIEWSTYLE_REPORT: u32 = 1u32;
 pub const MMCLV_VIEWSTYLE_SMALLICON: u32 = 2u32;
-pub const MMCVersionInfo: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3607026461, data2: 53025, data3: 19417, data4: [175, 59, 197, 70, 142, 156, 102, 132] };
+pub const MMCVersionInfo: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3607026461, data2: 53025, data3: 19417, data4: [175, 59, 197, 70, 142, 156, 102, 132] };
 pub type MMC_ACTION_TYPE = i32;
 pub const MMC_ACTION_UNINITIALIZED: MMC_ACTION_TYPE = -1i32;
 pub const MMC_ACTION_ID: MMC_ACTION_TYPE = 0i32;
@@ -247,10 +247,10 @@ impl ::core::clone::Clone for MMC_EXPANDSYNC_STRUCT {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct MMC_EXT_VIEW_DATA {
-    pub viewID: ::windows_sys_core::GUID,
-    pub pszURL: ::windows_sys_core::PCWSTR,
-    pub pszViewTitle: ::windows_sys_core::PCWSTR,
-    pub pszTooltipText: ::windows_sys_core::PCWSTR,
+    pub viewID: ::windows_core_sys::GUID,
+    pub pszURL: ::windows_core_sys::PCWSTR,
+    pub pszViewTitle: ::windows_core_sys::PCWSTR,
+    pub pszTooltipText: ::windows_core_sys::PCWSTR,
     pub bReplacesDefaultView: super::super::Foundation::BOOL,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -263,7 +263,7 @@ impl ::core::clone::Clone for MMC_EXT_VIEW_DATA {
 }
 #[repr(C)]
 pub struct MMC_FILTERDATA {
-    pub pszText: ::windows_sys_core::PWSTR,
+    pub pszText: ::windows_core_sys::PWSTR,
     pub cchTextMax: i32,
     pub lValue: i32,
 }
@@ -287,8 +287,8 @@ pub const MMC_ITEM_OVERLAY_STATE_SHIFT: u32 = 8u32;
 pub const MMC_ITEM_STATE_MASK: u32 = 255u32;
 #[repr(C)]
 pub struct MMC_LISTPAD_INFO {
-    pub szTitle: ::windows_sys_core::PWSTR,
-    pub szButtonText: ::windows_sys_core::PWSTR,
+    pub szTitle: ::windows_core_sys::PWSTR,
+    pub szButtonText: ::windows_core_sys::PWSTR,
     pub nCommandID: isize,
 }
 impl ::core::marker::Copy for MMC_LISTPAD_INFO {}
@@ -360,7 +360,7 @@ pub const MMC_PSO_NO_PROPTITLE: u32 = 8u32;
 pub struct MMC_RESTORE_VIEW {
     pub dwSize: u32,
     pub cookie: isize,
-    pub pViewType: ::windows_sys_core::PWSTR,
+    pub pViewType: ::windows_core_sys::PWSTR,
     pub lViewOptions: i32,
 }
 impl ::core::marker::Copy for MMC_RESTORE_VIEW {}
@@ -381,7 +381,7 @@ pub const MMC_SCOPE_ITEM_STATE_EXPANDEDONCE: MMC_SCOPE_ITEM_STATE = 3i32;
 #[repr(C)]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com", feature = "Win32_System_Ole"))]
 pub struct MMC_SNAPIN_PROPERTY {
-    pub pszPropName: ::windows_sys_core::PCWSTR,
+    pub pszPropName: ::windows_core_sys::PCWSTR,
     pub varValue: super::Com::VARIANT,
     pub eAction: MMC_PROPERTY_ACTION,
 }
@@ -420,8 +420,8 @@ impl ::core::clone::Clone for MMC_SORT_SET_DATA {
 #[repr(C)]
 pub struct MMC_TASK {
     pub sDisplayObject: MMC_TASK_DISPLAY_OBJECT,
-    pub szText: ::windows_sys_core::PWSTR,
-    pub szHelpString: ::windows_sys_core::PWSTR,
+    pub szText: ::windows_core_sys::PWSTR,
+    pub szHelpString: ::windows_core_sys::PWSTR,
     pub eActionType: MMC_ACTION_TYPE,
     pub Anonymous: MMC_TASK_0,
 }
@@ -434,8 +434,8 @@ impl ::core::clone::Clone for MMC_TASK {
 #[repr(C)]
 pub union MMC_TASK_0 {
     pub nCommandID: isize,
-    pub szActionURL: ::windows_sys_core::PWSTR,
-    pub szScript: ::windows_sys_core::PWSTR,
+    pub szActionURL: ::windows_core_sys::PWSTR,
+    pub szScript: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for MMC_TASK_0 {}
 impl ::core::clone::Clone for MMC_TASK_0 {
@@ -445,8 +445,8 @@ impl ::core::clone::Clone for MMC_TASK_0 {
 }
 #[repr(C)]
 pub struct MMC_TASK_DISPLAY_BITMAP {
-    pub szMouseOverBitmap: ::windows_sys_core::PWSTR,
-    pub szMouseOffBitmap: ::windows_sys_core::PWSTR,
+    pub szMouseOverBitmap: ::windows_core_sys::PWSTR,
+    pub szMouseOffBitmap: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for MMC_TASK_DISPLAY_BITMAP {}
 impl ::core::clone::Clone for MMC_TASK_DISPLAY_BITMAP {
@@ -478,9 +478,9 @@ impl ::core::clone::Clone for MMC_TASK_DISPLAY_OBJECT_0 {
 }
 #[repr(C)]
 pub struct MMC_TASK_DISPLAY_SYMBOL {
-    pub szFontFamilyName: ::windows_sys_core::PWSTR,
-    pub szURLtoEOT: ::windows_sys_core::PWSTR,
-    pub szSymbolString: ::windows_sys_core::PWSTR,
+    pub szFontFamilyName: ::windows_core_sys::PWSTR,
+    pub szURLtoEOT: ::windows_core_sys::PWSTR,
+    pub szSymbolString: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for MMC_TASK_DISPLAY_SYMBOL {}
 impl ::core::clone::Clone for MMC_TASK_DISPLAY_SYMBOL {
@@ -573,7 +573,7 @@ pub struct RESULTDATAITEM {
     pub itemID: isize,
     pub nIndex: i32,
     pub nCol: i32,
-    pub str: ::windows_sys_core::PWSTR,
+    pub str: ::windows_core_sys::PWSTR,
     pub nImage: i32,
     pub nState: u32,
     pub lParam: super::super::Foundation::LPARAM,
@@ -589,7 +589,7 @@ impl ::core::clone::Clone for RESULTDATAITEM {
 }
 #[repr(C)]
 pub struct RESULTFINDINFO {
-    pub psz: ::windows_sys_core::PWSTR,
+    pub psz: ::windows_core_sys::PWSTR,
     pub nStart: i32,
     pub dwOptions: u32,
 }
@@ -601,7 +601,7 @@ impl ::core::clone::Clone for RESULTFINDINFO {
 }
 #[repr(C)]
 pub struct RESULT_VIEW_TYPE_INFO {
-    pub pstrPersistableViewDescription: ::windows_sys_core::PWSTR,
+    pub pstrPersistableViewDescription: ::windows_core_sys::PWSTR,
     pub eViewType: MMC_VIEW_TYPE,
     pub dwMiscOptions: u32,
     pub Anonymous: RESULT_VIEW_TYPE_INFO_0,
@@ -627,7 +627,7 @@ impl ::core::clone::Clone for RESULT_VIEW_TYPE_INFO_0 {
 #[repr(C)]
 pub struct RESULT_VIEW_TYPE_INFO_0_0 {
     pub dwHTMLOptions: u32,
-    pub pstrURL: ::windows_sys_core::PWSTR,
+    pub pstrURL: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for RESULT_VIEW_TYPE_INFO_0_0 {}
 impl ::core::clone::Clone for RESULT_VIEW_TYPE_INFO_0_0 {
@@ -638,7 +638,7 @@ impl ::core::clone::Clone for RESULT_VIEW_TYPE_INFO_0_0 {
 #[repr(C)]
 pub struct RESULT_VIEW_TYPE_INFO_0_1 {
     pub dwOCXOptions: u32,
-    pub pUnkControl: ::windows_sys_core::IUnknown,
+    pub pUnkControl: ::windows_core_sys::IUnknown,
 }
 impl ::core::marker::Copy for RESULT_VIEW_TYPE_INFO_0_1 {}
 impl ::core::clone::Clone for RESULT_VIEW_TYPE_INFO_0_1 {
@@ -668,7 +668,7 @@ pub const RVTI_OCX_OPTIONS_NONE: u32 = 0u32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct SCOPEDATAITEM {
     pub mask: u32,
-    pub displayname: ::windows_sys_core::PWSTR,
+    pub displayname: ::windows_core_sys::PWSTR,
     pub nImage: i32,
     pub nOpenImage: i32,
     pub nState: u32,
@@ -724,7 +724,7 @@ impl ::core::clone::Clone for SMMCDataObjects {
 #[repr(C)]
 pub struct SMMCObjectTypes {
     pub count: u32,
-    pub guid: [::windows_sys_core::GUID; 1],
+    pub guid: [::windows_core_sys::GUID; 1],
 }
 impl ::core::marker::Copy for SMMCObjectTypes {}
 impl ::core::clone::Clone for SMMCObjectTypes {

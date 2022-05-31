@@ -99,7 +99,7 @@ impl ::core::clone::Clone for IndexerOption {
 pub type QueryOptions = *mut ::core::ffi::c_void;
 #[repr(C)]
 pub struct SortEntry {
-    pub PropertyName: ::windows_sys_core::HSTRING,
+    pub PropertyName: ::windows_core_sys::HSTRING,
     pub AscendingOrder: bool,
 }
 impl ::core::marker::Copy for SortEntry {}

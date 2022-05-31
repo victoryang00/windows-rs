@@ -1,17 +1,17 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_System_Com")]
-    pub fn CreateXmlReader(riid: *const ::windows_sys_core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: super::super::super::System::Com::IMalloc) -> ::windows_sys_core::HRESULT;
+    pub fn CreateXmlReader(riid: *const ::windows_core_sys::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: super::super::super::System::Com::IMalloc) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn CreateXmlReaderInputWithEncodingCodePage(pinputstream: ::windows_sys_core::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, nencodingcodepage: u32, fencodinghint: super::super::super::Foundation::BOOL, pwszbaseuri: ::windows_sys_core::PCWSTR, ppinput: *mut ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
+    pub fn CreateXmlReaderInputWithEncodingCodePage(pinputstream: ::windows_core_sys::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, nencodingcodepage: u32, fencodinghint: super::super::super::Foundation::BOOL, pwszbaseuri: ::windows_core_sys::PCWSTR, ppinput: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Com"))]
-    pub fn CreateXmlReaderInputWithEncodingName(pinputstream: ::windows_sys_core::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, pwszencodingname: ::windows_sys_core::PCWSTR, fencodinghint: super::super::super::Foundation::BOOL, pwszbaseuri: ::windows_sys_core::PCWSTR, ppinput: *mut ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
+    pub fn CreateXmlReaderInputWithEncodingName(pinputstream: ::windows_core_sys::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, pwszencodingname: ::windows_core_sys::PCWSTR, fencodinghint: super::super::super::Foundation::BOOL, pwszbaseuri: ::windows_core_sys::PCWSTR, ppinput: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn CreateXmlWriter(riid: *const ::windows_sys_core::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: super::super::super::System::Com::IMalloc) -> ::windows_sys_core::HRESULT;
+    pub fn CreateXmlWriter(riid: *const ::windows_core_sys::GUID, ppvobject: *mut *mut ::core::ffi::c_void, pmalloc: super::super::super::System::Com::IMalloc) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn CreateXmlWriterOutputWithEncodingCodePage(poutputstream: ::windows_sys_core::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, nencodingcodepage: u32, ppoutput: *mut ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
+    pub fn CreateXmlWriterOutputWithEncodingCodePage(poutputstream: ::windows_core_sys::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, nencodingcodepage: u32, ppoutput: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn CreateXmlWriterOutputWithEncodingName(poutputstream: ::windows_sys_core::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, pwszencodingname: ::windows_sys_core::PCWSTR, ppoutput: *mut ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
+    pub fn CreateXmlWriterOutputWithEncodingName(poutputstream: ::windows_core_sys::IUnknown, pmalloc: super::super::super::System::Com::IMalloc, pwszencodingname: ::windows_core_sys::PCWSTR, ppoutput: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
 }
 pub type DtdProcessing = i32;
 pub const DtdProcessing_Prohibit: DtdProcessing = 0i32;
@@ -154,6 +154,6 @@ pub const XmlWriterProperty_OmitXmlDeclaration: XmlWriterProperty = 3i32;
 pub const XmlWriterProperty_ConformanceLevel: XmlWriterProperty = 4i32;
 pub const XmlWriterProperty_CompactEmptyElement: XmlWriterProperty = 5i32;
 pub const _XmlWriterProperty_Last: XmlWriterProperty = 5i32;
-pub const _IID_IXmlReader: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1920597121, data2: 28829, data3: 16533, data4: [182, 61, 105, 254, 75, 13, 144, 48] };
-pub const _IID_IXmlResolver: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1920597122, data2: 28829, data3: 16533, data4: [182, 61, 105, 254, 75, 13, 144, 48] };
-pub const _IID_IXmlWriter: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1920597128, data2: 28829, data3: 16533, data4: [182, 61, 105, 254, 75, 13, 144, 48] };
+pub const _IID_IXmlReader: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1920597121, data2: 28829, data3: 16533, data4: [182, 61, 105, 254, 75, 13, 144, 48] };
+pub const _IID_IXmlResolver: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1920597122, data2: 28829, data3: 16533, data4: [182, 61, 105, 254, 75, 13, 144, 48] };
+pub const _IID_IXmlWriter: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1920597128, data2: 28829, data3: 16533, data4: [182, 61, 105, 254, 75, 13, 144, 48] };

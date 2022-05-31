@@ -1,9 +1,9 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_Com_CallObj\"`*"]
-    pub fn CoGetInterceptor(iidintercepted: *const ::windows_sys_core::GUID, punkouter: ::windows_sys_core::IUnknown, iid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn CoGetInterceptor(iidintercepted: *const ::windows_core_sys::GUID, punkouter: ::windows_core_sys::IUnknown, iid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_System_Com_CallObj\"`*"]
-    pub fn CoGetInterceptorFromTypeInfo(iidintercepted: *const ::windows_sys_core::GUID, punkouter: ::windows_sys_core::IUnknown, typeinfo: super::ITypeInfo, iid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn CoGetInterceptorFromTypeInfo(iidintercepted: *const ::windows_core_sys::GUID, punkouter: ::windows_core_sys::IUnknown, typeinfo: super::ITypeInfo, iid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Com_CallObj\"`, `\"Win32_Foundation\"`*"]
@@ -18,7 +18,7 @@ pub struct CALLFRAMEINFO {
     pub cInOutInterfacesMax: i32,
     pub cOutInterfacesMax: i32,
     pub cTopLevelInInterfaces: i32,
-    pub iid: ::windows_sys_core::GUID,
+    pub iid: ::windows_core_sys::GUID,
     pub cMethod: u32,
     pub cParams: u32,
 }
@@ -76,8 +76,8 @@ pub struct CALLFRAME_MARSHALCONTEXT {
     pub fIn: super::super::super::Foundation::BOOLEAN,
     pub dwDestContext: u32,
     pub pvDestContext: *mut ::core::ffi::c_void,
-    pub punkReserved: ::windows_sys_core::IUnknown,
-    pub guidTransferSyntax: ::windows_sys_core::GUID,
+    pub punkReserved: ::windows_core_sys::IUnknown,
+    pub guidTransferSyntax: ::windows_core_sys::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for CALLFRAME_MARSHALCONTEXT {}

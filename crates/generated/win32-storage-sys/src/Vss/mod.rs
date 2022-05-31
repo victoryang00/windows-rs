@@ -1,6 +1,6 @@
 #[link(name = "windows")]
 extern "system" {
-    pub fn CreateVssExpressWriterInternal(ppwriter: *mut IVssExpressWriter) -> ::windows_sys_core::HRESULT;
+    pub fn CreateVssExpressWriterInternal(ppwriter: *mut IVssExpressWriter) -> ::windows_core_sys::HRESULT;
 }
 pub type IVssAdmin = *mut ::core::ffi::c_void;
 pub type IVssAdminEx = *mut ::core::ffi::c_void;
@@ -30,7 +30,7 @@ pub type IVssWMDependency = *mut ::core::ffi::c_void;
 pub type IVssWMFiledesc = *mut ::core::ffi::c_void;
 pub type IVssWriterComponents = *mut ::core::ffi::c_void;
 pub type IVssWriterImpl = *mut ::core::ffi::c_void;
-pub const VSSCoordinator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3849956191, data2: 7364, data3: 17588, data4: [190, 217, 222, 9, 145, 255, 6, 35] };
+pub const VSSCoordinator: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3849956191, data2: 7364, data3: 17588, data4: [190, 217, 222, 9, 145, 255, 6, 35] };
 pub type VSS_ALTERNATE_WRITER_STATE = i32;
 pub const VSS_AWS_UNDEFINED: VSS_ALTERNATE_WRITER_STATE = 0i32;
 pub const VSS_AWS_NO_ALTERNATE_WRITER: VSS_ALTERNATE_WRITER_STATE = 1i32;
@@ -105,83 +105,83 @@ impl ::core::clone::Clone for VSS_DIFF_VOLUME_PROP {
         *self
     }
 }
-pub const VSS_E_ASRERROR_CRITICAL_DISKS_TOO_SMALL: ::windows_sys_core::HRESULT = -2147212280i32;
-pub const VSS_E_ASRERROR_CRITICAL_DISK_CANNOT_BE_EXCLUDED: ::windows_sys_core::HRESULT = -2147212267i32;
-pub const VSS_E_ASRERROR_DATADISK_RDISK0: ::windows_sys_core::HRESULT = -2147212282i32;
-pub const VSS_E_ASRERROR_DISK_ASSIGNMENT_FAILED: ::windows_sys_core::HRESULT = -2147212287i32;
-pub const VSS_E_ASRERROR_DISK_RECREATION_FAILED: ::windows_sys_core::HRESULT = -2147212286i32;
-pub const VSS_E_ASRERROR_DYNAMIC_VHD_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147212278i32;
-pub const VSS_E_ASRERROR_FIXED_PHYSICAL_DISK_AVAILABLE_AFTER_DISK_EXCLUSION: ::windows_sys_core::HRESULT = -2147212268i32;
-pub const VSS_E_ASRERROR_MISSING_DYNDISK: ::windows_sys_core::HRESULT = -2147212284i32;
-pub const VSS_E_ASRERROR_NO_ARCPATH: ::windows_sys_core::HRESULT = -2147212285i32;
-pub const VSS_E_ASRERROR_NO_PHYSICAL_DISK_AVAILABLE: ::windows_sys_core::HRESULT = -2147212269i32;
-pub const VSS_E_ASRERROR_RDISK0_TOOSMALL: ::windows_sys_core::HRESULT = -2147212281i32;
-pub const VSS_E_ASRERROR_RDISK_FOR_SYSTEM_DISK_NOT_FOUND: ::windows_sys_core::HRESULT = -2147212270i32;
-pub const VSS_E_ASRERROR_SHARED_CRIDISK: ::windows_sys_core::HRESULT = -2147212283i32;
-pub const VSS_E_ASRERROR_SYSTEM_PARTITION_HIDDEN: ::windows_sys_core::HRESULT = -2147212266i32;
-pub const VSS_E_AUTORECOVERY_FAILED: ::windows_sys_core::HRESULT = -2147212293i32;
-pub const VSS_E_BAD_STATE: ::windows_sys_core::HRESULT = -2147212543i32;
-pub const VSS_E_BREAK_REVERT_ID_FAILED: ::windows_sys_core::HRESULT = -2147212298i32;
-pub const VSS_E_CANNOT_REVERT_DISKID: ::windows_sys_core::HRESULT = -2147212290i32;
-pub const VSS_E_CLUSTER_ERROR: ::windows_sys_core::HRESULT = -2147212288i32;
-pub const VSS_E_CLUSTER_TIMEOUT: ::windows_sys_core::HRESULT = -2147212498i32;
-pub const VSS_E_CORRUPT_XML_DOCUMENT: ::windows_sys_core::HRESULT = -2147212528i32;
-pub const VSS_E_CRITICAL_VOLUME_ON_INVALID_DISK: ::windows_sys_core::HRESULT = -2147212271i32;
-pub const VSS_E_DYNAMIC_DISK_ERROR: ::windows_sys_core::HRESULT = -2147212292i32;
-pub const VSS_E_FLUSH_WRITES_TIMEOUT: ::windows_sys_core::HRESULT = -2147212525i32;
-pub const VSS_E_FSS_TIMEOUT: ::windows_sys_core::HRESULT = -2147212265i32;
-pub const VSS_E_HOLD_WRITES_TIMEOUT: ::windows_sys_core::HRESULT = -2147212524i32;
-pub const VSS_E_INSUFFICIENT_STORAGE: ::windows_sys_core::HRESULT = -2147212513i32;
-pub const VSS_E_INVALID_XML_DOCUMENT: ::windows_sys_core::HRESULT = -2147212527i32;
-pub const VSS_E_LEGACY_PROVIDER: ::windows_sys_core::HRESULT = -2147212297i32;
-pub const VSS_E_MAXIMUM_DIFFAREA_ASSOCIATIONS_REACHED: ::windows_sys_core::HRESULT = -2147212514i32;
-pub const VSS_E_MAXIMUM_NUMBER_OF_REMOTE_MACHINES_REACHED: ::windows_sys_core::HRESULT = -2147212510i32;
-pub const VSS_E_MAXIMUM_NUMBER_OF_SNAPSHOTS_REACHED: ::windows_sys_core::HRESULT = -2147212521i32;
-pub const VSS_E_MAXIMUM_NUMBER_OF_VOLUMES_REACHED: ::windows_sys_core::HRESULT = -2147212526i32;
-pub const VSS_E_MISSING_DISK: ::windows_sys_core::HRESULT = -2147212296i32;
-pub const VSS_E_MISSING_HIDDEN_VOLUME: ::windows_sys_core::HRESULT = -2147212295i32;
-pub const VSS_E_MISSING_VOLUME: ::windows_sys_core::HRESULT = -2147212294i32;
-pub const VSS_E_NESTED_VOLUME_LIMIT: ::windows_sys_core::HRESULT = -2147212500i32;
-pub const VSS_E_NONTRANSPORTABLE_BCD: ::windows_sys_core::HRESULT = -2147212291i32;
-pub const VSS_E_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147212497i32;
-pub const VSS_E_NO_SNAPSHOTS_IMPORTED: ::windows_sys_core::HRESULT = -2147212512i32;
-pub const VSS_E_OBJECT_ALREADY_EXISTS: ::windows_sys_core::HRESULT = -2147212531i32;
-pub const VSS_E_OBJECT_NOT_FOUND: ::windows_sys_core::HRESULT = -2147212536i32;
-pub const VSS_E_PROVIDER_ALREADY_REGISTERED: ::windows_sys_core::HRESULT = -2147212541i32;
-pub const VSS_E_PROVIDER_IN_USE: ::windows_sys_core::HRESULT = -2147212537i32;
-pub const VSS_E_PROVIDER_NOT_REGISTERED: ::windows_sys_core::HRESULT = -2147212540i32;
-pub const VSS_E_PROVIDER_VETO: ::windows_sys_core::HRESULT = -2147212538i32;
-pub const VSS_E_REBOOT_REQUIRED: ::windows_sys_core::HRESULT = -2147212505i32;
-pub const VSS_E_REMOTE_SERVER_UNAVAILABLE: ::windows_sys_core::HRESULT = -2147212509i32;
-pub const VSS_E_REMOTE_SERVER_UNSUPPORTED: ::windows_sys_core::HRESULT = -2147212508i32;
-pub const VSS_E_RESYNC_IN_PROGRESS: ::windows_sys_core::HRESULT = -2147212289i32;
-pub const VSS_E_REVERT_IN_PROGRESS: ::windows_sys_core::HRESULT = -2147212507i32;
-pub const VSS_E_REVERT_VOLUME_LOST: ::windows_sys_core::HRESULT = -2147212506i32;
-pub const VSS_E_SNAPSHOT_NOT_IN_SET: ::windows_sys_core::HRESULT = -2147212501i32;
-pub const VSS_E_SNAPSHOT_SET_IN_PROGRESS: ::windows_sys_core::HRESULT = -2147212522i32;
-pub const VSS_E_SOME_SNAPSHOTS_NOT_IMPORTED: ::windows_sys_core::HRESULT = -2147212511i32;
-pub const VSS_E_TRANSACTION_FREEZE_TIMEOUT: ::windows_sys_core::HRESULT = -2147212504i32;
-pub const VSS_E_TRANSACTION_THAW_TIMEOUT: ::windows_sys_core::HRESULT = -2147212503i32;
-pub const VSS_E_UNEXPECTED: ::windows_sys_core::HRESULT = -2147212542i32;
-pub const VSS_E_UNEXPECTED_PROVIDER_ERROR: ::windows_sys_core::HRESULT = -2147212529i32;
-pub const VSS_E_UNEXPECTED_WRITER_ERROR: ::windows_sys_core::HRESULT = -2147212523i32;
-pub const VSS_E_UNSELECTED_VOLUME: ::windows_sys_core::HRESULT = -2147212502i32;
-pub const VSS_E_UNSUPPORTED_CONTEXT: ::windows_sys_core::HRESULT = -2147212517i32;
-pub const VSS_E_VOLUME_IN_USE: ::windows_sys_core::HRESULT = -2147212515i32;
-pub const VSS_E_VOLUME_NOT_LOCAL: ::windows_sys_core::HRESULT = -2147212499i32;
-pub const VSS_E_VOLUME_NOT_SUPPORTED: ::windows_sys_core::HRESULT = -2147212532i32;
-pub const VSS_E_VOLUME_NOT_SUPPORTED_BY_PROVIDER: ::windows_sys_core::HRESULT = -2147212530i32;
-pub const VSS_E_WRITERERROR_INCONSISTENTSNAPSHOT: ::windows_sys_core::HRESULT = -2147212304i32;
-pub const VSS_E_WRITERERROR_NONRETRYABLE: ::windows_sys_core::HRESULT = -2147212300i32;
-pub const VSS_E_WRITERERROR_OUTOFRESOURCES: ::windows_sys_core::HRESULT = -2147212303i32;
-pub const VSS_E_WRITERERROR_PARTIAL_FAILURE: ::windows_sys_core::HRESULT = -2147212490i32;
-pub const VSS_E_WRITERERROR_RECOVERY_FAILED: ::windows_sys_core::HRESULT = -2147212299i32;
-pub const VSS_E_WRITERERROR_RETRYABLE: ::windows_sys_core::HRESULT = -2147212301i32;
-pub const VSS_E_WRITERERROR_TIMEOUT: ::windows_sys_core::HRESULT = -2147212302i32;
-pub const VSS_E_WRITER_ALREADY_SUBSCRIBED: ::windows_sys_core::HRESULT = -2147212518i32;
-pub const VSS_E_WRITER_INFRASTRUCTURE: ::windows_sys_core::HRESULT = -2147212520i32;
-pub const VSS_E_WRITER_NOT_RESPONDING: ::windows_sys_core::HRESULT = -2147212519i32;
-pub const VSS_E_WRITER_STATUS_NOT_AVAILABLE: ::windows_sys_core::HRESULT = -2147212279i32;
+pub const VSS_E_ASRERROR_CRITICAL_DISKS_TOO_SMALL: ::windows_core_sys::HRESULT = -2147212280i32;
+pub const VSS_E_ASRERROR_CRITICAL_DISK_CANNOT_BE_EXCLUDED: ::windows_core_sys::HRESULT = -2147212267i32;
+pub const VSS_E_ASRERROR_DATADISK_RDISK0: ::windows_core_sys::HRESULT = -2147212282i32;
+pub const VSS_E_ASRERROR_DISK_ASSIGNMENT_FAILED: ::windows_core_sys::HRESULT = -2147212287i32;
+pub const VSS_E_ASRERROR_DISK_RECREATION_FAILED: ::windows_core_sys::HRESULT = -2147212286i32;
+pub const VSS_E_ASRERROR_DYNAMIC_VHD_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147212278i32;
+pub const VSS_E_ASRERROR_FIXED_PHYSICAL_DISK_AVAILABLE_AFTER_DISK_EXCLUSION: ::windows_core_sys::HRESULT = -2147212268i32;
+pub const VSS_E_ASRERROR_MISSING_DYNDISK: ::windows_core_sys::HRESULT = -2147212284i32;
+pub const VSS_E_ASRERROR_NO_ARCPATH: ::windows_core_sys::HRESULT = -2147212285i32;
+pub const VSS_E_ASRERROR_NO_PHYSICAL_DISK_AVAILABLE: ::windows_core_sys::HRESULT = -2147212269i32;
+pub const VSS_E_ASRERROR_RDISK0_TOOSMALL: ::windows_core_sys::HRESULT = -2147212281i32;
+pub const VSS_E_ASRERROR_RDISK_FOR_SYSTEM_DISK_NOT_FOUND: ::windows_core_sys::HRESULT = -2147212270i32;
+pub const VSS_E_ASRERROR_SHARED_CRIDISK: ::windows_core_sys::HRESULT = -2147212283i32;
+pub const VSS_E_ASRERROR_SYSTEM_PARTITION_HIDDEN: ::windows_core_sys::HRESULT = -2147212266i32;
+pub const VSS_E_AUTORECOVERY_FAILED: ::windows_core_sys::HRESULT = -2147212293i32;
+pub const VSS_E_BAD_STATE: ::windows_core_sys::HRESULT = -2147212543i32;
+pub const VSS_E_BREAK_REVERT_ID_FAILED: ::windows_core_sys::HRESULT = -2147212298i32;
+pub const VSS_E_CANNOT_REVERT_DISKID: ::windows_core_sys::HRESULT = -2147212290i32;
+pub const VSS_E_CLUSTER_ERROR: ::windows_core_sys::HRESULT = -2147212288i32;
+pub const VSS_E_CLUSTER_TIMEOUT: ::windows_core_sys::HRESULT = -2147212498i32;
+pub const VSS_E_CORRUPT_XML_DOCUMENT: ::windows_core_sys::HRESULT = -2147212528i32;
+pub const VSS_E_CRITICAL_VOLUME_ON_INVALID_DISK: ::windows_core_sys::HRESULT = -2147212271i32;
+pub const VSS_E_DYNAMIC_DISK_ERROR: ::windows_core_sys::HRESULT = -2147212292i32;
+pub const VSS_E_FLUSH_WRITES_TIMEOUT: ::windows_core_sys::HRESULT = -2147212525i32;
+pub const VSS_E_FSS_TIMEOUT: ::windows_core_sys::HRESULT = -2147212265i32;
+pub const VSS_E_HOLD_WRITES_TIMEOUT: ::windows_core_sys::HRESULT = -2147212524i32;
+pub const VSS_E_INSUFFICIENT_STORAGE: ::windows_core_sys::HRESULT = -2147212513i32;
+pub const VSS_E_INVALID_XML_DOCUMENT: ::windows_core_sys::HRESULT = -2147212527i32;
+pub const VSS_E_LEGACY_PROVIDER: ::windows_core_sys::HRESULT = -2147212297i32;
+pub const VSS_E_MAXIMUM_DIFFAREA_ASSOCIATIONS_REACHED: ::windows_core_sys::HRESULT = -2147212514i32;
+pub const VSS_E_MAXIMUM_NUMBER_OF_REMOTE_MACHINES_REACHED: ::windows_core_sys::HRESULT = -2147212510i32;
+pub const VSS_E_MAXIMUM_NUMBER_OF_SNAPSHOTS_REACHED: ::windows_core_sys::HRESULT = -2147212521i32;
+pub const VSS_E_MAXIMUM_NUMBER_OF_VOLUMES_REACHED: ::windows_core_sys::HRESULT = -2147212526i32;
+pub const VSS_E_MISSING_DISK: ::windows_core_sys::HRESULT = -2147212296i32;
+pub const VSS_E_MISSING_HIDDEN_VOLUME: ::windows_core_sys::HRESULT = -2147212295i32;
+pub const VSS_E_MISSING_VOLUME: ::windows_core_sys::HRESULT = -2147212294i32;
+pub const VSS_E_NESTED_VOLUME_LIMIT: ::windows_core_sys::HRESULT = -2147212500i32;
+pub const VSS_E_NONTRANSPORTABLE_BCD: ::windows_core_sys::HRESULT = -2147212291i32;
+pub const VSS_E_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147212497i32;
+pub const VSS_E_NO_SNAPSHOTS_IMPORTED: ::windows_core_sys::HRESULT = -2147212512i32;
+pub const VSS_E_OBJECT_ALREADY_EXISTS: ::windows_core_sys::HRESULT = -2147212531i32;
+pub const VSS_E_OBJECT_NOT_FOUND: ::windows_core_sys::HRESULT = -2147212536i32;
+pub const VSS_E_PROVIDER_ALREADY_REGISTERED: ::windows_core_sys::HRESULT = -2147212541i32;
+pub const VSS_E_PROVIDER_IN_USE: ::windows_core_sys::HRESULT = -2147212537i32;
+pub const VSS_E_PROVIDER_NOT_REGISTERED: ::windows_core_sys::HRESULT = -2147212540i32;
+pub const VSS_E_PROVIDER_VETO: ::windows_core_sys::HRESULT = -2147212538i32;
+pub const VSS_E_REBOOT_REQUIRED: ::windows_core_sys::HRESULT = -2147212505i32;
+pub const VSS_E_REMOTE_SERVER_UNAVAILABLE: ::windows_core_sys::HRESULT = -2147212509i32;
+pub const VSS_E_REMOTE_SERVER_UNSUPPORTED: ::windows_core_sys::HRESULT = -2147212508i32;
+pub const VSS_E_RESYNC_IN_PROGRESS: ::windows_core_sys::HRESULT = -2147212289i32;
+pub const VSS_E_REVERT_IN_PROGRESS: ::windows_core_sys::HRESULT = -2147212507i32;
+pub const VSS_E_REVERT_VOLUME_LOST: ::windows_core_sys::HRESULT = -2147212506i32;
+pub const VSS_E_SNAPSHOT_NOT_IN_SET: ::windows_core_sys::HRESULT = -2147212501i32;
+pub const VSS_E_SNAPSHOT_SET_IN_PROGRESS: ::windows_core_sys::HRESULT = -2147212522i32;
+pub const VSS_E_SOME_SNAPSHOTS_NOT_IMPORTED: ::windows_core_sys::HRESULT = -2147212511i32;
+pub const VSS_E_TRANSACTION_FREEZE_TIMEOUT: ::windows_core_sys::HRESULT = -2147212504i32;
+pub const VSS_E_TRANSACTION_THAW_TIMEOUT: ::windows_core_sys::HRESULT = -2147212503i32;
+pub const VSS_E_UNEXPECTED: ::windows_core_sys::HRESULT = -2147212542i32;
+pub const VSS_E_UNEXPECTED_PROVIDER_ERROR: ::windows_core_sys::HRESULT = -2147212529i32;
+pub const VSS_E_UNEXPECTED_WRITER_ERROR: ::windows_core_sys::HRESULT = -2147212523i32;
+pub const VSS_E_UNSELECTED_VOLUME: ::windows_core_sys::HRESULT = -2147212502i32;
+pub const VSS_E_UNSUPPORTED_CONTEXT: ::windows_core_sys::HRESULT = -2147212517i32;
+pub const VSS_E_VOLUME_IN_USE: ::windows_core_sys::HRESULT = -2147212515i32;
+pub const VSS_E_VOLUME_NOT_LOCAL: ::windows_core_sys::HRESULT = -2147212499i32;
+pub const VSS_E_VOLUME_NOT_SUPPORTED: ::windows_core_sys::HRESULT = -2147212532i32;
+pub const VSS_E_VOLUME_NOT_SUPPORTED_BY_PROVIDER: ::windows_core_sys::HRESULT = -2147212530i32;
+pub const VSS_E_WRITERERROR_INCONSISTENTSNAPSHOT: ::windows_core_sys::HRESULT = -2147212304i32;
+pub const VSS_E_WRITERERROR_NONRETRYABLE: ::windows_core_sys::HRESULT = -2147212300i32;
+pub const VSS_E_WRITERERROR_OUTOFRESOURCES: ::windows_core_sys::HRESULT = -2147212303i32;
+pub const VSS_E_WRITERERROR_PARTIAL_FAILURE: ::windows_core_sys::HRESULT = -2147212490i32;
+pub const VSS_E_WRITERERROR_RECOVERY_FAILED: ::windows_core_sys::HRESULT = -2147212299i32;
+pub const VSS_E_WRITERERROR_RETRYABLE: ::windows_core_sys::HRESULT = -2147212301i32;
+pub const VSS_E_WRITERERROR_TIMEOUT: ::windows_core_sys::HRESULT = -2147212302i32;
+pub const VSS_E_WRITER_ALREADY_SUBSCRIBED: ::windows_core_sys::HRESULT = -2147212518i32;
+pub const VSS_E_WRITER_INFRASTRUCTURE: ::windows_core_sys::HRESULT = -2147212520i32;
+pub const VSS_E_WRITER_NOT_RESPONDING: ::windows_core_sys::HRESULT = -2147212519i32;
+pub const VSS_E_WRITER_STATUS_NOT_AVAILABLE: ::windows_core_sys::HRESULT = -2147212279i32;
 pub type VSS_FILE_RESTORE_STATUS = i32;
 pub const VSS_RS_UNDEFINED: VSS_FILE_RESTORE_STATUS = 0i32;
 pub const VSS_RS_NONE: VSS_FILE_RESTORE_STATUS = 1i32;
@@ -299,12 +299,12 @@ pub const VSS_PRV_CAPABILITY_DIFFERENTIAL: VSS_PROVIDER_CAPABILITIES = 256i32;
 pub const VSS_PRV_CAPABILITY_CLUSTERED: VSS_PROVIDER_CAPABILITIES = 512i32;
 #[repr(C)]
 pub struct VSS_PROVIDER_PROP {
-    pub m_ProviderId: ::windows_sys_core::GUID,
+    pub m_ProviderId: ::windows_core_sys::GUID,
     pub m_pwszProviderName: *mut u16,
     pub m_eProviderType: VSS_PROVIDER_TYPE,
     pub m_pwszProviderVersion: *mut u16,
-    pub m_ProviderVersionId: ::windows_sys_core::GUID,
-    pub m_ClassId: ::windows_sys_core::GUID,
+    pub m_ProviderVersionId: ::windows_core_sys::GUID,
+    pub m_ClassId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VSS_PROVIDER_PROP {}
 impl ::core::clone::Clone for VSS_PROVIDER_PROP {
@@ -360,8 +360,8 @@ pub const VSS_CTX_CLIENT_ACCESSIBLE_WRITERS: VSS_SNAPSHOT_CONTEXT = 13i32;
 pub const VSS_CTX_ALL: VSS_SNAPSHOT_CONTEXT = -1i32;
 #[repr(C)]
 pub struct VSS_SNAPSHOT_PROP {
-    pub m_SnapshotId: ::windows_sys_core::GUID,
-    pub m_SnapshotSetId: ::windows_sys_core::GUID,
+    pub m_SnapshotId: ::windows_core_sys::GUID,
+    pub m_SnapshotSetId: ::windows_core_sys::GUID,
     pub m_lSnapshotsCount: i32,
     pub m_pwszSnapshotDeviceObject: *mut u16,
     pub m_pwszOriginalVolumeName: *mut u16,
@@ -369,7 +369,7 @@ pub struct VSS_SNAPSHOT_PROP {
     pub m_pwszServiceMachine: *mut u16,
     pub m_pwszExposedName: *mut u16,
     pub m_pwszExposedPath: *mut u16,
-    pub m_ProviderId: ::windows_sys_core::GUID,
+    pub m_ProviderId: ::windows_core_sys::GUID,
     pub m_lSnapshotAttributes: i32,
     pub m_tsCreationTimestamp: i64,
     pub m_eStatus: VSS_SNAPSHOT_STATE,
@@ -424,10 +424,10 @@ pub const VSS_SM_BACKUP_EVENTS_FLAG: VSS_SUBSCRIBE_MASK = 2i32;
 pub const VSS_SM_RESTORE_EVENTS_FLAG: VSS_SUBSCRIBE_MASK = 4i32;
 pub const VSS_SM_IO_THROTTLING_FLAG: VSS_SUBSCRIBE_MASK = 8i32;
 pub const VSS_SM_ALL_FLAGS: VSS_SUBSCRIBE_MASK = -1i32;
-pub const VSS_S_ASYNC_CANCELLED: ::windows_sys_core::HRESULT = 271115i32;
-pub const VSS_S_ASYNC_FINISHED: ::windows_sys_core::HRESULT = 271114i32;
-pub const VSS_S_ASYNC_PENDING: ::windows_sys_core::HRESULT = 271113i32;
-pub const VSS_S_SOME_SNAPSHOTS_NOT_IMPORTED: ::windows_sys_core::HRESULT = 271137i32;
+pub const VSS_S_ASYNC_CANCELLED: ::windows_core_sys::HRESULT = 271115i32;
+pub const VSS_S_ASYNC_FINISHED: ::windows_core_sys::HRESULT = 271114i32;
+pub const VSS_S_ASYNC_PENDING: ::windows_core_sys::HRESULT = 271113i32;
+pub const VSS_S_SOME_SNAPSHOTS_NOT_IMPORTED: ::windows_core_sys::HRESULT = 271137i32;
 pub type VSS_USAGE_TYPE = i32;
 pub const VSS_UT_UNDEFINED: VSS_USAGE_TYPE = 0i32;
 pub const VSS_UT_BOOTABLESYSTEMSTATE: VSS_USAGE_TYPE = 1i32;
@@ -506,4 +506,4 @@ pub const VSS_WS_FAILED_AT_PRE_RESTORE: VSS_WRITER_STATE = 13i32;
 pub const VSS_WS_FAILED_AT_POST_RESTORE: VSS_WRITER_STATE = 14i32;
 pub const VSS_WS_FAILED_AT_BACKUPSHUTDOWN: VSS_WRITER_STATE = 15i32;
 pub const VSS_WS_COUNT: VSS_WRITER_STATE = 16i32;
-pub const VssSnapshotMgmt: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 190458962, data2: 16057, data3: 18186, data4: [150, 226, 108, 109, 69, 112, 228, 15] };
+pub const VssSnapshotMgmt: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 190458962, data2: 16057, data3: 18186, data4: [150, 226, 108, 109, 69, 112, 228, 15] };

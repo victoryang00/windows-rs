@@ -5,13 +5,13 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSCloseServer(hserver: super::super::Foundation::HANDLE);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSConnectSessionA(logonid: u32, targetlogonid: u32, ppassword: ::windows_sys_core::PCSTR, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn WTSConnectSessionA(logonid: u32, targetlogonid: u32, ppassword: ::windows_core_sys::PCSTR, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSConnectSessionW(logonid: u32, targetlogonid: u32, ppassword: ::windows_sys_core::PCWSTR, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn WTSConnectSessionW(logonid: u32, targetlogonid: u32, ppassword: ::windows_core_sys::PCWSTR, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSCreateListenerA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_sys_core::PCSTR, pbuffer: *const WTSLISTENERCONFIGA, flag: u32) -> super::super::Foundation::BOOL;
+    pub fn WTSCreateListenerA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, pbuffer: *const WTSLISTENERCONFIGA, flag: u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSCreateListenerW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_sys_core::PCWSTR, pbuffer: *const WTSLISTENERCONFIGW, flag: u32) -> super::super::Foundation::BOOL;
+    pub fn WTSCreateListenerW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, pbuffer: *const WTSLISTENERCONFIGW, flag: u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSDisconnectSession(hserver: super::super::Foundation::HANDLE, sessionid: u32, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -23,15 +23,15 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSEnumerateProcessesA(hserver: super::super::Foundation::HANDLE, reserved: u32, version: u32, ppprocessinfo: *mut *mut WTS_PROCESS_INFOA, pcount: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateProcessesExA(hserver: super::super::Foundation::HANDLE, plevel: *mut u32, sessionid: u32, ppprocessinfo: *mut ::windows_sys_core::PSTR, pcount: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSEnumerateProcessesExA(hserver: super::super::Foundation::HANDLE, plevel: *mut u32, sessionid: u32, ppprocessinfo: *mut ::windows_core_sys::PSTR, pcount: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateProcessesExW(hserver: super::super::Foundation::HANDLE, plevel: *mut u32, sessionid: u32, ppprocessinfo: *mut ::windows_sys_core::PWSTR, pcount: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSEnumerateProcessesExW(hserver: super::super::Foundation::HANDLE, plevel: *mut u32, sessionid: u32, ppprocessinfo: *mut ::windows_core_sys::PWSTR, pcount: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSEnumerateProcessesW(hserver: super::super::Foundation::HANDLE, reserved: u32, version: u32, ppprocessinfo: *mut *mut WTS_PROCESS_INFOW, pcount: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateServersA(pdomainname: ::windows_sys_core::PCSTR, reserved: u32, version: u32, ppserverinfo: *mut *mut WTS_SERVER_INFOA, pcount: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSEnumerateServersA(pdomainname: ::windows_core_sys::PCSTR, reserved: u32, version: u32, ppserverinfo: *mut *mut WTS_SERVER_INFOA, pcount: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSEnumerateServersW(pdomainname: ::windows_sys_core::PCWSTR, reserved: u32, version: u32, ppserverinfo: *mut *mut WTS_SERVER_INFOW, pcount: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSEnumerateServersW(pdomainname: ::windows_core_sys::PCWSTR, reserved: u32, version: u32, ppserverinfo: *mut *mut WTS_SERVER_INFOW, pcount: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSEnumerateSessionsA(hserver: super::super::Foundation::HANDLE, reserved: u32, version: u32, ppsessioninfo: *mut *mut WTS_SESSION_INFOA, pcount: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -49,33 +49,33 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSGetChildSessionId(psessionid: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn WTSGetListenerSecurityA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_sys_core::PCSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSGetListenerSecurityA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn WTSGetListenerSecurityW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_sys_core::PCWSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSGetListenerSecurityW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, nlength: u32, lpnlengthneeded: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSIsChildSessionsEnabled(pbenabled: *mut super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSLogoffSession(hserver: super::super::Foundation::HANDLE, sessionid: u32, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSOpenServerA(pservername: ::windows_sys_core::PCSTR) -> super::super::Foundation::HANDLE;
+    pub fn WTSOpenServerA(pservername: ::windows_core_sys::PCSTR) -> super::super::Foundation::HANDLE;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSOpenServerExA(pservername: ::windows_sys_core::PCSTR) -> super::super::Foundation::HANDLE;
+    pub fn WTSOpenServerExA(pservername: ::windows_core_sys::PCSTR) -> super::super::Foundation::HANDLE;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSOpenServerExW(pservername: ::windows_sys_core::PCWSTR) -> super::super::Foundation::HANDLE;
+    pub fn WTSOpenServerExW(pservername: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSOpenServerW(pservername: ::windows_sys_core::PCWSTR) -> super::super::Foundation::HANDLE;
+    pub fn WTSOpenServerW(pservername: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQueryListenerConfigA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_sys_core::PCSTR, pbuffer: *mut WTSLISTENERCONFIGA) -> super::super::Foundation::BOOL;
+    pub fn WTSQueryListenerConfigA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, pbuffer: *mut WTSLISTENERCONFIGA) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQueryListenerConfigW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_sys_core::PCWSTR, pbuffer: *mut WTSLISTENERCONFIGW) -> super::super::Foundation::BOOL;
+    pub fn WTSQueryListenerConfigW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, pbuffer: *mut WTSLISTENERCONFIGW) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQuerySessionInformationA(hserver: super::super::Foundation::HANDLE, sessionid: u32, wtsinfoclass: WTS_INFO_CLASS, ppbuffer: *mut ::windows_sys_core::PSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSQuerySessionInformationA(hserver: super::super::Foundation::HANDLE, sessionid: u32, wtsinfoclass: WTS_INFO_CLASS, ppbuffer: *mut ::windows_core_sys::PSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQuerySessionInformationW(hserver: super::super::Foundation::HANDLE, sessionid: u32, wtsinfoclass: WTS_INFO_CLASS, ppbuffer: *mut ::windows_sys_core::PWSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSQuerySessionInformationW(hserver: super::super::Foundation::HANDLE, sessionid: u32, wtsinfoclass: WTS_INFO_CLASS, ppbuffer: *mut ::windows_core_sys::PWSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQueryUserConfigA(pservername: ::windows_sys_core::PCSTR, pusername: ::windows_sys_core::PCSTR, wtsconfigclass: WTS_CONFIG_CLASS, ppbuffer: *mut ::windows_sys_core::PSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSQueryUserConfigA(pservername: ::windows_core_sys::PCSTR, pusername: ::windows_core_sys::PCSTR, wtsconfigclass: WTS_CONFIG_CLASS, ppbuffer: *mut ::windows_core_sys::PSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSQueryUserConfigW(pservername: ::windows_sys_core::PCWSTR, pusername: ::windows_sys_core::PCWSTR, wtsconfigclass: WTS_CONFIG_CLASS, ppbuffer: *mut ::windows_sys_core::PWSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSQueryUserConfigW(pservername: ::windows_core_sys::PCWSTR, pusername: ::windows_core_sys::PCWSTR, wtsconfigclass: WTS_CONFIG_CLASS, ppbuffer: *mut ::windows_core_sys::PWSTR, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSQueryUserToken(sessionid: u32, phtoken: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -83,25 +83,25 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSRegisterSessionNotificationEx(hserver: super::super::Foundation::HANDLE, hwnd: super::super::Foundation::HWND, dwflags: u32) -> super::super::Foundation::BOOL;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn WTSSendMessageA(hserver: super::super::Foundation::HANDLE, sessionid: u32, ptitle: ::windows_sys_core::PCSTR, titlelength: u32, pmessage: ::windows_sys_core::PCSTR, messagelength: u32, style: super::super::UI::WindowsAndMessaging::MESSAGEBOX_STYLE, timeout: u32, presponse: *mut super::super::UI::WindowsAndMessaging::MESSAGEBOX_RESULT, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn WTSSendMessageA(hserver: super::super::Foundation::HANDLE, sessionid: u32, ptitle: ::windows_core_sys::PCSTR, titlelength: u32, pmessage: ::windows_core_sys::PCSTR, messagelength: u32, style: super::super::UI::WindowsAndMessaging::MESSAGEBOX_STYLE, timeout: u32, presponse: *mut super::super::UI::WindowsAndMessaging::MESSAGEBOX_RESULT, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_UI_WindowsAndMessaging"))]
-    pub fn WTSSendMessageW(hserver: super::super::Foundation::HANDLE, sessionid: u32, ptitle: ::windows_sys_core::PCWSTR, titlelength: u32, pmessage: ::windows_sys_core::PCWSTR, messagelength: u32, style: super::super::UI::WindowsAndMessaging::MESSAGEBOX_STYLE, timeout: u32, presponse: *mut super::super::UI::WindowsAndMessaging::MESSAGEBOX_RESULT, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn WTSSendMessageW(hserver: super::super::Foundation::HANDLE, sessionid: u32, ptitle: ::windows_core_sys::PCWSTR, titlelength: u32, pmessage: ::windows_core_sys::PCWSTR, messagelength: u32, style: super::super::UI::WindowsAndMessaging::MESSAGEBOX_STYLE, timeout: u32, presponse: *mut super::super::UI::WindowsAndMessaging::MESSAGEBOX_RESULT, bwait: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn WTSSetListenerSecurityA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_sys_core::PCSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> super::super::Foundation::BOOL;
+    pub fn WTSSetListenerSecurityA(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> super::super::Foundation::BOOL;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
-    pub fn WTSSetListenerSecurityW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_sys_core::PCWSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> super::super::Foundation::BOOL;
+    pub fn WTSSetListenerSecurityW(hserver: super::super::Foundation::HANDLE, preserved: *const ::core::ffi::c_void, reserved: u32, plistenername: ::windows_core_sys::PCWSTR, securityinformation: u32, psecuritydescriptor: super::super::Security::PSECURITY_DESCRIPTOR) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSSetRenderHint(prenderhintid: *mut u64, hwndowner: super::super::Foundation::HWND, renderhinttype: u32, cbhintdatalength: u32, phintdata: *const u8) -> ::windows_sys_core::HRESULT;
+    pub fn WTSSetRenderHint(prenderhintid: *mut u64, hwndowner: super::super::Foundation::HWND, renderhinttype: u32, cbhintdatalength: u32, phintdata: *const u8) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSSetUserConfigA(pservername: ::windows_sys_core::PCSTR, pusername: ::windows_sys_core::PCSTR, wtsconfigclass: WTS_CONFIG_CLASS, pbuffer: ::windows_sys_core::PCSTR, datalength: u32) -> super::super::Foundation::BOOL;
+    pub fn WTSSetUserConfigA(pservername: ::windows_core_sys::PCSTR, pusername: ::windows_core_sys::PCSTR, wtsconfigclass: WTS_CONFIG_CLASS, pbuffer: ::windows_core_sys::PCSTR, datalength: u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSSetUserConfigW(pservername: ::windows_sys_core::PCWSTR, pusername: ::windows_sys_core::PCWSTR, wtsconfigclass: WTS_CONFIG_CLASS, pbuffer: ::windows_sys_core::PCWSTR, datalength: u32) -> super::super::Foundation::BOOL;
+    pub fn WTSSetUserConfigW(pservername: ::windows_core_sys::PCWSTR, pusername: ::windows_core_sys::PCWSTR, wtsconfigclass: WTS_CONFIG_CLASS, pbuffer: ::windows_core_sys::PCWSTR, datalength: u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSShutdownSystem(hserver: super::super::Foundation::HANDLE, shutdownflag: u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSStartRemoteControlSessionA(ptargetservername: ::windows_sys_core::PCSTR, targetlogonid: u32, hotkeyvk: u8, hotkeymodifiers: u16) -> super::super::Foundation::BOOL;
+    pub fn WTSStartRemoteControlSessionA(ptargetservername: ::windows_core_sys::PCSTR, targetlogonid: u32, hotkeyvk: u8, hotkeymodifiers: u16) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSStartRemoteControlSessionW(ptargetservername: ::windows_sys_core::PCWSTR, targetlogonid: u32, hotkeyvk: u8, hotkeymodifiers: u16) -> super::super::Foundation::BOOL;
+    pub fn WTSStartRemoteControlSessionW(ptargetservername: ::windows_core_sys::PCWSTR, targetlogonid: u32, hotkeyvk: u8, hotkeymodifiers: u16) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSStopRemoteControlSession(logonid: u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -113,8 +113,8 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSVirtualChannelClose(hchannelhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSVirtualChannelOpen(hserver: super::super::Foundation::HANDLE, sessionid: u32, pvirtualname: ::windows_sys_core::PCSTR) -> HwtsVirtualChannelHandle;
-    pub fn WTSVirtualChannelOpenEx(sessionid: u32, pvirtualname: ::windows_sys_core::PCSTR, flags: u32) -> HwtsVirtualChannelHandle;
+    pub fn WTSVirtualChannelOpen(hserver: super::super::Foundation::HANDLE, sessionid: u32, pvirtualname: ::windows_core_sys::PCSTR) -> HwtsVirtualChannelHandle;
+    pub fn WTSVirtualChannelOpenEx(sessionid: u32, pvirtualname: ::windows_core_sys::PCSTR, flags: u32) -> HwtsVirtualChannelHandle;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSVirtualChannelPurgeInput(hchannelhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
@@ -122,9 +122,9 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSVirtualChannelQuery(hchannelhandle: super::super::Foundation::HANDLE, param1: WTS_VIRTUAL_CLASS, ppbuffer: *mut *mut ::core::ffi::c_void, pbytesreturned: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSVirtualChannelRead(hchannelhandle: super::super::Foundation::HANDLE, timeout: u32, buffer: ::windows_sys_core::PSTR, buffersize: u32, pbytesread: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSVirtualChannelRead(hchannelhandle: super::super::Foundation::HANDLE, timeout: u32, buffer: ::windows_core_sys::PSTR, buffersize: u32, pbytesread: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn WTSVirtualChannelWrite(hchannelhandle: super::super::Foundation::HANDLE, buffer: ::windows_sys_core::PCSTR, length: u32, pbyteswritten: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn WTSVirtualChannelWrite(hchannelhandle: super::super::Foundation::HANDLE, buffer: ::windows_core_sys::PCSTR, length: u32, pbyteswritten: *mut u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WTSWaitSystemEvent(hserver: super::super::Foundation::HANDLE, eventmask: u32, peventflags: *mut u32) -> super::super::Foundation::BOOL;
 }
@@ -140,7 +140,7 @@ pub struct AAAccountingData {
     pub numberOfBytesReceived: i32,
     pub numberOfBytesTransfered: i32,
     pub reasonForDisconnect: super::super::Foundation::BSTR,
-    pub mainSessionId: ::windows_sys_core::GUID,
+    pub mainSessionId: ::windows_core_sys::GUID,
     pub subSessionId: i32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -175,7 +175,7 @@ pub const AA_UNTRUSTED: AATrustClassID = 0i32;
 pub const AA_TRUSTEDUSER_UNTRUSTEDCLIENT: AATrustClassID = 1i32;
 pub const AA_TRUSTEDUSER_TRUSTEDCLIENT: AATrustClassID = 2i32;
 pub const ACQUIRE_TARGET_LOCK_TIMEOUT: u32 = 300000u32;
-pub const ADsTSUserEx: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3806972646, data2: 7803, data3: 19342, data4: [186, 189, 233, 191, 98, 146, 172, 41] };
+pub const ADsTSUserEx: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3806972646, data2: 7803, data3: 19342, data4: [186, 189, 233, 191, 98, 146, 172, 41] };
 #[repr(C)]
 pub struct AE_CURRENT_POSITION {
     pub u64DevicePosition: u64,
@@ -326,8 +326,8 @@ pub const CONNECTION_REQUEST_CANCELLED: CONNECTION_CHANGE_NOTIFICATION = 5i32;
 pub const CONNECTION_REQUEST_LB_COMPLETED: CONNECTION_CHANGE_NOTIFICATION = 6i32;
 pub const CONNECTION_REQUEST_QUERY_PL_COMPLETED: CONNECTION_CHANGE_NOTIFICATION = 7i32;
 pub const CONNECTION_REQUEST_ORCH_COMPLETED: CONNECTION_CHANGE_NOTIFICATION = 8i32;
-pub const CONNECTION_PROPERTY_CURSOR_BLINK_DISABLED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1259668864, data2: 65188, data3: 19772, data4: [157, 228, 116, 51, 166, 102, 24, 247] };
-pub const CONNECTION_PROPERTY_IDLE_TIME_WARNING: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1765769205, data2: 3150, data3: 19735, data4: [184, 224, 31, 112, 50, 94, 93, 88] };
+pub const CONNECTION_PROPERTY_CURSOR_BLINK_DISABLED: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1259668864, data2: 65188, data3: 19772, data4: [157, 228, 116, 51, 166, 102, 24, 247] };
+pub const CONNECTION_PROPERTY_IDLE_TIME_WARNING: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1765769205, data2: 3150, data3: 19735, data4: [184, 224, 31, 112, 50, 94, 93, 88] };
 pub const DISPID_AX_ADMINMESSAGERECEIVED: u32 = 760u32;
 pub const DISPID_AX_AUTORECONNECTED: u32 = 756u32;
 pub const DISPID_AX_AUTORECONNECTING: u32 = 755u32;
@@ -501,16 +501,16 @@ pub const PROVISIONING_PLUGIN: PLUGIN_TYPE = 32i32;
 pub const TASK_PLUGIN: PLUGIN_TYPE = 64i32;
 pub const PRODUCTINFO_COMPANYNAME_LENGTH: u32 = 256u32;
 pub const PRODUCTINFO_PRODUCTID_LENGTH: u32 = 4u32;
-pub const PROPERTY_DYNAMIC_TIME_ZONE_INFORMATION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 215995022, data2: 53433, data3: 19487, data4: [165, 235, 109, 31, 108, 101, 53, 185] };
-pub const PROPERTY_TYPE_ENABLE_UNIVERSAL_APPS_FOR_CUSTOM_SHELL: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3979100122, data2: 13197, data3: 19775, data4: [129, 163, 231, 103, 49, 13, 144, 142] };
-pub const PROPERTY_TYPE_GET_FAST_RECONNECT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1645401943, data2: 67, data3: 18530, data4: [153, 195, 159, 48, 89, 172, 42, 59] };
-pub const PROPERTY_TYPE_GET_FAST_RECONNECT_USER_SID: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 427573882, data2: 309, data3: 19309, data4: [156, 94, 230, 87, 154, 10, 182, 37] };
+pub const PROPERTY_DYNAMIC_TIME_ZONE_INFORMATION: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 215995022, data2: 53433, data3: 19487, data4: [165, 235, 109, 31, 108, 101, 53, 185] };
+pub const PROPERTY_TYPE_ENABLE_UNIVERSAL_APPS_FOR_CUSTOM_SHELL: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3979100122, data2: 13197, data3: 19775, data4: [129, 163, 231, 103, 49, 13, 144, 142] };
+pub const PROPERTY_TYPE_GET_FAST_RECONNECT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1645401943, data2: 67, data3: 18530, data4: [153, 195, 159, 48, 89, 172, 42, 59] };
+pub const PROPERTY_TYPE_GET_FAST_RECONNECT_USER_SID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 427573882, data2: 309, data3: 19309, data4: [156, 94, 230, 87, 154, 10, 182, 37] };
 pub type PVIRTUALCHANNELCLOSE = ::core::option::Option<unsafe extern "system" fn(openhandle: u32) -> u32>;
 #[cfg(feature = "Win32_Foundation")]
 pub type PVIRTUALCHANNELENTRY = ::core::option::Option<unsafe extern "system" fn(pentrypoints: *mut CHANNEL_ENTRY_POINTS) -> super::super::Foundation::BOOL>;
 #[cfg(feature = "Win32_Foundation")]
 pub type PVIRTUALCHANNELINIT = ::core::option::Option<unsafe extern "system" fn(ppinithandle: *mut *mut ::core::ffi::c_void, pchannel: *mut CHANNEL_DEF, channelcount: i32, versionrequested: u32, pchanneliniteventproc: PCHANNEL_INIT_EVENT_FN) -> u32>;
-pub type PVIRTUALCHANNELOPEN = ::core::option::Option<unsafe extern "system" fn(pinithandle: *mut ::core::ffi::c_void, popenhandle: *mut u32, pchannelname: ::windows_sys_core::PCSTR, pchannelopeneventproc: PCHANNEL_OPEN_EVENT_FN) -> u32>;
+pub type PVIRTUALCHANNELOPEN = ::core::option::Option<unsafe extern "system" fn(pinithandle: *mut ::core::ffi::c_void, popenhandle: *mut u32, pchannelname: ::windows_core_sys::PCSTR, pchannelopeneventproc: PCHANNEL_OPEN_EVENT_FN) -> u32>;
 pub type PVIRTUALCHANNELWRITE = ::core::option::Option<unsafe extern "system" fn(openhandle: u32, pdata: *mut ::core::ffi::c_void, datalength: u32, puserdata: *mut ::core::ffi::c_void) -> u32>;
 pub type PasswordEncodingType = i32;
 pub const PasswordEncodingUTF8: PasswordEncodingType = 0i32;
@@ -525,7 +525,7 @@ pub const PortRedirectionDisabled: PolicyAttributeType = 4i32;
 pub const ClipboardRedirectionDisabled: PolicyAttributeType = 5i32;
 pub const PnpRedirectionDisabled: PolicyAttributeType = 6i32;
 pub const AllowOnlySDRServers: PolicyAttributeType = 7i32;
-pub const RDCLIENT_BITMAP_RENDER_SERVICE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3838576843, data2: 37934, data3: 19225, data4: [133, 4, 189, 90, 137, 167, 71, 245] };
+pub const RDCLIENT_BITMAP_RENDER_SERVICE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3838576843, data2: 37934, data3: 19225, data4: [133, 4, 189, 90, 137, 167, 71, 245] };
 pub type RDV_TASK_STATUS = i32;
 pub const RDV_TASK_STATUS_UNKNOWN: RDV_TASK_STATUS = 0i32;
 pub const RDV_TASK_STATUS_SEARCHING: RDV_TASK_STATUS = 1i32;
@@ -792,7 +792,7 @@ pub const STATE_RESET: TSSESSION_STATE = 7i32;
 pub const STATE_DOWN: TSSESSION_STATE = 8i32;
 pub const STATE_INIT: TSSESSION_STATE = 9i32;
 pub const STATE_MAX: TSSESSION_STATE = 10i32;
-pub const TSUserExInterfaces: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 152100097, data2: 57228, data3: 4561, data4: [174, 39, 0, 192, 79, 163, 88, 19] };
+pub const TSUserExInterfaces: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 152100097, data2: 57228, data3: 4561, data4: [174, 39, 0, 192, 79, 163, 88, 19] };
 pub type TS_SB_SORT_BY = i32;
 pub const TS_SB_SORT_BY_NONE: TS_SB_SORT_BY = 0i32;
 pub const TS_SB_SORT_BY_NAME: TS_SB_SORT_BY = 1i32;
@@ -838,7 +838,7 @@ pub const VM_NOTIFY_STATUS_CANCELED: VM_NOTIFY_STATUS = 4i32;
 #[repr(C)]
 pub struct VM_PATCH_INFO {
     pub dwNumEntries: u32,
-    pub pVmNames: *mut ::windows_sys_core::PWSTR,
+    pub pVmNames: *mut ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for VM_PATCH_INFO {}
 impl ::core::clone::Clone for VM_PATCH_INFO {
@@ -945,7 +945,7 @@ pub struct WRDS_CONNECTION_SETTINGS_1 {
     pub ClientSockAddress: WTS_SOCKADDR,
     pub ClientTimeZone: WTS_TIME_ZONE_INFORMATION,
     pub WRdsListenerSettings: WRDS_LISTENER_SETTINGS,
-    pub EventLogActivityId: ::windows_sys_core::GUID,
+    pub EventLogActivityId: ::windows_core_sys::GUID,
     pub ContextSize: u32,
     pub ContextData: *mut u8,
 }
@@ -1041,7 +1041,7 @@ pub const WRDS_PERF_ENABLE_DESKTOP_COMPOSITION: u32 = 256u32;
 pub const WRDS_PERF_ENABLE_ENHANCED_GRAPHICS: u32 = 16u32;
 pub const WRDS_PERF_ENABLE_FONT_SMOOTHING: u32 = 128u32;
 pub const WRDS_PROTOCOL_NAME_LENGTH: u32 = 8u32;
-pub const WRDS_SERVICE_ID_GRAPHICS_GUID: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3533258573, data2: 719, data3: 17024, data4: [140, 72, 22, 36, 180, 79, 135, 6] };
+pub const WRDS_SERVICE_ID_GRAPHICS_GUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3533258573, data2: 719, data3: 17024, data4: [140, 72, 22, 36, 180, 79, 135, 6] };
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub union WRDS_SETTING {
@@ -1932,7 +1932,7 @@ impl ::core::clone::Clone for WTS_POLICY_DATA {
 pub struct WTS_PROCESS_INFOA {
     pub SessionId: u32,
     pub ProcessId: u32,
-    pub pProcessName: ::windows_sys_core::PSTR,
+    pub pProcessName: ::windows_core_sys::PSTR,
     pub pUserSid: super::super::Foundation::PSID,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1948,7 +1948,7 @@ impl ::core::clone::Clone for WTS_PROCESS_INFOA {
 pub struct WTS_PROCESS_INFOW {
     pub SessionId: u32,
     pub ProcessId: u32,
-    pub pProcessName: ::windows_sys_core::PWSTR,
+    pub pProcessName: ::windows_core_sys::PWSTR,
     pub pUserSid: super::super::Foundation::PSID,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -1964,7 +1964,7 @@ impl ::core::clone::Clone for WTS_PROCESS_INFOW {
 pub struct WTS_PROCESS_INFO_EXA {
     pub SessionId: u32,
     pub ProcessId: u32,
-    pub pProcessName: ::windows_sys_core::PSTR,
+    pub pProcessName: ::windows_core_sys::PSTR,
     pub pUserSid: super::super::Foundation::PSID,
     pub NumberOfThreads: u32,
     pub HandleCount: u32,
@@ -1988,7 +1988,7 @@ impl ::core::clone::Clone for WTS_PROCESS_INFO_EXA {
 pub struct WTS_PROCESS_INFO_EXW {
     pub SessionId: u32,
     pub ProcessId: u32,
-    pub pProcessName: ::windows_sys_core::PWSTR,
+    pub pProcessName: ::windows_core_sys::PWSTR,
     pub pUserSid: super::super::Foundation::PSID,
     pub NumberOfThreads: u32,
     pub HandleCount: u32,
@@ -2026,7 +2026,7 @@ pub union WTS_PROPERTY_VALUE_0 {
     pub ulVal: u32,
     pub strVal: WTS_PROPERTY_VALUE_0_1,
     pub bVal: WTS_PROPERTY_VALUE_0_0,
-    pub guidVal: ::windows_sys_core::GUID,
+    pub guidVal: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for WTS_PROPERTY_VALUE_0 {}
 impl ::core::clone::Clone for WTS_PROPERTY_VALUE_0 {
@@ -2037,7 +2037,7 @@ impl ::core::clone::Clone for WTS_PROPERTY_VALUE_0 {
 #[repr(C)]
 pub struct WTS_PROPERTY_VALUE_0_0 {
     pub size: u32,
-    pub pbVal: ::windows_sys_core::PSTR,
+    pub pbVal: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for WTS_PROPERTY_VALUE_0_0 {}
 impl ::core::clone::Clone for WTS_PROPERTY_VALUE_0_0 {
@@ -2048,7 +2048,7 @@ impl ::core::clone::Clone for WTS_PROPERTY_VALUE_0_0 {
 #[repr(C)]
 pub struct WTS_PROPERTY_VALUE_0_1 {
     pub size: u32,
-    pub pstrVal: ::windows_sys_core::PWSTR,
+    pub pstrVal: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for WTS_PROPERTY_VALUE_0_1 {}
 impl ::core::clone::Clone for WTS_PROPERTY_VALUE_0_1 {
@@ -2113,10 +2113,10 @@ impl ::core::clone::Clone for WTS_PROTOCOL_STATUS {
 pub const WTS_PROTOCOL_TYPE_CONSOLE: u32 = 0u32;
 pub const WTS_PROTOCOL_TYPE_ICA: u32 = 1u32;
 pub const WTS_PROTOCOL_TYPE_RDP: u32 = 2u32;
-pub const WTS_QUERY_ALLOWED_INITIAL_APP: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3346864944, data2: 23521, data3: 19563, data4: [160, 225, 189, 109, 46, 92, 159, 204] };
-pub const WTS_QUERY_AUDIOENUM_DLL: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2616523415, data2: 51331, data3: 19498, data4: [128, 171, 90, 57, 201, 175, 0, 219] };
-pub const WTS_QUERY_LOGON_SCREEN_SIZE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2341343207, data2: 2052, data3: 18958, data4: [178, 121, 134, 96, 177, 223, 0, 73] };
-pub const WTS_QUERY_MF_FORMAT_SUPPORT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1099340496, data2: 25394, data3: 19912, data4: [149, 213, 219, 116, 158, 47, 29, 148] };
+pub const WTS_QUERY_ALLOWED_INITIAL_APP: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3346864944, data2: 23521, data3: 19563, data4: [160, 225, 189, 109, 46, 92, 159, 204] };
+pub const WTS_QUERY_AUDIOENUM_DLL: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2616523415, data2: 51331, data3: 19498, data4: [128, 171, 90, 57, 201, 175, 0, 219] };
+pub const WTS_QUERY_LOGON_SCREEN_SIZE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2341343207, data2: 2052, data3: 18958, data4: [178, 121, 134, 96, 177, 223, 0, 73] };
+pub const WTS_QUERY_MF_FORMAT_SUPPORT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1099340496, data2: 25394, data3: 19912, data4: [149, 213, 219, 116, 158, 47, 29, 148] };
 pub type WTS_RCM_DRAIN_STATE = i32;
 pub const WTS_DRAIN_STATE_NONE: WTS_RCM_DRAIN_STATE = 0i32;
 pub const WTS_DRAIN_IN_DRAIN: WTS_RCM_DRAIN_STATE = 1i32;
@@ -2138,7 +2138,7 @@ pub const WTS_SECURITY_SET_INFORMATION: u32 = 2u32;
 pub const WTS_SECURITY_VIRTUAL_CHANNELS: u32 = 8u32;
 #[repr(C)]
 pub struct WTS_SERVER_INFOA {
-    pub pServerName: ::windows_sys_core::PSTR,
+    pub pServerName: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for WTS_SERVER_INFOA {}
 impl ::core::clone::Clone for WTS_SERVER_INFOA {
@@ -2148,7 +2148,7 @@ impl ::core::clone::Clone for WTS_SERVER_INFOA {
 }
 #[repr(C)]
 pub struct WTS_SERVER_INFOW {
-    pub pServerName: ::windows_sys_core::PWSTR,
+    pub pServerName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for WTS_SERVER_INFOW {}
 impl ::core::clone::Clone for WTS_SERVER_INFOW {
@@ -2183,7 +2183,7 @@ impl ::core::clone::Clone for WTS_SESSION_ADDRESS {
 }
 #[repr(C)]
 pub struct WTS_SESSION_ID {
-    pub SessionUniqueGuid: ::windows_sys_core::GUID,
+    pub SessionUniqueGuid: ::windows_core_sys::GUID,
     pub SessionId: u32,
 }
 impl ::core::marker::Copy for WTS_SESSION_ID {}
@@ -2195,7 +2195,7 @@ impl ::core::clone::Clone for WTS_SESSION_ID {
 #[repr(C)]
 pub struct WTS_SESSION_INFOA {
     pub SessionId: u32,
-    pub pWinStationName: ::windows_sys_core::PSTR,
+    pub pWinStationName: ::windows_core_sys::PSTR,
     pub State: WTS_CONNECTSTATE_CLASS,
 }
 impl ::core::marker::Copy for WTS_SESSION_INFOA {}
@@ -2207,7 +2207,7 @@ impl ::core::clone::Clone for WTS_SESSION_INFOA {
 #[repr(C)]
 pub struct WTS_SESSION_INFOW {
     pub SessionId: u32,
-    pub pWinStationName: ::windows_sys_core::PWSTR,
+    pub pWinStationName: ::windows_core_sys::PWSTR,
     pub State: WTS_CONNECTSTATE_CLASS,
 }
 impl ::core::marker::Copy for WTS_SESSION_INFOW {}
@@ -2221,11 +2221,11 @@ pub struct WTS_SESSION_INFO_1A {
     pub ExecEnvId: u32,
     pub State: WTS_CONNECTSTATE_CLASS,
     pub SessionId: u32,
-    pub pSessionName: ::windows_sys_core::PSTR,
-    pub pHostName: ::windows_sys_core::PSTR,
-    pub pUserName: ::windows_sys_core::PSTR,
-    pub pDomainName: ::windows_sys_core::PSTR,
-    pub pFarmName: ::windows_sys_core::PSTR,
+    pub pSessionName: ::windows_core_sys::PSTR,
+    pub pHostName: ::windows_core_sys::PSTR,
+    pub pUserName: ::windows_core_sys::PSTR,
+    pub pDomainName: ::windows_core_sys::PSTR,
+    pub pFarmName: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for WTS_SESSION_INFO_1A {}
 impl ::core::clone::Clone for WTS_SESSION_INFO_1A {
@@ -2238,11 +2238,11 @@ pub struct WTS_SESSION_INFO_1W {
     pub ExecEnvId: u32,
     pub State: WTS_CONNECTSTATE_CLASS,
     pub SessionId: u32,
-    pub pSessionName: ::windows_sys_core::PWSTR,
-    pub pHostName: ::windows_sys_core::PWSTR,
-    pub pUserName: ::windows_sys_core::PWSTR,
-    pub pDomainName: ::windows_sys_core::PWSTR,
-    pub pFarmName: ::windows_sys_core::PWSTR,
+    pub pSessionName: ::windows_core_sys::PWSTR,
+    pub pHostName: ::windows_core_sys::PWSTR,
+    pub pUserName: ::windows_core_sys::PWSTR,
+    pub pDomainName: ::windows_core_sys::PWSTR,
+    pub pFarmName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for WTS_SESSION_INFO_1W {}
 impl ::core::clone::Clone for WTS_SESSION_INFO_1W {
@@ -2415,7 +2415,7 @@ pub const WTS_WSD_LOGOFF: u32 = 1u32;
 pub const WTS_WSD_POWEROFF: u32 = 8u32;
 pub const WTS_WSD_REBOOT: u32 = 4u32;
 pub const WTS_WSD_SHUTDOWN: u32 = 2u32;
-pub const Workspace: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1327365286, data2: 15021, data3: 18657, data4: [132, 6, 75, 194, 26, 80, 29, 124] };
+pub const Workspace: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1327365286, data2: 15021, data3: 18657, data4: [132, 6, 75, 194, 26, 80, 29, 124] };
 pub type _ITSWkspEvents = *mut ::core::ffi::c_void;
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
@@ -2446,7 +2446,7 @@ impl ::core::clone::Clone for _WTS_PRODUCT_INFOW {
 pub struct pluginResource {
     pub alias: [u16; 256],
     pub name: [u16; 256],
-    pub resourceFileContents: ::windows_sys_core::PWSTR,
+    pub resourceFileContents: ::windows_core_sys::PWSTR,
     pub fileExtension: [u16; 256],
     pub resourcePluginType: [u16; 256],
     pub isDiscoverable: u8,
@@ -2467,7 +2467,7 @@ pub struct pluginResource2 {
     pub resourceV1: pluginResource,
     pub pceFileAssocListSize: u32,
     pub fileAssocList: *mut pluginResource2FileAssociation,
-    pub securityDescriptor: ::windows_sys_core::PWSTR,
+    pub securityDescriptor: ::windows_core_sys::PWSTR,
     pub pceFolderListSize: u32,
     pub folderList: *mut *mut u16,
 }

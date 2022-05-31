@@ -1,8 +1,8 @@
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
 pub struct COMDLG_FILTERSPEC {
-    pub pszName: ::windows_sys_core::PCWSTR,
-    pub pszSpec: ::windows_sys_core::PCWSTR,
+    pub pszName: ::windows_core_sys::PCWSTR,
+    pub pszSpec: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for COMDLG_FILTERSPEC {}
 impl ::core::clone::Clone for COMDLG_FILTERSPEC {
@@ -189,7 +189,7 @@ impl ::core::clone::Clone for STRRET {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_UI_Shell_Common\"`*"]
 pub union STRRET_0 {
-    pub pOleStr: ::windows_sys_core::PWSTR,
+    pub pOleStr: ::windows_core_sys::PWSTR,
     pub uOffset: u32,
     pub cStr: [u8; 260],
 }

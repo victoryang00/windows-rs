@@ -3,62 +3,62 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn CfCloseHandle(filehandle: super::super::Foundation::HANDLE);
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
-    pub fn CfConnectSyncRoot(syncrootpath: ::windows_sys_core::PCWSTR, callbacktable: *const CF_CALLBACK_REGISTRATION, callbackcontext: *const ::core::ffi::c_void, connectflags: CF_CONNECT_FLAGS, connectionkey: *mut CF_CONNECTION_KEY) -> ::windows_sys_core::HRESULT;
+    pub fn CfConnectSyncRoot(syncrootpath: ::windows_core_sys::PCWSTR, callbacktable: *const CF_CALLBACK_REGISTRATION, callbackcontext: *const ::core::ffi::c_void, connectflags: CF_CONNECT_FLAGS, connectionkey: *mut CF_CONNECTION_KEY) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CfConvertToPlaceholder(filehandle: super::super::Foundation::HANDLE, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, convertflags: CF_CONVERT_FLAGS, convertusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_sys_core::HRESULT;
+    pub fn CfConvertToPlaceholder(filehandle: super::super::Foundation::HANDLE, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, convertflags: CF_CONVERT_FLAGS, convertusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Storage_FileSystem")]
-    pub fn CfCreatePlaceholders(basedirectorypath: ::windows_sys_core::PCWSTR, placeholderarray: *mut CF_PLACEHOLDER_CREATE_INFO, placeholdercount: u32, createflags: CF_CREATE_FLAGS, entriesprocessed: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn CfCreatePlaceholders(basedirectorypath: ::windows_core_sys::PCWSTR, placeholderarray: *mut CF_PLACEHOLDER_CREATE_INFO, placeholdercount: u32, createflags: CF_CREATE_FLAGS, entriesprocessed: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CfDehydratePlaceholder(filehandle: super::super::Foundation::HANDLE, startingoffset: i64, length: i64, dehydrateflags: CF_DEHYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_sys_core::HRESULT;
-    pub fn CfDisconnectSyncRoot(connectionkey: CF_CONNECTION_KEY) -> ::windows_sys_core::HRESULT;
+    pub fn CfDehydratePlaceholder(filehandle: super::super::Foundation::HANDLE, startingoffset: i64, length: i64, dehydrateflags: CF_DEHYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
+    pub fn CfDisconnectSyncRoot(connectionkey: CF_CONNECTION_KEY) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_CorrelationVector"))]
-    pub fn CfExecute(opinfo: *const CF_OPERATION_INFO, opparams: *mut CF_OPERATION_PARAMETERS) -> ::windows_sys_core::HRESULT;
+    pub fn CfExecute(opinfo: *const CF_OPERATION_INFO, opparams: *mut CF_OPERATION_PARAMETERS) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
-    pub fn CfGetCorrelationVector(filehandle: super::super::Foundation::HANDLE, correlationvector: *mut super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows_sys_core::HRESULT;
+    pub fn CfGetCorrelationVector(filehandle: super::super::Foundation::HANDLE, correlationvector: *mut super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CfGetPlaceholderInfo(filehandle: super::super::Foundation::HANDLE, infoclass: CF_PLACEHOLDER_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn CfGetPlaceholderInfo(filehandle: super::super::Foundation::HANDLE, infoclass: CF_PLACEHOLDER_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CfGetPlaceholderRangeInfo(filehandle: super::super::Foundation::HANDLE, infoclass: CF_PLACEHOLDER_RANGE_INFO_CLASS, startingoffset: i64, length: i64, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn CfGetPlaceholderRangeInfo(filehandle: super::super::Foundation::HANDLE, infoclass: CF_PLACEHOLDER_RANGE_INFO_CLASS, startingoffset: i64, length: i64, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
     pub fn CfGetPlaceholderStateFromAttributeTag(fileattributes: u32, reparsetag: u32) -> CF_PLACEHOLDER_STATE;
     #[cfg(feature = "Win32_Storage_FileSystem")]
     pub fn CfGetPlaceholderStateFromFileInfo(infobuffer: *const ::core::ffi::c_void, infoclass: super::FileSystem::FILE_INFO_BY_HANDLE_CLASS) -> CF_PLACEHOLDER_STATE;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem"))]
     pub fn CfGetPlaceholderStateFromFindData(finddata: *const super::FileSystem::WIN32_FIND_DATAA) -> CF_PLACEHOLDER_STATE;
-    pub fn CfGetPlatformInfo(platformversion: *mut CF_PLATFORM_INFO) -> ::windows_sys_core::HRESULT;
+    pub fn CfGetPlatformInfo(platformversion: *mut CF_PLATFORM_INFO) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CfGetSyncRootInfoByHandle(filehandle: super::super::Foundation::HANDLE, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_sys_core::HRESULT;
-    pub fn CfGetSyncRootInfoByPath(filepath: ::windows_sys_core::PCWSTR, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn CfGetSyncRootInfoByHandle(filehandle: super::super::Foundation::HANDLE, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn CfGetSyncRootInfoByPath(filepath: ::windows_core_sys::PCWSTR, infoclass: CF_SYNC_ROOT_INFO_CLASS, infobuffer: *mut ::core::ffi::c_void, infobufferlength: u32, returnedlength: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CfGetTransferKey(filehandle: super::super::Foundation::HANDLE, transferkey: *mut i64) -> ::windows_sys_core::HRESULT;
+    pub fn CfGetTransferKey(filehandle: super::super::Foundation::HANDLE, transferkey: *mut i64) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
     pub fn CfGetWin32HandleFromProtectedHandle(protectedhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::HANDLE;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CfHydratePlaceholder(filehandle: super::super::Foundation::HANDLE, startingoffset: i64, length: i64, hydrateflags: CF_HYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_sys_core::HRESULT;
+    pub fn CfHydratePlaceholder(filehandle: super::super::Foundation::HANDLE, startingoffset: i64, length: i64, hydrateflags: CF_HYDRATE_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CfOpenFileWithOplock(filepath: ::windows_sys_core::PCWSTR, flags: CF_OPEN_FILE_FLAGS, protectedhandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
-    pub fn CfQuerySyncProviderStatus(connectionkey: CF_CONNECTION_KEY, providerstatus: *mut CF_SYNC_PROVIDER_STATUS) -> ::windows_sys_core::HRESULT;
+    pub fn CfOpenFileWithOplock(filepath: ::windows_core_sys::PCWSTR, flags: CF_OPEN_FILE_FLAGS, protectedhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
+    pub fn CfQuerySyncProviderStatus(connectionkey: CF_CONNECTION_KEY, providerstatus: *mut CF_SYNC_PROVIDER_STATUS) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
     pub fn CfReferenceProtectedHandle(protectedhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::BOOLEAN;
-    pub fn CfRegisterSyncRoot(syncrootpath: ::windows_sys_core::PCWSTR, registration: *const CF_SYNC_REGISTRATION, policies: *const CF_SYNC_POLICIES, registerflags: CF_REGISTER_FLAGS) -> ::windows_sys_core::HRESULT;
+    pub fn CfRegisterSyncRoot(syncrootpath: ::windows_core_sys::PCWSTR, registration: *const CF_SYNC_REGISTRATION, policies: *const CF_SYNC_POLICIES, registerflags: CF_REGISTER_FLAGS) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
     pub fn CfReleaseProtectedHandle(protectedhandle: super::super::Foundation::HANDLE);
     #[cfg(feature = "Win32_Foundation")]
     pub fn CfReleaseTransferKey(filehandle: super::super::Foundation::HANDLE, transferkey: *mut i64);
-    pub fn CfReportProviderProgress(connectionkey: CF_CONNECTION_KEY, transferkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64) -> ::windows_sys_core::HRESULT;
-    pub fn CfReportProviderProgress2(connectionkey: CF_CONNECTION_KEY, transferkey: i64, requestkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64, targetsessionid: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CfReportSyncStatus(syncrootpath: ::windows_sys_core::PCWSTR, syncstatus: *const CF_SYNC_STATUS) -> ::windows_sys_core::HRESULT;
+    pub fn CfReportProviderProgress(connectionkey: CF_CONNECTION_KEY, transferkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64) -> ::windows_core_sys::HRESULT;
+    pub fn CfReportProviderProgress2(connectionkey: CF_CONNECTION_KEY, transferkey: i64, requestkey: i64, providerprogresstotal: i64, providerprogresscompleted: i64, targetsessionid: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CfReportSyncStatus(syncrootpath: ::windows_core_sys::PCWSTR, syncstatus: *const CF_SYNC_STATUS) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CfRevertPlaceholder(filehandle: super::super::Foundation::HANDLE, revertflags: CF_REVERT_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_sys_core::HRESULT;
+    pub fn CfRevertPlaceholder(filehandle: super::super::Foundation::HANDLE, revertflags: CF_REVERT_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
-    pub fn CfSetCorrelationVector(filehandle: super::super::Foundation::HANDLE, correlationvector: *const super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows_sys_core::HRESULT;
+    pub fn CfSetCorrelationVector(filehandle: super::super::Foundation::HANDLE, correlationvector: *const super::super::System::CorrelationVector::CORRELATION_VECTOR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CfSetInSyncState(filehandle: super::super::Foundation::HANDLE, insyncstate: CF_IN_SYNC_STATE, insyncflags: CF_SET_IN_SYNC_FLAGS, insyncusn: *mut i64) -> ::windows_sys_core::HRESULT;
+    pub fn CfSetInSyncState(filehandle: super::super::Foundation::HANDLE, insyncstate: CF_IN_SYNC_STATE, insyncflags: CF_SET_IN_SYNC_FLAGS, insyncusn: *mut i64) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
-    pub fn CfSetPinState(filehandle: super::super::Foundation::HANDLE, pinstate: CF_PIN_STATE, pinflags: CF_SET_PIN_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_sys_core::HRESULT;
-    pub fn CfUnregisterSyncRoot(syncrootpath: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn CfSetPinState(filehandle: super::super::Foundation::HANDLE, pinstate: CF_PIN_STATE, pinflags: CF_SET_PIN_FLAGS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
+    pub fn CfUnregisterSyncRoot(syncrootpath: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Storage_FileSystem", feature = "Win32_System_IO"))]
-    pub fn CfUpdatePlaceholder(filehandle: super::super::Foundation::HANDLE, fsmetadata: *const CF_FS_METADATA, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, dehydraterangearray: *const CF_FILE_RANGE, dehydraterangecount: u32, updateflags: CF_UPDATE_FLAGS, updateusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_sys_core::HRESULT;
-    pub fn CfUpdateSyncProviderStatus(connectionkey: CF_CONNECTION_KEY, providerstatus: CF_SYNC_PROVIDER_STATUS) -> ::windows_sys_core::HRESULT;
+    pub fn CfUpdatePlaceholder(filehandle: super::super::Foundation::HANDLE, fsmetadata: *const CF_FS_METADATA, fileidentity: *const ::core::ffi::c_void, fileidentitylength: u32, dehydraterangearray: *const CF_FILE_RANGE, dehydraterangecount: u32, updateflags: CF_UPDATE_FLAGS, updateusn: *mut i64, overlapped: *mut super::super::System::IO::OVERLAPPED) -> ::windows_core_sys::HRESULT;
+    pub fn CfUpdateSyncProviderStatus(connectionkey: CF_CONNECTION_KEY, providerstatus: CF_SYNC_PROVIDER_STATUS) -> ::windows_core_sys::HRESULT;
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_CorrelationVector"))]
 pub type CF_CALLBACK = ::core::option::Option<unsafe extern "system" fn(callbackinfo: *const CF_CALLBACK_INFO, callbackparameters: *const CF_CALLBACK_PARAMETERS)>;
@@ -100,8 +100,8 @@ pub struct CF_CALLBACK_INFO {
     pub StructSize: u32,
     pub ConnectionKey: CF_CONNECTION_KEY,
     pub CallbackContext: *mut ::core::ffi::c_void,
-    pub VolumeGuidName: ::windows_sys_core::PCWSTR,
-    pub VolumeDosName: ::windows_sys_core::PCWSTR,
+    pub VolumeGuidName: ::windows_core_sys::PCWSTR,
+    pub VolumeDosName: ::windows_core_sys::PCWSTR,
     pub VolumeSerialNumber: u32,
     pub SyncRootFileId: i64,
     pub SyncRootIdentity: *const ::core::ffi::c_void,
@@ -110,7 +110,7 @@ pub struct CF_CALLBACK_INFO {
     pub FileSize: i64,
     pub FileIdentity: *const ::core::ffi::c_void,
     pub FileIdentityLength: u32,
-    pub NormalizedPath: ::windows_sys_core::PCWSTR,
+    pub NormalizedPath: ::windows_core_sys::PCWSTR,
     pub TransferKey: i64,
     pub PriorityHint: u8,
     pub CorrelationVector: *mut super::super::System::CorrelationVector::CORRELATION_VECTOR,
@@ -264,7 +264,7 @@ impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_6 {
 #[repr(C)]
 pub struct CF_CALLBACK_PARAMETERS_0_7 {
     pub Flags: CF_CALLBACK_FETCH_PLACEHOLDERS_FLAGS,
-    pub Pattern: ::windows_sys_core::PCWSTR,
+    pub Pattern: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for CF_CALLBACK_PARAMETERS_0_7 {}
 impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_7 {
@@ -285,7 +285,7 @@ impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_8 {
 #[repr(C)]
 pub struct CF_CALLBACK_PARAMETERS_0_9 {
     pub Flags: CF_CALLBACK_RENAME_COMPLETION_FLAGS,
-    pub SourcePath: ::windows_sys_core::PCWSTR,
+    pub SourcePath: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for CF_CALLBACK_PARAMETERS_0_9 {}
 impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_9 {
@@ -296,7 +296,7 @@ impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_9 {
 #[repr(C)]
 pub struct CF_CALLBACK_PARAMETERS_0_10 {
     pub Flags: CF_CALLBACK_RENAME_FLAGS,
-    pub TargetPath: ::windows_sys_core::PCWSTR,
+    pub TargetPath: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for CF_CALLBACK_PARAMETERS_0_10 {}
 impl ::core::clone::Clone for CF_CALLBACK_PARAMETERS_0_10 {
@@ -713,12 +713,12 @@ pub const CF_PLACEHOLDER_CREATE_FLAG_ALWAYS_FULL: CF_PLACEHOLDER_CREATE_FLAGS = 
 #[repr(C)]
 #[cfg(feature = "Win32_Storage_FileSystem")]
 pub struct CF_PLACEHOLDER_CREATE_INFO {
-    pub RelativeFileName: ::windows_sys_core::PCWSTR,
+    pub RelativeFileName: ::windows_core_sys::PCWSTR,
     pub FsMetadata: CF_FS_METADATA,
     pub FileIdentity: *const ::core::ffi::c_void,
     pub FileIdentityLength: u32,
     pub Flags: CF_PLACEHOLDER_CREATE_FLAGS,
-    pub Result: ::windows_sys_core::HRESULT,
+    pub Result: ::windows_core_sys::HRESULT,
     pub CreateUsn: i64,
 }
 #[cfg(feature = "Win32_Storage_FileSystem")]
@@ -823,10 +823,10 @@ impl ::core::clone::Clone for CF_POPULATION_POLICY_PRIMARY_USHORT {
 pub struct CF_PROCESS_INFO {
     pub StructSize: u32,
     pub ProcessId: u32,
-    pub ImagePath: ::windows_sys_core::PCWSTR,
-    pub PackageName: ::windows_sys_core::PCWSTR,
-    pub ApplicationId: ::windows_sys_core::PCWSTR,
-    pub CommandLine: ::windows_sys_core::PCWSTR,
+    pub ImagePath: ::windows_core_sys::PCWSTR,
+    pub PackageName: ::windows_core_sys::PCWSTR,
+    pub ApplicationId: ::windows_core_sys::PCWSTR,
+    pub CommandLine: ::windows_core_sys::PCWSTR,
     pub SessionId: u32,
 }
 impl ::core::marker::Copy for CF_PROCESS_INFO {}
@@ -880,13 +880,13 @@ pub const CF_PROVIDER_STATUS_ERROR: CF_SYNC_PROVIDER_STATUS = 3221225474u32;
 #[repr(C)]
 pub struct CF_SYNC_REGISTRATION {
     pub StructSize: u32,
-    pub ProviderName: ::windows_sys_core::PCWSTR,
-    pub ProviderVersion: ::windows_sys_core::PCWSTR,
+    pub ProviderName: ::windows_core_sys::PCWSTR,
+    pub ProviderVersion: ::windows_core_sys::PCWSTR,
     pub SyncRootIdentity: *const ::core::ffi::c_void,
     pub SyncRootIdentityLength: u32,
     pub FileIdentity: *const ::core::ffi::c_void,
     pub FileIdentityLength: u32,
-    pub ProviderId: ::windows_sys_core::GUID,
+    pub ProviderId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for CF_SYNC_REGISTRATION {}
 impl ::core::clone::Clone for CF_SYNC_REGISTRATION {

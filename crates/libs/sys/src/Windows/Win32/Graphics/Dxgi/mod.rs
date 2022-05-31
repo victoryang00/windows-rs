@@ -3,15 +3,15 @@ pub mod Common;
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-    pub fn CreateDXGIFactory(riid: *const ::windows_sys_core::GUID, ppfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn CreateDXGIFactory(riid: *const ::windows_core_sys::GUID, ppfactory: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-    pub fn CreateDXGIFactory1(riid: *const ::windows_sys_core::GUID, ppfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn CreateDXGIFactory1(riid: *const ::windows_core_sys::GUID, ppfactory: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-    pub fn CreateDXGIFactory2(flags: u32, riid: *const ::windows_sys_core::GUID, ppfactory: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn CreateDXGIFactory2(flags: u32, riid: *const ::windows_core_sys::GUID, ppfactory: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-    pub fn DXGIDeclareAdapterRemovalSupport() -> ::windows_sys_core::HRESULT;
+    pub fn DXGIDeclareAdapterRemovalSupport() -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-    pub fn DXGIGetDebugInterface1(flags: u32, riid: *const ::windows_sys_core::GUID, pdebug: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn DXGIGetDebugInterface1(flags: u32, riid: *const ::windows_core_sys::GUID, pdebug: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`, `\"Win32_Foundation\"`*"]
@@ -148,12 +148,12 @@ pub const DXGI_COMPUTE_PREEMPTION_THREAD_BOUNDARY: DXGI_COMPUTE_PREEMPTION_GRANU
 pub const DXGI_COMPUTE_PREEMPTION_INSTRUCTION_BOUNDARY: DXGI_COMPUTE_PREEMPTION_GRANULARITY = 4i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
 pub const DXGI_CREATE_FACTORY_DEBUG: u32 = 1u32;
-pub const DXGI_DEBUG_ALL: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3834307203, data2: 55936, data3: 18699, data4: [135, 230, 67, 233, 169, 207, 218, 8] };
-pub const DXGI_DEBUG_APP: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 114126337, data2: 16921, data3: 20157, data4: [135, 9, 39, 237, 35, 54, 12, 98] };
+pub const DXGI_DEBUG_ALL: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3834307203, data2: 55936, data3: 18699, data4: [135, 230, 67, 233, 169, 207, 218, 8] };
+pub const DXGI_DEBUG_APP: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 114126337, data2: 16921, data3: 20157, data4: [135, 9, 39, 237, 35, 54, 12, 98] };
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
 pub const DXGI_DEBUG_BINARY_VERSION: u32 = 1u32;
-pub const DXGI_DEBUG_DX: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 902682620, data2: 5042, data3: 16925, data4: [165, 215, 126, 68, 81, 40, 125, 100] };
-pub const DXGI_DEBUG_DXGI: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 634247844, data2: 45510, data3: 18401, data4: [172, 62, 152, 135, 91, 90, 46, 42] };
+pub const DXGI_DEBUG_DX: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 902682620, data2: 5042, data3: 16925, data4: [165, 215, 126, 68, 81, 40, 125, 100] };
+pub const DXGI_DEBUG_DXGI: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 634247844, data2: 45510, data3: 18401, data4: [172, 62, 152, 135, 91, 90, 46, 42] };
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
 pub type DXGI_DEBUG_RLO_FLAGS = u32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
@@ -196,69 +196,69 @@ pub const DXGI_ENUM_MODES_SCALING: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
 pub const DXGI_ENUM_MODES_STEREO: u32 = 4u32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_ACCESS_DENIED: ::windows_sys_core::HRESULT = -2005270485i32;
+pub const DXGI_ERROR_ACCESS_DENIED: ::windows_core_sys::HRESULT = -2005270485i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_ACCESS_LOST: ::windows_sys_core::HRESULT = -2005270490i32;
+pub const DXGI_ERROR_ACCESS_LOST: ::windows_core_sys::HRESULT = -2005270490i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_ALREADY_EXISTS: ::windows_sys_core::HRESULT = -2005270474i32;
+pub const DXGI_ERROR_ALREADY_EXISTS: ::windows_core_sys::HRESULT = -2005270474i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_CACHE_CORRUPT: ::windows_sys_core::HRESULT = -2005270477i32;
+pub const DXGI_ERROR_CACHE_CORRUPT: ::windows_core_sys::HRESULT = -2005270477i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_CACHE_FULL: ::windows_sys_core::HRESULT = -2005270476i32;
+pub const DXGI_ERROR_CACHE_FULL: ::windows_core_sys::HRESULT = -2005270476i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_CACHE_HASH_COLLISION: ::windows_sys_core::HRESULT = -2005270475i32;
+pub const DXGI_ERROR_CACHE_HASH_COLLISION: ::windows_core_sys::HRESULT = -2005270475i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_CANNOT_PROTECT_CONTENT: ::windows_sys_core::HRESULT = -2005270486i32;
+pub const DXGI_ERROR_CANNOT_PROTECT_CONTENT: ::windows_core_sys::HRESULT = -2005270486i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_DEVICE_HUNG: ::windows_sys_core::HRESULT = -2005270522i32;
+pub const DXGI_ERROR_DEVICE_HUNG: ::windows_core_sys::HRESULT = -2005270522i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_DEVICE_REMOVED: ::windows_sys_core::HRESULT = -2005270523i32;
+pub const DXGI_ERROR_DEVICE_REMOVED: ::windows_core_sys::HRESULT = -2005270523i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_DEVICE_RESET: ::windows_sys_core::HRESULT = -2005270521i32;
+pub const DXGI_ERROR_DEVICE_RESET: ::windows_core_sys::HRESULT = -2005270521i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_DRIVER_INTERNAL_ERROR: ::windows_sys_core::HRESULT = -2005270496i32;
+pub const DXGI_ERROR_DRIVER_INTERNAL_ERROR: ::windows_core_sys::HRESULT = -2005270496i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_DYNAMIC_CODE_POLICY_VIOLATION: ::windows_sys_core::HRESULT = -2005270479i32;
+pub const DXGI_ERROR_DYNAMIC_CODE_POLICY_VIOLATION: ::windows_core_sys::HRESULT = -2005270479i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_FRAME_STATISTICS_DISJOINT: ::windows_sys_core::HRESULT = -2005270517i32;
+pub const DXGI_ERROR_FRAME_STATISTICS_DISJOINT: ::windows_core_sys::HRESULT = -2005270517i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE: ::windows_sys_core::HRESULT = -2005270516i32;
+pub const DXGI_ERROR_GRAPHICS_VIDPN_SOURCE_IN_USE: ::windows_core_sys::HRESULT = -2005270516i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_HW_PROTECTION_OUTOFMEMORY: ::windows_sys_core::HRESULT = -2005270480i32;
+pub const DXGI_ERROR_HW_PROTECTION_OUTOFMEMORY: ::windows_core_sys::HRESULT = -2005270480i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_INVALID_CALL: ::windows_sys_core::HRESULT = -2005270527i32;
+pub const DXGI_ERROR_INVALID_CALL: ::windows_core_sys::HRESULT = -2005270527i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_MODE_CHANGE_IN_PROGRESS: ::windows_sys_core::HRESULT = -2005270491i32;
+pub const DXGI_ERROR_MODE_CHANGE_IN_PROGRESS: ::windows_core_sys::HRESULT = -2005270491i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_MORE_DATA: ::windows_sys_core::HRESULT = -2005270525i32;
+pub const DXGI_ERROR_MORE_DATA: ::windows_core_sys::HRESULT = -2005270525i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_NAME_ALREADY_EXISTS: ::windows_sys_core::HRESULT = -2005270484i32;
+pub const DXGI_ERROR_NAME_ALREADY_EXISTS: ::windows_core_sys::HRESULT = -2005270484i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_NONEXCLUSIVE: ::windows_sys_core::HRESULT = -2005270495i32;
+pub const DXGI_ERROR_NONEXCLUSIVE: ::windows_core_sys::HRESULT = -2005270495i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_NON_COMPOSITED_UI: ::windows_sys_core::HRESULT = -2005270478i32;
+pub const DXGI_ERROR_NON_COMPOSITED_UI: ::windows_core_sys::HRESULT = -2005270478i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_NOT_CURRENT: ::windows_sys_core::HRESULT = -2005270482i32;
+pub const DXGI_ERROR_NOT_CURRENT: ::windows_core_sys::HRESULT = -2005270482i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_NOT_CURRENTLY_AVAILABLE: ::windows_sys_core::HRESULT = -2005270494i32;
+pub const DXGI_ERROR_NOT_CURRENTLY_AVAILABLE: ::windows_core_sys::HRESULT = -2005270494i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_NOT_FOUND: ::windows_sys_core::HRESULT = -2005270526i32;
+pub const DXGI_ERROR_NOT_FOUND: ::windows_core_sys::HRESULT = -2005270526i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED: ::windows_sys_core::HRESULT = -2005270493i32;
+pub const DXGI_ERROR_REMOTE_CLIENT_DISCONNECTED: ::windows_core_sys::HRESULT = -2005270493i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_REMOTE_OUTOFMEMORY: ::windows_sys_core::HRESULT = -2005270492i32;
+pub const DXGI_ERROR_REMOTE_OUTOFMEMORY: ::windows_core_sys::HRESULT = -2005270492i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_RESTRICT_TO_OUTPUT_STALE: ::windows_sys_core::HRESULT = -2005270487i32;
+pub const DXGI_ERROR_RESTRICT_TO_OUTPUT_STALE: ::windows_core_sys::HRESULT = -2005270487i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_SDK_COMPONENT_MISSING: ::windows_sys_core::HRESULT = -2005270483i32;
+pub const DXGI_ERROR_SDK_COMPONENT_MISSING: ::windows_core_sys::HRESULT = -2005270483i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_SESSION_DISCONNECTED: ::windows_sys_core::HRESULT = -2005270488i32;
+pub const DXGI_ERROR_SESSION_DISCONNECTED: ::windows_core_sys::HRESULT = -2005270488i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_UNSUPPORTED: ::windows_sys_core::HRESULT = -2005270524i32;
+pub const DXGI_ERROR_UNSUPPORTED: ::windows_core_sys::HRESULT = -2005270524i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_WAIT_TIMEOUT: ::windows_sys_core::HRESULT = -2005270489i32;
+pub const DXGI_ERROR_WAIT_TIMEOUT: ::windows_core_sys::HRESULT = -2005270489i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
-pub const DXGI_ERROR_WAS_STILL_DRAWING: ::windows_sys_core::HRESULT = -2005270518i32;
+pub const DXGI_ERROR_WAS_STILL_DRAWING: ::windows_core_sys::HRESULT = -2005270518i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
 pub type DXGI_FEATURE = i32;
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
@@ -403,7 +403,7 @@ impl ::core::clone::Clone for DXGI_INFO_QUEUE_FILTER_DESC {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_Dxgi\"`*"]
 pub struct DXGI_INFO_QUEUE_MESSAGE {
-    pub Producer: ::windows_sys_core::GUID,
+    pub Producer: ::windows_core_sys::GUID,
     pub Category: DXGI_INFO_QUEUE_MESSAGE_CATEGORY,
     pub Severity: DXGI_INFO_QUEUE_MESSAGE_SEVERITY,
     pub ID: i32,

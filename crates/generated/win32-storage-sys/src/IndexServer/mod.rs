@@ -1,11 +1,11 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_System_Com_StructuredStorage")]
-    pub fn BindIFilterFromStorage(pstg: super::super::System::Com::StructuredStorage::IStorage, punkouter: ::windows_sys_core::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn BindIFilterFromStorage(pstg: super::super::System::Com::StructuredStorage::IStorage, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_Com")]
-    pub fn BindIFilterFromStream(pstm: super::super::System::Com::IStream, punkouter: ::windows_sys_core::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
-    pub fn LoadIFilter(pwcspath: ::windows_sys_core::PCWSTR, punkouter: ::windows_sys_core::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
-    pub fn LoadIFilterEx(pwcspath: ::windows_sys_core::PCWSTR, dwflags: u32, riid: *const ::windows_sys_core::GUID, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
+    pub fn BindIFilterFromStream(pstm: super::super::System::Com::IStream, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn LoadIFilter(pwcspath: ::windows_core_sys::PCWSTR, punkouter: ::windows_core_sys::IUnknown, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn LoadIFilterEx(pwcspath: ::windows_core_sys::PCWSTR, dwflags: u32, riid: *const ::windows_core_sys::GUID, ppiunk: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
 }
 pub type CHUNKSTATE = i32;
 pub const CHUNK_TEXT: CHUNKSTATE = 1i32;
@@ -92,8 +92,8 @@ impl ::core::clone::Clone for DBID {
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub union DBID_0 {
-    pub guid: ::windows_sys_core::GUID,
-    pub pguid: *mut ::windows_sys_core::GUID,
+    pub guid: ::windows_core_sys::GUID,
+    pub pguid: *mut ::windows_core_sys::GUID,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 impl ::core::marker::Copy for DBID_0 {}
@@ -106,7 +106,7 @@ impl ::core::clone::Clone for DBID_0 {
 #[repr(C)]
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 pub union DBID_1 {
-    pub pwszName: ::windows_sys_core::PWSTR,
+    pub pwszName: ::windows_core_sys::PWSTR,
     pub ulPropid: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -135,8 +135,8 @@ impl ::core::clone::Clone for DBID {
 #[repr(C, packed(2))]
 #[cfg(target_arch = "x86")]
 pub union DBID_0 {
-    pub guid: ::windows_sys_core::GUID,
-    pub pguid: *mut ::windows_sys_core::GUID,
+    pub guid: ::windows_core_sys::GUID,
+    pub pguid: *mut ::windows_core_sys::GUID,
 }
 #[cfg(target_arch = "x86")]
 impl ::core::marker::Copy for DBID_0 {}
@@ -149,7 +149,7 @@ impl ::core::clone::Clone for DBID_0 {
 #[repr(C, packed(2))]
 #[cfg(target_arch = "x86")]
 pub union DBID_1 {
-    pub pwszName: ::windows_sys_core::PWSTR,
+    pub pwszName: ::windows_core_sys::PWSTR,
     pub ulPropid: u32,
 }
 #[cfg(target_arch = "x86")]
@@ -209,23 +209,23 @@ impl ::core::clone::Clone for FILTERREGION {
         *self
     }
 }
-pub const FILTER_E_ACCESS: ::windows_sys_core::HRESULT = -2147215613i32;
-pub const FILTER_E_EMBEDDING_UNAVAILABLE: ::windows_sys_core::HRESULT = -2147215609i32;
-pub const FILTER_E_END_OF_CHUNKS: ::windows_sys_core::HRESULT = -2147215616i32;
-pub const FILTER_E_LINK_UNAVAILABLE: ::windows_sys_core::HRESULT = -2147215608i32;
-pub const FILTER_E_NO_MORE_TEXT: ::windows_sys_core::HRESULT = -2147215615i32;
-pub const FILTER_E_NO_MORE_VALUES: ::windows_sys_core::HRESULT = -2147215614i32;
-pub const FILTER_E_NO_TEXT: ::windows_sys_core::HRESULT = -2147215611i32;
-pub const FILTER_E_NO_VALUES: ::windows_sys_core::HRESULT = -2147215610i32;
-pub const FILTER_E_PASSWORD: ::windows_sys_core::HRESULT = -2147215605i32;
-pub const FILTER_E_UNKNOWNFORMAT: ::windows_sys_core::HRESULT = -2147215604i32;
-pub const FILTER_S_LAST_TEXT: ::windows_sys_core::HRESULT = 268041i32;
-pub const FILTER_S_LAST_VALUES: ::windows_sys_core::HRESULT = 268042i32;
-pub const FILTER_W_MONIKER_CLIPPED: ::windows_sys_core::HRESULT = 268036i32;
+pub const FILTER_E_ACCESS: ::windows_core_sys::HRESULT = -2147215613i32;
+pub const FILTER_E_EMBEDDING_UNAVAILABLE: ::windows_core_sys::HRESULT = -2147215609i32;
+pub const FILTER_E_END_OF_CHUNKS: ::windows_core_sys::HRESULT = -2147215616i32;
+pub const FILTER_E_LINK_UNAVAILABLE: ::windows_core_sys::HRESULT = -2147215608i32;
+pub const FILTER_E_NO_MORE_TEXT: ::windows_core_sys::HRESULT = -2147215615i32;
+pub const FILTER_E_NO_MORE_VALUES: ::windows_core_sys::HRESULT = -2147215614i32;
+pub const FILTER_E_NO_TEXT: ::windows_core_sys::HRESULT = -2147215611i32;
+pub const FILTER_E_NO_VALUES: ::windows_core_sys::HRESULT = -2147215610i32;
+pub const FILTER_E_PASSWORD: ::windows_core_sys::HRESULT = -2147215605i32;
+pub const FILTER_E_UNKNOWNFORMAT: ::windows_core_sys::HRESULT = -2147215604i32;
+pub const FILTER_S_LAST_TEXT: ::windows_core_sys::HRESULT = 268041i32;
+pub const FILTER_S_LAST_VALUES: ::windows_core_sys::HRESULT = 268042i32;
+pub const FILTER_W_MONIKER_CLIPPED: ::windows_core_sys::HRESULT = 268036i32;
 #[repr(C)]
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
 pub struct FULLPROPSPEC {
-    pub guidPropSet: ::windows_sys_core::GUID,
+    pub guidPropSet: ::windows_core_sys::GUID,
     pub psProperty: super::super::System::Com::StructuredStorage::PROPSPEC,
 }
 #[cfg(feature = "Win32_System_Com_StructuredStorage")]
@@ -273,7 +273,7 @@ pub const MSIDXSPROP_SERVER_VERSION: u32 = 9u32;
 pub const MSIDXSPROP_SERVER_WINVER_MAJOR: u32 = 10u32;
 pub const MSIDXSPROP_SERVER_WINVER_MINOR: u32 = 11u32;
 pub const MSIDXSPROP_WHEREID: u32 = 8u32;
-pub const NOT_AN_ERROR: ::windows_sys_core::HRESULT = 524288i32;
+pub const NOT_AN_ERROR: ::windows_core_sys::HRESULT = 524288i32;
 pub const PID_FILENAME: u32 = 100u32;
 pub const PROPID_QUERY_ALL: u32 = 6u32;
 pub const PROPID_QUERY_HITCOUNT: u32 = 4u32;

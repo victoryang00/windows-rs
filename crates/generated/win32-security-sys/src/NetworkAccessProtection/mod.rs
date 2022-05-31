@@ -3,7 +3,7 @@ pub const ComponentTypeEnforcementClientSoH: u32 = 1u32;
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct CorrelationId {
-    pub connId: ::windows_sys_core::GUID,
+    pub connId: ::windows_core_sys::GUID,
     pub timeStamp: super::super::Foundation::FILETIME,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -17,7 +17,7 @@ impl ::core::clone::Clone for CorrelationId {
 #[repr(C)]
 pub struct CountedString {
     pub length: u16,
-    pub string: ::windows_sys_core::PWSTR,
+    pub string: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for CountedString {}
 impl ::core::clone::Clone for CountedString {
@@ -130,8 +130,8 @@ pub struct NapComponentRegistrationInfo {
     pub description: CountedString,
     pub version: CountedString,
     pub vendorName: CountedString,
-    pub infoClsid: ::windows_sys_core::GUID,
-    pub configClsid: ::windows_sys_core::GUID,
+    pub infoClsid: ::windows_core_sys::GUID,
+    pub configClsid: ::windows_core_sys::GUID,
     pub registrationDate: super::super::Foundation::FILETIME,
     pub componentType: u32,
 }
@@ -180,7 +180,7 @@ pub const remoteConfigTypeConfigBlob: RemoteConfigurationType = 2i32;
 #[repr(C)]
 pub struct ResultCodes {
     pub count: u16,
-    pub results: *mut ::windows_sys_core::HRESULT,
+    pub results: *mut ::windows_core_sys::HRESULT,
 }
 impl ::core::marker::Copy for ResultCodes {}
 impl ::core::clone::Clone for ResultCodes {

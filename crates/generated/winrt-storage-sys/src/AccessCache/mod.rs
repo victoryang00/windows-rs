@@ -15,8 +15,8 @@ impl ::core::clone::Clone for AccessCacheOptions {
 }
 #[repr(C)]
 pub struct AccessListEntry {
-    pub Token: ::windows_sys_core::HSTRING,
-    pub Metadata: ::windows_sys_core::HSTRING,
+    pub Token: ::windows_core_sys::HSTRING,
+    pub Metadata: ::windows_core_sys::HSTRING,
 }
 impl ::core::marker::Copy for AccessListEntry {}
 impl ::core::clone::Clone for AccessListEntry {

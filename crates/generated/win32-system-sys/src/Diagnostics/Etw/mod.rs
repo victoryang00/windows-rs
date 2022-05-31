@@ -2,39 +2,39 @@
 extern "system" {
     pub fn CloseTrace(tracehandle: u64) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ControlTraceA(tracehandle: u64, instancename: ::windows_sys_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32;
+    pub fn ControlTraceA(tracehandle: u64, instancename: ::windows_core_sys::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ControlTraceW(tracehandle: u64, instancename: ::windows_sys_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32;
+    pub fn ControlTraceW(tracehandle: u64, instancename: ::windows_core_sys::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES, controlcode: EVENT_TRACE_CONTROL) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn CreateTraceInstanceId(reghandle: super::super::super::Foundation::HANDLE, instinfo: *mut EVENT_INSTANCE_INFO) -> u32;
-    pub fn CveEventWrite(cveid: ::windows_sys_core::PCWSTR, additionaldetails: ::windows_sys_core::PCWSTR) -> i32;
-    pub fn EnableTrace(enable: u32, enableflag: u32, enablelevel: u32, controlguid: *const ::windows_sys_core::GUID, tracehandle: u64) -> u32;
-    pub fn EnableTraceEx(providerid: *const ::windows_sys_core::GUID, sourceid: *const ::windows_sys_core::GUID, tracehandle: u64, isenabled: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, enableproperty: u32, enablefilterdesc: *const EVENT_FILTER_DESCRIPTOR) -> u32;
-    pub fn EnableTraceEx2(tracehandle: u64, providerid: *const ::windows_sys_core::GUID, controlcode: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, timeout: u32, enableparameters: *const ENABLE_TRACE_PARAMETERS) -> u32;
+    pub fn CveEventWrite(cveid: ::windows_core_sys::PCWSTR, additionaldetails: ::windows_core_sys::PCWSTR) -> i32;
+    pub fn EnableTrace(enable: u32, enableflag: u32, enablelevel: u32, controlguid: *const ::windows_core_sys::GUID, tracehandle: u64) -> u32;
+    pub fn EnableTraceEx(providerid: *const ::windows_core_sys::GUID, sourceid: *const ::windows_core_sys::GUID, tracehandle: u64, isenabled: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, enableproperty: u32, enablefilterdesc: *const EVENT_FILTER_DESCRIPTOR) -> u32;
+    pub fn EnableTraceEx2(tracehandle: u64, providerid: *const ::windows_core_sys::GUID, controlcode: u32, level: u8, matchanykeyword: u64, matchallkeyword: u64, timeout: u32, enableparameters: *const ENABLE_TRACE_PARAMETERS) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn EnumerateTraceGuids(guidpropertiesarray: *mut *mut TRACE_GUID_PROPERTIES, propertyarraycount: u32, guidcount: *mut u32) -> u32;
     pub fn EnumerateTraceGuidsEx(tracequeryinfoclass: TRACE_QUERY_INFO_CLASS, inbuffer: *const ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, returnlength: *mut u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn EventAccessControl(guid: *const ::windows_sys_core::GUID, operation: u32, sid: super::super::super::Foundation::PSID, rights: u32, allowordeny: super::super::super::Foundation::BOOLEAN) -> u32;
+    pub fn EventAccessControl(guid: *const ::windows_core_sys::GUID, operation: u32, sid: super::super::super::Foundation::PSID, rights: u32, allowordeny: super::super::super::Foundation::BOOLEAN) -> u32;
     #[cfg(feature = "Win32_Security")]
-    pub fn EventAccessQuery(guid: *const ::windows_sys_core::GUID, buffer: super::super::super::Security::PSECURITY_DESCRIPTOR, buffersize: *mut u32) -> u32;
-    pub fn EventAccessRemove(guid: *const ::windows_sys_core::GUID) -> u32;
-    pub fn EventActivityIdControl(controlcode: u32, activityid: *mut ::windows_sys_core::GUID) -> u32;
+    pub fn EventAccessQuery(guid: *const ::windows_core_sys::GUID, buffer: super::super::super::Security::PSECURITY_DESCRIPTOR, buffersize: *mut u32) -> u32;
+    pub fn EventAccessRemove(guid: *const ::windows_core_sys::GUID) -> u32;
+    pub fn EventActivityIdControl(controlcode: u32, activityid: *mut ::windows_core_sys::GUID) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn EventEnabled(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR) -> super::super::super::Foundation::BOOLEAN;
     #[cfg(feature = "Win32_Foundation")]
     pub fn EventProviderEnabled(reghandle: u64, level: u8, keyword: u64) -> super::super::super::Foundation::BOOLEAN;
-    pub fn EventRegister(providerid: *const ::windows_sys_core::GUID, enablecallback: PENABLECALLBACK, callbackcontext: *const ::core::ffi::c_void, reghandle: *mut u64) -> u32;
+    pub fn EventRegister(providerid: *const ::windows_core_sys::GUID, enablecallback: PENABLECALLBACK, callbackcontext: *const ::core::ffi::c_void, reghandle: *mut u64) -> u32;
     pub fn EventSetInformation(reghandle: u64, informationclass: EVENT_INFO_CLASS, eventinformation: *const ::core::ffi::c_void, informationlength: u32) -> u32;
     pub fn EventUnregister(reghandle: u64) -> u32;
     pub fn EventWrite(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, userdatacount: u32, userdata: *const EVENT_DATA_DESCRIPTOR) -> u32;
-    pub fn EventWriteEx(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, filter: u64, flags: u32, activityid: *const ::windows_sys_core::GUID, relatedactivityid: *const ::windows_sys_core::GUID, userdatacount: u32, userdata: *const EVENT_DATA_DESCRIPTOR) -> u32;
-    pub fn EventWriteString(reghandle: u64, level: u8, keyword: u64, string: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn EventWriteTransfer(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, activityid: *const ::windows_sys_core::GUID, relatedactivityid: *const ::windows_sys_core::GUID, userdatacount: u32, userdata: *const EVENT_DATA_DESCRIPTOR) -> u32;
+    pub fn EventWriteEx(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, filter: u64, flags: u32, activityid: *const ::windows_core_sys::GUID, relatedactivityid: *const ::windows_core_sys::GUID, userdatacount: u32, userdata: *const EVENT_DATA_DESCRIPTOR) -> u32;
+    pub fn EventWriteString(reghandle: u64, level: u8, keyword: u64, string: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn EventWriteTransfer(reghandle: u64, eventdescriptor: *const EVENT_DESCRIPTOR, activityid: *const ::windows_core_sys::GUID, relatedactivityid: *const ::windows_core_sys::GUID, userdatacount: u32, userdata: *const EVENT_DATA_DESCRIPTOR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn FlushTraceA(tracehandle: u64, instancename: ::windows_sys_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+    pub fn FlushTraceA(tracehandle: u64, instancename: ::windows_core_sys::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn FlushTraceW(tracehandle: u64, instancename: ::windows_sys_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+    pub fn FlushTraceW(tracehandle: u64, instancename: ::windows_core_sys::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
     pub fn GetTraceEnableFlags(tracehandle: u64) -> u32;
     pub fn GetTraceEnableLevel(tracehandle: u64) -> u8;
     pub fn GetTraceLoggerHandle(buffer: *const ::core::ffi::c_void) -> u64;
@@ -49,69 +49,69 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn QueryAllTracesW(propertyarray: *mut *mut EVENT_TRACE_PROPERTIES, propertyarraycount: u32, loggercount: *mut u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn QueryTraceA(tracehandle: u64, instancename: ::windows_sys_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+    pub fn QueryTraceA(tracehandle: u64, instancename: ::windows_core_sys::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
     pub fn QueryTraceProcessingHandle(processinghandle: u64, informationclass: ETW_PROCESS_HANDLE_INFO_TYPE, inbuffer: *const ::core::ffi::c_void, inbuffersize: u32, outbuffer: *mut ::core::ffi::c_void, outbuffersize: u32, returnlength: *mut u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn QueryTraceW(tracehandle: u64, instancename: ::windows_sys_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+    pub fn QueryTraceW(tracehandle: u64, instancename: ::windows_core_sys::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterTraceGuidsA(requestaddress: WMIDPREQUEST, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows_sys_core::GUID, guidcount: u32, traceguidreg: *const TRACE_GUID_REGISTRATION, mofimagepath: ::windows_sys_core::PCSTR, mofresourcename: ::windows_sys_core::PCSTR, registrationhandle: *mut u64) -> u32;
+    pub fn RegisterTraceGuidsA(requestaddress: WMIDPREQUEST, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows_core_sys::GUID, guidcount: u32, traceguidreg: *const TRACE_GUID_REGISTRATION, mofimagepath: ::windows_core_sys::PCSTR, mofresourcename: ::windows_core_sys::PCSTR, registrationhandle: *mut u64) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RegisterTraceGuidsW(requestaddress: WMIDPREQUEST, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows_sys_core::GUID, guidcount: u32, traceguidreg: *const TRACE_GUID_REGISTRATION, mofimagepath: ::windows_sys_core::PCWSTR, mofresourcename: ::windows_sys_core::PCWSTR, registrationhandle: *mut u64) -> u32;
-    pub fn RemoveTraceCallback(pguid: *const ::windows_sys_core::GUID) -> u32;
-    pub fn SetTraceCallback(pguid: *const ::windows_sys_core::GUID, eventcallback: PEVENT_CALLBACK) -> u32;
+    pub fn RegisterTraceGuidsW(requestaddress: WMIDPREQUEST, requestcontext: *const ::core::ffi::c_void, controlguid: *const ::windows_core_sys::GUID, guidcount: u32, traceguidreg: *const TRACE_GUID_REGISTRATION, mofimagepath: ::windows_core_sys::PCWSTR, mofresourcename: ::windows_core_sys::PCWSTR, registrationhandle: *mut u64) -> u32;
+    pub fn RemoveTraceCallback(pguid: *const ::windows_core_sys::GUID) -> u32;
+    pub fn SetTraceCallback(pguid: *const ::windows_core_sys::GUID, eventcallback: PEVENT_CALLBACK) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn StartTraceA(tracehandle: *mut u64, instancename: ::windows_sys_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+    pub fn StartTraceA(tracehandle: *mut u64, instancename: ::windows_core_sys::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn StartTraceW(tracehandle: *mut u64, instancename: ::windows_sys_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+    pub fn StartTraceW(tracehandle: *mut u64, instancename: ::windows_core_sys::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn StopTraceA(tracehandle: u64, instancename: ::windows_sys_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+    pub fn StopTraceA(tracehandle: u64, instancename: ::windows_core_sys::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn StopTraceW(tracehandle: u64, instancename: ::windows_sys_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+    pub fn StopTraceW(tracehandle: u64, instancename: ::windows_core_sys::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn TdhAggregatePayloadFilters(payloadfiltercount: u32, payloadfilterptrs: *const *const ::core::ffi::c_void, eventmatchallflags: *const super::super::super::Foundation::BOOLEAN, eventfilterdescriptor: *mut EVENT_FILTER_DESCRIPTOR) -> u32;
     pub fn TdhCleanupPayloadEventFilterDescriptor(eventfilterdescriptor: *mut EVENT_FILTER_DESCRIPTOR) -> u32;
     pub fn TdhCloseDecodingHandle(handle: TDH_HANDLE) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TdhCreatePayloadFilter(providerguid: *const ::windows_sys_core::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, eventmatchany: super::super::super::Foundation::BOOLEAN, payloadpredicatecount: u32, payloadpredicates: *const PAYLOAD_FILTER_PREDICATE, payloadfilter: *mut *mut ::core::ffi::c_void) -> u32;
+    pub fn TdhCreatePayloadFilter(providerguid: *const ::windows_core_sys::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, eventmatchany: super::super::super::Foundation::BOOLEAN, payloadpredicatecount: u32, payloadpredicates: *const PAYLOAD_FILTER_PREDICATE, payloadfilter: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn TdhDeletePayloadFilter(payloadfilter: *mut *mut ::core::ffi::c_void) -> u32;
-    pub fn TdhEnumerateManifestProviderEvents(providerguid: *const ::windows_sys_core::GUID, buffer: *mut PROVIDER_EVENT_INFO, buffersize: *mut u32) -> u32;
-    pub fn TdhEnumerateProviderFieldInformation(pguid: *const ::windows_sys_core::GUID, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32;
-    pub fn TdhEnumerateProviderFilters(guid: *const ::windows_sys_core::GUID, tdhcontextcount: u32, tdhcontext: *const TDH_CONTEXT, filtercount: *mut u32, buffer: *mut *mut PROVIDER_FILTER_INFO, buffersize: *mut u32) -> u32;
+    pub fn TdhEnumerateManifestProviderEvents(providerguid: *const ::windows_core_sys::GUID, buffer: *mut PROVIDER_EVENT_INFO, buffersize: *mut u32) -> u32;
+    pub fn TdhEnumerateProviderFieldInformation(pguid: *const ::windows_core_sys::GUID, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32;
+    pub fn TdhEnumerateProviderFilters(guid: *const ::windows_core_sys::GUID, tdhcontextcount: u32, tdhcontext: *const TDH_CONTEXT, filtercount: *mut u32, buffer: *mut *mut PROVIDER_FILTER_INFO, buffersize: *mut u32) -> u32;
     pub fn TdhEnumerateProviders(pbuffer: *mut PROVIDER_ENUMERATION_INFO, pbuffersize: *mut u32) -> u32;
     pub fn TdhEnumerateProvidersForDecodingSource(filter: DECODING_SOURCE, buffer: *mut PROVIDER_ENUMERATION_INFO, buffersize: u32, bufferrequired: *mut u32) -> u32;
-    pub fn TdhFormatProperty(eventinfo: *const TRACE_EVENT_INFO, mapinfo: *const EVENT_MAP_INFO, pointersize: u32, propertyintype: u16, propertyouttype: u16, propertylength: u16, userdatalength: u16, userdata: *const u8, buffersize: *mut u32, buffer: ::windows_sys_core::PWSTR, userdataconsumed: *mut u16) -> u32;
+    pub fn TdhFormatProperty(eventinfo: *const TRACE_EVENT_INFO, mapinfo: *const EVENT_MAP_INFO, pointersize: u32, propertyintype: u16, propertyouttype: u16, propertylength: u16, userdatalength: u16, userdata: *const u8, buffersize: *mut u32, buffer: ::windows_core_sys::PWSTR, userdataconsumed: *mut u16) -> u32;
     pub fn TdhGetDecodingParameter(handle: TDH_HANDLE, tdhcontext: *mut TDH_CONTEXT) -> u32;
     pub fn TdhGetEventInformation(event: *const EVENT_RECORD, tdhcontextcount: u32, tdhcontext: *const TDH_CONTEXT, buffer: *mut TRACE_EVENT_INFO, buffersize: *mut u32) -> u32;
-    pub fn TdhGetEventMapInformation(pevent: *const EVENT_RECORD, pmapname: ::windows_sys_core::PCWSTR, pbuffer: *mut EVENT_MAP_INFO, pbuffersize: *mut u32) -> u32;
-    pub fn TdhGetManifestEventInformation(providerguid: *const ::windows_sys_core::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, buffer: *mut TRACE_EVENT_INFO, buffersize: *mut u32) -> u32;
+    pub fn TdhGetEventMapInformation(pevent: *const EVENT_RECORD, pmapname: ::windows_core_sys::PCWSTR, pbuffer: *mut EVENT_MAP_INFO, pbuffersize: *mut u32) -> u32;
+    pub fn TdhGetManifestEventInformation(providerguid: *const ::windows_core_sys::GUID, eventdescriptor: *const EVENT_DESCRIPTOR, buffer: *mut TRACE_EVENT_INFO, buffersize: *mut u32) -> u32;
     pub fn TdhGetProperty(pevent: *const EVENT_RECORD, tdhcontextcount: u32, ptdhcontext: *const TDH_CONTEXT, propertydatacount: u32, ppropertydata: *const PROPERTY_DATA_DESCRIPTOR, buffersize: u32, pbuffer: *mut u8) -> u32;
     pub fn TdhGetPropertySize(pevent: *const EVENT_RECORD, tdhcontextcount: u32, ptdhcontext: *const TDH_CONTEXT, propertydatacount: u32, ppropertydata: *const PROPERTY_DATA_DESCRIPTOR, ppropertysize: *mut u32) -> u32;
     pub fn TdhGetWppMessage(handle: TDH_HANDLE, eventrecord: *const EVENT_RECORD, buffersize: *mut u32, buffer: *mut u8) -> u32;
-    pub fn TdhGetWppProperty(handle: TDH_HANDLE, eventrecord: *const EVENT_RECORD, propertyname: ::windows_sys_core::PCWSTR, buffersize: *mut u32, buffer: *mut u8) -> u32;
-    pub fn TdhLoadManifest(manifest: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn TdhLoadManifestFromBinary(binarypath: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn TdhGetWppProperty(handle: TDH_HANDLE, eventrecord: *const EVENT_RECORD, propertyname: ::windows_core_sys::PCWSTR, buffersize: *mut u32, buffer: *mut u8) -> u32;
+    pub fn TdhLoadManifest(manifest: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn TdhLoadManifestFromBinary(binarypath: ::windows_core_sys::PCWSTR) -> u32;
     pub fn TdhLoadManifestFromMemory(pdata: *const ::core::ffi::c_void, cbdata: u32) -> u32;
     pub fn TdhOpenDecodingHandle(handle: *mut TDH_HANDLE) -> u32;
-    pub fn TdhQueryProviderFieldInformation(pguid: *const ::windows_sys_core::GUID, eventfieldvalue: u64, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32;
+    pub fn TdhQueryProviderFieldInformation(pguid: *const ::windows_core_sys::GUID, eventfieldvalue: u64, eventfieldtype: EVENT_FIELD_TYPE, pbuffer: *mut PROVIDER_FIELD_INFOARRAY, pbuffersize: *mut u32) -> u32;
     pub fn TdhSetDecodingParameter(handle: TDH_HANDLE, tdhcontext: *const TDH_CONTEXT) -> u32;
-    pub fn TdhUnloadManifest(manifest: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn TdhUnloadManifest(manifest: ::windows_core_sys::PCWSTR) -> u32;
     pub fn TdhUnloadManifestFromMemory(pdata: *const ::core::ffi::c_void, cbdata: u32) -> u32;
     pub fn TraceEvent(tracehandle: u64, eventtrace: *const EVENT_TRACE_HEADER) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn TraceEventInstance(tracehandle: u64, eventtrace: *const EVENT_INSTANCE_HEADER, instinfo: *const EVENT_INSTANCE_INFO, parentinstinfo: *const EVENT_INSTANCE_INFO) -> u32;
-    pub fn TraceMessage(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows_sys_core::GUID, messagenumber: u16) -> u32;
-    pub fn TraceMessageVa(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows_sys_core::GUID, messagenumber: u16, messagearglist: *const i8) -> u32;
+    pub fn TraceMessage(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows_core_sys::GUID, messagenumber: u16) -> u32;
+    pub fn TraceMessageVa(loggerhandle: u64, messageflags: TRACE_MESSAGE_FLAGS, messageguid: *const ::windows_core_sys::GUID, messagenumber: u16, messagearglist: *const i8) -> u32;
     pub fn TraceQueryInformation(sessionhandle: u64, informationclass: TRACE_QUERY_INFO_CLASS, traceinformation: *mut ::core::ffi::c_void, informationlength: u32, returnlength: *mut u32) -> u32;
     pub fn TraceSetInformation(sessionhandle: u64, informationclass: TRACE_QUERY_INFO_CLASS, traceinformation: *const ::core::ffi::c_void, informationlength: u32) -> u32;
     pub fn UnregisterTraceGuids(registrationhandle: u64) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn UpdateTraceA(tracehandle: u64, instancename: ::windows_sys_core::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+    pub fn UpdateTraceA(tracehandle: u64, instancename: ::windows_core_sys::PCSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn UpdateTraceW(tracehandle: u64, instancename: ::windows_sys_core::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
+    pub fn UpdateTraceW(tracehandle: u64, instancename: ::windows_core_sys::PCWSTR, properties: *mut EVENT_TRACE_PROPERTIES) -> u32;
 }
 #[repr(C)]
 pub struct CLASSIC_EVENT_ID {
-    pub EventGuid: ::windows_sys_core::GUID,
+    pub EventGuid: ::windows_core_sys::GUID,
     pub Type: u8,
     pub Reserved: [u8; 7],
 }
@@ -121,8 +121,8 @@ impl ::core::clone::Clone for CLASSIC_EVENT_ID {
         *self
     }
 }
-pub const CLSID_TraceRelogger: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2067822893, data2: 1535, data3: 17604, data4: [144, 88, 244, 64, 199, 31, 23, 212] };
-pub const CTraceRelogger: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2067822893, data2: 1535, data3: 17604, data4: [144, 88, 244, 64, 199, 31, 23, 212] };
+pub const CLSID_TraceRelogger: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2067822893, data2: 1535, data3: 17604, data4: [144, 88, 244, 64, 199, 31, 23, 212] };
+pub const CTraceRelogger: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2067822893, data2: 1535, data3: 17604, data4: [144, 88, 244, 64, 199, 31, 23, 212] };
 pub type DECODING_SOURCE = i32;
 pub const DecodingSourceXMLFile: DECODING_SOURCE = 0i32;
 pub const DecodingSourceWbem: DECODING_SOURCE = 1i32;
@@ -131,7 +131,7 @@ pub const DecodingSourceTlg: DECODING_SOURCE = 3i32;
 pub const DecodingSourceMax: DECODING_SOURCE = 4i32;
 pub const DIAG_LOGGER_NAMEA: &str = "DiagLog";
 pub const DIAG_LOGGER_NAMEW: &str = "DiagLog";
-pub const DefaultTraceSecurityGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 135381423, data2: 31239, data3: 18950, data4: [130, 237, 134, 148, 85, 205, 247, 19] };
+pub const DefaultTraceSecurityGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 135381423, data2: 31239, data3: 18950, data4: [130, 237, 134, 148, 85, 205, 247, 19] };
 pub type ENABLECALLBACK_ENABLED_STATE = u32;
 pub const EVENT_CONTROL_CODE_DISABLE_PROVIDER: ENABLECALLBACK_ENABLED_STATE = 0u32;
 pub const EVENT_CONTROL_CODE_ENABLE_PROVIDER: ENABLECALLBACK_ENABLED_STATE = 1u32;
@@ -141,7 +141,7 @@ pub struct ENABLE_TRACE_PARAMETERS {
     pub Version: u32,
     pub EnableProperty: u32,
     pub ControlFlags: u32,
-    pub SourceId: ::windows_sys_core::GUID,
+    pub SourceId: ::windows_core_sys::GUID,
     pub EnableFilterDesc: *mut EVENT_FILTER_DESCRIPTOR,
     pub FilterDescCount: u32,
 }
@@ -156,7 +156,7 @@ pub struct ENABLE_TRACE_PARAMETERS_V1 {
     pub Version: u32,
     pub EnableProperty: u32,
     pub ControlFlags: u32,
-    pub SourceId: ::windows_sys_core::GUID,
+    pub SourceId: ::windows_core_sys::GUID,
     pub EnableFilterDesc: *mut EVENT_FILTER_DESCRIPTOR,
 }
 impl ::core::marker::Copy for ENABLE_TRACE_PARAMETERS_V1 {}
@@ -275,8 +275,8 @@ pub const ETW_SIZET_TYPE_VALUE: u32 = 106u32;
 pub const ETW_STRING_TYPE_VALUE: u32 = 2u32;
 #[repr(C)]
 pub struct ETW_TRACE_PARTITION_INFORMATION {
-    pub PartitionId: ::windows_sys_core::GUID,
-    pub ParentId: ::windows_sys_core::GUID,
+    pub PartitionId: ::windows_core_sys::GUID,
+    pub ParentId: ::windows_core_sys::GUID,
     pub QpcOffsetFromRoot: i64,
     pub PartitionType: u32,
 }
@@ -290,8 +290,8 @@ impl ::core::clone::Clone for ETW_TRACE_PARTITION_INFORMATION {
 pub struct ETW_TRACE_PARTITION_INFORMATION_V2 {
     pub QpcOffsetFromRoot: i64,
     pub PartitionType: u32,
-    pub PartitionId: ::windows_sys_core::PWSTR,
-    pub ParentId: ::windows_sys_core::PWSTR,
+    pub PartitionId: ::windows_core_sys::PWSTR,
+    pub ParentId: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for ETW_TRACE_PARTITION_INFORMATION_V2 {}
 impl ::core::clone::Clone for ETW_TRACE_PARTITION_INFORMATION_V2 {
@@ -396,7 +396,7 @@ impl ::core::clone::Clone for EVENT_EXTENDED_ITEM_EVENT_KEY {
 pub struct EVENT_EXTENDED_ITEM_INSTANCE {
     pub InstanceId: u32,
     pub ParentInstanceId: u32,
-    pub ParentGuid: ::windows_sys_core::GUID,
+    pub ParentGuid: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for EVENT_EXTENDED_ITEM_INSTANCE {}
 impl ::core::clone::Clone for EVENT_EXTENDED_ITEM_INSTANCE {
@@ -436,7 +436,7 @@ impl ::core::clone::Clone for EVENT_EXTENDED_ITEM_PROCESS_START_KEY {
 }
 #[repr(C)]
 pub struct EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {
-    pub RelatedActivityId: ::windows_sys_core::GUID,
+    pub RelatedActivityId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {}
 impl ::core::clone::Clone for EVENT_EXTENDED_ITEM_RELATED_ACTIVITYID {
@@ -607,10 +607,10 @@ pub struct EVENT_HEADER {
     pub ThreadId: u32,
     pub ProcessId: u32,
     pub TimeStamp: i64,
-    pub ProviderId: ::windows_sys_core::GUID,
+    pub ProviderId: ::windows_core_sys::GUID,
     pub EventDescriptor: EVENT_DESCRIPTOR,
     pub Anonymous: EVENT_HEADER_0,
-    pub ActivityId: ::windows_sys_core::GUID,
+    pub ActivityId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for EVENT_HEADER {}
 impl ::core::clone::Clone for EVENT_HEADER {
@@ -995,7 +995,7 @@ pub struct EVENT_TRACE {
     pub Header: EVENT_TRACE_HEADER,
     pub InstanceId: u32,
     pub ParentInstanceId: u32,
-    pub ParentGuid: ::windows_sys_core::GUID,
+    pub ParentGuid: ::windows_core_sys::GUID,
     pub MofData: *mut ::core::ffi::c_void,
     pub MofLength: u32,
     pub Anonymous: EVENT_TRACE_0,
@@ -1131,7 +1131,7 @@ impl ::core::clone::Clone for EVENT_TRACE_HEADER_1_0 {
 }
 #[repr(C)]
 pub union EVENT_TRACE_HEADER_2 {
-    pub Guid: ::windows_sys_core::GUID,
+    pub Guid: ::windows_core_sys::GUID,
     pub GuidPtr: u64,
 }
 impl ::core::marker::Copy for EVENT_TRACE_HEADER_2 {}
@@ -1178,8 +1178,8 @@ pub const EVENT_TRACE_INDEPENDENT_SESSION_MODE: u32 = 134217728u32;
 #[repr(C)]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 pub struct EVENT_TRACE_LOGFILEA {
-    pub LogFileName: ::windows_sys_core::PSTR,
-    pub LoggerName: ::windows_sys_core::PSTR,
+    pub LogFileName: ::windows_core_sys::PSTR,
+    pub LoggerName: ::windows_core_sys::PSTR,
     pub CurrentTime: i64,
     pub BuffersRead: u32,
     pub Anonymous1: EVENT_TRACE_LOGFILEA_0,
@@ -1232,8 +1232,8 @@ impl ::core::clone::Clone for EVENT_TRACE_LOGFILEA_1 {
 #[repr(C)]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 pub struct EVENT_TRACE_LOGFILEW {
-    pub LogFileName: ::windows_sys_core::PWSTR,
-    pub LoggerName: ::windows_sys_core::PWSTR,
+    pub LogFileName: ::windows_core_sys::PWSTR,
+    pub LoggerName: ::windows_core_sys::PWSTR,
     pub CurrentTime: i64,
     pub BuffersRead: u32,
     pub Anonymous1: EVENT_TRACE_LOGFILEW_0,
@@ -1557,8 +1557,8 @@ pub const EVENT_TRACE_USE_PAGED_MEMORY: u32 = 16777216u32;
 pub const EVENT_TRACE_USE_PROCTIME: u32 = 1u32;
 pub const EVENT_WRITE_FLAG_INPRIVATE: u32 = 2u32;
 pub const EVENT_WRITE_FLAG_NO_FAULTING: u32 = 1u32;
-pub const EventTraceConfigGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 25508453, data2: 16783, data3: 20278, data4: [174, 252, 220, 15, 29, 47, 210, 53] };
-pub const EventTraceGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1761466624, data2: 19006, data3: 4561, data4: [132, 244, 0, 0, 248, 4, 100, 227] };
+pub const EventTraceConfigGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 25508453, data2: 16783, data3: 20278, data4: [174, 252, 220, 15, 29, 47, 210, 53] };
+pub const EventTraceGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1761466624, data2: 19006, data3: 4561, data4: [132, 244, 0, 0, 248, 4, 100, 227] };
 pub const GLOBAL_LOGGER_NAME: &str = "GlobalLogger";
 pub const GLOBAL_LOGGER_NAMEA: &str = "GlobalLogger";
 pub const GLOBAL_LOGGER_NAMEW: &str = "GlobalLogger";
@@ -1613,9 +1613,9 @@ impl ::core::clone::Clone for OFFSETINSTANCEDATAANDLENGTH {
 }
 #[repr(C)]
 pub struct PAYLOAD_FILTER_PREDICATE {
-    pub FieldName: ::windows_sys_core::PWSTR,
+    pub FieldName: ::windows_core_sys::PWSTR,
     pub CompareOp: u16,
-    pub Value: ::windows_sys_core::PWSTR,
+    pub Value: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for PAYLOAD_FILTER_PREDICATE {}
 impl ::core::clone::Clone for PAYLOAD_FILTER_PREDICATE {
@@ -1638,7 +1638,7 @@ pub const PAYLOADFIELD_DOESNTCONTAIN: PAYLOAD_OPERATOR = 21i32;
 pub const PAYLOADFIELD_IS: PAYLOAD_OPERATOR = 30i32;
 pub const PAYLOADFIELD_ISNOT: PAYLOAD_OPERATOR = 31i32;
 pub const PAYLOADFIELD_INVALID: PAYLOAD_OPERATOR = 32i32;
-pub type PENABLECALLBACK = ::core::option::Option<unsafe extern "system" fn(sourceid: *const ::windows_sys_core::GUID, isenabled: ENABLECALLBACK_ENABLED_STATE, level: u8, matchanykeyword: u64, matchallkeyword: u64, filterdata: *const EVENT_FILTER_DESCRIPTOR, callbackcontext: *mut ::core::ffi::c_void)>;
+pub type PENABLECALLBACK = ::core::option::Option<unsafe extern "system" fn(sourceid: *const ::windows_core_sys::GUID, isenabled: ENABLECALLBACK_ENABLED_STATE, level: u8, matchanykeyword: u64, matchallkeyword: u64, filterdata: *const EVENT_FILTER_DESCRIPTOR, callbackcontext: *mut ::core::ffi::c_void)>;
 pub type PEVENT_CALLBACK = ::core::option::Option<unsafe extern "system" fn(pevent: *mut EVENT_TRACE)>;
 pub type PEVENT_RECORD_CALLBACK = ::core::option::Option<unsafe extern "system" fn(eventrecord: *mut EVENT_RECORD)>;
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -1747,7 +1747,7 @@ impl ::core::clone::Clone for PROVIDER_FILTER_INFO {
         *self
     }
 }
-pub const PrivateLoggerNotificationGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 899001180, data2: 1066, data3: 19598, data4: [185, 66, 45, 5, 155, 254, 177, 177] };
+pub const PrivateLoggerNotificationGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 899001180, data2: 1066, data3: 19598, data4: [185, 66, 45, 5, 155, 254, 177, 177] };
 pub const SYSTEM_ALPC_KW_GENERAL: u64 = 1u64;
 pub const SYSTEM_CONFIG_KW_GRAPHICS: u64 = 2u64;
 pub const SYSTEM_CONFIG_KW_NETWORK: u64 = 8u64;
@@ -1843,24 +1843,24 @@ pub const SYSTEM_SCHEDULER_KW_XSCHEDULER: u64 = 1u64;
 pub const SYSTEM_SYSCALL_KW_GENERAL: u64 = 1u64;
 pub const SYSTEM_TIMER_KW_CLOCK_TIMER: u64 = 2u64;
 pub const SYSTEM_TIMER_KW_GENERAL: u64 = 1u64;
-pub const SystemAlpcProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4240030383, data2: 58665, data3: 18816, data4: [146, 233, 206, 209, 166, 170, 223, 223] };
-pub const SystemConfigProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4277381302, data2: 12685, data3: 19303, data4: [169, 106, 59, 15, 107, 143, 24, 254] };
-pub const SystemCpuProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3334809183, data2: 60136, data3: 18000, data4: [170, 228, 157, 72, 96, 61, 133, 16] };
-pub const SystemHypervisorProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3136948010, data2: 37258, data3: 19437, data4: [182, 34, 188, 21, 32, 151, 9, 143] };
-pub const SystemInterruptProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3569085975, data2: 46405, data3: 18568, data4: [133, 139, 116, 65, 105, 1, 91, 37] };
-pub const SystemIoFilterProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4224750435, data2: 40482, data3: 18017, data4: [184, 191, 231, 163, 75, 83, 91, 140] };
-pub const SystemIoProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1029456867, data2: 3868, data3: 16898, data4: [184, 23, 23, 76, 0, 112, 220, 121] };
-pub const SystemLockProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1914560467, data2: 56012, data3: 19998, data4: [178, 106, 162, 203, 49, 212, 112, 90] };
-pub const SystemMemoryProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2190838953, data2: 46797, data3: 18424, data4: [163, 168, 3, 174, 133, 164, 188, 36] };
-pub const SystemObjectProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4273828960, data2: 15645, data3: 18411, data4: [175, 73, 201, 238, 177, 225, 70, 242] };
-pub const SystemPowerProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3241445450, data2: 13013, data3: 17544, data4: [128, 229, 20, 237, 122, 187, 130, 105] };
-pub const SystemProcessProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 354375132, data2: 18045, data3: 18207, data4: [131, 181, 95, 136, 157, 70, 255, 102] };
-pub const SystemProfileProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3219850020, data2: 7406, data3: 18799, data4: [164, 9, 42, 194, 180, 138, 99, 34] };
-pub const SystemRegistryProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 370502617, data2: 64180, data3: 19706, data4: [162, 50, 137, 209, 9, 144, 88, 227] };
-pub const SystemSchedulerProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1503275638, data2: 19857, data3: 18704, data4: [154, 199, 125, 51, 242, 233, 122, 108] };
-pub const SystemSyscallProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1128433399, data2: 28443, data3: 17851, data4: [179, 126, 149, 246, 35, 4, 108, 124] };
-pub const SystemTimerProviderGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1325798760, data2: 57877, data3: 18847, data4: [171, 46, 237, 160, 174, 137, 10, 91] };
-pub const SystemTraceControlGuid: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2659273389, data2: 12804, data3: 4562, data4: [154, 130, 0, 96, 8, 168, 105, 57] };
+pub const SystemAlpcProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4240030383, data2: 58665, data3: 18816, data4: [146, 233, 206, 209, 166, 170, 223, 223] };
+pub const SystemConfigProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4277381302, data2: 12685, data3: 19303, data4: [169, 106, 59, 15, 107, 143, 24, 254] };
+pub const SystemCpuProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3334809183, data2: 60136, data3: 18000, data4: [170, 228, 157, 72, 96, 61, 133, 16] };
+pub const SystemHypervisorProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3136948010, data2: 37258, data3: 19437, data4: [182, 34, 188, 21, 32, 151, 9, 143] };
+pub const SystemInterruptProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3569085975, data2: 46405, data3: 18568, data4: [133, 139, 116, 65, 105, 1, 91, 37] };
+pub const SystemIoFilterProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4224750435, data2: 40482, data3: 18017, data4: [184, 191, 231, 163, 75, 83, 91, 140] };
+pub const SystemIoProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1029456867, data2: 3868, data3: 16898, data4: [184, 23, 23, 76, 0, 112, 220, 121] };
+pub const SystemLockProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1914560467, data2: 56012, data3: 19998, data4: [178, 106, 162, 203, 49, 212, 112, 90] };
+pub const SystemMemoryProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2190838953, data2: 46797, data3: 18424, data4: [163, 168, 3, 174, 133, 164, 188, 36] };
+pub const SystemObjectProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4273828960, data2: 15645, data3: 18411, data4: [175, 73, 201, 238, 177, 225, 70, 242] };
+pub const SystemPowerProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3241445450, data2: 13013, data3: 17544, data4: [128, 229, 20, 237, 122, 187, 130, 105] };
+pub const SystemProcessProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 354375132, data2: 18045, data3: 18207, data4: [131, 181, 95, 136, 157, 70, 255, 102] };
+pub const SystemProfileProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3219850020, data2: 7406, data3: 18799, data4: [164, 9, 42, 194, 180, 138, 99, 34] };
+pub const SystemRegistryProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 370502617, data2: 64180, data3: 19706, data4: [162, 50, 137, 209, 9, 144, 88, 227] };
+pub const SystemSchedulerProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1503275638, data2: 19857, data3: 18704, data4: [154, 199, 125, 51, 242, 233, 122, 108] };
+pub const SystemSyscallProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1128433399, data2: 28443, data3: 17851, data4: [179, 126, 149, 246, 35, 4, 108, 124] };
+pub const SystemTimerProviderGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1325798760, data2: 57877, data3: 18847, data4: [171, 46, 237, 160, 174, 137, 10, 91] };
+pub const SystemTraceControlGuid: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2659273389, data2: 12804, data3: 4562, data4: [154, 130, 0, 96, 8, 168, 105, 57] };
 #[repr(C)]
 pub struct TDH_CONTEXT {
     pub ParameterValue: u64,
@@ -1913,8 +1913,8 @@ impl ::core::clone::Clone for TRACE_ENABLE_INFO {
 }
 #[repr(C)]
 pub struct TRACE_EVENT_INFO {
-    pub ProviderGuid: ::windows_sys_core::GUID,
-    pub EventGuid: ::windows_sys_core::GUID,
+    pub ProviderGuid: ::windows_core_sys::GUID,
+    pub EventGuid: ::windows_core_sys::GUID,
     pub EventDescriptor: EVENT_DESCRIPTOR,
     pub DecodingSource: DECODING_SOURCE,
     pub ProviderNameOffset: u32,
@@ -1997,7 +1997,7 @@ impl ::core::clone::Clone for TRACE_GUID_INFO {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct TRACE_GUID_PROPERTIES {
-    pub Guid: ::windows_sys_core::GUID,
+    pub Guid: ::windows_core_sys::GUID,
     pub GuidType: u32,
     pub LoggerId: u32,
     pub EnableLevel: u32,
@@ -2015,7 +2015,7 @@ impl ::core::clone::Clone for TRACE_GUID_PROPERTIES {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct TRACE_GUID_REGISTRATION {
-    pub Guid: *const ::windows_sys_core::GUID,
+    pub Guid: *const ::windows_core_sys::GUID,
     pub RegHandle: super::super::super::Foundation::HANDLE,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2055,8 +2055,8 @@ pub struct TRACE_LOGFILE_HEADER {
     pub LogFileMode: u32,
     pub BuffersWritten: u32,
     pub Anonymous2: TRACE_LOGFILE_HEADER_1,
-    pub LoggerName: ::windows_sys_core::PWSTR,
-    pub LogFileName: ::windows_sys_core::PWSTR,
+    pub LoggerName: ::windows_core_sys::PWSTR,
+    pub LogFileName: ::windows_core_sys::PWSTR,
     pub TimeZone: super::super::Time::TIME_ZONE_INFORMATION,
     pub BootTime: i64,
     pub PerfFreq: i64,
@@ -2105,7 +2105,7 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER_0_0 {
 #[repr(C)]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 pub union TRACE_LOGFILE_HEADER_1 {
-    pub LogInstanceGuid: ::windows_sys_core::GUID,
+    pub LogInstanceGuid: ::windows_core_sys::GUID,
     pub Anonymous: TRACE_LOGFILE_HEADER_1_0,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -2195,7 +2195,7 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER32_0_0 {
 #[repr(C)]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 pub union TRACE_LOGFILE_HEADER32_1 {
-    pub LogInstanceGuid: ::windows_sys_core::GUID,
+    pub LogInstanceGuid: ::windows_core_sys::GUID,
     pub Anonymous: TRACE_LOGFILE_HEADER32_1_0,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -2285,7 +2285,7 @@ impl ::core::clone::Clone for TRACE_LOGFILE_HEADER64_0_0 {
 #[repr(C)]
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
 pub union TRACE_LOGFILE_HEADER64_1 {
-    pub LogInstanceGuid: ::windows_sys_core::GUID,
+    pub LogInstanceGuid: ::windows_core_sys::GUID,
     pub Anonymous: TRACE_LOGFILE_HEADER64_1_0,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_Time"))]
@@ -2349,7 +2349,7 @@ pub const TRACE_PROVIDER_FLAG_LEGACY: u32 = 1u32;
 pub const TRACE_PROVIDER_FLAG_PRE_ENABLE: u32 = 2u32;
 #[repr(C)]
 pub struct TRACE_PROVIDER_INFO {
-    pub ProviderGuid: ::windows_sys_core::GUID,
+    pub ProviderGuid: ::windows_core_sys::GUID,
     pub SchemaSource: u32,
     pub ProviderNameOffset: u32,
 }
@@ -2447,7 +2447,7 @@ pub const WMIGUID_READ_DESCRIPTION: u32 = 8u32;
 pub const WMIGUID_SET: u32 = 2u32;
 #[repr(C)]
 pub struct WMIREGGUIDW {
-    pub Guid: ::windows_sys_core::GUID,
+    pub Guid: ::windows_core_sys::GUID,
     pub Flags: u32,
     pub InstanceCount: u32,
     pub Anonymous: WMIREGGUIDW_0,
@@ -2549,7 +2549,7 @@ impl ::core::clone::Clone for WNODE_EVENT_ITEM {
 #[cfg(feature = "Win32_Foundation")]
 pub struct WNODE_EVENT_REFERENCE {
     pub WnodeHeader: WNODE_HEADER,
-    pub TargetGuid: ::windows_sys_core::GUID,
+    pub TargetGuid: ::windows_core_sys::GUID,
     pub TargetDataBlockSize: u32,
     pub Anonymous: WNODE_EVENT_REFERENCE_0,
 }
@@ -2605,7 +2605,7 @@ pub struct WNODE_HEADER {
     pub ProviderId: u32,
     pub Anonymous1: WNODE_HEADER_0,
     pub Anonymous2: WNODE_HEADER_1,
-    pub Guid: ::windows_sys_core::GUID,
+    pub Guid: ::windows_core_sys::GUID,
     pub ClientContext: u32,
     pub Flags: u32,
 }

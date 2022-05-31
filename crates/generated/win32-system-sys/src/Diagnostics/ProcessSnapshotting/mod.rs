@@ -96,9 +96,9 @@ pub struct PSS_HANDLE_ENTRY {
     pub NonPagedPoolCharge: u32,
     pub CreationTime: super::super::super::Foundation::FILETIME,
     pub TypeNameLength: u16,
-    pub TypeName: ::windows_sys_core::PCWSTR,
+    pub TypeName: ::windows_core_sys::PCWSTR,
     pub ObjectNameLength: u16,
-    pub ObjectName: ::windows_sys_core::PCWSTR,
+    pub ObjectName: ::windows_core_sys::PCWSTR,
     pub TypeSpecificInformation: PSS_HANDLE_ENTRY_0,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -411,7 +411,7 @@ pub struct PSS_VA_SPACE_ENTRY {
     pub ImageBase: *mut ::core::ffi::c_void,
     pub CheckSum: u32,
     pub MappedFileNameLength: u16,
-    pub MappedFileName: ::windows_sys_core::PCWSTR,
+    pub MappedFileName: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for PSS_VA_SPACE_ENTRY {}
 impl ::core::clone::Clone for PSS_VA_SPACE_ENTRY {

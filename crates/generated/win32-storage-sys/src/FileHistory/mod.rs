@@ -1,43 +1,43 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceBlockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn FhServiceBlockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceClosePipe(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn FhServiceClosePipe(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FhServiceOpenPipe(startserviceifstopped: super::super::Foundation::BOOL, pipe: *mut super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn FhServiceOpenPipe(startserviceifstopped: super::super::Foundation::BOOL, pipe: *mut super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceReloadConfiguration(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn FhServiceReloadConfiguration(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FhServiceStartBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, lowpriorityio: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
+    pub fn FhServiceStartBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, lowpriorityio: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_WindowsProgramming"))]
-    pub fn FhServiceStopBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, stoptracking: super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
+    pub fn FhServiceStopBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE, stoptracking: super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_System_WindowsProgramming")]
-    pub fn FhServiceUnblockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn FhServiceUnblockBackup(pipe: super::super::System::WindowsProgramming::FH_SERVICE_PIPE_HANDLE) -> ::windows_core_sys::HRESULT;
 }
-pub const FHCFG_E_CONFIGURATION_PREVIOUSLY_LOADED: ::windows_sys_core::HRESULT = -2147220731i32;
-pub const FHCFG_E_CONFIG_ALREADY_EXISTS: ::windows_sys_core::HRESULT = -2147220734i32;
-pub const FHCFG_E_CONFIG_FILE_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220735i32;
-pub const FHCFG_E_CORRUPT_CONFIG_FILE: ::windows_sys_core::HRESULT = -2147220736i32;
-pub const FHCFG_E_INVALID_REHYDRATION_STATE: ::windows_sys_core::HRESULT = -2147220726i32;
-pub const FHCFG_E_LEGACY_BACKUP_NOT_FOUND: ::windows_sys_core::HRESULT = -2147220715i32;
-pub const FHCFG_E_LEGACY_BACKUP_USER_EXCLUDED: ::windows_sys_core::HRESULT = -2147220716i32;
-pub const FHCFG_E_LEGACY_TARGET_UNSUPPORTED: ::windows_sys_core::HRESULT = -2147220718i32;
-pub const FHCFG_E_LEGACY_TARGET_VALIDATION_UNSUPPORTED: ::windows_sys_core::HRESULT = -2147220717i32;
-pub const FHCFG_E_NO_VALID_CONFIGURATION_LOADED: ::windows_sys_core::HRESULT = -2147220733i32;
-pub const FHCFG_E_RECOMMENDATION_CHANGE_NOT_ALLOWED: ::windows_sys_core::HRESULT = -2147220720i32;
-pub const FHCFG_E_TARGET_CANNOT_BE_USED: ::windows_sys_core::HRESULT = -2147220727i32;
-pub const FHCFG_E_TARGET_NOT_CONFIGURED: ::windows_sys_core::HRESULT = -2147220729i32;
-pub const FHCFG_E_TARGET_NOT_CONNECTED: ::windows_sys_core::HRESULT = -2147220732i32;
-pub const FHCFG_E_TARGET_NOT_ENOUGH_FREE_SPACE: ::windows_sys_core::HRESULT = -2147220728i32;
-pub const FHCFG_E_TARGET_REHYDRATED_ELSEWHERE: ::windows_sys_core::HRESULT = -2147220719i32;
-pub const FHCFG_E_TARGET_VERIFICATION_FAILED: ::windows_sys_core::HRESULT = -2147220730i32;
-pub const FHSVC_E_BACKUP_BLOCKED: ::windows_sys_core::HRESULT = -2147219968i32;
-pub const FHSVC_E_CONFIG_DISABLED: ::windows_sys_core::HRESULT = -2147219966i32;
-pub const FHSVC_E_CONFIG_DISABLED_GP: ::windows_sys_core::HRESULT = -2147219965i32;
-pub const FHSVC_E_CONFIG_REHYDRATING: ::windows_sys_core::HRESULT = -2147219963i32;
-pub const FHSVC_E_FATAL_CONFIG_ERROR: ::windows_sys_core::HRESULT = -2147219964i32;
-pub const FHSVC_E_NOT_CONFIGURED: ::windows_sys_core::HRESULT = -2147219967i32;
+pub const FHCFG_E_CONFIGURATION_PREVIOUSLY_LOADED: ::windows_core_sys::HRESULT = -2147220731i32;
+pub const FHCFG_E_CONFIG_ALREADY_EXISTS: ::windows_core_sys::HRESULT = -2147220734i32;
+pub const FHCFG_E_CONFIG_FILE_NOT_FOUND: ::windows_core_sys::HRESULT = -2147220735i32;
+pub const FHCFG_E_CORRUPT_CONFIG_FILE: ::windows_core_sys::HRESULT = -2147220736i32;
+pub const FHCFG_E_INVALID_REHYDRATION_STATE: ::windows_core_sys::HRESULT = -2147220726i32;
+pub const FHCFG_E_LEGACY_BACKUP_NOT_FOUND: ::windows_core_sys::HRESULT = -2147220715i32;
+pub const FHCFG_E_LEGACY_BACKUP_USER_EXCLUDED: ::windows_core_sys::HRESULT = -2147220716i32;
+pub const FHCFG_E_LEGACY_TARGET_UNSUPPORTED: ::windows_core_sys::HRESULT = -2147220718i32;
+pub const FHCFG_E_LEGACY_TARGET_VALIDATION_UNSUPPORTED: ::windows_core_sys::HRESULT = -2147220717i32;
+pub const FHCFG_E_NO_VALID_CONFIGURATION_LOADED: ::windows_core_sys::HRESULT = -2147220733i32;
+pub const FHCFG_E_RECOMMENDATION_CHANGE_NOT_ALLOWED: ::windows_core_sys::HRESULT = -2147220720i32;
+pub const FHCFG_E_TARGET_CANNOT_BE_USED: ::windows_core_sys::HRESULT = -2147220727i32;
+pub const FHCFG_E_TARGET_NOT_CONFIGURED: ::windows_core_sys::HRESULT = -2147220729i32;
+pub const FHCFG_E_TARGET_NOT_CONNECTED: ::windows_core_sys::HRESULT = -2147220732i32;
+pub const FHCFG_E_TARGET_NOT_ENOUGH_FREE_SPACE: ::windows_core_sys::HRESULT = -2147220728i32;
+pub const FHCFG_E_TARGET_REHYDRATED_ELSEWHERE: ::windows_core_sys::HRESULT = -2147220719i32;
+pub const FHCFG_E_TARGET_VERIFICATION_FAILED: ::windows_core_sys::HRESULT = -2147220730i32;
+pub const FHSVC_E_BACKUP_BLOCKED: ::windows_core_sys::HRESULT = -2147219968i32;
+pub const FHSVC_E_CONFIG_DISABLED: ::windows_core_sys::HRESULT = -2147219966i32;
+pub const FHSVC_E_CONFIG_DISABLED_GP: ::windows_core_sys::HRESULT = -2147219965i32;
+pub const FHSVC_E_CONFIG_REHYDRATING: ::windows_core_sys::HRESULT = -2147219963i32;
+pub const FHSVC_E_FATAL_CONFIG_ERROR: ::windows_core_sys::HRESULT = -2147219964i32;
+pub const FHSVC_E_NOT_CONFIGURED: ::windows_core_sys::HRESULT = -2147219967i32;
 pub type FH_BACKUP_STATUS = i32;
 pub const FH_STATUS_DISABLED: FH_BACKUP_STATUS = 0i32;
 pub const FH_STATUS_DISABLED_BY_GP: FH_BACKUP_STATUS = 1i32;
@@ -102,8 +102,8 @@ pub const BackupLimitUserBusyMachineOnAC: FhBackupStopReason = 1i32;
 pub const BackupLimitUserIdleMachineOnDC: FhBackupStopReason = 2i32;
 pub const BackupLimitUserBusyMachineOnDC: FhBackupStopReason = 3i32;
 pub const BackupCancelled: FhBackupStopReason = 4i32;
-pub const FhConfigMgr: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3980639036, data2: 2537, data3: 18826, data4: [157, 246, 33, 119, 36, 76, 109, 180] };
-pub const FhReassociation: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1299353141, data2: 5882, data3: 17184, data4: [158, 139, 191, 215, 16, 10, 136, 70] };
+pub const FhConfigMgr: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3980639036, data2: 2537, data3: 18826, data4: [157, 246, 33, 119, 36, 76, 109, 180] };
+pub const FhReassociation: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1299353141, data2: 5882, data3: 17184, data4: [158, 139, 191, 215, 16, 10, 136, 70] };
 pub type IFhConfigMgr = *mut ::core::ffi::c_void;
 pub type IFhReassociation = *mut ::core::ffi::c_void;
 pub type IFhScopeIterator = *mut ::core::ffi::c_void;

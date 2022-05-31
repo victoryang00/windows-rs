@@ -39,25 +39,25 @@ extern "system" {
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
     pub fn TcEnumerateInterfaces(clienthandle: super::super::Foundation::HANDLE, pbuffersize: *mut u32, interfacebuffer: *mut TC_IFC_DESCRIPTOR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TcGetFlowNameA(flowhandle: super::super::Foundation::HANDLE, strsize: u32, pflowname: ::windows_sys_core::PSTR) -> u32;
+    pub fn TcGetFlowNameA(flowhandle: super::super::Foundation::HANDLE, strsize: u32, pflowname: ::windows_core_sys::PSTR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TcGetFlowNameW(flowhandle: super::super::Foundation::HANDLE, strsize: u32, pflowname: ::windows_sys_core::PWSTR) -> u32;
+    pub fn TcGetFlowNameW(flowhandle: super::super::Foundation::HANDLE, strsize: u32, pflowname: ::windows_core_sys::PWSTR) -> u32;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
     pub fn TcModifyFlow(flowhandle: super::super::Foundation::HANDLE, pgenericflow: *const TC_GEN_FLOW) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TcOpenInterfaceA(pinterfacename: ::windows_sys_core::PCSTR, clienthandle: super::super::Foundation::HANDLE, clifcctx: super::super::Foundation::HANDLE, pifchandle: *mut super::super::Foundation::HANDLE) -> u32;
+    pub fn TcOpenInterfaceA(pinterfacename: ::windows_core_sys::PCSTR, clienthandle: super::super::Foundation::HANDLE, clifcctx: super::super::Foundation::HANDLE, pifchandle: *mut super::super::Foundation::HANDLE) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TcOpenInterfaceW(pinterfacename: ::windows_sys_core::PCWSTR, clienthandle: super::super::Foundation::HANDLE, clifcctx: super::super::Foundation::HANDLE, pifchandle: *mut super::super::Foundation::HANDLE) -> u32;
-    pub fn TcQueryFlowA(pflowname: ::windows_sys_core::PCSTR, pguidparam: *const ::windows_sys_core::GUID, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
-    pub fn TcQueryFlowW(pflowname: ::windows_sys_core::PCWSTR, pguidparam: *const ::windows_sys_core::GUID, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
+    pub fn TcOpenInterfaceW(pinterfacename: ::windows_core_sys::PCWSTR, clienthandle: super::super::Foundation::HANDLE, clifcctx: super::super::Foundation::HANDLE, pifchandle: *mut super::super::Foundation::HANDLE) -> u32;
+    pub fn TcQueryFlowA(pflowname: ::windows_core_sys::PCSTR, pguidparam: *const ::windows_core_sys::GUID, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
+    pub fn TcQueryFlowW(pflowname: ::windows_core_sys::PCWSTR, pguidparam: *const ::windows_core_sys::GUID, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TcQueryInterface(ifchandle: super::super::Foundation::HANDLE, pguidparam: *const ::windows_sys_core::GUID, notifychange: super::super::Foundation::BOOLEAN, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
+    pub fn TcQueryInterface(ifchandle: super::super::Foundation::HANDLE, pguidparam: *const ::windows_core_sys::GUID, notifychange: super::super::Foundation::BOOLEAN, pbuffersize: *mut u32, buffer: *mut ::core::ffi::c_void) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn TcRegisterClient(tciversion: u32, clregctx: super::super::Foundation::HANDLE, clienthandlerlist: *const TCI_CLIENT_FUNC_LIST, pclienthandle: *mut super::super::Foundation::HANDLE) -> u32;
-    pub fn TcSetFlowA(pflowname: ::windows_sys_core::PCSTR, pguidparam: *const ::windows_sys_core::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
-    pub fn TcSetFlowW(pflowname: ::windows_sys_core::PCWSTR, pguidparam: *const ::windows_sys_core::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
+    pub fn TcSetFlowA(pflowname: ::windows_core_sys::PCSTR, pguidparam: *const ::windows_core_sys::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
+    pub fn TcSetFlowW(pflowname: ::windows_core_sys::PCWSTR, pguidparam: *const ::windows_core_sys::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TcSetInterface(ifchandle: super::super::Foundation::HANDLE, pguidparam: *const ::windows_sys_core::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
+    pub fn TcSetInterface(ifchandle: super::super::Foundation::HANDLE, pguidparam: *const ::windows_core_sys::GUID, buffersize: u32, buffer: *const ::core::ffi::c_void) -> u32;
 }
 pub const ABLE_TO_RECV_RSVP: u32 = 50002u32;
 #[repr(C)]
@@ -368,22 +368,22 @@ pub const GUAR_ADSPARM_Ctot: i32 = 133i32;
 pub const GUAR_ADSPARM_D: i32 = 132i32;
 pub const GUAR_ADSPARM_Dsum: i32 = 136i32;
 pub const GUAR_ADSPARM_Dtot: i32 = 134i32;
-pub const GUID_QOS_BESTEFFORT_BANDWIDTH: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3985134224, data2: 16620, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
-pub const GUID_QOS_ENABLE_AVG_STATS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3137039633, data2: 10180, data3: 18433, data4: [164, 111, 239, 128, 128, 193, 136, 200] };
-pub const GUID_QOS_ENABLE_WINDOW_ADJUSTMENT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2861983525, data2: 54249, data3: 19541, data4: [179, 53, 42, 0, 39, 154, 30, 100] };
-pub const GUID_QOS_FLOW_8021P_CONFORMING: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 146923539, data2: 64722, data3: 4562, data4: [190, 30, 0, 160, 201, 158, 230, 59] };
-pub const GUID_QOS_FLOW_8021P_NONCONFORMING: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 151142289, data2: 64722, data3: 4562, data4: [190, 30, 0, 160, 201, 158, 230, 59] };
-pub const GUID_QOS_FLOW_COUNT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 289929344, data2: 16621, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
-pub const GUID_QOS_FLOW_IP_CONFORMING: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 133798539, data2: 64722, data3: 4562, data4: [190, 30, 0, 160, 201, 158, 230, 59] };
-pub const GUID_QOS_FLOW_IP_NONCONFORMING: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 142236039, data2: 64722, data3: 4562, data4: [190, 30, 0, 160, 201, 158, 230, 59] };
-pub const GUID_QOS_FLOW_MODE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1552034058, data2: 20826, data3: 4562, data4: [142, 88, 0, 192, 79, 201, 191, 203] };
-pub const GUID_QOS_ISSLOW_FLOW: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2884793252, data2: 60935, data3: 4562, data4: [190, 27, 0, 160, 201, 158, 230, 59] };
-pub const GUID_QOS_LATENCY: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4232089328, data2: 16620, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
-pub const GUID_QOS_MAX_OUTSTANDING_SENDS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 371194502, data2: 24864, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
-pub const GUID_QOS_NON_BESTEFFORT_LIMIT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 408700128, data2: 16621, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
-pub const GUID_QOS_REMAINING_BANDWIDTH: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3301250848, data2: 16620, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
-pub const GUID_QOS_STATISTICS_BUFFER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3140225408, data2: 59648, data3: 4561, data4: [176, 126, 0, 128, 199, 19, 130, 191] };
-pub const GUID_QOS_TIMER_RESOLUTION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3121663112, data2: 61758, data3: 4562, data4: [190, 27, 0, 160, 201, 158, 230, 59] };
+pub const GUID_QOS_BESTEFFORT_BANDWIDTH: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3985134224, data2: 16620, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
+pub const GUID_QOS_ENABLE_AVG_STATS: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3137039633, data2: 10180, data3: 18433, data4: [164, 111, 239, 128, 128, 193, 136, 200] };
+pub const GUID_QOS_ENABLE_WINDOW_ADJUSTMENT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2861983525, data2: 54249, data3: 19541, data4: [179, 53, 42, 0, 39, 154, 30, 100] };
+pub const GUID_QOS_FLOW_8021P_CONFORMING: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 146923539, data2: 64722, data3: 4562, data4: [190, 30, 0, 160, 201, 158, 230, 59] };
+pub const GUID_QOS_FLOW_8021P_NONCONFORMING: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 151142289, data2: 64722, data3: 4562, data4: [190, 30, 0, 160, 201, 158, 230, 59] };
+pub const GUID_QOS_FLOW_COUNT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 289929344, data2: 16621, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
+pub const GUID_QOS_FLOW_IP_CONFORMING: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 133798539, data2: 64722, data3: 4562, data4: [190, 30, 0, 160, 201, 158, 230, 59] };
+pub const GUID_QOS_FLOW_IP_NONCONFORMING: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 142236039, data2: 64722, data3: 4562, data4: [190, 30, 0, 160, 201, 158, 230, 59] };
+pub const GUID_QOS_FLOW_MODE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1552034058, data2: 20826, data3: 4562, data4: [142, 88, 0, 192, 79, 201, 191, 203] };
+pub const GUID_QOS_ISSLOW_FLOW: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2884793252, data2: 60935, data3: 4562, data4: [190, 27, 0, 160, 201, 158, 230, 59] };
+pub const GUID_QOS_LATENCY: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4232089328, data2: 16620, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
+pub const GUID_QOS_MAX_OUTSTANDING_SENDS: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 371194502, data2: 24864, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
+pub const GUID_QOS_NON_BESTEFFORT_LIMIT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 408700128, data2: 16621, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
+pub const GUID_QOS_REMAINING_BANDWIDTH: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3301250848, data2: 16620, data3: 4561, data4: [44, 145, 0, 170, 0, 87, 73, 21] };
+pub const GUID_QOS_STATISTICS_BUFFER: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3140225408, data2: 59648, data3: 4561, data4: [176, 126, 0, 128, 199, 19, 130, 191] };
+pub const GUID_QOS_TIMER_RESOLUTION: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3121663112, data2: 61758, data3: 4562, data4: [190, 27, 0, 160, 201, 158, 230, 59] };
 #[repr(C)]
 pub struct Gads_parms_t {
     pub Gads_serv_hdr: IntServServiceHdr,
@@ -1768,8 +1768,8 @@ impl ::core::clone::Clone for TC_GEN_FLOW {
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]
 pub struct TC_IFC_DESCRIPTOR {
     pub Length: u32,
-    pub pInterfaceName: ::windows_sys_core::PWSTR,
-    pub pInterfaceID: ::windows_sys_core::PWSTR,
+    pub pInterfaceName: ::windows_core_sys::PWSTR,
+    pub pInterfaceID: ::windows_core_sys::PWSTR,
     pub AddressListDesc: ADDRESS_LIST_DESCRIPTOR,
 }
 #[cfg(feature = "Win32_NetworkManagement_Ndis")]

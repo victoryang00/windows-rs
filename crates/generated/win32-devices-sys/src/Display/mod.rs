@@ -12,7 +12,7 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn CLIPOBJ_ppoGetPath(pco: *mut CLIPOBJ) -> *mut PATHOBJ;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CapabilitiesRequestAndCapabilitiesReply(hmonitor: super::super::Foundation::HANDLE, pszasciicapabilitiesstring: ::windows_sys_core::PSTR, dwcapabilitiesstringlengthincharacters: u32) -> i32;
+    pub fn CapabilitiesRequestAndCapabilitiesReply(hmonitor: super::super::Foundation::HANDLE, pszasciicapabilitiesstring: ::windows_core_sys::PSTR, dwcapabilitiesstringlengthincharacters: u32) -> i32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn DegaussMonitor(hmonitor: super::super::Foundation::HANDLE) -> i32;
     #[cfg(feature = "Win32_Foundation")]
@@ -63,20 +63,20 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn EngFreeModule(h: super::super::Foundation::HANDLE);
     pub fn EngGetCurrentCodePage(oemcodepage: *mut u16, ansicodepage: *mut u16);
-    pub fn EngGetDriverName(hdev: HDEV) -> ::windows_sys_core::PWSTR;
-    pub fn EngGetPrinterDataFileName(hdev: HDEV) -> ::windows_sys_core::PWSTR;
+    pub fn EngGetDriverName(hdev: HDEV) -> ::windows_core_sys::PWSTR;
+    pub fn EngGetPrinterDataFileName(hdev: HDEV) -> ::windows_core_sys::PWSTR;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
     pub fn EngGradientFill(psodest: *mut SURFOBJ, pco: *mut CLIPOBJ, pxlo: *mut XLATEOBJ, pvertex: *mut super::super::Graphics::Gdi::TRIVERTEX, nvertex: u32, pmesh: *mut ::core::ffi::c_void, nmesh: u32, prclextents: *mut super::super::Foundation::RECTL, pptlditherorg: *mut super::super::Foundation::POINTL, ulmode: u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn EngLineTo(pso: *mut SURFOBJ, pco: *mut CLIPOBJ, pbo: *mut BRUSHOBJ, x1: i32, y1: i32, x2: i32, y2: i32, prclbounds: *mut super::super::Foundation::RECTL, mix: u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn EngLoadModule(pwsz: ::windows_sys_core::PCWSTR) -> super::super::Foundation::HANDLE;
+    pub fn EngLoadModule(pwsz: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
     #[cfg(feature = "Win32_Foundation")]
     pub fn EngLockSurface(hsurf: HSURF) -> *mut SURFOBJ;
     #[cfg(feature = "Win32_Foundation")]
     pub fn EngMarkBandingSurface(hsurf: HSURF) -> super::super::Foundation::BOOL;
-    pub fn EngMultiByteToUnicodeN(unicodestring: ::windows_sys_core::PWSTR, maxbytesinunicodestring: u32, bytesinunicodestring: *mut u32, multibytestring: ::windows_sys_core::PCSTR, bytesinmultibytestring: u32);
-    pub fn EngMultiByteToWideChar(codepage: u32, widecharstring: ::windows_sys_core::PWSTR, bytesinwidecharstring: i32, multibytestring: ::windows_sys_core::PCSTR, bytesinmultibytestring: i32) -> i32;
+    pub fn EngMultiByteToUnicodeN(unicodestring: ::windows_core_sys::PWSTR, maxbytesinunicodestring: u32, bytesinunicodestring: *mut u32, multibytestring: ::windows_core_sys::PCSTR, bytesinmultibytestring: u32);
+    pub fn EngMultiByteToWideChar(codepage: u32, widecharstring: ::windows_core_sys::PWSTR, bytesinwidecharstring: i32, multibytestring: ::windows_core_sys::PCSTR, bytesinmultibytestring: i32) -> i32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn EngPaint(pso: *mut SURFOBJ, pco: *mut CLIPOBJ, pbo: *mut BRUSHOBJ, pptlbrushorg: *mut super::super::Foundation::POINTL, mix: u32) -> super::super::Foundation::BOOL;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
@@ -97,10 +97,10 @@ extern "system" {
     pub fn EngTextOut(pso: *mut SURFOBJ, pstro: *mut STROBJ, pfo: *mut FONTOBJ, pco: *mut CLIPOBJ, prclextra: *mut super::super::Foundation::RECTL, prclopaque: *mut super::super::Foundation::RECTL, pbofore: *mut BRUSHOBJ, pboopaque: *mut BRUSHOBJ, pptlorg: *mut super::super::Foundation::POINTL, mix: u32) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn EngTransparentBlt(psodst: *const SURFOBJ, psosrc: *const SURFOBJ, pco: *const CLIPOBJ, pxlo: *const XLATEOBJ, prcldst: *const super::super::Foundation::RECTL, prclsrc: *const super::super::Foundation::RECTL, transcolor: u32, bcalledfrombitblt: u32) -> super::super::Foundation::BOOL;
-    pub fn EngUnicodeToMultiByteN(multibytestring: ::windows_sys_core::PSTR, maxbytesinmultibytestring: u32, bytesinmultibytestring: *mut u32, unicodestring: ::windows_sys_core::PCWSTR, bytesinunicodestring: u32);
+    pub fn EngUnicodeToMultiByteN(multibytestring: ::windows_core_sys::PSTR, maxbytesinmultibytestring: u32, bytesinmultibytestring: *mut u32, unicodestring: ::windows_core_sys::PCWSTR, bytesinunicodestring: u32);
     #[cfg(feature = "Win32_Foundation")]
     pub fn EngUnlockSurface(pso: *mut SURFOBJ);
-    pub fn EngWideCharToMultiByte(codepage: u32, widecharstring: ::windows_sys_core::PCWSTR, bytesinwidecharstring: i32, multibytestring: ::windows_sys_core::PSTR, bytesinmultibytestring: i32) -> i32;
+    pub fn EngWideCharToMultiByte(codepage: u32, widecharstring: ::windows_core_sys::PCWSTR, bytesinwidecharstring: i32, multibytestring: ::windows_core_sys::PSTR, bytesinmultibytestring: i32) -> i32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn FONTOBJ_cGetAllGlyphHandles(pfo: *mut FONTOBJ, phg: *mut u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
@@ -145,11 +145,11 @@ extern "system" {
     #[cfg(feature = "Win32_Graphics_Gdi")]
     pub fn GetNumberOfPhysicalMonitorsFromHMONITOR(hmonitor: super::super::Graphics::Gdi::HMONITOR, pdwnumberofphysicalmonitors: *mut u32) -> i32;
     #[cfg(feature = "Win32_Graphics_Direct3D9")]
-    pub fn GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: super::super::Graphics::Direct3D9::IDirect3DDevice9, pdwnumberofphysicalmonitors: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn GetNumberOfPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: super::super::Graphics::Direct3D9::IDirect3DDevice9, pdwnumberofphysicalmonitors: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
     pub fn GetPhysicalMonitorsFromHMONITOR(hmonitor: super::super::Graphics::Gdi::HMONITOR, dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *mut PHYSICAL_MONITOR) -> i32;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Direct3D9"))]
-    pub fn GetPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: super::super::Graphics::Direct3D9::IDirect3DDevice9, dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *mut PHYSICAL_MONITOR) -> ::windows_sys_core::HRESULT;
+    pub fn GetPhysicalMonitorsFromIDirect3DDevice9(pdirect3ddevice9: super::super::Graphics::Direct3D9::IDirect3DDevice9, dwphysicalmonitorarraysize: u32, pphysicalmonitorarray: *mut PHYSICAL_MONITOR) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetTimingReport(hmonitor: super::super::Foundation::HANDLE, pmtrmonitortimingreport: *mut MC_TIMING_REPORT) -> i32;
     #[cfg(feature = "Win32_Foundation")]
@@ -752,13 +752,13 @@ impl ::core::clone::Clone for DEVINFO {
     }
 }
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Device_ActivityId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3305783056, data2: 43612, data3: 16967, data4: [184, 48, 214, 166, 248, 234, 163, 16] }, pid: 4u32 };
+pub const DEVPKEY_Device_ActivityId: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 3305783056, data2: 43612, data3: 16967, data4: [184, 48, 214, 166, 248, 234, 163, 16] }, pid: 4u32 };
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Device_AdapterLuid: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3305783056, data2: 43612, data3: 16967, data4: [184, 48, 214, 166, 248, 234, 163, 16] }, pid: 3u32 };
+pub const DEVPKEY_Device_AdapterLuid: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 3305783056, data2: 43612, data3: 16967, data4: [184, 48, 214, 166, 248, 234, 163, 16] }, pid: 3u32 };
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Device_TerminalLuid: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3305783056, data2: 43612, data3: 16967, data4: [184, 48, 214, 166, 248, 234, 163, 16] }, pid: 2u32 };
+pub const DEVPKEY_Device_TerminalLuid: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 3305783056, data2: 43612, data3: 16967, data4: [184, 48, 214, 166, 248, 234, 163, 16] }, pid: 2u32 };
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_IndirectDisplay: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 3305783056, data2: 43612, data3: 16967, data4: [184, 48, 214, 166, 248, 234, 163, 16] }, pid: 1u32 };
+pub const DEVPKEY_IndirectDisplay: super::Properties::DEVPROPKEY = super::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 3305783056, data2: 43612, data3: 16967, data4: [184, 48, 214, 166, 248, 234, 163, 16] }, pid: 1u32 };
 pub type DHPDEV = isize;
 pub type DHSURF = isize;
 #[repr(C)]
@@ -1158,8 +1158,8 @@ impl ::core::clone::Clone for DISPLAYCONFIG_SET_ADVANCED_COLOR_STATE_0_0 {
 pub struct DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION {
     pub header: DISPLAYCONFIG_DEVICE_INFO_HEADER,
     pub Anonymous: DISPLAYCONFIG_SET_MONITOR_SPECIALIZATION_0,
-    pub specializationType: ::windows_sys_core::GUID,
-    pub specializationSubType: ::windows_sys_core::GUID,
+    pub specializationType: ::windows_core_sys::GUID,
+    pub specializationSubType: ::windows_core_sys::GUID,
     pub specializationApplicationName: [u16; 128],
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2387,11 +2387,11 @@ impl ::core::clone::Clone for GLYPHPOS {
 pub const GS_16BIT_HANDLES: u32 = 4u32;
 pub const GS_8BIT_HANDLES: u32 = 2u32;
 pub const GS_UNICODE_HANDLES: u32 = 1u32;
-pub const GUID_DEVINTERFACE_DISPLAY_ADAPTER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1531256861, data2: 62194, data3: 20283, data4: [133, 187, 48, 255, 31, 149, 53, 153] };
-pub const GUID_DEVINTERFACE_MONITOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3874519903, data2: 61079, data3: 19088, data4: [176, 118, 51, 245, 123, 244, 234, 167] };
-pub const GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 450487536, data2: 63629, data3: 17248, data4: [186, 185, 76, 45, 85, 229, 100, 205] };
-pub const GUID_DISPLAY_DEVICE_ARRIVAL: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 480268672, data2: 42649, data3: 17674, data4: [154, 12, 222, 79, 190, 61, 221, 137] };
-pub const GUID_MONITOR_OVERRIDE_PSEUDO_SPECIALIZED: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4053188655, data2: 63599, data3: 20378, data4: [170, 21, 233, 206, 189, 254, 59, 150] };
+pub const GUID_DEVINTERFACE_DISPLAY_ADAPTER: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1531256861, data2: 62194, data3: 20283, data4: [133, 187, 48, 255, 31, 149, 53, 153] };
+pub const GUID_DEVINTERFACE_MONITOR: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3874519903, data2: 61079, data3: 19088, data4: [176, 118, 51, 245, 123, 244, 234, 167] };
+pub const GUID_DEVINTERFACE_VIDEO_OUTPUT_ARRIVAL: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 450487536, data2: 63629, data3: 17248, data4: [186, 185, 76, 45, 85, 229, 100, 205] };
+pub const GUID_DISPLAY_DEVICE_ARRIVAL: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 480268672, data2: 42649, data3: 17674, data4: [154, 12, 222, 79, 190, 61, 221, 137] };
+pub const GUID_MONITOR_OVERRIDE_PSEUDO_SPECIALIZED: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4053188655, data2: 63599, data3: 20378, data4: [170, 21, 233, 206, 189, 254, 59, 150] };
 pub const GX_GENERAL: i32 = 3i32;
 pub const GX_IDENTITY: i32 = 0i32;
 pub const GX_OFFSET: i32 = 1i32;
@@ -2850,7 +2850,7 @@ pub const LA_STYLED: u32 = 8u32;
 #[repr(C)]
 pub struct LIGATURE {
     pub culSize: u32,
-    pub pwsz: ::windows_sys_core::PWSTR,
+    pub pwsz: ::windows_core_sys::PWSTR,
     pub chglyph: u32,
     pub ahglyph: [u32; 1],
 }
@@ -3460,7 +3460,7 @@ pub type PFN_DrvEnableDirectDraw = ::core::option::Option<unsafe extern "system"
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_DrvEnableDriver = ::core::option::Option<unsafe extern "system" fn(param0: u32, param1: u32, param2: *mut DRVENABLEDATA) -> super::super::Foundation::BOOL>;
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-pub type PFN_DrvEnablePDEV = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Graphics::Gdi::DEVMODEW, param1: ::windows_sys_core::PCWSTR, param2: u32, param3: *mut HSURF, param4: u32, param5: *mut GDIINFO, param6: u32, param7: *mut DEVINFO, param8: HDEV, param9: ::windows_sys_core::PCWSTR, param10: super::super::Foundation::HANDLE) -> DHPDEV>;
+pub type PFN_DrvEnablePDEV = ::core::option::Option<unsafe extern "system" fn(param0: *mut super::super::Graphics::Gdi::DEVMODEW, param1: ::windows_core_sys::PCWSTR, param2: u32, param3: *mut HSURF, param4: u32, param5: *mut GDIINFO, param6: u32, param7: *mut DEVINFO, param8: HDEV, param9: ::windows_core_sys::PCWSTR, param10: super::super::Foundation::HANDLE) -> DHPDEV>;
 pub type PFN_DrvEnableSurface = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV) -> HSURF>;
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_DrvEndDoc = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ, fl: u32) -> super::super::Foundation::BOOL>;
@@ -3522,7 +3522,7 @@ pub type PFN_DrvQueryGlyphAttrs = ::core::option::Option<unsafe extern "system" 
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_DrvQueryPerBandInfo = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: *mut PERBANDINFO) -> super::super::Foundation::BOOL>;
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvQuerySpoolType = ::core::option::Option<unsafe extern "system" fn(dhpdev: DHPDEV, pwchtype: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL>;
+pub type PFN_DrvQuerySpoolType = ::core::option::Option<unsafe extern "system" fn(dhpdev: DHPDEV, pwchtype: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL>;
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
 pub type PFN_DrvQueryTrueTypeOutline = ::core::option::Option<unsafe extern "system" fn(param0: DHPDEV, param1: *mut FONTOBJ, param2: u32, param3: super::super::Foundation::BOOL, param4: *mut GLYPHDATA, param5: u32, param6: *mut super::super::Graphics::Gdi::TTPOLYGONHEADER) -> i32>;
 #[cfg(feature = "Win32_Foundation")]
@@ -3547,7 +3547,7 @@ pub type PFN_DrvSetPointerShape = ::core::option::Option<unsafe extern "system" 
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_DrvStartBanding = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, ppointl: *mut super::super::Foundation::POINTL) -> super::super::Foundation::BOOL>;
 #[cfg(feature = "Win32_Foundation")]
-pub type PFN_DrvStartDoc = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ, pwszdocname: ::windows_sys_core::PCWSTR, dwjobid: u32) -> super::super::Foundation::BOOL>;
+pub type PFN_DrvStartDoc = ::core::option::Option<unsafe extern "system" fn(pso: *mut SURFOBJ, pwszdocname: ::windows_core_sys::PCWSTR, dwjobid: u32) -> super::super::Foundation::BOOL>;
 #[cfg(feature = "Win32_Foundation")]
 pub type PFN_DrvStartDxInterop = ::core::option::Option<unsafe extern "system" fn(param0: *mut SURFOBJ, param1: super::super::Foundation::BOOL, kernelmodedevicehandle: *mut ::core::ffi::c_void) -> super::super::Foundation::BOOL>;
 #[cfg(feature = "Win32_Foundation")]
@@ -3786,7 +3786,7 @@ pub struct STROBJ {
     pub ulCharInc: u32,
     pub rclBkGround: super::super::Foundation::RECTL,
     pub pgp: *mut GLYPHPOS,
-    pub pwszOrg: ::windows_sys_core::PWSTR,
+    pub pwszOrg: ::windows_core_sys::PWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for STROBJ {}
@@ -3872,7 +3872,7 @@ impl ::core::clone::Clone for VGA_CHAR {
 }
 #[repr(C)]
 pub struct VIDEOPARAMETERS {
-    pub Guid: ::windows_sys_core::GUID,
+    pub Guid: ::windows_core_sys::GUID,
     pub dwOffset: u32,
     pub dwCommand: u32,
     pub dwFlags: u32,

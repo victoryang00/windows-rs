@@ -77,7 +77,7 @@ impl ::core::clone::Clone for StorePackageUpdateState {
 }
 #[repr(C)]
 pub struct StorePackageUpdateStatus {
-    pub PackageFamilyName: ::windows_sys_core::HSTRING,
+    pub PackageFamilyName: ::windows_core_sys::HSTRING,
     pub PackageDownloadSizeInBytes: u64,
     pub PackageBytesDownloaded: u64,
     pub PackageDownloadProgress: f64,

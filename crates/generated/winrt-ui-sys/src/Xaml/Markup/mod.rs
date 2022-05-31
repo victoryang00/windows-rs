@@ -25,8 +25,8 @@ pub type XamlMarkupHelper = *mut ::core::ffi::c_void;
 pub type XamlReader = *mut ::core::ffi::c_void;
 #[repr(C)]
 pub struct XmlnsDefinition {
-    pub XmlNamespace: ::windows_sys_core::HSTRING,
-    pub Namespace: ::windows_sys_core::HSTRING,
+    pub XmlNamespace: ::windows_core_sys::HSTRING,
+    pub Namespace: ::windows_core_sys::HSTRING,
 }
 impl ::core::marker::Copy for XmlnsDefinition {}
 impl ::core::clone::Clone for XmlnsDefinition {

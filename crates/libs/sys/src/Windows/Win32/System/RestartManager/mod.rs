@@ -2,7 +2,7 @@
 extern "system" {
     #[doc = "*Required features: `\"Win32_System_RestartManager\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RmAddFilter(dwsessionhandle: u32, strmodulename: ::windows_sys_core::PCWSTR, pprocess: *const RM_UNIQUE_PROCESS, strserviceshortname: ::windows_sys_core::PCWSTR, filteraction: RM_FILTER_ACTION) -> u32;
+    pub fn RmAddFilter(dwsessionhandle: u32, strmodulename: ::windows_core_sys::PCWSTR, pprocess: *const RM_UNIQUE_PROCESS, strserviceshortname: ::windows_core_sys::PCWSTR, filteraction: RM_FILTER_ACTION) -> u32;
     #[doc = "*Required features: `\"Win32_System_RestartManager\"`*"]
     pub fn RmCancelCurrentTask(dwsessionhandle: u32) -> u32;
     #[doc = "*Required features: `\"Win32_System_RestartManager\"`*"]
@@ -13,19 +13,19 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn RmGetList(dwsessionhandle: u32, pnprocinfoneeded: *mut u32, pnprocinfo: *mut u32, rgaffectedapps: *mut RM_PROCESS_INFO, lpdwrebootreasons: *mut u32) -> u32;
     #[doc = "*Required features: `\"Win32_System_RestartManager\"`*"]
-    pub fn RmJoinSession(psessionhandle: *mut u32, strsessionkey: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn RmJoinSession(psessionhandle: *mut u32, strsessionkey: ::windows_core_sys::PCWSTR) -> u32;
     #[doc = "*Required features: `\"Win32_System_RestartManager\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RmRegisterResources(dwsessionhandle: u32, nfiles: u32, rgsfilenames: *const ::windows_sys_core::PWSTR, napplications: u32, rgapplications: *const RM_UNIQUE_PROCESS, nservices: u32, rgsservicenames: *const ::windows_sys_core::PWSTR) -> u32;
+    pub fn RmRegisterResources(dwsessionhandle: u32, nfiles: u32, rgsfilenames: *const ::windows_core_sys::PWSTR, napplications: u32, rgapplications: *const RM_UNIQUE_PROCESS, nservices: u32, rgsservicenames: *const ::windows_core_sys::PWSTR) -> u32;
     #[doc = "*Required features: `\"Win32_System_RestartManager\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RmRemoveFilter(dwsessionhandle: u32, strmodulename: ::windows_sys_core::PCWSTR, pprocess: *const RM_UNIQUE_PROCESS, strserviceshortname: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn RmRemoveFilter(dwsessionhandle: u32, strmodulename: ::windows_core_sys::PCWSTR, pprocess: *const RM_UNIQUE_PROCESS, strserviceshortname: ::windows_core_sys::PCWSTR) -> u32;
     #[doc = "*Required features: `\"Win32_System_RestartManager\"`*"]
     pub fn RmRestart(dwsessionhandle: u32, dwrestartflags: u32, fnstatus: RM_WRITE_STATUS_CALLBACK) -> u32;
     #[doc = "*Required features: `\"Win32_System_RestartManager\"`*"]
     pub fn RmShutdown(dwsessionhandle: u32, lactionflags: u32, fnstatus: RM_WRITE_STATUS_CALLBACK) -> u32;
     #[doc = "*Required features: `\"Win32_System_RestartManager\"`*"]
-    pub fn RmStartSession(psessionhandle: *mut u32, dwsessionflags: u32, strsessionkey: ::windows_sys_core::PWSTR) -> u32;
+    pub fn RmStartSession(psessionhandle: *mut u32, dwsessionflags: u32, strsessionkey: ::windows_core_sys::PWSTR) -> u32;
 }
 #[doc = "*Required features: `\"Win32_System_RestartManager\"`*"]
 pub const CCH_RM_MAX_APP_NAME: u32 = 255u32;
@@ -98,9 +98,9 @@ impl ::core::clone::Clone for RM_FILTER_INFO {
 #[doc = "*Required features: `\"Win32_System_RestartManager\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub union RM_FILTER_INFO_0 {
-    pub strFilename: ::windows_sys_core::PWSTR,
+    pub strFilename: ::windows_core_sys::PWSTR,
     pub Process: RM_UNIQUE_PROCESS,
-    pub strServiceShortName: ::windows_sys_core::PWSTR,
+    pub strServiceShortName: ::windows_core_sys::PWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for RM_FILTER_INFO_0 {}

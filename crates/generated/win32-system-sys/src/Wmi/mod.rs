@@ -2379,13 +2379,13 @@ impl ::core::clone::Clone for MI_Value {
 pub const MI_WRITEMESSAGE_CHANNEL_DEBUG: u32 = 2u32;
 pub const MI_WRITEMESSAGE_CHANNEL_VERBOSE: u32 = 1u32;
 pub const MI_WRITEMESSAGE_CHANNEL_WARNING: u32 = 0u32;
-pub const MofCompiler: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1840224087, data2: 11831, data3: 4562, data4: [174, 201, 0, 192, 79, 182, 136, 32] };
+pub const MofCompiler: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1840224087, data2: 11831, data3: 4562, data4: [174, 201, 0, 192, 79, 182, 136, 32] };
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct SWbemAnalysisMatrix {
     pub m_uVersion: u32,
     pub m_uMatrixType: u32,
-    pub m_pszProperty: ::windows_sys_core::PCWSTR,
+    pub m_pszProperty: ::windows_core_sys::PCWSTR,
     pub m_uPropertyType: u32,
     pub m_uEntries: u32,
     pub m_pValues: *mut *mut ::core::ffi::c_void,
@@ -2421,14 +2421,14 @@ pub struct SWbemAssocQueryInf {
     pub m_uAnalysisType: u32,
     pub m_uFeatureMask: u32,
     pub m_pPath: IWbemPath,
-    pub m_pszPath: ::windows_sys_core::PWSTR,
-    pub m_pszQueryText: ::windows_sys_core::PWSTR,
-    pub m_pszResultClass: ::windows_sys_core::PWSTR,
-    pub m_pszAssocClass: ::windows_sys_core::PWSTR,
-    pub m_pszRole: ::windows_sys_core::PWSTR,
-    pub m_pszResultRole: ::windows_sys_core::PWSTR,
-    pub m_pszRequiredQualifier: ::windows_sys_core::PWSTR,
-    pub m_pszRequiredAssocQualifier: ::windows_sys_core::PWSTR,
+    pub m_pszPath: ::windows_core_sys::PWSTR,
+    pub m_pszQueryText: ::windows_core_sys::PWSTR,
+    pub m_pszResultClass: ::windows_core_sys::PWSTR,
+    pub m_pszAssocClass: ::windows_core_sys::PWSTR,
+    pub m_pszRole: ::windows_core_sys::PWSTR,
+    pub m_pszResultRole: ::windows_core_sys::PWSTR,
+    pub m_pszRequiredQualifier: ::windows_core_sys::PWSTR,
+    pub m_pszRequiredAssocQualifier: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SWbemAssocQueryInf {}
 impl ::core::clone::Clone for SWbemAssocQueryInf {
@@ -2436,31 +2436,31 @@ impl ::core::clone::Clone for SWbemAssocQueryInf {
         *self
     }
 }
-pub const SWbemDateTime: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1205845588, data2: 53110, data3: 4563, data4: [179, 143, 0, 16, 90, 31, 71, 58] };
-pub const SWbemEventSource: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183192, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemLastError: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3271487148, data2: 53197, data3: 4561, data4: [139, 5, 0, 96, 8, 6, 217, 182] };
-pub const SWbemLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1990607192, data2: 52033, data3: 4561, data4: [139, 2, 0, 96, 8, 6, 217, 182] };
-pub const SWbemMethod: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183195, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemMethodSet: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183194, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemNamedValue: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183200, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemNamedValueSet: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2599237710, data2: 52875, data3: 4561, data4: [139, 5, 0, 96, 8, 6, 217, 182] };
-pub const SWbemObject: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183202, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemObjectEx: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3602755506, data2: 37941, data3: 18719, data4: [187, 135, 106, 160, 240, 188, 49, 162] };
-pub const SWbemObjectPath: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1469168678, data2: 52892, data3: 4561, data4: [151, 191, 0, 0, 248, 30, 132, 156] };
-pub const SWbemObjectSet: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183201, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemPrivilege: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 653158332, data2: 22532, data3: 4562, data4: [139, 74, 0, 96, 8, 6, 217, 182] };
-pub const SWbemPrivilegeSet: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 653158334, data2: 22532, data3: 4562, data4: [139, 74, 0, 96, 8, 6, 217, 182] };
-pub const SWbemProperty: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183197, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemPropertySet: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183196, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemQualifier: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183199, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemQualifierSet: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183198, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemDateTime: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1205845588, data2: 53110, data3: 4563, data4: [179, 143, 0, 16, 90, 31, 71, 58] };
+pub const SWbemEventSource: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183192, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemLastError: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3271487148, data2: 53197, data3: 4561, data4: [139, 5, 0, 96, 8, 6, 217, 182] };
+pub const SWbemLocator: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1990607192, data2: 52033, data3: 4561, data4: [139, 2, 0, 96, 8, 6, 217, 182] };
+pub const SWbemMethod: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183195, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemMethodSet: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183194, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemNamedValue: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183200, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemNamedValueSet: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2599237710, data2: 52875, data3: 4561, data4: [139, 5, 0, 96, 8, 6, 217, 182] };
+pub const SWbemObject: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183202, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemObjectEx: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3602755506, data2: 37941, data3: 18719, data4: [187, 135, 106, 160, 240, 188, 49, 162] };
+pub const SWbemObjectPath: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1469168678, data2: 52892, data3: 4561, data4: [151, 191, 0, 0, 248, 30, 132, 156] };
+pub const SWbemObjectSet: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183201, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemPrivilege: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 653158332, data2: 22532, data3: 4562, data4: [139, 74, 0, 96, 8, 6, 217, 182] };
+pub const SWbemPrivilegeSet: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 653158334, data2: 22532, data3: 4562, data4: [139, 74, 0, 96, 8, 6, 217, 182] };
+pub const SWbemProperty: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183197, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemPropertySet: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183196, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemQualifier: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183199, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemQualifierSet: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183198, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct SWbemQueryQualifiedName {
     pub m_uVersion: u32,
     pub m_uTokenType: u32,
     pub m_uNameListSize: u32,
-    pub m_ppszNameList: *mut ::windows_sys_core::PWSTR,
+    pub m_ppszNameList: *mut ::windows_core_sys::PWSTR,
     pub m_bArraysUsed: super::super::Foundation::BOOL,
     pub m_pbArrayElUsed: *mut super::super::Foundation::BOOL,
     pub m_puArrayIndex: *mut u32,
@@ -2473,12 +2473,12 @@ impl ::core::clone::Clone for SWbemQueryQualifiedName {
         *self
     }
 }
-pub const SWbemRefreshableItem: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2355647676, data2: 56907, data3: 4563, data4: [179, 144, 0, 16, 90, 31, 71, 58] };
-pub const SWbemRefresher: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3530145628, data2: 55745, data3: 4563, data4: [179, 143, 0, 16, 90, 31, 71, 58] };
+pub const SWbemRefreshableItem: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2355647676, data2: 56907, data3: 4563, data4: [179, 144, 0, 16, 90, 31, 71, 58] };
+pub const SWbemRefresher: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3530145628, data2: 55745, data3: 4563, data4: [179, 143, 0, 16, 90, 31, 71, 58] };
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub union SWbemRpnConst {
-    pub m_pszStrVal: ::windows_sys_core::PCWSTR,
+    pub m_pszStrVal: ::windows_core_sys::PCWSTR,
     pub m_bBoolVal: super::super::Foundation::BOOL,
     pub m_lLongVal: i32,
     pub m_uLongVal: u32,
@@ -2505,15 +2505,15 @@ pub struct SWbemRpnEncodedQuery {
     pub m_uSelectListSize: u32,
     pub m_ppSelectList: *mut *mut SWbemQueryQualifiedName,
     pub m_uFromTargetType: u32,
-    pub m_pszOptionalFromPath: ::windows_sys_core::PCWSTR,
+    pub m_pszOptionalFromPath: ::windows_core_sys::PCWSTR,
     pub m_uFromListSize: u32,
-    pub m_ppszFromList: *mut ::windows_sys_core::PWSTR,
+    pub m_ppszFromList: *mut ::windows_core_sys::PWSTR,
     pub m_uWhereClauseSize: u32,
     pub m_ppRpnWhereClause: *mut *mut SWbemRpnQueryToken,
     pub m_dblWithinPolling: f64,
     pub m_dblWithinWindow: f64,
     pub m_uOrderByListSize: u32,
-    pub m_ppszOrderByList: *mut ::windows_sys_core::PWSTR,
+    pub m_ppszOrderByList: *mut ::windows_core_sys::PWSTR,
     pub m_uOrderDirectionEl: *mut u32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2537,8 +2537,8 @@ pub struct SWbemRpnQueryToken {
     pub m_Const: SWbemRpnConst,
     pub m_uConst2ApparentType: u32,
     pub m_Const2: SWbemRpnConst,
-    pub m_pszRightFunc: ::windows_sys_core::PCWSTR,
-    pub m_pszLeftFunc: ::windows_sys_core::PCWSTR,
+    pub m_pszRightFunc: ::windows_core_sys::PCWSTR,
+    pub m_pszLeftFunc: ::windows_core_sys::PCWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SWbemRpnQueryToken {}
@@ -2560,11 +2560,11 @@ impl ::core::clone::Clone for SWbemRpnTokenList {
         *self
     }
 }
-pub const SWbemSecurity: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3041748713, data2: 8839, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemServices: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 79183203, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
-pub const SWbemServicesEx: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1659183836, data2: 36083, data3: 16552, data4: [139, 46, 55, 213, 149, 101, 30, 64] };
-pub const SWbemSink: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1970375834, data2: 61481, data3: 4561, data4: [161, 172, 0, 192, 79, 182, 194, 35] };
-pub const UnsecuredApartment: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1237131304, data2: 5411, data3: 4561, data4: [173, 121, 0, 192, 79, 216, 253, 255] };
+pub const SWbemSecurity: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3041748713, data2: 8839, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemServices: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 79183203, data2: 8622, data3: 4562, data4: [139, 51, 0, 96, 8, 6, 217, 182] };
+pub const SWbemServicesEx: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1659183836, data2: 36083, data3: 16552, data4: [139, 46, 55, 213, 149, 101, 30, 64] };
+pub const SWbemSink: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1970375834, data2: 61481, data3: 4561, data4: [161, 172, 0, 192, 79, 182, 194, 35] };
+pub const UnsecuredApartment: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1237131304, data2: 5411, data3: 4561, data4: [173, 121, 0, 192, 79, 216, 253, 255] };
 pub type WBEMSTATUS = i32;
 pub const WBEM_NO_ERROR: WBEMSTATUS = 0i32;
 pub const WBEM_S_NO_ERROR: WBEMSTATUS = 0i32;
@@ -2803,7 +2803,7 @@ pub const WBEM_FLAG_STORE_FILE: WBEM_COMPILER_OPTIONS = 256i32;
 #[repr(C)]
 pub struct WBEM_COMPILE_STATUS_INFO {
     pub lPhaseError: i32,
-    pub hRes: ::windows_sys_core::HRESULT,
+    pub hRes: ::windows_core_sys::HRESULT,
     pub ObjectNum: i32,
     pub FirstLine: i32,
     pub LastLine: i32,
@@ -2969,7 +2969,7 @@ pub type WBEM_UNSECAPP_FLAG_TYPE = i32;
 pub const WBEM_FLAG_UNSECAPP_DEFAULT_CHECK_ACCESS: WBEM_UNSECAPP_FLAG_TYPE = 0i32;
 pub const WBEM_FLAG_UNSECAPP_CHECK_ACCESS: WBEM_UNSECAPP_FLAG_TYPE = 1i32;
 pub const WBEM_FLAG_UNSECAPP_DONT_CHECK_ACCESS: WBEM_UNSECAPP_FLAG_TYPE = 2i32;
-pub const WMIExtension: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4036451070, data2: 23679, data3: 4562, data4: [139, 116, 0, 16, 75, 42, 251, 65] };
+pub const WMIExtension: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4036451070, data2: 23679, data3: 4562, data4: [139, 116, 0, 16, 75, 42, 251, 65] };
 pub type WMIQ_ANALYSIS_TYPE = i32;
 pub const WMIQ_ANALYSIS_RPN_SEQUENCE: WMIQ_ANALYSIS_TYPE = 1i32;
 pub const WMIQ_ANALYSIS_ASSOC_QUERY: WMIQ_ANALYSIS_TYPE = 2i32;
@@ -3094,8 +3094,8 @@ pub const WMI_OBJ_TEXT_WMI_EXT8: WMI_OBJ_TEXT = 10i32;
 pub const WMI_OBJ_TEXT_WMI_EXT9: WMI_OBJ_TEXT = 11i32;
 pub const WMI_OBJ_TEXT_WMI_EXT10: WMI_OBJ_TEXT = 12i32;
 pub const WMI_OBJ_TEXT_LAST: WMI_OBJ_TEXT = 13i32;
-pub const WbemAdministrativeLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3414513100, data2: 37160, data3: 4561, data4: [173, 155, 0, 192, 79, 216, 253, 255] };
-pub const WbemAuthenticatedLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3440919350, data2: 37160, data3: 4561, data4: [173, 155, 0, 192, 79, 216, 253, 255] };
+pub const WbemAdministrativeLocator: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3414513100, data2: 37160, data3: 4561, data4: [173, 155, 0, 192, 79, 216, 253, 255] };
+pub const WbemAuthenticatedLocator: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3440919350, data2: 37160, data3: 4561, data4: [173, 155, 0, 192, 79, 216, 253, 255] };
 pub type WbemAuthenticationLevelEnum = i32;
 pub const wbemAuthenticationLevelDefault: WbemAuthenticationLevelEnum = 0i32;
 pub const wbemAuthenticationLevelNone: WbemAuthenticationLevelEnum = 1i32;
@@ -3104,7 +3104,7 @@ pub const wbemAuthenticationLevelCall: WbemAuthenticationLevelEnum = 3i32;
 pub const wbemAuthenticationLevelPkt: WbemAuthenticationLevelEnum = 4i32;
 pub const wbemAuthenticationLevelPktIntegrity: WbemAuthenticationLevelEnum = 5i32;
 pub const wbemAuthenticationLevelPktPrivacy: WbemAuthenticationLevelEnum = 6i32;
-pub const WbemBackupRestore: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3298702022, data2: 48267, data3: 4562, data4: [133, 212, 0, 16, 90, 31, 131, 4] };
+pub const WbemBackupRestore: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3298702022, data2: 48267, data3: 4562, data4: [133, 212, 0, 16, 90, 31, 131, 4] };
 pub type WbemChangeFlagEnum = i32;
 pub const wbemChangeFlagCreateOrUpdate: WbemChangeFlagEnum = 0i32;
 pub const wbemChangeFlagUpdateOnly: WbemChangeFlagEnum = 1i32;
@@ -3131,7 +3131,7 @@ pub const wbemCimtypeDatetime: WbemCimtypeEnum = 101i32;
 pub const wbemCimtypeReference: WbemCimtypeEnum = 102i32;
 pub const wbemCimtypeChar16: WbemCimtypeEnum = 103i32;
 pub const wbemCimtypeObject: WbemCimtypeEnum = 13i32;
-pub const WbemClassObject: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2590322822, data2: 5967, data3: 4562, data4: [181, 249, 0, 16, 75, 112, 62, 253] };
+pub const WbemClassObject: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2590322822, data2: 5967, data3: 4562, data4: [181, 249, 0, 16, 75, 112, 62, 253] };
 pub type WbemComparisonFlagEnum = i32;
 pub const wbemComparisonFlagIncludeAll: WbemComparisonFlagEnum = 0i32;
 pub const wbemComparisonFlagIgnoreQualifiers: WbemComparisonFlagEnum = 1i32;
@@ -3142,11 +3142,11 @@ pub const wbemComparisonFlagIgnoreCase: WbemComparisonFlagEnum = 16i32;
 pub const wbemComparisonFlagIgnoreFlavor: WbemComparisonFlagEnum = 32i32;
 pub type WbemConnectOptionsEnum = i32;
 pub const wbemConnectFlagUseMaxWait: WbemConnectOptionsEnum = 128i32;
-pub const WbemContext: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1732994712, data2: 61074, data3: 4560, data4: [173, 113, 0, 192, 79, 216, 253, 255] };
-pub const WbemDCOMTransport: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4157484563, data2: 35984, data3: 4561, data4: [158, 123, 0, 192, 79, 195, 36, 168] };
-pub const WbemDecoupledBasicEventProvider: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4126627639, data2: 10307, data3: 20258, data4: [147, 61, 199, 106, 151, 205, 166, 47] };
-pub const WbemDecoupledRegistrar: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1291614514, data2: 3997, data3: 19439, data4: [156, 50, 142, 162, 166, 181, 111, 203] };
-pub const WbemDefPath: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3477914629, data2: 58053, data3: 19933, data4: [179, 206, 94, 117, 130, 216, 201, 250] };
+pub const WbemContext: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1732994712, data2: 61074, data3: 4560, data4: [173, 113, 0, 192, 79, 216, 253, 255] };
+pub const WbemDCOMTransport: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4157484563, data2: 35984, data3: 4561, data4: [158, 123, 0, 192, 79, 195, 36, 168] };
+pub const WbemDecoupledBasicEventProvider: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4126627639, data2: 10307, data3: 20258, data4: [147, 61, 199, 106, 151, 205, 166, 47] };
+pub const WbemDecoupledRegistrar: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1291614514, data2: 3997, data3: 19439, data4: [156, 50, 142, 162, 166, 181, 111, 203] };
+pub const WbemDefPath: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3477914629, data2: 58053, data3: 19933, data4: [179, 206, 94, 117, 130, 216, 201, 250] };
 pub type WbemErrorEnum = i32;
 pub const wbemNoErr: WbemErrorEnum = 0i32;
 pub const wbemErrFailed: WbemErrorEnum = -2147217407i32;
@@ -3297,13 +3297,13 @@ pub const wbemImpersonationLevelAnonymous: WbemImpersonationLevelEnum = 1i32;
 pub const wbemImpersonationLevelIdentify: WbemImpersonationLevelEnum = 2i32;
 pub const wbemImpersonationLevelImpersonate: WbemImpersonationLevelEnum = 3i32;
 pub const wbemImpersonationLevelDelegate: WbemImpersonationLevelEnum = 4i32;
-pub const WbemLevel1Login: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2344874078, data2: 55403, data3: 4560, data4: [160, 117, 0, 192, 79, 182, 136, 32] };
-pub const WbemLocalAddrRes: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2701412353, data2: 36734, data3: 4561, data4: [158, 124, 0, 192, 79, 195, 36, 168] };
-pub const WbemLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1167128593, data2: 7482, data3: 4560, data4: [137, 31, 0, 170, 0, 75, 46, 36] };
+pub const WbemLevel1Login: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2344874078, data2: 55403, data3: 4560, data4: [160, 117, 0, 192, 79, 182, 136, 32] };
+pub const WbemLocalAddrRes: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2701412353, data2: 36734, data3: 4561, data4: [158, 124, 0, 192, 79, 195, 36, 168] };
+pub const WbemLocator: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1167128593, data2: 7482, data3: 4560, data4: [137, 31, 0, 170, 0, 75, 46, 36] };
 pub type WbemObjectTextFormatEnum = i32;
 pub const wbemObjectTextFormatCIMDTD20: WbemObjectTextFormatEnum = 1i32;
 pub const wbemObjectTextFormatWMIDTD20: WbemObjectTextFormatEnum = 2i32;
-pub const WbemObjectTextSrc: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2367444381, data2: 34032, data3: 19379, data4: [167, 213, 86, 167, 67, 90, 155, 166] };
+pub const WbemObjectTextSrc: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2367444381, data2: 34032, data3: 19379, data4: [167, 213, 86, 167, 67, 90, 155, 166] };
 pub type WbemPrivilegeEnum = i32;
 pub const wbemPrivilegeCreateToken: WbemPrivilegeEnum = 1i32;
 pub const wbemPrivilegePrimaryToken: WbemPrivilegeEnum = 2i32;
@@ -3332,19 +3332,19 @@ pub const wbemPrivilegeUndock: WbemPrivilegeEnum = 24i32;
 pub const wbemPrivilegeSyncAgent: WbemPrivilegeEnum = 25i32;
 pub const wbemPrivilegeEnableDelegation: WbemPrivilegeEnum = 26i32;
 pub const wbemPrivilegeManageVolume: WbemPrivilegeEnum = 27i32;
-pub const WbemQuery: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3939016740, data2: 8674, data3: 17699, data4: [173, 115, 167, 26, 10, 162, 245, 106] };
+pub const WbemQuery: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3939016740, data2: 8674, data3: 17699, data4: [173, 115, 167, 26, 10, 162, 245, 106] };
 pub type WbemQueryFlagEnum = i32;
 pub const wbemQueryFlagDeep: WbemQueryFlagEnum = 0i32;
 pub const wbemQueryFlagShallow: WbemQueryFlagEnum = 1i32;
 pub const wbemQueryFlagPrototype: WbemQueryFlagEnum = 2i32;
-pub const WbemRefresher: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3340068594, data2: 22046, data3: 4561, data4: [173, 135, 0, 192, 79, 216, 253, 255] };
-pub const WbemStatusCodeText: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3951550909, data2: 12851, data3: 4562, data4: [174, 201, 0, 192, 79, 182, 136, 32] };
+pub const WbemRefresher: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3340068594, data2: 22046, data3: 4561, data4: [173, 135, 0, 192, 79, 216, 253, 255] };
+pub const WbemStatusCodeText: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3951550909, data2: 12851, data3: 4562, data4: [174, 201, 0, 192, 79, 182, 136, 32] };
 pub type WbemTextFlagEnum = i32;
 pub const wbemTextFlagNoFlavors: WbemTextFlagEnum = 1i32;
 pub type WbemTimeout = i32;
 pub const wbemTimeoutInfinite: WbemTimeout = -1i32;
-pub const WbemUnauthenticatedLocator: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1144945529, data2: 56881, data3: 4562, data4: [179, 64, 0, 16, 75, 204, 75, 74] };
-pub const WbemUninitializedClassObject: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2046961654, data2: 28936, data3: 4561, data4: [173, 144, 0, 192, 79, 216, 253, 255] };
+pub const WbemUnauthenticatedLocator: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1144945529, data2: 56881, data3: 4562, data4: [179, 64, 0, 16, 75, 204, 75, 74] };
+pub const WbemUninitializedClassObject: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2046961654, data2: 28936, data3: 4561, data4: [173, 144, 0, 192, 79, 216, 253, 255] };
 pub type tag_WBEM_LOGIN_TYPE = i32;
 pub const WBEM_FLAG_INPROC_LOGIN: tag_WBEM_LOGIN_TYPE = 0i32;
 pub const WBEM_FLAG_LOCAL_LOGIN: tag_WBEM_LOGIN_TYPE = 1i32;

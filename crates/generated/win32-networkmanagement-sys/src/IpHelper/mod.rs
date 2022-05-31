@@ -8,29 +8,29 @@ extern "system" {
     #[cfg(feature = "Win32_NetworkManagement_Ndis")]
     pub fn CaptureInterfaceHardwareCrossTimestamp(interfaceluid: *const super::Ndis::NET_LUID_LH, crosstimestamp: *mut INTERFACE_HARDWARE_CROSSTIMESTAMP) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertCompartmentGuidToId(compartmentguid: *const ::windows_sys_core::GUID, compartmentid: *mut u32) -> super::super::Foundation::NTSTATUS;
+    pub fn ConvertCompartmentGuidToId(compartmentguid: *const ::windows_core_sys::GUID, compartmentid: *mut u32) -> super::super::Foundation::NTSTATUS;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ConvertCompartmentIdToGuid(compartmentid: u32, compartmentguid: *mut ::windows_sys_core::GUID) -> super::super::Foundation::NTSTATUS;
+    pub fn ConvertCompartmentIdToGuid(compartmentid: u32, compartmentguid: *mut ::windows_core_sys::GUID) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
-    pub fn ConvertInterfaceAliasToLuid(interfacealias: ::windows_sys_core::PCWSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
+    pub fn ConvertInterfaceAliasToLuid(interfacealias: ::windows_core_sys::PCWSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
-    pub fn ConvertInterfaceGuidToLuid(interfaceguid: *const ::windows_sys_core::GUID, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
+    pub fn ConvertInterfaceGuidToLuid(interfaceguid: *const ::windows_core_sys::GUID, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
     pub fn ConvertInterfaceIndexToLuid(interfaceindex: u32, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
-    pub fn ConvertInterfaceLuidToAlias(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacealias: ::windows_sys_core::PWSTR, length: usize) -> super::super::Foundation::NTSTATUS;
+    pub fn ConvertInterfaceLuidToAlias(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacealias: ::windows_core_sys::PWSTR, length: usize) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
-    pub fn ConvertInterfaceLuidToGuid(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceguid: *mut ::windows_sys_core::GUID) -> super::super::Foundation::NTSTATUS;
+    pub fn ConvertInterfaceLuidToGuid(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceguid: *mut ::windows_core_sys::GUID) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
     pub fn ConvertInterfaceLuidToIndex(interfaceluid: *const super::Ndis::NET_LUID_LH, interfaceindex: *mut u32) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
-    pub fn ConvertInterfaceLuidToNameA(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: ::windows_sys_core::PSTR, length: usize) -> super::super::Foundation::NTSTATUS;
+    pub fn ConvertInterfaceLuidToNameA(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: ::windows_core_sys::PSTR, length: usize) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
-    pub fn ConvertInterfaceLuidToNameW(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: ::windows_sys_core::PWSTR, length: usize) -> super::super::Foundation::NTSTATUS;
+    pub fn ConvertInterfaceLuidToNameW(interfaceluid: *const super::Ndis::NET_LUID_LH, interfacename: ::windows_core_sys::PWSTR, length: usize) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
-    pub fn ConvertInterfaceNameToLuidA(interfacename: ::windows_sys_core::PCSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
+    pub fn ConvertInterfaceNameToLuidA(interfacename: ::windows_core_sys::PCSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
-    pub fn ConvertInterfaceNameToLuidW(interfacename: ::windows_sys_core::PCWSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
+    pub fn ConvertInterfaceNameToLuidW(interfacename: ::windows_core_sys::PCWSTR, interfaceluid: *mut super::Ndis::NET_LUID_LH) -> super::super::Foundation::NTSTATUS;
     #[cfg(feature = "Win32_Foundation")]
     pub fn ConvertIpv4MaskToLength(mask: u32, masklength: *mut u8) -> super::super::Foundation::NTSTATUS;
     #[cfg(feature = "Win32_Foundation")]
@@ -78,7 +78,7 @@ extern "system" {
     pub fn FreeDnsSettings(settings: *mut DNS_SETTINGS);
     pub fn FreeInterfaceDnsSettings(settings: *mut DNS_INTERFACE_SETTINGS);
     pub fn FreeMibTable(memory: *const ::core::ffi::c_void);
-    pub fn GetAdapterIndex(adaptername: ::windows_sys_core::PCWSTR, ifindex: *mut u32) -> u32;
+    pub fn GetAdapterIndex(adaptername: ::windows_core_sys::PCWSTR, ifindex: *mut u32) -> u32;
     pub fn GetAdapterOrderMap() -> *mut IP_ADAPTER_ORDER_MAP;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
     pub fn GetAdaptersAddresses(family: super::super::Networking::WinSock::ADDRESS_FAMILY, flags: GET_ADAPTERS_ADDRESSES_FLAGS, reserved: *mut ::core::ffi::c_void, adapteraddresses: *mut IP_ADAPTER_ADDRESSES_LH, sizepointer: *mut u32) -> u32;
@@ -123,7 +123,7 @@ extern "system" {
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
     pub fn GetInterfaceActiveTimestampCapabilities(interfaceluid: *const super::Ndis::NET_LUID_LH, timestampcapabilites: *mut INTERFACE_TIMESTAMP_CAPABILITIES) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetInterfaceDnsSettings(interface: ::windows_sys_core::GUID, settings: *mut DNS_INTERFACE_SETTINGS) -> super::super::Foundation::NTSTATUS;
+    pub fn GetInterfaceDnsSettings(interface: ::windows_core_sys::GUID, settings: *mut DNS_INTERFACE_SETTINGS) -> super::super::Foundation::NTSTATUS;
     pub fn GetInterfaceInfo(piftable: *mut IP_INTERFACE_INFO, dwoutbuflen: *mut u32) -> u32;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis"))]
     pub fn GetInterfaceSupportedTimestampCapabilities(interfaceluid: *const super::Ndis::NET_LUID_LH, timestampcapabilites: *mut INTERFACE_TIMESTAMP_CAPABILITIES) -> u32;
@@ -131,7 +131,7 @@ extern "system" {
     pub fn GetInvertedIfStackTable(table: *mut *mut MIB_INVERTEDIFSTACK_TABLE) -> super::super::Foundation::NTSTATUS;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetIpAddrTable(pipaddrtable: *mut MIB_IPADDRTABLE, pdwsize: *mut u32, border: super::super::Foundation::BOOL) -> u32;
-    pub fn GetIpErrorString(errorcode: u32, buffer: ::windows_sys_core::PWSTR, size: *mut u32) -> u32;
+    pub fn GetIpErrorString(errorcode: u32, buffer: ::windows_core_sys::PWSTR, size: *mut u32) -> u32;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
     pub fn GetIpForwardEntry2(row: *mut MIB_IPFORWARD_ROW2) -> super::super::Foundation::NTSTATUS;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
@@ -168,7 +168,7 @@ extern "system" {
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Networking_WinSock"))]
     pub fn GetNetworkConnectivityHintForInterface(interfaceindex: u32, connectivityhint: *mut super::super::Networking::WinSock::NL_NETWORK_CONNECTIVITY_HINT) -> super::super::Foundation::NTSTATUS;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetNetworkInformation(networkguid: *const ::windows_sys_core::GUID, compartmentid: *mut u32, siteid: *mut u32, networkname: ::windows_sys_core::PWSTR, length: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn GetNetworkInformation(networkguid: *const ::windows_core_sys::GUID, compartmentid: *mut u32, siteid: *mut u32, networkname: ::windows_core_sys::PWSTR, length: u32) -> super::super::Foundation::NTSTATUS;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetNetworkParams(pfixedinfo: *mut FIXED_INFO_W2KSP1, poutbuflen: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     pub fn GetNumberOfInterfaces(pdwnumif: *mut u32) -> u32;
@@ -290,7 +290,7 @@ extern "system" {
     pub fn SetDnsSettings(settings: *const DNS_SETTINGS) -> super::super::Foundation::NTSTATUS;
     pub fn SetIfEntry(pifrow: *const MIB_IFROW) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetInterfaceDnsSettings(interface: ::windows_sys_core::GUID, settings: *const DNS_INTERFACE_SETTINGS) -> super::super::Foundation::NTSTATUS;
+    pub fn SetInterfaceDnsSettings(interface: ::windows_core_sys::GUID, settings: *const DNS_INTERFACE_SETTINGS) -> super::super::Foundation::NTSTATUS;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn SetIpForwardEntry(proute: *const MIB_IPFORWARDROW) -> u32;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_NetworkManagement_Ndis", feature = "Win32_Networking_WinSock"))]
@@ -306,7 +306,7 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn SetJobCompartmentId(jobhandle: super::super::Foundation::HANDLE, compartmentid: u32) -> super::super::Foundation::NTSTATUS;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetNetworkInformation(networkguid: *const ::windows_sys_core::GUID, compartmentid: u32, networkname: ::windows_sys_core::PCWSTR) -> super::super::Foundation::NTSTATUS;
+    pub fn SetNetworkInformation(networkguid: *const ::windows_core_sys::GUID, compartmentid: u32, networkname: ::windows_core_sys::PCWSTR) -> super::super::Foundation::NTSTATUS;
     #[cfg(feature = "Win32_Networking_WinSock")]
     pub fn SetPerTcp6ConnectionEStats(row: *const MIB_TCP6ROW, estatstype: TCP_ESTATS_TYPE, rw: *const u8, rwversion: u32, rwsize: u32, offset: u32) -> u32;
     pub fn SetPerTcpConnectionEStats(row: *const MIB_TCPROW_LH, estatstype: TCP_ESTATS_TYPE, rw: *const u8, rwversion: u32, rwsize: u32, offset: u32) -> u32;
@@ -318,8 +318,8 @@ extern "system" {
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
     pub fn UnenableRouter(poverlapped: *const super::super::System::IO::OVERLAPPED, lpdwenablecount: *mut u32) -> u32;
     pub fn UnregisterInterfaceTimestampConfigChange(notificationhandle: HIFTIMESTAMPCHANGE);
-    pub fn if_indextoname(interfaceindex: u32, interfacename: ::windows_sys_core::PSTR) -> ::windows_sys_core::PSTR;
-    pub fn if_nametoindex(interfacename: ::windows_sys_core::PCSTR) -> u32;
+    pub fn if_indextoname(interfaceindex: u32, interfacename: ::windows_core_sys::PSTR) -> ::windows_core_sys::PSTR;
+    pub fn if_nametoindex(interfacename: ::windows_core_sys::PCSTR) -> u32;
 }
 pub const ANY_SIZE: u32 = 1u32;
 pub const BEST_IF: u32 = 20u32;
@@ -336,7 +336,7 @@ pub const DNS_DOH_POLICY_NOT_CONFIGURED: u32 = 4u32;
 pub const DNS_DOH_POLICY_REQUIRED: u32 = 32u32;
 #[repr(C)]
 pub struct DNS_DOH_SERVER_SETTINGS {
-    pub Template: ::windows_sys_core::PWSTR,
+    pub Template: ::windows_core_sys::PWSTR,
     pub Flags: u64,
 }
 impl ::core::marker::Copy for DNS_DOH_SERVER_SETTINGS {}
@@ -353,14 +353,14 @@ pub const DNS_ENABLE_DOH: u32 = 1u32;
 pub struct DNS_INTERFACE_SETTINGS {
     pub Version: u32,
     pub Flags: u64,
-    pub Domain: ::windows_sys_core::PWSTR,
-    pub NameServer: ::windows_sys_core::PWSTR,
-    pub SearchList: ::windows_sys_core::PWSTR,
+    pub Domain: ::windows_core_sys::PWSTR,
+    pub NameServer: ::windows_core_sys::PWSTR,
+    pub SearchList: ::windows_core_sys::PWSTR,
     pub RegistrationEnabled: u32,
     pub RegisterAdapterName: u32,
     pub EnableLLMNR: u32,
     pub QueryAdapterName: u32,
-    pub ProfileNameServer: ::windows_sys_core::PWSTR,
+    pub ProfileNameServer: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for DNS_INTERFACE_SETTINGS {}
 impl ::core::clone::Clone for DNS_INTERFACE_SETTINGS {
@@ -372,16 +372,16 @@ impl ::core::clone::Clone for DNS_INTERFACE_SETTINGS {
 pub struct DNS_INTERFACE_SETTINGS3 {
     pub Version: u32,
     pub Flags: u64,
-    pub Domain: ::windows_sys_core::PWSTR,
-    pub NameServer: ::windows_sys_core::PWSTR,
-    pub SearchList: ::windows_sys_core::PWSTR,
+    pub Domain: ::windows_core_sys::PWSTR,
+    pub NameServer: ::windows_core_sys::PWSTR,
+    pub SearchList: ::windows_core_sys::PWSTR,
     pub RegistrationEnabled: u32,
     pub RegisterAdapterName: u32,
     pub EnableLLMNR: u32,
     pub QueryAdapterName: u32,
-    pub ProfileNameServer: ::windows_sys_core::PWSTR,
+    pub ProfileNameServer: ::windows_core_sys::PWSTR,
     pub DisableUnconstrainedQueries: u32,
-    pub SupplementalSearchList: ::windows_sys_core::PWSTR,
+    pub SupplementalSearchList: ::windows_core_sys::PWSTR,
     pub cServerProperties: u32,
     pub ServerProperties: *mut DNS_SERVER_PROPERTY,
     pub cProfileServerProperties: u32,
@@ -397,7 +397,7 @@ impl ::core::clone::Clone for DNS_INTERFACE_SETTINGS3 {
 pub struct DNS_INTERFACE_SETTINGS_EX {
     pub SettingsV1: DNS_INTERFACE_SETTINGS,
     pub DisableUnconstrainedQueries: u32,
-    pub SupplementalSearchList: ::windows_sys_core::PWSTR,
+    pub SupplementalSearchList: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for DNS_INTERFACE_SETTINGS_EX {}
 impl ::core::clone::Clone for DNS_INTERFACE_SETTINGS_EX {
@@ -439,9 +439,9 @@ pub const DNS_SERVER_PROPERTY_VERSION1: u32 = 1u32;
 pub struct DNS_SETTINGS {
     pub Version: u32,
     pub Flags: u64,
-    pub Hostname: ::windows_sys_core::PWSTR,
-    pub Domain: ::windows_sys_core::PWSTR,
-    pub SearchList: ::windows_sys_core::PWSTR,
+    pub Hostname: ::windows_core_sys::PWSTR,
+    pub Domain: ::windows_core_sys::PWSTR,
+    pub SearchList: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for DNS_SETTINGS {}
 impl ::core::clone::Clone for DNS_SETTINGS {
@@ -453,9 +453,9 @@ impl ::core::clone::Clone for DNS_SETTINGS {
 pub struct DNS_SETTINGS2 {
     pub Version: u32,
     pub Flags: u64,
-    pub Hostname: ::windows_sys_core::PWSTR,
-    pub Domain: ::windows_sys_core::PWSTR,
-    pub SearchList: ::windows_sys_core::PWSTR,
+    pub Hostname: ::windows_core_sys::PWSTR,
+    pub Domain: ::windows_core_sys::PWSTR,
+    pub SearchList: ::windows_core_sys::PWSTR,
     pub SettingFlags: u64,
 }
 impl ::core::marker::Copy for DNS_SETTINGS2 {}
@@ -878,14 +878,14 @@ pub const IPV6_ROUTE_INFO: u32 = 4294901776u32;
 pub struct IP_ADAPTER_ADDRESSES_LH {
     pub Anonymous1: IP_ADAPTER_ADDRESSES_LH_0,
     pub Next: *mut IP_ADAPTER_ADDRESSES_LH,
-    pub AdapterName: ::windows_sys_core::PSTR,
+    pub AdapterName: ::windows_core_sys::PSTR,
     pub FirstUnicastAddress: *mut IP_ADAPTER_UNICAST_ADDRESS_LH,
     pub FirstAnycastAddress: *mut IP_ADAPTER_ANYCAST_ADDRESS_XP,
     pub FirstMulticastAddress: *mut IP_ADAPTER_MULTICAST_ADDRESS_XP,
     pub FirstDnsServerAddress: *mut IP_ADAPTER_DNS_SERVER_ADDRESS_XP,
-    pub DnsSuffix: ::windows_sys_core::PWSTR,
-    pub Description: ::windows_sys_core::PWSTR,
-    pub FriendlyName: ::windows_sys_core::PWSTR,
+    pub DnsSuffix: ::windows_core_sys::PWSTR,
+    pub Description: ::windows_core_sys::PWSTR,
+    pub FriendlyName: ::windows_core_sys::PWSTR,
     pub PhysicalAddress: [u8; 8],
     pub PhysicalAddressLength: u32,
     pub Anonymous2: IP_ADAPTER_ADDRESSES_LH_1,
@@ -904,7 +904,7 @@ pub struct IP_ADAPTER_ADDRESSES_LH {
     pub Luid: super::Ndis::NET_LUID_LH,
     pub Dhcpv4Server: super::super::Networking::WinSock::SOCKET_ADDRESS,
     pub CompartmentId: u32,
-    pub NetworkGuid: ::windows_sys_core::GUID,
+    pub NetworkGuid: ::windows_core_sys::GUID,
     pub ConnectionType: super::Ndis::NET_IF_CONNECTION_TYPE,
     pub TunnelType: super::Ndis::TUNNEL_TYPE,
     pub Dhcpv6Server: super::super::Networking::WinSock::SOCKET_ADDRESS,
@@ -981,14 +981,14 @@ impl ::core::clone::Clone for IP_ADAPTER_ADDRESSES_LH_1_0 {
 pub struct IP_ADAPTER_ADDRESSES_XP {
     pub Anonymous: IP_ADAPTER_ADDRESSES_XP_0,
     pub Next: *mut IP_ADAPTER_ADDRESSES_XP,
-    pub AdapterName: ::windows_sys_core::PSTR,
+    pub AdapterName: ::windows_core_sys::PSTR,
     pub FirstUnicastAddress: *mut IP_ADAPTER_UNICAST_ADDRESS_XP,
     pub FirstAnycastAddress: *mut IP_ADAPTER_ANYCAST_ADDRESS_XP,
     pub FirstMulticastAddress: *mut IP_ADAPTER_MULTICAST_ADDRESS_XP,
     pub FirstDnsServerAddress: *mut IP_ADAPTER_DNS_SERVER_ADDRESS_XP,
-    pub DnsSuffix: ::windows_sys_core::PWSTR,
-    pub Description: ::windows_sys_core::PWSTR,
-    pub FriendlyName: ::windows_sys_core::PWSTR,
+    pub DnsSuffix: ::windows_core_sys::PWSTR,
+    pub Description: ::windows_core_sys::PWSTR,
+    pub FriendlyName: ::windows_core_sys::PWSTR,
     pub PhysicalAddress: [u8; 8],
     pub PhysicalAddressLength: u32,
     pub Flags: u32,
@@ -1898,7 +1898,7 @@ pub const MibIfEntryNormalWithoutStatistics: MIB_IF_ENTRY_LEVEL = 2i32;
 pub struct MIB_IF_ROW2 {
     pub InterfaceLuid: super::Ndis::NET_LUID_LH,
     pub InterfaceIndex: u32,
-    pub InterfaceGuid: ::windows_sys_core::GUID,
+    pub InterfaceGuid: ::windows_core_sys::GUID,
     pub Alias: [u16; 257],
     pub Description: [u16; 257],
     pub PhysicalAddressLength: u32,
@@ -1915,7 +1915,7 @@ pub struct MIB_IF_ROW2 {
     pub OperStatus: super::Ndis::IF_OPER_STATUS,
     pub AdminStatus: super::Ndis::NET_IF_ADMIN_STATUS,
     pub MediaConnectState: super::Ndis::NET_IF_MEDIA_CONNECT_STATE,
-    pub NetworkGuid: ::windows_sys_core::GUID,
+    pub NetworkGuid: ::windows_core_sys::GUID,
     pub ConnectionType: super::Ndis::NET_IF_CONNECTION_TYPE,
     pub TransmitLinkSpeed: u64,
     pub ReceiveLinkSpeed: u64,
@@ -3750,8 +3750,8 @@ pub const ROUTE_STATE: u32 = 34u32;
 pub const TCP6_STATS: u32 = 38u32;
 #[repr(C)]
 pub struct TCPIP_OWNER_MODULE_BASIC_INFO {
-    pub pModuleName: ::windows_sys_core::PWSTR,
-    pub pModulePath: ::windows_sys_core::PWSTR,
+    pub pModuleName: ::windows_core_sys::PWSTR,
+    pub pModulePath: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for TCPIP_OWNER_MODULE_BASIC_INFO {}
 impl ::core::clone::Clone for TCPIP_OWNER_MODULE_BASIC_INFO {
@@ -4194,8 +4194,8 @@ pub struct ip_interface_name_info_w2ksp1 {
     pub MediaType: u32,
     pub ConnectionType: u8,
     pub AccessType: u8,
-    pub DeviceGuid: ::windows_sys_core::GUID,
-    pub InterfaceGuid: ::windows_sys_core::GUID,
+    pub DeviceGuid: ::windows_core_sys::GUID,
+    pub InterfaceGuid: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for ip_interface_name_info_w2ksp1 {}
 impl ::core::clone::Clone for ip_interface_name_info_w2ksp1 {

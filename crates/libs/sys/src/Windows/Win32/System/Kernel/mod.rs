@@ -26,7 +26,7 @@ pub const DEFAULT_COMPARTMENT_ID: COMPARTMENT_ID = 1i32;
 pub struct CSTRING {
     pub Length: u16,
     pub MaximumLength: u16,
-    pub Buffer: ::windows_sys_core::PCSTR,
+    pub Buffer: ::windows_core_sys::PCSTR,
 }
 impl ::core::marker::Copy for CSTRING {}
 impl ::core::clone::Clone for CSTRING {
@@ -202,7 +202,7 @@ pub const NULL64: u32 = 0u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Kernel\"`*"]
 pub struct OBJECTID {
-    pub Lineage: ::windows_sys_core::GUID,
+    pub Lineage: ::windows_core_sys::GUID,
     pub Uniquifier: u32,
 }
 impl ::core::marker::Copy for OBJECTID {}
@@ -512,7 +512,7 @@ impl ::core::clone::Clone for SLIST_HEADER_0 {
 pub struct STRING {
     pub Length: u16,
     pub MaximumLength: u16,
-    pub Buffer: ::windows_sys_core::PSTR,
+    pub Buffer: ::windows_core_sys::PSTR,
 }
 impl ::core::marker::Copy for STRING {}
 impl ::core::clone::Clone for STRING {

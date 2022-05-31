@@ -1,7 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AddVirtualDiskParent(virtualdiskhandle: super::super::Foundation::HANDLE, parentpath: ::windows_sys_core::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
+    pub fn AddVirtualDiskParent(virtualdiskhandle: super::super::Foundation::HANDLE, parentpath: ::windows_core_sys::PCWSTR) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
     pub fn ApplySnapshotVhdSet(virtualdiskhandle: super::super::Foundation::HANDLE, parameters: *const APPLY_SNAPSHOT_VHDSET_PARAMETERS, flags: APPLY_SNAPSHOT_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_IO"))]
@@ -13,31 +13,31 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn CompleteForkVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security", feature = "Win32_System_IO"))]
-    pub fn CreateVirtualDisk(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: ::windows_sys_core::PCWSTR, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, securitydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, flags: CREATE_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const CREATE_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED, handle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR;
+    pub fn CreateVirtualDisk(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: ::windows_core_sys::PCWSTR, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, securitydescriptor: super::super::Security::PSECURITY_DESCRIPTOR, flags: CREATE_VIRTUAL_DISK_FLAG, providerspecificflags: u32, parameters: *const CREATE_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED, handle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
     pub fn DeleteSnapshotVhdSet(virtualdiskhandle: super::super::Foundation::HANDLE, parameters: *const DELETE_SNAPSHOT_VHDSET_PARAMETERS, flags: DELETE_SNAPSHOT_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn DeleteVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, item: *const ::windows_sys_core::GUID) -> super::super::Foundation::WIN32_ERROR;
+    pub fn DeleteVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, item: *const ::windows_core_sys::GUID) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
     pub fn DetachVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: DETACH_VIRTUAL_DISK_FLAG, providerspecificflags: u32) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn EnumerateVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, numberofitems: *mut u32, items: *mut ::windows_sys_core::GUID) -> super::super::Foundation::WIN32_ERROR;
+    pub fn EnumerateVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, numberofitems: *mut u32, items: *mut ::windows_core_sys::GUID) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
     pub fn ExpandVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: EXPAND_VIRTUAL_DISK_FLAG, parameters: *const EXPAND_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
     pub fn ForkVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: FORK_VIRTUAL_DISK_FLAG, parameters: *const FORK_VIRTUAL_DISK_PARAMETERS, overlapped: *mut super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetAllAttachedVirtualDiskPhysicalPaths(pathsbuffersizeinbytes: *mut u32, pathsbuffer: ::windows_sys_core::PWSTR) -> super::super::Foundation::WIN32_ERROR;
+    pub fn GetAllAttachedVirtualDiskPhysicalPaths(pathsbuffersizeinbytes: *mut u32, pathsbuffer: ::windows_core_sys::PWSTR) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetStorageDependencyInformation(objecthandle: super::super::Foundation::HANDLE, flags: GET_STORAGE_DEPENDENCY_FLAG, storagedependencyinfosize: u32, storagedependencyinfo: *mut STORAGE_DEPENDENCY_INFO, sizeused: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetVirtualDiskInformation(virtualdiskhandle: super::super::Foundation::HANDLE, virtualdiskinfosize: *mut u32, virtualdiskinfo: *mut GET_VIRTUAL_DISK_INFO, sizeused: *mut u32) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, item: *const ::windows_sys_core::GUID, metadatasize: *mut u32, metadata: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
+    pub fn GetVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, item: *const ::windows_core_sys::GUID, metadatasize: *mut u32, metadata: *mut ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
     pub fn GetVirtualDiskOperationProgress(virtualdiskhandle: super::super::Foundation::HANDLE, overlapped: *const super::super::System::IO::OVERLAPPED, progress: *mut VIRTUAL_DISK_PROGRESS) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetVirtualDiskPhysicalPath(virtualdiskhandle: super::super::Foundation::HANDLE, diskpathsizeinbytes: *mut u32, diskpath: ::windows_sys_core::PWSTR) -> super::super::Foundation::WIN32_ERROR;
+    pub fn GetVirtualDiskPhysicalPath(virtualdiskhandle: super::super::Foundation::HANDLE, diskpathsizeinbytes: *mut u32, diskpath: ::windows_core_sys::PWSTR) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
     pub fn MergeVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, flags: MERGE_VIRTUAL_DISK_FLAG, parameters: *const MERGE_VIRTUAL_DISK_PARAMETERS, overlapped: *const super::super::System::IO::OVERLAPPED) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
@@ -45,9 +45,9 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn ModifyVhdSet(virtualdiskhandle: super::super::Foundation::HANDLE, parameters: *const MODIFY_VHDSET_PARAMETERS, flags: MODIFY_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn OpenVirtualDisk(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: ::windows_sys_core::PCWSTR, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, flags: OPEN_VIRTUAL_DISK_FLAG, parameters: *const OPEN_VIRTUAL_DISK_PARAMETERS, handle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR;
+    pub fn OpenVirtualDisk(virtualstoragetype: *const VIRTUAL_STORAGE_TYPE, path: ::windows_core_sys::PCWSTR, virtualdiskaccessmask: VIRTUAL_DISK_ACCESS_MASK, flags: OPEN_VIRTUAL_DISK_FLAG, parameters: *const OPEN_VIRTUAL_DISK_PARAMETERS, handle: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn QueryChangesVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, changetrackingid: ::windows_sys_core::PCWSTR, byteoffset: u64, bytelength: u64, flags: QUERY_CHANGES_VIRTUAL_DISK_FLAG, ranges: *mut QUERY_CHANGES_VIRTUAL_DISK_RANGE, rangecount: *mut u32, processedlength: *mut u64) -> super::super::Foundation::WIN32_ERROR;
+    pub fn QueryChangesVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, changetrackingid: ::windows_core_sys::PCWSTR, byteoffset: u64, bytelength: u64, flags: QUERY_CHANGES_VIRTUAL_DISK_FLAG, ranges: *mut QUERY_CHANGES_VIRTUAL_DISK_RANGE, rangecount: *mut u32, processedlength: *mut u64) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
     pub fn RawSCSIVirtualDisk(virtualdiskhandle: super::super::Foundation::HANDLE, parameters: *const RAW_SCSI_VIRTUAL_DISK_PARAMETERS, flags: RAW_SCSI_VIRTUAL_DISK_FLAG, response: *mut RAW_SCSI_VIRTUAL_DISK_RESPONSE) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_System_IO"))]
@@ -55,7 +55,7 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn SetVirtualDiskInformation(virtualdiskhandle: super::super::Foundation::HANDLE, virtualdiskinfo: *const SET_VIRTUAL_DISK_INFO) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, item: *const ::windows_sys_core::GUID, metadatasize: u32, metadata: *const ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
+    pub fn SetVirtualDiskMetadata(virtualdiskhandle: super::super::Foundation::HANDLE, item: *const ::windows_core_sys::GUID, metadatasize: u32, metadata: *const ::core::ffi::c_void) -> super::super::Foundation::WIN32_ERROR;
     #[cfg(feature = "Win32_Foundation")]
     pub fn TakeSnapshotVhdSet(virtualdiskhandle: super::super::Foundation::HANDLE, parameters: *const TAKE_SNAPSHOT_VHDSET_PARAMETERS, flags: TAKE_SNAPSHOT_VHDSET_FLAG) -> super::super::Foundation::WIN32_ERROR;
 }
@@ -85,8 +85,8 @@ impl ::core::clone::Clone for APPLY_SNAPSHOT_VHDSET_PARAMETERS_0 {
 }
 #[repr(C)]
 pub struct APPLY_SNAPSHOT_VHDSET_PARAMETERS_0_0 {
-    pub SnapshotId: ::windows_sys_core::GUID,
-    pub LeafSnapshotId: ::windows_sys_core::GUID,
+    pub SnapshotId: ::windows_core_sys::GUID,
+    pub LeafSnapshotId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for APPLY_SNAPSHOT_VHDSET_PARAMETERS_0_0 {}
 impl ::core::clone::Clone for APPLY_SNAPSHOT_VHDSET_PARAMETERS_0_0 {
@@ -233,12 +233,12 @@ impl ::core::clone::Clone for CREATE_VIRTUAL_DISK_PARAMETERS_0 {
 }
 #[repr(C)]
 pub struct CREATE_VIRTUAL_DISK_PARAMETERS_0_0 {
-    pub UniqueId: ::windows_sys_core::GUID,
+    pub UniqueId: ::windows_core_sys::GUID,
     pub MaximumSize: u64,
     pub BlockSizeInBytes: u32,
     pub SectorSizeInBytes: u32,
-    pub ParentPath: ::windows_sys_core::PCWSTR,
-    pub SourcePath: ::windows_sys_core::PCWSTR,
+    pub ParentPath: ::windows_core_sys::PCWSTR,
+    pub SourcePath: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for CREATE_VIRTUAL_DISK_PARAMETERS_0_0 {}
 impl ::core::clone::Clone for CREATE_VIRTUAL_DISK_PARAMETERS_0_0 {
@@ -248,17 +248,17 @@ impl ::core::clone::Clone for CREATE_VIRTUAL_DISK_PARAMETERS_0_0 {
 }
 #[repr(C)]
 pub struct CREATE_VIRTUAL_DISK_PARAMETERS_0_1 {
-    pub UniqueId: ::windows_sys_core::GUID,
+    pub UniqueId: ::windows_core_sys::GUID,
     pub MaximumSize: u64,
     pub BlockSizeInBytes: u32,
     pub SectorSizeInBytes: u32,
     pub PhysicalSectorSizeInBytes: u32,
-    pub ParentPath: ::windows_sys_core::PCWSTR,
-    pub SourcePath: ::windows_sys_core::PCWSTR,
+    pub ParentPath: ::windows_core_sys::PCWSTR,
+    pub SourcePath: ::windows_core_sys::PCWSTR,
     pub OpenFlags: OPEN_VIRTUAL_DISK_FLAG,
     pub ParentVirtualStorageType: VIRTUAL_STORAGE_TYPE,
     pub SourceVirtualStorageType: VIRTUAL_STORAGE_TYPE,
-    pub ResiliencyGuid: ::windows_sys_core::GUID,
+    pub ResiliencyGuid: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for CREATE_VIRTUAL_DISK_PARAMETERS_0_1 {}
 impl ::core::clone::Clone for CREATE_VIRTUAL_DISK_PARAMETERS_0_1 {
@@ -268,18 +268,18 @@ impl ::core::clone::Clone for CREATE_VIRTUAL_DISK_PARAMETERS_0_1 {
 }
 #[repr(C)]
 pub struct CREATE_VIRTUAL_DISK_PARAMETERS_0_2 {
-    pub UniqueId: ::windows_sys_core::GUID,
+    pub UniqueId: ::windows_core_sys::GUID,
     pub MaximumSize: u64,
     pub BlockSizeInBytes: u32,
     pub SectorSizeInBytes: u32,
     pub PhysicalSectorSizeInBytes: u32,
-    pub ParentPath: ::windows_sys_core::PCWSTR,
-    pub SourcePath: ::windows_sys_core::PCWSTR,
+    pub ParentPath: ::windows_core_sys::PCWSTR,
+    pub SourcePath: ::windows_core_sys::PCWSTR,
     pub OpenFlags: OPEN_VIRTUAL_DISK_FLAG,
     pub ParentVirtualStorageType: VIRTUAL_STORAGE_TYPE,
     pub SourceVirtualStorageType: VIRTUAL_STORAGE_TYPE,
-    pub ResiliencyGuid: ::windows_sys_core::GUID,
-    pub SourceLimitPath: ::windows_sys_core::PCWSTR,
+    pub ResiliencyGuid: ::windows_core_sys::GUID,
+    pub SourceLimitPath: ::windows_core_sys::PCWSTR,
     pub BackingStorageType: VIRTUAL_STORAGE_TYPE,
 }
 impl ::core::marker::Copy for CREATE_VIRTUAL_DISK_PARAMETERS_0_2 {}
@@ -290,20 +290,20 @@ impl ::core::clone::Clone for CREATE_VIRTUAL_DISK_PARAMETERS_0_2 {
 }
 #[repr(C)]
 pub struct CREATE_VIRTUAL_DISK_PARAMETERS_0_3 {
-    pub UniqueId: ::windows_sys_core::GUID,
+    pub UniqueId: ::windows_core_sys::GUID,
     pub MaximumSize: u64,
     pub BlockSizeInBytes: u32,
     pub SectorSizeInBytes: u32,
     pub PhysicalSectorSizeInBytes: u32,
-    pub ParentPath: ::windows_sys_core::PCWSTR,
-    pub SourcePath: ::windows_sys_core::PCWSTR,
+    pub ParentPath: ::windows_core_sys::PCWSTR,
+    pub SourcePath: ::windows_core_sys::PCWSTR,
     pub OpenFlags: OPEN_VIRTUAL_DISK_FLAG,
     pub ParentVirtualStorageType: VIRTUAL_STORAGE_TYPE,
     pub SourceVirtualStorageType: VIRTUAL_STORAGE_TYPE,
-    pub ResiliencyGuid: ::windows_sys_core::GUID,
-    pub SourceLimitPath: ::windows_sys_core::PCWSTR,
+    pub ResiliencyGuid: ::windows_core_sys::GUID,
+    pub SourceLimitPath: ::windows_core_sys::PCWSTR,
     pub BackingStorageType: VIRTUAL_STORAGE_TYPE,
-    pub PmemAddressAbstractionType: ::windows_sys_core::GUID,
+    pub PmemAddressAbstractionType: ::windows_core_sys::GUID,
     pub DataAlignment: u64,
 }
 impl ::core::marker::Copy for CREATE_VIRTUAL_DISK_PARAMETERS_0_3 {}
@@ -346,7 +346,7 @@ impl ::core::clone::Clone for DELETE_SNAPSHOT_VHDSET_PARAMETERS_0 {
 }
 #[repr(C)]
 pub struct DELETE_SNAPSHOT_VHDSET_PARAMETERS_0_0 {
-    pub SnapshotId: ::windows_sys_core::GUID,
+    pub SnapshotId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for DELETE_SNAPSHOT_VHDSET_PARAMETERS_0_0 {}
 impl ::core::clone::Clone for DELETE_SNAPSHOT_VHDSET_PARAMETERS_0_0 {
@@ -438,7 +438,7 @@ impl ::core::clone::Clone for FORK_VIRTUAL_DISK_PARAMETERS_0 {
 }
 #[repr(C)]
 pub struct FORK_VIRTUAL_DISK_PARAMETERS_0_0 {
-    pub ForkedVirtualDiskPath: ::windows_sys_core::PCWSTR,
+    pub ForkedVirtualDiskPath: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for FORK_VIRTUAL_DISK_PARAMETERS_0_0 {}
 impl ::core::clone::Clone for FORK_VIRTUAL_DISK_PARAMETERS_0_0 {
@@ -471,9 +471,9 @@ impl ::core::clone::Clone for GET_VIRTUAL_DISK_INFO {
 #[cfg(feature = "Win32_Foundation")]
 pub union GET_VIRTUAL_DISK_INFO_0 {
     pub Size: GET_VIRTUAL_DISK_INFO_0_3,
-    pub Identifier: ::windows_sys_core::GUID,
+    pub Identifier: ::windows_core_sys::GUID,
     pub ParentLocation: GET_VIRTUAL_DISK_INFO_0_1,
-    pub ParentIdentifier: ::windows_sys_core::GUID,
+    pub ParentIdentifier: ::windows_core_sys::GUID,
     pub ParentTimestamp: u32,
     pub VirtualStorageType: VIRTUAL_STORAGE_TYPE,
     pub ProviderSubtype: u32,
@@ -483,7 +483,7 @@ pub union GET_VIRTUAL_DISK_INFO_0 {
     pub VhdPhysicalSectorSize: u32,
     pub SmallestSafeVirtualSize: u64,
     pub FragmentationPercentage: u32,
-    pub VirtualDiskId: ::windows_sys_core::GUID,
+    pub VirtualDiskId: ::windows_core_sys::GUID,
     pub ChangeTrackingState: GET_VIRTUAL_DISK_INFO_0_0,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -650,7 +650,7 @@ impl ::core::clone::Clone for MIRROR_VIRTUAL_DISK_PARAMETERS_0 {
 }
 #[repr(C)]
 pub struct MIRROR_VIRTUAL_DISK_PARAMETERS_0_0 {
-    pub MirrorVirtualDiskPath: ::windows_sys_core::PCWSTR,
+    pub MirrorVirtualDiskPath: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for MIRROR_VIRTUAL_DISK_PARAMETERS_0_0 {}
 impl ::core::clone::Clone for MIRROR_VIRTUAL_DISK_PARAMETERS_0_0 {
@@ -678,8 +678,8 @@ impl ::core::clone::Clone for MODIFY_VHDSET_PARAMETERS {
 #[repr(C)]
 pub union MODIFY_VHDSET_PARAMETERS_0 {
     pub SnapshotPath: MODIFY_VHDSET_PARAMETERS_0_0,
-    pub SnapshotId: ::windows_sys_core::GUID,
-    pub DefaultFilePath: ::windows_sys_core::PCWSTR,
+    pub SnapshotId: ::windows_core_sys::GUID,
+    pub DefaultFilePath: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for MODIFY_VHDSET_PARAMETERS_0 {}
 impl ::core::clone::Clone for MODIFY_VHDSET_PARAMETERS_0 {
@@ -689,8 +689,8 @@ impl ::core::clone::Clone for MODIFY_VHDSET_PARAMETERS_0 {
 }
 #[repr(C)]
 pub struct MODIFY_VHDSET_PARAMETERS_0_0 {
-    pub SnapshotId: ::windows_sys_core::GUID,
-    pub SnapshotFilePath: ::windows_sys_core::PCWSTR,
+    pub SnapshotId: ::windows_core_sys::GUID,
+    pub SnapshotFilePath: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for MODIFY_VHDSET_PARAMETERS_0_0 {}
 impl ::core::clone::Clone for MODIFY_VHDSET_PARAMETERS_0_0 {
@@ -764,7 +764,7 @@ impl ::core::clone::Clone for OPEN_VIRTUAL_DISK_PARAMETERS_0_0 {
 pub struct OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {
     pub GetInfoOnly: super::super::Foundation::BOOL,
     pub ReadOnly: super::super::Foundation::BOOL,
-    pub ResiliencyGuid: ::windows_sys_core::GUID,
+    pub ResiliencyGuid: ::windows_core_sys::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {}
@@ -779,8 +779,8 @@ impl ::core::clone::Clone for OPEN_VIRTUAL_DISK_PARAMETERS_0_1 {
 pub struct OPEN_VIRTUAL_DISK_PARAMETERS_0_2 {
     pub GetInfoOnly: super::super::Foundation::BOOL,
     pub ReadOnly: super::super::Foundation::BOOL,
-    pub ResiliencyGuid: ::windows_sys_core::GUID,
-    pub SnapshotId: ::windows_sys_core::GUID,
+    pub ResiliencyGuid: ::windows_core_sys::GUID,
+    pub SnapshotId: ::windows_core_sys::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for OPEN_VIRTUAL_DISK_PARAMETERS_0_2 {}
@@ -951,11 +951,11 @@ impl ::core::clone::Clone for SET_VIRTUAL_DISK_INFO {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub union SET_VIRTUAL_DISK_INFO_0 {
-    pub ParentFilePath: ::windows_sys_core::PCWSTR,
-    pub UniqueIdentifier: ::windows_sys_core::GUID,
+    pub ParentFilePath: ::windows_core_sys::PCWSTR,
+    pub UniqueIdentifier: ::windows_core_sys::GUID,
     pub ParentPathWithDepthInfo: SET_VIRTUAL_DISK_INFO_0_1,
     pub VhdPhysicalSectorSize: u32,
-    pub VirtualDiskId: ::windows_sys_core::GUID,
+    pub VirtualDiskId: ::windows_core_sys::GUID,
     pub ChangeTrackingEnabled: super::super::Foundation::BOOL,
     pub ParentLocator: SET_VIRTUAL_DISK_INFO_0_0,
 }
@@ -970,8 +970,8 @@ impl ::core::clone::Clone for SET_VIRTUAL_DISK_INFO_0 {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct SET_VIRTUAL_DISK_INFO_0_0 {
-    pub LinkageId: ::windows_sys_core::GUID,
-    pub ParentFilePath: ::windows_sys_core::PCWSTR,
+    pub LinkageId: ::windows_core_sys::GUID,
+    pub ParentFilePath: ::windows_core_sys::PCWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SET_VIRTUAL_DISK_INFO_0_0 {}
@@ -985,7 +985,7 @@ impl ::core::clone::Clone for SET_VIRTUAL_DISK_INFO_0_0 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct SET_VIRTUAL_DISK_INFO_0_1 {
     pub ChildDepth: u32,
-    pub ParentFilePath: ::windows_sys_core::PCWSTR,
+    pub ParentFilePath: ::windows_core_sys::PCWSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for SET_VIRTUAL_DISK_INFO_0_1 {}
@@ -1045,10 +1045,10 @@ pub struct STORAGE_DEPENDENCY_INFO_TYPE_2 {
     pub ProviderSpecificFlags: u32,
     pub VirtualStorageType: VIRTUAL_STORAGE_TYPE,
     pub AncestorLevel: u32,
-    pub DependencyDeviceName: ::windows_sys_core::PWSTR,
-    pub HostVolumeName: ::windows_sys_core::PWSTR,
-    pub DependentVolumeName: ::windows_sys_core::PWSTR,
-    pub DependentVolumeRelativePath: ::windows_sys_core::PWSTR,
+    pub DependencyDeviceName: ::windows_core_sys::PWSTR,
+    pub HostVolumeName: ::windows_core_sys::PWSTR,
+    pub DependentVolumeName: ::windows_core_sys::PWSTR,
+    pub DependentVolumeRelativePath: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for STORAGE_DEPENDENCY_INFO_TYPE_2 {}
 impl ::core::clone::Clone for STORAGE_DEPENDENCY_INFO_TYPE_2 {
@@ -1086,7 +1086,7 @@ impl ::core::clone::Clone for TAKE_SNAPSHOT_VHDSET_PARAMETERS_0 {
 }
 #[repr(C)]
 pub struct TAKE_SNAPSHOT_VHDSET_PARAMETERS_0_0 {
-    pub SnapshotId: ::windows_sys_core::GUID,
+    pub SnapshotId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for TAKE_SNAPSHOT_VHDSET_PARAMETERS_0_0 {}
 impl ::core::clone::Clone for TAKE_SNAPSHOT_VHDSET_PARAMETERS_0_0 {
@@ -1124,7 +1124,7 @@ impl ::core::clone::Clone for VIRTUAL_DISK_PROGRESS {
 #[repr(C)]
 pub struct VIRTUAL_STORAGE_TYPE {
     pub DeviceId: u32,
-    pub VendorId: ::windows_sys_core::GUID,
+    pub VendorId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VIRTUAL_STORAGE_TYPE {}
 impl ::core::clone::Clone for VIRTUAL_STORAGE_TYPE {
@@ -1137,5 +1137,5 @@ pub const VIRTUAL_STORAGE_TYPE_DEVICE_UNKNOWN: u32 = 0u32;
 pub const VIRTUAL_STORAGE_TYPE_DEVICE_VHD: u32 = 2u32;
 pub const VIRTUAL_STORAGE_TYPE_DEVICE_VHDSET: u32 = 4u32;
 pub const VIRTUAL_STORAGE_TYPE_DEVICE_VHDX: u32 = 3u32;
-pub const VIRTUAL_STORAGE_TYPE_VENDOR_MICROSOFT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3969403628, data2: 41209, data3: 18409, data4: [144, 31, 113, 65, 90, 102, 52, 91] };
-pub const VIRTUAL_STORAGE_TYPE_VENDOR_UNKNOWN: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 0, data2: 0, data3: 0, data4: [0, 0, 0, 0, 0, 0, 0, 0] };
+pub const VIRTUAL_STORAGE_TYPE_VENDOR_MICROSOFT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3969403628, data2: 41209, data3: 18409, data4: [144, 31, 113, 65, 90, 102, 52, 91] };
+pub const VIRTUAL_STORAGE_TYPE_VENDOR_UNKNOWN: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 0, data2: 0, data3: 0, data4: [0, 0, 0, 0, 0, 0, 0, 0] };

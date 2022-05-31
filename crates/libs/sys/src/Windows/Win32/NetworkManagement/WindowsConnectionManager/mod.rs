@@ -5,32 +5,32 @@ extern "system" {
     pub fn FreeInterfaceContextTable(interfacecontexttable: *const NET_INTERFACE_CONTEXT_TABLE);
     #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn GetInterfaceContextTableForHostName(hostname: ::windows_sys_core::PCWSTR, proxyname: ::windows_sys_core::PCWSTR, flags: u32, connectionprofilefilterrawdata: *const u8, connectionprofilefilterrawdatasize: u32, interfacecontexttable: *mut *mut NET_INTERFACE_CONTEXT_TABLE) -> ::windows_sys_core::HRESULT;
+    pub fn GetInterfaceContextTableForHostName(hostname: ::windows_core_sys::PCWSTR, proxyname: ::windows_core_sys::PCWSTR, flags: u32, connectionprofilefilterrawdata: *const u8, connectionprofilefilterrawdatasize: u32, interfacecontexttable: *mut *mut NET_INTERFACE_CONTEXT_TABLE) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`*"]
-    pub fn OnDemandGetRoutingHint(destinationhostname: ::windows_sys_core::PCWSTR, interfaceindex: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn OnDemandGetRoutingHint(destinationhostname: ::windows_core_sys::PCWSTR, interfaceindex: *mut u32) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn OnDemandRegisterNotification(callback: ONDEMAND_NOTIFICATION_CALLBACK, callbackcontext: *const ::core::ffi::c_void, registrationhandle: *mut super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn OnDemandRegisterNotification(callback: ONDEMAND_NOTIFICATION_CALLBACK, callbackcontext: *const ::core::ffi::c_void, registrationhandle: *mut super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn OnDemandUnRegisterNotification(registrationhandle: super::super::Foundation::HANDLE) -> ::windows_sys_core::HRESULT;
+    pub fn OnDemandUnRegisterNotification(registrationhandle: super::super::Foundation::HANDLE) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`*"]
     pub fn WcmFreeMemory(pmemory: *mut ::core::ffi::c_void);
     #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`*"]
     pub fn WcmGetProfileList(preserved: *mut ::core::ffi::c_void, ppprofilelist: *mut *mut WCM_PROFILE_INFO_LIST) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`*"]
-    pub fn WcmQueryProperty(pinterface: *const ::windows_sys_core::GUID, strprofilename: ::windows_sys_core::PCWSTR, property: WCM_PROPERTY, preserved: *mut ::core::ffi::c_void, pdwdatasize: *mut u32, ppdata: *mut *mut u8) -> u32;
+    pub fn WcmQueryProperty(pinterface: *const ::windows_core_sys::GUID, strprofilename: ::windows_core_sys::PCWSTR, property: WCM_PROPERTY, preserved: *mut ::core::ffi::c_void, pdwdatasize: *mut u32, ppdata: *mut *mut u8) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn WcmSetProfileList(pprofilelist: *const WCM_PROFILE_INFO_LIST, dwposition: u32, fignoreunknownprofiles: super::super::Foundation::BOOL, preserved: *mut ::core::ffi::c_void) -> u32;
     #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`*"]
-    pub fn WcmSetProperty(pinterface: *const ::windows_sys_core::GUID, strprofilename: ::windows_sys_core::PCWSTR, property: WCM_PROPERTY, preserved: *mut ::core::ffi::c_void, dwdatasize: u32, pbdata: *const u8) -> u32;
+    pub fn WcmSetProperty(pinterface: *const ::windows_core_sys::GUID, strprofilename: ::windows_core_sys::PCWSTR, property: WCM_PROPERTY, preserved: *mut ::core::ffi::c_void, dwdatasize: u32, pbdata: *const u8) -> u32;
 }
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`*"]
 pub struct NET_INTERFACE_CONTEXT {
     pub InterfaceIndex: u32,
-    pub ConfigurationName: ::windows_sys_core::PWSTR,
+    pub ConfigurationName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for NET_INTERFACE_CONTEXT {}
 impl ::core::clone::Clone for NET_INTERFACE_CONTEXT {
@@ -175,7 +175,7 @@ impl ::core::clone::Clone for WCM_POLICY_VALUE {
 #[doc = "*Required features: `\"Win32_NetworkManagement_WindowsConnectionManager\"`*"]
 pub struct WCM_PROFILE_INFO {
     pub strProfileName: [u16; 256],
-    pub AdapterGUID: ::windows_sys_core::GUID,
+    pub AdapterGUID: ::windows_core_sys::GUID,
     pub Media: WCM_MEDIA_TYPE,
 }
 impl ::core::marker::Copy for WCM_PROFILE_INFO {}

@@ -53,7 +53,7 @@ impl ::core::clone::Clone for MAGCOLOREFFECT {
 pub struct MAGIMAGEHEADER {
     pub width: u32,
     pub height: u32,
-    pub format: ::windows_sys_core::GUID,
+    pub format: ::windows_core_sys::GUID,
     pub stride: u32,
     pub offset: u32,
     pub cbSize: usize,

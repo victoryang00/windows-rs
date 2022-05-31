@@ -21,9 +21,9 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn FindTextW(param0: *mut FINDREPLACEW) -> super::super::super::Foundation::HWND;
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
-    pub fn GetFileTitleA(param0: ::windows_sys_core::PCSTR, buf: ::windows_sys_core::PSTR, cchsize: u16) -> i16;
+    pub fn GetFileTitleA(param0: ::windows_core_sys::PCSTR, buf: ::windows_core_sys::PSTR, cchsize: u16) -> i16;
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`*"]
-    pub fn GetFileTitleW(param0: ::windows_sys_core::PCWSTR, buf: ::windows_sys_core::PWSTR, cchsize: u16) -> i16;
+    pub fn GetFileTitleW(param0: ::windows_core_sys::PCWSTR, buf: ::windows_core_sys::PWSTR, cchsize: u16) -> i16;
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
     pub fn GetOpenFileNameA(param0: *mut OPENFILENAMEA) -> super::super::super::Foundation::BOOL;
@@ -47,10 +47,10 @@ extern "system" {
     pub fn PrintDlgA(ppd: *mut PRINTDLGA) -> super::super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn PrintDlgExA(ppd: *mut PRINTDLGEXA) -> ::windows_sys_core::HRESULT;
+    pub fn PrintDlgExA(ppd: *mut PRINTDLGEXA) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
-    pub fn PrintDlgExW(ppd: *mut PRINTDLGEXW) -> ::windows_sys_core::HRESULT;
+    pub fn PrintDlgExW(ppd: *mut PRINTDLGEXW) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_UI_Controls_Dialogs\"`, `\"Win32_Foundation\"`, `\"Win32_Graphics_Gdi\"`*"]
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi"))]
     pub fn PrintDlgW(ppd: *mut PRINTDLGW) -> super::super::super::Foundation::BOOL;
@@ -100,7 +100,7 @@ pub struct CHOOSECOLORA {
     pub Flags: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCCHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCSTR,
+    pub lpTemplateName: ::windows_core_sys::PCSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -125,7 +125,7 @@ pub struct CHOOSECOLORA {
     pub Flags: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCCHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCSTR,
+    pub lpTemplateName: ::windows_core_sys::PCSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -150,7 +150,7 @@ pub struct CHOOSECOLORW {
     pub Flags: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCCHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpTemplateName: ::windows_core_sys::PCWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -175,7 +175,7 @@ pub struct CHOOSECOLORW {
     pub Flags: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCCHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpTemplateName: ::windows_core_sys::PCWSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -201,9 +201,9 @@ pub struct CHOOSEFONTA {
     pub rgbColors: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCFHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCSTR,
+    pub lpTemplateName: ::windows_core_sys::PCSTR,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpszStyle: ::windows_sys_core::PSTR,
+    pub lpszStyle: ::windows_core_sys::PSTR,
     pub nFontType: CHOOSEFONT_FONT_TYPE,
     pub ___MISSING_ALIGNMENT__: u16,
     pub nSizeMin: i32,
@@ -233,9 +233,9 @@ pub struct CHOOSEFONTA {
     pub rgbColors: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCFHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCSTR,
+    pub lpTemplateName: ::windows_core_sys::PCSTR,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpszStyle: ::windows_sys_core::PSTR,
+    pub lpszStyle: ::windows_core_sys::PSTR,
     pub nFontType: CHOOSEFONT_FONT_TYPE,
     pub ___MISSING_ALIGNMENT__: u16,
     pub nSizeMin: i32,
@@ -265,9 +265,9 @@ pub struct CHOOSEFONTW {
     pub rgbColors: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCFHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpTemplateName: ::windows_core_sys::PCWSTR,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpszStyle: ::windows_sys_core::PWSTR,
+    pub lpszStyle: ::windows_core_sys::PWSTR,
     pub nFontType: CHOOSEFONT_FONT_TYPE,
     pub ___MISSING_ALIGNMENT__: u16,
     pub nSizeMin: i32,
@@ -297,9 +297,9 @@ pub struct CHOOSEFONTW {
     pub rgbColors: u32,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPCFHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpTemplateName: ::windows_core_sys::PCWSTR,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpszStyle: ::windows_sys_core::PWSTR,
+    pub lpszStyle: ::windows_core_sys::PWSTR,
     pub nFontType: CHOOSEFONT_FONT_TYPE,
     pub ___MISSING_ALIGNMENT__: u16,
     pub nSizeMin: i32,
@@ -590,13 +590,13 @@ pub struct FINDREPLACEA {
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub Flags: FINDREPLACE_FLAGS,
-    pub lpstrFindWhat: ::windows_sys_core::PSTR,
-    pub lpstrReplaceWith: ::windows_sys_core::PSTR,
+    pub lpstrFindWhat: ::windows_core_sys::PSTR,
+    pub lpstrReplaceWith: ::windows_core_sys::PSTR,
     pub wFindWhatLen: u16,
     pub wReplaceWithLen: u16,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPFRHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCSTR,
+    pub lpTemplateName: ::windows_core_sys::PCSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -617,13 +617,13 @@ pub struct FINDREPLACEA {
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub Flags: FINDREPLACE_FLAGS,
-    pub lpstrFindWhat: ::windows_sys_core::PSTR,
-    pub lpstrReplaceWith: ::windows_sys_core::PSTR,
+    pub lpstrFindWhat: ::windows_core_sys::PSTR,
+    pub lpstrReplaceWith: ::windows_core_sys::PSTR,
     pub wFindWhatLen: u16,
     pub wReplaceWithLen: u16,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPFRHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCSTR,
+    pub lpTemplateName: ::windows_core_sys::PCSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -644,13 +644,13 @@ pub struct FINDREPLACEW {
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub Flags: FINDREPLACE_FLAGS,
-    pub lpstrFindWhat: ::windows_sys_core::PWSTR,
-    pub lpstrReplaceWith: ::windows_sys_core::PWSTR,
+    pub lpstrFindWhat: ::windows_core_sys::PWSTR,
+    pub lpstrReplaceWith: ::windows_core_sys::PWSTR,
     pub wFindWhatLen: u16,
     pub wReplaceWithLen: u16,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPFRHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpTemplateName: ::windows_core_sys::PCWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -671,13 +671,13 @@ pub struct FINDREPLACEW {
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
     pub Flags: FINDREPLACE_FLAGS,
-    pub lpstrFindWhat: ::windows_sys_core::PWSTR,
-    pub lpstrReplaceWith: ::windows_sys_core::PWSTR,
+    pub lpstrFindWhat: ::windows_core_sys::PWSTR,
+    pub lpstrReplaceWith: ::windows_core_sys::PWSTR,
     pub wFindWhatLen: u16,
     pub wReplaceWithLen: u16,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPFRHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpTemplateName: ::windows_core_sys::PCWSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -790,7 +790,7 @@ pub const NUM_CUSTOM_COLORS: u32 = 16u32;
 pub struct OFNOTIFYA {
     pub hdr: super::NMHDR,
     pub lpOFN: *mut OPENFILENAMEA,
-    pub pszFile: ::windows_sys_core::PSTR,
+    pub pszFile: ::windows_core_sys::PSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -809,7 +809,7 @@ impl ::core::clone::Clone for OFNOTIFYA {
 pub struct OFNOTIFYA {
     pub hdr: super::NMHDR,
     pub lpOFN: *mut OPENFILENAMEA,
-    pub pszFile: ::windows_sys_core::PSTR,
+    pub pszFile: ::windows_core_sys::PSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -908,7 +908,7 @@ impl ::core::clone::Clone for OFNOTIFYEXW {
 pub struct OFNOTIFYW {
     pub hdr: super::NMHDR,
     pub lpOFN: *mut OPENFILENAMEW,
-    pub pszFile: ::windows_sys_core::PWSTR,
+    pub pszFile: ::windows_core_sys::PWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -927,7 +927,7 @@ impl ::core::clone::Clone for OFNOTIFYW {
 pub struct OFNOTIFYW {
     pub hdr: super::NMHDR,
     pub lpOFN: *mut OPENFILENAMEW,
-    pub pszFile: ::windows_sys_core::PWSTR,
+    pub pszFile: ::windows_core_sys::PWSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -953,23 +953,23 @@ pub struct OPENFILENAMEA {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows_sys_core::PCSTR,
-    pub lpstrCustomFilter: ::windows_sys_core::PSTR,
+    pub lpstrFilter: ::windows_core_sys::PCSTR,
+    pub lpstrCustomFilter: ::windows_core_sys::PSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows_sys_core::PSTR,
+    pub lpstrFile: ::windows_core_sys::PSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows_sys_core::PSTR,
+    pub lpstrFileTitle: ::windows_core_sys::PSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows_sys_core::PCSTR,
-    pub lpstrTitle: ::windows_sys_core::PCSTR,
+    pub lpstrInitialDir: ::windows_core_sys::PCSTR,
+    pub lpstrTitle: ::windows_core_sys::PCSTR,
     pub Flags: OPEN_FILENAME_FLAGS,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows_sys_core::PCSTR,
+    pub lpstrDefExt: ::windows_core_sys::PCSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCSTR,
+    pub lpTemplateName: ::windows_core_sys::PCSTR,
     pub pvReserved: *mut ::core::ffi::c_void,
     pub dwReserved: u32,
     pub FlagsEx: OPEN_FILENAME_FLAGS_EX,
@@ -992,23 +992,23 @@ pub struct OPENFILENAMEA {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows_sys_core::PCSTR,
-    pub lpstrCustomFilter: ::windows_sys_core::PSTR,
+    pub lpstrFilter: ::windows_core_sys::PCSTR,
+    pub lpstrCustomFilter: ::windows_core_sys::PSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows_sys_core::PSTR,
+    pub lpstrFile: ::windows_core_sys::PSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows_sys_core::PSTR,
+    pub lpstrFileTitle: ::windows_core_sys::PSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows_sys_core::PCSTR,
-    pub lpstrTitle: ::windows_sys_core::PCSTR,
+    pub lpstrInitialDir: ::windows_core_sys::PCSTR,
+    pub lpstrTitle: ::windows_core_sys::PCSTR,
     pub Flags: OPEN_FILENAME_FLAGS,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows_sys_core::PCSTR,
+    pub lpstrDefExt: ::windows_core_sys::PCSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCSTR,
+    pub lpTemplateName: ::windows_core_sys::PCSTR,
     pub pvReserved: *mut ::core::ffi::c_void,
     pub dwReserved: u32,
     pub FlagsEx: OPEN_FILENAME_FLAGS_EX,
@@ -1031,23 +1031,23 @@ pub struct OPENFILENAMEW {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows_sys_core::PCWSTR,
-    pub lpstrCustomFilter: ::windows_sys_core::PWSTR,
+    pub lpstrFilter: ::windows_core_sys::PCWSTR,
+    pub lpstrCustomFilter: ::windows_core_sys::PWSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows_sys_core::PWSTR,
+    pub lpstrFile: ::windows_core_sys::PWSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows_sys_core::PWSTR,
+    pub lpstrFileTitle: ::windows_core_sys::PWSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows_sys_core::PCWSTR,
-    pub lpstrTitle: ::windows_sys_core::PCWSTR,
+    pub lpstrInitialDir: ::windows_core_sys::PCWSTR,
+    pub lpstrTitle: ::windows_core_sys::PCWSTR,
     pub Flags: OPEN_FILENAME_FLAGS,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows_sys_core::PCWSTR,
+    pub lpstrDefExt: ::windows_core_sys::PCWSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpTemplateName: ::windows_core_sys::PCWSTR,
     pub pvReserved: *mut ::core::ffi::c_void,
     pub dwReserved: u32,
     pub FlagsEx: OPEN_FILENAME_FLAGS_EX,
@@ -1070,23 +1070,23 @@ pub struct OPENFILENAMEW {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows_sys_core::PCWSTR,
-    pub lpstrCustomFilter: ::windows_sys_core::PWSTR,
+    pub lpstrFilter: ::windows_core_sys::PCWSTR,
+    pub lpstrCustomFilter: ::windows_core_sys::PWSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows_sys_core::PWSTR,
+    pub lpstrFile: ::windows_core_sys::PWSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows_sys_core::PWSTR,
+    pub lpstrFileTitle: ::windows_core_sys::PWSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows_sys_core::PCWSTR,
-    pub lpstrTitle: ::windows_sys_core::PCWSTR,
+    pub lpstrInitialDir: ::windows_core_sys::PCWSTR,
+    pub lpstrTitle: ::windows_core_sys::PCWSTR,
     pub Flags: OPEN_FILENAME_FLAGS,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows_sys_core::PCWSTR,
+    pub lpstrDefExt: ::windows_core_sys::PCWSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpTemplateName: ::windows_core_sys::PCWSTR,
     pub pvReserved: *mut ::core::ffi::c_void,
     pub dwReserved: u32,
     pub FlagsEx: OPEN_FILENAME_FLAGS_EX,
@@ -1109,23 +1109,23 @@ pub struct OPENFILENAME_NT4A {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows_sys_core::PCSTR,
-    pub lpstrCustomFilter: ::windows_sys_core::PSTR,
+    pub lpstrFilter: ::windows_core_sys::PCSTR,
+    pub lpstrCustomFilter: ::windows_core_sys::PSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows_sys_core::PSTR,
+    pub lpstrFile: ::windows_core_sys::PSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows_sys_core::PSTR,
+    pub lpstrFileTitle: ::windows_core_sys::PSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows_sys_core::PCSTR,
-    pub lpstrTitle: ::windows_sys_core::PCSTR,
+    pub lpstrInitialDir: ::windows_core_sys::PCSTR,
+    pub lpstrTitle: ::windows_core_sys::PCSTR,
     pub Flags: u32,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows_sys_core::PCSTR,
+    pub lpstrDefExt: ::windows_core_sys::PCSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCSTR,
+    pub lpTemplateName: ::windows_core_sys::PCSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -1145,23 +1145,23 @@ pub struct OPENFILENAME_NT4A {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows_sys_core::PCSTR,
-    pub lpstrCustomFilter: ::windows_sys_core::PSTR,
+    pub lpstrFilter: ::windows_core_sys::PCSTR,
+    pub lpstrCustomFilter: ::windows_core_sys::PSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows_sys_core::PSTR,
+    pub lpstrFile: ::windows_core_sys::PSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows_sys_core::PSTR,
+    pub lpstrFileTitle: ::windows_core_sys::PSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows_sys_core::PCSTR,
-    pub lpstrTitle: ::windows_sys_core::PCSTR,
+    pub lpstrInitialDir: ::windows_core_sys::PCSTR,
+    pub lpstrTitle: ::windows_core_sys::PCSTR,
     pub Flags: u32,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows_sys_core::PCSTR,
+    pub lpstrDefExt: ::windows_core_sys::PCSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCSTR,
+    pub lpTemplateName: ::windows_core_sys::PCSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -1181,23 +1181,23 @@ pub struct OPENFILENAME_NT4W {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows_sys_core::PCWSTR,
-    pub lpstrCustomFilter: ::windows_sys_core::PWSTR,
+    pub lpstrFilter: ::windows_core_sys::PCWSTR,
+    pub lpstrCustomFilter: ::windows_core_sys::PWSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows_sys_core::PWSTR,
+    pub lpstrFile: ::windows_core_sys::PWSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows_sys_core::PWSTR,
+    pub lpstrFileTitle: ::windows_core_sys::PWSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows_sys_core::PCWSTR,
-    pub lpstrTitle: ::windows_sys_core::PCWSTR,
+    pub lpstrInitialDir: ::windows_core_sys::PCWSTR,
+    pub lpstrTitle: ::windows_core_sys::PCWSTR,
     pub Flags: u32,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows_sys_core::PCWSTR,
+    pub lpstrDefExt: ::windows_core_sys::PCWSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpTemplateName: ::windows_core_sys::PCWSTR,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
 #[cfg(feature = "Win32_Foundation")]
@@ -1217,23 +1217,23 @@ pub struct OPENFILENAME_NT4W {
     pub lStructSize: u32,
     pub hwndOwner: super::super::super::Foundation::HWND,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpstrFilter: ::windows_sys_core::PCWSTR,
-    pub lpstrCustomFilter: ::windows_sys_core::PWSTR,
+    pub lpstrFilter: ::windows_core_sys::PCWSTR,
+    pub lpstrCustomFilter: ::windows_core_sys::PWSTR,
     pub nMaxCustFilter: u32,
     pub nFilterIndex: u32,
-    pub lpstrFile: ::windows_sys_core::PWSTR,
+    pub lpstrFile: ::windows_core_sys::PWSTR,
     pub nMaxFile: u32,
-    pub lpstrFileTitle: ::windows_sys_core::PWSTR,
+    pub lpstrFileTitle: ::windows_core_sys::PWSTR,
     pub nMaxFileTitle: u32,
-    pub lpstrInitialDir: ::windows_sys_core::PCWSTR,
-    pub lpstrTitle: ::windows_sys_core::PCWSTR,
+    pub lpstrInitialDir: ::windows_core_sys::PCWSTR,
+    pub lpstrTitle: ::windows_core_sys::PCWSTR,
     pub Flags: u32,
     pub nFileOffset: u16,
     pub nFileExtension: u16,
-    pub lpstrDefExt: ::windows_sys_core::PCWSTR,
+    pub lpstrDefExt: ::windows_core_sys::PCWSTR,
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnHook: LPOFNHOOKPROC,
-    pub lpTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpTemplateName: ::windows_core_sys::PCWSTR,
 }
 #[cfg(target_arch = "x86")]
 #[cfg(feature = "Win32_Foundation")]
@@ -1322,7 +1322,7 @@ pub struct PAGESETUPDLGA {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPageSetupHook: LPPAGESETUPHOOK,
     pub lpfnPagePaintHook: LPPAGEPAINTHOOK,
-    pub lpPageSetupTemplateName: ::windows_sys_core::PCSTR,
+    pub lpPageSetupTemplateName: ::windows_core_sys::PCSTR,
     pub hPageSetupTemplate: isize,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -1352,7 +1352,7 @@ pub struct PAGESETUPDLGA {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPageSetupHook: LPPAGESETUPHOOK,
     pub lpfnPagePaintHook: LPPAGEPAINTHOOK,
-    pub lpPageSetupTemplateName: ::windows_sys_core::PCSTR,
+    pub lpPageSetupTemplateName: ::windows_core_sys::PCSTR,
     pub hPageSetupTemplate: isize,
 }
 #[cfg(target_arch = "x86")]
@@ -1382,7 +1382,7 @@ pub struct PAGESETUPDLGW {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPageSetupHook: LPPAGESETUPHOOK,
     pub lpfnPagePaintHook: LPPAGEPAINTHOOK,
-    pub lpPageSetupTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpPageSetupTemplateName: ::windows_core_sys::PCWSTR,
     pub hPageSetupTemplate: isize,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -1412,7 +1412,7 @@ pub struct PAGESETUPDLGW {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPageSetupHook: LPPAGESETUPHOOK,
     pub lpfnPagePaintHook: LPPAGEPAINTHOOK,
-    pub lpPageSetupTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpPageSetupTemplateName: ::windows_core_sys::PCWSTR,
     pub hPageSetupTemplate: isize,
 }
 #[cfg(target_arch = "x86")]
@@ -1491,8 +1491,8 @@ pub struct PRINTDLGA {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPrintHook: LPPRINTHOOKPROC,
     pub lpfnSetupHook: LPSETUPHOOKPROC,
-    pub lpPrintTemplateName: ::windows_sys_core::PCSTR,
-    pub lpSetupTemplateName: ::windows_sys_core::PCSTR,
+    pub lpPrintTemplateName: ::windows_core_sys::PCSTR,
+    pub lpSetupTemplateName: ::windows_core_sys::PCSTR,
     pub hPrintTemplate: isize,
     pub hSetupTemplate: isize,
 }
@@ -1526,8 +1526,8 @@ pub struct PRINTDLGA {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPrintHook: LPPRINTHOOKPROC,
     pub lpfnSetupHook: LPSETUPHOOKPROC,
-    pub lpPrintTemplateName: ::windows_sys_core::PCSTR,
-    pub lpSetupTemplateName: ::windows_sys_core::PCSTR,
+    pub lpPrintTemplateName: ::windows_core_sys::PCSTR,
+    pub lpSetupTemplateName: ::windows_core_sys::PCSTR,
     pub hPrintTemplate: isize,
     pub hSetupTemplate: isize,
 }
@@ -1561,8 +1561,8 @@ pub struct PRINTDLGEXA {
     pub nMaxPage: u32,
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpPrintTemplateName: ::windows_sys_core::PCSTR,
-    pub lpCallback: ::windows_sys_core::IUnknown,
+    pub lpPrintTemplateName: ::windows_core_sys::PCSTR,
+    pub lpCallback: ::windows_core_sys::IUnknown,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -1598,8 +1598,8 @@ pub struct PRINTDLGEXA {
     pub nMaxPage: u32,
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpPrintTemplateName: ::windows_sys_core::PCSTR,
-    pub lpCallback: ::windows_sys_core::IUnknown,
+    pub lpPrintTemplateName: ::windows_core_sys::PCSTR,
+    pub lpCallback: ::windows_core_sys::IUnknown,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -1635,8 +1635,8 @@ pub struct PRINTDLGEXW {
     pub nMaxPage: u32,
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpPrintTemplateName: ::windows_sys_core::PCWSTR,
-    pub lpCallback: ::windows_sys_core::IUnknown,
+    pub lpPrintTemplateName: ::windows_core_sys::PCWSTR,
+    pub lpCallback: ::windows_core_sys::IUnknown,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -1672,8 +1672,8 @@ pub struct PRINTDLGEXW {
     pub nMaxPage: u32,
     pub nCopies: u32,
     pub hInstance: super::super::super::Foundation::HINSTANCE,
-    pub lpPrintTemplateName: ::windows_sys_core::PCWSTR,
-    pub lpCallback: ::windows_sys_core::IUnknown,
+    pub lpPrintTemplateName: ::windows_core_sys::PCWSTR,
+    pub lpCallback: ::windows_core_sys::IUnknown,
     pub nPropertyPages: u32,
     pub lphPropertyPages: *mut super::HPROPSHEETPAGE,
     pub nStartPage: u32,
@@ -1767,8 +1767,8 @@ pub struct PRINTDLGW {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPrintHook: LPPRINTHOOKPROC,
     pub lpfnSetupHook: LPSETUPHOOKPROC,
-    pub lpPrintTemplateName: ::windows_sys_core::PCWSTR,
-    pub lpSetupTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpPrintTemplateName: ::windows_core_sys::PCWSTR,
+    pub lpSetupTemplateName: ::windows_core_sys::PCWSTR,
     pub hPrintTemplate: isize,
     pub hSetupTemplate: isize,
 }
@@ -1802,8 +1802,8 @@ pub struct PRINTDLGW {
     pub lCustData: super::super::super::Foundation::LPARAM,
     pub lpfnPrintHook: LPPRINTHOOKPROC,
     pub lpfnSetupHook: LPSETUPHOOKPROC,
-    pub lpPrintTemplateName: ::windows_sys_core::PCWSTR,
-    pub lpSetupTemplateName: ::windows_sys_core::PCWSTR,
+    pub lpPrintTemplateName: ::windows_core_sys::PCWSTR,
+    pub lpSetupTemplateName: ::windows_core_sys::PCWSTR,
     pub hPrintTemplate: isize,
     pub hSetupTemplate: isize,
 }

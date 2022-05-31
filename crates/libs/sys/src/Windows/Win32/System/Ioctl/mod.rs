@@ -549,7 +549,7 @@ impl ::core::clone::Clone for CREATE_DISK_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct CREATE_DISK_GPT {
-    pub DiskId: ::windows_sys_core::GUID,
+    pub DiskId: ::windows_core_sys::GUID,
     pub MaxPartitionCount: u32,
 }
 impl ::core::marker::Copy for CREATE_DISK_GPT {}
@@ -740,7 +740,7 @@ pub struct CSV_QUERY_MDS_PATH_V2 {
     pub DsNodeId: u32,
     pub Flags: u32,
     pub DiskConnectivity: CSVFS_DISK_CONNECTIVITY,
-    pub VolumeId: ::windows_sys_core::GUID,
+    pub VolumeId: ::windows_core_sys::GUID,
     pub IpAddressOffset: u32,
     pub IpAddressLength: u32,
     pub PathOffset: u32,
@@ -786,7 +786,7 @@ impl ::core::clone::Clone for CSV_QUERY_VETO_FILE_DIRECT_IO_OUTPUT {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct CSV_QUERY_VOLUME_ID {
-    pub VolumeId: ::windows_sys_core::GUID,
+    pub VolumeId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for CSV_QUERY_VOLUME_ID {}
 impl ::core::clone::Clone for CSV_QUERY_VOLUME_ID {
@@ -815,7 +815,7 @@ impl ::core::clone::Clone for CSV_QUERY_VOLUME_REDIRECT_STATE {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct CSV_SET_VOLUME_ID {
-    pub VolumeId: ::windows_sys_core::GUID,
+    pub VolumeId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for CSV_SET_VOLUME_ID {}
 impl ::core::clone::Clone for CSV_SET_VOLUME_ID {
@@ -913,7 +913,7 @@ impl ::core::clone::Clone for DEVICEDUMP_RESTRICTED_SUBSECTION {
 #[repr(C, packed(1))]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct DEVICEDUMP_SECTION_HEADER {
-    pub guidDeviceDataId: ::windows_sys_core::GUID,
+    pub guidDeviceDataId: ::windows_core_sys::GUID,
     pub sOrganizationID: [u8; 16],
     pub dwFirmwareRevision: u32,
     pub sModelNumber: [u8; 32],
@@ -1203,7 +1203,7 @@ impl ::core::clone::Clone for DEVICE_DATA_SET_TOPOLOGY_ID_QUERY_OUTPUT {
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct DEVICE_DSM_CONVERSION_OUTPUT {
     pub Version: u32,
-    pub Source: ::windows_sys_core::GUID,
+    pub Source: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for DEVICE_DSM_CONVERSION_OUTPUT {}
 impl ::core::clone::Clone for DEVICE_DSM_CONVERSION_OUTPUT {
@@ -1294,7 +1294,7 @@ pub struct DEVICE_DSM_NOTIFICATION_PARAMETERS {
     pub Size: u32,
     pub Flags: u32,
     pub NumFileTypeIDs: u32,
-    pub FileTypeID: [::windows_sys_core::GUID; 1],
+    pub FileTypeID: [::windows_core_sys::GUID; 1],
 }
 impl ::core::marker::Copy for DEVICE_DSM_NOTIFICATION_PARAMETERS {}
 impl ::core::clone::Clone for DEVICE_DSM_NOTIFICATION_PARAMETERS {
@@ -1425,7 +1425,7 @@ pub struct DEVICE_DSM_TIERING_QUERY_INPUT {
     pub Size: u32,
     pub Flags: u32,
     pub NumberOfTierIds: u32,
-    pub TierIds: [::windows_sys_core::GUID; 1],
+    pub TierIds: [::windows_core_sys::GUID; 1],
 }
 impl ::core::marker::Copy for DEVICE_DSM_TIERING_QUERY_INPUT {}
 impl ::core::clone::Clone for DEVICE_DSM_TIERING_QUERY_INPUT {
@@ -1844,28 +1844,28 @@ impl ::core::clone::Clone for DEVICE_WRITE_AGGREGATION_DESCRIPTOR {
 }
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Storage_Disk_Number: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 5u32 };
+pub const DEVPKEY_Storage_Disk_Number: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 5u32 };
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Storage_Gpt_Name: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 9u32 };
+pub const DEVPKEY_Storage_Gpt_Name: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 9u32 };
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Storage_Gpt_Type: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 8u32 };
+pub const DEVPKEY_Storage_Gpt_Type: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 8u32 };
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Storage_Mbr_Type: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 7u32 };
+pub const DEVPKEY_Storage_Mbr_Type: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 7u32 };
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Storage_Partition_Number: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 6u32 };
+pub const DEVPKEY_Storage_Partition_Number: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 6u32 };
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Storage_Portable: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 2u32 };
+pub const DEVPKEY_Storage_Portable: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 2u32 };
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Storage_Removable_Media: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 3u32 };
+pub const DEVPKEY_Storage_Removable_Media: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 3u32 };
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`, `\"Win32_Devices_Properties\"`*"]
 #[cfg(feature = "Win32_Devices_Properties")]
-pub const DEVPKEY_Storage_System_Critical: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_sys_core::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 4u32 };
+pub const DEVPKEY_Storage_System_Critical: super::super::Devices::Properties::DEVPROPKEY = super::super::Devices::Properties::DEVPROPKEY { fmtid: ::windows_core_sys::GUID { data1: 1293860584, data2: 2051, data3: 18292, data4: [152, 66, 183, 125, 181, 2, 101, 233] }, pid: 4u32 };
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub const DISABLE_SMART: u32 = 217u32;
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
@@ -2151,7 +2151,7 @@ impl ::core::clone::Clone for DISK_PARTITION_INFO_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct DISK_PARTITION_INFO_0_0 {
-    pub DiskId: ::windows_sys_core::GUID,
+    pub DiskId: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for DISK_PARTITION_INFO_0_0 {}
 impl ::core::clone::Clone for DISK_PARTITION_INFO_0_0 {
@@ -2278,7 +2278,7 @@ impl ::core::clone::Clone for DRIVE_LAYOUT_INFORMATION_EX_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct DRIVE_LAYOUT_INFORMATION_GPT {
-    pub DiskId: ::windows_sys_core::GUID,
+    pub DiskId: ::windows_core_sys::GUID,
     pub StartingUsableOffset: i64,
     pub UsableLength: i64,
     pub MaxPartitionCount: u32,
@@ -3276,7 +3276,7 @@ pub const FILE_SPECIAL_ACCESS: u32 = 0u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct FILE_STORAGE_TIER {
-    pub Id: ::windows_sys_core::GUID,
+    pub Id: ::windows_core_sys::GUID,
     pub Name: [u16; 256],
     pub Description: [u16; 256],
     pub Flags: FILE_STORAGE_TIER_FLAGS,
@@ -3331,7 +3331,7 @@ pub const FILE_STORAGE_TIER_NAME_LENGTH: u32 = 256u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct FILE_STORAGE_TIER_REGION {
-    pub TierId: ::windows_sys_core::GUID,
+    pub TierId: ::windows_core_sys::GUID,
     pub Offset: u64,
     pub Length: u64,
 }
@@ -3359,15 +3359,15 @@ impl ::core::clone::Clone for FILE_SYSTEM_RECOGNITION_INFORMATION {
 pub const FILE_TYPE_NOTIFICATION_FLAG_USAGE_BEGIN: u32 = 1u32;
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub const FILE_TYPE_NOTIFICATION_FLAG_USAGE_END: u32 = 2u32;
-pub const FILE_TYPE_NOTIFICATION_GUID_CRASHDUMP_FILE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2638560951, data2: 53926, data3: 19901, data4: [162, 227, 251, 208, 237, 145, 9, 169] };
-pub const FILE_TYPE_NOTIFICATION_GUID_HIBERNATION_FILE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3076672868, data2: 47523, data3: 19704, data4: [128, 17, 91, 134, 201, 64, 231, 183] };
-pub const FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 218784929, data2: 14588, data3: 19896, data4: [159, 231, 63, 67, 82, 205, 124, 92] };
+pub const FILE_TYPE_NOTIFICATION_GUID_CRASHDUMP_FILE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2638560951, data2: 53926, data3: 19901, data4: [162, 227, 251, 208, 237, 145, 9, 169] };
+pub const FILE_TYPE_NOTIFICATION_GUID_HIBERNATION_FILE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3076672868, data2: 47523, data3: 19704, data4: [128, 17, 91, 134, 201, 64, 231, 183] };
+pub const FILE_TYPE_NOTIFICATION_GUID_PAGE_FILE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 218784929, data2: 14588, data3: 19896, data4: [159, 231, 63, 67, 82, 205, 124, 92] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct FILE_TYPE_NOTIFICATION_INPUT {
     pub Flags: u32,
     pub NumFileTypeIDs: u32,
-    pub FileTypeID: [::windows_sys_core::GUID; 1],
+    pub FileTypeID: [::windows_core_sys::GUID; 1],
 }
 impl ::core::marker::Copy for FILE_TYPE_NOTIFICATION_INPUT {}
 impl ::core::clone::Clone for FILE_TYPE_NOTIFICATION_INPUT {
@@ -3778,7 +3778,7 @@ pub struct FSCTL_QUERY_REGION_INFO_INPUT {
     pub Size: u32,
     pub Flags: u32,
     pub NumberOfTierIds: u32,
-    pub TierIds: [::windows_sys_core::GUID; 1],
+    pub TierIds: [::windows_core_sys::GUID; 1],
 }
 impl ::core::marker::Copy for FSCTL_QUERY_REGION_INFO_INPUT {}
 impl ::core::clone::Clone for FSCTL_QUERY_REGION_INFO_INPUT {
@@ -4353,29 +4353,29 @@ impl ::core::clone::Clone for GP_LOG_PAGE_DESCRIPTOR {
         *self
     }
 }
-pub const GUID_DEVICEDUMP_DRIVER_STORAGE_PORT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3665970205, data2: 28994, data3: 19393, data4: [184, 68, 8, 7, 197, 164, 182, 127] };
-pub const GUID_DEVICEDUMP_STORAGE_DEVICE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3638712623, data2: 6827, data3: 19798, data4: [167, 70, 31, 117, 133, 223, 64, 244] };
-pub const GUID_DEVINTERFACE_CDCHANGER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1408590610, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
-pub const GUID_DEVINTERFACE_CDROM: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1408590600, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
-pub const GUID_DEVINTERFACE_COMPORT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2262880736, data2: 32905, data3: 4560, data4: [156, 228, 8, 0, 62, 48, 31, 115] };
-pub const GUID_DEVINTERFACE_DISK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1408590599, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
-pub const GUID_DEVINTERFACE_FLOPPY: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1408590609, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
-pub const GUID_DEVINTERFACE_HIDDEN_VOLUME: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2131790376, data2: 38963, data3: 19259, data4: [183, 128, 44, 107, 95, 165, 192, 98] };
-pub const GUID_DEVINTERFACE_MEDIUMCHANGER: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1408590608, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
-pub const GUID_DEVINTERFACE_PARTITION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1408590602, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
-pub const GUID_DEVINTERFACE_SCM_PHYSICAL_DEVICE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1115906205, data2: 19906, data3: 17342, data4: [187, 180, 79, 21, 223, 206, 44, 97] };
-pub const GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1295444344, data2: 58149, data3: 4558, data4: [191, 193, 8, 0, 43, 225, 3, 24] };
-pub const GUID_DEVINTERFACE_SERVICE_VOLUME: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1856847234, data2: 9708, data3: 18108, data4: [183, 253, 193, 240, 223, 143, 80, 55] };
-pub const GUID_DEVINTERFACE_SES: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 395364844, data2: 18389, data3: 19955, data4: [181, 175, 154, 223, 60, 242, 62, 72] };
-pub const GUID_DEVINTERFACE_STORAGEPORT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 718077536, data2: 49456, data3: 4562, data4: [176, 130, 0, 160, 201, 30, 251, 139] };
-pub const GUID_DEVINTERFACE_TAPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1408590603, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
-pub const GUID_DEVINTERFACE_UNIFIED_ACCESS_RPMB: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 658799649, data2: 48323, data3: 19719, data4: [160, 91, 163, 57, 91, 180, 238, 231] };
-pub const GUID_DEVINTERFACE_VMLUN: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1866556953, data2: 40745, data3: 17061, data4: [178, 11, 55, 226, 25, 202, 2, 176] };
-pub const GUID_DEVINTERFACE_VOLUME: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1408590605, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
-pub const GUID_DEVINTERFACE_WRITEONCEDISK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1408590604, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
-pub const GUID_DEVINTERFACE_ZNSDISK: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3094954437, data2: 65499, data3: 17351, data4: [182, 177, 32, 182, 50, 240, 177, 9] };
-pub const GUID_SCM_PD_HEALTH_NOTIFICATION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2644693894, data2: 29429, data3: 20195, data4: [129, 85, 236, 160, 103, 142, 59, 6] };
-pub const GUID_SCM_PD_PASSTHROUGH_INVDIMM: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1124707376, data2: 3345, data3: 4580, data4: [145, 145, 8, 0, 32, 12, 154, 102] };
+pub const GUID_DEVICEDUMP_DRIVER_STORAGE_PORT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3665970205, data2: 28994, data3: 19393, data4: [184, 68, 8, 7, 197, 164, 182, 127] };
+pub const GUID_DEVICEDUMP_STORAGE_DEVICE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3638712623, data2: 6827, data3: 19798, data4: [167, 70, 31, 117, 133, 223, 64, 244] };
+pub const GUID_DEVINTERFACE_CDCHANGER: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1408590610, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
+pub const GUID_DEVINTERFACE_CDROM: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1408590600, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
+pub const GUID_DEVINTERFACE_COMPORT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2262880736, data2: 32905, data3: 4560, data4: [156, 228, 8, 0, 62, 48, 31, 115] };
+pub const GUID_DEVINTERFACE_DISK: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1408590599, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
+pub const GUID_DEVINTERFACE_FLOPPY: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1408590609, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
+pub const GUID_DEVINTERFACE_HIDDEN_VOLUME: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2131790376, data2: 38963, data3: 19259, data4: [183, 128, 44, 107, 95, 165, 192, 98] };
+pub const GUID_DEVINTERFACE_MEDIUMCHANGER: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1408590608, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
+pub const GUID_DEVINTERFACE_PARTITION: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1408590602, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
+pub const GUID_DEVINTERFACE_SCM_PHYSICAL_DEVICE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1115906205, data2: 19906, data3: 17342, data4: [187, 180, 79, 21, 223, 206, 44, 97] };
+pub const GUID_DEVINTERFACE_SERENUM_BUS_ENUMERATOR: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1295444344, data2: 58149, data3: 4558, data4: [191, 193, 8, 0, 43, 225, 3, 24] };
+pub const GUID_DEVINTERFACE_SERVICE_VOLUME: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1856847234, data2: 9708, data3: 18108, data4: [183, 253, 193, 240, 223, 143, 80, 55] };
+pub const GUID_DEVINTERFACE_SES: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 395364844, data2: 18389, data3: 19955, data4: [181, 175, 154, 223, 60, 242, 62, 72] };
+pub const GUID_DEVINTERFACE_STORAGEPORT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 718077536, data2: 49456, data3: 4562, data4: [176, 130, 0, 160, 201, 30, 251, 139] };
+pub const GUID_DEVINTERFACE_TAPE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1408590603, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
+pub const GUID_DEVINTERFACE_UNIFIED_ACCESS_RPMB: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 658799649, data2: 48323, data3: 19719, data4: [160, 91, 163, 57, 91, 180, 238, 231] };
+pub const GUID_DEVINTERFACE_VMLUN: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1866556953, data2: 40745, data3: 17061, data4: [178, 11, 55, 226, 25, 202, 2, 176] };
+pub const GUID_DEVINTERFACE_VOLUME: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1408590605, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
+pub const GUID_DEVINTERFACE_WRITEONCEDISK: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1408590604, data2: 46783, data3: 4560, data4: [148, 242, 0, 160, 201, 30, 251, 139] };
+pub const GUID_DEVINTERFACE_ZNSDISK: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3094954437, data2: 65499, data3: 17351, data4: [182, 177, 32, 182, 50, 240, 177, 9] };
+pub const GUID_SCM_PD_HEALTH_NOTIFICATION: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2644693894, data2: 29429, data3: 20195, data4: [129, 85, 236, 160, 103, 142, 59, 6] };
+pub const GUID_SCM_PD_PASSTHROUGH_INVDIMM: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1124707376, data2: 3345, data3: 4580, data4: [145, 145, 8, 0, 32, 12, 154, 102] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct HISTOGRAM_BUCKET {
@@ -5481,8 +5481,8 @@ impl ::core::clone::Clone for PARTITION_INFORMATION_EX_0 {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct PARTITION_INFORMATION_GPT {
-    pub PartitionType: ::windows_sys_core::GUID,
-    pub PartitionId: ::windows_sys_core::GUID,
+    pub PartitionType: ::windows_core_sys::GUID,
+    pub PartitionId: ::windows_core_sys::GUID,
     pub Attributes: GPT_ATTRIBUTES,
     pub Name: [u16; 36],
 }
@@ -5500,7 +5500,7 @@ pub struct PARTITION_INFORMATION_MBR {
     pub BootIndicator: super::super::Foundation::BOOLEAN,
     pub RecognizedPartition: super::super::Foundation::BOOLEAN,
     pub HiddenSectors: u32,
-    pub PartitionId: ::windows_sys_core::GUID,
+    pub PartitionId: ::windows_core_sys::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for PARTITION_INFORMATION_MBR {}
@@ -6304,7 +6304,7 @@ impl ::core::clone::Clone for SCM_BUS_DEDICATED_MEMORY_DEVICES_INFO {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO {
-    pub DeviceGuid: ::windows_sys_core::GUID,
+    pub DeviceGuid: ::windows_core_sys::GUID,
     pub DeviceNumber: u32,
     pub Flags: SCM_BUS_DEDICATED_MEMORY_DEVICE_INFO_0,
     pub DeviceSize: u64,
@@ -6444,7 +6444,7 @@ pub const ScmBusSet_Max: SCM_BUS_SET_TYPE = 2i32;
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct SCM_INTERLEAVED_PD_INFO {
     pub DeviceHandle: u32,
-    pub DeviceGuid: ::windows_sys_core::GUID,
+    pub DeviceGuid: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for SCM_INTERLEAVED_PD_INFO {}
 impl ::core::clone::Clone for SCM_INTERLEAVED_PD_INFO {
@@ -6485,7 +6485,7 @@ impl ::core::clone::Clone for SCM_LOGICAL_DEVICES {
 pub struct SCM_LOGICAL_DEVICE_INSTANCE {
     pub Version: u32,
     pub Size: u32,
-    pub DeviceGuid: ::windows_sys_core::GUID,
+    pub DeviceGuid: ::windows_core_sys::GUID,
     pub SymbolicLink: [u16; 256],
 }
 impl ::core::marker::Copy for SCM_LOGICAL_DEVICE_INSTANCE {}
@@ -6513,7 +6513,7 @@ impl ::core::clone::Clone for SCM_PD_DESCRIPTOR_HEADER {
 pub struct SCM_PD_DEVICE_HANDLE {
     pub Version: u32,
     pub Size: u32,
-    pub DeviceGuid: ::windows_sys_core::GUID,
+    pub DeviceGuid: ::windows_core_sys::GUID,
     pub DeviceHandle: u32,
 }
 impl ::core::marker::Copy for SCM_PD_DEVICE_HANDLE {}
@@ -6528,7 +6528,7 @@ impl ::core::clone::Clone for SCM_PD_DEVICE_HANDLE {
 pub struct SCM_PD_DEVICE_INFO {
     pub Version: u32,
     pub Size: u32,
-    pub DeviceGuid: ::windows_sys_core::GUID,
+    pub DeviceGuid: ::windows_core_sys::GUID,
     pub UnsafeShutdownCount: u32,
     pub PersistentMemorySizeInBytes: u64,
     pub VolatileMemorySizeInBytes: u64,
@@ -6676,7 +6676,7 @@ impl ::core::clone::Clone for SCM_PD_FRU_ID_STRING {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct SCM_PD_HEALTH_NOTIFICATION_DATA {
-    pub DeviceGuid: ::windows_sys_core::GUID,
+    pub DeviceGuid: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for SCM_PD_HEALTH_NOTIFICATION_DATA {}
 impl ::core::clone::Clone for SCM_PD_HEALTH_NOTIFICATION_DATA {
@@ -6831,7 +6831,7 @@ pub const ScmPhysicalDeviceOpReason_Max: SCM_PD_OPERATIONAL_STATUS_REASON = 23i3
 pub struct SCM_PD_PASSTHROUGH_INPUT {
     pub Version: u32,
     pub Size: u32,
-    pub ProtocolGuid: ::windows_sys_core::GUID,
+    pub ProtocolGuid: ::windows_core_sys::GUID,
     pub DataSize: u32,
     pub Data: [u8; 1],
 }
@@ -6873,7 +6873,7 @@ impl ::core::clone::Clone for SCM_PD_PASSTHROUGH_INVDIMM_OUTPUT {
 pub struct SCM_PD_PASSTHROUGH_OUTPUT {
     pub Version: u32,
     pub Size: u32,
-    pub ProtocolGuid: ::windows_sys_core::GUID,
+    pub ProtocolGuid: ::windows_core_sys::GUID,
     pub DataSize: u32,
     pub Data: [u8; 1],
 }
@@ -7053,8 +7053,8 @@ pub struct SCM_REGION {
     pub Size: u32,
     pub Flags: u32,
     pub NfitHandle: u32,
-    pub LogicalDeviceGuid: ::windows_sys_core::GUID,
-    pub AddressRangeType: ::windows_sys_core::GUID,
+    pub LogicalDeviceGuid: ::windows_core_sys::GUID,
+    pub AddressRangeType: ::windows_core_sys::GUID,
     pub AssociatedId: u32,
     pub Length: u64,
     pub StartingDPA: u64,
@@ -7930,7 +7930,7 @@ pub struct STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR {
     pub Version: u32,
     pub Size: u32,
     pub NumberOfFaultDomains: u32,
-    pub FaultDomainIds: [::windows_sys_core::GUID; 1],
+    pub FaultDomainIds: [::windows_core_sys::GUID; 1],
 }
 impl ::core::marker::Copy for STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR {}
 impl ::core::clone::Clone for STORAGE_DEVICE_FAULT_DOMAIN_DESCRIPTOR {
@@ -8092,7 +8092,7 @@ pub struct STORAGE_DEVICE_NUMBER_EX {
     pub Flags: u32,
     pub DeviceType: u32,
     pub DeviceNumber: u32,
-    pub DeviceGuid: ::windows_sys_core::GUID,
+    pub DeviceGuid: ::windows_core_sys::GUID,
     pub PartitionNumber: u32,
 }
 impl ::core::marker::Copy for STORAGE_DEVICE_NUMBER_EX {}
@@ -8193,7 +8193,7 @@ impl ::core::clone::Clone for STORAGE_DEVICE_UNSAFE_SHUTDOWN_COUNT {
 pub struct STORAGE_DIAGNOSTIC_DATA {
     pub Version: u32,
     pub Size: u32,
-    pub ProviderId: ::windows_sys_core::GUID,
+    pub ProviderId: ::windows_core_sys::GUID,
     pub BufferSize: u32,
     pub Reserved: u32,
     pub DiagnosticDataBuffer: [u8; 1],
@@ -9781,7 +9781,7 @@ pub const STORAGE_TEMPERATURE_VALUE_NOT_REPORTED: u32 = 32768u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct STORAGE_TIER {
-    pub Id: ::windows_sys_core::GUID,
+    pub Id: ::windows_core_sys::GUID,
     pub Name: [u16; 256],
     pub Description: [u16; 256],
     pub Flags: u64,
@@ -9834,7 +9834,7 @@ pub const STORAGE_TIER_NAME_LENGTH: u32 = 256u32;
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct STORAGE_TIER_REGION {
-    pub TierId: ::windows_sys_core::GUID,
+    pub TierId: ::windows_core_sys::GUID,
     pub Offset: u64,
     pub Length: u64,
 }
@@ -10274,7 +10274,7 @@ impl ::core::clone::Clone for TXFS_CREATE_MINIVERSION_INFO {
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct TXFS_GET_METADATA_INFO_OUT {
     pub TxfFileId: TXFS_GET_METADATA_INFO_OUT_0,
-    pub LockingTransaction: ::windows_sys_core::GUID,
+    pub LockingTransaction: ::windows_core_sys::GUID,
     pub LastLsn: u64,
     pub TransactionState: u32,
 }
@@ -10326,7 +10326,7 @@ impl ::core::clone::Clone for TXFS_LIST_TRANSACTIONS {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct TXFS_LIST_TRANSACTIONS_ENTRY {
-    pub TransactionId: ::windows_sys_core::GUID,
+    pub TransactionId: ::windows_core_sys::GUID,
     pub TransactionState: u32,
     pub Reserved1: u32,
     pub Reserved2: u32,
@@ -10341,7 +10341,7 @@ impl ::core::clone::Clone for TXFS_LIST_TRANSACTIONS_ENTRY {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct TXFS_LIST_TRANSACTION_LOCKED_FILES {
-    pub KtmTransaction: ::windows_sys_core::GUID,
+    pub KtmTransaction: ::windows_core_sys::GUID,
     pub NumberOfFiles: u64,
     pub BufferSizeRequired: u64,
     pub Offset: u64,
@@ -10422,7 +10422,7 @@ pub struct TXFS_QUERY_RM_INFORMATION {
     pub TwoPCCount: u64,
     pub NumberLogFileFull: u64,
     pub OldestTransactionAge: u64,
-    pub RMName: ::windows_sys_core::GUID,
+    pub RMName: ::windows_core_sys::GUID,
     pub TmLogPathOffset: u32,
 }
 impl ::core::marker::Copy for TXFS_QUERY_RM_INFORMATION {}
@@ -10948,7 +10948,7 @@ impl ::core::clone::Clone for VIRTUALIZATION_INSTANCE_INFO_INPUT_EX {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_System_Ioctl\"`*"]
 pub struct VIRTUALIZATION_INSTANCE_INFO_OUTPUT {
-    pub VirtualizationInstanceID: ::windows_sys_core::GUID,
+    pub VirtualizationInstanceID: ::windows_core_sys::GUID,
 }
 impl ::core::marker::Copy for VIRTUALIZATION_INSTANCE_INFO_OUTPUT {}
 impl ::core::clone::Clone for VIRTUALIZATION_INSTANCE_INFO_OUTPUT {
@@ -11061,7 +11061,7 @@ impl ::core::clone::Clone for WIM_PROVIDER_EXTERNAL_INFO {
 pub struct WIM_PROVIDER_OVERLAY_ENTRY {
     pub NextEntryOffset: u32,
     pub DataSourceId: i64,
-    pub WimGuid: ::windows_sys_core::GUID,
+    pub WimGuid: ::windows_core_sys::GUID,
     pub WimFileNameOffset: u32,
     pub WimType: u32,
     pub WimIndex: u32,

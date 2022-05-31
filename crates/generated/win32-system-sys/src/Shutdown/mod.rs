@@ -1,31 +1,31 @@
 #[link(name = "windows")]
 extern "system" {
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AbortSystemShutdownA(lpmachinename: ::windows_sys_core::PCSTR) -> super::super::Foundation::BOOL;
+    pub fn AbortSystemShutdownA(lpmachinename: ::windows_core_sys::PCSTR) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn AbortSystemShutdownW(lpmachinename: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn AbortSystemShutdownW(lpmachinename: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn CheckForHiberboot(phiberboot: *mut super::super::Foundation::BOOLEAN, bclearflag: super::super::Foundation::BOOLEAN) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn ExitWindowsEx(uflags: EXIT_WINDOWS_FLAGS, dwreason: SHUTDOWN_REASON) -> super::super::Foundation::BOOL;
-    pub fn InitiateShutdownA(lpmachinename: ::windows_sys_core::PCSTR, lpmessage: ::windows_sys_core::PCSTR, dwgraceperiod: u32, dwshutdownflags: SHUTDOWN_FLAGS, dwreason: SHUTDOWN_REASON) -> u32;
-    pub fn InitiateShutdownW(lpmachinename: ::windows_sys_core::PCWSTR, lpmessage: ::windows_sys_core::PCWSTR, dwgraceperiod: u32, dwshutdownflags: SHUTDOWN_FLAGS, dwreason: SHUTDOWN_REASON) -> u32;
+    pub fn InitiateShutdownA(lpmachinename: ::windows_core_sys::PCSTR, lpmessage: ::windows_core_sys::PCSTR, dwgraceperiod: u32, dwshutdownflags: SHUTDOWN_FLAGS, dwreason: SHUTDOWN_REASON) -> u32;
+    pub fn InitiateShutdownW(lpmachinename: ::windows_core_sys::PCWSTR, lpmessage: ::windows_core_sys::PCWSTR, dwgraceperiod: u32, dwshutdownflags: SHUTDOWN_FLAGS, dwreason: SHUTDOWN_REASON) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn InitiateSystemShutdownA(lpmachinename: ::windows_sys_core::PCSTR, lpmessage: ::windows_sys_core::PCSTR, dwtimeout: u32, bforceappsclosed: super::super::Foundation::BOOL, brebootaftershutdown: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn InitiateSystemShutdownA(lpmachinename: ::windows_core_sys::PCSTR, lpmessage: ::windows_core_sys::PCSTR, dwtimeout: u32, bforceappsclosed: super::super::Foundation::BOOL, brebootaftershutdown: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn InitiateSystemShutdownExA(lpmachinename: ::windows_sys_core::PCSTR, lpmessage: ::windows_sys_core::PCSTR, dwtimeout: u32, bforceappsclosed: super::super::Foundation::BOOL, brebootaftershutdown: super::super::Foundation::BOOL, dwreason: SHUTDOWN_REASON) -> super::super::Foundation::BOOL;
+    pub fn InitiateSystemShutdownExA(lpmachinename: ::windows_core_sys::PCSTR, lpmessage: ::windows_core_sys::PCSTR, dwtimeout: u32, bforceappsclosed: super::super::Foundation::BOOL, brebootaftershutdown: super::super::Foundation::BOOL, dwreason: SHUTDOWN_REASON) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn InitiateSystemShutdownExW(lpmachinename: ::windows_sys_core::PCWSTR, lpmessage: ::windows_sys_core::PCWSTR, dwtimeout: u32, bforceappsclosed: super::super::Foundation::BOOL, brebootaftershutdown: super::super::Foundation::BOOL, dwreason: SHUTDOWN_REASON) -> super::super::Foundation::BOOL;
+    pub fn InitiateSystemShutdownExW(lpmachinename: ::windows_core_sys::PCWSTR, lpmessage: ::windows_core_sys::PCWSTR, dwtimeout: u32, bforceappsclosed: super::super::Foundation::BOOL, brebootaftershutdown: super::super::Foundation::BOOL, dwreason: SHUTDOWN_REASON) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn InitiateSystemShutdownW(lpmachinename: ::windows_sys_core::PCWSTR, lpmessage: ::windows_sys_core::PCWSTR, dwtimeout: u32, bforceappsclosed: super::super::Foundation::BOOL, brebootaftershutdown: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
+    pub fn InitiateSystemShutdownW(lpmachinename: ::windows_core_sys::PCWSTR, lpmessage: ::windows_core_sys::PCWSTR, dwtimeout: u32, bforceappsclosed: super::super::Foundation::BOOL, brebootaftershutdown: super::super::Foundation::BOOL) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn LockWorkStation() -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ShutdownBlockReasonCreate(hwnd: super::super::Foundation::HWND, pwszreason: ::windows_sys_core::PCWSTR) -> super::super::Foundation::BOOL;
+    pub fn ShutdownBlockReasonCreate(hwnd: super::super::Foundation::HWND, pwszreason: ::windows_core_sys::PCWSTR) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn ShutdownBlockReasonDestroy(hwnd: super::super::Foundation::HWND) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ShutdownBlockReasonQuery(hwnd: super::super::Foundation::HWND, pwszbuff: ::windows_sys_core::PWSTR, pcchbuff: *mut u32) -> super::super::Foundation::BOOL;
+    pub fn ShutdownBlockReasonQuery(hwnd: super::super::Foundation::HWND, pwszbuff: ::windows_core_sys::PWSTR, pcchbuff: *mut u32) -> super::super::Foundation::BOOL;
 }
 pub type EXIT_WINDOWS_FLAGS = u32;
 pub const EWX_HYBRID_SHUTDOWN: EXIT_WINDOWS_FLAGS = 4194304u32;

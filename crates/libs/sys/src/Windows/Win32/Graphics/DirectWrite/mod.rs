@@ -1,7 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
-    pub fn DWriteCreateFactory(factorytype: DWRITE_FACTORY_TYPE, iid: *const ::windows_sys_core::GUID, factory: *mut ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
+    pub fn DWriteCreateFactory(factorytype: DWRITE_FACTORY_TYPE, iid: *const ::windows_core_sys::GUID, factory: *mut ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
 }
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
 pub const DWRITE_ALPHA_MAX: u32 = 255u32;
@@ -127,13 +127,13 @@ pub const DWRITE_CONTAINER_TYPE_WOFF2: DWRITE_CONTAINER_TYPE = 2i32;
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
 pub const DWRITE_ERR_BASE: u32 = 20480u32;
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
-pub const DWRITE_E_DOWNLOADCANCELLED: ::windows_sys_core::HRESULT = -2003283954i32;
+pub const DWRITE_E_DOWNLOADCANCELLED: ::windows_core_sys::HRESULT = -2003283954i32;
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
-pub const DWRITE_E_DOWNLOADFAILED: ::windows_sys_core::HRESULT = -2003283953i32;
+pub const DWRITE_E_DOWNLOADFAILED: ::windows_core_sys::HRESULT = -2003283953i32;
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
-pub const DWRITE_E_REMOTEFONT: ::windows_sys_core::HRESULT = -2003283955i32;
+pub const DWRITE_E_REMOTEFONT: ::windows_core_sys::HRESULT = -2003283955i32;
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
-pub const DWRITE_E_TOOMANYDOWNLOADS: ::windows_sys_core::HRESULT = -2003283952i32;
+pub const DWRITE_E_TOOMANYDOWNLOADS: ::windows_core_sys::HRESULT = -2003283952i32;
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
 pub type DWRITE_FACTORY_TYPE = i32;
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
@@ -488,8 +488,8 @@ impl ::core::clone::Clone for DWRITE_FONT_METRICS1 {
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
 pub struct DWRITE_FONT_PROPERTY {
     pub propertyId: DWRITE_FONT_PROPERTY_ID,
-    pub propertyValue: ::windows_sys_core::PCWSTR,
-    pub localeName: ::windows_sys_core::PCWSTR,
+    pub propertyValue: ::windows_core_sys::PCWSTR,
+    pub localeName: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for DWRITE_FONT_PROPERTY {}
 impl ::core::clone::Clone for DWRITE_FONT_PROPERTY {
@@ -730,8 +730,8 @@ impl ::core::clone::Clone for DWRITE_GLYPH_RUN {
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_DirectWrite\"`*"]
 pub struct DWRITE_GLYPH_RUN_DESCRIPTION {
-    pub localeName: ::windows_sys_core::PCWSTR,
-    pub string: ::windows_sys_core::PCWSTR,
+    pub localeName: ::windows_core_sys::PCWSTR,
+    pub string: ::windows_core_sys::PCWSTR,
     pub stringLength: u32,
     pub clusterMap: *const u16,
     pub textPosition: u32,
@@ -1841,7 +1841,7 @@ pub struct DWRITE_STRIKETHROUGH {
     pub offset: f32,
     pub readingDirection: DWRITE_READING_DIRECTION,
     pub flowDirection: DWRITE_FLOW_DIRECTION,
-    pub localeName: ::windows_sys_core::PCWSTR,
+    pub localeName: ::windows_core_sys::PCWSTR,
     pub measuringMode: DWRITE_MEASURING_MODE,
 }
 impl ::core::marker::Copy for DWRITE_STRIKETHROUGH {}
@@ -1957,7 +1957,7 @@ pub struct DWRITE_UNDERLINE {
     pub runHeight: f32,
     pub readingDirection: DWRITE_READING_DIRECTION,
     pub flowDirection: DWRITE_FLOW_DIRECTION,
-    pub localeName: ::windows_sys_core::PCWSTR,
+    pub localeName: ::windows_core_sys::PCWSTR,
     pub measuringMode: DWRITE_MEASURING_MODE,
 }
 impl ::core::marker::Copy for DWRITE_UNDERLINE {}

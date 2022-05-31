@@ -1,207 +1,207 @@
 #[link(name = "windows")]
 extern "system" {
-    pub fn GetNetScheduleAccountInformation(pwszservername: ::windows_sys_core::PCWSTR, ccaccount: u32, wszaccount: ::windows_sys_core::PWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn I_NetLogonControl2(servername: ::windows_sys_core::PCWSTR, functioncode: u32, querylevel: u32, data: *const u8, buffer: *mut *mut u8) -> u32;
-    pub fn LogErrorA(dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_sys_core::PSTR, dwerrorcode: u32);
-    pub fn LogErrorW(dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_sys_core::PWSTR, dwerrorcode: u32);
-    pub fn LogEventA(weventtype: u32, dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_sys_core::PSTR);
-    pub fn LogEventW(weventtype: u32, dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_sys_core::PWSTR);
+    pub fn GetNetScheduleAccountInformation(pwszservername: ::windows_core_sys::PCWSTR, ccaccount: u32, wszaccount: ::windows_core_sys::PWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn I_NetLogonControl2(servername: ::windows_core_sys::PCWSTR, functioncode: u32, querylevel: u32, data: *const u8, buffer: *mut *mut u8) -> u32;
+    pub fn LogErrorA(dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_core_sys::PSTR, dwerrorcode: u32);
+    pub fn LogErrorW(dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_core_sys::PWSTR, dwerrorcode: u32);
+    pub fn LogEventA(weventtype: u32, dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_core_sys::PSTR);
+    pub fn LogEventW(weventtype: u32, dwmessageid: u32, cnumberofsubstrings: u32, plpwssubstrings: *const ::windows_core_sys::PWSTR);
     pub fn MprSetupProtocolEnum(dwtransportid: u32, lplpbuffer: *mut *mut u8, lpdwentriesread: *mut u32) -> u32;
     pub fn MprSetupProtocolFree(lpbuffer: *mut ::core::ffi::c_void) -> u32;
-    pub fn NetAccessAdd(servername: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetAccessDel(servername: ::windows_sys_core::PCWSTR, resource: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetAccessEnum(servername: ::windows_sys_core::PCWSTR, basepath: ::windows_sys_core::PCWSTR, recursive: u32, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
-    pub fn NetAccessGetInfo(servername: ::windows_sys_core::PCWSTR, resource: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetAccessGetUserPerms(servername: ::windows_sys_core::PCWSTR, ugname: ::windows_sys_core::PCWSTR, resource: ::windows_sys_core::PCWSTR, perms: *mut u32) -> u32;
-    pub fn NetAccessSetInfo(servername: ::windows_sys_core::PCWSTR, resource: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetAddAlternateComputerName(server: ::windows_sys_core::PCWSTR, alternatename: ::windows_sys_core::PCWSTR, domainaccount: ::windows_sys_core::PCWSTR, domainaccountpassword: ::windows_sys_core::PCWSTR, reserved: u32) -> u32;
+    pub fn NetAccessAdd(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetAccessDel(servername: ::windows_core_sys::PCWSTR, resource: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetAccessEnum(servername: ::windows_core_sys::PCWSTR, basepath: ::windows_core_sys::PCWSTR, recursive: u32, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+    pub fn NetAccessGetInfo(servername: ::windows_core_sys::PCWSTR, resource: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetAccessGetUserPerms(servername: ::windows_core_sys::PCWSTR, ugname: ::windows_core_sys::PCWSTR, resource: ::windows_core_sys::PCWSTR, perms: *mut u32) -> u32;
+    pub fn NetAccessSetInfo(servername: ::windows_core_sys::PCWSTR, resource: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetAddAlternateComputerName(server: ::windows_core_sys::PCWSTR, alternatename: ::windows_core_sys::PCWSTR, domainaccount: ::windows_core_sys::PCWSTR, domainaccountpassword: ::windows_core_sys::PCWSTR, reserved: u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NetAddServiceAccount(servername: ::windows_sys_core::PCWSTR, accountname: ::windows_sys_core::PCWSTR, password: ::windows_sys_core::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
-    pub fn NetAlertRaise(alerttype: ::windows_sys_core::PCWSTR, buffer: *const ::core::ffi::c_void, buffersize: u32) -> u32;
-    pub fn NetAlertRaiseEx(alerttype: ::windows_sys_core::PCWSTR, variableinfo: *const ::core::ffi::c_void, variableinfosize: u32, servicename: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn NetAddServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, password: ::windows_core_sys::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn NetAlertRaise(alerttype: ::windows_core_sys::PCWSTR, buffer: *const ::core::ffi::c_void, buffersize: u32) -> u32;
+    pub fn NetAlertRaiseEx(alerttype: ::windows_core_sys::PCWSTR, variableinfo: *const ::core::ffi::c_void, variableinfosize: u32, servicename: ::windows_core_sys::PCWSTR) -> u32;
     pub fn NetApiBufferAllocate(bytecount: u32, buffer: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn NetApiBufferFree(buffer: *const ::core::ffi::c_void) -> u32;
     pub fn NetApiBufferReallocate(oldbuffer: *const ::core::ffi::c_void, newbytecount: u32, newbuffer: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn NetApiBufferSize(buffer: *const ::core::ffi::c_void, bytecount: *mut u32) -> u32;
-    pub fn NetAuditClear(server: ::windows_sys_core::PCWSTR, backupfile: ::windows_sys_core::PCWSTR, service: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetAuditRead(server: ::windows_sys_core::PCWSTR, service: ::windows_sys_core::PCWSTR, auditloghandle: *mut HLOG, offset: u32, reserved1: *mut u32, reserved2: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxlen: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32;
-    pub fn NetAuditWrite(r#type: u32, buf: *mut u8, numbytes: u32, service: ::windows_sys_core::PCWSTR, reserved: *mut u8) -> u32;
-    pub fn NetConfigGet(server: ::windows_sys_core::PCWSTR, component: ::windows_sys_core::PCWSTR, parameter: ::windows_sys_core::PCWSTR, bufptr: *mut *mut u8) -> u32;
-    pub fn NetConfigGetAll(server: ::windows_sys_core::PCWSTR, component: ::windows_sys_core::PCWSTR, bufptr: *mut *mut u8) -> u32;
-    pub fn NetConfigSet(server: ::windows_sys_core::PCWSTR, reserved1: ::windows_sys_core::PCWSTR, component: ::windows_sys_core::PCWSTR, level: u32, reserved2: u32, buf: *mut u8, reserved3: u32) -> u32;
-    pub fn NetCreateProvisioningPackage(pprovisioningparams: *const NETSETUP_PROVISIONING_PARAMS, pppackagebindata: *mut *mut u8, pdwpackagebindatasize: *mut u32, pppackagetextdata: *mut ::windows_sys_core::PWSTR) -> u32;
-    pub fn NetEnumerateComputerNames(server: ::windows_sys_core::PCWSTR, nametype: NET_COMPUTER_NAME_TYPE, reserved: u32, entrycount: *mut u32, computernames: *mut *mut ::windows_sys_core::PWSTR) -> u32;
+    pub fn NetAuditClear(server: ::windows_core_sys::PCWSTR, backupfile: ::windows_core_sys::PCWSTR, service: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetAuditRead(server: ::windows_core_sys::PCWSTR, service: ::windows_core_sys::PCWSTR, auditloghandle: *mut HLOG, offset: u32, reserved1: *mut u32, reserved2: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxlen: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32;
+    pub fn NetAuditWrite(r#type: u32, buf: *mut u8, numbytes: u32, service: ::windows_core_sys::PCWSTR, reserved: *mut u8) -> u32;
+    pub fn NetConfigGet(server: ::windows_core_sys::PCWSTR, component: ::windows_core_sys::PCWSTR, parameter: ::windows_core_sys::PCWSTR, bufptr: *mut *mut u8) -> u32;
+    pub fn NetConfigGetAll(server: ::windows_core_sys::PCWSTR, component: ::windows_core_sys::PCWSTR, bufptr: *mut *mut u8) -> u32;
+    pub fn NetConfigSet(server: ::windows_core_sys::PCWSTR, reserved1: ::windows_core_sys::PCWSTR, component: ::windows_core_sys::PCWSTR, level: u32, reserved2: u32, buf: *mut u8, reserved3: u32) -> u32;
+    pub fn NetCreateProvisioningPackage(pprovisioningparams: *const NETSETUP_PROVISIONING_PARAMS, pppackagebindata: *mut *mut u8, pdwpackagebindatasize: *mut u32, pppackagetextdata: *mut ::windows_core_sys::PWSTR) -> u32;
+    pub fn NetEnumerateComputerNames(server: ::windows_core_sys::PCWSTR, nametype: NET_COMPUTER_NAME_TYPE, reserved: u32, entrycount: *mut u32, computernames: *mut *mut ::windows_core_sys::PWSTR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NetEnumerateServiceAccounts(servername: ::windows_sys_core::PCWSTR, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> super::super::Foundation::NTSTATUS;
-    pub fn NetErrorLogClear(uncservername: ::windows_sys_core::PCWSTR, backupfile: ::windows_sys_core::PCWSTR, reserved: *const u8) -> u32;
-    pub fn NetErrorLogRead(uncservername: ::windows_sys_core::PCWSTR, reserved1: ::windows_sys_core::PCWSTR, errorloghandle: *const HLOG, offset: u32, reserved2: *const u32, reserved3: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxsize: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32;
-    pub fn NetErrorLogWrite(reserved1: *const u8, code: u32, component: ::windows_sys_core::PCWSTR, buffer: *const u8, numbytes: u32, msgbuf: *const u8, strcount: u32, reserved2: *const u8) -> u32;
+    pub fn NetEnumerateServiceAccounts(servername: ::windows_core_sys::PCWSTR, flags: u32, accountscount: *mut u32, accounts: *mut *mut *mut u16) -> super::super::Foundation::NTSTATUS;
+    pub fn NetErrorLogClear(uncservername: ::windows_core_sys::PCWSTR, backupfile: ::windows_core_sys::PCWSTR, reserved: *const u8) -> u32;
+    pub fn NetErrorLogRead(uncservername: ::windows_core_sys::PCWSTR, reserved1: ::windows_core_sys::PCWSTR, errorloghandle: *const HLOG, offset: u32, reserved2: *const u32, reserved3: u32, offsetflag: u32, bufptr: *mut *mut u8, prefmaxsize: u32, bytesread: *mut u32, totalavailable: *mut u32) -> u32;
+    pub fn NetErrorLogWrite(reserved1: *const u8, code: u32, component: ::windows_core_sys::PCWSTR, buffer: *const u8, numbytes: u32, msgbuf: *const u8, strcount: u32, reserved2: *const u8) -> u32;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
     pub fn NetFreeAadJoinInformation(pjoininfo: *const DSREG_JOIN_INFO);
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
-    pub fn NetGetAadJoinInformation(pcsztenantid: ::windows_sys_core::PCWSTR, ppjoininfo: *mut *mut DSREG_JOIN_INFO) -> ::windows_sys_core::HRESULT;
-    pub fn NetGetAnyDCName(servername: ::windows_sys_core::PCWSTR, domainname: ::windows_sys_core::PCWSTR, buffer: *mut *mut u8) -> u32;
-    pub fn NetGetDCName(servername: ::windows_sys_core::PCWSTR, domainname: ::windows_sys_core::PCWSTR, buffer: *mut *mut u8) -> u32;
-    pub fn NetGetDisplayInformationIndex(servername: ::windows_sys_core::PCWSTR, level: u32, prefix: ::windows_sys_core::PCWSTR, index: *mut u32) -> u32;
-    pub fn NetGetJoinInformation(lpserver: ::windows_sys_core::PCWSTR, lpnamebuffer: *mut ::windows_sys_core::PWSTR, buffertype: *mut NETSETUP_JOIN_STATUS) -> u32;
-    pub fn NetGetJoinableOUs(lpserver: ::windows_sys_core::PCWSTR, lpdomain: ::windows_sys_core::PCWSTR, lpaccount: ::windows_sys_core::PCWSTR, lppassword: ::windows_sys_core::PCWSTR, oucount: *mut u32, ous: *mut *mut ::windows_sys_core::PWSTR) -> u32;
-    pub fn NetGroupAdd(servername: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetGroupAddUser(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetGroupDel(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetGroupDelUser(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetGroupEnum(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut usize) -> u32;
-    pub fn NetGroupGetInfo(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetGroupGetUsers(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
-    pub fn NetGroupSetInfo(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetGroupSetUsers(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
+    pub fn NetGetAadJoinInformation(pcsztenantid: ::windows_core_sys::PCWSTR, ppjoininfo: *mut *mut DSREG_JOIN_INFO) -> ::windows_core_sys::HRESULT;
+    pub fn NetGetAnyDCName(servername: ::windows_core_sys::PCWSTR, domainname: ::windows_core_sys::PCWSTR, buffer: *mut *mut u8) -> u32;
+    pub fn NetGetDCName(servername: ::windows_core_sys::PCWSTR, domainname: ::windows_core_sys::PCWSTR, buffer: *mut *mut u8) -> u32;
+    pub fn NetGetDisplayInformationIndex(servername: ::windows_core_sys::PCWSTR, level: u32, prefix: ::windows_core_sys::PCWSTR, index: *mut u32) -> u32;
+    pub fn NetGetJoinInformation(lpserver: ::windows_core_sys::PCWSTR, lpnamebuffer: *mut ::windows_core_sys::PWSTR, buffertype: *mut NETSETUP_JOIN_STATUS) -> u32;
+    pub fn NetGetJoinableOUs(lpserver: ::windows_core_sys::PCWSTR, lpdomain: ::windows_core_sys::PCWSTR, lpaccount: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR, oucount: *mut u32, ous: *mut *mut ::windows_core_sys::PWSTR) -> u32;
+    pub fn NetGroupAdd(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetGroupAddUser(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetGroupDel(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetGroupDelUser(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetGroupEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut usize) -> u32;
+    pub fn NetGroupGetInfo(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetGroupGetUsers(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
+    pub fn NetGroupSetInfo(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetGroupSetUsers(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NetIsServiceAccount(servername: ::windows_sys_core::PCWSTR, accountname: ::windows_sys_core::PCWSTR, isservice: *mut super::super::Foundation::BOOL) -> super::super::Foundation::NTSTATUS;
-    pub fn NetJoinDomain(lpserver: ::windows_sys_core::PCWSTR, lpdomain: ::windows_sys_core::PCWSTR, lpmachineaccountou: ::windows_sys_core::PCWSTR, lpaccount: ::windows_sys_core::PCWSTR, lppassword: ::windows_sys_core::PCWSTR, fjoinoptions: NET_JOIN_DOMAIN_JOIN_OPTIONS) -> u32;
-    pub fn NetLocalGroupAdd(servername: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetIsServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, isservice: *mut super::super::Foundation::BOOL) -> super::super::Foundation::NTSTATUS;
+    pub fn NetJoinDomain(lpserver: ::windows_core_sys::PCWSTR, lpdomain: ::windows_core_sys::PCWSTR, lpmachineaccountou: ::windows_core_sys::PCWSTR, lpaccount: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR, fjoinoptions: NET_JOIN_DOMAIN_JOIN_OPTIONS) -> u32;
+    pub fn NetLocalGroupAdd(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NetLocalGroupAddMember(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
-    pub fn NetLocalGroupAddMembers(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
-    pub fn NetLocalGroupDel(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn NetLocalGroupAddMember(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
+    pub fn NetLocalGroupAddMembers(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
+    pub fn NetLocalGroupDel(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NetLocalGroupDelMember(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
-    pub fn NetLocalGroupDelMembers(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
-    pub fn NetLocalGroupEnum(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
-    pub fn NetLocalGroupGetInfo(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetLocalGroupGetMembers(servername: ::windows_sys_core::PCWSTR, localgroupname: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
-    pub fn NetLocalGroupSetInfo(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetLocalGroupSetMembers(servername: ::windows_sys_core::PCWSTR, groupname: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
-    pub fn NetMessageBufferSend(servername: ::windows_sys_core::PCWSTR, msgname: ::windows_sys_core::PCWSTR, fromname: ::windows_sys_core::PCWSTR, buf: *const u8, buflen: u32) -> u32;
-    pub fn NetMessageNameAdd(servername: ::windows_sys_core::PCWSTR, msgname: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetMessageNameDel(servername: ::windows_sys_core::PCWSTR, msgname: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetMessageNameEnum(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *const *const u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
-    pub fn NetMessageNameGetInfo(servername: ::windows_sys_core::PCWSTR, msgname: ::windows_sys_core::PCWSTR, level: u32, bufptr: *const *const u8) -> u32;
-    pub fn NetProvisionComputerAccount(lpdomain: ::windows_sys_core::PCWSTR, lpmachinename: ::windows_sys_core::PCWSTR, lpmachineaccountou: ::windows_sys_core::PCWSTR, lpdcname: ::windows_sys_core::PCWSTR, dwoptions: NETSETUP_PROVISION, pprovisionbindata: *mut *mut u8, pdwprovisionbindatasize: *mut u32, pprovisiontextdata: *mut ::windows_sys_core::PWSTR) -> u32;
-    pub fn NetQueryDisplayInformation(servername: ::windows_sys_core::PCWSTR, level: u32, index: u32, entriesrequested: u32, preferredmaximumlength: u32, returnedentrycount: *mut u32, sortedbuffer: *mut *mut ::core::ffi::c_void) -> u32;
+    pub fn NetLocalGroupDelMember(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, membersid: super::super::Foundation::PSID) -> u32;
+    pub fn NetLocalGroupDelMembers(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
+    pub fn NetLocalGroupEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
+    pub fn NetLocalGroupGetInfo(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetLocalGroupGetMembers(servername: ::windows_core_sys::PCWSTR, localgroupname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut usize) -> u32;
+    pub fn NetLocalGroupSetInfo(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetLocalGroupSetMembers(servername: ::windows_core_sys::PCWSTR, groupname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, totalentries: u32) -> u32;
+    pub fn NetMessageBufferSend(servername: ::windows_core_sys::PCWSTR, msgname: ::windows_core_sys::PCWSTR, fromname: ::windows_core_sys::PCWSTR, buf: *const u8, buflen: u32) -> u32;
+    pub fn NetMessageNameAdd(servername: ::windows_core_sys::PCWSTR, msgname: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetMessageNameDel(servername: ::windows_core_sys::PCWSTR, msgname: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetMessageNameEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *const *const u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+    pub fn NetMessageNameGetInfo(servername: ::windows_core_sys::PCWSTR, msgname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *const *const u8) -> u32;
+    pub fn NetProvisionComputerAccount(lpdomain: ::windows_core_sys::PCWSTR, lpmachinename: ::windows_core_sys::PCWSTR, lpmachineaccountou: ::windows_core_sys::PCWSTR, lpdcname: ::windows_core_sys::PCWSTR, dwoptions: NETSETUP_PROVISION, pprovisionbindata: *mut *mut u8, pdwprovisionbindatasize: *mut u32, pprovisiontextdata: *mut ::windows_core_sys::PWSTR) -> u32;
+    pub fn NetQueryDisplayInformation(servername: ::windows_core_sys::PCWSTR, level: u32, index: u32, entriesrequested: u32, preferredmaximumlength: u32, returnedentrycount: *mut u32, sortedbuffer: *mut *mut ::core::ffi::c_void) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NetQueryServiceAccount(servername: ::windows_sys_core::PCWSTR, accountname: ::windows_sys_core::PCWSTR, infolevel: u32, buffer: *mut *mut u8) -> super::super::Foundation::NTSTATUS;
-    pub fn NetRemoteComputerSupports(uncservername: ::windows_sys_core::PCWSTR, optionswanted: NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS, optionssupported: *mut u32) -> u32;
-    pub fn NetRemoteTOD(uncservername: ::windows_sys_core::PCWSTR, bufferptr: *mut *mut u8) -> u32;
-    pub fn NetRemoveAlternateComputerName(server: ::windows_sys_core::PCWSTR, alternatename: ::windows_sys_core::PCWSTR, domainaccount: ::windows_sys_core::PCWSTR, domainaccountpassword: ::windows_sys_core::PCWSTR, reserved: u32) -> u32;
+    pub fn NetQueryServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, infolevel: u32, buffer: *mut *mut u8) -> super::super::Foundation::NTSTATUS;
+    pub fn NetRemoteComputerSupports(uncservername: ::windows_core_sys::PCWSTR, optionswanted: NET_REMOTE_COMPUTER_SUPPORTS_OPTIONS, optionssupported: *mut u32) -> u32;
+    pub fn NetRemoteTOD(uncservername: ::windows_core_sys::PCWSTR, bufferptr: *mut *mut u8) -> u32;
+    pub fn NetRemoveAlternateComputerName(server: ::windows_core_sys::PCWSTR, alternatename: ::windows_core_sys::PCWSTR, domainaccount: ::windows_core_sys::PCWSTR, domainaccountpassword: ::windows_core_sys::PCWSTR, reserved: u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn NetRemoveServiceAccount(servername: ::windows_sys_core::PCWSTR, accountname: ::windows_sys_core::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
-    pub fn NetRenameMachineInDomain(lpserver: ::windows_sys_core::PCWSTR, lpnewmachinename: ::windows_sys_core::PCWSTR, lpaccount: ::windows_sys_core::PCWSTR, lppassword: ::windows_sys_core::PCWSTR, frenameoptions: u32) -> u32;
-    pub fn NetReplExportDirAdd(servername: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetReplExportDirDel(servername: ::windows_sys_core::PCWSTR, dirname: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetReplExportDirEnum(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
-    pub fn NetReplExportDirGetInfo(servername: ::windows_sys_core::PCWSTR, dirname: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetReplExportDirLock(servername: ::windows_sys_core::PCWSTR, dirname: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetReplExportDirSetInfo(servername: ::windows_sys_core::PCWSTR, dirname: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetReplExportDirUnlock(servername: ::windows_sys_core::PCWSTR, dirname: ::windows_sys_core::PCWSTR, unlockforce: u32) -> u32;
-    pub fn NetReplGetInfo(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetReplImportDirAdd(servername: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetReplImportDirDel(servername: ::windows_sys_core::PCWSTR, dirname: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetReplImportDirEnum(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
-    pub fn NetReplImportDirGetInfo(servername: ::windows_sys_core::PCWSTR, dirname: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetReplImportDirLock(servername: ::windows_sys_core::PCWSTR, dirname: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetReplImportDirUnlock(servername: ::windows_sys_core::PCWSTR, dirname: ::windows_sys_core::PCWSTR, unlockforce: u32) -> u32;
-    pub fn NetReplSetInfo(servername: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetRequestOfflineDomainJoin(pprovisionbindata: *const u8, cbprovisionbindatasize: u32, dwoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetRequestProvisioningPackageInstall(ppackagebindata: *const u8, dwpackagebindatasize: u32, dwprovisionoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: ::windows_sys_core::PCWSTR, pvreserved: *mut ::core::ffi::c_void) -> u32;
-    pub fn NetScheduleJobAdd(servername: ::windows_sys_core::PCWSTR, buffer: *mut u8, jobid: *mut u32) -> u32;
-    pub fn NetScheduleJobDel(servername: ::windows_sys_core::PCWSTR, minjobid: u32, maxjobid: u32) -> u32;
-    pub fn NetScheduleJobEnum(servername: ::windows_sys_core::PCWSTR, pointertobuffer: *mut *mut u8, prefferedmaximumlength: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
-    pub fn NetScheduleJobGetInfo(servername: ::windows_sys_core::PCWSTR, jobid: u32, pointertobuffer: *mut *mut u8) -> u32;
-    pub fn NetServerComputerNameAdd(servername: ::windows_sys_core::PCWSTR, emulateddomainname: ::windows_sys_core::PCWSTR, emulatedservername: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetServerComputerNameDel(servername: ::windows_sys_core::PCWSTR, emulatedservername: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetServerDiskEnum(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
-    pub fn NetServerEnum(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, servertype: NET_SERVER_TYPE, domain: ::windows_sys_core::PCWSTR, resume_handle: *mut u32) -> u32;
-    pub fn NetServerGetInfo(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetServerSetInfo(servername: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parmerror: *mut u32) -> u32;
-    pub fn NetServerTransportAdd(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *const u8) -> u32;
-    pub fn NetServerTransportAddEx(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *const u8) -> u32;
-    pub fn NetServerTransportDel(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *const u8) -> u32;
-    pub fn NetServerTransportEnum(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
-    pub fn NetServiceControl(servername: ::windows_sys_core::PCWSTR, service: ::windows_sys_core::PCWSTR, opcode: u32, arg: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetServiceEnum(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
-    pub fn NetServiceGetInfo(servername: ::windows_sys_core::PCWSTR, service: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetServiceInstall(servername: ::windows_sys_core::PCWSTR, service: ::windows_sys_core::PCWSTR, argc: u32, argv: *const ::windows_sys_core::PWSTR, bufptr: *mut *mut u8) -> u32;
-    pub fn NetSetPrimaryComputerName(server: ::windows_sys_core::PCWSTR, primaryname: ::windows_sys_core::PCWSTR, domainaccount: ::windows_sys_core::PCWSTR, domainaccountpassword: ::windows_sys_core::PCWSTR, reserved: u32) -> u32;
-    pub fn NetUnjoinDomain(lpserver: ::windows_sys_core::PCWSTR, lpaccount: ::windows_sys_core::PCWSTR, lppassword: ::windows_sys_core::PCWSTR, funjoinoptions: u32) -> u32;
+    pub fn NetRemoveServiceAccount(servername: ::windows_core_sys::PCWSTR, accountname: ::windows_core_sys::PCWSTR, flags: u32) -> super::super::Foundation::NTSTATUS;
+    pub fn NetRenameMachineInDomain(lpserver: ::windows_core_sys::PCWSTR, lpnewmachinename: ::windows_core_sys::PCWSTR, lpaccount: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR, frenameoptions: u32) -> u32;
+    pub fn NetReplExportDirAdd(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetReplExportDirDel(servername: ::windows_core_sys::PCWSTR, dirname: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetReplExportDirEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
+    pub fn NetReplExportDirGetInfo(servername: ::windows_core_sys::PCWSTR, dirname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetReplExportDirLock(servername: ::windows_core_sys::PCWSTR, dirname: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetReplExportDirSetInfo(servername: ::windows_core_sys::PCWSTR, dirname: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetReplExportDirUnlock(servername: ::windows_core_sys::PCWSTR, dirname: ::windows_core_sys::PCWSTR, unlockforce: u32) -> u32;
+    pub fn NetReplGetInfo(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetReplImportDirAdd(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetReplImportDirDel(servername: ::windows_core_sys::PCWSTR, dirname: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetReplImportDirEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
+    pub fn NetReplImportDirGetInfo(servername: ::windows_core_sys::PCWSTR, dirname: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetReplImportDirLock(servername: ::windows_core_sys::PCWSTR, dirname: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetReplImportDirUnlock(servername: ::windows_core_sys::PCWSTR, dirname: ::windows_core_sys::PCWSTR, unlockforce: u32) -> u32;
+    pub fn NetReplSetInfo(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetRequestOfflineDomainJoin(pprovisionbindata: *const u8, cbprovisionbindatasize: u32, dwoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetRequestProvisioningPackageInstall(ppackagebindata: *const u8, dwpackagebindatasize: u32, dwprovisionoptions: NET_REQUEST_PROVISION_OPTIONS, lpwindowspath: ::windows_core_sys::PCWSTR, pvreserved: *mut ::core::ffi::c_void) -> u32;
+    pub fn NetScheduleJobAdd(servername: ::windows_core_sys::PCWSTR, buffer: *mut u8, jobid: *mut u32) -> u32;
+    pub fn NetScheduleJobDel(servername: ::windows_core_sys::PCWSTR, minjobid: u32, maxjobid: u32) -> u32;
+    pub fn NetScheduleJobEnum(servername: ::windows_core_sys::PCWSTR, pointertobuffer: *mut *mut u8, prefferedmaximumlength: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
+    pub fn NetScheduleJobGetInfo(servername: ::windows_core_sys::PCWSTR, jobid: u32, pointertobuffer: *mut *mut u8) -> u32;
+    pub fn NetServerComputerNameAdd(servername: ::windows_core_sys::PCWSTR, emulateddomainname: ::windows_core_sys::PCWSTR, emulatedservername: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetServerComputerNameDel(servername: ::windows_core_sys::PCWSTR, emulatedservername: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetServerDiskEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+    pub fn NetServerEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, servertype: NET_SERVER_TYPE, domain: ::windows_core_sys::PCWSTR, resume_handle: *mut u32) -> u32;
+    pub fn NetServerGetInfo(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetServerSetInfo(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parmerror: *mut u32) -> u32;
+    pub fn NetServerTransportAdd(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *const u8) -> u32;
+    pub fn NetServerTransportAddEx(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *const u8) -> u32;
+    pub fn NetServerTransportDel(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *const u8) -> u32;
+    pub fn NetServerTransportEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+    pub fn NetServiceControl(servername: ::windows_core_sys::PCWSTR, service: ::windows_core_sys::PCWSTR, opcode: u32, arg: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetServiceEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+    pub fn NetServiceGetInfo(servername: ::windows_core_sys::PCWSTR, service: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetServiceInstall(servername: ::windows_core_sys::PCWSTR, service: ::windows_core_sys::PCWSTR, argc: u32, argv: *const ::windows_core_sys::PWSTR, bufptr: *mut *mut u8) -> u32;
+    pub fn NetSetPrimaryComputerName(server: ::windows_core_sys::PCWSTR, primaryname: ::windows_core_sys::PCWSTR, domainaccount: ::windows_core_sys::PCWSTR, domainaccountpassword: ::windows_core_sys::PCWSTR, reserved: u32) -> u32;
+    pub fn NetUnjoinDomain(lpserver: ::windows_core_sys::PCWSTR, lpaccount: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR, funjoinoptions: u32) -> u32;
     pub fn NetUseAdd(servername: *const i8, levelflags: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetUseDel(uncservername: ::windows_sys_core::PCWSTR, usename: ::windows_sys_core::PCWSTR, forcelevelflags: FORCE_LEVEL_FLAGS) -> u32;
-    pub fn NetUseEnum(uncservername: ::windows_sys_core::PCWSTR, levelflags: u32, bufptr: *mut *mut u8, preferedmaximumsize: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
-    pub fn NetUseGetInfo(uncservername: ::windows_sys_core::PCWSTR, usename: ::windows_sys_core::PCWSTR, levelflags: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetUserAdd(servername: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetUserChangePassword(domainname: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR, oldpassword: ::windows_sys_core::PCWSTR, newpassword: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetUserDel(servername: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn NetUserEnum(servername: ::windows_sys_core::PCWSTR, level: u32, filter: NET_USER_ENUM_FILTER_FLAGS, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
-    pub fn NetUserGetGroups(servername: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32;
-    pub fn NetUserGetInfo(servername: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetUserGetLocalGroups(servername: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR, level: u32, flags: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32;
-    pub fn NetUserModalsGet(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetUserModalsSet(servername: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetUserSetGroups(servername: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, num_entries: u32) -> u32;
-    pub fn NetUserSetInfo(servername: ::windows_sys_core::PCWSTR, username: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetValidateName(lpserver: ::windows_sys_core::PCWSTR, lpname: ::windows_sys_core::PCWSTR, lpaccount: ::windows_sys_core::PCWSTR, lppassword: ::windows_sys_core::PCWSTR, nametype: NETSETUP_NAME_TYPE) -> u32;
-    pub fn NetValidatePasswordPolicy(servername: ::windows_sys_core::PCWSTR, qualifier: *mut ::core::ffi::c_void, validationtype: NET_VALIDATE_PASSWORD_TYPE, inputarg: *mut ::core::ffi::c_void, outputarg: *mut *mut ::core::ffi::c_void) -> u32;
+    pub fn NetUseDel(uncservername: ::windows_core_sys::PCWSTR, usename: ::windows_core_sys::PCWSTR, forcelevelflags: FORCE_LEVEL_FLAGS) -> u32;
+    pub fn NetUseEnum(uncservername: ::windows_core_sys::PCWSTR, levelflags: u32, bufptr: *mut *mut u8, preferedmaximumsize: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
+    pub fn NetUseGetInfo(uncservername: ::windows_core_sys::PCWSTR, usename: ::windows_core_sys::PCWSTR, levelflags: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetUserAdd(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetUserChangePassword(domainname: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, oldpassword: ::windows_core_sys::PCWSTR, newpassword: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetUserDel(servername: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn NetUserEnum(servername: ::windows_core_sys::PCWSTR, level: u32, filter: NET_USER_ENUM_FILTER_FLAGS, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
+    pub fn NetUserGetGroups(servername: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32;
+    pub fn NetUserGetInfo(servername: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetUserGetLocalGroups(servername: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, level: u32, flags: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32) -> u32;
+    pub fn NetUserModalsGet(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetUserModalsSet(servername: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetUserSetGroups(servername: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, num_entries: u32) -> u32;
+    pub fn NetUserSetInfo(servername: ::windows_core_sys::PCWSTR, username: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetValidateName(lpserver: ::windows_core_sys::PCWSTR, lpname: ::windows_core_sys::PCWSTR, lpaccount: ::windows_core_sys::PCWSTR, lppassword: ::windows_core_sys::PCWSTR, nametype: NETSETUP_NAME_TYPE) -> u32;
+    pub fn NetValidatePasswordPolicy(servername: ::windows_core_sys::PCWSTR, qualifier: *mut ::core::ffi::c_void, validationtype: NET_VALIDATE_PASSWORD_TYPE, inputarg: *mut ::core::ffi::c_void, outputarg: *mut *mut ::core::ffi::c_void) -> u32;
     pub fn NetValidatePasswordPolicyFree(outputarg: *mut *mut ::core::ffi::c_void) -> u32;
-    pub fn NetWkstaGetInfo(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetWkstaSetInfo(servername: ::windows_sys_core::PCWSTR, level: u32, buffer: *const u8, parm_err: *mut u32) -> u32;
+    pub fn NetWkstaGetInfo(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetWkstaSetInfo(servername: ::windows_core_sys::PCWSTR, level: u32, buffer: *const u8, parm_err: *mut u32) -> u32;
     pub fn NetWkstaTransportAdd(servername: *const i8, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn NetWkstaTransportDel(servername: ::windows_sys_core::PCWSTR, transportname: ::windows_sys_core::PCWSTR, ucond: FORCE_LEVEL_FLAGS) -> u32;
+    pub fn NetWkstaTransportDel(servername: ::windows_core_sys::PCWSTR, transportname: ::windows_core_sys::PCWSTR, ucond: FORCE_LEVEL_FLAGS) -> u32;
     pub fn NetWkstaTransportEnum(servername: *const i8, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resume_handle: *mut u32) -> u32;
-    pub fn NetWkstaUserEnum(servername: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
-    pub fn NetWkstaUserGetInfo(reserved: ::windows_sys_core::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
-    pub fn NetWkstaUserSetInfo(reserved: ::windows_sys_core::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
-    pub fn RouterAssert(pszfailedassertion: ::windows_sys_core::PCSTR, pszfilename: ::windows_sys_core::PCSTR, dwlinenumber: u32, pszmessage: ::windows_sys_core::PCSTR);
-    pub fn RouterGetErrorStringA(dwerrorcode: u32, lplpszerrorstring: *mut ::windows_sys_core::PSTR) -> u32;
-    pub fn RouterGetErrorStringW(dwerrorcode: u32, lplpwszerrorstring: *mut ::windows_sys_core::PWSTR) -> u32;
+    pub fn NetWkstaUserEnum(servername: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8, prefmaxlen: u32, entriesread: *mut u32, totalentries: *mut u32, resumehandle: *mut u32) -> u32;
+    pub fn NetWkstaUserGetInfo(reserved: ::windows_core_sys::PCWSTR, level: u32, bufptr: *mut *mut u8) -> u32;
+    pub fn NetWkstaUserSetInfo(reserved: ::windows_core_sys::PCWSTR, level: u32, buf: *const u8, parm_err: *mut u32) -> u32;
+    pub fn RouterAssert(pszfailedassertion: ::windows_core_sys::PCSTR, pszfilename: ::windows_core_sys::PCSTR, dwlinenumber: u32, pszmessage: ::windows_core_sys::PCSTR);
+    pub fn RouterGetErrorStringA(dwerrorcode: u32, lplpszerrorstring: *mut ::windows_core_sys::PSTR) -> u32;
+    pub fn RouterGetErrorStringW(dwerrorcode: u32, lplpwszerrorstring: *mut ::windows_core_sys::PWSTR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn RouterLogDeregisterA(hloghandle: super::super::Foundation::HANDLE);
     #[cfg(feature = "Win32_Foundation")]
     pub fn RouterLogDeregisterW(hloghandle: super::super::Foundation::HANDLE);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_sys_core::PSTR, dwerrorcode: u32);
+    pub fn RouterLogEventA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PSTR, dwerrorcode: u32);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventDataA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_sys_core::PSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
+    pub fn RouterLogEventDataA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventDataW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_sys_core::PWSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
+    pub fn RouterLogEventDataW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PWSTR, dwdatabytes: u32, lpdatabytes: *mut u8);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_sys_core::PCSTR);
+    pub fn RouterLogEventExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCSTR);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_sys_core::PCWSTR);
+    pub fn RouterLogEventExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCWSTR);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventStringA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_sys_core::PSTR, dwerrorcode: u32, dwerrorindex: u32);
+    pub fn RouterLogEventStringA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PSTR, dwerrorcode: u32, dwerrorindex: u32);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventStringW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_sys_core::PWSTR, dwerrorcode: u32, dwerrorindex: u32);
+    pub fn RouterLogEventStringW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PWSTR, dwerrorcode: u32, dwerrorindex: u32);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventValistExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_sys_core::PCSTR, arglist: *mut i8);
+    pub fn RouterLogEventValistExA(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCSTR, arglist: *mut i8);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventValistExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_sys_core::PCWSTR, arglist: *mut i8);
+    pub fn RouterLogEventValistExW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwerrorcode: u32, dwmessageid: u32, ptszformat: ::windows_core_sys::PCWSTR, arglist: *mut i8);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogEventW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_sys_core::PWSTR, dwerrorcode: u32);
+    pub fn RouterLogEventW(hloghandle: super::super::Foundation::HANDLE, dweventtype: u32, dwmessageid: u32, dwsubstringcount: u32, plpszsubstringarray: *const ::windows_core_sys::PWSTR, dwerrorcode: u32);
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogRegisterA(lpszsource: ::windows_sys_core::PCSTR) -> super::super::Foundation::HANDLE;
+    pub fn RouterLogRegisterA(lpszsource: ::windows_core_sys::PCSTR) -> super::super::Foundation::HANDLE;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn RouterLogRegisterW(lpszsource: ::windows_sys_core::PCWSTR) -> super::super::Foundation::HANDLE;
-    pub fn SetNetScheduleAccountInformation(pwszservername: ::windows_sys_core::PCWSTR, pwszaccount: ::windows_sys_core::PCWSTR, pwszpassword: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
+    pub fn RouterLogRegisterW(lpszsource: ::windows_core_sys::PCWSTR) -> super::super::Foundation::HANDLE;
+    pub fn SetNetScheduleAccountInformation(pwszservername: ::windows_core_sys::PCWSTR, pwszaccount: ::windows_core_sys::PCWSTR, pwszpassword: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
     pub fn TraceDeregisterA(dwtraceid: u32) -> u32;
     pub fn TraceDeregisterExA(dwtraceid: u32, dwflags: u32) -> u32;
     pub fn TraceDeregisterExW(dwtraceid: u32, dwflags: u32) -> u32;
     pub fn TraceDeregisterW(dwtraceid: u32) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TraceDumpExA(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows_sys_core::PCSTR) -> u32;
+    pub fn TraceDumpExA(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows_core_sys::PCSTR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn TraceDumpExW(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows_sys_core::PCWSTR) -> u32;
+    pub fn TraceDumpExW(dwtraceid: u32, dwflags: u32, lpbbytes: *mut u8, dwbytecount: u32, dwgroupsize: u32, baddressprefix: super::super::Foundation::BOOL, lpszprefix: ::windows_core_sys::PCWSTR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn TraceGetConsoleA(dwtraceid: u32, lphconsole: *mut super::super::Foundation::HANDLE) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn TraceGetConsoleW(dwtraceid: u32, lphconsole: *mut super::super::Foundation::HANDLE) -> u32;
-    pub fn TracePrintfA(dwtraceid: u32, lpszformat: ::windows_sys_core::PCSTR) -> u32;
-    pub fn TracePrintfExA(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_sys_core::PCSTR) -> u32;
-    pub fn TracePrintfExW(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn TracePrintfW(dwtraceid: u32, lpszformat: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn TracePutsExA(dwtraceid: u32, dwflags: u32, lpszstring: ::windows_sys_core::PCSTR) -> u32;
-    pub fn TracePutsExW(dwtraceid: u32, dwflags: u32, lpszstring: ::windows_sys_core::PCWSTR) -> u32;
-    pub fn TraceRegisterExA(lpszcallername: ::windows_sys_core::PCSTR, dwflags: u32) -> u32;
-    pub fn TraceRegisterExW(lpszcallername: ::windows_sys_core::PCWSTR, dwflags: u32) -> u32;
-    pub fn TraceVprintfExA(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_sys_core::PCSTR, arglist: *mut i8) -> u32;
-    pub fn TraceVprintfExW(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_sys_core::PCWSTR, arglist: *mut i8) -> u32;
+    pub fn TracePrintfA(dwtraceid: u32, lpszformat: ::windows_core_sys::PCSTR) -> u32;
+    pub fn TracePrintfExA(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_core_sys::PCSTR) -> u32;
+    pub fn TracePrintfExW(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn TracePrintfW(dwtraceid: u32, lpszformat: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn TracePutsExA(dwtraceid: u32, dwflags: u32, lpszstring: ::windows_core_sys::PCSTR) -> u32;
+    pub fn TracePutsExW(dwtraceid: u32, dwflags: u32, lpszstring: ::windows_core_sys::PCWSTR) -> u32;
+    pub fn TraceRegisterExA(lpszcallername: ::windows_core_sys::PCSTR, dwflags: u32) -> u32;
+    pub fn TraceRegisterExW(lpszcallername: ::windows_core_sys::PCWSTR, dwflags: u32) -> u32;
+    pub fn TraceVprintfExA(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_core_sys::PCSTR, arglist: *mut i8) -> u32;
+    pub fn TraceVprintfExW(dwtraceid: u32, dwflags: u32, lpszformat: ::windows_core_sys::PCWSTR, arglist: *mut i8) -> u32;
 }
 pub const AA_AUDIT_ALL: u32 = 1u32;
 pub const AA_A_ACL: u32 = 32768u32;
@@ -234,7 +234,7 @@ pub const ACCESS_FAIL_WRITE: u32 = 512u32;
 pub const ACCESS_GROUP: u32 = 32768u32;
 #[repr(C)]
 pub struct ACCESS_INFO_0 {
-    pub acc0_resource_name: ::windows_sys_core::PWSTR,
+    pub acc0_resource_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for ACCESS_INFO_0 {}
 impl ::core::clone::Clone for ACCESS_INFO_0 {
@@ -244,7 +244,7 @@ impl ::core::clone::Clone for ACCESS_INFO_0 {
 }
 #[repr(C)]
 pub struct ACCESS_INFO_1 {
-    pub acc1_resource_name: ::windows_sys_core::PWSTR,
+    pub acc1_resource_name: ::windows_core_sys::PWSTR,
     pub acc1_attr: u32,
     pub acc1_count: u32,
 }
@@ -267,7 +267,7 @@ impl ::core::clone::Clone for ACCESS_INFO_1002 {
 pub const ACCESS_LETTERS: &str = "RWCXDAP         ";
 #[repr(C)]
 pub struct ACCESS_LIST {
-    pub acl_ugname: ::windows_sys_core::PWSTR,
+    pub acl_ugname: ::windows_core_sys::PWSTR,
     pub acl_access: u32,
 }
 impl ::core::marker::Copy for ACCESS_LIST {}
@@ -619,7 +619,7 @@ pub struct AT_ENUM {
     pub DaysOfMonth: u32,
     pub DaysOfWeek: u8,
     pub Flags: u8,
-    pub Command: ::windows_sys_core::PWSTR,
+    pub Command: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for AT_ENUM {}
 impl ::core::clone::Clone for AT_ENUM {
@@ -633,7 +633,7 @@ pub struct AT_INFO {
     pub DaysOfMonth: u32,
     pub DaysOfWeek: u8,
     pub Flags: u8,
-    pub Command: ::windows_sys_core::PWSTR,
+    pub Command: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for AT_INFO {}
 impl ::core::clone::Clone for AT_INFO {
@@ -689,8 +689,8 @@ pub const NCF_FIXED_BINDING: COMPONENT_CHARACTERISTICS = 131072i32;
 pub const NCF_LW_FILTER: COMPONENT_CHARACTERISTICS = 262144i32;
 #[repr(C)]
 pub struct CONFIG_INFO_0 {
-    pub cfgi0_key: ::windows_sys_core::PWSTR,
-    pub cfgi0_data: ::windows_sys_core::PWSTR,
+    pub cfgi0_key: ::windows_core_sys::PWSTR,
+    pub cfgi0_data: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for CONFIG_INFO_0 {}
 impl ::core::clone::Clone for CONFIG_INFO_0 {
@@ -776,15 +776,15 @@ pub const DNLEN: u32 = 15u32;
 pub struct DSREG_JOIN_INFO {
     pub joinType: DSREG_JOIN_TYPE,
     pub pJoinCertificate: *const super::super::Security::Cryptography::CERT_CONTEXT,
-    pub pszDeviceId: ::windows_sys_core::PWSTR,
-    pub pszIdpDomain: ::windows_sys_core::PWSTR,
-    pub pszTenantId: ::windows_sys_core::PWSTR,
-    pub pszJoinUserEmail: ::windows_sys_core::PWSTR,
-    pub pszTenantDisplayName: ::windows_sys_core::PWSTR,
-    pub pszMdmEnrollmentUrl: ::windows_sys_core::PWSTR,
-    pub pszMdmTermsOfUseUrl: ::windows_sys_core::PWSTR,
-    pub pszMdmComplianceUrl: ::windows_sys_core::PWSTR,
-    pub pszUserSettingSyncUrl: ::windows_sys_core::PWSTR,
+    pub pszDeviceId: ::windows_core_sys::PWSTR,
+    pub pszIdpDomain: ::windows_core_sys::PWSTR,
+    pub pszTenantId: ::windows_core_sys::PWSTR,
+    pub pszJoinUserEmail: ::windows_core_sys::PWSTR,
+    pub pszTenantDisplayName: ::windows_core_sys::PWSTR,
+    pub pszMdmEnrollmentUrl: ::windows_core_sys::PWSTR,
+    pub pszMdmTermsOfUseUrl: ::windows_core_sys::PWSTR,
+    pub pszMdmComplianceUrl: ::windows_core_sys::PWSTR,
+    pub pszUserSettingSyncUrl: ::windows_core_sys::PWSTR,
     pub pUserInfo: *mut DSREG_USER_INFO,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security_Cryptography"))]
@@ -801,9 +801,9 @@ pub const DSREG_DEVICE_JOIN: DSREG_JOIN_TYPE = 1i32;
 pub const DSREG_WORKPLACE_JOIN: DSREG_JOIN_TYPE = 2i32;
 #[repr(C)]
 pub struct DSREG_USER_INFO {
-    pub pszUserEmail: ::windows_sys_core::PWSTR,
-    pub pszUserKeyId: ::windows_sys_core::PWSTR,
-    pub pszUserKeyName: ::windows_sys_core::PWSTR,
+    pub pszUserEmail: ::windows_core_sys::PWSTR,
+    pub pszUserKeyId: ::windows_core_sys::PWSTR,
+    pub pszUserKeyName: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for DSREG_USER_INFO {}
 impl ::core::clone::Clone for DSREG_USER_INFO {
@@ -834,8 +834,8 @@ pub struct ERROR_LOG {
     pub el_reserved: u32,
     pub el_time: u32,
     pub el_error: u32,
-    pub el_name: ::windows_sys_core::PWSTR,
-    pub el_text: ::windows_sys_core::PWSTR,
+    pub el_name: ::windows_core_sys::PWSTR,
+    pub el_text: ::windows_core_sys::PWSTR,
     pub el_data: *mut u8,
     pub el_data_size: u32,
     pub el_nstrings: u32,
@@ -1365,7 +1365,7 @@ pub const GROUP_ATTRIBUTES_PARMNUM: u32 = 3u32;
 pub const GROUP_COMMENT_PARMNUM: u32 = 2u32;
 #[repr(C)]
 pub struct GROUP_INFO_0 {
-    pub grpi0_name: ::windows_sys_core::PWSTR,
+    pub grpi0_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for GROUP_INFO_0 {}
 impl ::core::clone::Clone for GROUP_INFO_0 {
@@ -1375,8 +1375,8 @@ impl ::core::clone::Clone for GROUP_INFO_0 {
 }
 #[repr(C)]
 pub struct GROUP_INFO_1 {
-    pub grpi1_name: ::windows_sys_core::PWSTR,
-    pub grpi1_comment: ::windows_sys_core::PWSTR,
+    pub grpi1_name: ::windows_core_sys::PWSTR,
+    pub grpi1_comment: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for GROUP_INFO_1 {}
 impl ::core::clone::Clone for GROUP_INFO_1 {
@@ -1386,7 +1386,7 @@ impl ::core::clone::Clone for GROUP_INFO_1 {
 }
 #[repr(C)]
 pub struct GROUP_INFO_1002 {
-    pub grpi1002_comment: ::windows_sys_core::PWSTR,
+    pub grpi1002_comment: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for GROUP_INFO_1002 {}
 impl ::core::clone::Clone for GROUP_INFO_1002 {
@@ -1406,8 +1406,8 @@ impl ::core::clone::Clone for GROUP_INFO_1005 {
 }
 #[repr(C)]
 pub struct GROUP_INFO_2 {
-    pub grpi2_name: ::windows_sys_core::PWSTR,
-    pub grpi2_comment: ::windows_sys_core::PWSTR,
+    pub grpi2_name: ::windows_core_sys::PWSTR,
+    pub grpi2_comment: ::windows_core_sys::PWSTR,
     pub grpi2_group_id: u32,
     pub grpi2_attributes: u32,
 }
@@ -1420,8 +1420,8 @@ impl ::core::clone::Clone for GROUP_INFO_2 {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct GROUP_INFO_3 {
-    pub grpi3_name: ::windows_sys_core::PWSTR,
-    pub grpi3_comment: ::windows_sys_core::PWSTR,
+    pub grpi3_name: ::windows_core_sys::PWSTR,
+    pub grpi3_comment: ::windows_core_sys::PWSTR,
     pub grpi3_group_sid: super::super::Foundation::PSID,
     pub grpi3_attributes: u32,
 }
@@ -1440,7 +1440,7 @@ pub const GROUP_SPECIALGRP_LOCAL: &str = "LOCAL";
 pub const GROUP_SPECIALGRP_USERS: &str = "USERS";
 #[repr(C)]
 pub struct GROUP_USERS_INFO_0 {
-    pub grui0_name: ::windows_sys_core::PWSTR,
+    pub grui0_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for GROUP_USERS_INFO_0 {}
 impl ::core::clone::Clone for GROUP_USERS_INFO_0 {
@@ -1450,7 +1450,7 @@ impl ::core::clone::Clone for GROUP_USERS_INFO_0 {
 }
 #[repr(C)]
 pub struct GROUP_USERS_INFO_1 {
-    pub grui1_name: ::windows_sys_core::PWSTR,
+    pub grui1_name: ::windows_core_sys::PWSTR,
     pub grui1_attributes: u32,
 }
 impl ::core::marker::Copy for GROUP_USERS_INFO_1 {}
@@ -1543,7 +1543,7 @@ pub const LM_REDIR_FAILURE: i32 = 1073756225i32;
 pub const LOCALGROUP_COMMENT_PARMNUM: u32 = 2u32;
 #[repr(C)]
 pub struct LOCALGROUP_INFO_0 {
-    pub lgrpi0_name: ::windows_sys_core::PWSTR,
+    pub lgrpi0_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for LOCALGROUP_INFO_0 {}
 impl ::core::clone::Clone for LOCALGROUP_INFO_0 {
@@ -1553,8 +1553,8 @@ impl ::core::clone::Clone for LOCALGROUP_INFO_0 {
 }
 #[repr(C)]
 pub struct LOCALGROUP_INFO_1 {
-    pub lgrpi1_name: ::windows_sys_core::PWSTR,
-    pub lgrpi1_comment: ::windows_sys_core::PWSTR,
+    pub lgrpi1_name: ::windows_core_sys::PWSTR,
+    pub lgrpi1_comment: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for LOCALGROUP_INFO_1 {}
 impl ::core::clone::Clone for LOCALGROUP_INFO_1 {
@@ -1564,7 +1564,7 @@ impl ::core::clone::Clone for LOCALGROUP_INFO_1 {
 }
 #[repr(C)]
 pub struct LOCALGROUP_INFO_1002 {
-    pub lgrpi1002_comment: ::windows_sys_core::PWSTR,
+    pub lgrpi1002_comment: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for LOCALGROUP_INFO_1002 {}
 impl ::core::clone::Clone for LOCALGROUP_INFO_1002 {
@@ -1590,7 +1590,7 @@ impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_0 {
 pub struct LOCALGROUP_MEMBERS_INFO_1 {
     pub lgrmi1_sid: super::super::Foundation::PSID,
     pub lgrmi1_sidusage: super::super::Security::SID_NAME_USE,
-    pub lgrmi1_name: ::windows_sys_core::PWSTR,
+    pub lgrmi1_name: ::windows_core_sys::PWSTR,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_1 {}
@@ -1605,7 +1605,7 @@ impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_1 {
 pub struct LOCALGROUP_MEMBERS_INFO_2 {
     pub lgrmi2_sid: super::super::Foundation::PSID,
     pub lgrmi2_sidusage: super::super::Security::SID_NAME_USE,
-    pub lgrmi2_domainandname: ::windows_sys_core::PWSTR,
+    pub lgrmi2_domainandname: ::windows_core_sys::PWSTR,
 }
 #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Security"))]
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_2 {}
@@ -1617,7 +1617,7 @@ impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_2 {
 }
 #[repr(C)]
 pub struct LOCALGROUP_MEMBERS_INFO_3 {
-    pub lgrmi3_domainandname: ::windows_sys_core::PWSTR,
+    pub lgrmi3_domainandname: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for LOCALGROUP_MEMBERS_INFO_3 {}
 impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_3 {
@@ -1628,7 +1628,7 @@ impl ::core::clone::Clone for LOCALGROUP_MEMBERS_INFO_3 {
 pub const LOCALGROUP_NAME_PARMNUM: u32 = 1u32;
 #[repr(C)]
 pub struct LOCALGROUP_USERS_INFO_0 {
-    pub lgrui0_name: ::windows_sys_core::PWSTR,
+    pub lgrui0_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for LOCALGROUP_USERS_INFO_0 {}
 impl ::core::clone::Clone for LOCALGROUP_USERS_INFO_0 {
@@ -1727,7 +1727,7 @@ pub const MSGNAME_FORWARDED_TO: u32 = 4u32;
 pub const MSGNAME_NOT_FORWARDED: u32 = 0u32;
 #[repr(C)]
 pub struct MSG_INFO_0 {
-    pub msgi0_name: ::windows_sys_core::PWSTR,
+    pub msgi0_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for MSG_INFO_0 {}
 impl ::core::clone::Clone for MSG_INFO_0 {
@@ -1737,9 +1737,9 @@ impl ::core::clone::Clone for MSG_INFO_0 {
 }
 #[repr(C)]
 pub struct MSG_INFO_1 {
-    pub msgi1_name: ::windows_sys_core::PWSTR,
+    pub msgi1_name: ::windows_core_sys::PWSTR,
     pub msgi1_forward_flag: u32,
-    pub msgi1_forward: ::windows_sys_core::PWSTR,
+    pub msgi1_forward: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for MSG_INFO_1 {}
 impl ::core::clone::Clone for MSG_INFO_1 {
@@ -2325,26 +2325,26 @@ pub const NERR_WkstaNotStarted: u32 = 2138u32;
 pub const NERR_WriteFault: u32 = 2295u32;
 pub const NETBIOS_NAME_LEN: u32 = 16u32;
 pub const NETCFG_CLIENT_CID_MS_MSClient: &str = "ms_msclient";
-pub const NETCFG_E_ACTIVE_RAS_CONNECTIONS: ::windows_sys_core::HRESULT = -2147180506i32;
-pub const NETCFG_E_ADAPTER_NOT_FOUND: ::windows_sys_core::HRESULT = -2147180505i32;
-pub const NETCFG_E_ALREADY_INITIALIZED: ::windows_sys_core::HRESULT = -2147180512i32;
-pub const NETCFG_E_COMPONENT_REMOVED_PENDING_REBOOT: ::windows_sys_core::HRESULT = -2147180504i32;
-pub const NETCFG_E_DUPLICATE_INSTANCEID: ::windows_sys_core::HRESULT = -2147180501i32;
-pub const NETCFG_E_IN_USE: ::windows_sys_core::HRESULT = -2147180510i32;
-pub const NETCFG_E_MAX_FILTER_LIMIT: ::windows_sys_core::HRESULT = -2147180503i32;
-pub const NETCFG_E_NEED_REBOOT: ::windows_sys_core::HRESULT = -2147180507i32;
-pub const NETCFG_E_NOT_INITIALIZED: ::windows_sys_core::HRESULT = -2147180511i32;
-pub const NETCFG_E_NO_WRITE_LOCK: ::windows_sys_core::HRESULT = -2147180508i32;
-pub const NETCFG_E_VMSWITCH_ACTIVE_OVER_ADAPTER: ::windows_sys_core::HRESULT = -2147180502i32;
+pub const NETCFG_E_ACTIVE_RAS_CONNECTIONS: ::windows_core_sys::HRESULT = -2147180506i32;
+pub const NETCFG_E_ADAPTER_NOT_FOUND: ::windows_core_sys::HRESULT = -2147180505i32;
+pub const NETCFG_E_ALREADY_INITIALIZED: ::windows_core_sys::HRESULT = -2147180512i32;
+pub const NETCFG_E_COMPONENT_REMOVED_PENDING_REBOOT: ::windows_core_sys::HRESULT = -2147180504i32;
+pub const NETCFG_E_DUPLICATE_INSTANCEID: ::windows_core_sys::HRESULT = -2147180501i32;
+pub const NETCFG_E_IN_USE: ::windows_core_sys::HRESULT = -2147180510i32;
+pub const NETCFG_E_MAX_FILTER_LIMIT: ::windows_core_sys::HRESULT = -2147180503i32;
+pub const NETCFG_E_NEED_REBOOT: ::windows_core_sys::HRESULT = -2147180507i32;
+pub const NETCFG_E_NOT_INITIALIZED: ::windows_core_sys::HRESULT = -2147180511i32;
+pub const NETCFG_E_NO_WRITE_LOCK: ::windows_core_sys::HRESULT = -2147180508i32;
+pub const NETCFG_E_VMSWITCH_ACTIVE_OVER_ADAPTER: ::windows_core_sys::HRESULT = -2147180502i32;
 pub const NETCFG_SERVICE_CID_MS_NETBIOS: &str = "ms_netbios";
 pub const NETCFG_SERVICE_CID_MS_PSCHED: &str = "ms_pschedpc";
 pub const NETCFG_SERVICE_CID_MS_SERVER: &str = "ms_server";
 pub const NETCFG_SERVICE_CID_MS_WLBS: &str = "ms_wlbs";
-pub const NETCFG_S_CAUSED_SETUP_CHANGE: ::windows_sys_core::HRESULT = 303140i32;
-pub const NETCFG_S_COMMIT_NOW: ::windows_sys_core::HRESULT = 303141i32;
-pub const NETCFG_S_DISABLE_QUERY: ::windows_sys_core::HRESULT = 303138i32;
-pub const NETCFG_S_REBOOT: ::windows_sys_core::HRESULT = 303136i32;
-pub const NETCFG_S_STILL_REFERENCED: ::windows_sys_core::HRESULT = 303139i32;
+pub const NETCFG_S_CAUSED_SETUP_CHANGE: ::windows_core_sys::HRESULT = 303140i32;
+pub const NETCFG_S_COMMIT_NOW: ::windows_core_sys::HRESULT = 303141i32;
+pub const NETCFG_S_DISABLE_QUERY: ::windows_core_sys::HRESULT = 303138i32;
+pub const NETCFG_S_REBOOT: ::windows_core_sys::HRESULT = 303136i32;
+pub const NETCFG_S_STILL_REFERENCED: ::windows_core_sys::HRESULT = 303139i32;
 pub const NETCFG_TRANS_CID_MS_APPLETALK: &str = "ms_appletalk";
 pub const NETCFG_TRANS_CID_MS_NETBEUI: &str = "ms_netbeui";
 pub const NETCFG_TRANS_CID_MS_NETMON: &str = "ms_netmon";
@@ -2388,7 +2388,7 @@ impl ::core::clone::Clone for NETLOGON_INFO_1 {
 pub struct NETLOGON_INFO_2 {
     pub netlog2_flags: u32,
     pub netlog2_pdc_connection_status: u32,
-    pub netlog2_trusted_dc_name: ::windows_sys_core::PWSTR,
+    pub netlog2_trusted_dc_name: ::windows_core_sys::PWSTR,
     pub netlog2_tc_connection_status: u32,
 }
 impl ::core::marker::Copy for NETLOGON_INFO_2 {}
@@ -2415,8 +2415,8 @@ impl ::core::clone::Clone for NETLOGON_INFO_3 {
 }
 #[repr(C)]
 pub struct NETLOGON_INFO_4 {
-    pub netlog4_trusted_dc_name: ::windows_sys_core::PWSTR,
-    pub netlog4_trusted_domain_name: ::windows_sys_core::PWSTR,
+    pub netlog4_trusted_dc_name: ::windows_core_sys::PWSTR,
+    pub netlog4_trusted_domain_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for NETLOGON_INFO_4 {}
 impl ::core::clone::Clone for NETLOGON_INFO_4 {
@@ -2462,20 +2462,20 @@ pub const NETSETUP_PROVISION_ROOT_CA_CERTS: NETSETUP_PROVISION = 16u32;
 #[repr(C)]
 pub struct NETSETUP_PROVISIONING_PARAMS {
     pub dwVersion: u32,
-    pub lpDomain: ::windows_sys_core::PCWSTR,
-    pub lpHostName: ::windows_sys_core::PCWSTR,
-    pub lpMachineAccountOU: ::windows_sys_core::PCWSTR,
-    pub lpDcName: ::windows_sys_core::PCWSTR,
+    pub lpDomain: ::windows_core_sys::PCWSTR,
+    pub lpHostName: ::windows_core_sys::PCWSTR,
+    pub lpMachineAccountOU: ::windows_core_sys::PCWSTR,
+    pub lpDcName: ::windows_core_sys::PCWSTR,
     pub dwProvisionOptions: NETSETUP_PROVISION,
-    pub aCertTemplateNames: *mut ::windows_sys_core::PWSTR,
+    pub aCertTemplateNames: *mut ::windows_core_sys::PWSTR,
     pub cCertTemplateNames: u32,
-    pub aMachinePolicyNames: *mut ::windows_sys_core::PWSTR,
+    pub aMachinePolicyNames: *mut ::windows_core_sys::PWSTR,
     pub cMachinePolicyNames: u32,
-    pub aMachinePolicyPaths: *mut ::windows_sys_core::PWSTR,
+    pub aMachinePolicyPaths: *mut ::windows_core_sys::PWSTR,
     pub cMachinePolicyPaths: u32,
-    pub lpNetbiosName: ::windows_sys_core::PWSTR,
-    pub lpSiteName: ::windows_sys_core::PWSTR,
-    pub lpPrimaryDNSDomain: ::windows_sys_core::PWSTR,
+    pub lpNetbiosName: ::windows_core_sys::PWSTR,
+    pub lpSiteName: ::windows_core_sys::PWSTR,
+    pub lpPrimaryDNSDomain: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for NETSETUP_PROVISIONING_PARAMS {}
 impl ::core::clone::Clone for NETSETUP_PROVISIONING_PARAMS {
@@ -2519,8 +2519,8 @@ pub const NET_DFS_ENUM: i32 = 1073756324i32;
 pub const NET_DFS_ENUMEX: i32 = 1073756325i32;
 #[repr(C)]
 pub struct NET_DISPLAY_GROUP {
-    pub grpi3_name: ::windows_sys_core::PWSTR,
-    pub grpi3_comment: ::windows_sys_core::PWSTR,
+    pub grpi3_name: ::windows_core_sys::PWSTR,
+    pub grpi3_comment: ::windows_core_sys::PWSTR,
     pub grpi3_group_id: u32,
     pub grpi3_attributes: u32,
     pub grpi3_next_index: u32,
@@ -2533,8 +2533,8 @@ impl ::core::clone::Clone for NET_DISPLAY_GROUP {
 }
 #[repr(C)]
 pub struct NET_DISPLAY_MACHINE {
-    pub usri2_name: ::windows_sys_core::PWSTR,
-    pub usri2_comment: ::windows_sys_core::PWSTR,
+    pub usri2_name: ::windows_core_sys::PWSTR,
+    pub usri2_comment: ::windows_core_sys::PWSTR,
     pub usri2_flags: USER_ACCOUNT_FLAGS,
     pub usri2_user_id: u32,
     pub usri2_next_index: u32,
@@ -2547,10 +2547,10 @@ impl ::core::clone::Clone for NET_DISPLAY_MACHINE {
 }
 #[repr(C)]
 pub struct NET_DISPLAY_USER {
-    pub usri1_name: ::windows_sys_core::PWSTR,
-    pub usri1_comment: ::windows_sys_core::PWSTR,
+    pub usri1_name: ::windows_core_sys::PWSTR,
+    pub usri1_comment: ::windows_core_sys::PWSTR,
     pub usri1_flags: USER_ACCOUNT_FLAGS,
-    pub usri1_full_name: ::windows_sys_core::PWSTR,
+    pub usri1_full_name: ::windows_core_sys::PWSTR,
     pub usri1_user_id: u32,
     pub usri1_next_index: u32,
 }
@@ -2662,8 +2662,8 @@ impl ::core::clone::Clone for NET_VALIDATE_OUTPUT_ARG {
 #[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_PASSWORD_CHANGE_INPUT_ARG {
     pub InputPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
-    pub ClearPassword: ::windows_sys_core::PWSTR,
-    pub UserAccountName: ::windows_sys_core::PWSTR,
+    pub ClearPassword: ::windows_core_sys::PWSTR,
+    pub UserAccountName: ::windows_core_sys::PWSTR,
     pub HashedPassword: NET_VALIDATE_PASSWORD_HASH,
     pub PasswordMatch: super::super::Foundation::BOOLEAN,
 }
@@ -2693,8 +2693,8 @@ pub const NET_VALIDATE_PASSWORD_LAST_SET: u32 = 1u32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct NET_VALIDATE_PASSWORD_RESET_INPUT_ARG {
     pub InputPersistedFields: NET_VALIDATE_PERSISTED_FIELDS,
-    pub ClearPassword: ::windows_sys_core::PWSTR,
-    pub UserAccountName: ::windows_sys_core::PWSTR,
+    pub ClearPassword: ::windows_core_sys::PWSTR,
+    pub UserAccountName: ::windows_core_sys::PWSTR,
     pub HashedPassword: NET_VALIDATE_PASSWORD_HASH,
     pub PasswordMustChangeAtNextLogon: super::super::Foundation::BOOLEAN,
     pub ClearLockout: super::super::Foundation::BOOLEAN,
@@ -2781,15 +2781,15 @@ pub const NWSAP_EVENT_WANHANDLEMEMORY_ERROR: i32 = -1073733292i32;
 pub const NWSAP_EVENT_WANSEM_FAIL: i32 = -1073733298i32;
 pub const NWSAP_EVENT_WANSOCKET_FAILED: i32 = -1073733297i32;
 pub const NWSAP_EVENT_WSASTARTUP_FAILED: i32 = -1073733323i32;
-pub const NetProvisioning: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 715306494, data2: 47174, data3: 19719, data4: [129, 12, 178, 30, 228, 83, 32, 227] };
+pub const NetProvisioning: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 715306494, data2: 47174, data3: 19719, data4: [129, 12, 178, 30, 228, 83, 32, 227] };
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct OBO_TOKEN {
     pub Type: OBO_TOKEN_TYPE,
     pub pncc: INetCfgComponent,
-    pub pszwManufacturer: ::windows_sys_core::PCWSTR,
-    pub pszwProduct: ::windows_sys_core::PCWSTR,
-    pub pszwDisplayName: ::windows_sys_core::PCWSTR,
+    pub pszwManufacturer: ::windows_core_sys::PCWSTR,
+    pub pszwProduct: ::windows_core_sys::PCWSTR,
+    pub pszwDisplayName: ::windows_core_sys::PCWSTR,
     pub fRegistered: super::super::Foundation::BOOL,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -2873,7 +2873,7 @@ pub const QNLEN: u32 = 80u32;
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct RASCON_IPUI {
-    pub guidConnection: ::windows_sys_core::GUID,
+    pub guidConnection: ::windows_core_sys::GUID,
     pub fIPv6Cfg: super::super::Foundation::BOOL,
     pub dwFlags: u32,
     pub pszwIpAddr: [u16; 16],
@@ -2900,7 +2900,7 @@ impl ::core::clone::Clone for RASCON_IPUI {
 pub const REGISTER_PROTOCOL_ENTRY_POINT_STRING: &str = "RegisterProtocol";
 #[repr(C)]
 pub struct REPL_EDIR_INFO_0 {
-    pub rped0_dirname: ::windows_sys_core::PWSTR,
+    pub rped0_dirname: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for REPL_EDIR_INFO_0 {}
 impl ::core::clone::Clone for REPL_EDIR_INFO_0 {
@@ -2910,7 +2910,7 @@ impl ::core::clone::Clone for REPL_EDIR_INFO_0 {
 }
 #[repr(C)]
 pub struct REPL_EDIR_INFO_1 {
-    pub rped1_dirname: ::windows_sys_core::PWSTR,
+    pub rped1_dirname: ::windows_core_sys::PWSTR,
     pub rped1_integrity: u32,
     pub rped1_extent: u32,
 }
@@ -2942,7 +2942,7 @@ impl ::core::clone::Clone for REPL_EDIR_INFO_1001 {
 }
 #[repr(C)]
 pub struct REPL_EDIR_INFO_2 {
-    pub rped2_dirname: ::windows_sys_core::PWSTR,
+    pub rped2_dirname: ::windows_core_sys::PWSTR,
     pub rped2_integrity: u32,
     pub rped2_extent: u32,
     pub rped2_lockcount: u32,
@@ -2961,7 +2961,7 @@ pub const REPL_EXTENT_TREE: u32 = 2u32;
 pub const REPL_GUARDTIME_INFOLEVEL: u32 = 1002u32;
 #[repr(C)]
 pub struct REPL_IDIR_INFO_0 {
-    pub rpid0_dirname: ::windows_sys_core::PWSTR,
+    pub rpid0_dirname: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for REPL_IDIR_INFO_0 {}
 impl ::core::clone::Clone for REPL_IDIR_INFO_0 {
@@ -2971,9 +2971,9 @@ impl ::core::clone::Clone for REPL_IDIR_INFO_0 {
 }
 #[repr(C)]
 pub struct REPL_IDIR_INFO_1 {
-    pub rpid1_dirname: ::windows_sys_core::PWSTR,
+    pub rpid1_dirname: ::windows_core_sys::PWSTR,
     pub rpid1_state: u32,
-    pub rpid1_mastername: ::windows_sys_core::PWSTR,
+    pub rpid1_mastername: ::windows_core_sys::PWSTR,
     pub rpid1_last_update_time: u32,
     pub rpid1_lockcount: u32,
     pub rpid1_locktime: u32,
@@ -2987,11 +2987,11 @@ impl ::core::clone::Clone for REPL_IDIR_INFO_1 {
 #[repr(C)]
 pub struct REPL_INFO_0 {
     pub rp0_role: u32,
-    pub rp0_exportpath: ::windows_sys_core::PWSTR,
-    pub rp0_exportlist: ::windows_sys_core::PWSTR,
-    pub rp0_importpath: ::windows_sys_core::PWSTR,
-    pub rp0_importlist: ::windows_sys_core::PWSTR,
-    pub rp0_logonusername: ::windows_sys_core::PWSTR,
+    pub rp0_exportpath: ::windows_core_sys::PWSTR,
+    pub rp0_exportlist: ::windows_core_sys::PWSTR,
+    pub rp0_importpath: ::windows_core_sys::PWSTR,
+    pub rp0_importlist: ::windows_core_sys::PWSTR,
+    pub rp0_logonusername: ::windows_core_sys::PWSTR,
     pub rp0_interval: u32,
     pub rp0_pulse: u32,
     pub rp0_guardtime: u32,
@@ -3103,7 +3103,7 @@ pub const SERVER_DISPLAY_NAME: &str = "Server";
 #[repr(C)]
 pub struct SERVER_INFO_100 {
     pub sv100_platform_id: u32,
-    pub sv100_name: ::windows_sys_core::PWSTR,
+    pub sv100_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_100 {}
 impl ::core::clone::Clone for SERVER_INFO_100 {
@@ -3113,7 +3113,7 @@ impl ::core::clone::Clone for SERVER_INFO_100 {
 }
 #[repr(C)]
 pub struct SERVER_INFO_1005 {
-    pub sv1005_comment: ::windows_sys_core::PWSTR,
+    pub sv1005_comment: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_1005 {}
 impl ::core::clone::Clone for SERVER_INFO_1005 {
@@ -3124,11 +3124,11 @@ impl ::core::clone::Clone for SERVER_INFO_1005 {
 #[repr(C)]
 pub struct SERVER_INFO_101 {
     pub sv101_platform_id: u32,
-    pub sv101_name: ::windows_sys_core::PWSTR,
+    pub sv101_name: ::windows_core_sys::PWSTR,
     pub sv101_version_major: u32,
     pub sv101_version_minor: u32,
     pub sv101_type: NET_SERVER_TYPE,
-    pub sv101_comment: ::windows_sys_core::PWSTR,
+    pub sv101_comment: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_101 {}
 impl ::core::clone::Clone for SERVER_INFO_101 {
@@ -3179,18 +3179,18 @@ impl ::core::clone::Clone for SERVER_INFO_1018 {
 #[repr(C)]
 pub struct SERVER_INFO_102 {
     pub sv102_platform_id: u32,
-    pub sv102_name: ::windows_sys_core::PWSTR,
+    pub sv102_name: ::windows_core_sys::PWSTR,
     pub sv102_version_major: u32,
     pub sv102_version_minor: u32,
     pub sv102_type: NET_SERVER_TYPE,
-    pub sv102_comment: ::windows_sys_core::PWSTR,
+    pub sv102_comment: ::windows_core_sys::PWSTR,
     pub sv102_users: u32,
     pub sv102_disc: i32,
     pub sv102_hidden: SERVER_INFO_HIDDEN,
     pub sv102_announce: u32,
     pub sv102_anndelta: u32,
     pub sv102_licenses: u32,
-    pub sv102_userpath: ::windows_sys_core::PWSTR,
+    pub sv102_userpath: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_102 {}
 impl ::core::clone::Clone for SERVER_INFO_102 {
@@ -3202,18 +3202,18 @@ impl ::core::clone::Clone for SERVER_INFO_102 {
 #[cfg(feature = "Win32_Foundation")]
 pub struct SERVER_INFO_103 {
     pub sv103_platform_id: u32,
-    pub sv103_name: ::windows_sys_core::PWSTR,
+    pub sv103_name: ::windows_core_sys::PWSTR,
     pub sv103_version_major: u32,
     pub sv103_version_minor: u32,
     pub sv103_type: u32,
-    pub sv103_comment: ::windows_sys_core::PWSTR,
+    pub sv103_comment: ::windows_core_sys::PWSTR,
     pub sv103_users: u32,
     pub sv103_disc: i32,
     pub sv103_hidden: super::super::Foundation::BOOL,
     pub sv103_announce: u32,
     pub sv103_anndelta: u32,
     pub sv103_licenses: u32,
-    pub sv103_userpath: ::windows_sys_core::PWSTR,
+    pub sv103_userpath: ::windows_core_sys::PWSTR,
     pub sv103_capabilities: u32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -4167,11 +4167,11 @@ pub struct SERVER_INFO_402 {
     pub sv402_ulist_mtime: u32,
     pub sv402_glist_mtime: u32,
     pub sv402_alist_mtime: u32,
-    pub sv402_alerts: ::windows_sys_core::PWSTR,
+    pub sv402_alerts: ::windows_core_sys::PWSTR,
     pub sv402_security: SERVER_INFO_SECURITY,
     pub sv402_numadmin: u32,
     pub sv402_lanmask: u32,
-    pub sv402_guestacct: ::windows_sys_core::PWSTR,
+    pub sv402_guestacct: ::windows_core_sys::PWSTR,
     pub sv402_chdevs: u32,
     pub sv402_chdevq: u32,
     pub sv402_chdevjobs: u32,
@@ -4194,7 +4194,7 @@ pub struct SERVER_INFO_402 {
     pub sv402_diskalert: u32,
     pub sv402_netioalert: u32,
     pub sv402_maxauditsz: u32,
-    pub sv402_srvheuristics: ::windows_sys_core::PWSTR,
+    pub sv402_srvheuristics: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_402 {}
 impl ::core::clone::Clone for SERVER_INFO_402 {
@@ -4207,11 +4207,11 @@ pub struct SERVER_INFO_403 {
     pub sv403_ulist_mtime: u32,
     pub sv403_glist_mtime: u32,
     pub sv403_alist_mtime: u32,
-    pub sv403_alerts: ::windows_sys_core::PWSTR,
+    pub sv403_alerts: ::windows_core_sys::PWSTR,
     pub sv403_security: SERVER_INFO_SECURITY,
     pub sv403_numadmin: u32,
     pub sv403_lanmask: u32,
-    pub sv403_guestacct: ::windows_sys_core::PWSTR,
+    pub sv403_guestacct: ::windows_core_sys::PWSTR,
     pub sv403_chdevs: u32,
     pub sv403_chdevq: u32,
     pub sv403_chdevjobs: u32,
@@ -4234,10 +4234,10 @@ pub struct SERVER_INFO_403 {
     pub sv403_diskalert: u32,
     pub sv403_netioalert: u32,
     pub sv403_maxauditsz: u32,
-    pub sv403_srvheuristics: ::windows_sys_core::PWSTR,
+    pub sv403_srvheuristics: ::windows_core_sys::PWSTR,
     pub sv403_auditedevents: u32,
     pub sv403_autoprofile: u32,
-    pub sv403_autopath: ::windows_sys_core::PWSTR,
+    pub sv403_autopath: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_INFO_403 {}
 impl ::core::clone::Clone for SERVER_INFO_403 {
@@ -4296,7 +4296,7 @@ pub struct SERVER_INFO_503 {
     pub sv503_timesource: super::super::Foundation::BOOL,
     pub sv503_acceptdownlevelapis: super::super::Foundation::BOOL,
     pub sv503_lmannounce: super::super::Foundation::BOOL,
-    pub sv503_domain: ::windows_sys_core::PWSTR,
+    pub sv503_domain: ::windows_core_sys::PWSTR,
     pub sv503_maxcopyreadlen: u32,
     pub sv503_maxcopywritelen: u32,
     pub sv503_minkeepsearch: u32,
@@ -4366,7 +4366,7 @@ pub struct SERVER_INFO_598 {
     pub sv598_enablesecuritysignature: super::super::Foundation::BOOL,
     pub sv598_requiresecuritysignature: super::super::Foundation::BOOL,
     pub sv598_minclientbuffersize: u32,
-    pub sv598_serverguid: ::windows_sys_core::GUID,
+    pub sv598_serverguid: ::windows_core_sys::GUID,
     pub sv598_ConnectionNoSessionsTimeout: u32,
     pub sv598_IdleThreadTimeOut: u32,
     pub sv598_enableW9xsecuritysignature: super::super::Foundation::BOOL,
@@ -4405,7 +4405,7 @@ pub struct SERVER_INFO_599 {
     pub sv599_timesource: super::super::Foundation::BOOL,
     pub sv599_acceptdownlevelapis: super::super::Foundation::BOOL,
     pub sv599_lmannounce: super::super::Foundation::BOOL,
-    pub sv599_domain: ::windows_sys_core::PWSTR,
+    pub sv599_domain: ::windows_core_sys::PWSTR,
     pub sv599_maxcopyreadlen: u32,
     pub sv599_maxcopywritelen: u32,
     pub sv599_minkeepsearch: u32,
@@ -4461,10 +4461,10 @@ pub const SV_USERSECURITY: SERVER_INFO_SECURITY = 1u32;
 #[repr(C)]
 pub struct SERVER_TRANSPORT_INFO_0 {
     pub svti0_numberofvcs: u32,
-    pub svti0_transportname: ::windows_sys_core::PWSTR,
+    pub svti0_transportname: ::windows_core_sys::PWSTR,
     pub svti0_transportaddress: *mut u8,
     pub svti0_transportaddresslength: u32,
-    pub svti0_networkaddress: ::windows_sys_core::PWSTR,
+    pub svti0_networkaddress: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_TRANSPORT_INFO_0 {}
 impl ::core::clone::Clone for SERVER_TRANSPORT_INFO_0 {
@@ -4475,11 +4475,11 @@ impl ::core::clone::Clone for SERVER_TRANSPORT_INFO_0 {
 #[repr(C)]
 pub struct SERVER_TRANSPORT_INFO_1 {
     pub svti1_numberofvcs: u32,
-    pub svti1_transportname: ::windows_sys_core::PWSTR,
+    pub svti1_transportname: ::windows_core_sys::PWSTR,
     pub svti1_transportaddress: *mut u8,
     pub svti1_transportaddresslength: u32,
-    pub svti1_networkaddress: ::windows_sys_core::PWSTR,
-    pub svti1_domain: ::windows_sys_core::PWSTR,
+    pub svti1_networkaddress: ::windows_core_sys::PWSTR,
+    pub svti1_domain: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SERVER_TRANSPORT_INFO_1 {}
 impl ::core::clone::Clone for SERVER_TRANSPORT_INFO_1 {
@@ -4490,11 +4490,11 @@ impl ::core::clone::Clone for SERVER_TRANSPORT_INFO_1 {
 #[repr(C)]
 pub struct SERVER_TRANSPORT_INFO_2 {
     pub svti2_numberofvcs: u32,
-    pub svti2_transportname: ::windows_sys_core::PWSTR,
+    pub svti2_transportname: ::windows_core_sys::PWSTR,
     pub svti2_transportaddress: *mut u8,
     pub svti2_transportaddresslength: u32,
-    pub svti2_networkaddress: ::windows_sys_core::PWSTR,
-    pub svti2_domain: ::windows_sys_core::PWSTR,
+    pub svti2_networkaddress: ::windows_core_sys::PWSTR,
+    pub svti2_domain: ::windows_core_sys::PWSTR,
     pub svti2_flags: u32,
 }
 impl ::core::marker::Copy for SERVER_TRANSPORT_INFO_2 {}
@@ -4506,11 +4506,11 @@ impl ::core::clone::Clone for SERVER_TRANSPORT_INFO_2 {
 #[repr(C)]
 pub struct SERVER_TRANSPORT_INFO_3 {
     pub svti3_numberofvcs: u32,
-    pub svti3_transportname: ::windows_sys_core::PWSTR,
+    pub svti3_transportname: ::windows_core_sys::PWSTR,
     pub svti3_transportaddress: *mut u8,
     pub svti3_transportaddresslength: u32,
-    pub svti3_networkaddress: ::windows_sys_core::PWSTR,
-    pub svti3_domain: ::windows_sys_core::PWSTR,
+    pub svti3_networkaddress: ::windows_core_sys::PWSTR,
+    pub svti3_domain: ::windows_core_sys::PWSTR,
     pub svti3_flags: u32,
     pub svti3_passwordlength: u32,
     pub svti3_password: [u8; 256],
@@ -4550,7 +4550,7 @@ pub const SERVICE_DOS_ENCRYPTION: &str = "ENCRYPT";
 pub const SERVICE_DSROLE: &str = "DsRoleSvc";
 #[repr(C)]
 pub struct SERVICE_INFO_0 {
-    pub svci0_name: ::windows_sys_core::PWSTR,
+    pub svci0_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SERVICE_INFO_0 {}
 impl ::core::clone::Clone for SERVICE_INFO_0 {
@@ -4560,7 +4560,7 @@ impl ::core::clone::Clone for SERVICE_INFO_0 {
 }
 #[repr(C)]
 pub struct SERVICE_INFO_1 {
-    pub svci1_name: ::windows_sys_core::PWSTR,
+    pub svci1_name: ::windows_core_sys::PWSTR,
     pub svci1_status: u32,
     pub svci1_code: u32,
     pub svci1_pid: u32,
@@ -4573,13 +4573,13 @@ impl ::core::clone::Clone for SERVICE_INFO_1 {
 }
 #[repr(C)]
 pub struct SERVICE_INFO_2 {
-    pub svci2_name: ::windows_sys_core::PWSTR,
+    pub svci2_name: ::windows_core_sys::PWSTR,
     pub svci2_status: u32,
     pub svci2_code: u32,
     pub svci2_pid: u32,
-    pub svci2_text: ::windows_sys_core::PWSTR,
+    pub svci2_text: ::windows_core_sys::PWSTR,
     pub svci2_specific_error: u32,
-    pub svci2_display_name: ::windows_sys_core::PWSTR,
+    pub svci2_display_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for SERVICE_INFO_2 {}
 impl ::core::clone::Clone for SERVICE_INFO_2 {
@@ -4949,7 +4949,7 @@ pub const SV_VERSION_MINOR_PARMNUM: u32 = 104u32;
 pub const SV_XACTMEMSIZE_PARMNUM: u32 = 531u32;
 pub const SW_AUTOPROF_LOAD_MASK: u32 = 1u32;
 pub const SW_AUTOPROF_SAVE_MASK: u32 = 2u32;
-pub const ServiceAccountPasswordGUID: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 640588233, data2: 24928, data3: 18545, data4: [172, 236, 78, 97, 115, 107, 111, 33] };
+pub const ServiceAccountPasswordGUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 640588233, data2: 24928, data3: 18545, data4: [172, 236, 78, 97, 115, 107, 111, 33] };
 #[repr(C)]
 pub struct TIME_OF_DAY_INFO {
     pub tod_elapsedt: u32,
@@ -5040,7 +5040,7 @@ pub const USER_HOME_DIR_DRIVE_PARMNUM: u32 = 53u32;
 pub const USER_HOME_DIR_PARMNUM: u32 = 6u32;
 #[repr(C)]
 pub struct USER_INFO_0 {
-    pub usri0_name: ::windows_sys_core::PWSTR,
+    pub usri0_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_0 {}
 impl ::core::clone::Clone for USER_INFO_0 {
@@ -5050,14 +5050,14 @@ impl ::core::clone::Clone for USER_INFO_0 {
 }
 #[repr(C)]
 pub struct USER_INFO_1 {
-    pub usri1_name: ::windows_sys_core::PWSTR,
-    pub usri1_password: ::windows_sys_core::PWSTR,
+    pub usri1_name: ::windows_core_sys::PWSTR,
+    pub usri1_password: ::windows_core_sys::PWSTR,
     pub usri1_password_age: u32,
     pub usri1_priv: USER_PRIV,
-    pub usri1_home_dir: ::windows_sys_core::PWSTR,
-    pub usri1_comment: ::windows_sys_core::PWSTR,
+    pub usri1_home_dir: ::windows_core_sys::PWSTR,
+    pub usri1_comment: ::windows_core_sys::PWSTR,
     pub usri1_flags: USER_ACCOUNT_FLAGS,
-    pub usri1_script_path: ::windows_sys_core::PWSTR,
+    pub usri1_script_path: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1 {}
 impl ::core::clone::Clone for USER_INFO_1 {
@@ -5067,10 +5067,10 @@ impl ::core::clone::Clone for USER_INFO_1 {
 }
 #[repr(C)]
 pub struct USER_INFO_10 {
-    pub usri10_name: ::windows_sys_core::PWSTR,
-    pub usri10_comment: ::windows_sys_core::PWSTR,
-    pub usri10_usr_comment: ::windows_sys_core::PWSTR,
-    pub usri10_full_name: ::windows_sys_core::PWSTR,
+    pub usri10_name: ::windows_core_sys::PWSTR,
+    pub usri10_comment: ::windows_core_sys::PWSTR,
+    pub usri10_usr_comment: ::windows_core_sys::PWSTR,
+    pub usri10_full_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_10 {}
 impl ::core::clone::Clone for USER_INFO_10 {
@@ -5080,7 +5080,7 @@ impl ::core::clone::Clone for USER_INFO_10 {
 }
 #[repr(C)]
 pub struct USER_INFO_1003 {
-    pub usri1003_password: ::windows_sys_core::PWSTR,
+    pub usri1003_password: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1003 {}
 impl ::core::clone::Clone for USER_INFO_1003 {
@@ -5100,7 +5100,7 @@ impl ::core::clone::Clone for USER_INFO_1005 {
 }
 #[repr(C)]
 pub struct USER_INFO_1006 {
-    pub usri1006_home_dir: ::windows_sys_core::PWSTR,
+    pub usri1006_home_dir: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1006 {}
 impl ::core::clone::Clone for USER_INFO_1006 {
@@ -5110,7 +5110,7 @@ impl ::core::clone::Clone for USER_INFO_1006 {
 }
 #[repr(C)]
 pub struct USER_INFO_1007 {
-    pub usri1007_comment: ::windows_sys_core::PWSTR,
+    pub usri1007_comment: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1007 {}
 impl ::core::clone::Clone for USER_INFO_1007 {
@@ -5130,7 +5130,7 @@ impl ::core::clone::Clone for USER_INFO_1008 {
 }
 #[repr(C)]
 pub struct USER_INFO_1009 {
-    pub usri1009_script_path: ::windows_sys_core::PWSTR,
+    pub usri1009_script_path: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1009 {}
 impl ::core::clone::Clone for USER_INFO_1009 {
@@ -5150,7 +5150,7 @@ impl ::core::clone::Clone for USER_INFO_1010 {
 }
 #[repr(C)]
 pub struct USER_INFO_1011 {
-    pub usri1011_full_name: ::windows_sys_core::PWSTR,
+    pub usri1011_full_name: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1011 {}
 impl ::core::clone::Clone for USER_INFO_1011 {
@@ -5160,7 +5160,7 @@ impl ::core::clone::Clone for USER_INFO_1011 {
 }
 #[repr(C)]
 pub struct USER_INFO_1012 {
-    pub usri1012_usr_comment: ::windows_sys_core::PWSTR,
+    pub usri1012_usr_comment: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1012 {}
 impl ::core::clone::Clone for USER_INFO_1012 {
@@ -5170,7 +5170,7 @@ impl ::core::clone::Clone for USER_INFO_1012 {
 }
 #[repr(C)]
 pub struct USER_INFO_1013 {
-    pub usri1013_parms: ::windows_sys_core::PWSTR,
+    pub usri1013_parms: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1013 {}
 impl ::core::clone::Clone for USER_INFO_1013 {
@@ -5180,7 +5180,7 @@ impl ::core::clone::Clone for USER_INFO_1013 {
 }
 #[repr(C)]
 pub struct USER_INFO_1014 {
-    pub usri1014_workstations: ::windows_sys_core::PWSTR,
+    pub usri1014_workstations: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1014 {}
 impl ::core::clone::Clone for USER_INFO_1014 {
@@ -5221,7 +5221,7 @@ impl ::core::clone::Clone for USER_INFO_1020 {
 }
 #[repr(C)]
 pub struct USER_INFO_1023 {
-    pub usri1023_logon_server: ::windows_sys_core::PWSTR,
+    pub usri1023_logon_server: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1023 {}
 impl ::core::clone::Clone for USER_INFO_1023 {
@@ -5261,7 +5261,7 @@ impl ::core::clone::Clone for USER_INFO_1051 {
 }
 #[repr(C)]
 pub struct USER_INFO_1052 {
-    pub usri1052_profile: ::windows_sys_core::PWSTR,
+    pub usri1052_profile: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1052 {}
 impl ::core::clone::Clone for USER_INFO_1052 {
@@ -5271,7 +5271,7 @@ impl ::core::clone::Clone for USER_INFO_1052 {
 }
 #[repr(C)]
 pub struct USER_INFO_1053 {
-    pub usri1053_home_dir_drive: ::windows_sys_core::PWSTR,
+    pub usri1053_home_dir_drive: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_INFO_1053 {}
 impl ::core::clone::Clone for USER_INFO_1053 {
@@ -5281,22 +5281,22 @@ impl ::core::clone::Clone for USER_INFO_1053 {
 }
 #[repr(C)]
 pub struct USER_INFO_11 {
-    pub usri11_name: ::windows_sys_core::PWSTR,
-    pub usri11_comment: ::windows_sys_core::PWSTR,
-    pub usri11_usr_comment: ::windows_sys_core::PWSTR,
-    pub usri11_full_name: ::windows_sys_core::PWSTR,
+    pub usri11_name: ::windows_core_sys::PWSTR,
+    pub usri11_comment: ::windows_core_sys::PWSTR,
+    pub usri11_usr_comment: ::windows_core_sys::PWSTR,
+    pub usri11_full_name: ::windows_core_sys::PWSTR,
     pub usri11_priv: USER_PRIV,
     pub usri11_auth_flags: AF_OP,
     pub usri11_password_age: u32,
-    pub usri11_home_dir: ::windows_sys_core::PWSTR,
-    pub usri11_parms: ::windows_sys_core::PWSTR,
+    pub usri11_home_dir: ::windows_core_sys::PWSTR,
+    pub usri11_parms: ::windows_core_sys::PWSTR,
     pub usri11_last_logon: u32,
     pub usri11_last_logoff: u32,
     pub usri11_bad_pw_count: u32,
     pub usri11_num_logons: u32,
-    pub usri11_logon_server: ::windows_sys_core::PWSTR,
+    pub usri11_logon_server: ::windows_core_sys::PWSTR,
     pub usri11_country_code: u32,
-    pub usri11_workstations: ::windows_sys_core::PWSTR,
+    pub usri11_workstations: ::windows_core_sys::PWSTR,
     pub usri11_max_storage: u32,
     pub usri11_units_per_week: u32,
     pub usri11_logon_hours: *mut u8,
@@ -5310,19 +5310,19 @@ impl ::core::clone::Clone for USER_INFO_11 {
 }
 #[repr(C)]
 pub struct USER_INFO_2 {
-    pub usri2_name: ::windows_sys_core::PWSTR,
-    pub usri2_password: ::windows_sys_core::PWSTR,
+    pub usri2_name: ::windows_core_sys::PWSTR,
+    pub usri2_password: ::windows_core_sys::PWSTR,
     pub usri2_password_age: u32,
     pub usri2_priv: USER_PRIV,
-    pub usri2_home_dir: ::windows_sys_core::PWSTR,
-    pub usri2_comment: ::windows_sys_core::PWSTR,
+    pub usri2_home_dir: ::windows_core_sys::PWSTR,
+    pub usri2_comment: ::windows_core_sys::PWSTR,
     pub usri2_flags: USER_ACCOUNT_FLAGS,
-    pub usri2_script_path: ::windows_sys_core::PWSTR,
+    pub usri2_script_path: ::windows_core_sys::PWSTR,
     pub usri2_auth_flags: AF_OP,
-    pub usri2_full_name: ::windows_sys_core::PWSTR,
-    pub usri2_usr_comment: ::windows_sys_core::PWSTR,
-    pub usri2_parms: ::windows_sys_core::PWSTR,
-    pub usri2_workstations: ::windows_sys_core::PWSTR,
+    pub usri2_full_name: ::windows_core_sys::PWSTR,
+    pub usri2_usr_comment: ::windows_core_sys::PWSTR,
+    pub usri2_parms: ::windows_core_sys::PWSTR,
+    pub usri2_workstations: ::windows_core_sys::PWSTR,
     pub usri2_last_logon: u32,
     pub usri2_last_logoff: u32,
     pub usri2_acct_expires: u32,
@@ -5331,7 +5331,7 @@ pub struct USER_INFO_2 {
     pub usri2_logon_hours: *mut u8,
     pub usri2_bad_pw_count: u32,
     pub usri2_num_logons: u32,
-    pub usri2_logon_server: ::windows_sys_core::PWSTR,
+    pub usri2_logon_server: ::windows_core_sys::PWSTR,
     pub usri2_country_code: u32,
     pub usri2_code_page: u32,
 }
@@ -5343,9 +5343,9 @@ impl ::core::clone::Clone for USER_INFO_2 {
 }
 #[repr(C)]
 pub struct USER_INFO_20 {
-    pub usri20_name: ::windows_sys_core::PWSTR,
-    pub usri20_full_name: ::windows_sys_core::PWSTR,
-    pub usri20_comment: ::windows_sys_core::PWSTR,
+    pub usri20_name: ::windows_core_sys::PWSTR,
+    pub usri20_full_name: ::windows_core_sys::PWSTR,
+    pub usri20_comment: ::windows_core_sys::PWSTR,
     pub usri20_flags: USER_ACCOUNT_FLAGS,
     pub usri20_user_id: u32,
 }
@@ -5367,19 +5367,19 @@ impl ::core::clone::Clone for USER_INFO_21 {
 }
 #[repr(C)]
 pub struct USER_INFO_22 {
-    pub usri22_name: ::windows_sys_core::PWSTR,
+    pub usri22_name: ::windows_core_sys::PWSTR,
     pub usri22_password: [u8; 16],
     pub usri22_password_age: u32,
     pub usri22_priv: USER_PRIV,
-    pub usri22_home_dir: ::windows_sys_core::PWSTR,
-    pub usri22_comment: ::windows_sys_core::PWSTR,
+    pub usri22_home_dir: ::windows_core_sys::PWSTR,
+    pub usri22_comment: ::windows_core_sys::PWSTR,
     pub usri22_flags: USER_ACCOUNT_FLAGS,
-    pub usri22_script_path: ::windows_sys_core::PWSTR,
+    pub usri22_script_path: ::windows_core_sys::PWSTR,
     pub usri22_auth_flags: AF_OP,
-    pub usri22_full_name: ::windows_sys_core::PWSTR,
-    pub usri22_usr_comment: ::windows_sys_core::PWSTR,
-    pub usri22_parms: ::windows_sys_core::PWSTR,
-    pub usri22_workstations: ::windows_sys_core::PWSTR,
+    pub usri22_full_name: ::windows_core_sys::PWSTR,
+    pub usri22_usr_comment: ::windows_core_sys::PWSTR,
+    pub usri22_parms: ::windows_core_sys::PWSTR,
+    pub usri22_workstations: ::windows_core_sys::PWSTR,
     pub usri22_last_logon: u32,
     pub usri22_last_logoff: u32,
     pub usri22_acct_expires: u32,
@@ -5388,7 +5388,7 @@ pub struct USER_INFO_22 {
     pub usri22_logon_hours: *mut u8,
     pub usri22_bad_pw_count: u32,
     pub usri22_num_logons: u32,
-    pub usri22_logon_server: ::windows_sys_core::PWSTR,
+    pub usri22_logon_server: ::windows_core_sys::PWSTR,
     pub usri22_country_code: u32,
     pub usri22_code_page: u32,
 }
@@ -5401,9 +5401,9 @@ impl ::core::clone::Clone for USER_INFO_22 {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct USER_INFO_23 {
-    pub usri23_name: ::windows_sys_core::PWSTR,
-    pub usri23_full_name: ::windows_sys_core::PWSTR,
-    pub usri23_comment: ::windows_sys_core::PWSTR,
+    pub usri23_name: ::windows_core_sys::PWSTR,
+    pub usri23_full_name: ::windows_core_sys::PWSTR,
+    pub usri23_comment: ::windows_core_sys::PWSTR,
     pub usri23_flags: USER_ACCOUNT_FLAGS,
     pub usri23_user_sid: super::super::Foundation::PSID,
 }
@@ -5420,8 +5420,8 @@ impl ::core::clone::Clone for USER_INFO_23 {
 pub struct USER_INFO_24 {
     pub usri24_internet_identity: super::super::Foundation::BOOL,
     pub usri24_flags: u32,
-    pub usri24_internet_provider_name: ::windows_sys_core::PWSTR,
-    pub usri24_internet_principal_name: ::windows_sys_core::PWSTR,
+    pub usri24_internet_provider_name: ::windows_core_sys::PWSTR,
+    pub usri24_internet_principal_name: ::windows_core_sys::PWSTR,
     pub usri24_user_sid: super::super::Foundation::PSID,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5434,19 +5434,19 @@ impl ::core::clone::Clone for USER_INFO_24 {
 }
 #[repr(C)]
 pub struct USER_INFO_3 {
-    pub usri3_name: ::windows_sys_core::PWSTR,
-    pub usri3_password: ::windows_sys_core::PWSTR,
+    pub usri3_name: ::windows_core_sys::PWSTR,
+    pub usri3_password: ::windows_core_sys::PWSTR,
     pub usri3_password_age: u32,
     pub usri3_priv: USER_PRIV,
-    pub usri3_home_dir: ::windows_sys_core::PWSTR,
-    pub usri3_comment: ::windows_sys_core::PWSTR,
+    pub usri3_home_dir: ::windows_core_sys::PWSTR,
+    pub usri3_comment: ::windows_core_sys::PWSTR,
     pub usri3_flags: USER_ACCOUNT_FLAGS,
-    pub usri3_script_path: ::windows_sys_core::PWSTR,
+    pub usri3_script_path: ::windows_core_sys::PWSTR,
     pub usri3_auth_flags: AF_OP,
-    pub usri3_full_name: ::windows_sys_core::PWSTR,
-    pub usri3_usr_comment: ::windows_sys_core::PWSTR,
-    pub usri3_parms: ::windows_sys_core::PWSTR,
-    pub usri3_workstations: ::windows_sys_core::PWSTR,
+    pub usri3_full_name: ::windows_core_sys::PWSTR,
+    pub usri3_usr_comment: ::windows_core_sys::PWSTR,
+    pub usri3_parms: ::windows_core_sys::PWSTR,
+    pub usri3_workstations: ::windows_core_sys::PWSTR,
     pub usri3_last_logon: u32,
     pub usri3_last_logoff: u32,
     pub usri3_acct_expires: u32,
@@ -5455,13 +5455,13 @@ pub struct USER_INFO_3 {
     pub usri3_logon_hours: *mut u8,
     pub usri3_bad_pw_count: u32,
     pub usri3_num_logons: u32,
-    pub usri3_logon_server: ::windows_sys_core::PWSTR,
+    pub usri3_logon_server: ::windows_core_sys::PWSTR,
     pub usri3_country_code: u32,
     pub usri3_code_page: u32,
     pub usri3_user_id: u32,
     pub usri3_primary_group_id: u32,
-    pub usri3_profile: ::windows_sys_core::PWSTR,
-    pub usri3_home_dir_drive: ::windows_sys_core::PWSTR,
+    pub usri3_profile: ::windows_core_sys::PWSTR,
+    pub usri3_home_dir_drive: ::windows_core_sys::PWSTR,
     pub usri3_password_expired: u32,
 }
 impl ::core::marker::Copy for USER_INFO_3 {}
@@ -5473,19 +5473,19 @@ impl ::core::clone::Clone for USER_INFO_3 {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct USER_INFO_4 {
-    pub usri4_name: ::windows_sys_core::PWSTR,
-    pub usri4_password: ::windows_sys_core::PWSTR,
+    pub usri4_name: ::windows_core_sys::PWSTR,
+    pub usri4_password: ::windows_core_sys::PWSTR,
     pub usri4_password_age: u32,
     pub usri4_priv: USER_PRIV,
-    pub usri4_home_dir: ::windows_sys_core::PWSTR,
-    pub usri4_comment: ::windows_sys_core::PWSTR,
+    pub usri4_home_dir: ::windows_core_sys::PWSTR,
+    pub usri4_comment: ::windows_core_sys::PWSTR,
     pub usri4_flags: USER_ACCOUNT_FLAGS,
-    pub usri4_script_path: ::windows_sys_core::PWSTR,
+    pub usri4_script_path: ::windows_core_sys::PWSTR,
     pub usri4_auth_flags: AF_OP,
-    pub usri4_full_name: ::windows_sys_core::PWSTR,
-    pub usri4_usr_comment: ::windows_sys_core::PWSTR,
-    pub usri4_parms: ::windows_sys_core::PWSTR,
-    pub usri4_workstations: ::windows_sys_core::PWSTR,
+    pub usri4_full_name: ::windows_core_sys::PWSTR,
+    pub usri4_usr_comment: ::windows_core_sys::PWSTR,
+    pub usri4_parms: ::windows_core_sys::PWSTR,
+    pub usri4_workstations: ::windows_core_sys::PWSTR,
     pub usri4_last_logon: u32,
     pub usri4_last_logoff: u32,
     pub usri4_acct_expires: u32,
@@ -5494,13 +5494,13 @@ pub struct USER_INFO_4 {
     pub usri4_logon_hours: *mut u8,
     pub usri4_bad_pw_count: u32,
     pub usri4_num_logons: u32,
-    pub usri4_logon_server: ::windows_sys_core::PWSTR,
+    pub usri4_logon_server: ::windows_core_sys::PWSTR,
     pub usri4_country_code: u32,
     pub usri4_code_page: u32,
     pub usri4_user_sid: super::super::Foundation::PSID,
     pub usri4_primary_group_id: u32,
-    pub usri4_profile: ::windows_sys_core::PWSTR,
-    pub usri4_home_dir_drive: ::windows_sys_core::PWSTR,
+    pub usri4_profile: ::windows_core_sys::PWSTR,
+    pub usri4_home_dir_drive: ::windows_core_sys::PWSTR,
     pub usri4_password_expired: u32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5533,7 +5533,7 @@ impl ::core::clone::Clone for USER_MODALS_INFO_0 {
 #[repr(C)]
 pub struct USER_MODALS_INFO_1 {
     pub usrmod1_role: u32,
-    pub usrmod1_primary: ::windows_sys_core::PWSTR,
+    pub usrmod1_primary: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_MODALS_INFO_1 {}
 impl ::core::clone::Clone for USER_MODALS_INFO_1 {
@@ -5603,7 +5603,7 @@ impl ::core::clone::Clone for USER_MODALS_INFO_1006 {
 }
 #[repr(C)]
 pub struct USER_MODALS_INFO_1007 {
-    pub usrmod1007_primary: ::windows_sys_core::PWSTR,
+    pub usrmod1007_primary: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USER_MODALS_INFO_1007 {}
 impl ::core::clone::Clone for USER_MODALS_INFO_1007 {
@@ -5614,7 +5614,7 @@ impl ::core::clone::Clone for USER_MODALS_INFO_1007 {
 #[repr(C)]
 #[cfg(feature = "Win32_Foundation")]
 pub struct USER_MODALS_INFO_2 {
-    pub usrmod2_domain_name: ::windows_sys_core::PWSTR,
+    pub usrmod2_domain_name: ::windows_core_sys::PWSTR,
     pub usrmod2_domain_id: super::super::Foundation::PSID,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -5683,8 +5683,8 @@ pub const USE_FLAGS_PARMNUM: u32 = 7u32;
 pub const USE_FLAG_GLOBAL_MAPPING: u32 = 65536u32;
 #[repr(C)]
 pub struct USE_INFO_0 {
-    pub ui0_local: ::windows_sys_core::PWSTR,
-    pub ui0_remote: ::windows_sys_core::PWSTR,
+    pub ui0_local: ::windows_core_sys::PWSTR,
+    pub ui0_remote: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USE_INFO_0 {}
 impl ::core::clone::Clone for USE_INFO_0 {
@@ -5694,9 +5694,9 @@ impl ::core::clone::Clone for USE_INFO_0 {
 }
 #[repr(C)]
 pub struct USE_INFO_1 {
-    pub ui1_local: ::windows_sys_core::PWSTR,
-    pub ui1_remote: ::windows_sys_core::PWSTR,
-    pub ui1_password: ::windows_sys_core::PWSTR,
+    pub ui1_local: ::windows_core_sys::PWSTR,
+    pub ui1_remote: ::windows_core_sys::PWSTR,
+    pub ui1_password: ::windows_core_sys::PWSTR,
     pub ui1_status: u32,
     pub ui1_asg_type: USE_INFO_ASG_TYPE,
     pub ui1_refcount: u32,
@@ -5710,15 +5710,15 @@ impl ::core::clone::Clone for USE_INFO_1 {
 }
 #[repr(C)]
 pub struct USE_INFO_2 {
-    pub ui2_local: ::windows_sys_core::PWSTR,
-    pub ui2_remote: ::windows_sys_core::PWSTR,
-    pub ui2_password: ::windows_sys_core::PWSTR,
+    pub ui2_local: ::windows_core_sys::PWSTR,
+    pub ui2_remote: ::windows_core_sys::PWSTR,
+    pub ui2_password: ::windows_core_sys::PWSTR,
     pub ui2_status: u32,
     pub ui2_asg_type: USE_INFO_ASG_TYPE,
     pub ui2_refcount: u32,
     pub ui2_usecount: u32,
-    pub ui2_username: ::windows_sys_core::PWSTR,
-    pub ui2_domainname: ::windows_sys_core::PWSTR,
+    pub ui2_username: ::windows_core_sys::PWSTR,
+    pub ui2_domainname: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for USE_INFO_2 {}
 impl ::core::clone::Clone for USE_INFO_2 {
@@ -5846,8 +5846,8 @@ pub const WKSTA_FORCECORECREATEMODE_PARMNUM: u32 = 60u32;
 #[repr(C)]
 pub struct WKSTA_INFO_100 {
     pub wki100_platform_id: u32,
-    pub wki100_computername: ::windows_sys_core::PWSTR,
-    pub wki100_langroup: ::windows_sys_core::PWSTR,
+    pub wki100_computername: ::windows_core_sys::PWSTR,
+    pub wki100_langroup: ::windows_core_sys::PWSTR,
     pub wki100_ver_major: u32,
     pub wki100_ver_minor: u32,
 }
@@ -5860,11 +5860,11 @@ impl ::core::clone::Clone for WKSTA_INFO_100 {
 #[repr(C)]
 pub struct WKSTA_INFO_101 {
     pub wki101_platform_id: u32,
-    pub wki101_computername: ::windows_sys_core::PWSTR,
-    pub wki101_langroup: ::windows_sys_core::PWSTR,
+    pub wki101_computername: ::windows_core_sys::PWSTR,
+    pub wki101_langroup: ::windows_core_sys::PWSTR,
     pub wki101_ver_major: u32,
     pub wki101_ver_minor: u32,
-    pub wki101_lanroot: ::windows_sys_core::PWSTR,
+    pub wki101_lanroot: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for WKSTA_INFO_101 {}
 impl ::core::clone::Clone for WKSTA_INFO_101 {
@@ -5925,11 +5925,11 @@ impl ::core::clone::Clone for WKSTA_INFO_1018 {
 #[repr(C)]
 pub struct WKSTA_INFO_102 {
     pub wki102_platform_id: u32,
-    pub wki102_computername: ::windows_sys_core::PWSTR,
-    pub wki102_langroup: ::windows_sys_core::PWSTR,
+    pub wki102_computername: ::windows_core_sys::PWSTR,
+    pub wki102_langroup: ::windows_core_sys::PWSTR,
     pub wki102_ver_major: u32,
     pub wki102_ver_minor: u32,
-    pub wki102_lanroot: ::windows_sys_core::PWSTR,
+    pub wki102_lanroot: ::windows_core_sys::PWSTR,
     pub wki102_logged_on_users: u32,
 }
 impl ::core::marker::Copy for WKSTA_INFO_102 {}
@@ -6269,7 +6269,7 @@ pub struct WKSTA_INFO_302 {
     pub wki302_print_buf_time: u32,
     pub wki302_num_char_buf: u32,
     pub wki302_siz_char_buf: u32,
-    pub wki302_wrk_heuristics: ::windows_sys_core::PWSTR,
+    pub wki302_wrk_heuristics: ::windows_core_sys::PWSTR,
     pub wki302_mailslots: u32,
     pub wki302_num_dgram_buf: u32,
 }
@@ -6298,7 +6298,7 @@ pub struct WKSTA_INFO_402 {
     pub wki402_print_buf_time: u32,
     pub wki402_num_char_buf: u32,
     pub wki402_siz_char_buf: u32,
-    pub wki402_wrk_heuristics: ::windows_sys_core::PWSTR,
+    pub wki402_wrk_heuristics: ::windows_core_sys::PWSTR,
     pub wki402_mailslots: u32,
     pub wki402_num_dgram_buf: u32,
     pub wki402_max_threads: u32,
@@ -6390,8 +6390,8 @@ pub const WKSTA_SIZWORKBUF_PARMNUM: u32 = 29u32;
 pub struct WKSTA_TRANSPORT_INFO_0 {
     pub wkti0_quality_of_service: u32,
     pub wkti0_number_of_vcs: u32,
-    pub wkti0_transport_name: ::windows_sys_core::PWSTR,
-    pub wkti0_transport_address: ::windows_sys_core::PWSTR,
+    pub wkti0_transport_name: ::windows_core_sys::PWSTR,
+    pub wkti0_transport_address: ::windows_core_sys::PWSTR,
     pub wkti0_wan_ish: super::super::Foundation::BOOL,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -6411,7 +6411,7 @@ pub const WKSTA_USERAWREAD_PARMNUM: u32 = 54u32;
 pub const WKSTA_USERAWWRITE_PARMNUM: u32 = 55u32;
 #[repr(C)]
 pub struct WKSTA_USER_INFO_0 {
-    pub wkui0_username: ::windows_sys_core::PWSTR,
+    pub wkui0_username: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for WKSTA_USER_INFO_0 {}
 impl ::core::clone::Clone for WKSTA_USER_INFO_0 {
@@ -6421,10 +6421,10 @@ impl ::core::clone::Clone for WKSTA_USER_INFO_0 {
 }
 #[repr(C)]
 pub struct WKSTA_USER_INFO_1 {
-    pub wkui1_username: ::windows_sys_core::PWSTR,
-    pub wkui1_logon_domain: ::windows_sys_core::PWSTR,
-    pub wkui1_oth_domains: ::windows_sys_core::PWSTR,
-    pub wkui1_logon_server: ::windows_sys_core::PWSTR,
+    pub wkui1_username: ::windows_core_sys::PWSTR,
+    pub wkui1_logon_domain: ::windows_core_sys::PWSTR,
+    pub wkui1_oth_domains: ::windows_core_sys::PWSTR,
+    pub wkui1_logon_server: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for WKSTA_USER_INFO_1 {}
 impl ::core::clone::Clone for WKSTA_USER_INFO_1 {
@@ -6434,7 +6434,7 @@ impl ::core::clone::Clone for WKSTA_USER_INFO_1 {
 }
 #[repr(C)]
 pub struct WKSTA_USER_INFO_1101 {
-    pub wkui1101_oth_domains: ::windows_sys_core::PWSTR,
+    pub wkui1101_oth_domains: ::windows_core_sys::PWSTR,
 }
 impl ::core::marker::Copy for WKSTA_USER_INFO_1101 {}
 impl ::core::clone::Clone for WKSTA_USER_INFO_1101 {

@@ -15,7 +15,7 @@ extern "system" {
     pub fn SnmpDuplicatePdu(session: isize, pdu: isize) -> isize;
     pub fn SnmpDuplicateVbl(session: isize, vbl: isize) -> isize;
     pub fn SnmpEncodeMsg(session: isize, srcentity: isize, dstentity: isize, context: isize, pdu: isize, msgbufdesc: *mut smiOCTETS) -> u32;
-    pub fn SnmpEntityToStr(entity: isize, size: u32, string: ::windows_sys_core::PSTR) -> u32;
+    pub fn SnmpEntityToStr(entity: isize, size: u32, string: ::windows_core_sys::PSTR) -> u32;
     pub fn SnmpFreeContext(context: isize) -> u32;
     pub fn SnmpFreeDescriptor(syntax: u32, descriptor: *mut smiOCTETS) -> u32;
     pub fn SnmpFreeEntity(entity: isize) -> u32;
@@ -41,17 +41,17 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn SnmpMgrGetTrapEx(enterprise: *mut AsnObjectIdentifier, agentaddress: *mut AsnOctetString, sourceaddress: *mut AsnOctetString, generictrap: *mut SNMP_GENERICTRAP, specifictrap: *mut i32, community: *mut AsnOctetString, timestamp: *mut u32, variablebindings: *mut SnmpVarBindList) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SnmpMgrOidToStr(oid: *mut AsnObjectIdentifier, string: *mut ::windows_sys_core::PSTR) -> super::super::Foundation::BOOL;
-    pub fn SnmpMgrOpen(lpagentaddress: ::windows_sys_core::PCSTR, lpagentcommunity: ::windows_sys_core::PCSTR, ntimeout: i32, nretries: i32) -> *mut ::core::ffi::c_void;
+    pub fn SnmpMgrOidToStr(oid: *mut AsnObjectIdentifier, string: *mut ::windows_core_sys::PSTR) -> super::super::Foundation::BOOL;
+    pub fn SnmpMgrOpen(lpagentaddress: ::windows_core_sys::PCSTR, lpagentcommunity: ::windows_core_sys::PCSTR, ntimeout: i32, nretries: i32) -> *mut ::core::ffi::c_void;
     #[cfg(feature = "Win32_Foundation")]
     pub fn SnmpMgrRequest(session: *mut ::core::ffi::c_void, requesttype: u8, variablebindings: *mut SnmpVarBindList, errorstatus: *mut SNMP_ERROR_STATUS, errorindex: *mut i32) -> i32;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SnmpMgrStrToOid(string: ::windows_sys_core::PCSTR, oid: *mut AsnObjectIdentifier) -> super::super::Foundation::BOOL;
+    pub fn SnmpMgrStrToOid(string: ::windows_core_sys::PCSTR, oid: *mut AsnObjectIdentifier) -> super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
     pub fn SnmpMgrTrapListen(phtrapavailable: *mut super::super::Foundation::HANDLE) -> super::super::Foundation::BOOL;
     pub fn SnmpOidCompare(xoid: *mut smiOID, yoid: *mut smiOID, maxlen: u32, result: *mut i32) -> u32;
     pub fn SnmpOidCopy(srcoid: *mut smiOID, dstoid: *mut smiOID) -> u32;
-    pub fn SnmpOidToStr(srcoid: *const smiOID, size: u32, string: ::windows_sys_core::PSTR) -> u32;
+    pub fn SnmpOidToStr(srcoid: *const smiOID, size: u32, string: ::windows_core_sys::PSTR) -> u32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn SnmpOpen(hwnd: super::super::Foundation::HWND, wmsg: u32) -> isize;
     pub fn SnmpRecvMsg(session: isize, srcentity: *mut isize, dstentity: *mut isize, context: *mut isize, pdu: *mut isize) -> u32;
@@ -67,8 +67,8 @@ extern "system" {
     pub fn SnmpStartup(nmajorversion: *mut u32, nminorversion: *mut u32, nlevel: *mut u32, ntranslatemode: *mut SNMP_API_TRANSLATE_MODE, nretransmitmode: *mut SNMP_STATUS) -> u32;
     pub fn SnmpStartupEx(nmajorversion: *mut u32, nminorversion: *mut u32, nlevel: *mut u32, ntranslatemode: *mut SNMP_API_TRANSLATE_MODE, nretransmitmode: *mut SNMP_STATUS) -> u32;
     pub fn SnmpStrToContext(session: isize, string: *mut smiOCTETS) -> isize;
-    pub fn SnmpStrToEntity(session: isize, string: ::windows_sys_core::PCSTR) -> isize;
-    pub fn SnmpStrToOid(string: ::windows_sys_core::PCSTR, dstoid: *mut smiOID) -> u32;
+    pub fn SnmpStrToEntity(session: isize, string: ::windows_core_sys::PCSTR) -> isize;
+    pub fn SnmpStrToOid(string: ::windows_core_sys::PCSTR, dstoid: *mut smiOID) -> u32;
     pub fn SnmpSvcGetUptime() -> u32;
     pub fn SnmpSvcSetLogLevel(nloglevel: SNMP_LOG);
     pub fn SnmpSvcSetLogType(nlogtype: SNMP_OUTPUT_LOG_TYPE);
@@ -76,8 +76,8 @@ extern "system" {
     pub fn SnmpUtilAsnAnyCpy(panydst: *mut AsnAny, panysrc: *mut AsnAny) -> i32;
     #[cfg(feature = "Win32_Foundation")]
     pub fn SnmpUtilAsnAnyFree(pany: *mut AsnAny);
-    pub fn SnmpUtilDbgPrint(nloglevel: SNMP_LOG, szformat: ::windows_sys_core::PCSTR);
-    pub fn SnmpUtilIdsToA(ids: *mut u32, idlength: u32) -> ::windows_sys_core::PSTR;
+    pub fn SnmpUtilDbgPrint(nloglevel: SNMP_LOG, szformat: ::windows_core_sys::PCSTR);
+    pub fn SnmpUtilIdsToA(ids: *mut u32, idlength: u32) -> ::windows_core_sys::PSTR;
     pub fn SnmpUtilMemAlloc(nbytes: u32) -> *mut ::core::ffi::c_void;
     pub fn SnmpUtilMemFree(pmem: *mut ::core::ffi::c_void);
     pub fn SnmpUtilMemReAlloc(pmem: *mut ::core::ffi::c_void, nbytes: u32) -> *mut ::core::ffi::c_void;
@@ -94,7 +94,7 @@ extern "system" {
     pub fn SnmpUtilOidCpy(poiddst: *mut AsnObjectIdentifier, poidsrc: *mut AsnObjectIdentifier) -> i32;
     pub fn SnmpUtilOidFree(poid: *mut AsnObjectIdentifier);
     pub fn SnmpUtilOidNCmp(poid1: *mut AsnObjectIdentifier, poid2: *mut AsnObjectIdentifier, nsubids: u32) -> i32;
-    pub fn SnmpUtilOidToA(oid: *mut AsnObjectIdentifier) -> ::windows_sys_core::PSTR;
+    pub fn SnmpUtilOidToA(oid: *mut AsnObjectIdentifier) -> ::windows_core_sys::PSTR;
     #[cfg(feature = "Win32_Foundation")]
     pub fn SnmpUtilPrintAsnAny(pany: *mut AsnAny);
     pub fn SnmpUtilPrintOid(oid: *mut AsnObjectIdentifier);

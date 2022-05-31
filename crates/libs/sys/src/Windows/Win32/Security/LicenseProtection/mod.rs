@@ -1,10 +1,10 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Security_LicenseProtection\"`*"]
-    pub fn RegisterLicenseKeyWithExpiration(licensekey: ::windows_sys_core::PCWSTR, validityindays: u32, status: *mut LicenseProtectionStatus) -> ::windows_sys_core::HRESULT;
+    pub fn RegisterLicenseKeyWithExpiration(licensekey: ::windows_core_sys::PCWSTR, validityindays: u32, status: *mut LicenseProtectionStatus) -> ::windows_core_sys::HRESULT;
     #[doc = "*Required features: `\"Win32_Security_LicenseProtection\"`, `\"Win32_Foundation\"`*"]
     #[cfg(feature = "Win32_Foundation")]
-    pub fn ValidateLicenseKeyProtection(licensekey: ::windows_sys_core::PCWSTR, notvalidbefore: *mut super::super::Foundation::FILETIME, notvalidafter: *mut super::super::Foundation::FILETIME, status: *mut LicenseProtectionStatus) -> ::windows_sys_core::HRESULT;
+    pub fn ValidateLicenseKeyProtection(licensekey: ::windows_core_sys::PCWSTR, notvalidbefore: *mut super::super::Foundation::FILETIME, notvalidafter: *mut super::super::Foundation::FILETIME, status: *mut LicenseProtectionStatus) -> ::windows_core_sys::HRESULT;
 }
 #[doc = "*Required features: `\"Win32_Security_LicenseProtection\"`*"]
 pub type LicenseProtectionStatus = i32;

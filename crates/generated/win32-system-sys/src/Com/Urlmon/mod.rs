@@ -1,85 +1,85 @@
 #[link(name = "windows")]
 extern "system" {
-    pub fn CoGetClassObjectFromURL(rclassid: *const ::windows_sys_core::GUID, szcode: ::windows_sys_core::PCWSTR, dwfileversionms: u32, dwfileversionls: u32, sztype: ::windows_sys_core::PCWSTR, pbindctx: super::IBindCtx, dwclscontext: super::CLSCTX, pvreserved: *mut ::core::ffi::c_void, riid: *const ::windows_sys_core::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetCombineIUri(pbaseuri: super::IUri, prelativeuri: super::IUri, dwcombineflags: u32, ppcombineduri: *mut super::IUri, dwreserved: usize) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetCombineUrl(pwzbaseurl: ::windows_sys_core::PCWSTR, pwzrelativeurl: ::windows_sys_core::PCWSTR, dwcombineflags: u32, pszresult: ::windows_sys_core::PWSTR, cchresult: u32, pcchresult: *mut u32, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetCombineUrlEx(pbaseuri: super::IUri, pwzrelativeurl: ::windows_sys_core::PCWSTR, dwcombineflags: u32, ppcombineduri: *mut super::IUri, dwreserved: usize) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetCompareUrl(pwzurl1: ::windows_sys_core::PCWSTR, pwzurl2: ::windows_sys_core::PCWSTR, dwflags: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetCreateSecurityManager(psp: super::IServiceProvider, ppsm: *mut IInternetSecurityManager, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetCreateZoneManager(psp: super::IServiceProvider, ppzm: *mut IInternetZoneManager, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetGetProtocolFlags(pwzurl: ::windows_sys_core::PCWSTR, pdwflags: *mut u32, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetGetSecurityUrl(pwszurl: ::windows_sys_core::PCWSTR, ppwszsecurl: *mut ::windows_sys_core::PWSTR, psuaction: PSUACTION, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetGetSecurityUrlEx(puri: super::IUri, ppsecuri: *mut super::IUri, psuaction: PSUACTION, dwreserved: usize) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetGetSession(dwsessionmode: u32, ppiinternetsession: *mut IInternetSession, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetIsFeatureEnabled(featureentry: INTERNETFEATURELIST, dwflags: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetIsFeatureEnabledForIUri(featureentry: INTERNETFEATURELIST, dwflags: u32, piuri: super::IUri, psecmgr: IInternetSecurityManagerEx2) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetIsFeatureEnabledForUrl(featureentry: INTERNETFEATURELIST, dwflags: u32, szurl: ::windows_sys_core::PCWSTR, psecmgr: IInternetSecurityManager) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetIsFeatureZoneElevationEnabled(szfromurl: ::windows_sys_core::PCWSTR, sztourl: ::windows_sys_core::PCWSTR, psecmgr: IInternetSecurityManager, dwflags: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetParseIUri(piuri: super::IUri, parseaction: PARSEACTION, dwflags: u32, pwzresult: ::windows_sys_core::PWSTR, cchresult: u32, pcchresult: *mut u32, dwreserved: usize) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetParseUrl(pwzurl: ::windows_sys_core::PCWSTR, parseaction: PARSEACTION, dwflags: u32, pszresult: ::windows_sys_core::PWSTR, cchresult: u32, pcchresult: *mut u32, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CoInternetQueryInfo(pwzurl: ::windows_sys_core::PCWSTR, queryoptions: QUERYOPTION, dwqueryflags: u32, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, pcbbuffer: *mut u32, dwreserved: u32) -> ::windows_sys_core::HRESULT;
+    pub fn CoGetClassObjectFromURL(rclassid: *const ::windows_core_sys::GUID, szcode: ::windows_core_sys::PCWSTR, dwfileversionms: u32, dwfileversionls: u32, sztype: ::windows_core_sys::PCWSTR, pbindctx: super::IBindCtx, dwclscontext: super::CLSCTX, pvreserved: *mut ::core::ffi::c_void, riid: *const ::windows_core_sys::GUID, ppv: *mut *mut ::core::ffi::c_void) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetCombineIUri(pbaseuri: super::IUri, prelativeuri: super::IUri, dwcombineflags: u32, ppcombineduri: *mut super::IUri, dwreserved: usize) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetCombineUrl(pwzbaseurl: ::windows_core_sys::PCWSTR, pwzrelativeurl: ::windows_core_sys::PCWSTR, dwcombineflags: u32, pszresult: ::windows_core_sys::PWSTR, cchresult: u32, pcchresult: *mut u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetCombineUrlEx(pbaseuri: super::IUri, pwzrelativeurl: ::windows_core_sys::PCWSTR, dwcombineflags: u32, ppcombineduri: *mut super::IUri, dwreserved: usize) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetCompareUrl(pwzurl1: ::windows_core_sys::PCWSTR, pwzurl2: ::windows_core_sys::PCWSTR, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetCreateSecurityManager(psp: super::IServiceProvider, ppsm: *mut IInternetSecurityManager, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetCreateZoneManager(psp: super::IServiceProvider, ppzm: *mut IInternetZoneManager, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetGetProtocolFlags(pwzurl: ::windows_core_sys::PCWSTR, pdwflags: *mut u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetGetSecurityUrl(pwszurl: ::windows_core_sys::PCWSTR, ppwszsecurl: *mut ::windows_core_sys::PWSTR, psuaction: PSUACTION, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetGetSecurityUrlEx(puri: super::IUri, ppsecuri: *mut super::IUri, psuaction: PSUACTION, dwreserved: usize) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetGetSession(dwsessionmode: u32, ppiinternetsession: *mut IInternetSession, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetIsFeatureEnabled(featureentry: INTERNETFEATURELIST, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetIsFeatureEnabledForIUri(featureentry: INTERNETFEATURELIST, dwflags: u32, piuri: super::IUri, psecmgr: IInternetSecurityManagerEx2) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetIsFeatureEnabledForUrl(featureentry: INTERNETFEATURELIST, dwflags: u32, szurl: ::windows_core_sys::PCWSTR, psecmgr: IInternetSecurityManager) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetIsFeatureZoneElevationEnabled(szfromurl: ::windows_core_sys::PCWSTR, sztourl: ::windows_core_sys::PCWSTR, psecmgr: IInternetSecurityManager, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetParseIUri(piuri: super::IUri, parseaction: PARSEACTION, dwflags: u32, pwzresult: ::windows_core_sys::PWSTR, cchresult: u32, pcchresult: *mut u32, dwreserved: usize) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetParseUrl(pwzurl: ::windows_core_sys::PCWSTR, parseaction: PARSEACTION, dwflags: u32, pszresult: ::windows_core_sys::PWSTR, cchresult: u32, pcchresult: *mut u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CoInternetQueryInfo(pwzurl: ::windows_core_sys::PCWSTR, queryoptions: QUERYOPTION, dwqueryflags: u32, pvbuffer: *mut ::core::ffi::c_void, cbbuffer: u32, pcbbuffer: *mut u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn CoInternetSetFeatureEnabled(featureentry: INTERNETFEATURELIST, dwflags: u32, fenable: super::super::super::Foundation::BOOL) -> ::windows_sys_core::HRESULT;
-    pub fn CompareSecurityIds(pbsecurityid1: *const u8, dwlen1: u32, pbsecurityid2: *const u8, dwlen2: u32, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CompatFlagsFromClsid(pclsid: *const ::windows_sys_core::GUID, pdwcompatflags: *mut u32, pdwmiscstatusflags: *mut u32) -> ::windows_sys_core::HRESULT;
+    pub fn CoInternetSetFeatureEnabled(featureentry: INTERNETFEATURELIST, dwflags: u32, fenable: super::super::super::Foundation::BOOL) -> ::windows_core_sys::HRESULT;
+    pub fn CompareSecurityIds(pbsecurityid1: *const u8, dwlen1: u32, pbsecurityid2: *const u8, dwlen2: u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CompatFlagsFromClsid(pclsid: *const ::windows_core_sys::GUID, pdwcompatflags: *mut u32, pdwmiscstatusflags: *mut u32) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
-    pub fn CopyBindInfo(pcbisrc: *const super::BINDINFO, pbidest: *mut super::BINDINFO) -> ::windows_sys_core::HRESULT;
+    pub fn CopyBindInfo(pcbisrc: *const super::BINDINFO, pbidest: *mut super::BINDINFO) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Graphics_Gdi", feature = "Win32_System_Com_StructuredStorage"))]
-    pub fn CopyStgMedium(pcstgmedsrc: *const super::STGMEDIUM, pstgmeddest: *mut super::STGMEDIUM) -> ::windows_sys_core::HRESULT;
-    pub fn CreateAsyncBindCtx(reserved: u32, pbscb: super::IBindStatusCallback, pefetc: super::IEnumFORMATETC, ppbc: *mut super::IBindCtx) -> ::windows_sys_core::HRESULT;
-    pub fn CreateAsyncBindCtxEx(pbc: super::IBindCtx, dwoptions: u32, pbscb: super::IBindStatusCallback, penum: super::IEnumFORMATETC, ppbc: *mut super::IBindCtx, reserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CreateFormatEnumerator(cfmtetc: u32, rgfmtetc: *const super::FORMATETC, ppenumfmtetc: *mut super::IEnumFORMATETC) -> ::windows_sys_core::HRESULT;
-    pub fn CreateURLMoniker(pmkctx: super::IMoniker, szurl: ::windows_sys_core::PCWSTR, ppmk: *mut super::IMoniker) -> ::windows_sys_core::HRESULT;
-    pub fn CreateURLMonikerEx(pmkctx: super::IMoniker, szurl: ::windows_sys_core::PCWSTR, ppmk: *mut super::IMoniker, dwflags: u32) -> ::windows_sys_core::HRESULT;
-    pub fn CreateURLMonikerEx2(pmkctx: super::IMoniker, puri: super::IUri, ppmk: *mut super::IMoniker, dwflags: u32) -> ::windows_sys_core::HRESULT;
+    pub fn CopyStgMedium(pcstgmedsrc: *const super::STGMEDIUM, pstgmeddest: *mut super::STGMEDIUM) -> ::windows_core_sys::HRESULT;
+    pub fn CreateAsyncBindCtx(reserved: u32, pbscb: super::IBindStatusCallback, pefetc: super::IEnumFORMATETC, ppbc: *mut super::IBindCtx) -> ::windows_core_sys::HRESULT;
+    pub fn CreateAsyncBindCtxEx(pbc: super::IBindCtx, dwoptions: u32, pbscb: super::IBindStatusCallback, penum: super::IEnumFORMATETC, ppbc: *mut super::IBindCtx, reserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CreateFormatEnumerator(cfmtetc: u32, rgfmtetc: *const super::FORMATETC, ppenumfmtetc: *mut super::IEnumFORMATETC) -> ::windows_core_sys::HRESULT;
+    pub fn CreateURLMoniker(pmkctx: super::IMoniker, szurl: ::windows_core_sys::PCWSTR, ppmk: *mut super::IMoniker) -> ::windows_core_sys::HRESULT;
+    pub fn CreateURLMonikerEx(pmkctx: super::IMoniker, szurl: ::windows_core_sys::PCWSTR, ppmk: *mut super::IMoniker, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn CreateURLMonikerEx2(pmkctx: super::IMoniker, puri: super::IUri, ppmk: *mut super::IMoniker, dwflags: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn FaultInIEFeature(hwnd: super::super::super::Foundation::HWND, pclassspec: *const super::uCLSSPEC, pquery: *mut super::QUERYCONTEXT, dwflags: u32) -> ::windows_sys_core::HRESULT;
-    pub fn FindMediaType(rgsztypes: ::windows_sys_core::PCSTR, rgcftypes: *mut u16) -> ::windows_sys_core::HRESULT;
-    pub fn FindMediaTypeClass(pbc: super::IBindCtx, sztype: ::windows_sys_core::PCSTR, pclsid: *mut ::windows_sys_core::GUID, reserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn FindMimeFromData(pbc: super::IBindCtx, pwzurl: ::windows_sys_core::PCWSTR, pbuffer: *const ::core::ffi::c_void, cbsize: u32, pwzmimeproposed: ::windows_sys_core::PCWSTR, dwmimeflags: u32, ppwzmimeout: *mut ::windows_sys_core::PWSTR, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn GetClassFileOrMime(pbc: super::IBindCtx, szfilename: ::windows_sys_core::PCWSTR, pbuffer: *const ::core::ffi::c_void, cbsize: u32, szmime: ::windows_sys_core::PCWSTR, dwreserved: u32, pclsid: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
-    pub fn GetClassURL(szurl: ::windows_sys_core::PCWSTR, pclsid: *mut ::windows_sys_core::GUID) -> ::windows_sys_core::HRESULT;
-    pub fn GetComponentIDFromCLSSPEC(pclassspec: *const super::uCLSSPEC, ppszcomponentid: *mut ::windows_sys_core::PSTR) -> ::windows_sys_core::HRESULT;
-    pub fn GetSoftwareUpdateInfo(szdistunit: ::windows_sys_core::PCWSTR, psdi: *mut SOFTDISTINFO) -> ::windows_sys_core::HRESULT;
-    pub fn HlinkGoBack(punk: ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
-    pub fn HlinkGoForward(punk: ::windows_sys_core::IUnknown) -> ::windows_sys_core::HRESULT;
-    pub fn HlinkNavigateMoniker(punk: ::windows_sys_core::IUnknown, pmktarget: super::IMoniker) -> ::windows_sys_core::HRESULT;
-    pub fn HlinkNavigateString(punk: ::windows_sys_core::IUnknown, sztarget: ::windows_sys_core::PCWSTR) -> ::windows_sys_core::HRESULT;
-    pub fn HlinkSimpleNavigateToMoniker(pmktarget: super::IMoniker, szlocation: ::windows_sys_core::PCWSTR, sztargetframename: ::windows_sys_core::PCWSTR, punk: ::windows_sys_core::IUnknown, pbc: super::IBindCtx, param5: super::IBindStatusCallback, grfhlnf: u32, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn HlinkSimpleNavigateToString(sztarget: ::windows_sys_core::PCWSTR, szlocation: ::windows_sys_core::PCWSTR, sztargetframename: ::windows_sys_core::PCWSTR, punk: ::windows_sys_core::IUnknown, pbc: super::IBindCtx, param5: super::IBindStatusCallback, grfhlnf: u32, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn IEGetUserPrivateNamespaceName() -> ::windows_sys_core::PWSTR;
-    pub fn IEInstallScope(pdwscope: *mut u32) -> ::windows_sys_core::HRESULT;
-    pub fn IsAsyncMoniker(pmk: super::IMoniker) -> ::windows_sys_core::HRESULT;
+    pub fn FaultInIEFeature(hwnd: super::super::super::Foundation::HWND, pclassspec: *const super::uCLSSPEC, pquery: *mut super::QUERYCONTEXT, dwflags: u32) -> ::windows_core_sys::HRESULT;
+    pub fn FindMediaType(rgsztypes: ::windows_core_sys::PCSTR, rgcftypes: *mut u16) -> ::windows_core_sys::HRESULT;
+    pub fn FindMediaTypeClass(pbc: super::IBindCtx, sztype: ::windows_core_sys::PCSTR, pclsid: *mut ::windows_core_sys::GUID, reserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn FindMimeFromData(pbc: super::IBindCtx, pwzurl: ::windows_core_sys::PCWSTR, pbuffer: *const ::core::ffi::c_void, cbsize: u32, pwzmimeproposed: ::windows_core_sys::PCWSTR, dwmimeflags: u32, ppwzmimeout: *mut ::windows_core_sys::PWSTR, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn GetClassFileOrMime(pbc: super::IBindCtx, szfilename: ::windows_core_sys::PCWSTR, pbuffer: *const ::core::ffi::c_void, cbsize: u32, szmime: ::windows_core_sys::PCWSTR, dwreserved: u32, pclsid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
+    pub fn GetClassURL(szurl: ::windows_core_sys::PCWSTR, pclsid: *mut ::windows_core_sys::GUID) -> ::windows_core_sys::HRESULT;
+    pub fn GetComponentIDFromCLSSPEC(pclassspec: *const super::uCLSSPEC, ppszcomponentid: *mut ::windows_core_sys::PSTR) -> ::windows_core_sys::HRESULT;
+    pub fn GetSoftwareUpdateInfo(szdistunit: ::windows_core_sys::PCWSTR, psdi: *mut SOFTDISTINFO) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkGoBack(punk: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkGoForward(punk: ::windows_core_sys::IUnknown) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkNavigateMoniker(punk: ::windows_core_sys::IUnknown, pmktarget: super::IMoniker) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkNavigateString(punk: ::windows_core_sys::IUnknown, sztarget: ::windows_core_sys::PCWSTR) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkSimpleNavigateToMoniker(pmktarget: super::IMoniker, szlocation: ::windows_core_sys::PCWSTR, sztargetframename: ::windows_core_sys::PCWSTR, punk: ::windows_core_sys::IUnknown, pbc: super::IBindCtx, param5: super::IBindStatusCallback, grfhlnf: u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn HlinkSimpleNavigateToString(sztarget: ::windows_core_sys::PCWSTR, szlocation: ::windows_core_sys::PCWSTR, sztargetframename: ::windows_core_sys::PCWSTR, punk: ::windows_core_sys::IUnknown, pbc: super::IBindCtx, param5: super::IBindStatusCallback, grfhlnf: u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn IEGetUserPrivateNamespaceName() -> ::windows_core_sys::PWSTR;
+    pub fn IEInstallScope(pdwscope: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn IsAsyncMoniker(pmk: super::IMoniker) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn IsLoggingEnabledA(pszurl: ::windows_sys_core::PCSTR) -> super::super::super::Foundation::BOOL;
+    pub fn IsLoggingEnabledA(pszurl: ::windows_core_sys::PCSTR) -> super::super::super::Foundation::BOOL;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn IsLoggingEnabledW(pwszurl: ::windows_sys_core::PCWSTR) -> super::super::super::Foundation::BOOL;
-    pub fn IsValidURL(pbc: super::IBindCtx, szurl: ::windows_sys_core::PCWSTR, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn MkParseDisplayNameEx(pbc: super::IBindCtx, szdisplayname: ::windows_sys_core::PCWSTR, pcheaten: *mut u32, ppmk: *mut super::IMoniker) -> ::windows_sys_core::HRESULT;
-    pub fn ObtainUserAgentString(dwoption: u32, pszuaout: ::windows_sys_core::PSTR, cbsize: *mut u32) -> ::windows_sys_core::HRESULT;
-    pub fn RegisterBindStatusCallback(pbc: super::IBindCtx, pbscb: super::IBindStatusCallback, ppbscbprev: *mut super::IBindStatusCallback, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn RegisterFormatEnumerator(pbc: super::IBindCtx, pefetc: super::IEnumFORMATETC, reserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn RegisterMediaTypeClass(pbc: super::IBindCtx, ctypes: u32, rgsztypes: *const ::windows_sys_core::PSTR, rgclsid: *const ::windows_sys_core::GUID, reserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn RegisterMediaTypes(ctypes: u32, rgsztypes: *const ::windows_sys_core::PSTR, rgcftypes: *mut u16) -> ::windows_sys_core::HRESULT;
+    pub fn IsLoggingEnabledW(pwszurl: ::windows_core_sys::PCWSTR) -> super::super::super::Foundation::BOOL;
+    pub fn IsValidURL(pbc: super::IBindCtx, szurl: ::windows_core_sys::PCWSTR, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn MkParseDisplayNameEx(pbc: super::IBindCtx, szdisplayname: ::windows_core_sys::PCWSTR, pcheaten: *mut u32, ppmk: *mut super::IMoniker) -> ::windows_core_sys::HRESULT;
+    pub fn ObtainUserAgentString(dwoption: u32, pszuaout: ::windows_core_sys::PSTR, cbsize: *mut u32) -> ::windows_core_sys::HRESULT;
+    pub fn RegisterBindStatusCallback(pbc: super::IBindCtx, pbscb: super::IBindStatusCallback, ppbscbprev: *mut super::IBindStatusCallback, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn RegisterFormatEnumerator(pbc: super::IBindCtx, pefetc: super::IEnumFORMATETC, reserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn RegisterMediaTypeClass(pbc: super::IBindCtx, ctypes: u32, rgsztypes: *const ::windows_core_sys::PSTR, rgclsid: *const ::windows_core_sys::GUID, reserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn RegisterMediaTypes(ctypes: u32, rgsztypes: *const ::windows_core_sys::PSTR, rgcftypes: *mut u16) -> ::windows_core_sys::HRESULT;
     #[cfg(all(feature = "Win32_Foundation", feature = "Win32_Graphics_Gdi", feature = "Win32_Security", feature = "Win32_System_Com_StructuredStorage"))]
     pub fn ReleaseBindInfo(pbindinfo: *mut super::BINDINFO);
-    pub fn RevokeBindStatusCallback(pbc: super::IBindCtx, pbscb: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn RevokeFormatEnumerator(pbc: super::IBindCtx, pefetc: super::IEnumFORMATETC) -> ::windows_sys_core::HRESULT;
+    pub fn RevokeBindStatusCallback(pbc: super::IBindCtx, pbscb: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn RevokeFormatEnumerator(pbc: super::IBindCtx, pefetc: super::IEnumFORMATETC) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
-    pub fn SetAccessForIEAppContainer(hobject: super::super::super::Foundation::HANDLE, ieobjecttype: IEObjectType, dwaccessmask: u32) -> ::windows_sys_core::HRESULT;
-    pub fn SetSoftwareUpdateAdvertisementState(szdistunit: ::windows_sys_core::PCWSTR, dwadstate: u32, dwadvertisedversionms: u32, dwadvertisedversionls: u32) -> ::windows_sys_core::HRESULT;
-    pub fn URLDownloadToCacheFileA(param0: ::windows_sys_core::IUnknown, param1: ::windows_sys_core::PCSTR, param2: ::windows_sys_core::PSTR, cchfilename: u32, param4: u32, param5: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn URLDownloadToCacheFileW(param0: ::windows_sys_core::IUnknown, param1: ::windows_sys_core::PCWSTR, param2: ::windows_sys_core::PWSTR, cchfilename: u32, param4: u32, param5: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn URLDownloadToFileA(param0: ::windows_sys_core::IUnknown, param1: ::windows_sys_core::PCSTR, param2: ::windows_sys_core::PCSTR, param3: u32, param4: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn URLDownloadToFileW(param0: ::windows_sys_core::IUnknown, param1: ::windows_sys_core::PCWSTR, param2: ::windows_sys_core::PCWSTR, param3: u32, param4: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn URLOpenBlockingStreamA(param0: ::windows_sys_core::IUnknown, param1: ::windows_sys_core::PCSTR, param2: *mut super::IStream, param3: u32, param4: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn URLOpenBlockingStreamW(param0: ::windows_sys_core::IUnknown, param1: ::windows_sys_core::PCWSTR, param2: *mut super::IStream, param3: u32, param4: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn URLOpenPullStreamA(param0: ::windows_sys_core::IUnknown, param1: ::windows_sys_core::PCSTR, param2: u32, param3: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn URLOpenPullStreamW(param0: ::windows_sys_core::IUnknown, param1: ::windows_sys_core::PCWSTR, param2: u32, param3: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn URLOpenStreamA(param0: ::windows_sys_core::IUnknown, param1: ::windows_sys_core::PCSTR, param2: u32, param3: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn URLOpenStreamW(param0: ::windows_sys_core::IUnknown, param1: ::windows_sys_core::PCWSTR, param2: u32, param3: super::IBindStatusCallback) -> ::windows_sys_core::HRESULT;
-    pub fn UrlMkGetSessionOption(dwoption: u32, pbuffer: *mut ::core::ffi::c_void, dwbufferlength: u32, pdwbufferlengthout: *mut u32, dwreserved: u32) -> ::windows_sys_core::HRESULT;
-    pub fn UrlMkSetSessionOption(dwoption: u32, pbuffer: *const ::core::ffi::c_void, dwbufferlength: u32, dwreserved: u32) -> ::windows_sys_core::HRESULT;
+    pub fn SetAccessForIEAppContainer(hobject: super::super::super::Foundation::HANDLE, ieobjecttype: IEObjectType, dwaccessmask: u32) -> ::windows_core_sys::HRESULT;
+    pub fn SetSoftwareUpdateAdvertisementState(szdistunit: ::windows_core_sys::PCWSTR, dwadstate: u32, dwadvertisedversionms: u32, dwadvertisedversionls: u32) -> ::windows_core_sys::HRESULT;
+    pub fn URLDownloadToCacheFileA(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PSTR, cchfilename: u32, param4: u32, param5: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn URLDownloadToCacheFileW(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCWSTR, param2: ::windows_core_sys::PWSTR, cchfilename: u32, param4: u32, param5: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn URLDownloadToFileA(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCSTR, param2: ::windows_core_sys::PCSTR, param3: u32, param4: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn URLDownloadToFileW(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCWSTR, param2: ::windows_core_sys::PCWSTR, param3: u32, param4: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn URLOpenBlockingStreamA(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCSTR, param2: *mut super::IStream, param3: u32, param4: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn URLOpenBlockingStreamW(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCWSTR, param2: *mut super::IStream, param3: u32, param4: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn URLOpenPullStreamA(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCSTR, param2: u32, param3: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn URLOpenPullStreamW(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCWSTR, param2: u32, param3: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn URLOpenStreamA(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCSTR, param2: u32, param3: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn URLOpenStreamW(param0: ::windows_core_sys::IUnknown, param1: ::windows_core_sys::PCWSTR, param2: u32, param3: super::IBindStatusCallback) -> ::windows_core_sys::HRESULT;
+    pub fn UrlMkGetSessionOption(dwoption: u32, pbuffer: *mut ::core::ffi::c_void, dwbufferlength: u32, pdwbufferlengthout: *mut u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
+    pub fn UrlMkSetSessionOption(dwoption: u32, pbuffer: *const ::core::ffi::c_void, dwbufferlength: u32, dwreserved: u32) -> ::windows_core_sys::HRESULT;
     #[cfg(feature = "Win32_Foundation")]
     pub fn WriteHitLogging(lplogginginfo: *const HIT_LOGGING_INFO) -> super::super::super::Foundation::BOOL;
 }
@@ -307,8 +307,8 @@ pub const CIP_NEED_REBOOT_UI_PERMISSION: CIP_STATUS = 9i32;
 #[repr(C)]
 pub struct CODEBASEHOLD {
     pub cbSize: u32,
-    pub szDistUnit: ::windows_sys_core::PWSTR,
-    pub szCodeBase: ::windows_sys_core::PWSTR,
+    pub szDistUnit: ::windows_core_sys::PWSTR,
+    pub szCodeBase: ::windows_core_sys::PWSTR,
     pub dwVersionMS: u32,
     pub dwVersionLS: u32,
     pub dwStyle: u32,
@@ -321,8 +321,8 @@ impl ::core::clone::Clone for CODEBASEHOLD {
 }
 #[repr(C)]
 pub struct CONFIRMSAFETY {
-    pub clsid: ::windows_sys_core::GUID,
-    pub pUnk: ::windows_sys_core::IUnknown,
+    pub clsid: ::windows_core_sys::GUID,
+    pub pUnk: ::windows_core_sys::IUnknown,
     pub dwFlags: u32,
 }
 impl ::core::marker::Copy for CONFIRMSAFETY {}
@@ -345,7 +345,7 @@ impl ::core::clone::Clone for DATAINFO {
         *self
     }
 }
-pub const E_PENDING: ::windows_sys_core::HRESULT = -2147483638i32;
+pub const E_PENDING: ::windows_core_sys::HRESULT = -2147483638i32;
 pub const FIEF_FLAG_FORCE_JITUI: u32 = 1u32;
 pub const FIEF_FLAG_PEEK: u32 = 2u32;
 pub const FIEF_FLAG_RESERVED_0: u32 = 8u32;
@@ -371,10 +371,10 @@ pub const GET_FEATURE_FROM_THREAD_TRUSTED: u32 = 32u32;
 #[cfg(feature = "Win32_Foundation")]
 pub struct HIT_LOGGING_INFO {
     pub dwStructSize: u32,
-    pub lpszLoggedUrlName: ::windows_sys_core::PSTR,
+    pub lpszLoggedUrlName: ::windows_core_sys::PSTR,
     pub StartTime: super::super::super::Foundation::SYSTEMTIME,
     pub EndTime: super::super::super::Foundation::SYSTEMTIME,
-    pub lpszExtendedInfo: ::windows_sys_core::PSTR,
+    pub lpszExtendedInfo: ::windows_core_sys::PSTR,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for HIT_LOGGING_INFO {}
@@ -426,56 +426,56 @@ pub type IInternetZoneManager = *mut ::core::ffi::c_void;
 pub type IInternetZoneManagerEx = *mut ::core::ffi::c_void;
 pub type IInternetZoneManagerEx2 = *mut ::core::ffi::c_void;
 pub type IMonikerProp = *mut ::core::ffi::c_void;
-pub const INET_E_AUTHENTICATION_REQUIRED: ::windows_sys_core::HRESULT = -2146697207i32;
-pub const INET_E_BLOCKED_ENHANCEDPROTECTEDMODE: ::windows_sys_core::HRESULT = -2146695930i32;
-pub const INET_E_BLOCKED_PLUGGABLE_PROTOCOL: ::windows_sys_core::HRESULT = -2146695931i32;
-pub const INET_E_BLOCKED_REDIRECT_XSECURITYID: ::windows_sys_core::HRESULT = -2146697189i32;
-pub const INET_E_CANNOT_CONNECT: ::windows_sys_core::HRESULT = -2146697212i32;
-pub const INET_E_CANNOT_INSTANTIATE_OBJECT: ::windows_sys_core::HRESULT = -2146697200i32;
-pub const INET_E_CANNOT_LOAD_DATA: ::windows_sys_core::HRESULT = -2146697201i32;
-pub const INET_E_CANNOT_LOCK_REQUEST: ::windows_sys_core::HRESULT = -2146697194i32;
-pub const INET_E_CANNOT_REPLACE_SFP_FILE: ::windows_sys_core::HRESULT = -2146696448i32;
-pub const INET_E_CODE_DOWNLOAD_DECLINED: ::windows_sys_core::HRESULT = -2146696960i32;
-pub const INET_E_CODE_INSTALL_BLOCKED_ARM: ::windows_sys_core::HRESULT = -2146695932i32;
-pub const INET_E_CODE_INSTALL_BLOCKED_BITNESS: ::windows_sys_core::HRESULT = -2146695929i32;
-pub const INET_E_CODE_INSTALL_BLOCKED_BY_HASH_POLICY: ::windows_sys_core::HRESULT = -2146695936i32;
-pub const INET_E_CODE_INSTALL_BLOCKED_IMMERSIVE: ::windows_sys_core::HRESULT = -2146695934i32;
-pub const INET_E_CODE_INSTALL_SUPPRESSED: ::windows_sys_core::HRESULT = -2146696192i32;
-pub const INET_E_CONNECTION_TIMEOUT: ::windows_sys_core::HRESULT = -2146697205i32;
-pub const INET_E_DATA_NOT_AVAILABLE: ::windows_sys_core::HRESULT = -2146697209i32;
+pub const INET_E_AUTHENTICATION_REQUIRED: ::windows_core_sys::HRESULT = -2146697207i32;
+pub const INET_E_BLOCKED_ENHANCEDPROTECTEDMODE: ::windows_core_sys::HRESULT = -2146695930i32;
+pub const INET_E_BLOCKED_PLUGGABLE_PROTOCOL: ::windows_core_sys::HRESULT = -2146695931i32;
+pub const INET_E_BLOCKED_REDIRECT_XSECURITYID: ::windows_core_sys::HRESULT = -2146697189i32;
+pub const INET_E_CANNOT_CONNECT: ::windows_core_sys::HRESULT = -2146697212i32;
+pub const INET_E_CANNOT_INSTANTIATE_OBJECT: ::windows_core_sys::HRESULT = -2146697200i32;
+pub const INET_E_CANNOT_LOAD_DATA: ::windows_core_sys::HRESULT = -2146697201i32;
+pub const INET_E_CANNOT_LOCK_REQUEST: ::windows_core_sys::HRESULT = -2146697194i32;
+pub const INET_E_CANNOT_REPLACE_SFP_FILE: ::windows_core_sys::HRESULT = -2146696448i32;
+pub const INET_E_CODE_DOWNLOAD_DECLINED: ::windows_core_sys::HRESULT = -2146696960i32;
+pub const INET_E_CODE_INSTALL_BLOCKED_ARM: ::windows_core_sys::HRESULT = -2146695932i32;
+pub const INET_E_CODE_INSTALL_BLOCKED_BITNESS: ::windows_core_sys::HRESULT = -2146695929i32;
+pub const INET_E_CODE_INSTALL_BLOCKED_BY_HASH_POLICY: ::windows_core_sys::HRESULT = -2146695936i32;
+pub const INET_E_CODE_INSTALL_BLOCKED_IMMERSIVE: ::windows_core_sys::HRESULT = -2146695934i32;
+pub const INET_E_CODE_INSTALL_SUPPRESSED: ::windows_core_sys::HRESULT = -2146696192i32;
+pub const INET_E_CONNECTION_TIMEOUT: ::windows_core_sys::HRESULT = -2146697205i32;
+pub const INET_E_DATA_NOT_AVAILABLE: ::windows_core_sys::HRESULT = -2146697209i32;
 pub const INET_E_DEFAULT_ACTION: i32 = -2146697199i32;
-pub const INET_E_DOMINJECTIONVALIDATION: ::windows_sys_core::HRESULT = -2146697188i32;
-pub const INET_E_DOWNLOAD_BLOCKED_BY_CSP: ::windows_sys_core::HRESULT = -2146695928i32;
-pub const INET_E_DOWNLOAD_BLOCKED_BY_INPRIVATE: ::windows_sys_core::HRESULT = -2146695935i32;
-pub const INET_E_DOWNLOAD_FAILURE: ::windows_sys_core::HRESULT = -2146697208i32;
-pub const INET_E_ERROR_FIRST: ::windows_sys_core::HRESULT = -2146697214i32;
+pub const INET_E_DOMINJECTIONVALIDATION: ::windows_core_sys::HRESULT = -2146697188i32;
+pub const INET_E_DOWNLOAD_BLOCKED_BY_CSP: ::windows_core_sys::HRESULT = -2146695928i32;
+pub const INET_E_DOWNLOAD_BLOCKED_BY_INPRIVATE: ::windows_core_sys::HRESULT = -2146695935i32;
+pub const INET_E_DOWNLOAD_FAILURE: ::windows_core_sys::HRESULT = -2146697208i32;
+pub const INET_E_ERROR_FIRST: ::windows_core_sys::HRESULT = -2146697214i32;
 pub const INET_E_ERROR_LAST: i32 = -2146695928i32;
-pub const INET_E_FORBIDFRAMING: ::windows_sys_core::HRESULT = -2146695933i32;
-pub const INET_E_HSTS_CERTIFICATE_ERROR: ::windows_sys_core::HRESULT = -2146697186i32;
-pub const INET_E_INVALID_CERTIFICATE: ::windows_sys_core::HRESULT = -2146697191i32;
-pub const INET_E_INVALID_REQUEST: ::windows_sys_core::HRESULT = -2146697204i32;
-pub const INET_E_INVALID_URL: ::windows_sys_core::HRESULT = -2146697214i32;
-pub const INET_E_NO_SESSION: ::windows_sys_core::HRESULT = -2146697213i32;
-pub const INET_E_NO_VALID_MEDIA: ::windows_sys_core::HRESULT = -2146697206i32;
-pub const INET_E_OBJECT_NOT_FOUND: ::windows_sys_core::HRESULT = -2146697210i32;
-pub const INET_E_QUERYOPTION_UNKNOWN: ::windows_sys_core::HRESULT = -2146697197i32;
-pub const INET_E_REDIRECTING: ::windows_sys_core::HRESULT = -2146697196i32;
-pub const INET_E_REDIRECT_FAILED: ::windows_sys_core::HRESULT = -2146697196i32;
-pub const INET_E_REDIRECT_TO_DIR: ::windows_sys_core::HRESULT = -2146697195i32;
-pub const INET_E_RESERVED_1: ::windows_sys_core::HRESULT = -2146697190i32;
-pub const INET_E_RESERVED_2: ::windows_sys_core::HRESULT = -2146697185i32;
-pub const INET_E_RESERVED_3: ::windows_sys_core::HRESULT = -2146697184i32;
-pub const INET_E_RESERVED_4: ::windows_sys_core::HRESULT = -2146697183i32;
-pub const INET_E_RESERVED_5: ::windows_sys_core::HRESULT = -2146697182i32;
-pub const INET_E_RESOURCE_NOT_FOUND: ::windows_sys_core::HRESULT = -2146697211i32;
-pub const INET_E_RESULT_DISPATCHED: ::windows_sys_core::HRESULT = -2146696704i32;
-pub const INET_E_SECURITY_PROBLEM: ::windows_sys_core::HRESULT = -2146697202i32;
-pub const INET_E_TERMINATED_BIND: ::windows_sys_core::HRESULT = -2146697192i32;
-pub const INET_E_UNKNOWN_PROTOCOL: ::windows_sys_core::HRESULT = -2146697203i32;
-pub const INET_E_USE_DEFAULT_PROTOCOLHANDLER: ::windows_sys_core::HRESULT = -2146697199i32;
-pub const INET_E_USE_DEFAULT_SETTING: ::windows_sys_core::HRESULT = -2146697198i32;
-pub const INET_E_USE_EXTEND_BINDING: ::windows_sys_core::HRESULT = -2146697193i32;
-pub const INET_E_VTAB_SWITCH_FORCE_ENGINE: ::windows_sys_core::HRESULT = -2146697187i32;
+pub const INET_E_FORBIDFRAMING: ::windows_core_sys::HRESULT = -2146695933i32;
+pub const INET_E_HSTS_CERTIFICATE_ERROR: ::windows_core_sys::HRESULT = -2146697186i32;
+pub const INET_E_INVALID_CERTIFICATE: ::windows_core_sys::HRESULT = -2146697191i32;
+pub const INET_E_INVALID_REQUEST: ::windows_core_sys::HRESULT = -2146697204i32;
+pub const INET_E_INVALID_URL: ::windows_core_sys::HRESULT = -2146697214i32;
+pub const INET_E_NO_SESSION: ::windows_core_sys::HRESULT = -2146697213i32;
+pub const INET_E_NO_VALID_MEDIA: ::windows_core_sys::HRESULT = -2146697206i32;
+pub const INET_E_OBJECT_NOT_FOUND: ::windows_core_sys::HRESULT = -2146697210i32;
+pub const INET_E_QUERYOPTION_UNKNOWN: ::windows_core_sys::HRESULT = -2146697197i32;
+pub const INET_E_REDIRECTING: ::windows_core_sys::HRESULT = -2146697196i32;
+pub const INET_E_REDIRECT_FAILED: ::windows_core_sys::HRESULT = -2146697196i32;
+pub const INET_E_REDIRECT_TO_DIR: ::windows_core_sys::HRESULT = -2146697195i32;
+pub const INET_E_RESERVED_1: ::windows_core_sys::HRESULT = -2146697190i32;
+pub const INET_E_RESERVED_2: ::windows_core_sys::HRESULT = -2146697185i32;
+pub const INET_E_RESERVED_3: ::windows_core_sys::HRESULT = -2146697184i32;
+pub const INET_E_RESERVED_4: ::windows_core_sys::HRESULT = -2146697183i32;
+pub const INET_E_RESERVED_5: ::windows_core_sys::HRESULT = -2146697182i32;
+pub const INET_E_RESOURCE_NOT_FOUND: ::windows_core_sys::HRESULT = -2146697211i32;
+pub const INET_E_RESULT_DISPATCHED: ::windows_core_sys::HRESULT = -2146696704i32;
+pub const INET_E_SECURITY_PROBLEM: ::windows_core_sys::HRESULT = -2146697202i32;
+pub const INET_E_TERMINATED_BIND: ::windows_core_sys::HRESULT = -2146697192i32;
+pub const INET_E_UNKNOWN_PROTOCOL: ::windows_core_sys::HRESULT = -2146697203i32;
+pub const INET_E_USE_DEFAULT_PROTOCOLHANDLER: ::windows_core_sys::HRESULT = -2146697199i32;
+pub const INET_E_USE_DEFAULT_SETTING: ::windows_core_sys::HRESULT = -2146697198i32;
+pub const INET_E_USE_EXTEND_BINDING: ::windows_core_sys::HRESULT = -2146697193i32;
+pub const INET_E_VTAB_SWITCH_FORCE_ENGINE: ::windows_core_sys::HRESULT = -2146697187i32;
 pub type INET_ZONE_MANAGER_CONSTANTS = i32;
 pub const MAX_ZONE_PATH: INET_ZONE_MANAGER_CONSTANTS = 260i32;
 pub const MAX_ZONE_DESCRIPTION: INET_ZONE_MANAGER_CONSTANTS = 200i32;
@@ -525,7 +525,7 @@ pub type IZoneIdentifier = *mut ::core::ffi::c_void;
 pub type IZoneIdentifier2 = *mut ::core::ffi::c_void;
 pub const MAX_SIZE_SECURITY_ID: u32 = 512u32;
 pub const MKSYS_URLMONIKER: u32 = 6u32;
-pub const MK_S_ASYNCHRONOUS: ::windows_sys_core::HRESULT = 262632i32;
+pub const MK_S_ASYNCHRONOUS: ::windows_core_sys::HRESULT = 262632i32;
 pub type MONIKERPROPERTY = i32;
 pub const MIMETYPEPROP: MONIKERPROPERTY = 0i32;
 pub const USE_SRC_URL: MONIKERPROPERTY = 1i32;
@@ -599,7 +599,7 @@ pub struct PROTOCOLFILTERDATA {
     pub cbSize: u32,
     pub pProtocolSink: IInternetProtocolSink,
     pub pProtocol: IInternetProtocol,
-    pub pUnk: ::windows_sys_core::IUnknown,
+    pub pUnk: ::windows_core_sys::IUnknown,
     pub dwFilterFlags: u32,
 }
 impl ::core::marker::Copy for PROTOCOLFILTERDATA {}
@@ -611,8 +611,8 @@ impl ::core::clone::Clone for PROTOCOLFILTERDATA {
 pub const PROTOCOLFLAG_NO_PICS_CHECK: u32 = 1u32;
 #[repr(C)]
 pub struct PROTOCOL_ARGUMENT {
-    pub szMethod: ::windows_sys_core::PCWSTR,
-    pub szTargetUrl: ::windows_sys_core::PCWSTR,
+    pub szMethod: ::windows_core_sys::PCWSTR,
+    pub szTargetUrl: ::windows_core_sys::PCWSTR,
 }
 impl ::core::marker::Copy for PROTOCOL_ARGUMENT {}
 impl ::core::clone::Clone for PROTOCOL_ARGUMENT {
@@ -684,17 +684,17 @@ impl ::core::clone::Clone for REMSECURITY_ATTRIBUTES {
 #[cfg(feature = "Win32_Foundation")]
 pub struct RemBINDINFO {
     pub cbSize: u32,
-    pub szExtraInfo: ::windows_sys_core::PWSTR,
+    pub szExtraInfo: ::windows_core_sys::PWSTR,
     pub grfBindInfoF: u32,
     pub dwBindVerb: u32,
-    pub szCustomVerb: ::windows_sys_core::PWSTR,
+    pub szCustomVerb: ::windows_core_sys::PWSTR,
     pub cbstgmedData: u32,
     pub dwOptions: u32,
     pub dwOptionsFlags: u32,
     pub dwCodePage: u32,
     pub securityAttributes: REMSECURITY_ATTRIBUTES,
-    pub iid: ::windows_sys_core::GUID,
-    pub pUnk: ::windows_sys_core::IUnknown,
+    pub iid: ::windows_core_sys::GUID,
+    pub pUnk: ::windows_core_sys::IUnknown,
     pub dwReserved: u32,
 }
 #[cfg(feature = "Win32_Foundation")]
@@ -734,9 +734,9 @@ pub struct SOFTDISTINFO {
     pub cbSize: u32,
     pub dwFlags: u32,
     pub dwAdState: u32,
-    pub szTitle: ::windows_sys_core::PWSTR,
-    pub szAbstract: ::windows_sys_core::PWSTR,
-    pub szHREF: ::windows_sys_core::PWSTR,
+    pub szTitle: ::windows_core_sys::PWSTR,
+    pub szAbstract: ::windows_core_sys::PWSTR,
+    pub szHREF: ::windows_core_sys::PWSTR,
     pub dwInstalledVersionMS: u32,
     pub dwInstalledVersionLS: u32,
     pub dwUpdateVersionMS: u32,
@@ -765,9 +765,9 @@ pub const SZM_DELETE: SZM_FLAGS = 1i32;
 pub const S_ASYNCHRONOUS: i32 = 262632i32;
 #[repr(C)]
 pub struct StartParam {
-    pub iid: ::windows_sys_core::GUID,
+    pub iid: ::windows_core_sys::GUID,
     pub pIBindCtx: super::IBindCtx,
-    pub pItf: ::windows_sys_core::IUnknown,
+    pub pItf: ::windows_core_sys::IUnknown,
 }
 impl ::core::marker::Copy for StartParam {}
 impl ::core::clone::Clone for StartParam {

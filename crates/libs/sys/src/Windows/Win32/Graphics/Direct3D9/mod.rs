@@ -1,7 +1,7 @@
 #[link(name = "windows")]
 extern "system" {
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
-    pub fn D3DPERF_BeginEvent(col: u32, wszname: ::windows_sys_core::PCWSTR) -> i32;
+    pub fn D3DPERF_BeginEvent(col: u32, wszname: ::windows_core_sys::PCWSTR) -> i32;
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
     pub fn D3DPERF_EndEvent() -> i32;
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
@@ -10,15 +10,15 @@ extern "system" {
     #[cfg(feature = "Win32_Foundation")]
     pub fn D3DPERF_QueryRepeatFrame() -> super::super::Foundation::BOOL;
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
-    pub fn D3DPERF_SetMarker(col: u32, wszname: ::windows_sys_core::PCWSTR);
+    pub fn D3DPERF_SetMarker(col: u32, wszname: ::windows_core_sys::PCWSTR);
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
     pub fn D3DPERF_SetOptions(dwoptions: u32);
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
-    pub fn D3DPERF_SetRegion(col: u32, wszname: ::windows_sys_core::PCWSTR);
+    pub fn D3DPERF_SetRegion(col: u32, wszname: ::windows_core_sys::PCWSTR);
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
     pub fn Direct3DCreate9(sdkversion: u32) -> IDirect3D9;
     #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
-    pub fn Direct3DCreate9Ex(sdkversion: u32, param1: *mut IDirect3D9Ex) -> ::windows_sys_core::HRESULT;
+    pub fn Direct3DCreate9Ex(sdkversion: u32, param1: *mut IDirect3D9Ex) -> ::windows_core_sys::HRESULT;
 }
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
 pub const D3D9_RESOURCE_PRIORITY_HIGH: u32 = 2684354560u32;
@@ -47,7 +47,7 @@ pub struct D3DADAPTER_IDENTIFIER9 {
     pub DeviceId: u32,
     pub SubSysId: u32,
     pub Revision: u32,
-    pub DeviceIdentifier: ::windows_sys_core::GUID,
+    pub DeviceIdentifier: ::windows_core_sys::GUID,
     pub WHQLLevel: u32,
 }
 #[cfg(any(target_arch = "aarch64", target_arch = "x86_64"))]
@@ -73,7 +73,7 @@ pub struct D3DADAPTER_IDENTIFIER9 {
     pub DeviceId: u32,
     pub SubSysId: u32,
     pub Revision: u32,
-    pub DeviceIdentifier: ::windows_sys_core::GUID,
+    pub DeviceIdentifier: ::windows_core_sys::GUID,
     pub WHQLLevel: u32,
 }
 #[cfg(target_arch = "x86")]
@@ -194,7 +194,7 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_CONFIGURESHAREDRESOURCE {
 #[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION {
     pub Parameters: D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT,
-    pub EncryptionGuid: ::windows_sys_core::GUID,
+    pub EncryptionGuid: ::windows_core_sys::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRYPTION {}
@@ -209,7 +209,7 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_CONFIGUREUNCOMPRESSEDENCRY
 #[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT {
     pub omac: D3D_OMAC,
-    pub ConfigureType: ::windows_sys_core::GUID,
+    pub ConfigureType: ::windows_core_sys::GUID,
     pub hChannel: super::super::Foundation::HANDLE,
     pub SequenceNumber: u32,
 }
@@ -226,10 +226,10 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_CONFIGURE_INPUT {
 #[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT {
     pub omac: D3D_OMAC,
-    pub ConfigureType: ::windows_sys_core::GUID,
+    pub ConfigureType: ::windows_core_sys::GUID,
     pub hChannel: super::super::Foundation::HANDLE,
     pub SequenceNumber: u32,
-    pub ReturnCode: ::windows_sys_core::HRESULT,
+    pub ReturnCode: ::windows_core_sys::HRESULT,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_CONFIGURE_OUTPUT {}
@@ -379,7 +379,7 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUI
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
     pub EncryptionGuidIndex: u32,
-    pub EncryptionGuid: ::windows_sys_core::GUID,
+    pub EncryptionGuid: ::windows_core_sys::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUID_OUTPUT {}
@@ -565,7 +565,7 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOU
 #[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT {
     pub Output: D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT,
-    pub EncryptionGuid: ::windows_sys_core::GUID,
+    pub EncryptionGuid: ::windows_core_sys::GUID,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERYUNCOMPRESSEDENCRYPTIONLEVEL_OUTPUT {}
@@ -594,7 +594,7 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERYUNRESTRICTEDPROTECTED
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`, `\"Win32_Foundation\"`*"]
 #[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERY_INPUT {
-    pub QueryType: ::windows_sys_core::GUID,
+    pub QueryType: ::windows_core_sys::GUID,
     pub hChannel: super::super::Foundation::HANDLE,
     pub SequenceNumber: u32,
 }
@@ -611,10 +611,10 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERY_INPUT {
 #[cfg(feature = "Win32_Foundation")]
 pub struct D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT {
     pub omac: D3D_OMAC,
-    pub QueryType: ::windows_sys_core::GUID,
+    pub QueryType: ::windows_core_sys::GUID,
     pub hChannel: super::super::Foundation::HANDLE,
     pub SequenceNumber: u32,
-    pub ReturnCode: ::windows_sys_core::HRESULT,
+    pub ReturnCode: ::windows_core_sys::HRESULT,
 }
 #[cfg(feature = "Win32_Foundation")]
 impl ::core::marker::Copy for D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT {}
@@ -624,24 +624,24 @@ impl ::core::clone::Clone for D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT {
         *self
     }
 }
-pub const D3DAUTHENTICATEDCONFIGURE_CRYPTOSESSION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1665584212, data2: 11516, data3: 19156, data4: [130, 36, 209, 88, 55, 222, 119, 0] };
-pub const D3DAUTHENTICATEDCONFIGURE_ENCRYPTIONWHENACCESSIBLE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1107292806, data2: 27360, data3: 19779, data4: [157, 85, 164, 110, 158, 253, 21, 138] };
-pub const D3DAUTHENTICATEDCONFIGURE_INITIALIZE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 101796827, data2: 13603, data3: 18186, data4: [141, 202, 251, 194, 132, 81, 84, 240] };
-pub const D3DAUTHENTICATEDCONFIGURE_PROTECTION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1346721368, data2: 16199, data3: 17250, data4: [191, 153, 191, 223, 205, 233, 237, 41] };
-pub const D3DAUTHENTICATEDCONFIGURE_SHAREDRESOURCE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 124964935, data2: 6976, data3: 18664, data4: [156, 166, 181, 245, 16, 222, 159, 1] };
-pub const D3DAUTHENTICATEDQUERY_ACCESSIBILITYATTRIBUTES: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1645533650, data2: 17196, data3: 19131, data4: [159, 206, 33, 110, 234, 38, 158, 59] };
-pub const D3DAUTHENTICATEDQUERY_CHANNELTYPE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3155892389, data2: 45563, data3: 17067, data4: [189, 148, 181, 130, 139, 75, 247, 190] };
-pub const D3DAUTHENTICATEDQUERY_CRYPTOSESSION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 640960926, data2: 53272, data3: 19828, data4: [172, 23, 127, 114, 64, 89, 82, 141] };
-pub const D3DAUTHENTICATEDQUERY_CURRENTENCRYPTIONWHENACCESSIBLE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3960967623, data2: 56019, data3: 20245, data4: [158, 195, 250, 169, 61, 96, 212, 240] };
-pub const D3DAUTHENTICATEDQUERY_DEVICEHANDLE: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3961279389, data2: 36095, data3: 20010, data4: [188, 196, 245, 105, 47, 153, 244, 128] };
-pub const D3DAUTHENTICATEDQUERY_ENCRYPTIONWHENACCESSIBLEGUID: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 4164573528, data2: 59782, data3: 19418, data4: [190, 176, 65, 31, 106, 122, 1, 183] };
-pub const D3DAUTHENTICATEDQUERY_ENCRYPTIONWHENACCESSIBLEGUIDCOUNT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3004133478, data2: 8252, data3: 19207, data4: [147, 252, 206, 170, 253, 97, 36, 30] };
-pub const D3DAUTHENTICATEDQUERY_OUTPUTID: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2208160931, data2: 39758, data3: 16868, data4: [176, 83, 137, 43, 210, 161, 30, 231] };
-pub const D3DAUTHENTICATEDQUERY_OUTPUTIDCOUNT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 738470750, data2: 35847, data3: 18133, data4: [170, 190, 143, 117, 203, 173, 76, 49] };
-pub const D3DAUTHENTICATEDQUERY_PROTECTION: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2823730564, data2: 50325, data3: 18602, data4: [185, 77, 139, 210, 214, 251, 206, 5] };
-pub const D3DAUTHENTICATEDQUERY_RESTRICTEDSHAREDRESOURCEPROCESS: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1687927515, data2: 61684, data3: 17977, data4: [161, 91, 36, 57, 63, 195, 171, 172] };
-pub const D3DAUTHENTICATEDQUERY_RESTRICTEDSHAREDRESOURCEPROCESSCOUNT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 229771187, data2: 37968, data3: 18086, data4: [130, 222, 27, 150, 212, 79, 156, 242] };
-pub const D3DAUTHENTICATEDQUERY_UNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 19860438, data2: 58978, data3: 17524, data4: [190, 253, 170, 83, 229, 20, 60, 109] };
+pub const D3DAUTHENTICATEDCONFIGURE_CRYPTOSESSION: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1665584212, data2: 11516, data3: 19156, data4: [130, 36, 209, 88, 55, 222, 119, 0] };
+pub const D3DAUTHENTICATEDCONFIGURE_ENCRYPTIONWHENACCESSIBLE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1107292806, data2: 27360, data3: 19779, data4: [157, 85, 164, 110, 158, 253, 21, 138] };
+pub const D3DAUTHENTICATEDCONFIGURE_INITIALIZE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 101796827, data2: 13603, data3: 18186, data4: [141, 202, 251, 194, 132, 81, 84, 240] };
+pub const D3DAUTHENTICATEDCONFIGURE_PROTECTION: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1346721368, data2: 16199, data3: 17250, data4: [191, 153, 191, 223, 205, 233, 237, 41] };
+pub const D3DAUTHENTICATEDCONFIGURE_SHAREDRESOURCE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 124964935, data2: 6976, data3: 18664, data4: [156, 166, 181, 245, 16, 222, 159, 1] };
+pub const D3DAUTHENTICATEDQUERY_ACCESSIBILITYATTRIBUTES: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1645533650, data2: 17196, data3: 19131, data4: [159, 206, 33, 110, 234, 38, 158, 59] };
+pub const D3DAUTHENTICATEDQUERY_CHANNELTYPE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3155892389, data2: 45563, data3: 17067, data4: [189, 148, 181, 130, 139, 75, 247, 190] };
+pub const D3DAUTHENTICATEDQUERY_CRYPTOSESSION: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 640960926, data2: 53272, data3: 19828, data4: [172, 23, 127, 114, 64, 89, 82, 141] };
+pub const D3DAUTHENTICATEDQUERY_CURRENTENCRYPTIONWHENACCESSIBLE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3960967623, data2: 56019, data3: 20245, data4: [158, 195, 250, 169, 61, 96, 212, 240] };
+pub const D3DAUTHENTICATEDQUERY_DEVICEHANDLE: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3961279389, data2: 36095, data3: 20010, data4: [188, 196, 245, 105, 47, 153, 244, 128] };
+pub const D3DAUTHENTICATEDQUERY_ENCRYPTIONWHENACCESSIBLEGUID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 4164573528, data2: 59782, data3: 19418, data4: [190, 176, 65, 31, 106, 122, 1, 183] };
+pub const D3DAUTHENTICATEDQUERY_ENCRYPTIONWHENACCESSIBLEGUIDCOUNT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3004133478, data2: 8252, data3: 19207, data4: [147, 252, 206, 170, 253, 97, 36, 30] };
+pub const D3DAUTHENTICATEDQUERY_OUTPUTID: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2208160931, data2: 39758, data3: 16868, data4: [176, 83, 137, 43, 210, 161, 30, 231] };
+pub const D3DAUTHENTICATEDQUERY_OUTPUTIDCOUNT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 738470750, data2: 35847, data3: 18133, data4: [170, 190, 143, 117, 203, 173, 76, 49] };
+pub const D3DAUTHENTICATEDQUERY_PROTECTION: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2823730564, data2: 50325, data3: 18602, data4: [185, 77, 139, 210, 214, 251, 206, 5] };
+pub const D3DAUTHENTICATEDQUERY_RESTRICTEDSHAREDRESOURCEPROCESS: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1687927515, data2: 61684, data3: 17977, data4: [161, 91, 36, 57, 63, 195, 171, 172] };
+pub const D3DAUTHENTICATEDQUERY_RESTRICTEDSHAREDRESOURCEPROCESSCOUNT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 229771187, data2: 37968, data3: 18086, data4: [130, 222, 27, 150, 212, 79, 156, 242] };
+pub const D3DAUTHENTICATEDQUERY_UNRESTRICTEDPROTECTEDSHAREDRESOURCECOUNT: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 19860438, data2: 58978, data3: 17524, data4: [190, 253, 170, 83, 229, 20, 60, 109] };
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
 pub type D3DBACKBUFFER_TYPE = u32;
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
@@ -1005,8 +1005,8 @@ pub const D3DCREATE_PUREDEVICE: i32 = 16i32;
 pub const D3DCREATE_SCREENSAVER: i32 = 268435456i32;
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
 pub const D3DCREATE_SOFTWARE_VERTEXPROCESSING: i32 = 32i32;
-pub const D3DCRYPTOTYPE_AES128_CTR: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2607535889, data2: 20340, data3: 16841, data4: [158, 123, 11, 226, 215, 217, 59, 79] };
-pub const D3DCRYPTOTYPE_PROPRIETARY: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 2874055421, data2: 7452, data3: 18150, data4: [167, 47, 8, 105, 145, 123, 13, 232] };
+pub const D3DCRYPTOTYPE_AES128_CTR: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2607535889, data2: 20340, data3: 16841, data4: [158, 123, 11, 226, 215, 217, 59, 79] };
+pub const D3DCRYPTOTYPE_PROPRIETARY: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 2874055421, data2: 7452, data3: 18150, data4: [167, 47, 8, 105, 145, 123, 13, 232] };
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
 pub const D3DCS_BACK: i32 = 32i32;
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
@@ -1624,8 +1624,8 @@ impl ::core::clone::Clone for D3DINDEXBUFFER_DESC {
 pub const D3DISSUE_BEGIN: u32 = 2u32;
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`*"]
 pub const D3DISSUE_END: u32 = 1u32;
-pub const D3DKEYEXCHANGE_DXVA: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 1137932124, data2: 14565, data3: 18724, data4: [141, 134, 211, 252, 207, 21, 62, 155] };
-pub const D3DKEYEXCHANGE_RSAES_OAEP: ::windows_sys_core::GUID = ::windows_sys_core::GUID { data1: 3247741077, data2: 55082, data3: 18973, data4: [142, 93, 237, 133, 125, 23, 21, 32] };
+pub const D3DKEYEXCHANGE_DXVA: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 1137932124, data2: 14565, data3: 18724, data4: [141, 134, 211, 252, 207, 21, 62, 155] };
+pub const D3DKEYEXCHANGE_RSAES_OAEP: ::windows_core_sys::GUID = ::windows_core_sys::GUID { data1: 3247741077, data2: 55082, data3: 18973, data4: [142, 93, 237, 133, 125, 23, 21, 32] };
 #[repr(C)]
 #[doc = "*Required features: `\"Win32_Graphics_Direct3D9\"`, `\"Win32_Graphics_Direct3D\"`*"]
 #[cfg(feature = "Win32_Graphics_Direct3D")]
