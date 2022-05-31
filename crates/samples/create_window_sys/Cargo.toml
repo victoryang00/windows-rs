@@ -3,38 +3,17 @@ name = "sample_create_window_sys"
 version = "0.0.0"
 edition = "2018"
 
-#
-# Before:
-#
+[dependencies.win32-foundation-sys]
+path = "../../generated/win32-foundation-sys"
 
-[dependencies.windows-sys]
-path = "../../libs/sys"
-features = [
-    "Win32_Foundation",
-    "Win32_Graphics_Gdi",
-    "Win32_System_LibraryLoader",
-    "Win32_UI_WindowsAndMessaging",
-]
+[dependencies.win32-graphics-sys]
+path = "../../generated/win32-graphics-sys"
+features = ["Gdi"]
 
-#
-# After:
-#
+[dependencies.win32-system-sys]
+path = "../../generated/win32-system-sys"
+features = ["LibraryLoader"]
 
-[dependencies.foundation]
-package = "windows-sys-win32-foundation"
-path = "../../generated/windows-sys-win32-foundation"
-
-[dependencies.graphics]
-package = "windows-sys-win32-graphics"
-path = "../../generated/windows-sys-win32-graphics"
-features = ["Gdi", "windows-sys-win32-foundation"]
-
-[dependencies.system]
-package = "windows-sys-win32-system"
-path = "../../generated/windows-sys-win32-system"
-features = ["LibraryLoader", "windows-sys-win32-foundation"]
-
-[dependencies.ui]
-package = "windows-sys-win32-ui"
-path = "../../generated/windows-sys-win32-ui"
-features = ["WindowsAndMessaging", "windows-sys-win32-foundation", "windows-sys-win32-graphics"]
+[dependencies.win32-ui-sys]
+path = "../../generated/win32-ui-sys"
+features = ["WindowsAndMessaging"]

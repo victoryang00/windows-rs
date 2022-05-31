@@ -1,0 +1,73 @@
+
+[package]
+name = "winrt-applicationmodel"
+version = "0.37.0"
+authors = ["Microsoft"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "Rust for Windows"
+repository = "https://github.com/microsoft/windows-rs"
+readme = "../../../.github/readme.md"
+rust-version = "1.46"
+
+[dependencies]
+windows-core = { path = "../../libs/windows-core",  version = "0.37.0" }
+winrt-foundation = { path = "../winrt-foundation",  version = "0.37.0", optional = true }
+
+[features]
+deprecated = []
+default = ["winrt-foundation"]
+Activation = []
+AppExtensions = []
+AppService = []
+Appointments = []
+Appointments_AppointmentsProvider = ["Appointments"]
+Appointments_DataProvider = ["Appointments"]
+Background = []
+Calls = []
+Calls_Background = ["Calls"]
+Calls_Provider = ["Calls"]
+Chat = []
+CommunicationBlocking = []
+Contacts = []
+Contacts_DataProvider = ["Contacts"]
+Contacts_Provider = ["Contacts"]
+ConversationalAgent = []
+Core = []
+DataTransfer = []
+DataTransfer_DragDrop = ["DataTransfer"]
+DataTransfer_DragDrop_Core = ["DataTransfer_DragDrop"]
+DataTransfer_ShareTarget = ["DataTransfer"]
+Email = []
+Email_DataProvider = ["Email"]
+ExtendedExecution = []
+ExtendedExecution_Foreground = ["ExtendedExecution"]
+Holographic = []
+LockScreen = []
+Payments = []
+Payments_Provider = ["Payments"]
+Preview = []
+Preview_Holographic = ["Preview"]
+Preview_InkWorkspace = ["Preview"]
+Preview_Notes = ["Preview"]
+Resources = []
+Resources_Core = ["Resources"]
+Resources_Management = ["Resources"]
+Search = []
+Search_Core = ["Search"]
+SocialInfo = []
+SocialInfo_Provider = ["SocialInfo"]
+Store = []
+Store_LicenseManagement = ["Store"]
+Store_Preview = ["Store"]
+Store_Preview_InstallControl = ["Store_Preview"]
+UserActivities = []
+UserActivities_Core = ["UserActivities"]
+UserDataAccounts = []
+UserDataAccounts_Provider = ["UserDataAccounts"]
+UserDataAccounts_SystemAccess = ["UserDataAccounts"]
+UserDataTasks = []
+UserDataTasks_DataProvider = ["UserDataTasks"]
+VoiceCommands = []
+Wallet = []
+Wallet_System = ["Wallet"]

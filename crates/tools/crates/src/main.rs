@@ -18,7 +18,7 @@ fn main() {
         }
     }
     trees
-    .par_iter()
+   .par_iter()
     .for_each(|tree| build(reader, tree));
    // build(reader, &root.nested["Foundation"]);
 }
@@ -29,8 +29,15 @@ fn build(reader: &Reader, tree: &Tree) {
 }
 
 fn build_kind(reader: &Reader, tree: &Tree, sys: bool) {
-    let name = if sys { "windows-sys" } else { "windows" };
-    let name = format!("{}-{}", name, tree.namespace.strip_prefix("Windows.").unwrap().to_lowercase().replace(".", "-"));
+    let win32 = tree.namespace.starts_with("Windows.Win32");
+    let mut name = if win32 {
+        tree.namespace[8..].to_lowercase().replace(".", "-")
+    } else {
+        format!("winrt-{}", tree.namespace[8..].to_lowercase().replace(".", "-"))
+    };
+    if sys {
+        name.push_str("-sys");
+    }
     println!("{}", name);
     let mut path = std::path::PathBuf::from("crates/generated");
     path.push(&name);
@@ -43,7 +50,7 @@ fn build_kind(reader: &Reader, tree: &Tree, sys: bool) {
         file,
         r#"
 [package]
-name = "{}"
+name = "{name}"
 version = "0.37.0"
 authors = ["Microsoft"]
 edition = "2018"
@@ -52,46 +59,74 @@ description = "Rust for Windows"
 repository = "https://github.com/microsoft/windows-rs"
 readme = "../../../.github/readme.md"
 rust-version = "1.46"
-"#,
-        name
+
+[dependencies]
+"#
     )
     .unwrap();
 
-    if sys {
-        file.write_all(
-            r#"
-[dependencies]
-windows-sys-core = { path = "../../libs/windows-sys-core",  version = "0.37.0" }
-"#
-            .as_bytes(),
-        )
-        .unwrap();
+    let foundation = if win32 {
+        if sys {
+            "win32-foundation-sys"    
+        } else {
+            "win32-foundation"
+        }
     } else {
-        file.write_all(
-            r#"
-[dependencies]
-windows-core = { path = "../../libs/windows-core",  version = "0.37.0" }
-"#
-            .as_bytes(),
-        )
-        .unwrap();
+        if sys {
+            "winrt-foundation-sys"    
+        } else {
+            "winrt-foundation"
+        }
+    };
+
+    let core = if sys {
+        "windows-core-sys"
+    } else {
+        "windows-core"
+    };
+
+    writeln!(file, r#"{core} = {{ path = "../../libs/{core}",  version = "0.37.0" }}"#).unwrap();
+
+    if name != foundation {
+        writeln!(file, r#"{foundation} = {{ path = "../{foundation}",  version = "0.37.0", optional = true }}"#).unwrap();
     }
 
     write!(
         file,
         r#"
 [features]
-default = []
 deprecated = []
-"#,
+"#
     )
     .unwrap();
+
+    if name != foundation {
+        writeln!(file, r#"default = ["{foundation}"]"#).unwrap();
+    }
 
     file.write_all(imp::gen_features(tree).as_bytes()).unwrap();
 
     path.pop();
     path.push("src");
     build_tree(reader, "", tree, &path, sys, true);
+
+    //path.pop();
+    // loop {
+    //     let mut cmd = std::process::Command::new("cargo");
+    //     cmd.current_dir(&path);
+    //     cmd.arg("publish");
+    //     cmd.arg("--allow-dirty");
+    //     let output = cmd.output().unwrap();
+
+    //     if output.status.success() {
+    //         break;
+    //     } else {
+    //         std::io::stdout().write_all(&output.stdout).unwrap();
+    //         std::io::stderr().write_all(&output.stderr).unwrap();
+    //         println!("Waiting to retry...");
+    //         std::thread::sleep(std::time::Duration::from_secs(60*11));
+    //     }
+    // }
 }
 
 fn build_tree(reader: &Reader, name: &str, tree: &Tree, path: &std::path::Path, sys: bool, root: bool) {

@@ -1,7 +1,7 @@
-use foundation::*;
-use system::LibraryLoader::*;
-use graphics::Gdi::*;
-use ui::WindowsAndMessaging::*;
+use win32_foundation::*;
+use win32_system::LibraryLoader::*;
+use win32_graphics::Gdi::*;
+use win32_ui::WindowsAndMessaging::*;
 
 fn main() {
     unsafe {

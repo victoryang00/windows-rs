@@ -1,0 +1,28 @@
+
+[package]
+name = "winrt-gaming"
+version = "0.37.0"
+authors = ["Microsoft"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "Rust for Windows"
+repository = "https://github.com/microsoft/windows-rs"
+readme = "../../../.github/readme.md"
+rust-version = "1.46"
+
+[dependencies]
+windows-core = { path = "../../libs/windows-core",  version = "0.37.0" }
+winrt-foundation = { path = "../winrt-foundation",  version = "0.37.0", optional = true }
+
+[features]
+deprecated = []
+default = ["winrt-foundation"]
+Input = []
+Input_Custom = ["Input"]
+Input_ForceFeedback = ["Input"]
+Input_Preview = ["Input"]
+Preview = []
+Preview_GamesEnumeration = ["Preview"]
+UI = []
+XboxLive = []
+XboxLive_Storage = ["XboxLive"]

@@ -1,0 +1,52 @@
+
+[package]
+name = "winrt-media-sys"
+version = "0.37.0"
+authors = ["Microsoft"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "Rust for Windows"
+repository = "https://github.com/microsoft/windows-rs"
+readme = "../../../.github/readme.md"
+rust-version = "1.46"
+
+[dependencies]
+windows-core-sys = { path = "../../libs/windows-core-sys",  version = "0.37.0" }
+winrt-foundation-sys = { path = "../winrt-foundation-sys",  version = "0.37.0", optional = true }
+
+[features]
+deprecated = []
+default = ["winrt-foundation-sys"]
+AppBroadcasting = []
+AppRecording = []
+Audio = []
+Capture = []
+Capture_Core = ["Capture"]
+Capture_Frames = ["Capture"]
+Casting = []
+ClosedCaptioning = []
+ContentRestrictions = []
+Control = []
+Core = []
+Core_Preview = ["Core"]
+Devices = []
+Devices_Core = ["Devices"]
+DialProtocol = []
+Editing = []
+Effects = []
+FaceAnalysis = []
+Import = []
+MediaProperties = []
+Miracast = []
+Ocr = []
+PlayTo = []
+Playback = []
+Playlists = []
+Protection = []
+Protection_PlayReady = ["Protection"]
+Render = []
+SpeechRecognition = []
+SpeechSynthesis = []
+Streaming = []
+Streaming_Adaptive = ["Streaming"]
+Transcoding = []

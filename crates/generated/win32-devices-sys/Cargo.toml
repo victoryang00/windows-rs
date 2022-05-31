@@ -1,0 +1,42 @@
+
+[package]
+name = "win32-devices-sys"
+version = "0.37.0"
+authors = ["Microsoft"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "Rust for Windows"
+repository = "https://github.com/microsoft/windows-rs"
+readme = "../../../.github/readme.md"
+rust-version = "1.46"
+
+[dependencies]
+windows-core-sys = { path = "../../libs/windows-core-sys",  version = "0.37.0" }
+win32-foundation-sys = { path = "../win32-foundation-sys",  version = "0.37.0", optional = true }
+
+[features]
+deprecated = []
+default = ["win32-foundation-sys"]
+AllJoyn = []
+BiometricFramework = []
+Bluetooth = []
+Communication = []
+DeviceAccess = []
+DeviceAndDriverInstallation = []
+DeviceQuery = []
+Display = []
+Enumeration = []
+Enumeration_Pnp = ["Enumeration"]
+Fax = []
+FunctionDiscovery = []
+Geolocation = []
+HumanInterfaceDevice = []
+ImageAcquisition = []
+PortableDevices = []
+Properties = []
+Pwm = []
+Sensors = []
+SerialCommunication = []
+Tapi = []
+Usb = []
+WebServicesOnDevices = []
